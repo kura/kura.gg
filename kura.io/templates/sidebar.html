@@ -1,0 +1,21 @@
+<div class="three columns">
+
+<h4>Software</h4>
+
+ <ul>
+  {% for title, link in MENUITEMS %}
+      <li><a href="{{ link }}">{{ title }}</a></li>
+  {% endfor %}
+  </ul>
+
+<h4>Categories</h4>
+{% if categories %}
+<ul>
+	{% for cat, null in categories %}
+		<li><a href="{{ SITEURL }}/{{ cat.url|e }}">{{ cat }}</a></li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+
+</div>
