@@ -68,15 +68,13 @@ run this you do so at your own risk**.
 Compilation
 -----------
 
-You can download the `source here <../../../../files/oom>`_.
+You can download the `source here <|filename|/files/oom.c>`_.
 
 To compile run the command below
 
     gcc -O2 oom.c -o oom
 
-Or download a `pre-compiled version here`_.
-
-.. _pre-compiled version here: http://syslog.tv/downloads/oom.c
+Or download a `pre-compiled version here <|filename|/files/oom>`_.
 
 Usage
 -----

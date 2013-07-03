@@ -36,6 +36,9 @@ MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
 STATIC_PATHS = ['images', 'files', 'slides']
 
+#PDF_GENERATOR = True
+PDF_STYLE = "twelvepoint"
+
 # Blogroll
 LINKS = ()
 
@@ -47,9 +50,26 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
+PLUGIN_PATH = "plugins/"
 PLUGINS = [
     # ...
     'pelican_gist',
     'archive_unique_dates',
+    'sitemap',
+    'gzip_cache',
     # ...
 ]
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5,
+    },
+    'changefreqs': {
+        'articles': 'daily',
+        'indexes': 'daily',
+        'pages': 'daily',
+    }
+}
