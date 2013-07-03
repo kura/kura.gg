@@ -2,7 +2,7 @@ Bash portforwarding with autocompletion
 #######################################
 :date: 2013-03-12 18:00
 :author: kura
-:category: Uncategorized
+:category: tutorials
 :tags: autocompletion, bash, port forwarding
 :slug: bash-portforwarding-with-autocompletion
 
@@ -14,7 +14,7 @@ that I created in a small competition with `@codeinthehole.`_
 
 .. _@codeinthehole.: https://twitter.com/codeinthehole
 
-[gist]https://gist.github.com/kura/5065819[/gist]
+[gist:id=5065819]
 
 Installation
 ------------

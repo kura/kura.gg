@@ -2,7 +2,7 @@ Send all email to a blackhole (never gets delivered), test delivery speed and mu
 ##########################################################################################################
 :date: 2012-06-26 23:05
 :author: kura
-:category: howto, mail
+:category: tutorials
 :tags: blackhole, blackhole.io, email, mail
 :slug: send-all-email-to-a-blackhole-never-gets-delivered-test-delivery-speed-and-much-more-using-blackhole-io
 

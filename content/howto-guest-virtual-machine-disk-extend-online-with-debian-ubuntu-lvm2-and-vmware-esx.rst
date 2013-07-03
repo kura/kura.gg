@@ -2,7 +2,7 @@ HOWTO: Guest Virtual Machine disk extend online with Debian/Ubuntu, LVM2 and VMW
 #######################################################################################
 :date: 2010-02-16 18:20
 :author: kura
-:category: debian, howto, ubuntu, vmware
+:category: tutorials
 :tags: cfdisk, debian, esx, howto, logical volume management, lvm, lvm2, partition, ubuntu, vmware
 :slug: howto-guest-virtual-machine-disk-extend-online-with-debian-ubuntu-lvm2-and-vmware-esx
 

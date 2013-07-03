@@ -2,7 +2,7 @@ Postfix + SpamAssassin + ClamAV + Procmail on Debian 6/Ubuntu
 #############################################################
 :date: 2011-09-16 21:28
 :author: kura
-:category: debian, howto, mail, postfix, ubuntu
+:category: tutorials
 :tags: clamav, clamsmtp, debian, email, mail, postfix, procmail, spamassassin, ubuntu
 :slug: postfix-spamassassin-clamav-procmail
 

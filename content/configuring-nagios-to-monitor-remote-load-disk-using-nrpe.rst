@@ -2,7 +2,7 @@ Configuring Nagios to monitor remote load, disk, swap etc using NRPE
 ####################################################################
 :date: 2010-03-21 21:55
 :author: kura
-:category: debian, howto, nagios, ubuntu
+:category: tutorials
 :tags: debian, monitoring, nagios, nrpe, ubuntu
 :slug: configuring-nagios-to-monitor-remote-load-disk-using-nrpe
 

@@ -2,7 +2,7 @@ Visualised: 24 hours of SSH attacks against a single server
 ###########################################################
 :date: 2012-03-02 18:36
 :author: kura
-:category: ssh
+:category: misc
 :tags: bruteforce, ssh
 :slug: visualised-24-hours-of-ssh-attacks-against-a-single-server
 

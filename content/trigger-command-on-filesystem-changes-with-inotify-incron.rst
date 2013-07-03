@@ -2,7 +2,7 @@ Trigger command on filesystem changes with inotify + incron
 ###########################################################
 :date: 2010-07-03 15:26
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: incron, infobright, inotify, mysql
 :slug: trigger-command-on-filesystem-changes-with-inotify-incron
 

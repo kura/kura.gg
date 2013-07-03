@@ -2,7 +2,7 @@ Backup a Linux server to Amazon S3 on Debian 6/Ubuntu 10.04
 ###########################################################
 :date: 2012-02-29 20:55
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: amazon, aws, backup, debian, s3, ubuntu
 :slug: backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04
 

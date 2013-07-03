@@ -2,7 +2,7 @@ Find and replace across multiple files
 ######################################
 :date: 2010-08-13 19:19
 :author: kura
-:category: howto, Uncategorized
+:category: tutorials
 :tags: find, sed, xargs
 :slug: find-and-replace-across-multiple-files
 

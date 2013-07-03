@@ -2,7 +2,7 @@ nginx config for reverse proxying Wordpress & WP Super Cache and keeping the loa
 #############################################################################################
 :date: 2011-09-30 23:21
 :author: kura
-:category: apache, nginx
+:category: tutorials
 :tags: apache2, nginx, wordpress, wp-super-cache
 :slug: nginx-config-for-reverse-proxying-wordpress-wp-super-cache-and-keeping-the-load-off-apache2
 

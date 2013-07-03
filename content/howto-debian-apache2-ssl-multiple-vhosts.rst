@@ -2,7 +2,7 @@ HOWTO: Debian - Apache 2 SSL on multiple virtual hosts
 ######################################################
 :date: 2010-01-15 06:24
 :author: kura
-:category: apache, debian, howto
+:category: tutorials
 :tags: apache, debian, eth0, howto, mod_ssl, networking, ssl, vhost
 :slug: howto-debian-apache2-ssl-multiple-vhosts
 

@@ -2,7 +2,7 @@ HOWTO: Debian, Apache 2 & mod_ssl with self signed cert. or officially signed ce
 ###################################################################################
 :date: 2010-01-12 22:57
 :author: kura
-:category: apache, debian, howto
+:category: tutorials
 :tags: apache, debian, mod_ssl, ssl
 :slug: howto-debian-apache-2-amp-mod_ssl
 

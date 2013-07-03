@@ -2,7 +2,7 @@ Logging Google Analytics cookies with nginx
 ###########################################
 :date: 2011-06-05 20:41
 :author: kura
-:category: debian, howto, nginx, ubuntu
+:category: tutorials
 :tags: google analytics, logging, nginx
 :slug: logging-google-analytics-cookies-with-nginx
 

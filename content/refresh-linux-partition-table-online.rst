@@ -2,7 +2,7 @@ Refresh Linux partition table online
 ####################################
 :date: 2010-10-20 17:17
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: linux, online, partition
 :slug: refresh-linux-partition-table-online
 

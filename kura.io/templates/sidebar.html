@@ -1,11 +1,21 @@
 <div class="three columns">
 
-<h4>Software</h4>
+<h4>Pages</h4>
+<ul>
+    <li><a href="{{ SITEURL }}/me/">About me</a></li>
+    <li><a href="{{ SITEURL }}/0x49FCF4D9.asc">My public PGP key</a></li>
+    <li><a href="http://rpi.syslog.io/">My Raspberry Pi mirror</a></li>
+</ul>
 
+<h4>Software / Services</h4>
  <ul>
-  {% for title, link in MENUITEMS %}
-      <li><a href="{{ link }}">{{ title }}</a></li>
-  {% endfor %}
+      <li><a href="http://blackhole.io/">blackhole.io</a></li>
+      <li><a href="{{ SITEURL }}/amisecure/">Am I Secure?</a></li>
+      <li><a href="https://pypip.in/">pypipins</a></li>
+      <li><a href="{{ SITEURL }}/pybozo/">PyBozo</a></li>
+      <li><a href="{{ SITEURL }}/apt-security/">apt-security</a></li>
+      <li><a href="{{ SITEURL }}/rabbitmq-nagios">rabbitmq-nagios</a></li>
+      <li><a href="{{ SITEURL }}/simplemta">SimpleMTA</a></li>
   </ul>
 
 <h4>Categories</h4>
@@ -17,5 +27,11 @@
 </ul>
 {% endif %}
 
+<h4>Archives</h4>
+<ul>
+{% for date in archive_dates %}
+  <li><a href="{{ SITEURL }}/{{ date.url|e }}">{{ date.string }}</a></li>
+{% endfor %}
+</ul>
 
 </div>

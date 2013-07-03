@@ -2,7 +2,7 @@ Postfix spam protection with blacklists
 #######################################
 :date: 2011-09-24 21:05
 :author: kura
-:category: howto, mail, postfix
+:category: tutorials
 :tags: blackhole, blacklist, email, mail, postfix, spam
 :slug: postfix-spam-protection-with-blacklists
 

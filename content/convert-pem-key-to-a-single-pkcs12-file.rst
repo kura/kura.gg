@@ -2,7 +2,7 @@ Convert PEM & Key to a single PKCS#12 file
 ##########################################
 :date: 2010-04-13 19:19
 :author: kura
-:category: howto
+:category: tutorials
 :tags: crt, openssl, pem, pkcs12, ssl
 :slug: convert-pem-key-to-a-single-pkcs12-file
 

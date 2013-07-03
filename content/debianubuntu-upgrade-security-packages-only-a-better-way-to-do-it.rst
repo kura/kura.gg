@@ -2,7 +2,7 @@ Debian/Ubuntu upgrade security packages only - a better way to do it
 ####################################################################
 :date: 2011-09-21 13:21
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: apt, debian, security, ubuntu, upgrades
 :slug: debianubuntu-upgrade-security-packages-only-a-better-way-to-do-it
 

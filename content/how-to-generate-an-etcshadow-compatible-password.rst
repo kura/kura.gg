@@ -2,7 +2,7 @@ How to generate an  /etc/shadow compatible password
 ###################################################
 :date: 2012-10-11 09:56
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: /etc/shadow, mkpasswd, password, sha-512, sha512
 :slug: how-to-generate-an-etcshadow-compatible-password
 

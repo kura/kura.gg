@@ -2,7 +2,7 @@ Rebooting on OOM
 ################
 :date: 2011-10-25 10:26
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: kernel panic, oom, reboot
 :slug: rebooting-on-oom
 
@@ -68,9 +68,7 @@ run this you do so at your own risk**.
 Compilation
 -----------
 
-You can download the `source here`_.
-
-.. _source here: http://syslog.tv/downloads/oom.c
+You can download the `source here <../../../../files/oom>`_.
 
 To compile run the command below
 
@@ -78,7 +76,7 @@ To compile run the command below
 
 Or download a `pre-compiled version here`_.
 
-.. _pre-compiled version here: http://syslog.tv/downloads/oom
+.. _pre-compiled version here: http://syslog.tv/downloads/oom.c
 
 Usage
 -----

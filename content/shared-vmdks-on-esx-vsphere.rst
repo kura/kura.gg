@@ -2,7 +2,7 @@ Shared VMDKs on ESX vSphere
 ###########################
 :date: 2011-07-09 02:07
 :author: kura
-:category: howto, vmware
+:category: tutorials
 :tags: esx, iscsi, scsi, shared vmdk, vmdk, vmware
 :slug: shared-vmdks-on-esx-vsphere
 
@@ -21,12 +21,12 @@ Next up we create the VMDK, I find it easiest to do this by adding
 hardware to an already existing machine, I'm going to use one that I
 want the VMDK shared with to make it even simpler.
 
-`|image0|`_
+.. image:: |filename|/images/shared-vmdks-on-esx-vsphere1.png
 
 You will need to enable clustering features as shown below, this means
 you cannot use thin provisioning.
 
-`|image1|`_
+.. image:: |filename|/images/shared-vmdks-on-esx-vsphere2.png
 
 You will need to add the VMDK to a new SCSI BUS, this will usually begin
 with 1: or 2: depending on how many SCSI BUS you have connected already,
@@ -34,13 +34,13 @@ I'm using 1:0 as shown below.
 
 You will also need to set it's MODE as "Independent" and "Persistent".
 
-`|image2|`_
+.. image:: |filename|/images/shared-vmdks-on-esx-vsphere3.png
 
 Once the drive has been added it will appear in your VM hardware list
 along with the new SCSI controller. Click on the controller to modify it
 and set it as "Physical" as shown below.
 
-`|image3|`_
+.. image:: |filename|/images/shared-vmdks-on-esx-vsphere4.png
 
 Once this is down, close out of the hardware panel and modify the other
 VMs you wish this disk to be shared to, do exactly as above but adding
@@ -48,17 +48,3 @@ the existing VMDK to each VM rather than creating a new drive.
 
 When you're finished, power on all of the machines and mount the device
 as you normally would for your operating system.
-
-.. _|image4|: https://syslog.tv/files/2011/07/Screenshot-060711-131305.png
-.. _|image5|: https://syslog.tv/files/2011/07/Screenshot-060711-131324.png
-.. _|image6|: https://syslog.tv/files/2011/07/Screenshot-060711-131343.png
-.. _|image7|: https://syslog.tv/files/2011/07/Screenshot-060711-131414.png
-
-.. |image0| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131305-300x234.png
-.. |image1| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131324-300x231.png
-.. |image2| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131343-300x236.png
-.. |image3| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131414-300x257.png
-.. |image4| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131305-300x234.png
-.. |image5| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131324-300x231.png
-.. |image6| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131343-300x236.png
-.. |image7| image:: http://syslog.tv/files/2011/07/Screenshot-060711-131414-300x257.png

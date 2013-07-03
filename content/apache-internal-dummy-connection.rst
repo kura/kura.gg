@@ -2,7 +2,7 @@ Apache internal dummy connection
 ################################
 :date: 2010-03-27 19:29
 :author: kura
-:category: apache
+:category: tutorials
 :tags: apache, load average
 :slug: apache-internal-dummy-connection
 

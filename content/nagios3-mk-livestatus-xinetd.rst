@@ -2,7 +2,7 @@ Nagios3 + MK Livestatus + xinetd on Debian 6/Ubuntu
 ###################################################
 :date: 2011-10-13 23:17
 :author: kura
-:category: debian, howto, nagios, ubuntu, Uncategorized
+:category: tutorials
 :tags: mk livestatus, nagios, nagios 3, nagios broker, xinetd
 :slug: nagios3-mk-livestatus-xinetd
 

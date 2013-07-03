@@ -2,7 +2,7 @@ code_swarm - Apache, Python and PostgreSQL commit visualization
 ###############################################################
 :date: 2010-02-13 23:01
 :author: kura
-:category: Uncategorized
+:category: misc
 :tags: apache, code_swarm, postgresql, python
 :slug: code_swarm-apache-python-and-postgresql-commit-visualization
 

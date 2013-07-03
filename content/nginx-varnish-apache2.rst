@@ -2,7 +2,7 @@ WordPress + nginx + Varnish + Apache 2
 ######################################
 :date: 2010-09-26 19:41
 :author: kura
-:category: apache, debian, howto, nginx, ubuntu, varnish
+:category: tutorials
 :tags: apache, nginx, varnish, wordpress
 :slug: nginx-varnish-apache2
 

@@ -2,7 +2,7 @@ nginx - increase increase server_names_hash_bucket_size
 #######################################################
 :date: 2010-03-18 21:54
 :author: kura
-:category: howto, nginx
+:category: tutorials
 :tags: nginx
 :slug: nginx-increase-increase-server_names_hash_bucket_size
 

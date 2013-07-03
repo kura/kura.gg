@@ -2,7 +2,7 @@ New syslog.tv nginx wordpress site configuration explained
 ##########################################################
 :date: 2010-04-18 12:51
 :author: kura
-:category: apache, howto, nginx
+:category: tutorials
 :tags: apache, cache, nginx, proxy, proxy_cache, wordpress
 :slug: new-syslog-tv-nginx-wordpress-site-configuration
 

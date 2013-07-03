@@ -158,7 +158,7 @@ table th[class*="span"],
 #banner h1 { font-size:3.25rem }
 
 .no-touch .navbar ul li.active > a {
-  
+
   background: #868d92;
 
 }
@@ -182,11 +182,16 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 a, a:hover { color: #3498DB; }
 a:focus { color: #34495E; }
 
-.btn a:hover, 
+.btn a:hover,
 .btn a:focus {color:#eee; }
 
 .label:hover,
 .label:focus {color:#eee; }
+
+/* Header
+--------------------------------------------------------- */
+.hbg { border-bottom:5px solid #3498DB; }
+
 
 /* Footer
 --------------------------------------------------------- */

@@ -2,7 +2,7 @@ Mount Amazon S3 bucket locally on Debian 5 & 6/Ubuntu 10.04
 ###########################################################
 :date: 2012-03-03 16:05
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: aws, fstab, fuse, mount, s3, s3fs
 :slug: mount-amazon-s3-bucket-locally
 

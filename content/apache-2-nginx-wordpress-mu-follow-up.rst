@@ -2,7 +2,7 @@ Apache 2, Nginx & WordPress MU - Follow up
 ##########################################
 :date: 2010-01-12 00:37
 :author: kura
-:category: apache, debian, nginx
+:category: tutorials
 :tags: apache, cache, debian, nginx, wordpress
 :slug: apache-2-nginx-wordpress-mu-follow-up
 

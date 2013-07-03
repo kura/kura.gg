@@ -2,7 +2,7 @@ Mounting a remote filesystem using sshfs
 ########################################
 :date: 2010-09-26 01:55
 :author: kura
-:category: debian, howto, ssh, ubuntu
+:category: tutorials
 :tags: ssh, sshfs
 :slug: mounting-a-remote-filesystem-using-sshfs
 

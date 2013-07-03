@@ -2,7 +2,7 @@ Using dpkg selections to backup and install packages
 ####################################################
 :date: 2010-07-02 18:32
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: apt, backup, dpkg, packages
 :slug: using-dpkg-selections-to-backup-and-install-packages
 

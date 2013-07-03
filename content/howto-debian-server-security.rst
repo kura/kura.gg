@@ -2,7 +2,7 @@ HOWTO: Debian server security
 #############################
 :date: 2010-01-14 19:57
 :author: kura
-:category: apache, debian, denyhosts, howto, logwatch, php, ssh
+:category: tutorials
 :tags: apache, debian, denyhosts, howto, logwatch, php, security
 :slug: howto-debian-server-security
 

@@ -2,7 +2,7 @@ MySQL Master-Master-Slave-Slave Replication
 ###########################################
 :date: 2010-09-04 18:14
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: mysql, replication
 :slug: mysql-master-master-slave-slave-replication
 

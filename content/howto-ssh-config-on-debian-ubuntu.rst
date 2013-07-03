@@ -2,7 +2,7 @@ HOWTO: SSH config on Debian/Ubuntu
 ##################################
 :date: 2010-02-18 21:03
 :author: kura
-:category: debian, howto, ssh, ubuntu
+:category: tutorials
 :tags: debian, howto, ssh, ssh_config, ubuntu
 :slug: howto-ssh-config-on-debian-ubuntu
 

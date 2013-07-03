@@ -2,7 +2,7 @@ More nginx proxy_cache optimizations and nginx load balancing
 ##############################################################
 :date: 2010-02-14 14:27
 :author: kura
-:category: apache, debian, howto, nginx, ubuntu
+:category: tutorials
 :tags: apache, cache, debian, howto, load balancing, nginx, ubuntu, wordpress
 :slug: more-nginx-proxy_cache-optimizations-and-nginx-load-balancing
 

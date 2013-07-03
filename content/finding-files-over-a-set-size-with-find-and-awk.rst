@@ -2,7 +2,7 @@ Finding files over a set size with find & awk
 #############################################
 :date: 2010-03-17 11:19
 :author: kura
-:category: debian, howto, ubuntu, Uncategorized
+:category: tutorials
 :tags: awk, egrep, find, linux, ls, wc
 :slug: finding-files-over-a-set-size-with-find-and-awk
 

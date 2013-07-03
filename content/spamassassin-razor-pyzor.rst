@@ -2,7 +2,7 @@ SpamAssassin + Razor + Pyzor on Debian 6/Ubuntu
 ###############################################
 :date: 2011-09-22 19:17
 :author: kura
-:category: debian, howto, mail, postfix, ubuntu
+:category: tutorials
 :tags: email, mail, postfix, pyzor, razor, spam, spamassassin
 :slug: spamassassin-razor-pyzor
 

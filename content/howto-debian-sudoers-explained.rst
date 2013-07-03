@@ -2,7 +2,7 @@ HOWTO: Debian - Sudo(ers) explained
 ###################################
 :date: 2010-01-13 03:56
 :author: kura
-:category: debian, howto
+:category: tutorials
 :tags: debian, howto, sudo, sudoers
 :slug: howto-debian-sudoers-explained
 

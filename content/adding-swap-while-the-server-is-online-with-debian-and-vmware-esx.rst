@@ -2,7 +2,7 @@ Adding swap while the server is online with Debian and VMWare ESX
 #################################################################
 :date: 2010-07-07 18:56
 :author: kura
-:category: debian, howto, ubuntu, vmware
+:category: tutorials
 :tags: debian, swap, vmware
 :slug: adding-swap-while-the-server-is-online-with-debian-and-vmware-esx
 

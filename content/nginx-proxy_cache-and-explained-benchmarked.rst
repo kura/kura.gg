@@ -2,7 +2,7 @@ nginx, proxy_cache and reverse proxying explained & benchmarked
 ###############################################################
 :date: 2010-02-07 10:27
 :author: kura
-:category: apache, debian, howto, nginx, php, ubuntu
+:category: tutorials
 :tags: apache, cache, debian, howto, nginx, php, ubuntu, wordpress
 :slug: nginx-proxy_cache-and-explained-benchmarked
 

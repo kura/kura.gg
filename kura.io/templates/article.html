@@ -14,6 +14,14 @@
            {{ translations.translations_for(article) }}
             </header>
             <footer class="post-info">
+              {% if article.tags %}
+              <p>
+                <span>Tagged as : </span>
+                {% for tag in article.tags %}
+                  <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                {% endfor %}
+              </p>
+              {% endif %}
               <abbr class="published" title="{{ article.date.isoformat() }}">
                 {{ article.locale_date }}
               </abbr>
@@ -26,10 +34,11 @@
             <div class="entry-content">
               {{ article.content }}
             </div><!-- /.entry-content -->
-
-
+            <p>&nbsp;</p>
+            {% include 'share.html' %}
+            {% include 'disqus.html' %}
         </div><!-- /.eleven.columns -->
-        
+
      {% include 'sidebar.html' %}
  </div><!-- /.row -->
 

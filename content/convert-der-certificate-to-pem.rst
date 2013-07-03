@@ -2,7 +2,7 @@ Convert DER certificate to PEM
 ##############################
 :date: 2010-03-03 17:26
 :author: kura
-:category: apache, howto
+:category: tutorials
 :tags: apache, certificate, crt, der, pem, ssl
 :slug: convert-der-certificate-to-pem
 

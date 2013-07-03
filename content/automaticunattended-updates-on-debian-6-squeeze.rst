@@ -2,7 +2,7 @@ Automatic/Unattended updates on Debian 6 (Squeeze)
 ##################################################
 :date: 2012-01-28 17:41
 :author: kura
-:category: debian, howto
+:category: tutorials
 :tags: automatic update, debian, unattended-upgrades, update
 :slug: automaticunattended-updates-on-debian-6-squeeze
 

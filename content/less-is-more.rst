@@ -2,7 +2,7 @@ less is more
 ############
 :date: 2010-03-01 21:30
 :author: kura
-:category: Uncategorized
+:category: tutorials
 :tags: less, linux, unix
 :slug: less-is-more
 

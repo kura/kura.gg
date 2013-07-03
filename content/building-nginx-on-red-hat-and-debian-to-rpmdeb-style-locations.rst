@@ -2,7 +2,7 @@ Building nginx on Red Hat and Debian to RPM/DEB-style locations
 ###############################################################
 :date: 2010-04-02 16:54
 :author: kura
-:category: debian, howto, nginx, ubuntu
+:category: tutorials
 :tags: debian, fedora, install, nginx, redhat, ubuntu
 :slug: building-nginx-on-red-hat-and-debian-to-rpmdeb-style-locations
 

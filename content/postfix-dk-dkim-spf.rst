@@ -2,7 +2,7 @@ Postfix + DK (DomainKeys) + DKIM + SPF on Debian 6/Ubuntu
 #########################################################
 :date: 2011-09-17 18:18
 :author: kura
-:category: debian, howto, mail, postfix, ubuntu
+:category: tutorials
 :tags: debian, dk, dkim, domainkeys, email, mail, postfix, spf, ubuntu
 :slug: postfix-dk-dkim-spf
 

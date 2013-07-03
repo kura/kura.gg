@@ -3,7 +3,7 @@ Java 6 on Ubuntu 12.04 (including Tomcat 6)
 :date: 2012-11-08 11:47
 :author: kura
 :category: howto
-:tags: java, openjdk, sun, tomcat6
+:category: tutorials
 :slug: java-6-on-ubuntu-12-04-including-tomcat-6
 
 If like me you run in to issue when using OpenJDK, my issues come from

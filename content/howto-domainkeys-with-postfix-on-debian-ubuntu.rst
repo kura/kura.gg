@@ -2,7 +2,7 @@ HOWTO: DomainKeys with Postfix on Debian/Ubuntu
 ###############################################
 :date: 2010-02-12 19:08
 :author: kura
-:category: debian, howto, mail, postfix, ubuntu
+:category: tutorials
 :tags: debian, dkim, domainkeys, howto, mail, postfix, ubuntu
 :slug: howto-domainkeys-with-postfix-on-debian-ubuntu
 

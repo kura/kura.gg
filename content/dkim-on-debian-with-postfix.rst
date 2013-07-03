@@ -2,7 +2,7 @@ HOWTO: DKIM with Postfix on Debian
 ##################################
 :date: 2010-01-11 20:53
 :author: kura
-:category: debian, howto, mail, postfix
+:category: tutorials
 :tags: debian, dkim, howto, mail, postfix
 :slug: dkim-on-debian-with-postfix
 

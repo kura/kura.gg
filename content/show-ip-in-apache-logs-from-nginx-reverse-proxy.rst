@@ -2,7 +2,7 @@ Show IP in Apache logs from nginx reverse proxy
 ###############################################
 :date: 2010-03-20 19:24
 :author: kura
-:category: apache, debian, howto, nginx
+:category: tutorials
 :tags: apache, log, nginx, proxy
 :slug: show-ip-in-apache-logs-from-nginx-reverse-proxy
 

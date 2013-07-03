@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Archives for {{ SITENAME }}</h1>
-
-<dl>
-{% for article in dates %}
-    <dt>{{ article.locale_date }}</dt>
-    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-{% endfor %}
-</dl>
-{% endblock %}
+<section id="content">
+   <div class="row">
+        <div class="eleven columns">
+            <dl>
+            {% for article in dates %}
+                <dt>{{ article.locale_date }}</dt>
+                <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+            {% endfor %}
+            </dl>
+        </div><!-- /.eleven.columns -->
+     {% include 'sidebar.html' %}
+ </div><!-- /.row -->
+</section><!-- /#content -->
+{% endblock content %}

@@ -2,7 +2,7 @@ HOWTO: IPTables on Debian/Ubuntu
 #################################
 :date: 2010-02-11 16:51
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: debian, howto, iptables, networking, security, ubuntu
 :slug: howto-iptables-on-debian-ubuntu
 

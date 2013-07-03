@@ -2,7 +2,7 @@ Load balancing HTTP/HTTPS with Pound on Debian 6/Ubuntu
 #######################################################
 :date: 2011-09-29 23:15
 :author: kura
-:category: debian, howto, pound, ubuntu
+:category: tutorials
 :tags: http, https, load, load balancing, pound, ssl, ssl offloading, ssl termination
 :slug: load-balancing-httphttps-with-pound-on-debian-6ubuntu
 

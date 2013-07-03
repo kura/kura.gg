@@ -2,7 +2,7 @@ nginx log real IP from Pound
 ############################
 :date: 2011-08-10 12:34
 :author: kura
-:category: apache, debian, howto, nginx, pound, ubuntu
+:category: tutorials
 :tags: apache, load balancer, nginx, pound, reaip, x-forwarded-for
 :slug: nginx-log-real-ip-from-pound
 

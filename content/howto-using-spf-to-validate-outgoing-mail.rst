@@ -2,7 +2,7 @@ HOWTO: Using SPF to validate outgoing mail
 ##########################################
 :date: 2010-02-11 18:25
 :author: kura
-:category: howto, mail
+:category: tutorials
 :tags: howto, mail
 :slug: howto-using-spf-to-validate-outgoing-mail
 

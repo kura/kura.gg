@@ -2,7 +2,7 @@ Installing kernel headers for current kernel version with ease on Debian/Ubuntu
 ###############################################################################
 :date: 2011-09-15 13:30
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: apt, apt-get, debian, headers, kernel, ubuntu
 :slug: installing-kernel-headers-for-current-kernel-version-with-ease-on-debianubuntu
 

@@ -2,7 +2,7 @@ Running your own PGP keyserver with SKS on Debian 6/Ubuntu 10.04
 ################################################################
 :date: 2011-12-17 15:58
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: debian, keyserver, pgp, sks, ubuntu
 :slug: running-your-own-pgp-keyserver-with-sks-on-debian-6ubuntu-10-04
 

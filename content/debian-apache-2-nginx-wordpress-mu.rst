@@ -2,7 +2,7 @@ Debian, Apache 2, Nginx, WordPress MU & WP-Super-Cache
 ######################################################
 :date: 2010-01-11 19:58
 :author: kura
-:category: apache, debian, nginx
+:category: tutorials
 :tags: apache, cache, debian, nginx, wordpress
 :slug: debian-apache-2-nginx-wordpress-mu
 
@@ -13,7 +13,7 @@ see;*
 2. `http://syslog.tv/2010/02/14/more-nginx-proxy\_cache-optimizations-and-nginx-load-balancing/`_
 
    .. _`http://syslog.tv/2010/02/07/nginx-proxy\_cache-and-explained-benchmarked/`: http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/
-.. _`http://syslog.tv/2010/02/14/more-nginx-proxy\_cache-optimizations-and-nginx-load-balancing/`: http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
+   .. _`http://syslog.tv/2010/02/14/more-nginx-proxy\_cache-optimizations-and-nginx-load-balancing/`: http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
 
 I've started collecting a few blogs on my servers now and figured from
 this one on I would consolidate it in to one workable, usable location.
@@ -33,7 +33,7 @@ before but started to look in to nginx mid year as a replacement. I
 learned that at my new job they used nginx for image server and, after
 reading a few articles online decided nginx greatly outweighed "Lighty".
 
-.. _`http://nginx.org/`: http://nginx.org/
+   .. _`http://nginx.org/`: http://nginx.org/
 
 First stop was getting Wordpress MU installed, this itself proved rather
 interesting, I've no idea why however. After several failed attempts

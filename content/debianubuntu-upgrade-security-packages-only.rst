@@ -2,7 +2,7 @@ Debian/Ubuntu upgrade security packages only
 ############################################
 :date: 2010-12-13 16:27
 :author: kura
-:category: debian, howto, ubuntu
+:category: tutorials
 :tags: apt-get, aptitude, security, update, upgrade
 :slug: debianubuntu-upgrade-security-packages-only
 

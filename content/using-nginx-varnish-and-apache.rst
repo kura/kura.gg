@@ -2,7 +2,7 @@ Using nginx, Varnish and Apache
 ###############################
 :date: 2010-02-06 10:36
 :author: kura
-:category: apache, nginx, php, varnish
+:category: tutorials
 :tags: apache, cache, nginx, varnish
 :slug: using-nginx-varnish-and-apache
 

@@ -73,7 +73,6 @@
           <div class="seven columns">
             <div class="row">
               <ul class="socbtns">
-
                 {% if GITHUB_URL %}
                 <li><div class="btn primary"><a href="{{ GITHUB_URL }}" target="_blank">Github</a></div></li>
                 {% endif %}
@@ -81,15 +80,6 @@
                 {% if TWITTER_URL %}
                 <li><div class="btn twitter"><a href="{{ TWITTER_URL }}" target="_blank">Twitter</a></div></li>
                 {% endif %}
-
-                {% if FACEBOOK_URL %}
-                <li><div class="btn facebook"><a href="{{ FACEBOOK_URL }}" target="_blank">Facebook</a></div></li>
-                {% endif %}
-
-                {% if GOOGLEPLUS_URL %}
-                <li><div class="btn danger"><a href="{{ GOOGLEPLUS_URL }}" target="_blank">Google+</a></div></li>
-                {% endif %}
-
               </ul>
             </div>
           </div>
@@ -102,21 +92,9 @@
 
         <div class="row">
 
-          <header id="banner" class="body">
+          <header id="banner" class="container.nopad hbg">
                   <h1><a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
           </header><!-- /#banner -->
-
-            <div id="navigation" class="navbar row">
-              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-
-              <ul class="columns">
-                <li><a href="{{ SITEURL }}">Home</a></li>
-
-            {% for title, link in MENUITEMS %}
-                <li><a href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
-              </ul>
-            </div>
 
           {% block content %}
 

@@ -2,7 +2,7 @@ SSH Tunnelling
 ##############
 :date: 2011-02-14 20:37
 :author: kura
-:category: howto, ssh
+:category: tutorials
 :tags: ssh, tunnel
 :slug: ssh-tunnelling
 

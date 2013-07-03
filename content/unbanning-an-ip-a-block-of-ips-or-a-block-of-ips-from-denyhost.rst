@@ -2,7 +2,7 @@ Unbanning an IP, multiple IPs or a block of IPs from DenyHost
 #############################################################
 :date: 2012-11-13 17:45
 :author: kura
-:category: denyhosts, howto
+:category: tutorials
 :tags: denyhosts, unban
 :slug: unbanning-an-ip-a-block-of-ips-or-a-block-of-ips-from-denyhost
 
