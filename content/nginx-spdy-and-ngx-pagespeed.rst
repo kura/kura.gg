@@ -90,6 +90,7 @@ server configuration as below.
     server {
         ...
         pagespeed on;
+        pagespeed RewriteLevel CoreFilters;
         pagespeed FileCachePath "/var/cache/ngx_pagespeed/";
         pagespeed EnableFilters combine_css,combine_javascript,remove_comments,collapse_whitespace;
         ...
