@@ -3,7 +3,7 @@ nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)
 :date: 2013-07-10 22:30
 :author: kura
 :category: tutorials
-:tags: debian, ubuntu, nginx, spdy. pagespeed, ngx_pagespeed, mod_pagespeed
+:tags: debian, ubuntu, nginx, spdy, pagespeed, ngx_pagespeed, mod_pagespeed
 :slug: nginx-spdy-and-ngx-pagespeed
 
 I decided to rebuild syslog.tv as pure HTML using RST and
@@ -97,6 +97,7 @@ server configuration as below.
     }
 
 The three filters that are enabled do the following:
+
  - combines CSS <style> elements in to one,
  - combines multiple <script> elements in to one,
  - removes all comments from HTML and,
