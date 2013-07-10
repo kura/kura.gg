@@ -179,6 +179,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #3498DB;
 }
 
+p { max-width: 80%; }
+
 a, a:hover { color: #3498DB; }
 a:focus { color: #34495E; }
 
