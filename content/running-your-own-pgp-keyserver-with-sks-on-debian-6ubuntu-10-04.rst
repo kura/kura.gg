@@ -48,7 +48,7 @@ Change it's permissions so the sks user can access it.
 And finally we need create a single HTML file for the interface, I have
 provided that too.
 
-    # wget http://syslog.tv/downloads/sks-index.html -O /var/lib/sks/www/index.html
+    # wget https://kura.io/static/files/sks-index.html -O /var/lib/sks/www/index.html
 
 Now your PGP server should be accessible from a web browser at
 `http://YOUR\_SERVER:11371/`_ and it should look like mine

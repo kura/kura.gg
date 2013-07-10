@@ -17,7 +17,11 @@ different IP addresses. An attacker is banned after;
 -  3 failed user logins (including invalid users) and
 -  3 failed system logins.
 
-[vimeo width="800" height="500"]http://vimeo.com/37818131[/vimeo]
+.. vimeo:: 37818131
+    :width: 800
+    :height: 500
+    :align: center
+
 
 Direct links
 ~~~~~~~~~~~~

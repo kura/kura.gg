@@ -15,7 +15,7 @@ FTP_TARGET_DIR=/
 SSH_HOST=kura.io
 SSH_PORT=2222
 SSH_USER=kura
-SSH_TARGET_DIR=/var/www/kura.io/new/
+SSH_TARGET_DIR=/var/www/kura.io
 
 S3_BUCKET=my_s3_bucket
 

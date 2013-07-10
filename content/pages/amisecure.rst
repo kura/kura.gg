@@ -73,10 +73,6 @@ Example output
 .. image:: |filename|/images/output-amisecure.png
    :alt: Am I Secure?
 
-`Full output here`_.
-
-.. _Full output here: http://iamkura.com/amisecure.html
-
 Issue tracking
 --------------
 

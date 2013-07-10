@@ -80,6 +80,12 @@
                 {% if TWITTER_URL %}
                 <li><div class="btn twitter"><a href="{{ TWITTER_URL }}" target="_blank">Twitter</a></div></li>
                 {% endif %}
+                {% if FEED_RSS %}
+                <li><div class="btn primary"><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" target="_blank">RSS</a></div></li>
+                {% endif %}
+                {% if FEED_ATOM %}
+                <li><div class="btn twitter"><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" target="_blank">Atom</a></div></li>
+                {% endif %}
               </ul>
             </div>
           </div>
@@ -104,14 +110,14 @@
     </div><!-- /.container -->
 
 
-       <div class="container.nopad bg">
+       <div class="container.nopad fbg">
 
 
         <footer id="credits" class="row">
           <div class="seven columns left-center">
 
                    <address id="about" class="vcard body">
-                    Powered by love &amp; rainbow sparkles
+                    Powered by love &amp; rainbow sparkles. This website and all it's content is released under the <a href="{{ SITEURL }}/license/">GNU Geneneral Public (GPL) version 3 license</a>.
                     </address>
           </div>
 

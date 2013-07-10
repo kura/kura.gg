@@ -75,7 +75,7 @@ improve performance and clear up some bugs.
 Sadly Wordpress messes up the config when displayed like that so you can
 view the proper version `here`_.
 
-.. _here: http://syslog.tv/downloads/syslog-nginx-config-18-apr-2010
+.. _here: https://kura.io/satic/files/syslog-nginx-config-18-apr-2010
 
 Explanation
 -----------
