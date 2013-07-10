@@ -25,7 +25,7 @@ enable SPDY so I thought I would go ahead and do it, releasing
 some Debian packages in the process.
 
 After compiling nginx from the source package available at the
-`Ubuntu PPA`_ I decided I would go further and compile in
+`Ubuntu PPA`_, I decided I would go further and compile in
 ngx_pagespeed.
 
 .. _`Ubuntu PPA`: https://launchpad.net/~nginx
