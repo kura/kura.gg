@@ -63,7 +63,7 @@ they are only available for amd64);
 .. _`nginx-full_1.4.1_amd64.deb`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb
 .. _`owG09ndUk1...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.asc
 .. _`4776dc6c7f...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.md5
-.. _`a023efb3f8...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.sha1
+.. _`0e4e124acc...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.sha1
 
 .. _`nginx-doc_1.4.1_all.deb`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb
 .. _`owGMtlOQJQ...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.asc
