@@ -65,7 +65,7 @@ stopserver:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-	gpg --armor --export kura@kura.io > $(OUTPUTDIR)/static/files/kura.key
+	gpg --armor --export kura@kura.io > $(OUTPUTDIR)/static/files/kura.asc
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
