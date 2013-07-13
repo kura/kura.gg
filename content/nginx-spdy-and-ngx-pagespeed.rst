@@ -36,38 +36,40 @@ Installing
 I have released the 4 required debian packages below (please note
 they are only available for amd64);
 
+
 +-------------------------------+------------------+------------------+------------------+
 | FILE                          | GPG              | MD5              | SHA1             |
 +===============================+==================+==================+==================+
-| `nginx_1.4.1_all.deb`_        | `owGMl1NwLw...`_ | `e0fb636905...`_ | `d0d1e073eb...`_ |
+| `nginx_1.4.1_all.deb`_        | `owGMl1NwLw...`_ | `42f790a1f6...`_ | `f4495055e9...`_ |
 +-------------------------------+------------------+------------------+------------------+
-| `nginx-common_1.4.1_all.deb`_ | `owGMt1NwJU...`_ | `4ef36131b2...`_ | `7043e0828d...`_ |
+| `nginx-common_1.4.1_all.deb`_ | `owGMt1NwJU...`_ | `ca4ec5688d...`_ | `633bfc2eaa...`_ |
 +-------------------------------+------------------+------------------+------------------+
-| `nginx-full_1.4.1_amd64.deb`_ | `owG09ndUk1...`_ | `5f9da5109c...`_ | `a023efb3f8...`_ |
+| `nginx-full_1.4.1_amd64.deb`_ | `owG09ndUk1...`_ | `4776dc6c7f...`_ | `0e4e124acc...`_ |
 +-------------------------------+------------------+------------------+------------------+
-| `nginx-doc_1.4.1_all.deb`_    | `owGMtlOQJQ...`_ | `1857b64f9d...`_ | `bd814c7465...`_ |
+| `nginx-doc_1.4.1_all.deb`_    | `owGMtlOQJQ...`_ | `ad8ae70215...`_ | `690563e7cc...`_ |
 +-------------------------------+------------------+------------------+------------------+
 
 
 .. _`nginx_1.4.1_all.deb`: https://kura.io/static/files/nginx_1.4.1_all.deb
 .. _`owGMl1NwLw...`: https://kura.io/static/files/nginx_1.4.1_all.deb.asc
-.. _`e0fb636905...`: https://kura.io/static/files/nginx_1.4.1_all.deb.md5
-.. _`d0d1e073eb...`: https://kura.io/static/files/nginx_1.4.1_all.deb.sha1
+.. _`42f790a1f6...`: https://kura.io/static/files/nginx_1.4.1_all.deb.md5
+.. _`f4495055e9...`: https://kura.io/static/files/nginx_1.4.1_all.deb.sha1
 
 .. _`nginx-common_1.4.1_all.deb`: https://kura.io/static/files/nginx-common_1.4.1_all.deb
 .. _`owGMt1NwJU...`: https://kura.io/static/files/nginx-common_1.4.1_all.deb.asc
-.. _`4ef36131b2...`: https://kura.io/static/files/nginx-common_1.4.1_all.deb.md5
-.. _`7043e0828d...`: https://kura.io/static/files/nginx-common_1.4.1_all.deb.sha1
+.. _`ca4ec5688d...`: https://kura.io/static/files/nginx-common_1.4.1_all.deb.md5
+.. _`633bfc2eaa...`: https://kura.io/static/files/nginx-common_1.4.1_all.deb.sha1
 
 .. _`nginx-full_1.4.1_amd64.deb`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb
 .. _`owG09ndUk1...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.asc
-.. _`5f9da5109c...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.md5
-.. _`a023efb3f8...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.sha1
+.. _`4776dc6c7f...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.md5
+.. _`0e4e124acc...`: https://kura.io/static/files/nginx-full_1.4.1_amd64.deb.sha1
 
 .. _`nginx-doc_1.4.1_all.deb`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb
 .. _`owGMtlOQJQ...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.asc
-.. _`1857b64f9d...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.md5
-.. _`bd814c7465...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.sha1
+.. _`ad8ae70215...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.md5
+.. _`690563e7cc...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.sha1
+
 
 
 You can install them by simply running:
