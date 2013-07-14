@@ -78,6 +78,10 @@ You can install them by simply running:
 
 If you already have nginx installed, make sure to remove it first.
 
+You may receive an error due to missing dependencies, to fix this run:
+
+    sudo apt-get install -f
+
 Configuring SPDY
 ================
 
