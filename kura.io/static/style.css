@@ -76,6 +76,18 @@ table {
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+table td, table th {
+  padding-right: 8px;
+}
+
+table th {
+  border-bottom: 2px solid #3498DB;
+  padding-bottom: 4px;
+  text-transform:uppercase;
+  font-weight: 600;
 }
 
 .table {
@@ -85,7 +97,7 @@ table {
 
 .table th,
 .table td {
-  padding: 8px;
+  padding: 50px;
   line-height: 20px;
   text-align: left;
   vertical-align: top;
