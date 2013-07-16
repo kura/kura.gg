@@ -11,6 +11,7 @@ TIMEZONE = 'Europe/Paris'
 
 GITHUB_URL = 'https://github.com/kura'
 TWITTER_URL = 'https://twitter.com/kuramanga'
+GOOGLE_ANALYTICS = 'UA-12479444-1'
 DISQUS_SITENAME = "syslogtv"
 
 DISPLAY_PAGES_ON_MENU = False
