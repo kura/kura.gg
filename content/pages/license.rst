@@ -3,7 +3,9 @@ License
 :author: kura
 :slug: license
 
-This website and all it's content is released under the GNU General Public License (GPL) version 3 which is outlined below.
+This website and all it's content is released under the `GNU General Public License (GPL) version 3`_ which is outlined below.
+
+.. _`GNU General Public License (GPL) version 3`: https://www.gnu.org/licenses/gpl.html
 
 ::
 
