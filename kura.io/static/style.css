@@ -180,7 +180,7 @@ table th[class*="span"],
 --------------------------------------------------------- */
 
 #post-list { margin-left:0; }
-#post-list > li {list-style:none;  border-bottom: 2px solid #ccc;  margin-bottom: 20px;  padding-bottom: 15px;}
+#post-list > li { list-style:none;  border-bottom: 2px solid #ccc;  margin-bottom: 20px;  padding-bottom: 40px; }
 
 .tag-row {margin-top:20px;}
 
