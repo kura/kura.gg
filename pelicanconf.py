@@ -40,7 +40,8 @@ STATIC_PATHS = ['images', 'files', 'slides']
 
 PDF_GENERATOR = True
 PDF_STYLE = "twelvepoint"
-FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
+FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
+                 ('extra/favicon.ico', 'favicon.ico'),)
 EXTRA_PATH_METADATA = {
     'files': {'path': 'files'},
 }
