@@ -179,7 +179,7 @@ backend kura-app-spdy
         server kura-io-app1 127.0.0.1:80 check
 
 This section simply defines the server we should talk to if
-the client is using an SPDY enabled section.
+the client is using an SPDY enabled connection.
 
 Simply define multiple servers for additional servers.
 
