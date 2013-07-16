@@ -23,7 +23,7 @@
 {% if categories %}
 <ul>
 	{% for cat, null in categories %}
-		<li><a href="{{ SITEURL }}/{{ cat.url|e }}">{{ cat }}</a></li>
+		<li><a href="{{ SITEURL }}/{{ cat.url|e }}/">{{ cat }}</a></li>
 	{% endfor %}
 </ul>
 {% endif %}

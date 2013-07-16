@@ -19,7 +19,7 @@
               <p>
                 <span>Tagged as : </span>
                 {% for tag in article.tags %}
-                  <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                  <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}/">{{ tag }}</a>
                 {% endfor %}
               </p>
               {% endif %}
