@@ -7,8 +7,8 @@ rabbitmq-nagios
 
 A set of plugins for Nagios to monitor RabbitMQ using rabbitmqctl.
 
-Download
---------
+Downloads
+---------
 
 `.tar.gz`_
 `.zip`_
