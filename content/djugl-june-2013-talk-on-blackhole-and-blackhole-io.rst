@@ -1,6 +1,6 @@
 DJUGL June 2013 talk on blackhole and blackhole.io
 ##################################################
-:date: 2013-07-17 20:01
+:date: 2013-07-17 21:00
 :author: kura
 :category: talks
 :tags: python, pypy, blackhole, blackhole.io, mta, email, honeypot
