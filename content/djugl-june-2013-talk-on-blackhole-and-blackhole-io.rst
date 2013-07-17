@@ -16,7 +16,7 @@ to get round to it.
 
 My talk was on `blackhole/blackhole.io <http://blackhole.io>`_ and
 covered several topics including `PyPy <http://pypy.org>`_,
-`SimpleMTA <https://kura.io/simplemta>`_ and moved on to talking
+`SimpleMTA <https://kura.io/simplemta/>`_ and moved on to talking
 about spamming and starting work on my honey pot suite called
 `Nectar <http://nectar.blackhole.io>`_.
 
