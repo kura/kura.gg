@@ -25,6 +25,9 @@ sadly I ran out of time when creating them and although I was
 promised time to finish them at work, I got busy. So I replaced
 content with "Taylor Replacements(tm)".
 
+The event, attendees and other speakers are listen on the `Lanyrd
+event page <http://lanyrd.com/2013/djugl-june/>`_.
+
 Several people took photos of the event, I don't remember who they
 were to give them credit but you can view them below.
 
@@ -33,7 +36,8 @@ didn't have a Mac. I have a ginormous Alienware M17x R3 running
 Linux.
 
 1. .. image:: https://kura.io/static/images/djugl-june-2013-3.jpg
-
+       :alt: I look like a hairy beast...
 2. .. image:: https://kura.io/static/images/djugl-june-2013-2.jpg
-
+       :alt: I look like a hairy beast...
 3. .. image:: https://kura.io/static/images/djugl-june-2013-1.jpg
+       :alt: I look like a hairy beast...
