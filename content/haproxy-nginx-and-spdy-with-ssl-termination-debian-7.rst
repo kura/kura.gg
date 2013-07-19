@@ -122,19 +122,20 @@ enable SPDY in your server configuration as below.
 You don't need to worry about the *global* and *defaults* sections, I will now
 explain what the final four sections do.
 
-listen/redirect
----------------
+frontend http
+-------------
 
 ::
 
-    listen http 0.0.0.0:80
-    redirect location https://kura.io
+    frontend http
+        bind 0.0.0.0:80
+        redirect sheme https if !{ ssl_fc }	
 
 This tells haproxy to listen on port 80 and redirect all traffic
 to the HTTPS version of the site.
 
-frontend
---------
+frontend kura-io
+----------------
 
 ::
 
