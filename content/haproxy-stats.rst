@@ -16,7 +16,7 @@ the backend statuses etc.
 Example stats page
 ------------------
 
-.. image: https://kura.io/static/images/haproxy.png
+.. image:: https://kura.io/static/images/haproxy-stats.png
    :alt: Moar stats!
 
 Enabling stats
