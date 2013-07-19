@@ -101,8 +101,9 @@ enable SPDY in your server configuration as below.
         clitimeout 50000
         srvtimeout 50000
 
-    listen http 0.0.0.0:80
-    redirect location https://kura.io
+    frontend http
+        bind 0.0.0.0:80
+        redirect sheme https if !{ ssl_fc }
 
     frontend kura-io
         mode tcp
@@ -226,6 +227,10 @@ Within nginx we need to enable two virtual hosts::
         listen 80 spdy;
         server_name kura.io;
 
+        # make nginx 301 redirects work
+        port_in_redirect off;
+        server_name_in_redirect off;
+
         location / {
                 root   /var/www/kura.io/;
                 index  index.html index.htm;
@@ -235,6 +240,10 @@ Within nginx we need to enable two virtual hosts::
     server {
         listen 81;
         server_name kura.io;
+
+        # make nginx 301 redirects work
+        port_in_redirect off;
+        server_name_in_redirect off;
 
         location / {
                 root   /var/www/kura.io/;
@@ -247,6 +256,10 @@ which is configured to run on port 80.
 
 The second is our standard HTTP host which is
 running on port 81.
+
+We have two lines *port_in_redirect* and *server_name_in_redirect*
+set to *off* because otherwise nginx would try to redirect to
+http://kura.io:81/ and cause issues with haproxy.
 
 It's a simple as that, you can test this using the `Firefox`_ and
 `Chrome`_ extensions that show you websites with SPDY enabled.
