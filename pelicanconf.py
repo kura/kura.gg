@@ -36,14 +36,17 @@ TAG_URL = 't/{slug}'
 TAG_SAVE_AS = 't/{slug}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
-STATIC_PATHS = ['images', 'files', 'slides']
+STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
+                'extra/favicon.ico',]
 
 PDF_GENERATOR = True
 PDF_STYLE = "twelvepoint"
-FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
-                 ('extra/favicon.ico', 'favicon.ico'),)
+#FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
+#                 ('extra/favicon.ico', 'favicon.ico'),)
 EXTRA_PATH_METADATA = {
     'files': {'path': 'files'},
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
 }
 
 # Blogroll
