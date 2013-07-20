@@ -36,14 +36,18 @@ You will need to give the nagios user sudo privileges to run these
 scripts, making sure that you only allow a passwordless sudo to the
 scripts you want to use
 
+.. code:: bash
+
     nagios ALL=(ALL)
-    NOPASSWD:/usr/lib/nagios/plugins/check\_rabbitmq\_queue\_length
+    NOPASSWD:/usr/lib/nagios/plugins/check_rabbitmq_queue_length
 
 Usage
 -----
 
 You simply need to add a command to NRPE to allow the plugin to be
 called
+
+::
 
     command[check\_rabbitmq\_queue\_length]=sudo /usr/lib/nagios/plugins/check\_rabbitmq\_queue\_length -w 10000 -c 20000 -v /
 

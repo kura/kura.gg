@@ -44,17 +44,23 @@ Partitioning the newly added space
 
 Once done, go to your VM, and as root run the following command:
 
-    echo "- - -" > /sys/class/scsi\_host/**host0**/scan && fdisk -l
+.. code:: bash
+
+    sudo echo "- - -" > /sys/class/scsi_host/**host0**/scan && fdisk -l
 
 If the newly added unpartitioned drive isn't displayed, try again with a
 different **host#** - host1, host2 etc.
 
-    cfdisk /dev/sda
+.. code:: bash
+
+    sudo cfdisk /dev/sda
 
 If you don't have cfdisk installed, you should be able to install it
 with the following command on Debian-based systems:
 
-    apt-get install cfdisk
+.. code:: bash
+
+    sudo apt-get install cfdisk
 
 Once you have it running the ASCII interface should be simple to follow,
 select your unallocated space and partition it, making sure you select
@@ -75,7 +81,7 @@ Adding to an existing LVM
 
 Lets take a look at our current list of physical volumes
 
-::
+.. code:: bash
 
     pvs
 
@@ -87,12 +93,16 @@ As you can see we have our existing list of volumes, in my case one.
 So now all we need to do is create another physical volume, my partition
 is labelled **sda6** so that's what I will be using.
 
-    pvcreate /dev/sda6
+.. code:: bash
+
+    sudo pvcreate /dev/sda6
 
 Now that we've added the volume it's time to add it to the volume group,
 this is really simple and again I'll be using sda6.
 
-    vgextend jeos-base /dev/sda6
+.. code:: bash
+
+    sudo vgextend jeos-base /dev/sda6
 
 jeos-root is the name of my volume group, you'd obviously replace this
 with your own groups name.
@@ -100,7 +110,7 @@ with your own groups name.
 Now if we actually take a look at pvs again you will see that your
 physical volume has been created and added to your volume group.
 
-::
+.. code:: bash
 
     pvs && lvdisplay
 
@@ -128,7 +138,9 @@ the LVM, so the next step is to actually extend the LVM
 
 Thanks to Ivan Marinkovic from the comments for this improved command::
 
-    lvextend -l+100%FREE /dev/jeos-base/root && lvdisplay
+.. code:: bash
+
+    sudo lvextend -l+100%FREE /dev/jeos-base/root && lvdisplay
 
     --- Logical volume ---
     LV Name /dev/jeos-base/root
@@ -155,9 +167,9 @@ file system too, so that it can use the full extra space freely, this
 can be done online, I'd recommend doing a snapshot or backup of your VM
 before doing this though.
 
-::
+.. code:: bash
 
-    resize2fs /dev/mapper/jeos--base-root && df -h
+    sudo resize2fs /dev/mapper/jeos--base-root && df -h
 
     Filesystem Size Used Avail Use% Mounted on
     /dev/mapper/jeos--base-root

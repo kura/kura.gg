@@ -45,20 +45,26 @@ running.
 
 First step is to install opendkim.
 
-    sudo su;
-    apt-get install opendkim
+.. code:: bash
+
+    sudo apt-get install opendkim
 
 Leave the install process to complete, we'll configure it later, first
 we'll make the public and private keys required for signing.
 
+.. code:: bash
+
     openssl genrsa -out private.key 1024
     openssl rsa -in private.key -out public.key -pubout -outform PEM
-    cp private.key /etc/mail/dkim.key
+    sudo /etc/mail/
+    sudo cp private.key /etc/mail/dkim.key
 
 So that's the key sorted, now we'll configure opendkim.
 
 First open **/etc/opendkim.conf** and put the following in, replacing
-the \_DOMAIN\_ with your domain name.
+the _DOMAIN_ with your domain name.
+
+::
 
     # Log to syslog
     Syslog yes
@@ -67,8 +73,8 @@ the \_DOMAIN\_ with your domain name.
     UMask 002
 
     # Sign for example.com with key in /etc/mail/dkim.key using
-    # selector '2007' (e.g. 2007.\_domainkey.example.com)
-    Domain \_DOMAIN\_
+    # selector '2007' (e.g. 2007._domainkey.example.com)
+    Domain _DOMAIN_
     KeyFile /etc/dkim/private.key
     Selector mail
 
@@ -83,9 +89,11 @@ Set a custom selector if you want.
 Next we open up **/etc/default/opendkim** and change it to the
 following:
 
+.. code:: bash
+
     # Command-line options specified here will override the contents of
     # /etc/opendkim.conf. See opendkim(8) for a complete list of options.
-    #DAEMON\_OPTS=""
+    #DAEMON_OPTS=""
     #
 
     # Uncomment to specify an alternate socket
@@ -98,24 +106,31 @@ following:
     #SOCKET="inet:12345@192.0.2.1" # listen on 192.0.2.1 on port 12345
 
 That's opendkim all configured, start the daemon with
-**/etc/init.d/opendkim start**
+
+.. code:: bash
+
+    sudo /etc/init.d/opendkim start
 
 Next we need to modify Postfix to tell it to use opendkim to sign
 emails. Lets open up **/etc/postfix/main.cf**
 
-Place the following as the end of that file:
+Place the following as the end of that file
 
-    milter\_default\_action = accept
-    milter\_protocol = 6
-    smtpd\_milters = inet:localhost:12345
-    non\_smtpd\_milters = inet:localhost:12345
+::
+
+    milter_default_action = accept
+    milter_protocol = 6
+    smtpd_milters = inet:localhost:12345
+    non_smtpd_milters = inet:localhost:12345
 
 That's Postfix configured, we'll reload it once the DNS is configured.
 
 How you configured your DNS is up to you, you will need to add the
 following 2 new records
 
-    \_domainkey.DOMAIN.TLD. IN TXT "t=y; o=-;" SELECTOR.\_domainkey.DOMAIN.TLD. IN TXT "k=rsa; t=y; p=YOUR\_PUBLIC\_KEY\_HERE"
+::
+
+    _domainkey.DOMAIN.TLD. IN TXT "t=y; o=-;" SELECTOR._domainkey.DOMAIN.TLD. IN TXT "k=rsa; t=y; p=YOUR_PUBLIC_KEY_HERE"
 
 Replace the instances of **DOMAIN.TLD** with your actual mail domain
 name in both records, **SELECTOR** was configured in to opendkim
@@ -125,6 +140,8 @@ Your key will be called public.key, we created both public and private
 keys earlier. You only need to add the actual key from between the BEGIN
 and END lines, e.g. my test one below
 
+::
+
     -----BEGIN PUBLIC KEY-----
     MIGfMWGwregWREGREwgERGREGergerDGdEPzFCAdYnf1Z9nRtfTqwP/mcdGg
     NmbY11tCtwwFMu8/qEQwaK/Nc61q0D/z7NYwlsPFi08lnVSHGrewherh5630n
@@ -133,6 +150,8 @@ and END lines, e.g. my test one below
     -----END PUBLIC KEY-----
 
 Becomes
+
+::
 
     MIGfMWGwregWREGREwgERGREGerg [...snip...]
     plp1ruZ66Bgrewhg43y634567gewrgB

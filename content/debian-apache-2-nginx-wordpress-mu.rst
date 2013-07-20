@@ -9,11 +9,11 @@ Debian, Apache 2, Nginx, WordPress MU & WP-Super-Cache
 *This is a rather old article, for more up-to-date information please
 see;*
 
-1. `http://syslog.tv/2010/02/07/nginx-proxy\_cache-and-explained-benchmarked/`_
-2. `http://syslog.tv/2010/02/14/more-nginx-proxy\_cache-optimizations-and-nginx-load-balancing/`_
+1. `http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`_
+2. `http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/`_
 
-   .. _`http://syslog.tv/2010/02/07/nginx-proxy\_cache-and-explained-benchmarked/`: http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/
-   .. _`http://syslog.tv/2010/02/14/more-nginx-proxy\_cache-optimizations-and-nginx-load-balancing/`: http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
+.. _`http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`: http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/
+.. _`http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/`: http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
 
 I've started collecting a few blogs on my servers now and figured from
 this one on I would consolidate it in to one workable, usable location.
@@ -33,7 +33,7 @@ before but started to look in to nginx mid year as a replacement. I
 learned that at my new job they used nginx for image server and, after
 reading a few articles online decided nginx greatly outweighed "Lighty".
 
-   .. _`http://nginx.org/`: http://nginx.org/
+.. _`http://nginx.org/`: http://nginx.org/
 
 First stop was getting Wordpress MU installed, this itself proved rather
 interesting, I've no idea why however. After several failed attempts
@@ -77,70 +77,72 @@ This wasn't difficult at all, I've reverse proxied connections to Apache
 many times from nginx now, being a Debian user made it quite nice a
 simple, I have Apache 2 running bound to 1 IP and nginx bound to
 another, I simply created a new vhost for nginx and filled it with the
-lovely data needed as shown below.::
+lovely data needed as shown below.
+
+.. code:: nginx
 
     server {
         listen 174.143.241.61:80;
-        server\_name syslog.tv;
-        access\_log /var/log/nginx/syslog.tv.access.log;
+        server_name syslog.tv;
+        access_log /var/log/nginx/syslog.tv.access.log;
 
         location / {
-            proxy\_pass http://apache.syslog.tv;
-            proxy\_redirect off;
-            proxy\_set\_header Host $host;
-            proxy\_set\_header X-Real-IP $remote\_addr;
-            proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-            client\_max\_body\_size 10m;
-            client\_body\_buffer\_size 128k;
-            proxy\_connect\_timeout 90;
-            proxy\_send\_timeout 90;
-            proxy\_read\_timeout 90;
-            proxy\_buffer\_size 4k;
-            proxy\_buffers 4 32k;
-            proxy\_busy\_buffers\_size 64k;
-            proxy\_temp\_file\_write\_size 64k;
+            proxy_pass http://apache.syslog.tv;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            client_max_body_size 10m;
+            client_body_buffer_size 128k;
+            proxy_connect_timeout 90;
+            proxy_send_timeout 90;
+            proxy_read_timeout 90;
+            proxy_buffer_size 4k;
+            proxy_buffers 4 32k;
+            proxy_busy_buffers_size 64k;
+            proxy_temp_file_write_size 64k;
         }
 
-        location ~\* ^.+.(jpg\|jpeg\|gif\|png\|ico\|css\|zip\|tgz\|gz\|rar\|bz2\|doc\|xls\|exe\|pdf\|ppt\|txt\|tar\|mid\|midi\|wav\|bmp\|rtf\|js)$ {
+        location ~\* ^.+.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
             root /path/to/wordpress;
         }
 
-        if (-f $request\_filename) {
+        if (-f $request_filename) {
             break;
         }
 
-        if (-d $request\_filename) {
+        if (-d $request_filename) {
             break;
         }
 
-        set $supercache\_file .;
-        set $supercache\_uri $request\_uri;
+        set $supercache_file .;
+        set $supercache_uri $request_uri;
 
-        if ($request\_method = POST) {
-            set $supercache\_uri .;
+        if ($request_method = POST) {
+            set $supercache_uri .;
         }
 
-        if ($query\_string) {
-            set $supercache\_uri .;
+        if ($query_string) {
+            set $supercache_uri .;
         }
 
-        if ($http\_cookie ~\* .comment\_author\_\|wordpress\|wp-postpass\_.) {
-            set $supercache\_uri .;
+        if ($http_cookie ~\* .comment_author_|wordpress|wp-postpass_.) {
+            set $supercache_uri .;
         }
 
-        if ($supercache\_uri ~ ^(.+)$) {
-            set $supercache\_file /wp-content/cache/supercache/$http\_host/$1index.html;
+        if ($supercache_uri ~ ^(.+)$) {
+            set $supercache_file /wp-content/cache/supercache/$http_host/$1index.html;
         }
 
-        if (-f $document\_root$supercache\_file) {
-            rewrite ^(.\*)$ $supercache\_file break;
+        if (-f $document_root$supercache_file) {
+            rewrite ^(.\*)$ $supercache_file break;
         }
 
     }
 
 As you can see, this is rather simple, I patched it together from some
 articles already out there on Google, made a couple of changes where
-required. The main thing here is that we turn "proxy\_redirect" off, and
+required. The main thing here is that we turn "proxy_redirect" off, and
 you may also notice I am pointing at apache.syslog.tv, this domain
 doesn't exist, I just created an instance of it pointing to Apache's
 local IP in /etc/hosts.
@@ -167,12 +169,12 @@ Again came the speed problems, I noticed that when I used Ctrl+F5
 instead of just F5 or opened the site in Firefox instead of Chrome I was
 getting the same slow speed problems. While trying to watch my logs go
 speeding by I found some very interesting messages. The first was from
-mod\_spamhaus which claimed my IP address was blacklisted, I ran to
+mod_spamhaus which claimed my IP address was blacklisted, I ran to
 their website and did a lookup, thankfully it seems to only be a local
-blacklist, against my better judgement I disable mod\_spamhaus for the
-time being. The other issue was coming from mod\_evasive, a few quick
+blacklist, against my better judgement I disable mod_spamhaus for the
+time being. The other issue was coming from mod_evasive, a few quick
 config changes for it to handle lots of proxied requests from nginx when
 the cache was old or not there.
 
-And that solved it, solved excluding mod\_spamhaus. Now I need to either
-find a solution or weigh the pros and cons of mod\_spamhaus.
+And that solved it, solved excluding mod_spamhaus. Now I need to either
+find a solution or weigh the pros and cons of mod_spamhaus.

@@ -12,11 +12,13 @@ load balancer. I did some digging and found the correct way to "fix"
 this.
 
 First thing you need to do is make sure you remove X-Forwarded-For from
-Pound::
+Pound
+
+::
 
     ListenHTTP
-        ... snip ...
-        ... snip ...
+        # ... snip ...
+        # ... snip ...
         HeadRemove "X-Forwarded-For"
     End
 
@@ -30,14 +32,18 @@ Next you need nginx compiled with realip module -
 On Ubuntu/Debian servers this module comes by default, otherwise you may
 have to compile it in yourself using the following option:
 
-    --with-http\_realip\_module
+.. code:: bash
+
+    --with-http_realip_module
 
 Once this is all done modify your nginx vhosts and add the following 2
-lines::
+lines
 
-    set\_real\_ip\_from [IP];
-    real\_ip\_header X-Forwarded-For;
+.. code:: nginx
+
+    set_real_ip_from [IP];
+    real_ip_header X-Forwarded-For;
 
 Where [IP] is the IP address of your load balancer.
 
-To configure this to work with Apache you need the mod\_rpaf module.
+To configure this to work with Apache you need the mod_rpaf module.

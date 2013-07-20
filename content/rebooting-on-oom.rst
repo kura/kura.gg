@@ -18,10 +18,10 @@ tool.
 Think before implementing this and use at your own risk, I take zero
 responsibility for you using this.
 
-::
+.. code:: bash
 
-    sysctl vm.panic\_on\_oom=1
-    sysctl kernel.panic=X # X is the amount of seconds to wait before rebooting
+    sudo sysctl vm.panic_on_oom=1
+    sudo sysctl kernel.panic=X # X is the amount of seconds to wait before rebooting
 
 ***DO NOT FORGET TO CHANGE X***
 
@@ -29,10 +29,10 @@ This will inject the changes in to a system that is currently running
 but will be forgotten on reboot so use the lines below to save
 permanently.
 
-::
+.. code:: bash
 
-    echo "vm.panic\_on\_oom=1" >> /etc/sysctl.conf
-    echo "kernel.panic=X" >> /etc/sysctl.conf
+    sudo echo "vm.panic_on_oom=1" >> /etc/sysctl.conf
+    sudo echo "kernel.panic=X" >> /etc/sysctl.conf
 
 ***X is the amount of seconds to wait before rebooting. DO NOT FORGET TO
 CHANGE X***
@@ -43,7 +43,7 @@ Testing
 You can test the changes with a simple C program. **Please note if you
 run this you do so at your own risk**.
 
-::
+.. code:: c
 
     #include
     #include
@@ -51,16 +51,16 @@ run this you do so at your own risk**.
 
     #define MB 10485760
 
-    int main(int argc, char \*argv[]) {
-        void \*b = NULL;
+    int main(int argc, char *argv[]) {
+        void *b = NULL;
         int c = 0;
         while(1) {
-            b = (void \*) malloc(MB);
+            b = (void *) malloc(MB);
             if (!b) {
                 break;
             }
             memset(b, 10, MB);
-            printf("Allocating %d MB\\n", (++c \* 10));
+            printf("Allocating %d MB\\n", (++c * 10));
         }
         exit(0);
     }
@@ -72,6 +72,8 @@ You can download the `source here <https://kura.io/static/files/oom.c>`_.
 
 To compile run the command below
 
+.. code:: bash
+
     gcc -O2 oom.c -o oom
 
 Or download a `pre-compiled version here <https://kura.io/static/files/oom>`_.
@@ -80,6 +82,8 @@ Usage
 -----
 
 And simply run it using
+
+.. code:: bash
 
     ./oom
 

@@ -30,12 +30,18 @@ Unban
 
 Unbanning is simple, you can either unban a single IP using:
 
+.. code:: bash
+
     sudo denyhosts-unban 10.0.0.1
 
 Or multiples using:
 
+.. code:: bash
+
     sudo denyhosts-unban 10.0.0.1 10.0.0.2
 
 Or, you can use a bashism to unban an entire range:
+
+.. code:: bash
 
     sudo denyhosts-unban 10.0.0.{0..255}

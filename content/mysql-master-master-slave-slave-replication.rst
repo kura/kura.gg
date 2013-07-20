@@ -33,9 +33,12 @@ Modify your MySQL config file, usually named my.cnf or mysql.cnf
 
 Add the following lines to [mysqld]
 
+.. code:: ini
+
+    [mysqld]
     server-id=1
-    auto\_increment\_offset=1
-    auto\_increment\_increment=2
+    auto_increment_offset=1
+    auto_increment_increment=2
 
     log-bin
     binlog-ignore-db=mysql
@@ -44,16 +47,17 @@ Add the following lines to [mysqld]
 
 Save and close.
 
-You should note that I have included *auto\_increment\_offset*and
-*auto\_increment\_increment*. auto\_increment\_offset is the same as
+You should note that I have included *auto_increment_offset*and
+*auto_increment_increment*. auto_increment_offset is the same as
 server-id in my case, it does as the name suggests - offsets the auto
-increment value. auto\_increment\_increment should be set to the number
+increment value. auto_increment_increment should be set to the number
 of servers you have as masters, in this example we have 2.
 
 Open up a MySQL prompt and run the following query
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.2'
-    IDENTIFIED BY 'password';
+.. code:: mysql
+
+    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.2' IDENTIFIED BY 'password';
 
 Now restart MySQL.
 
@@ -64,9 +68,12 @@ Modify your MySQL config file.
 
 Add the following in [mysqld]
 
+.. code:: ini
+
+    [mysqld]
     server-id=2
-    auto\_increment\_offset=2
-    auto\_increment\_increment=2
+    auto_increment_offset=2
+    auto_increment_increment=2
 
     log-bin
     binlog-ignore-db=mysql
@@ -82,15 +89,19 @@ Save and restart MySQL.
 
 Now open a MySQL prompt and run the following queries
 
-    START SLAVE;
-    SHOW SLAVE STATUS\\G;
+.. code:: mysql
 
-Slave\_IO\_Running and Slave\_SQL\_Running must be set to **Yes**.
+    START SLAVE;
+    SHOW SLAVE STATUS\G;
+
+Slave_IO_Running and Slave_SQL_Running must be set to **Yes**.
 
 Master 1 (Slave 2)
 ------------------
 
 Open a MySQL prompt and run the following query
+
+.. code:: mysql
 
     SHOW MASTER STATUS;
 
@@ -100,6 +111,9 @@ Now we need to configure Master 1 to run as Slave 2.
 
 Modify MySQL config and add the following lines to [mysqld]
 
+.. code:: ini
+
+    [mysqld]
     master-host = 10.1.1.2
     master-user = replication
     master-password = password
@@ -112,18 +126,21 @@ Master 2
 
 Open a MySQL prompt and run the following query
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.1'
-    IDENTIFIED BY 'password';
+.. code:: mysql
+
+    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.1' IDENTIFIED BY 'password';
 
 Master 1
 --------
 
 Open a MySQL prompt and run the following queries
 
-    START SLAVE;
-    SHOW SLAVE STATUS\\G;
+.. code:: mysql
 
-Slave\_IO\_Running and Slave\_SQL\_Running must be set to **Yes**.
+    START SLAVE;
+    SHOW SLAVE STATUS\G;
+
+Slave_IO_Running and Slave_SQL_Running must be set to **Yes**.
 
 Slave 3 and Slave 4
 -------------------
@@ -141,22 +158,27 @@ Master 1
 
 Open a MySQL prompt and run the following query
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.3'
-    IDENTIFIED BY 'password';
+.. code:: mysql
+
+    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.3' IDENTIFIED BY 'password';
 
 Master 2
 --------
 
 Open a MySQL prompt and run the following query
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.4'
-    IDENTIFIED BY 'password';
+.. code:: mysql
+
+    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.4' IDENTIFIED BY 'password';
 
 Slave 3
 -------
 
 Open your MySQL config file, under [mysqld] put the following
 
+.. code:: ini
+
+    [mysqld]
     server-id=3
 
     master-host = 10.1.1.1
@@ -168,16 +190,21 @@ Save and restart MySQL.
 
 Open a MySQL prompt and run the following queries
 
+.. code:: mysql
+
     START SLAVE;
     SHOW SLAVE STATUS\\G;
 
-Slave\_IO\_Running and Slave\_SQL\_Running must be set to **Yes**.
+Slave_IO_Running and Slave_SQL_Running must be set to **Yes**.
 
 Slave 4
 -------
 
 Open your MySQL config file, under [mysqld] put the following
 
+.. code:: ini
+
+    [mysql]
     server-id=4
 
     master-host = 10.1.1.2
@@ -189,7 +216,9 @@ Save and restart MySQL.
 
 Open a MySQL prompt and run the following queries
 
+.. code:: mysql
+
     START SLAVE;
     SHOW SLAVE STATUS\\G;
 
-Slave\_IO\_Running and Slave\_SQL\_Running must be set to **Yes**.
+Slave_IO_Running and Slave_SQL_Running must be set to **Yes**.

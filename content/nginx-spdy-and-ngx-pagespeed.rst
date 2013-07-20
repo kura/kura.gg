@@ -74,11 +74,15 @@ they are only available for amd64);
 
 You can install them by simply running:
 
+.. code:: bash
+
     sudo dpkg -i nginx*.deb
 
 If you already have nginx installed, make sure to remove it first.
 
 You may receive an error due to missing dependencies, to fix this run:
+
+.. code:: bash
 
     sudo apt-get install -f
 
@@ -88,12 +92,12 @@ Configuring SPDY
 SPDY only works over HTTPS, so bare that in mind. All you need to do is
 enable SPDY in your server configuration as below.
 
-::
+.. code:: nginx
 
     server {
         listen 443 ssl spdy;
         server_name kura.io;
-        ...
+        # ...
     }
 
 It's a simple as that, you can test this using the `Firefox`_ and
@@ -108,22 +112,23 @@ Configuring ngx_pagespeed
 To enable ngx_pagespeed you first need to create a directory
 that it can write cache files to.
 
-    sudo mkdir /var/cache/ngx_pagespeed/
+.. code:: bash
 
+    sudo mkdir /var/cache/ngx_pagespeed/
     sudo chown www-data:www-data /var/cache/ngx_pagespeed/
 
 Once this is done you can enable ngx_pagespeed in your
 server configuration as below.
 
-::
+.. code:: nginx
 
     server {
-        ...
+        # ...
         pagespeed on;
         pagespeed RewriteLevel CoreFilters;
         pagespeed FileCachePath "/var/cache/ngx_pagespeed/";
         pagespeed EnableFilters combine_css,combine_javascript,remove_comments,collapse_whitespace;
-        ...
+        # ...
     }
 
 The three filters that are enabled do the following:

@@ -12,26 +12,25 @@ Installation
 First up we'll need to install git and some Python tools to get Gitosis
 installed.
 
-Where # is used it means you need to either run the command as a
-superuser with sudo or as root.
+.. code:: bash
 
-    # apt-get install -y git-core gitweb python-setuptools
+    sudo apt-get install -y git-core gitweb python-setuptools
 
 Next we have to clone gitosis from it's git repository and install it.
 
+.. code:: bash
+
     cd /tmp
-
     git clone git://eagain.net/gitosis.git
-
     cd gitosis
-
-    # python setup.py install
+    sudo python setup.py install
 
 Adding your git user
 --------------------
 
-    # adduser --system --shell /bin/sh --gecos 'git version control'
-    --group --disabled-password --home /home/git git
+.. code:: bash
+
+    sudo adduser --system --shell /bin/sh --gecos 'git version control' --group --disabled-password --home /home/git git
 
 The above command creates a new system user with **/bin/sh** as it's
 shell with **no password** and a homedir of **/home/git/** and also
@@ -44,11 +43,15 @@ You'll need an SSH key for this, if you have one simply copy the
 contents of it to your new git server, if you do not have one then you
 can generate one on your machine using
 
+.. code:: bash
+
     ssh-keygen
 
 And then copy the contents to your server.
 
 My file was copied to **/tmp/kura.pub** so to initialise I used
+
+.. code:: bash
 
     sudo -H -u git gitosis-init < /tmp/kura.pub
 
@@ -65,11 +68,15 @@ about his username having invalid characters
 
 .. _@gump: https://syslog.tv/2011/12/17/host-git-repositories-with-git-gitosis-and-gitweb-on-debian-6ubuntu-10-04/#comment-374
 
+::
+
     gitosis.init.InsecureSSHKeyUsername: Username contains not allowed
     characters
 
 This is because Gitosis expects your key to have a username and host at
 the end of the base64 string like below
+
+::
 
     ssh-rsa AAAAB3NzaC1yc2EA ... NOHgpPwEBzpnw== kura@odin
 
@@ -83,20 +90,24 @@ automatically pick them up.
 
 So you need to run
 
-    git clone git@YOUR\_SERVER:gitosis-admin.git
+.. code:: bash
+
+    git clone git@YOUR_SERVER:gitosis-admin.git
 
 If everything worked correctly you should have a copy on your local
 machine now, if you run **ls** you'll see 1 file and a directory.
 
-#. gitosis.conf
-#. keydir
+1. gitosis.conf
+2. keydir
 
 Unsurprisingly gitosis.conf is where gitosis is configured and keydir
 contains public keys for your users. Each user needs their own public
 key and it must end in *.pub*.
 
 So open up **gitosis.conf** in your favourite editor and add the
-following:
+following
+
+.. code:: ini
 
     [gitosis]
     gitweb = yes
@@ -131,17 +142,23 @@ HTAUTH.**
 
 Now the changes have been made you need to commit them to git.
 
-    git add \*
+.. code:: bash
+
+    git add *
     git commit -m "Initial configuration"
 
 And push them back to the server
+
+.. code:: bash
 
     git push origin master
 
 Now that is done you can test your access to the test repository created
 earlier.
 
-    git clone git@YOUR\_SERVER:test.git
+.. code:: bash
+
+    git clone git@YOUR_SERVER:test.git
     cd test
     echo "Hello world" > hello
     git add hello
@@ -172,14 +189,18 @@ Configure gitweb
 Open up **/etc/gitweb.conf** in your favourite editor and change
 ***$projectroot*** to
 
+.. code:: bash
+
     $projectroot = "/home/git/repositories/"
 
 You will also need to add the Apache user to the git group
 
-    usermod -G www-data,git www-data
+.. code:: bash
+
+    sudo usermod -G www-data,git www-data
 
 By default Debian and Ubuntu will symlink in an Apache2 config to
 **/etc/apache2/conf.d/gitweb** which is accessible from a browser on
-`http://YOUR\_SERVER/gitweb`_
+`http://YOUR_SERVER/gitweb`_
 
-.. _`http://YOUR\_SERVER/gitweb`: http://YOUR_SERVER/gitweb
+.. _`http://YOUR_SERVER/gitweb`: http://YOUR_SERVER/gitweb

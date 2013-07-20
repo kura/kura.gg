@@ -28,82 +28,82 @@ full copy from `here`_.
 
 .. _here: http://syslog.tv/files/2011/09/server.txt
 
-::
+.. code:: nginx
 
     server {
       listen 80;
-      server\_name **DOMAIN\_HERE**;
-      access\_log /var/log/nginx/access.**DOMAIN\_HERE**.log;
+      server_name **DOMAIN_HERE**;
+      access_log /var/log/nginx/access.**DOMAIN_HERE**.log;
 
       gzip on;
-      gzip\_disable msie6; # disable gzip for IE6
-      gzip\_static on;
-      gzip\_comp\_level 9; # highest level of compression
-      gzip\_proxied any;
-      gzip\_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+      gzip_disable msie6; # disable gzip for IE6
+      gzip_static on;
+      gzip_comp_level 9; # highest level of compression
+      gzip_proxied any;
+      gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 
-      proxy\_redirect off;
-      proxy\_set\_header Host $host;
-      proxy\_set\_header X-Real-IP $remote\_addr;
-      proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-      proxy\_pass\_header Set-Cookie;root **/PATH/TO/WORDPRESS**;
+      proxy_redirect off;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_pass_header Set-Cookie;root **/PATH/TO/WORDPRESS**;
 
       # default location, used for the basic proxying
       location / {
         # if we're requesting a file and it exists, return it and bail out
-        if (-f $request\_filename) {
+        if (-f $request_filename) {
           break;
         }
 
-        client\_max\_body\_size 2m; # increase this to increase file upload size
-        proxy\_pass http://localhost:**APACHE\_PORT**;
+        client_max_body_size 2m; # increase this to increase file upload size
+        proxy_pass http://localhost:**APACHE_PORT**;
       }
 
       # handle uploaded files
       location ~\* files/ {
-        root **/PATH/TO/WORDPRESS**/blogs.dir/**BLOG\_ID**/;
+        root **/PATH/TO/WORDPRESS**/blogs.dir/**BLOG_ID**/;
       }
 
       # handle static files
-      location ~\* \\.(jpg\|png\|gif\|jpeg\|js\|css\|mp3\|wav\|swf\|mov\|doc\|pdf\|xls\|ppt\|docx\|pptx\|xlsx\|txt\|htm\|html)$ {
+      location ~\* \\.(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx|txt|htm|html)$ {
         # if the static file doesn't exist, handle it with Apache
-        if (!-f $request\_filename) {
+        if (!-f $request_filename) {
         break;
-        proxy\_pass http://localhost:**APACHE\_PORT**;
+        proxy_pass http://localhost:**APACHE_PORT**;
       }
 
       }
 
-      set $supercache\_file "";
-      set $supercache\_uri $request\_uri;
+      set $supercache_file "";
+      set $supercache_uri $request_uri;
 
       # reset cache URI if POSTing - bypass cache
-      if ($request\_method = POST) {
-        set $supercache\_uri "";
+      if ($request_method = POST) {
+        set $supercache_uri "";
       }
 
       # bypass cache if there's a query string
-      if ($query\_string) {
-        set $supercache\_uri "";
+      if ($query_string) {
+        set $supercache_uri "";
       }
 
       # bypass cache if one of the cookies below is set
-      if ($http\_cookie ~\* "comment\_author\_\|wordpress\|wp-postpass\_") {
-        set $supercache\_uri "";
+      if ($http_cookie ~\* "comment_author_|wordpress|wp-postpass_") {
+        set $supercache_uri "";
       }
 
       # if the URI is still set (rules above don't trigger) then set our file location!
-      if ($supercache\_uri ~ ^(.+)$) {
-        set $supercache\_file /wp-content/cache/supercache/$http\_host$1index.html;
+      if ($supercache_uri ~ ^(.+)$) {
+        set $supercache_file /wp-content/cache/supercache/$http_host$1index.html;
       }
 
       # rewrite the request to the cached HTML file
-      if (-f $document\_root$supercache\_file) {
-        rewrite ^(.\*)$ $supercache\_file break;
+      if (-f $document_root$supercache_file) {
+        rewrite ^(.\*)$ $supercache_file break;
       }
 
       # if file exists, return it - will bypass back to Apache if not
-      if (-f $request\_filename) {
+      if (-f $request_filename) {
         break;
       }
     }

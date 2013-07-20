@@ -37,14 +37,14 @@ thus allowing us to give other users access and auto-mount using
 Installation
 ------------
 
-**All commands prefixed with a # need to be run as root or a sudo**
-
 Fuse
 ~~~~
 
 Installing FUSE is simple
 
-    # apt-get install fuse-utils
+.. code:: bash
+
+    sudo apt-get install fuse-utils
 
 s3fs
 ~~~~
@@ -52,7 +52,9 @@ s3fs
 We'll need to get build-essential, pkg-config, libfuse-dev,
 libcurl4-openssl-dev and libxml2-dev to be able to compile s3fs
 
-    # apt-get install build-essential pkg-config libfuse-dev libcurl4-openssl-dev libxml2-dev
+.. code:: bash
+
+    sudo apt-get install build-essential pkg-config libfuse-dev libcurl4-openssl-dev libxml2-dev
 
 Debian 5 & Ubuntu 10.04
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,24 +68,29 @@ issue tracker`_.
 First we need to remove the install fuse-utils and libfuse-dev that we
 install above.
 
-    # apt-get purge fuse-utils libfuse-dev
+.. code:: bash
+
+    sudo apt-get purge fuse-utils libfuse-dev
 
 You'll need to export a variable with your arch, i.e
 
-::
+.. code:: bash
 
     export PLATFORM=amd64
-
-    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse2\_2.8.4-1.1\_${PLATFORM}.deb
-    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse-dev\_2.8.4-1.1\_${PLATFORM}.deb
-    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/fuse-utils\_2.8.4-1.1\_${PLATFORM}.deb
-    # dpkg -i libfuse2\_2.8.4-1.1\_${PLATFORM}.deb libfuse-dev\_2.8.4-1.1\_${PLATFORM}.deb fuse-utils\_2.8.4-1.1\_${PLATFORM}.deb
+    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse2_2.8.4-1.1_${PLATFORM}.deb
+    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse-dev_2.8.4-1.1_${PLATFORM}.deb
+    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/fuse-utils_2.8.4-1.1_${PLATFORM}.deb
+    sudo dpkg -i libfuse2_2.8.4-1.1_${PLATFORM}.deb libfuse-dev_2.8.4-1.1_${PLATFORM}.deb fuse-utils_2.8.4-1.1_${PLATFORM}.deb
 
 Fix missing dependencies
 
-    # apt-get -f install
+.. code:: bash
+
+    sudo apt-get -f install
 
 Now run the command below and confirm the output::
+
+.. code:: bash
 
     pkg-config --modversion fuse
     2.8.4
@@ -95,14 +102,15 @@ archive from `Google code`_.
 
 Once download, gunzip and untar it.
 
-    tar -xvzf s3fs-x.xx.tar.gz
+.. code:: bash
+
+    tar xvzf s3fs-x.xx.tar.gz
 
 Change directory in to your newly extracted archive, and configure.
 
-::
+.. code:: bash
 
-    ./configure --exec-prefix=/usr/ --prefix=/
-    --includedir=/usr/include/ --mandir=/usr/share/man/
+    ./configure --exec-prefix=/usr/ --prefix=/ --includedir=/usr/include/ --mandir=/usr/share/man/
 
 This configure command will install the s3fs binary in to /usr/bin and
 man pages in to /usr/share/man/ which is Debian and Ubuntu correct
@@ -110,10 +118,10 @@ locations.
 
 Then you'll need to compile and install.
 
-::
+.. code:: bash
 
     make
-    # make install
+    sudo make install
 
 *You'll noticed I only run make install as sudo/root, because the other
 commands do not require it and you should never compile as root.*
@@ -132,11 +140,13 @@ Create a file called **/etc/passwd-s3fs** - **MAKE SURE YOU DON'T BREAK
 In it you need to put your access key ID and secret access key,
 separated with a colon.
 
-    ACCESS\_KEY\_ID:SECRET\_ACCESS\_KEY
+    ACCESS_KEY_ID:SECRET_ACCESS_KEY
 
 And for security reasons, change the file permissions
 
-    # chmod 0600 /etc/passwd-s3fs
+.. code:: bash
+
+    sudo chmod 0600 /etc/passwd-s3fs
 
 Mounting
 --------
@@ -147,7 +157,9 @@ Manual
 Once all the above is done you can mount a bucket using the s3fs binary,
 I'm going to mount directly to /mnt
 
-    # s3fs your-bucket-name /mnt
+.. code:: bash
+
+    sudo s3fs your-bucket-name /mnt
 
 This will mount it and make it usable for your user.
 
@@ -158,13 +170,14 @@ Mounting via fstab requires the above FUSE step to be completed.
 
 Your **/etc/fstab** entry should look like this::
 
-    s3fs#your-bucket-name /mnt fuse
-    allow\_other,\_netdev,nosuid,nodev,url=https://s3.amazonaws.com 0 0
+.. code:: bash
+
+    s3fs#your-bucket-name /mnt fuse allow_other,_netdev,nosuid,nodev,url=https://s3.amazonaws.com 0 0
 
 A brief description of the mount arguments;
 
-- **allow\_other** - allow all users to access the mount point,
-- **\_netdev** - The filesystem resides on a device that requires
+- **allow_other** - allow all users to access the mount point,
+- **_netdev** - The filesystem resides on a device that requires
   network access,
 - **nosuid** - Do not allow set-user-identifier or set-group-identifier
   bits to take effect,

@@ -32,7 +32,7 @@ Installation
 Debian/Ubuntu
 -------------
 
-::
+.. code:: bash
 
     sudo cp vagrant /etc/bash_completion.d/
     . ~/bashrc

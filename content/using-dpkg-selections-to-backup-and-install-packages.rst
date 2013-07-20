@@ -16,10 +16,14 @@ a list of installed packages and another for importing a list.
 Generating a list of installed packages
 ---------------------------------------
 
+.. code:: bash
+
     sudo dpkg --get-selections > selections
 
 This will generate a file called *selections* which will contain
 something like
+
+::
 
     ... snip ...
     adduser install
@@ -39,9 +43,13 @@ Installing packages from an exported list
 This is almost just as easy, first we need to actually set the list of
 selected packages
 
+.. code:: bash
+
     sudo dpkg --set-selections < selections
 
 Then we need to actually do an update and install
+
+.. code:: bash
 
     sudo apt-get update && sudo apt-get -u dselect-upgrade
 
