@@ -18,7 +18,9 @@ gain traction and now are quite widely used.
 
 OS X support was added by `Conor McDermottroe
 <https://github.com/conormcd>`_ and `Nils Caspar
-<https://github.com/pencil>`_ added it to Homebrew.
+<https://github.com/pencil>`_ added it to Homebrew with
+additional OS X/Homebrew documentation from `Dean Malmgre
+<https://github.com/deanmalmgren>`_
 
 Downloads
 =========
@@ -36,6 +38,25 @@ Debian/Ubuntu
 
     sudo cp vagrant /etc/bash_completion.d/
     . ~/bashrc
+
+OS X
+----
+
+With `homebrew <http://brew.sh/>`_ you can install the
+`vagrant-completion` recipe to use this plugin
+
+.. code:: bash
+
+    brew tap homebrew/completions
+    brew install vagrant-completion
+
+then add the following lines to your ~/.bashrc
+
+.. code:: bash
+
+    if [ -f `brew --prefix`/etc/bash_completion.d/vagrant ]; then
+        source `brew --prefix`/etc/bash_completion.d/vagrant
+    else
 
 Source
 ======
