@@ -5,7 +5,7 @@ vagrant-bash-completion
 :slug: vagrant-bash-completion
 
 vagrant-bash-completion is as it sounds - bash completion
-script for `Vagrant <>`_.
+script for `Vagrant <http://www.vagrantup.com/>`_.
 
 They were originally written by `Nikita Fedyashev
 <https://github.com/nfedyashev/>`_, I just modified his
