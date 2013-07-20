@@ -52,7 +52,7 @@ Gone are the location checks and file checks, all replaced with several
 lines that tell nginx that it needs to cache the page content.
 
 Before I get stuck in on the changes it's worth pointing out that this
-is only possible with version of nginx >= 0.7.65 and within the 0.8.\*
+is only possible with version of nginx >= 0.7.65 and within the 0.8.*
 branch. According to the nginx website there was a bug in the proxy
 caching engine that meant nginx would ignore comma separate cache
 controls. So upgrade before attempting this.

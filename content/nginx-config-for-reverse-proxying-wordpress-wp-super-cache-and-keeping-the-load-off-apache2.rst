@@ -60,12 +60,12 @@ full copy from `here`_.
       }
 
       # handle uploaded files
-      location ~\* files/ {
+      location ~* files/ {
         root **/PATH/TO/WORDPRESS**/blogs.dir/**BLOG_ID**/;
       }
 
       # handle static files
-      location ~\* \\.(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx|txt|htm|html)$ {
+      location ~* \.(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx|txt|htm|html)$ {
         # if the static file doesn't exist, handle it with Apache
         if (!-f $request_filename) {
         break;
@@ -88,7 +88,7 @@ full copy from `here`_.
       }
 
       # bypass cache if one of the cookies below is set
-      if ($http_cookie ~\* "comment_author_|wordpress|wp-postpass_") {
+      if ($http_cookie ~* "comment_author_|wordpress|wp-postpass_") {
         set $supercache_uri "";
       }
 
@@ -99,7 +99,7 @@ full copy from `here`_.
 
       # rewrite the request to the cached HTML file
       if (-f $document_root$supercache_file) {
-        rewrite ^(.\*)$ $supercache_file break;
+        rewrite ^(.*)$ $supercache_file break;
       }
 
       # if file exists, return it - will bypass back to Apache if not

@@ -38,7 +38,7 @@ Change the Listen and NameVirtualHost lines to:
 .. code:: apache
 
     Listen 81
-    NameVirtualHost \*:81
+    NameVirtualHost *:81
 
 This will mean you need to go and change all of your virtualhost
 definitions to work on port 81.
@@ -47,7 +47,7 @@ Example below.
 
 .. code:: apache
 
-    <VirtualHost \*:81>
+    <VirtualHost *:81>
         ServerAdmin webmaster@example.com
         ServerName example.com
         DocumentRoot /var/www/website
@@ -102,7 +102,7 @@ received.
 
         }
 
-        if (req.url ~ ".(jpg|png|gif|gz|tgz|bz2|lzma|tbz)(?.\*|)$") {
+        if (req.url ~ ".(jpg|png|gif|gz|tgz|bz2|lzma|tbz)(?.*|)$") {
             remove req.http.Accept-Encoding;
         } elsif (req.http.Accept-Encoding ~ "gzip") {
             set req.http.Accept-Encoding = "gzip";
@@ -122,11 +122,11 @@ received.
 
         unset req.http.cookie;
 
-        if (req.url ~ ".(jpeg|jpg|png|gif|ico|swf|js|css|txt|gz|zip|rar|bz2|tgz|tbz|html|htm|pdf|pls|torrent)(?.\*|)$") {
+        if (req.url ~ ".(jpeg|jpg|png|gif|ico|swf|js|css|txt|gz|zip|rar|bz2|tgz|tbz|html|htm|pdf|pls|torrent)(?.*|)$") {
             unset req.http.Authenticate;
             unset req.http.POSTDATA;
             set req.request = "GET";
-            set req.url = regsub(req.url, "?.\*$", "");
+            set req.url = regsub(req.url, "?.*$", "");
             return (lookup);
         }
 
@@ -163,7 +163,7 @@ Next is vcl_pipe and vcl_pass.
         if (req.http.X-Forwarded-For) {
             set bereq.http.X-Forwarded-For = req.http.X-Forwarded-For;
         } else {
-            set bereq.http.X-Forwarded-For = regsub(client.ip, ":.\*", "");
+            set bereq.http.X-Forwarded-For = regsub(client.ip, ":.*", "");
         }
     }
     sub vcl_pass {
@@ -171,7 +171,7 @@ Next is vcl_pipe and vcl_pass.
         if (req.http.X-Forwarded-For) {
             set bereq.http.X-Forwarded-For = req.http.X-Forwarded-For;
         } else {
-            set bereq.http.X-Forwarded-For = regsub(client.ip, ":.\*", "");
+            set bereq.http.X-Forwarded-For = regsub(client.ip, ":.*", "");
         }
     }
 

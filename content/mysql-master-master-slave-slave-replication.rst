@@ -57,7 +57,7 @@ Open up a MySQL prompt and run the following query
 
 .. code:: mysql
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.2' IDENTIFIED BY 'password';
+    GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.2' IDENTIFIED BY 'password';
 
 Now restart MySQL.
 
@@ -128,7 +128,7 @@ Open a MySQL prompt and run the following query
 
 .. code:: mysql
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.1' IDENTIFIED BY 'password';
+    GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.1' IDENTIFIED BY 'password';
 
 Master 1
 --------
@@ -160,7 +160,7 @@ Open a MySQL prompt and run the following query
 
 .. code:: mysql
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.3' IDENTIFIED BY 'password';
+    GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.3' IDENTIFIED BY 'password';
 
 Master 2
 --------
@@ -169,7 +169,7 @@ Open a MySQL prompt and run the following query
 
 .. code:: mysql
 
-    GRANT REPLICATION SLAVE ON \*.\* TO 'replication'@'10.1.1.4' IDENTIFIED BY 'password';
+    GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.4' IDENTIFIED BY 'password';
 
 Slave 3
 -------
@@ -193,7 +193,7 @@ Open a MySQL prompt and run the following queries
 .. code:: mysql
 
     START SLAVE;
-    SHOW SLAVE STATUS\\G;
+    SHOW SLAVE STATUS\G;
 
 Slave_IO_Running and Slave_SQL_Running must be set to **Yes**.
 
@@ -219,6 +219,6 @@ Open a MySQL prompt and run the following queries
 .. code:: mysql
 
     START SLAVE;
-    SHOW SLAVE STATUS\\G;
+    SHOW SLAVE STATUS\G;
 
 Slave_IO_Running and Slave_SQL_Running must be set to **Yes**.

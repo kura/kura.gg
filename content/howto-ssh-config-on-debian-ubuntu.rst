@@ -123,7 +123,7 @@ Configuration example
     Host host3
         HostName host3.example.com
 
-    Host \*
+    Host *
         Compression yes
         CompressionLevel 9
         KeepAlive yes

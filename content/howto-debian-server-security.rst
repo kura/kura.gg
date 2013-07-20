@@ -146,7 +146,7 @@ also things that aren't even present on my server.
     Users logging in through sshd:
 
     hidden:
-    \*\*\*.\*\*\*.\*\*\*.\*\*\* (my.hostname.com): 4 times
+    ***.***.***.*** (my.hostname.com): 4 times
 
     Refused incoming connections:
     190.144.99.98 (190.144.99.98): 2 Time(s)

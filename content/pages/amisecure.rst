@@ -29,11 +29,11 @@ program would include them in, for example Apache2 includes them in the
 following order on Debian-based systems;
 
 1. /etc/apache2/apache2.conf,
-2. /etc/apache2/mods-enabled/\*,
+2. /etc/apache2/mods-enabled/*,
 3. /etc/apache2/httpd.conf,
 4. /etc/apache2/ports.conf,
-5. /etc/apache2/conf.d/\*,
-6. /etc/apache2/sites-enabled/\*,
+5. /etc/apache2/conf.d/*,
+6. /etc/apache2/sites-enabled/*,
 
 it will then run through each this, ignoring commented out config
 options and show you where things are configured insecurely.

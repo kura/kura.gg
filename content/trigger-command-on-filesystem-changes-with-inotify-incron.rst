@@ -91,27 +91,27 @@ All incron tasks must be in the following format
 Masks
 ~~~~~
 
-    **IN_ACCESS** - File was accessed (read) (\*)
-    **IN_ATTRIB** - Metadata changed (permissions, timestamps, extended attributes, etc.) (\*)
-    **IN_CLOSE_WRITE** - File opened for writing was closed (\*)
-    **IN_CLOSE_NOWRITE** - File not opened for writing was closed (\*)
+    **IN_ACCESS** - File was accessed (read) (*)
+    **IN_ATTRIB** - Metadata changed (permissions, timestamps, extended attributes, etc.) (*)
+    **IN_CLOSE_WRITE** - File opened for writing was closed (*)
+    **IN_CLOSE_NOWRITE** - File not opened for writing was closed (*)
     **IN_CLOSE** - Covers IN_CLOSE_WRITE and IN_CLOSE_NOWRITE
-    **IN_CREATE** - File/directory created in watched directory (\*)
-    **IN_DELETE** - File/directory deleted from watched directory (\*)
+    **IN_CREATE** - File/directory created in watched directory (*)
+    **IN_DELETE** - File/directory deleted from watched directory (*)
     **IN_DELETE_SELF** - Watched file/directory was itself deleted
-    **IN_MODIFY** - File was modified (\*)
+    **IN_MODIFY** - File was modified (*)
     **IN_MOVE_SELF** - Watched file/directory was itself moved
-    **IN_MOVED_FROM** - File moved out of watched directory (\*)
-    **IN_MOVED_TO** - File moved into watched directory (\*)
+    **IN_MOVED_FROM** - File moved out of watched directory (*)
+    **IN_MOVED_TO** - File moved into watched directory (*)
     **IN_MOVE** - Covers IN_MOVED_FROM and IN_MOVED_TO
-    **IN_OPEN** - File was opened (\*)
+    **IN_OPEN** - File was opened (*)
     **IN_ALL_EVENTS** - All of the above
 
     **IN_DONT_FOLLOW** - Don't dereference pathname if it is a symbolic link
     **IN_ONESHOT** - Monitor pathname for only one event
     **IN_ONLYDIR** - Only watch pathname if it is a directory
 
-*When monitoring a directory, the masks marked with an asterisk (\*)
+*When monitoring a directory, the masks marked with an asterisk (*)
 above can occur for files in the directory, in which case the name field
 in the returned event data identifies the name of the file within the
 directory.*

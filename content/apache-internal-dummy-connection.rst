@@ -22,7 +22,7 @@ of Apache waking it's child processes.
 
 ::
 
-    127.0.0.1 - - [23/Mar/2010:17:02:38 +0000] "OPTIONS \* HTTP/1.0" 200 - "-" "Apache (internal dummy connection)"
+    127.0.0.1 - - [23/Mar/2010:17:02:38 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache (internal dummy connection)"
 
 This in itself is normal and nothing to worry about, generally, it is
 known and also mentioned on the Apache wiki (`explanation here`_) that

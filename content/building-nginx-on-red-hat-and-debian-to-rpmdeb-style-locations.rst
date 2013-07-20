@@ -132,23 +132,23 @@ Next we will configure the source::
 
 .. code:: bash
 
-    ./configure --sbin-path=/usr/bin/nginx\\
-    --conf-path=/etc/nginx/nginx.conf\\
-    --pid-path=/var/run/nginx.pid\\
-    --lock-path=/var/lock/nginx.lock\\
-    --error-log-path=/var/log/nginx/error.log\\
-    --http-log-path=/var/log/nginx/access.log\\
-    --user=www-data\\
-    --group=www-data\\
-    --http-client-body-temp-path=/var/lib/nginx/body\\
-    --http-proxy-temp-path=/var/lib/nginx/proxy\\
-    --http-fastcgi-temp-path=/var/lib/nginx/fastcgi\\
-    --with-http_ssl_module\\
-    --with-http_realip_module\\
-    --with-http_addition_module\\
-    --with-debug\\
-    --with-http_flv_module\\
-    --with-http_stub_status_module\\
+    ./configure --sbin-path=/usr/bin/nginx \
+    --conf-path=/etc/nginx/nginx.conf \
+    --pid-path=/var/run/nginx.pid \
+    --lock-path=/var/lock/nginx.lock \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --user=www-data \
+    --group=www-data \
+    --http-client-body-temp-path=/var/lib/nginx/body \
+    --http-proxy-temp-path=/var/lib/nginx/proxy \
+    --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \
+    --with-http_ssl_module \
+    --with-http_realip_module \
+    --with-http_addition_module \
+    --with-debug \
+    --with-http_flv_module \
+    --with-http_stub_status_module \
 
 The above command will configure nginx, setting the path to it's binary
 to /usr/bin/nginx, config file path to /etc/nginx/nginx.conf, pid to
@@ -207,8 +207,8 @@ Modify it to look like the one below.
         tcp_nodelay on;
         gzip on;
 
-        include /etc/nginx/conf.d/\*.conf;
-        include /etc/nginx/sites-enabled/\*;
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
     }
 
 Next we'll create the sub directories for holding site and module

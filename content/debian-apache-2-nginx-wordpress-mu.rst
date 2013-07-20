@@ -103,7 +103,7 @@ lovely data needed as shown below.
             proxy_temp_file_write_size 64k;
         }
 
-        location ~\* ^.+.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
+        location ~* ^.+.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
             root /path/to/wordpress;
         }
 
@@ -126,7 +126,7 @@ lovely data needed as shown below.
             set $supercache_uri .;
         }
 
-        if ($http_cookie ~\* .comment_author_|wordpress|wp-postpass_.) {
+        if ($http_cookie ~* .comment_author_|wordpress|wp-postpass_.) {
             set $supercache_uri .;
         }
 
@@ -135,7 +135,7 @@ lovely data needed as shown below.
         }
 
         if (-f $document_root$supercache_file) {
-            rewrite ^(.\*)$ $supercache_file break;
+            rewrite ^(.*)$ $supercache_file break;
         }
 
     }

@@ -60,7 +60,7 @@ run this you do so at your own risk**.
                 break;
             }
             memset(b, 10, MB);
-            printf("Allocating %d MB\\n", (++c * 10));
+            printf("Allocating %d MB\n", (++c * 10));
         }
         exit(0);
     }

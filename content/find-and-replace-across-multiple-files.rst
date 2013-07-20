@@ -11,10 +11,10 @@ size, thankfully Linux makes that pretty fast and very easy.
 
 .. code:: bash
 
-    find . -name "\*.xml" -print | xargs sed -i 's/FROM/TO/g'
+    find . -name "*.xml" -print | xargs sed -i 's/FROM/TO/g'
 
 A semi "real world" example:
 
 .. code:: bash
 
-    find . -name "\*.xml" -print | xargs sed -i 's/foo/bar/g'
+    find . -name "*.xml" -print | xargs sed -i 's/foo/bar/g'

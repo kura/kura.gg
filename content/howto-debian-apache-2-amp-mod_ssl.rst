@@ -119,7 +119,7 @@ need.
 
 .. code:: apache
 
-    <VirtualHost \*>
+    <VirtualHost *>
         ServerAdmin webmaster@DOMAINNAME
         ServerName DOMAINNAME
         DocumentRoot /var/www/DOMAINNAME
@@ -137,7 +137,7 @@ need.
         </Directory>
     </VirtualHost>
 
-    <VirtualHost \*:443>
+    <VirtualHost *:443>
         ServerAdmin webmaster@DOMAINNAME
         ServerName DOMAINNAME
         DocumentRoot /var/www/DOMAINNAME

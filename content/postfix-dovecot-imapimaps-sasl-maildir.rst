@@ -76,8 +76,8 @@ protocols option
 ::
 
     protocol imap {
-        listen = \*:143
-        ssl_listen = \*:993/
+        listen = *:143
+        ssl_listen = *:993/
     }
 
 Search through the file for "*mail_location =*" without the quotes,

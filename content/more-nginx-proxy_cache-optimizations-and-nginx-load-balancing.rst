@@ -92,7 +92,7 @@ changed and why it's changed.
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-        if ($http_cookie ~\* "comment_author_|wordpress_(?!test_cookie)|wp-postpass_") {
+        if ($http_cookie ~* "comment_author_|wordpress_(?!test_cookie)|wp-postpass_") {
             set $do_not_cache 1;
         }
 
@@ -120,7 +120,7 @@ to use.
 
 .. code:: nginx
 
-    location ~\* .(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
+    location ~* .(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
         proxy_cache_valid 200 120m;
         expires 604800;
         proxy_pass http://apachesyslogtv;
@@ -171,7 +171,7 @@ The full config
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-            if ($http_cookie ~\* "comment_author_|wordpress_(?!test_cookie)|wp-postpass_") {
+            if ($http_cookie ~* "comment_author_|wordpress_(?!test_cookie)|wp-postpass_") {
                 set $do_not_cache 1;
             }
 
@@ -182,7 +182,7 @@ The full config
             proxy_pass http://apachesyslogtv;
         }
 
-        location ~\* .(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
+        location ~* .(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
             proxy_cache_valid 200 120m;
             expires 604800;
             proxy_pass http://apachesyslogtv;

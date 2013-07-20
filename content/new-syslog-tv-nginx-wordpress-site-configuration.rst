@@ -39,15 +39,15 @@ improve performance and clear up some bugs.
             set $comment_author_email "";
             set $comment_author "";
 
-            if ($http_cookie ~\* "wordpress_logged_in_[^=]\*=([^%]+)%7C") {
+            if ($http_cookie ~* "wordpress_logged_in_[^=]*=([^%]+)%7C") {
                  set $wordpress_logged_in wordpress_logged_in_$1;
             }
 
-            if ($http_cookie ~\* "comment_author_email_[^=]\*=([^;]+)(;|$)") {
+            if ($http_cookie ~* "comment_author_email_[^=]*=([^;]+)(;|$)") {
                 set $comment_author_email comment_author_email_$1;
             }
 
-            if ($http_cookie ~\* "comment_author_[^=]\*=([^;]+)(;|$)") {
+            if ($http_cookie ~* "comment_author_[^=]*=([^;]+)(;|$)") {
                 set $comment_author comment_author_$1;
             }
 
@@ -67,7 +67,7 @@ improve performance and clear up some bugs.
             proxy_pass http://backend;
         }
 
-        location ~\* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
+        location ~* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
             root /var/www/syslog.tv;
         }
     }
@@ -129,15 +129,15 @@ location
     set $comment_author_email "";
     set $comment_author "";
 
-    if ($http_cookie ~\* "wordpress_logged_in_[^=]\*=([^%]+)%7C") {
+    if ($http_cookie ~* "wordpress_logged_in_[^=]*=([^%]+)%7C") {
         set $wordpress_logged_in wordpress_logged_in_$1;
     }
 
-    if ($http_cookie ~\* "comment_author_email_[^=]\*=([^;]+)(;|$)") {
+    if ($http_cookie ~* "comment_author_email_[^=]*=([^;]+)(;|$)") {
         set $comment_author_email comment_author_email_$1;
     }
 
-    if ($http_cookie ~\* "comment_author_[^=]\*=([^;]+)(;|$)") {
+    if ($http_cookie ~* "comment_author_[^=]*=([^;]+)(;|$)") {
         set $comment_author comment_author_$1;
     }
 
@@ -203,7 +203,7 @@ Static location block
 
 .. code:: nginx
 
-    location ~\* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
+    location ~* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
         root /var/www/syslog.tv;
     }
 
