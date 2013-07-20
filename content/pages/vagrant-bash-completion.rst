@@ -19,7 +19,7 @@ gain traction and now are quite widely used.
 OS X support was added by `Conor McDermottroe
 <https://github.com/conormcd>`_ and `Nils Caspar
 <https://github.com/pencil>`_ added it to Homebrew with
-additional OS X/Homebrew documentation from `Dean Malmgre
+additional OS X/Homebrew documentation from `Dean Malmgren
 <https://github.com/deanmalmgren>`_
 
 Downloads
