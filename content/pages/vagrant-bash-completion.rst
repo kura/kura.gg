@@ -37,6 +37,17 @@ Debian/Ubuntu
     sudo cp vagrant /etc/bash_completion.d/
     . ~/bashrc
 
+Source
+======
+
+The source can be found on `GitHub
+<https://github.com/kura/vagrant-bash-completion>`_.
+
+Issues
+======
+
+Issues can be tracked using `GitHub Issues
+<https://github.com/kura/vagrant-bash-completion/issues>`_.
 
 License
 =======
