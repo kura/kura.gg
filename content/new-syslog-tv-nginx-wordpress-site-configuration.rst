@@ -12,62 +12,62 @@ Configuration changes
 I made some modifications to my nginx configuration this weekend to
 improve performance and clear up some bugs.
 
-::
+.. code:: nginx
 
     upstream backend {
-        server 127.0.0.1:81 fail\_timeout=120s;
+        server 127.0.0.1:81 fail_timeout=120s;
     }
 
     server {
         listen 80;
-        server\_name syslog.tv;
+        server_name syslog.tv;
 
-        access\_log /var/log/nginx/access.syslog.tv.log;
+        access_log /var/log/nginx/access.syslog.tv.log;
 
         gzip on;
-        gzip\_disable msie6;
-        gzip\_static on;
-        gzip\_comp\_level 9;
-        gzip\_proxied any;
-        gzip\_types text/plain text/css application/x-javascript text/xml
+        gzip_disable msie6;
+        gzip_static on;
+        gzip_comp_level 9;
+        gzip_proxied any;
+        gzip_types text/plain text/css application/x-javascript text/xml
         application/xml application/xml+rss text/javascript;
 
        location / {
             root /var/www/syslog.tv;
 
-            set $wordpress\_logged\_in "";
-            set $comment\_author\_email "";
-            set $comment\_author "";
+            set $wordpress_logged_in "";
+            set $comment_author_email "";
+            set $comment_author "";
 
-            if ($http\_cookie ~\* "wordpress\_logged\_in\_[^=]\*=([^%]+)%7C") {
-                 set $wordpress\_logged\_in wordpress\_logged\_in\_$1;
+            if ($http_cookie ~* "wordpress_logged_in_[^=]*=([^%]+)%7C") {
+                 set $wordpress_logged_in wordpress_logged_in_$1;
             }
 
-            if ($http\_cookie ~\* "comment\_author\_email\_[^=]\*=([^;]+)(;\|$)") {
-                set $comment\_author\_email comment\_author\_email\_$1;
+            if ($http_cookie ~* "comment_author_email_[^=]*=([^;]+)(;|$)") {
+                set $comment_author_email comment_author_email_$1;
             }
 
-            if ($http\_cookie ~\* "comment\_author\_[^=]\*=([^;]+)(;\|$)") {
-                set $comment\_author comment\_author\_$1;
+            if ($http_cookie ~* "comment_author_[^=]*=([^;]+)(;|$)") {
+                set $comment_author comment_author_$1;
             }
 
-            set $my\_cache\_key "$scheme://$host$uri$is\_args$args$wordpress\_logged\_in$comment\_author\_email$comment\_author";
+            set $my_cache_key "$scheme://$host$uri$is_args$args$wordpress_logged_in$comment_author_email$comment_author";
 
-            client\_max\_body\_size 8m;
+            client_max_body_size 8m;
 
-            proxy\_redirect off;
-            proxy\_set\_header Host $host;
-            proxy\_set\_header X-Real-IP $remote\_addr;
-            proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-            proxy\_pass\_header Set-Cookie;
-            proxy\_cache cache;
-            proxy\_cache\_key $my\_cache\_key;
-            proxy\_cache\_valid 200 302 60m;
-            proxy\_cache\_valid 404 1m;
-            proxy\_pass http://backend;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass_header Set-Cookie;
+            proxy_cache cache;
+            proxy_cache_key $my_cache_key;
+            proxy_cache_valid 200 302 60m;
+            proxy_cache_valid 404 1m;
+            proxy_pass http://backend;
         }
 
-        location ~\* .(jpg\|png\|gif\|jpeg\|js\|css\|mp3\|wav\|swf\|mov\|doc\|pdf\|xls\|ppt\|docx\|pptx\|xlsx)$ {
+        location ~* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
             root /var/www/syslog.tv;
         }
     }
@@ -86,30 +86,30 @@ and why it's configured that way, I'll do this "chunk-by-chunk".
 upstream
 ~~~~~~~~
 
-::
+.. code:: nginx
 
     upstream backend {
-        server 127.0.0.1:81 fail\_timeout=120s;
+        server 127.0.0.1:81 fail_timeout=120s;
     }
 
 This one is relatively simple, it basically configures an upstream proxy
-to 127.0.0.1 on port 81, fail\_timeout controls how long nginx will try
+to 127.0.0.1 on port 81, fail_timeout controls how long nginx will try
 talking to that server before giving up.
 
-I'll assume you understand the basic listen, server\_name and
-access\_log parameters in the first section of the server definition.
+I'll assume you understand the basic listen, server_name and
+access_log parameters in the first section of the server definition.
 
 gzip
 ~~~~
 
-::
+.. code:: nginx
 
     gzip on;
-    gzip\_disable msie6;
-    gzip\_static on;
-    gzip\_comp\_level 9;
-    gzip\_proxied any;
-    gzip\_types text/plain text/css application/x-javascript text/xml
+    gzip_disable msie6;
+    gzip_static on;
+    gzip_comp_level 9;
+    gzip_proxied any;
+    gzip_types text/plain text/css application/x-javascript text/xml
     application/xml application/xml+rss text/javascript;
 
 Again, this one is rather simple. We enabled GZIP, disable it for anyone
@@ -121,24 +121,24 @@ the mimetypes which GZIP is allowed to compress.
 location
 ~~~~~~~~
 
-::
+.. code:: nginx
 
     root /var/www/syslog.tv;
 
-    set $wordpress\_logged\_in "";
-    set $comment\_author\_email "";
-    set $comment\_author "";
+    set $wordpress_logged_in "";
+    set $comment_author_email "";
+    set $comment_author "";
 
-    if ($http\_cookie ~\* "wordpress\_logged\_in\_[^=]\*=([^%]+)%7C") {
-        set $wordpress\_logged\_in wordpress\_logged\_in\_$1;
+    if ($http_cookie ~* "wordpress_logged_in_[^=]*=([^%]+)%7C") {
+        set $wordpress_logged_in wordpress_logged_in_$1;
     }
 
-    if ($http\_cookie ~\* "comment\_author\_email\_[^=]\*=([^;]+)(;\|$)") {
-        set $comment\_author\_email comment\_author\_email\_$1;
+    if ($http_cookie ~* "comment_author_email_[^=]*=([^;]+)(;|$)") {
+        set $comment_author_email comment_author_email_$1;
     }
 
-    if ($http\_cookie ~\* "comment\_author\_[^=]\*=([^;]+)(;\|$)") {
-        set $comment\_author comment\_author\_$1;
+    if ($http_cookie ~* "comment_author_[^=]*=([^;]+)(;|$)") {
+        set $comment_author comment_author_$1;
     }
 
 This is a rather large chunk but is very simple once you understand it.
@@ -149,15 +149,14 @@ cookies and then set the relevant variable to the correct value if it
 exists, this is later used in the cache key to make sure each user has
 their own private cache if they have certain cookies.
 
-$my\_cache\_key
+$my_cache_key
 ~~~~~~~~~~~~~~~
 
-::
+.. code:: nginx
 
-    set $my\_cache\_key
-    "$scheme://$host$uri$is\_args$args$wordpress\_logged\_in$comment\_author\_email$comment\_author";
+    set $my_cache_key "$scheme://$host$uri$is_args$args$wordpress_logged_in$comment_author_email$comment_author";
 
-This sets up a variable called $my\_cache\_key which contains the
+This sets up a variable called $my_cache_key which contains the
 current scheme (HTTP or HTTPS), host (syslog.tv), uri, various arguments
 and then finally sets the variables from the previous block from the
 cookie checks.
@@ -165,20 +164,20 @@ cookie checks.
 Proxy time!
 ~~~~~~~~~~~
 
-::
+.. code:: nginx
 
-    client\_max\_body\_size 8m;
+    client_max_body_size 8m;
 
-    proxy\_redirect off;
-    proxy\_set\_header Host $host;
-    proxy\_set\_header X-Real-IP $remote\_addr;
-    proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-    proxy\_pass\_header Set-Cookie;
-    proxy\_cache cache;
-    proxy\_cache\_key $my\_cache\_key;
-    proxy\_cache\_valid 200 302 60m;
-    proxy\_cache\_valid 404 1m;
-    proxy\_pass http://backend;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass_header Set-Cookie;
+    proxy_cache cache;
+    proxy_cache_key $my_cache_key;
+    proxy_cache_valid 200 302 60m;
+    proxy_cache_valid 404 1m;
+    proxy_pass http://backend;
 
 Here I am setting the maximum size of the client body content to 8MB,
 disabling proxy redirects, passing through some basic headers to the
@@ -189,7 +188,7 @@ basically standard when proxying.
 
 Next I pass Set-Cookie headers back to the backend, tell it to use a
 cache definition called "cache" which I set up in a `previous blog
-post`_. I set the proxy\_cache\_key to use the variable defined earlier
+post`_. I set the proxy_cache_key to use the variable defined earlier
 contains all of the users cookie information in it's key to make it a
 private cache.
 
@@ -202,9 +201,9 @@ minute, then I simply pass back to the backend system.
 Static location block
 ~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code:: nginx
 
-    location ~\* .(jpg\|png\|gif\|jpeg\|js\|css\|mp3\|wav\|swf\|mov\|doc\|pdf\|xls\|ppt\|docx\|pptx\|xlsx)$ {
+    location ~* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
         root /var/www/syslog.tv;
     }
 

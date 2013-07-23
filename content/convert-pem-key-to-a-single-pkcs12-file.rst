@@ -10,6 +10,8 @@ Sometimes keeping multiple copies of keys, certificates and root
 certificates can be a real annoyance, thankfully it's quite simple to
 convert them in to a single PKCS#12 file with the following command.
 
+.. code:: bash
+
     openssl pkcs12 -export -out certificate.pkcs -in certificate.crt -inkey private.key -certfile rootcert.crt -name "PKCS#12 Certificate Bundle"
 
 This will create a file called **certificate.pkcs** which will contain

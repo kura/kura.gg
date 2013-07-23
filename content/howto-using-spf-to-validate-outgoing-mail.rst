@@ -25,6 +25,8 @@ servers recognise this type it also works in the TXT type.
 
 A simple usage of SPF is
 
+::
+
     v=spf1 a mx -all
 
 Imagine this exists on this domain, **syslog.tv**. This spf record would
@@ -75,14 +77,20 @@ Qualifiers
 More examples
 -------------
 
+::
+
     v=spf1 include:google.com -all
 
 Include SPF records from the domain **google.com** and pass if record
 matches any from the include, failing if it doesn't.
 
+::
+
     v=spf1 exists:syslog.tv
 
 If syslog.tv resolves, pass.
+
+::
 
     v=spf mx ~all
 

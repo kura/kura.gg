@@ -37,6 +37,8 @@ lazy, so I decided to just use incron.
 Installation
 ------------
 
+.. code:: bash
+
     sudo apt-get install inotify incron
 
 Configuration
@@ -62,46 +64,54 @@ incrontab just like you do crontab
 Listing incron tasks
 ~~~~~~~~~~~~~~~~~~~~
 
+.. code:: bash
+
     incrontab -l
 
 Adding/editing tasks
 ~~~~~~~~~~~~~~~~~~~~
+
+.. code:: bash
 
     incrontab -e
 
 Delete all tasks
 ~~~~~~~~~~~~~~~~
 
+.. code:: bash
+
     incrontab -r
 
 All incron tasks must be in the following format
+
+::
 
     <path> <mask> <command>
 
 Masks
 ~~~~~
 
-    **IN\_ACCESS** - File was accessed (read) (\*)
-    **IN\_ATTRIB** - Metadata changed (permissions, timestamps, extended attributes, etc.) (\*)
-    **IN\_CLOSE\_WRITE** - File opened for writing was closed (\*)
-    **IN\_CLOSE\_NOWRITE** - File not opened for writing was closed (\*)
-    **IN\_CLOSE** - Covers IN\_CLOSE\_WRITE and IN\_CLOSE\_NOWRITE
-    **IN\_CREATE** - File/directory created in watched directory (\*)
-    **IN\_DELETE** - File/directory deleted from watched directory (\*)
-    **IN\_DELETE\_SELF** - Watched file/directory was itself deleted
-    **IN\_MODIFY** - File was modified (\*)
-    **IN\_MOVE\_SELF** - Watched file/directory was itself moved
-    **IN\_MOVED\_FROM** - File moved out of watched directory (\*)
-    **IN\_MOVED\_TO** - File moved into watched directory (\*)
-    **IN\_MOVE** - Covers IN\_MOVED\_FROM and IN\_MOVED\_TO
-    **IN\_OPEN** - File was opened (\*)
-    **IN\_ALL\_EVENTS** - All of the above
+    **IN_ACCESS** - File was accessed (read) (*)
+    **IN_ATTRIB** - Metadata changed (permissions, timestamps, extended attributes, etc.) (*)
+    **IN_CLOSE_WRITE** - File opened for writing was closed (*)
+    **IN_CLOSE_NOWRITE** - File not opened for writing was closed (*)
+    **IN_CLOSE** - Covers IN_CLOSE_WRITE and IN_CLOSE_NOWRITE
+    **IN_CREATE** - File/directory created in watched directory (*)
+    **IN_DELETE** - File/directory deleted from watched directory (*)
+    **IN_DELETE_SELF** - Watched file/directory was itself deleted
+    **IN_MODIFY** - File was modified (*)
+    **IN_MOVE_SELF** - Watched file/directory was itself moved
+    **IN_MOVED_FROM** - File moved out of watched directory (*)
+    **IN_MOVED_TO** - File moved into watched directory (*)
+    **IN_MOVE** - Covers IN_MOVED_FROM and IN_MOVED_TO
+    **IN_OPEN** - File was opened (*)
+    **IN_ALL_EVENTS** - All of the above
 
-    **IN\_DONT\_FOLLOW** - Don't dereference pathname if it is a symbolic link
-    **IN\_ONESHOT** - Monitor pathname for only one event
-    **IN\_ONLYDIR** - Only watch pathname if it is a directory
+    **IN_DONT_FOLLOW** - Don't dereference pathname if it is a symbolic link
+    **IN_ONESHOT** - Monitor pathname for only one event
+    **IN_ONLYDIR** - Only watch pathname if it is a directory
 
-*When monitoring a directory, the masks marked with an asterisk (\*)
+*When monitoring a directory, the masks marked with an asterisk (*)
 above can occur for files in the directory, in which case the name field
 in the returned event data identifies the name of the file within the
 directory.*
@@ -122,19 +132,27 @@ the commands.
 A simple way of testing incron would be to add a basic task on the root
 users home directory.
 
-    /root/ IN\_CREATE echo "$@$# $% $&"
+::
+
+    /root/ IN_CREATE echo "$@$# $% $&"
 
 Open up a second root shell on the system and tail syslog
 
-    tail -f /var/log/syslog
+.. code:: bash
+
+    sudo tail -f /var/log/syslog
 
 And simply create a random file on the system in /root/
+
+.. code:: bash
 
     >test-incron
 
 You should see the following appear within syslog:
 
-    Jul 03 15:19:26 eurus incrond[5049]: (root) CMD (echo "/tmp/test-incron IN\_CREATE 256")
+::
+
+    Jul 03 15:19:26 eurus incrond[5049]: (root) CMD (echo "/tmp/test-incron IN_CREATE 256")
 
 Success, you now have incron working.
 
@@ -143,7 +161,9 @@ How I used it
 
 For me it meant I could set up one simple task to modify file access
 
-    /tmp/mysql-ib-exports/ IN\_CREATE /bin/chmod 0664 $@$#
+::
+
+    /tmp/mysql-ib-exports/ IN_CREATE /bin/chmod 0664 $@$#
 
 This will instantly change permissions on created files to 0664,
 allowing the CSV to be loaded directly in to MySQL.

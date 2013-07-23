@@ -22,7 +22,9 @@ like on Hotmail.com.
 Installation
 ------------
 
-    apt-get install postgrey
+.. code:: bash
+
+    sudo apt-get install postgrey
 
 Configuring Postgrey
 --------------------
@@ -30,8 +32,10 @@ Configuring Postgrey
 By default Postgrey runs on *127.0.0.1:60000*, which is the local
 loopback interface so it is not exposed to the outside world.
 
-If you open up **/etc/default/postgrey** and modify the *POSTGREY\_OPTS*
+If you open up **/etc/default/postgrey** and modify the *POSTGREY_OPTS*
 line you can configure how long to grey list for.
+
+.. code:: bash
 
     --delay=60
 
@@ -40,39 +44,50 @@ would greylist the sending server for 60 seconds (the default value is
 sender would automatically become whitelisted, by default this sender is
 whitelisted for 35 days but can be changed using the *--max-age* option
 
+.. code:: bash
+
     --max-age=10
 
 would whitelist for 10 days.
 
 They can be combined as below.
 
-    POSTGREY\_OPTS="--inet=127.0.0.1:60000 --delay=60 --max-age=10"
+.. code:: bash
+
+    POSTGREY_OPTS="--inet=127.0.0.1:60000 --delay=60 --max-age=10"
 
 Once you're satisfied save and closed and restart Postgrey.
 
-    /etc/init.d/postgrey restart
+.. code:: bash
+
+    sudo /etc/init.d/postgrey restart
 
 Configuring Postfix
 -------------------
 
 Open up **/etc/postfix/main.cf** and add the following within
-*smtpd\_receipient\_restrictions*
+*smtpd_receipient_restrictions*
 
-    check\_policy\_service inet:127.0.0.1:60000
+::
+
+    check_policy_service inet:127.0.0.1:60000
 
 This is best added after your SASL and sender domain checks but before
 SPF and blacklists, see below for an example
 
-    smtpd\_recipient\_restrictions = permit\_mynetworks,
+::
 
-    permit\_sasl\_authenticated,
-    reject\_unauth\_destination,
-    reject\_unknown\_sender\_domain,
-    check\_policy\_service inet:127.0.0.1:60000
+    smtpd_recipient_restrictions = permit_mynetworks,
+        permit_sasl_authenticated,
+        reject_unauth_destination,
+        reject_unknown_sender_domain,
+        check_policy_service inet:127.0.0.1:60000
 
 Now reload Postfix
 
-    /etc/init.d/postfix reload
+.. code:: bash
+
+    sudo /etc/init.d/postfix reload
 
 Testing
 -------
@@ -80,8 +95,6 @@ Testing
 Now if you tail your mail.log you will see your Postgrey instance
 rejecting incoming email like below.
 
-    Sept 24 22:26:18 heimdall postfix/smtpd[4256]: NOQUEUE: reject: RCPT
-    from example.com[xxx.xxx.xxx.xxx]: 450: Recipient address rejected:
-    Greylisted for 300 seconds (see
-    http://isg.ee.ethz.ch/tools/postgrey/help/spammed.com.html);
-    from=to=proto=ESMTP helo=<example.com>
+::
+
+    Sept 24 22:26:18 heimdall postfix/smtpd[4256]: NOQUEUE: reject: RCPT from example.com[xxx.xxx.xxx.xxx]: 450: Recipient address rejected: Greylisted for 300 seconds (see http://isg.ee.ethz.ch/tools/postgrey/help/spammed.com.html); from=to=proto=ESMTP helo=<example.com>

@@ -15,20 +15,24 @@ Remote server -- the server to be monitored
 First we'll install the needed plugins and daemon on the **remote**
 server.
 
-    apt-get install nagios-plugins nagios-nrpe-server
+.. code:: bash
 
-Once installed, open up **/etc/nagios/nrpe\_local.cfg**
+    sudo apt-get install nagios-plugins nagios-nrpe-server
 
-And place the following in it::
+Once installed, open up **/etc/nagios/nrpe_local.cfg**
 
-    allowed\_hosts=NAGIOS.SERVER.IP,127.0.0.1
+And place the following in it
 
-    command[check\_users]=/usr/lib/nagios/plugins/check\_users -w 5 -c 10
-    command[check\_load]=/usr/lib/nagios/plugins/check\_load -w 15,10,5 -c 30,25,20
-    command[check\_all\_disks]=/usr/lib/nagios/plugins/check\_disk -w 20 -c 10
-    command[check\_zombie\_procs]=/usr/lib/nagios/plugins/check\_procs -w 5 -c 10 -s Z
-    command[check\_total\_procs]=/usr/lib/nagios/plugins/check\_procs -w 150 -c 200
-    command[check\_swap]=/usr/lib/nagios/plugins/check\_swap -w 20 -c 10
+::
+
+    allowed_hosts=NAGIOS.SERVER.IP,127.0.0.1
+
+    command[check_users]=/usr/lib/nagios/plugins/check_users -w 5 -c 10
+    command[check_load]=/usr/lib/nagios/plugins/check_load -w 15,10,5 -c 30,25,20
+    command[check_all_disks]=/usr/lib/nagios/plugins/check_disk -w 20 -c 10
+    command[check_zombie_procs]=/usr/lib/nagios/plugins/check_procs -w 5 -c 10 -s Z
+    command[check_total_procs]=/usr/lib/nagios/plugins/check_procs -w 150 -c 200
+    command[check_swap]=/usr/lib/nagios/plugins/check_swap -w 20 -c 10
 
 Save and exit.
 
@@ -38,51 +42,57 @@ any time you want.
 
 Start the nagios-nrpe-server daemon.
 
-    /etc/init.d/nagios-nrpe-server start
+.. code:: bash
+
+    sudo /etc/init.d/nagios-nrpe-server start
 
 Monitoring server -- the server with Nagios installed
 -----------------------------------------------------
 
 Install the nagios nrpe plugin
 
-    apt-get install nagios-nrpe-plugin
+.. code:: bash
+
+    sudo apt-get install nagios-nrpe-plugin
 
 Now test the connection to the remote server we set up just now.
 
-::
+.. code:: bash
 
-    #> /usr/lib/nagios/plugins/check\_nrpe -H REMOTE.SERVER.IP
+    /usr/lib/nagios/plugins/check_nrpe -H REMOTE.SERVER.IP
     NRPE v2.8.1
 
 If you get a version response it means it all works.
 
-Now we simply add a service check for the host but use the check\_nrpe
+Now we simply add a service check for the host but use the check_nrpe
 plugin to do so.
 
 ::
 
     define service {
-        host\_name HOSTNAME
-        service\_description Load
-        check\_command check\_nrpe\_1arg!check\_load
+        host_name HOSTNAME
+        service_description Load
+        check_command check_nrpe_1arg!check_load
         use generic-service
-        notification\_interval 0
+        notification_interval 0
     }
 
 We have already defined the tolerances on the remote server in
-nrpe\_local.cfg so we only need to use the check\_nrpe\_1arg command,
-you can actually pass arguments using check\_nrpe as below.
+nrpe_local.cfg so we only need to use the check_nrpe_1arg command,
+you can actually pass arguments using check_nrpe as below.
 
 ::
 
     define service {
-        host\_name HOSTNAME
-        service\_description Load
-        check\_command check\_nrpe!check\_load!5!10
+        host_name HOSTNAME
+        service_description Load
+        check_command check_nrpe!check_load!5!10
         use generic-service
-        notification\_interval 0
+        notification_interval 0
     }
 
 Save, exit and reload nagios.
 
-    /etc/init.d/nagios2 restart
+.. code:: bash
+
+    sudo /etc/init.d/nagios2 restart

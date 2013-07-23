@@ -34,11 +34,15 @@ off of haproxy_1.5~dev19 and is compiled for amd64. It should work on
 any installation of Debian 7 and requires openssl-1.0.1d or higher.
 
 On a standard Debian 7 install you should have openssl-1.0.1e-2, you
-can find which version you have by running::
+can find which version you have by running
+
+.. code:: bash
 
     dpkg -l openssl
 
-This should return something similar to::
+This should return something similar to
+
+::
 
     ii  openssl        1.0.1e-2        amd64        Secure Socket Layer (SSL) binary and related cryptographic tools
 
@@ -63,22 +67,30 @@ If you already have haproxy installed, make sure to remove it first.
 
 You can install them by simply running:
 
+.. code:: bash
+
     sudo dpkg -i haproxy_1.5~dev19_amd64.deb
 
 You may receive an error due to missing dependencies, to fix this run:
+
+.. code:: bash
 
     sudo apt-get install -f
 
 Configuring haproxy
 ===================
 
-First we need to enabled haproxy by running the following command::
+First we need to enabled haproxy by running the following command
+
+.. code:: bash
 
     sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 
 We then need to empty the contents of the haproxy configuration and
 replace it with a nice blank file. The following command will copy
-the original file to a new location and create a blank file::
+the original file to a new location and create a blank file
+
+.. code:: bash
 
     sudo mv /etc/haproxy/haproxy.cfg{,.orig} && sudo >/etc/haproxy/haproxy.cfg
 
@@ -129,7 +141,7 @@ frontend http
 
     frontend http
         bind 0.0.0.0:80
-        redirect sheme https if !{ ssl_fc }	
+        redirect sheme https if !{ ssl_fc }
 
 This tells haproxy to listen on port 80 and redirect all traffic
 to the HTTPS version of the site.
@@ -150,7 +162,9 @@ data over to the backend servers rather than http requests.
 
 We then bind to all interfaces on port 443, enabling SSL and
 passing in a PEM version of the certificate in the following
-format::
+format
+
+::
 
     -----BEGIN CERTIFICATE-----
     MAIN CERTIFICATE FOR KURA.IO
@@ -222,7 +236,9 @@ Follow this guide up until the configuration of nginx.
 Configuring nginx
 =================
 
-Within nginx we need to enable two virtual hosts::
+Within nginx we need to enable two virtual hosts
+
+.. code:: nginx
 
     server {
         listen 80 spdy;

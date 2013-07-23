@@ -52,7 +52,7 @@ Gone are the location checks and file checks, all replaced with several
 lines that tell nginx that it needs to cache the page content.
 
 Before I get stuck in on the changes it's worth pointing out that this
-is only possible with version of nginx >= 0.7.65 and within the 0.8.\*
+is only possible with version of nginx >= 0.7.65 and within the 0.8.*
 branch. According to the nginx website there was a bug in the proxy
 caching engine that meant nginx would ignore comma separate cache
 controls. So upgrade before attempting this.
@@ -62,53 +62,57 @@ actual nginx main configuration file, on Debian/Ubuntu this is in
 
     /etc/nginx/nginx.conf
 
-    proxy\_cache\_path /var/www/syslog.tv/cache levels=1:2 keys\_zone=one:8m max\_size=1000m inactive=600m;
-    proxy\_temp\_path /tmp;
+.. code:: nginx
+
+    proxy_cache_path /var/www/syslog.tv/cache levels=1:2 keys_zone=one:8m max_size=1000m inactive=600m;
+    proxy_temp_path /tmp;
 
 These 2 lines need to be within the main nginx configuration before any
 of your server {} definitions, otherwise nginx's config test will fail
 and nginx won't start.
 
 The biggest chain was in this site's server definition, it now looks
-like this::
+like this
+
+.. code:: nginx
 
     server {
         listen 174.143.241.61:80;
-        server\_name syslog.tv;
-        access\_log /var/log/nginx/syslog.tv.access.log;
+        server_name syslog.tv;
+        access_log /var/log/nginx/syslog.tv.access.log;
 
         location / {
             root /var/www/syslog.tv; #the path to your actual site, used for serving static files
-            proxy\_redirect off;
-            proxy\_set\_header Host $host;
-            proxy\_set\_header X-Real-IP $remote\_addr;
-            proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-            proxy\_cache one;
-            proxy\_cache\_key syslog.tv$request\_uri;
-            proxy\_cache\_valid 200 302 60m;
-            proxy\_cache\_valid 404 1m;
-            proxy\_pass http://apache.syslog.tv;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_cache one;
+            proxy_cache_key syslog.tv$request_uri;
+            proxy_cache_valid 200 302 60m;
+            proxy_cache_valid 404 1m;
+            proxy_pass http://apache.syslog.tv;
         }
     }
 
 The server definition should be relatively easy to understand, we have
-the general listen, server\_name, access\_log and root which are used
+the general listen, server_name, access_log and root which are used
 everywhere, the only difference now is that I am serving root from
 /var/www/syslog.tv/cache which is where nginx is configured to store
 it's cache.
 
-We set several proxy specific options, proxy\_redirect and three
-proxy\_set\_header instances, these are really quite self explanatory;
+We set several proxy specific options, proxy_redirect and three
+proxy_set_header instances, these are really quite self explanatory;
 do not redirect proxy requests, ever and the three headers are passed
 over to Apache so it is able to properly log access and see the original
 IP rather than seeing nginx's IP.
 
-The new and important part is from proxy\_cache down to proxy\_pass,
-proxy\_pass exists in my original config file but here it is now used in
-conjunction with proxy\_cache, which sets the zone (zone definition are
+The new and important part is from proxy_cache down to proxy_pass,
+proxy_pass exists in my original config file but here it is now used in
+conjunction with proxy_cache, which sets the zone (zone definition are
 in the two lines added to nginx.conf), set the key, sets some timers on
 valid responses, in this case 200, 302 and 404 and then passed back to
-Apache with proxy\_pass.
+Apache with proxy_pass.
 
 So what does it do?
 -------------------
@@ -208,7 +212,7 @@ I'm hoping your eyes are as wide as mine were when I saw this average,
 above 0.08 the whole time. It served 10,000 requests with 0 failures,
 200 at a time in 93.371 seconds...
 
-I tried the same with proxy\_caching disable and also directly against
+I tried the same with proxy_caching disable and also directly against
 Apache, both times with a KeepAlive On and KeepAliveTimeOut 5 Apache
 fell over, load went through the roof and I had to hard reset the server
 both times. Apache couldn't even handle 50 concurrent requests, let

@@ -12,4 +12,6 @@ Apache.
 
 Converting it is a simple process:
 
+.. code:: bash
+
     openssl x509 -in certificate.crt -inform DER -out certificate.pem -outform PEM

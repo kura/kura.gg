@@ -22,15 +22,17 @@ Razor
 
 First off we need to install Razor.
 
-    apt-get install razor
+.. code:: bash
+
+    sudo apt-get install razor
 
 Now we need to run three commands to register and configure Razor.
 
-::
+.. code:: bash
 
-    razor-admin -home=/etc/spamassassin/.razor -register
-    razor-admin -home=/etc/spamassassin/.razor -create
-    razor-admin -home=/etc/spamassassin/.razor -discover
+    sudo razor-admin -home=/etc/spamassassin/.razor -register
+    sudo razor-admin -home=/etc/spamassassin/.razor -create
+    sudo razor-admin -home=/etc/spamassassin/.razor -discover
 
 These 3 commands should be pretty self explanatory, they register Razor,
 create it's configuration and discover the Razor servers.
@@ -40,25 +42,31 @@ Pyzor
 
 Now we'll install Pyzor.
 
-    apt-get install pyzor
+.. code:: bash
+
+    sudo apt-get install pyzor
 
 Now we also need to tell Pyzor to discover it's servers.
 
-    pyzor discover
+.. code:: bash
+
+    sudo pyzor discover
 
 SpamAssassin
 ------------
 
 Add the following lines to the end of **/etc/spamassassin/local.cf**
 
-::
+.. code:: bash
 
-    razor\_config /etc/spamassassin/.razor/razor-agent.conf
-    pyzor\_options --homedir /etc/spamassassin
+    sudo razor_config /etc/spamassassin/.razor/razor-agent.conf
+    sudo pyzor_options --homedir /etc/spamassassin
 
 Finally we restart SpamAssassin
 
-    /etc/init.d/spamassasin restart
+.. code:: bash
+
+    sudo /etc/init.d/spamassasin restart
 
 And we're all done.
 

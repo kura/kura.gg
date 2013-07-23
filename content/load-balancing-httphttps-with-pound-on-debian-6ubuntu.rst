@@ -12,7 +12,9 @@ supports SSL termination, which is great!
 Install
 -------
 
-    apt-get install pound
+.. code:: bash
+
+    sudo apt-get install pound
 
 Configuration
 -------------
@@ -27,13 +29,17 @@ We'll first look at load balancing HTTP, in case you don't want or need
 HTTPS load balancing.
 
 We'll need delete all the content within *ListenHTTP* block, once done
-it should look like this::
+it should look like this
+
+::
 
     ListenHTTP
     End
 
 Now we add an address and port to listen on and finally a line to remove
-an HTTP header::
+an HTTP header
+
+::
 
     ListenHTTP
         Address 0.0.0.0 # all interfaces
@@ -129,6 +135,8 @@ Done
 
 Once configured, reload Pound.
 
-    /etc/init.d/pound reload
+.. code:: bash
+
+    sudo /etc/init.d/pound reload
 
 That really was simple.

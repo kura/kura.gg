@@ -39,25 +39,27 @@ S3 using `s3cmd`_.
 Installation
 ------------
 
-**All commands prefixed with a # need to be run as root or a sudo**
-
 Download the S3 tools package list in to apt::
 
-    # wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key \|
-    sudo apt-key add -
-     # wget http://s3tools.org/repo/deb-all/stable/s3tools.list -O
-    /etc/apt/sources.list.d/s3tools.list
+.. code:: bash
+
+    sudo wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
+    sudo wget http://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
 
 Update your package list and install s3cmd
 
-    # apt-get update && apt-get install s3cmd
+.. code:: bash
+
+    sudo apt-get update && apt-get install s3cmd
 
 Configuration
 -------------
 
 You'll need to configure the tool to work with your AWS account, so run
 
-    # s3cmd --configure
+.. code:: bash
+
+    sudo s3cmd --configure
 
 When prompted, fill in your access and secret key which you can find
 `on the Amazone website <https://aws-portal.amazon.com/gp/aws/securityCredentials>`_.
@@ -79,37 +81,53 @@ You can create a bucket using the s3cmd command below, but as far as I
 know you can't select a location so I create my buckets manually
 `on the web interface <https://console.aws.amazon.com/s3/home>`_.
 
-    # s3cmd mb s3://your-bucket-name
+.. code:: bash
+
+    s3cmd mb s3://your-bucket-name
 
 Once done you can see a list of available buckets with
 
-    # s3cmd ls
+.. code:: bash
 
-As shown below::
+    s3cmd ls
 
-    $ s3cmd ls
+As shown below
+
+.. code:: bash
+
+    s3cmd ls
 
     2012-02-29 20:28 s3://kura-linode-test
 
 Now that this is done we can put some data in there, create a test file
 
+.. code:: bash
+
     echo "this is a test" > test.file
 
 And put it in S3
 
-    # s3cmd put test.file s3://your-bucket-name/
+.. code:: bash
+
+    s3cmd put test.file s3://your-bucket-name/
 
 You can see it using
 
-    # s3cmd ls s3://your-bucket-name
+.. code:: bash
+
+    s3cmd ls s3://your-bucket-name
 
 Download it with
 
-    # s3cmd get s3://your-bucket-name/test.file
+.. code:: bash
+
+    s3cmd get s3://your-bucket-name/test.file
 
 And delete it with
 
-    # s3cmd del s3://your-bucket-name/test.file
+.. code:: bash
+
+    s3cmd del s3://your-bucket-name/test.file
 
 Once satisfied with this you can create a shell script to automate some
 backups for you, I'll provide a simple one below that uploads my home
@@ -118,9 +136,8 @@ directory
 Example
 -------
 
-::
+.. code:: bash
 
     #!/bin/sh
-
     s3cmd sync --recursive --skip-existing /home/kura
     s3://kura-linode-test/

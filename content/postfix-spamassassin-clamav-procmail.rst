@@ -14,7 +14,9 @@ SpamAssassin
 
 First off we'll get SpamAssassin installed and configured.
 
-    apt-get install spamassassin
+.. code:: bash
+
+    sudo apt-get install spamassassin
 
 We'll be configuring SpamAssassin as a daemon that Postfix interfaces
 with using **spamc**.
@@ -24,27 +26,35 @@ so we'll need to make some changes.
 
 We'll add a group called **spamd** with GID**5001**.
 
-    groupadd -g 5001 spamd
+.. code:: bash
+
+    sudo groupadd -g 5001 spamd
 
 Next we add a user spamd with UID **5001** and add it to the spamd
 group, as well as set it's home directory as **/var/lib/spamassassin**
 and make sure it has no shell access or SSH access.
 
-    useradd -u 5001 -g spamd -s /usr/sbin/nologin -d /var/lib/spamassassin spamd
+.. code:: bash
+
+    sudo useradd -u 5001 -g spamd -s /usr/sbin/nologin -d /var/lib/spamassassin spamd
 
 Now we make that users home directory.
 
-    mkdir /var/lib/spamassassin
+.. code:: bash
+
+    sudo mkdir /var/lib/spamassassin
 
 And finally change the permissions of that directory so the spamd user
 can write there.
 
-    chown spamd:spamd /var/lib/spamassassin
+.. code:: bash
+
+    sudo chown spamd:spamd /var/lib/spamassassin
 
 Next up we have to enabled the daemon and configure it. Open up
 **/etc/default/spamassassin** and make the following changes.
 
-::
+.. code:: bash
 
     ENABLED=1
     CRON=1
@@ -52,7 +62,7 @@ Next up we have to enabled the daemon and configure it. Open up
 This will actually allow the spamassassin daemon to start. We also need
 to configure it's new home directory and more.
 
-::
+.. code:: bash
 
     SAHOME="/var/lib/spamassassin/"
     OPTIONS="--create-prefs --max-children 5 --username spamd --helper-home-dir ${SAHOME} -s /var/log/spamd.log"
@@ -62,16 +72,16 @@ Next up we'll make some changes to **/etc/spamassassin/local.cf**
 
 ::
 
-    rewrite\_header Subject \*\*\*\*\* SPAM \_SCORE\_ \*\*\*\*\*
-    report\_safe 1
+    rewrite_header Subject ***** SPAM _SCORE_ *****
+    report_safe 1
 
-    use\_bayes 1
-    use\_bayes\_rules 1
-    bayes\_auto\_learn 1
+    use_bayes 1
+    use_bayes_rules 1
+    bayes_auto_learn 1
 
 These changes will rewrite the email subject to show that it is spam and
-add the spam score too, like this \*\*\*\*\* SPAM 6.0 \*\*\*\*\*,
-report\_safe will attach the spam email as a plain text attachment to
+add the spam score too, like this ***** SPAM 6.0 *****,
+report_safe will attach the spam email as a plain text attachment to
 the email to filter out any bad stuff. The 3 bayes options enabled the
 Bayesian classifier and enable auto learn functionality. For more info
 on Bayesian cliassifier, go `here <http://en.wikipedia.org/wiki/Bayesian_spam_filtering>`_.
@@ -82,16 +92,22 @@ it, we'll configure that later. Now on to...
 ClamAV
 ------
 
-    apt-get install clamsmtp clamav-freshclam
+.. code:: bash
+
+    sudo apt-get install clamsmtp clamav-freshclam
 
 Once installed you'll have an SMTP wrapper for ClamAV installed and a
 daemon that automatically updates your anti-virus database.
 
 Open up **/etc/clamsmtpd.conf** and make the following changes
 
+::
+
     OutAddress: 10026
 
 and
+
+::
 
     Listen: 127.0.0.1:10025
 
@@ -100,11 +116,13 @@ Now we move on to...
 Procmail
 --------
 
-    apt-get install procmail
+.. code:: bash
+
+    sudo apt-get install procmail
 
 Now we need to create **/etc/procmailrc** and add the following to it
 
-::
+.. code:: bash
 
     DROPPRIVS=YES
     ORGMAIL=$HOME/Maildir
@@ -123,8 +141,8 @@ Open up **/etc/postfix/main.cf** and add the following lines
 
 ::
 
-    content\_filter = scan:127.0.0.1:10025
-    receive\_override\_options = no\_address\_mappings
+    content_filter = scan:127.0.0.1:10025
+    receive_override_options = no_address_mappings
 
 This tells Postfix to scan content using ClamAV which is listening on
 port 10025.
@@ -132,31 +150,39 @@ port 10025.
 Now add the following to tell Postfix to deliver mail locally using
 Procmail.
 
-    mailbox\_command = procmail -a "$EXTENSION"
+::
+
+    mailbox_command = procmail -a "$EXTENSION"
 
 Next open up **/etc/postfix/master.cf** and change
 
-    smtp inet n - - - - smtpd
-
-to::
+::
 
     smtp inet n - - - - smtpd
-        -o content\_filter=spamassassin
 
-Then add the following lines to the end of the file::
+to
+
+::
+
+    smtp inet n - - - - smtpd
+        -o content_filter=spamassassin
+
+Then add the following lines to the end of the file
+
+::
 
     scan unix - - n - 16 smtp
-        -o smtp\_send\_xforward\_command=yes
+        -o smtp_send_xforward_command=yes
 
     127.0.0.1:10026 inet n - n - 16 smtpd
-        -o content\_filter=
-        -o receive\_override\_options=no\_unknown\_recipient\_checks,no\_header\_body\_checks
-        -o smtpd\_helo\_restrictions=
-        -o smtpd\_client\_restrictions=
-        -o smtpd\_sender\_restrictions=
-        -o smtpd\_recipient\_restrictions=permit\_mynetworks,reject
-        -o mynetworks\_style=host
-        -o smtpd\_authorized\_xforward\_hosts=127.0.0.0/8
+        -o content_filter=
+        -o receive_override_options=no_unknown_recipient_checks,no_header_body_checks
+        -o smtpd_helo_restrictions=
+        -o smtpd_client_restrictions=
+        -o smtpd_sender_restrictions=
+        -o smtpd_recipient_restrictions=permit_mynetworks,reject
+        -o mynetworks_style=host
+        -o smtpd_authorized_xforward_hosts=127.0.0.0/8
 
     spamassassin unix - n n - - pipe
         user=spamd argv=/usr/bin/spamc -f -e
@@ -167,11 +193,11 @@ These changes tell Postfix to talk to ClamAV and SpamAssassin.
 Finally
 -------
 
-::
+.. code:: bash
 
-    /etc/init.d/spamassassin restart
-    /etc/init.d/clamsmtp restart
-    /etc/init.d/postfix restart
+    sudo /etc/init.d/spamassassin restart
+    sudo /etc/init.d/clamsmtp restart
+    sudo /etc/init.d/postfix restart
 
 That should be everything done, good luck!
 

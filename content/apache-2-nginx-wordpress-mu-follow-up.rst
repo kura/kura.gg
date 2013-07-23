@@ -13,9 +13,9 @@ This is a quick follow up to a previous post about getting this blog
 
 It seems the issue stems from 3 mods I had installed and enabled
 
-#. mod-spamhaus
-#. mod-evasive and
-#. mod-security
+1. mod-spamhaus
+2. mod-evasive and
+3. mod-security
 
 The 3, when running together are a fantastic way to strengthen any web
 server from attack, be it DOS, injection, XLS etc. I've sworn by all 3

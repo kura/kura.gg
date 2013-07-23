@@ -58,16 +58,22 @@ from yum or apt in the past.
 To check to see if you already have a www-data user run the following
 command as root.
 
+.. code:: bash
+
     grep www-data /etc/passwd
 
 You should see the following output, the at signs (@) represent a
 number.
 
-    *www-data:x:@@:@@:www-data:/var/www:/bin/sh*
+::
+
+    www-data:x:@@:@@:www-data:/var/www:/bin/sh
 
 If you don't see this user then we will need to create it.
 
-    useradd -d /var/www -m -U www-data
+.. code:: bash
+
+    sudo useradd -d /var/www -m -U www-data
 
 The -d argument sets the user's home directory to /var/www, -m creates
 the home directory if it does not exist and -U will create a group with
@@ -82,12 +88,16 @@ SSL
 Debian
 ^^^^^^
 
-    apt-get install libssl-dev
+.. code:: bash
+
+    sudo apt-get install libssl-dev
 
 RedHat (yum)
 ^^^^^^^^^^^^
 
-    yum install libssl-dev
+.. code:: bash
+
+    sudo yum install libssl-dev
 
 If you don't have yum installed you will either need to find an RPM or
 install openssl from source (`http://www.openssl.org/source/`_)
@@ -100,12 +110,16 @@ Rewrite module
 Debian
 ^^^^^^
 
-    apt-get install libpcre3 libpcre3-dev
+.. code:: bash
+
+    sudo apt-get install libpcre3 libpcre3-dev
 
 RedHat (yum)
 ^^^^^^^^^^^^
 
-    yum install libpcre-dev
+.. code:: bash
+
+    sudo yum install libpcre-dev
 
 Or compile from source (`http://www.pcre.org/`_)
 
@@ -116,23 +130,25 @@ Configuring
 
 Next we will configure the source::
 
-    ./configure --sbin-path=/usr/bin/nginx\\
-    --conf-path=/etc/nginx/nginx.conf\\
-    --pid-path=/var/run/nginx.pid\\
-    --lock-path=/var/lock/nginx.lock\\
-    --error-log-path=/var/log/nginx/error.log\\
-    --http-log-path=/var/log/nginx/access.log\\
-    --user=www-data\\
-    --group=www-data\\
-    --http-client-body-temp-path=/var/lib/nginx/body\\
-    --http-proxy-temp-path=/var/lib/nginx/proxy\\
-    --http-fastcgi-temp-path=/var/lib/nginx/fastcgi\\
-    --with-http\_ssl\_module\\
-    --with-http\_realip\_module\\
-    --with-http\_addition\_module\\
-    --with-debug\\
-    --with-http\_flv\_module\\
-    --with-http\_stub\_status\_module\\
+.. code:: bash
+
+    ./configure --sbin-path=/usr/bin/nginx \
+    --conf-path=/etc/nginx/nginx.conf \
+    --pid-path=/var/run/nginx.pid \
+    --lock-path=/var/lock/nginx.lock \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --user=www-data \
+    --group=www-data \
+    --http-client-body-temp-path=/var/lib/nginx/body \
+    --http-proxy-temp-path=/var/lib/nginx/proxy \
+    --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \
+    --with-http_ssl_module \
+    --with-http_realip_module \
+    --with-http_addition_module \
+    --with-debug \
+    --with-http_flv_module \
+    --with-http_stub_status_module \
 
 The above command will configure nginx, setting the path to it's binary
 to /usr/bin/nginx, config file path to /etc/nginx/nginx.conf, pid to
@@ -143,17 +159,22 @@ modules; ssl, realip, addition (used for adding content to the start and
 end of pages), debug, flash video and status modules.
 
 If you didn't want to install openssl or pcre then you will have to
-compile without ssl and pcre. Remove --with-http\_ssl\_module from above
+compile without ssl and pcre. Remove --with-http_ssl_module from above
 and disable the rewrite module.
 
-    --without-http\_rewrite\_module
+.. code:: bash
+
+    --without-http_rewrite_module
 
 Compiling
 ~~~~~~~~~
 
 Once done, if you have no errors you can actually compile nginx.
 
-    make && make install
+.. code:: bash
+
+    make
+    sudo make install
 
 nginx configuration
 -------------------
@@ -163,55 +184,63 @@ options. First open up nginx's main configuration file
 
     /etc/nginx/nginx.conf
 
-Modify it to look like the one below.::
+Modify it to look like the one below.
+
+.. code:: nginx
 
     user www-data www-data;
-    worker\_processes 2;
+    worker_processes 2;
 
-    error\_log /var/log/nginx/error.log;
+    error_log /var/log/nginx/error.log;
     pid /var/run/nginx.pid;
 
     events {
-        worker\_connections 1024;
+        worker_connections 1024;
     }
 
     http {
         include /etc/nginx/mime.types;
-        access\_log /var/log/nginx/access.log;
+        access_log /var/log/nginx/access.log;
         sendfile on;
-        tcp\_nopush on;
-        keepalive\_timeout 5;
-        tcp\_nodelay on;
+        tcp_nopush on;
+        keepalive_timeout 5;
+        tcp_nodelay on;
         gzip on;
 
-        include /etc/nginx/conf.d/\*.conf;
-        include /etc/nginx/sites-enabled/\*;
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
     }
 
 Next we'll create the sub directories for holding site and module
 configuation.
 
-    mkdir /etc/nginx/sites-available && mkdir /etc/nginx/sites-enabled && mkdir /etc/nginx/conf.d
+.. code:: bash
+
+    sudo mkdir /etc/nginx/sites-available
+    sudo mkdir /etc/nginx/sites-enabled
+    sudo mkdir /etc/nginx/conf.d
 
 Next we'll create the default server definition.
 
     /etc/nginx/sites-available/default
 
-And put the following in it.::
+And put the following in it.
+
+.. code:: nginx
 
     server {
         listen 80;
-        server\_name localhost;
-        access\_log /var/log/nginx/localhost.access.log;
+        server_name localhost;
+        access_log /var/log/nginx/localhost.access.log;
 
         location / {
             root /var/www/;
             index index.html index.htm;
         }
 
-        location /nginx\_status {
-            stub\_status on;
-            access\_log off;
+        location /nginx_status {
+            stub_status on;
+            access_log off;
             allow 127.0.0.1;
             deny all;
         }
@@ -220,9 +249,12 @@ And put the following in it.::
 
 Now we symlink it in to the sites-enabled directory.
 
-    ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+.. code:: bash
+
+    sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
 Start/stop scripts
+------------------
 
 Once installation is complete we need to install a start/stop script, to
 simply make life easier.
@@ -236,14 +268,20 @@ here`_.
 Starting nginx
 --------------
 
+.. code:: bash
+
     /etc/init.d/nginx start
 
 Starting the service on boot
 
 Edit the following file:
 
+.. code:: bash
+
     /etc/rc.local
 
 And add the following before the exit call.
+
+.. code:: bash
 
     /etc/init.d/nginx start

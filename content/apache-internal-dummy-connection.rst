@@ -20,7 +20,9 @@ written spider which was generating a lot of server load when it hit the
 server, but after IP banning the culprit I also found several instances
 of Apache waking it's child processes.
 
-    127.0.0.1 - - [23/Mar/2010:17:02:38 +0000] "OPTIONS \* HTTP/1.0" 200 - "-" "Apache (internal dummy connection)"
+::
+
+    127.0.0.1 - - [23/Mar/2010:17:02:38 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache (internal dummy connection)"
 
 This in itself is normal and nothing to worry about, generally, it is
 known and also mentioned on the Apache wiki (`explanation here`_) that
@@ -33,9 +35,10 @@ run 2.2.8 which doesn't actually used that same method.
 I applied the well known "work around" for this to test it and see if it
 made any difference.
 
+.. code:: apache
+
     RewriteEngine on
-    RewriteCond %{HTTP\_USER\_AGENT} ^.\*internal dummy connection.\*$
-    [NC]
+    RewriteCond %{HTTP_USER_AGENT} ^.*internal dummy connection.*$ [NC]
     RewriteRule ^/$ /blank.html [L]
 
 Adding the virtual hosts with dynamic content will simple rewrite

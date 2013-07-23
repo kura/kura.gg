@@ -19,6 +19,8 @@ Installing sudo
 
 So first things first, lets install sudo.
 
+.. code:: bash
+
     apt-get install sudo
 
 Chances are you've probably already got sudo installed but depending on
@@ -69,6 +71,8 @@ So how do I use sudo?
 
 Well, this is what **man sudo** is for, but basically it's simple:
 
+.. code:: bash
+
     sudo cat /etc/issue
 
 Yes, this command would work without the need for sudo, but I wanted a
@@ -89,6 +93,8 @@ choice.
 So, open your sudoers list using your chosen method, you should see
 something similar to this:
 
+.. code:: bash
+
     root ALL=(ALL) ALL
 
 So, what does this mean? Well, it's actually surprisingly simple. The
@@ -101,6 +107,8 @@ can run.
 So, this might be a bit daunting from that explanation, so lets take a
 look at a user I'll create for myself
 
+.. code:: bash
+
     kura ALL=(root) /usr/bin/apt-get, /usr/bin/vi
 
 So lets break that down; the user **kura** can run the commands
@@ -112,6 +120,8 @@ commands are run as you can user any user or daemon on the server, for
 example root could be another user, in the following example I will use
 a different user called admin.
 
+.. code:: bash
+
     kura ALL=(admin) /usr/bin/apt-get, /usr/bin/vi
 
 Adding groups to sudoers
@@ -119,6 +129,8 @@ Adding groups to sudoers
 
 The approach for this is exactly the same as for users except you use %
 to define a group.
+
+.. code:: bash
 
     %sudoers ALL=(root) /usr/bin/apt-get, /usr/bin/vi
 

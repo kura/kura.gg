@@ -36,6 +36,8 @@ Requires
 Usage
 -----
 
+.. code:: bash
+
     python bozo.py HASHES.TXT
 
 The file of hashes must contain a 32 character MD5 hash separated by a

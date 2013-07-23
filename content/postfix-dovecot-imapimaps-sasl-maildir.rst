@@ -16,7 +16,9 @@ for Debian 5 and Ubuntu 10.04 and above.
 The installation
 ----------------
 
-    apt-get install dovecot-imapd postfix sasl2-bin libsasl2-2 libsasl2-modules
+.. code:: bash
+
+    sudo apt-get install dovecot-imapd postfix sasl2-bin libsasl2-2 libsasl2-modules
 
 Choose "Internet site" when prompted and enter the fully qualified name
 of your server.
@@ -28,21 +30,23 @@ Postfix
 -------
 
 Open up **/etc/postfix/main.cf** and add the following to the end of the
-file::
+file
 
-    home\_mailbox = Maildir/
-    smtpd\_sasl\_auth\_enable = yes
-    smtpd\_sasl\_security\_options = noanonymous
-    smtpd\_sasl\_local\_domain = $myhostname
-    broken\_sasl\_auth\_clients = yes
+::
 
-    smtpd\_sender\_restrictions = permit\_sasl\_authenticated,
-        permit\_mynetworks,
+    home_mailbox = Maildir/
+    smtpd_sasl_auth_enable = yes
+    smtpd_sasl_security_options = noanonymous
+    smtpd_sasl_local_domain = $myhostname
+    broken_sasl_auth_clients = yes
 
-    smtpd\_recipient\_restrictions = permit\_mynetworks,
-        permit\_sasl\_authenticated,
-        reject\_unauth\_destination,
-        reject\_unknown\_sender\_domain,
+    smtpd_sender_restrictions = permit_sasl_authenticated,
+        permit_mynetworks,
+
+    smtpd_recipient_restrictions = permit_mynetworks,
+        permit_sasl_authenticated,
+        reject_unauth_destination,
+        reject_unknown_sender_domain,
 
 Here we basically tell Postfix to store all email in maildir format in
 the user's home directory. We then enable SASL with and tell it to not
@@ -62,6 +66,8 @@ Open up **/etc/dovecot/dovecot.conf**
 
 Uncomment the IMAP and IMAPS protocols
 
+::
+
     protocols = imap imaps
 
 Next we configure the protocols, add the following lines just below the
@@ -70,17 +76,21 @@ protocols option
 ::
 
     protocol imap {
-        listen = \*:143
-        ssl\_listen = \*:993/
+        listen = *:143
+        ssl_listen = *:993/
     }
 
-Search through the file for "*mail\_location =*" without the quotes,
+Search through the file for "*mail_location =*" without the quotes,
 make sure it's commented out and add the following below it:
 
-    mail\_location = maildir:~/Maildir/
+::
+
+    mail_location = maildir:~/Maildir/
 
 Now we need to search down the file and comment out everything within
-the "*auth default*" section and add the following below it::
+the "*auth default*" section and add the following below it
+
+::
 
     auth default {
         mechanisms = plain login
@@ -114,6 +124,8 @@ SASL
 Open up the following file**/etc/default/saslauthd**, we need to modify
 a couple of things. Set START to yes and MECHANISMS to pam.
 
+.. code:: bash
+
     START=yes
     MECHANISMS="pam"
 
@@ -122,34 +134,44 @@ changes for SASL.
 
 First we remove the default SASL run location.
 
-    rm -r /var/run/saslauthd/
+.. code:: bash
+
+    sudo rm -r /var/run/saslauthd/
 
 Now we make one within the Postfix chroot.
 
-    mkdir -p /var/spool/postfix/var/run/saslauthd
+.. code:: bash
+
+    sudo mkdir -p /var/spool/postfix/var/run/saslauthd
 
 Symlink it back to /var/run so things work.
 
-    ln -s /var/spool/postfix/var/run/saslauthd /var/run
+.. code:: bash
+
+    sudo ln -s /var/spool/postfix/var/run/saslauthd /var/run
 
 Change the group for the directory we created.
 
-    chgrp sasl /var/spool/postfix/var/run/saslauthd
+.. code:: bash
+
+    sudo chgrp sasl /var/spool/postfix/var/run/saslauthd
 
 And finally add the Postfix user to the SASL group.
 
-    adduser postfix sasl
+.. code:: bash
+
+    sudo adduser postfix sasl
 
 Finally
 -------
 
 Now we just need to restart our services.
 
-::
+.. code:: bash
 
-    /etc/init.d/dovecot restart
-    /etc/init.d/postfix restart
-    /etc/init.d/saslauthd restart
+    sudo /etc/init.d/dovecot restart
+    sudo /etc/init.d/postfix restart
+    sudo /etc/init.d/saslauthd restart
 
 If all went according to plan normal system users should now be able to
 send and receive mail.

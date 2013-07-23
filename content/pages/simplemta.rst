@@ -27,6 +27,8 @@ Requires
 
 These can be installed by simply running the following command:
 
+.. code:: bash
+
     pip install -r requirements.txt
 
 Configuration

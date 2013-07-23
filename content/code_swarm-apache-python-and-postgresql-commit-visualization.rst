@@ -7,7 +7,7 @@ code_swarm - Apache, Python and PostgreSQL commit visualization
 :slug: code_swarm-apache-python-and-postgresql-commit-visualization
 
 These videos are pretty old now and I had forgotten about them until a
-colleague tweeted about a Twitter code\_swarm visualization which made
+colleague tweeted about a Twitter code_swarm visualization which made
 me remember.
 
 So here they are, best viewed in full screen mode.

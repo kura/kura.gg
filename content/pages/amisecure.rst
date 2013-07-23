@@ -65,6 +65,8 @@ Usage
 
 Once downloaded simply run
 
+.. code:: bash
+
     sudo python amisecure.py
 
 Example output

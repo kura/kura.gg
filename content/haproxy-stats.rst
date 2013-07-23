@@ -6,8 +6,9 @@ haproxy stats
 :tags: haproxy, stats
 :slug: haproxy-stats
 
-I recently wrote an article on using haproxy, SSL and
-SPDY with nginx backend servers.
+I recently wrote an article on `using haproxy, SSL and
+SPDY with nginx backend servers
+<https://kura.io/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/>`_.
 
 This article is a little extra on top of that to explain
 how to enable statistics for haproxy so you can monitor
@@ -39,5 +40,6 @@ Be sure to replace *admin:admin* with your a proper
 username and password, username first, password
 after the colon.
 
-Restart haproxy, all done.
+Restart haproxy, and then browse to `http://yousite.com:8000
+<http://yoursite.com:8000>`_.
 

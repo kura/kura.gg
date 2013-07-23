@@ -26,7 +26,7 @@ We'll start with a very simple change that makes a very big difference,
 a change to the security of SSH. The file is located in the location
 below on a Debian system.
 
-    /etc/ssh/sshd\_config
+    /etc/ssh/sshd_config
 
 Replace this.
 
@@ -49,7 +49,9 @@ DenyHosts
 This is one of my favourite programs, if not my favourite program and is
 of course available from the Debian repository.
 
-    apt-get install denyhosts
+.. code:: bash
+
+    sudo apt-get install denyhosts
 
 Once installed it will configure itself and should start on it's own
 too. DenyHosts will monitor your SSH logs and ban people that it sees
@@ -76,23 +78,25 @@ reading the config file to see what they actually do.
 
 ::
 
-    BLOCK\_SERVICE = ALL
-    DENY\_THRESHOLD\_INVALID = 5
-    DENY\_THRESHOLD\_VALID = 10
-    DENY\_THRESHOLD\_ROOT = 1
-    DENY\_THRESHOLD\_RESTRICTED = 1
-    HOSTNAME\_LOOKUP=YES
-    ADMIN\_EMAIL = myemail@mydomain.tld
-    SMTP\_HOST = localhost
-    SMTP\_PORT = 25
-    SMTP\_HOST = localhost
-    SMTP\_PORT = 25
-    SMTP\_FROM = DenyHosts <denyhosts@SERVERNAME>
-    SMTP\_SUBJECT = DenyHosts Report from $[HOSTNAME]
+    BLOCK_SERVICE = ALL
+    DENY_THRESHOLD_INVALID = 5
+    DENY_THRESHOLD_VALID = 10
+    DENY_THRESHOLD_ROOT = 1
+    DENY_THRESHOLD_RESTRICTED = 1
+    HOSTNAME_LOOKUP=YES
+    ADMIN_EMAIL = myemail@mydomain.tld
+    SMTP_HOST = localhost
+    SMTP_PORT = 25
+    SMTP_HOST = localhost
+    SMTP_PORT = 25
+    SMTP_FROM = DenyHosts <denyhosts@SERVERNAME>
+    SMTP_SUBJECT = DenyHosts Report from $[HOSTNAME]
 
 Once configured simply restart the DenyHosts daemon.
 
-    /etc/init.d/denyhosts restart
+.. code:: bash
+
+    sudo /etc/init.d/denyhosts restart
 
 Logwatch
 --------
@@ -100,13 +104,17 @@ Logwatch
 Next up is another fantastic little program. It's simple, it's
 lightweight and... it's in the Debian repository.
 
-    apt-get install logwatch
+.. code:: bash
+
+    sudo apt-get install logwatch
 
 This program does as it's name suggests, it watches your log files, it
 then emails them to you every day and runs from **/etc/cron.daily**.
 
 There really is no configuration required for logwatch, I personally
 just edit the cron job to force a mailto.
+
+.. code:: bash
 
     /usr/sbin/logwatch --mailto myemail@mydomain.tld
 
@@ -138,7 +146,7 @@ also things that aren't even present on my server.
     Users logging in through sshd:
 
     hidden:
-    \*\*\*.\*\*\*.\*\*\*.\*\*\* (my.hostname.com): 4 times
+    ***.***.***.*** (my.hostname.com): 4 times
 
     Refused incoming connections:
     190.144.99.98 (190.144.99.98): 2 Time(s)
@@ -169,13 +177,19 @@ These changes are made to the following conf file on a Debian server.
 
 Only show minimal information in headers.
 
+.. code:: apache
+
     ServerTokens Prod
 
 Don't include server version in server-generated pages.
 
+.. code:: apache
+
     ServerSignature Off
 
 Disable the icons alias that FancyIndexed directory listings use.
+
+.. code:: apache
 
     #Alias /icons/ "/var/www/icons/"
 
@@ -183,11 +197,15 @@ The following change will need to be done to your vhosts too, it
 disallows users from browsing your directory structures when no index
 file is present.
 
+.. code:: apache
+
     Options -Indexes
 
 Restart apache and you're good.
 
-    /etc/init.d/apache2 restart
+.. code:: bash
+
+    sudo /etc/init.d/apache2 restart
 
 PHP
 ---
@@ -199,22 +217,26 @@ in the following file.
 
 Turn off PHP exposure.
 
-    expose\_php = Off
+.. code:: ini
+
+    expose_php = Off
 
 Preventing session fixation. For more information on this please see
 `this paper`_.
 
 .. _this paper: http://www.acros.si/papers/session_fixation.pdf
 
-::
+.. code:: ini
 
-    session.use\_only\_cookies = 1
-    session.cookie\_httponly = 1
-    session.use\_trans\_sid = 0
+    session.use_only_cookies = 1
+    session.cookie_httponly = 1
+    session.use_trans_sid = 0
 
 Once changed simply restart Apache.
 
-    /etc/php5/apache2/php.ini
+.. code:: bash
+
+    sudo /etc/init.d/apache2 restart
 
 Round up
 --------

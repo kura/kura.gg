@@ -11,11 +11,10 @@ Installation
 
 Simple, if it's not installed already then run the following commands
 
-    sudo su
+.. code:: bash
 
-    apt-get update && apt-get install iptables
-
-    /etc/init.d/iptables start
+    sudo apt-get install iptables
+    sudo /etc/init.d/iptables start
 
 The safest and best way of configuring iptables, in my opinion, is to
 have two files. The first is a temporary/test set that you will save to
@@ -27,11 +26,13 @@ Configuration
 
 So, first we'll create an empty temp rules file
 
-    touch /etc/iptables.temp.rules
+.. code:: bash
+
+    sudo touch /etc/iptables.temp.rules
 
 Add some simple rules to it::
 
-    \*filter
+    *filter
     # Allows all loopback traffic and drop all traffic to 127/8 that doesn't use lo
 
     -A INPUT -i lo -j ACCEPT
@@ -70,16 +71,22 @@ Add some simple rules to it::
 
 Next we apply this rule set to the currently running iptables instance
 
-    iptables-restore < /etc/iptables.temp.rules
+.. code:: bash
+
+    sudo iptables-restore < /etc/iptables.temp.rules
 
 Check to make sure they loaded correctly
 
-    iptables -L
+.. code:: bash
+
+    sudo iptables -L
 
 If everything looks OK and ready to go then we simply save, this time to
 the secondary file that I mentioned earlier
 
-    iptables-save > /etc/iptables.up.rules
+.. code:: bash
+
+    sudo iptables-save > /etc/iptables.up.rules
 
 Network interface configuration
 -------------------------------
@@ -95,9 +102,13 @@ Find the following lines::
 
 And add this to the end
 
+.. code:: bash
+
     pre-up iptables-restore < /etc/iptables.up.rules
 
-So that it becomes::
+So that it becomes
+
+.. code:: bash
 
     auto lo
     iface lo inet loopback

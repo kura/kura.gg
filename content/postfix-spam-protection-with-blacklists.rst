@@ -10,7 +10,7 @@ This really should be quite a quick and simple post.
 
 I use several tools to protect my mail servers from spam, the most
 effective of these I've found is using external lists in conjunction
-with **reject\_rbl\_client** and **reject\_rhsbl\_client**.
+with **reject_rbl_client** and **reject_rhsbl_client**.
 
 +======================+
 | Service              | Description
@@ -41,11 +41,13 @@ aggressive and a lot of people advise not to use them due to this. They
 have been known to block emails from senders like Facebook.***
 
 You can pick and choose which ones you use and you configure them as
-below within **smtp\_recipient\_restrictions** in **/etc/postfix/main.cf**
+below within **smtp_recipient_restrictions** in **/etc/postfix/main.cf**
 
-    smtpd\_recipient\_restrictions =
-      reject\_rbl\_client zen.spamhaus.org,
-      reject\_rbl\_client dnsbl.sorbs.net,
-      reject\_rbl\_client spam.dnsbl.sorbs.net,
-      reject\_rbl\_client bl.spamcop.net,
-      reject\_rhsbl\_client rhsbl.ahbl.org
+::
+
+    smtpd_recipient_restrictions =
+      reject_rbl_client zen.spamhaus.org,
+      reject_rbl_client dnsbl.sorbs.net,
+      reject_rbl_client spam.dnsbl.sorbs.net,
+      reject_rbl_client bl.spamcop.net,
+      reject_rhsbl_client rhsbl.ahbl.org

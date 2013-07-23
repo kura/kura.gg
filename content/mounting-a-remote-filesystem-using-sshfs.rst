@@ -8,14 +8,20 @@ Mounting a remote filesystem using sshfs
 
 First we need to install sshfs.
 
+.. code:: bash
+
     sudo apt-get install sshfs fuse-utils
 
 Now we make a mount point, I'm going to use a directory in my home
 directory for this.
 
+.. code:: bash
+
     mkd﻿ir ~/remote-content
 
 And now we simply mount our remote directory to it.
+
+.. code:: bash
 
     sshfs user@host:/path/to/location ~/remote-content
 

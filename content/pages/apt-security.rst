@@ -31,6 +31,8 @@ Install
 
 Extract the tarball or zipball and run
 
+.. code:: bash
+
     sudo ./installer
 
 within the extracted directory.
@@ -41,16 +43,18 @@ Usage
 You will need to resynchronise your package index just like you would
 normally using
 
-    apt-get update
+.. code:: bash
+
+    sudo apt-get update
 
 Both commands listed below need to be run as root or sudo.
 
 apt-security-sources
 ~~~~~~~~~~~~~~~~~~~~
 
-    /usr/bin/apt-security-sources
+.. code:: bash
 
-    apt-security-sources
+    /usr/bin/apt-security-sources
 
 Refreshes the repository list from */etc/apt/sources.list* and stores it
 in */etc/apt/security.sources.list*, this is called by the installer but
@@ -60,9 +64,9 @@ operating system.
 apt-get-security
 ~~~~~~~~~~~~~~~~
 
-    /usr/bin/apt-get-security
+.. code:: bash
 
-    apt-get-security
+    /usr/bin/apt-get-security
 
 Does an upgrade of packages from the security repositories
 
