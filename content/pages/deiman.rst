@@ -51,7 +51,7 @@ Usage
 
 To use Deiman, you simply need to import the main Deiman class,
 passing a path to where you want the pid to be stored and call
-the start and stop methods as required::
+the start and stop methods as required
 
 .. code:: python
 
