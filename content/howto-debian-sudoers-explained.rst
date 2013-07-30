@@ -6,6 +6,17 @@ HOWTO: Debian - Sudo(ers) explained
 :tags: debian, howto, sudo, sudoers
 :slug: howto-debian-sudoers-explained
 
+Contents
+--------
+
+ - `What is sudo?`_
+ - `Why use sudo?`_
+ - `Installing sudo`_
+ - `So how do I use sudo?`_
+ - `Adding users to sudo`_
+ - `Adding groups to sudoers`_
+ - `How I personally use sudoers`_
+
 Ah sudo, one of my favourites, funnily enough I've noticed a lot of
 Linux users use sudo (mainly because Ubuntu installs and configures your
 first user by default,) but very few seem to know that much about it.
@@ -13,19 +24,6 @@ This can include not even knowing how to add a user to sudoers.
 
 This article will give you some useful information on what sudo actually
 is, how to configure it and how to restrict it.
-
-Installing sudo
----------------
-
-So first things first, lets install sudo.
-
-.. code:: bash
-
-    apt-get install sudo
-
-Chances are you've probably already got sudo installed but depending on
-how you installed Debian (or whichever flavour you're using) you may not
-have chosen to install it.
 
 What is sudo?
 -------------
@@ -65,6 +63,19 @@ if I want them accessible" I hear you cry, of course you can, but there
 are some things you simply don't want to expose and yes, you can argue
 that you just add a user to a group that has permissions but sudo is
 just a better way of controlling access.
+
+Installing sudo
+---------------
+
+So first things first, lets install sudo.
+
+.. code:: bash
+
+    apt-get install sudo
+
+Chances are you've probably already got sudo installed but depending on
+how you installed Debian (or whichever flavour you're using) you may not
+have chosen to install it.
 
 So how do I use sudo?
 ---------------------

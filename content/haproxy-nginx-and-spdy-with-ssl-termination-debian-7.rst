@@ -6,6 +6,19 @@ haproxy, nginx and SPDY with SSL termination (Debian 7)
 :tags: debian, ubuntu, haproxy, nginx, spdy, ssl, ssl termination
 :slug: haproxy-nginx-and-spdy-with-ssl-termination-debian-7
 
+Contents
+--------
+
+ - `Requirements`_
+ - `Installing haproxy`_
+ - `Configuring haproxy`_
+ - - `frontend http`_
+ - - `frontend kura-io`_
+ - - `backend kura-app-spdy`_
+ - - `backend kura-app-http`_
+ - `nginx`_
+ - `Configuring nginx`_
+
 `I wrote an article last week`_ explaining that I had changed my blog
 and built my own nginx packages with `SPDY`_ built in.
 

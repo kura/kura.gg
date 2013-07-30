@@ -6,6 +6,15 @@ Backup a Linux server to Amazon S3 on Debian 6/Ubuntu 10.04
 :tags: amazon, aws, backup, debian, s3, ubuntu
 :slug: backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04
 
+Contents
+--------
+
+ - `About S3`_
+ - `Installation`_
+ - `Configuration`_
+ - `Using s3cmd`_
+ - `Example`_
+
 I have several servers powering syslog including it's `Raspberry Pi`_
 mirror, load balancer and email servers. All of my servers are hosted
 using `Linode`_ in their London data centre and have Linode's back-up
@@ -24,8 +33,8 @@ for that I use `S3`_...
 
 .. _S3: http://aws.amazon.com/s3/
 
-S3
---
+About S3
+--------
 
 Amazon's S3 is pretty cheap and very easy to use. Because only data is
 going in you don't pay a transfer fee and the cost of storage is very
@@ -131,7 +140,7 @@ And delete it with
 
 Once satisfied with this you can create a shell script to automate some
 backups for you, I'll provide a simple one below that uploads my home
-directory
+directory.
 
 Example
 -------

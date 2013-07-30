@@ -6,6 +6,16 @@ HOWTO: Debian server security
 :tags: apache, debian, denyhosts, howto, logwatch, php, security
 :slug: howto-debian-server-security
 
+Contents
+--------
+
+ - `SSH`_
+ - `DenyHosts`_
+ - `Logwatch`_
+ - `Apache 2`_
+ - `PHP`_
+ - `Round up`_
+
 Server security is something I've always tried to keep myself up-to-date
 on. I have at least a dozen RSS feeds that I read daily to learn about
 the latest flaws, holes releases etc. That being said I am by no means
@@ -168,8 +178,8 @@ With that said it's now time to move on to the actual "web server" side
 of things, the following changes are all personal preference but do help
 increase security.
 
-Apache 2 changes
-----------------
+Apache 2
+--------
 
 These changes are made to the following conf file on a Debian server.
 
