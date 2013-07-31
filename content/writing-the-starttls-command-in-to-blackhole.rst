@@ -17,7 +17,8 @@ standard `250 OK` response but would continue to operate on unencrypted
 SMTP.
 
 I wanted to fix this and do it properly, but this meant learning how
-to do so with Tornado, which itself proved to be tricky.
+to do so with Tornado, which itself proved to be tricky. I ended up
+deciding to go to my local coding spot - the pub and hash it out.
 
 connection_stream
 =================
@@ -129,7 +130,7 @@ and removed the original instance of `IOStream` from it.
     if line.lower().startswith("starttls"):
         fileno = mail_state.stream.socket.fileno()
         IOLoop.current().remove_handler(fileno)
-        mail_state.stream = ssl_connection(connection
+        mail_state.stream = ssl_connection(connection)
 
 connection_ready
 ================
