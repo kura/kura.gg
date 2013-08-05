@@ -12,8 +12,8 @@ I use several tools to protect my mail servers from spam, the most
 effective of these I've found is using external lists in conjunction
 with **reject_rbl_client** and **reject_rhsbl_client**.
 
-+======================+
-| Service              | Description
++======================+======================================================================================================+
+| Service              | description                                                                                          |
 +======================+======================================================================================================+
 | zen.spamhaus.org     | A single lookup for querying the SBL, XBL and PBL databases.                                         |
 |                      |  - SBL - Verified sources of spam, including spammers and their support services                     |
