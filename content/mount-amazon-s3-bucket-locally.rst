@@ -88,7 +88,7 @@ Fix missing dependencies
 
     sudo apt-get -f install
 
-Now run the command below and confirm the output::
+Now run the command below and confirm the output
 
 .. code:: bash
 

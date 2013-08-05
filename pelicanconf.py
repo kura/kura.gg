@@ -39,7 +39,7 @@ MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
                 'extra/favicon.ico',]
 
-PDF_GENERATOR = True
+PDF_STYLE_PATH = ''
 PDF_STYLE = "twelvepoint"
 FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
                  ('extra/favicon.ico', 'favicon.ico'),)
@@ -67,6 +67,7 @@ PLUGINS = [
     'archive_unique_dates',
     'sitemap',
     'gzip_cache',
+    'pdf',
     # ...
 ]
 
