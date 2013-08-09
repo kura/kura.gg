@@ -70,9 +70,16 @@ publish:
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
-rsync_upload: publish
+rsync_upload:
+	sed -i "s/# 'pdf',/'pdf',/g" pelicanconf.py
+	make publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app1:$(SSH_TARGET_DIR) --cvs-exclude
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
+	sed -i "s/'pdf',/# 'pdf',/g" pelicanconf.py
+	make publish
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app1:$(SSH_TARGET_DIR) --cvs-exclude
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
+
 
 dropbox_upload: publish
 	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)

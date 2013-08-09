@@ -168,7 +168,7 @@ fstab
 
 Mounting via fstab requires the above FUSE step to be completed.
 
-Your **/etc/fstab** entry should look like this::
+Your **/etc/fstab** entry should look like this
 
 .. code:: bash
 

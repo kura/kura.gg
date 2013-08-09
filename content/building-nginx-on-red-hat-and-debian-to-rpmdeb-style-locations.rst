@@ -141,7 +141,7 @@ Or compile from source (`http://www.pcre.org/`_)
 Configuring
 ~~~~~~~~~~~
 
-Next we will configure the source::
+Next we will configure the source
 
 .. code:: bash
 

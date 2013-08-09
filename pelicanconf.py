@@ -67,7 +67,7 @@ PLUGINS = [
     'archive_unique_dates',
     'sitemap',
     'gzip_cache',
-    'pdf',
+    # 'pdf',
     # ...
 ]
 

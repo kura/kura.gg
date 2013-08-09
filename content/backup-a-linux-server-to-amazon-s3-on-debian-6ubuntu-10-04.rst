@@ -48,7 +48,7 @@ S3 using `s3cmd`_.
 Installation
 ------------
 
-Download the S3 tools package list in to apt::
+Download the S3 tools package list in to apt
 
 .. code:: bash
 
