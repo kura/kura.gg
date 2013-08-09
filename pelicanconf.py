@@ -67,6 +67,8 @@ PLUGINS = [
     'archive_unique_dates',
     'sitemap',
     'gzip_cache',
+    'pelican_vimeo',
+    'pelican_youtube',
     # 'pdf',
     # ...
 ]

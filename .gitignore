@@ -2,4 +2,4 @@ output
 pelican.pid
 srv.pid
 pelican-plugins
-
+.ropeproject
