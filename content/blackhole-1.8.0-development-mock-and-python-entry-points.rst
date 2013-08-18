@@ -10,10 +10,8 @@ Blackhole 1.8.0 development, Mock and Python entry_points
 
 Over the last week I've been doing a huge amount of refactoring of
 `Blackhole <http://blackhole.io>`_ as well as writing dozens of additional
-tests.
-
-To make Blackhole more testable I need to make a big change to how the program
-is launched and controlled.
+tests. To make Blackhole more testable I needed to make a big change to
+how the program is launched and controlled.
 
 setup.py scripts vs. entry_points
 =================================
@@ -30,17 +28,14 @@ or in the three line example below.
       ],
 
 In doing so, it allowed me to be lazy and write a lot of prodecural code in the
-main "binary" which made it pretty much impossible to test.
-
-You can also see that `on GitHub in the main "binary"
-<https://github.com/kura/blackhole/blob/bb6cccca3a75def324ed5cb64a32fd2e5773a038/blackhole/bin/blackhole>`_
+main "binary" which made it pretty much impossible to test. You can also see
+that `on GitHub in the main "binary"
+<https://github.com/kura/blackhole/blob/bb6cccca3a75def324ed5cb64a32fd2e5773a038/blackhole/bin/blackhole>`_.
 
 I've noticed that most people who write Python packages that have some kind of
-commandlin entry point use distutils' `entry_points` option instead of
-`scripts`.
-
-I decided to rewrite Blackhole to make it use the same entry_points option
-and also make it's new entry point as testable as possible.
+commandline entry point use distutils' `entry_points` option instead of
+`scripts`. I decided to rewrite Blackhole to make it use the same entry_points
+option and also make it's new entry point as testable as possible.
 
 setup.py entry_point change
 ---------------------------
