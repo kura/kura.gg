@@ -22,8 +22,8 @@ passed in.
 Downloads
 ---------
 
- - `.tar.gz`_
- - `.zip`_
+- `.tar.gz`_
+- `.zip`_
 
 .. _.tar.gz: https://github.com/kura/pybozo/tarball/master
 .. _.zip: https://github.com/kura/pybozo/zipball/master
@@ -31,7 +31,7 @@ Downloads
 Requires
 --------
 
--  Python 2.6+
+- Python 2.6+
 
 Usage
 -----

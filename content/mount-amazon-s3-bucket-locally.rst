@@ -6,11 +6,12 @@ Mount Amazon S3 bucket locally on Debian 5 & 6/Ubuntu 10.04
 :tags: aws, fstab, fuse, mount, s3, s3fs
 :slug: mount-amazon-s3-bucket-locally
 
+.. contents::
+
 I've recently been toying with my `Raspberry Pi mirror`_ including
 moving it out on to Amazon's S3. I've written an article on `how to back
 up to S3`_, but that isn't enough when it comes to serving data
 from S3.
-
 
 .. _Raspberry Pi mirror: http://rpi.syslog.tv/
 .. _how to back up to S3: https://syslog.tv/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/

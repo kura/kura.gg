@@ -6,6 +6,8 @@ Using dpkg selections to backup and install packages
 :tags: apt, backup, dpkg, packages
 :slug: using-dpkg-selections-to-backup-and-install-packages
 
+.. contents::
+
 Sometimes you want to be able to install packages on another machine
 without the hassle of a long apt-get install command or having to write
 down every single package you've installed.

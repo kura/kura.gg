@@ -25,8 +25,8 @@ additional OS X/Homebrew documentation from `Dean Malmgren
 Downloads
 =========
 
- - `.tar.gz <https://github.com/kura/vagrant-bash-completion/tarball/master>`_
- - `.zip <https://github.com/kura/amisecure/zipball/master>`_
+- `.tar.gz <https://github.com/kura/vagrant-bash-completion/tarball/master>`_
+- `.zip <https://github.com/kura/amisecure/zipball/master>`_
 
 Installation
 ============

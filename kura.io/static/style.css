@@ -195,6 +195,18 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 p { max-width: 80%; }
 
+.topic-title {
+    font-size: 2.625rem;
+    font-family: "Open Sans";
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    padding-top: 0.273em;
+    line-height: 1.15538em;
+    padding-bottom: 0.273em
+    color: #3498DB;
+}
+#contents { margin-bottom: 15px; }
+
 a, a:hover { color: #3498DB; }
 a:focus { color: #34495E; }
 

@@ -6,6 +6,8 @@ Writing a Vimeo and YouTube plugin for Pelican
 :tags: python, pelican, youtube, vimeo
 :slug: writing-a-vimeo-and-youtube-plugin-for-pelican
 
+.. contents::
+
 `Pelican <http://getpelican.com/>`_ is a Python-powered static blog generator
 that processes `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_
 and `Markdown <http://daringfireball.net/projects/markdown/>`_ articles and

@@ -6,18 +6,7 @@ Building nginx on Red Hat and Debian to RPM/DEB-style locations
 :tags: debian, fedora, install, nginx, redhat, ubuntu
 :slug: building-nginx-on-red-hat-and-debian-to-rpmdeb-style-locations
 
-Contents
---------
-
- - `Brief introduction of what's to come`_
- - `Installation`_
- - `SSL`_
- - `Rewrite module`_
- - `Configuring`_
- - `Compiling`_
- - `nginx configuration`_
- - `Start/stop scripts`_
- - `Starting nginx`_
+.. contents::
 
 The title of this post is a bit stupid, but I honestly couldn't think of
 any other way to write it...
@@ -50,9 +39,9 @@ configure and also provide a start/stop script for RHEL4, 5 and Debian.
 The build process can be found on the nginx wiki and is a very simple
 thing, but I passed some different arguments to do the follow;
 
--  Install all modules that I wanted
--  Build to /usr/bin, store config files in /etc/nginx, add
-   sites-available, sites-enabled folders and logs to /var/log/nginx
+- Install all modules that I wanted
+- Build to /usr/bin, store config files in /etc/nginx, add
+  sites-available, sites-enabled folders and logs to /var/log/nginx
 
 I'm going to assume you have the latest 0.7.X or even 0.8.X source
 already downloaded, untarred and also have gcc and all other required

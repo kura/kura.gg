@@ -14,8 +14,8 @@ updated packages at the same time.
 Downloads
 ---------
 
- - `.tar.gz`_
- - `.zip`_
+- `.tar.gz`_
+- `.zip`_
 
 .. _.tar.gz: https://github.com/kura/apt-security/tarball/master
 .. _.zip: https://github.com/kura/apt-security/zipball/master
@@ -23,8 +23,8 @@ Downloads
 Requires
 --------
 
- - Debian or Debian-based operating system
- - APT
+- Debian or Debian-based operating system
+- APT
 
 Install
 -------

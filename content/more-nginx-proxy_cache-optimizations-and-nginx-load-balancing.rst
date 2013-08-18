@@ -6,6 +6,8 @@ More nginx proxy_cache optimizations and nginx load balancing
 :tags: apache, cache, debian, howto, load balancing, nginx, ubuntu, wordpress
 :slug: more-nginx-proxy_cache-optimizations-and-nginx-load-balancing
 
+.. contents::
+
 This is yet another follow up to post to several previous posts about
 using nginx as a reverse proxy with caching. It is actually a direct
 addition to my post from a week or so ago which outlined how to actually
@@ -39,9 +41,9 @@ I've decided to put the temporary caches file in to an nginx specific
 directory, just to separate them from other cache files. I've also
 modified the proxy_cache_key to add the following variables:
 
--  **$scheme** - This will be the protocol; http or https
--  **$host** - Host name, this will be set as syslog.tv for me
--  **$request_uri** - The full request uri, this is simple
+- **$scheme** - This will be the protocol; http or https
+- **$host** - Host name, this will be set as syslog.tv for me
+- **$request_uri** - The full request uri, this is simple
 
 Why add these variables? Quite simple really, it means I can have
 multiple sites running with proxy caching enabled and have them set a

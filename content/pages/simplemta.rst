@@ -13,8 +13,8 @@ No mail spools, no disk I/O (unless logging is turned on), low memory and CPU us
 Downloads
 =========
 
- - `.tar.gz`_
- - `.zip`_
+- `.tar.gz`_
+- `.zip`_
 
 .. _.tar.gz: https://github.com/kura/simplemta/tarball/master
 .. _.zip: https://github.com/kura/simplemta/zipball/master
@@ -22,8 +22,8 @@ Downloads
 Requires
 ========
 
- - eventlet==0.9.15
- - greenlet==0.3.1
+- eventlet==0.9.15
+- greenlet==0.3.1
 
 These can be installed by simply running the following command:
 
@@ -41,11 +41,13 @@ Please note it is generally not a good idea to enable DEBUG mode, if you're rece
 Usage
 =====
 
-    ./simplemta.py start Starts the server
-
-    ./simplemta.py stop Stops the server
-
-    ./simplemta.py restart Restarts the server
++----------------+---------+---------------------+
+| ./simplemta.py | start   | Starts the server   |
++================+=========+=====================+
+| ./simplemta.py | stop    | Stops the server    |
++----------------+---------+---------------------+
+| ./simplemta.py | restart | Restarts the server |
++----------------+---------+---------------------+
 
 Source
 ======

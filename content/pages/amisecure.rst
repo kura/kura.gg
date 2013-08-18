@@ -15,11 +15,11 @@ the tests.
 What can it scan?
 -----------------
 
- - OpenSSH
- - nginx
- - Apache2
- - PHP5
- - DenyHosts
+- OpenSSH
+- nginx
+- Apache2
+- PHP5
+- DenyHosts
 
 How does it work?
 -----------------
@@ -49,8 +49,8 @@ Downloads
 
 ***Please note this is alpha software.***
 
- - `.tar.gz`_
- - `.zip`_
+- `.tar.gz`_
+- `.zip`_
 
 .. _.tar.gz: https://github.com/kura/amisecure/tarball/master
 .. _.zip: https://github.com/kura/amisecure/zipball/master
@@ -58,7 +58,7 @@ Downloads
 Requires
 --------
 
- - Python >2.6
+- Python >2.6
 
 Usage
 -----

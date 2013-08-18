@@ -6,17 +6,7 @@ HOWTO: Debian, Apache 2 & mod_ssl with self signed cert. or officially signed ce
 :tags: apache, debian, mod_ssl, ssl
 :slug: howto-debian-apache-2-amp-mod_ssl
 
-Contents
---------
-
- - `Installation`_
- - `SSL certificate`_
- - - `Self signed`_
- - - `Provider signed`_
- - - `Without a passphrase`_
- - - `With a passphrase`_
- - `Apache configuration`_
- - `The nasty SSL passphrase hack...`_
+.. contents::
 
 This is gonna be quite a simple tutorial that should be the same
 (excluding pathing and apt) across other Linux distros.

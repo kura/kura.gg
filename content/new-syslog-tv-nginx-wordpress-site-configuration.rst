@@ -6,6 +6,8 @@ New syslog.tv nginx wordpress site configuration explained
 :tags: apache, cache, nginx, proxy, proxy_cache, wordpress
 :slug: new-syslog-tv-nginx-wordpress-site-configuration
 
+.. contents::
+
 Configuration changes
 ---------------------
 

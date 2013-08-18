@@ -37,12 +37,12 @@ TAG_SAVE_AS = 't/{slug}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
 STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
-                'extra/favicon.ico',]
+                'extra/favicon.ico', ]
 
 PDF_STYLE_PATH = ''
 PDF_STYLE = "twelvepoint"
 FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
-                 ('extra/favicon.ico', 'favicon.ico'),)
+                 ('extra/favicon.ico', 'favicon.ico'), )
 EXTRA_PATH_METADATA = {
     'files': {'path': 'files'},
     # 'extra/robots.txt': {'path': 'robots.txt'},
@@ -66,7 +66,7 @@ PLUGINS = [
     'pelican_gist',
     'archive_unique_dates',
     'sitemap',
-    'gzip_cache',
+    # 'gzip_cache',
     'pelican_vimeo',
     'pelican_youtube',
     # 'pdf',

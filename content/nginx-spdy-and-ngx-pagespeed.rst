@@ -6,6 +6,8 @@ nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)
 :tags: debian, ubuntu, nginx, spdy, pagespeed, ngx_pagespeed, mod_pagespeed
 :slug: nginx-spdy-and-ngx-pagespeed
 
+.. contents::
+
 I decided to rebuild syslog.tv as pure HTML using RST and
 `Pelican`_ and rebrand it as kura.io.
 
@@ -70,8 +72,6 @@ they are only available for amd64);
 .. _`ad8ae70215...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.md5
 .. _`690563e7cc...`: https://kura.io/static/files/nginx-doc_1.4.1_all.deb.sha1
 
-
-
 You can install them by simply running:
 
 .. code:: bash
@@ -133,10 +133,10 @@ server configuration as below.
 
 The three filters that are enabled do the following:
 
- - combines CSS <style> elements in to one,
- - combines multiple <script> elements in to one,
- - removes all comments from HTML and,
- - removes additional whitespace from HTML excluding <pre>, <script>, <style> and <textarea> elements.
+- combines CSS <style> elements in to one,
+- combines multiple <script> elements in to one,
+- removes all comments from HTML and,
+- removes additional whitespace from HTML excluding <pre>, <script>, <style> and <textarea> elements.
 
 You can test this by simply viewing the source code of your
 website and seeing all of the HTML compressed.

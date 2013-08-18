@@ -6,6 +6,8 @@ less is more
 :tags: less, linux, unix
 :slug: less-is-more
 
+.. contents::
+
 To my surprise I have found that there are still people out there who
 use *"more"*, this has shocked me.
 
@@ -31,20 +33,33 @@ chunks. Opening a 100MB log file is simple with less!
 Useful options
 --------------
 
--  **-g** - Highlights just the current match of any searched string,
--  **-I** - Case-insensitive searches,
--  **-M** - Show a more detailed prompt, including file position,
--  **-N** - Show line numbers.
--  **+F** - Follow (like tail -f)
++--------+-----------------------------------------------------------+
+| **-g** | Highlights just the current match of any searched string, |
++========+===========================================================+
+| **-I** | Case-insensitive searches,                                |
++--------+-----------------------------------------------------------+
+| **-M** | Show a more detailed prompt, including file position,     |
++--------+-----------------------------------------------------------+
+| **-N** | Show line numbers.                                        |
++--------+-----------------------------------------------------------+
+| **+F** | Follow (like tail -f)                                     |
++--------+-----------------------------------------------------------+
 
 Useful key bindings
 -------------------
 
--  **/** - Search e.g. /test
--  **n** - Goto next search match
--  **N** (Shift + n) - Goto previous search match
--  **^** - Goto start of the file
--  **$** - Goto end of the file
--  **Spacebar** - Next page
--  **b** - Previous page
-
++-------------------+----------------------------+
+| **/**             | Search e.g. /test          |
++===================+============================+
+| **n**             | Goto next search match     |
++-------------------+----------------------------+
+| **N** (Shift + n) | Goto previous search match |
++-------------------+----------------------------+
+| **^**             | Goto start of the file     |
++-------------------+----------------------------+
+| **$**             | Goto end of the file       |
++-------------------+----------------------------+
+| **Spacebar**      | Next page                  |
++-------------------+----------------------------+
+| **b**             | Previous page              |
++-------------------+----------------------------+

@@ -6,6 +6,8 @@ Refresh Linux partition table online
 :tags: linux, online, partition
 :slug: refresh-linux-partition-table-online
 
+.. contents::
+
 If the device is not mounted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

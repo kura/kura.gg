@@ -6,14 +6,7 @@ Backup a Linux server to Amazon S3 on Debian 6/Ubuntu 10.04
 :tags: amazon, aws, backup, debian, s3, ubuntu
 :slug: backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04
 
-Contents
---------
-
- - `About S3`_
- - `Installation`_
- - `Configuration`_
- - `Using s3cmd`_
- - `Example`_
+.. contents::
 
 I have several servers powering syslog including it's `Raspberry Pi`_
 mirror, load balancer and email servers. All of my servers are hosted
