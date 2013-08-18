@@ -16,7 +16,7 @@ how the program is launched and controlled.
 setup.py scripts vs. entry_points
 =================================
 
-Whenever I've written Python programs that require some kind of commandline
+Whenever I've written Python programs that require some kind of command line
 script I've always used distutils' scripts, this can be seen `in blackhole's
 setup.py on GitHub <https://github.com/kura/blackhole/blob/05c6647aeb25ecfcc17d9df535db330a68016a24/setup.py#L37-L39>`_
 or in the three line example below.
@@ -33,7 +33,7 @@ that `on GitHub in the main "binary"
 <https://github.com/kura/blackhole/blob/bb6cccca3a75def324ed5cb64a32fd2e5773a038/blackhole/bin/blackhole>`_.
 
 I've noticed that most people who write Python packages that have some kind of
-commandline entry point use distutils' `entry_points` option instead of
+command line entry point use distutils' `entry_points` option instead of
 `scripts`. I decided to rewrite Blackhole to make it use the same entry_points
 option and also make it's new entry point as testable as possible.
 
@@ -58,10 +58,10 @@ I'm not going to go in to any real detal on how `entry_points` works, there are
 plenty of articles elsewhere on the internet that detail this.
 
 That being said, `entry_points` is a dictionary, in it I set a `console_scripts`
-key that has a list of scripts that should be usable from the commandline.
+key that has a list of scripts that should be usable from the command line.
 
 Each list item is made up of two parts; the command name (what will be typed on
-the commandline to trigger the command) and the module(s) and method to run.
+the command line to trigger the command) and the module(s) and method to run.
 
 blackhole.application:run
 -------------------------
