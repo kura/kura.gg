@@ -10,8 +10,8 @@ A set of plugins for Nagios to monitor RabbitMQ using rabbitmqctl.
 Downloads
 ---------
 
-`.tar.gz`_
-`.zip`_
+- .tar.gz`_
+- .zip`_
 
 .. _.tar.gz: https://github.com/kura/rabbitmq-nagios/tarball/master
 .. _.zip: https://github.com/kura/rabbitmq-nagios/zipball/master
