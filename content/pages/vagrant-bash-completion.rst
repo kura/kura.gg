@@ -26,7 +26,7 @@ Downloads
 =========
 
 - `.tar.gz <https://github.com/kura/vagrant-bash-completion/tarball/master>`_
-- `.zip <https://github.com/kura/amisecure/zipball/master>`_
+- `.zip <https://github.com/kura/vagrant-bash-completion/zipball/master>`_
 
 Installation
 ============
