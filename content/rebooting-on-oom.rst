@@ -47,9 +47,9 @@ run this you do so at your own risk**.
 
 .. code:: c
 
-    #include
-    #include
-    #include
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
 
     #define MB 10485760
 
