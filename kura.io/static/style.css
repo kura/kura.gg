@@ -232,3 +232,22 @@ a:focus { color: #34495E; }
 @media only screen and (max-width: 600px) {
   #banner h1 a {font-size:22px!important; line-height:24px;}
 }
+
+.search {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 13px;
+  line-height: 1.625em;
+  border: 2px solid #3498DB;
+  width: 90%;
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+form {
+  margin: 0;
+  margin-top: 10px;
+}
