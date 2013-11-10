@@ -7,7 +7,7 @@ Contact
 Twitter
 =======
 
-- `@kuramanga <https://twitter.com/kuramanga>_`
+- `@kuramanga <https://twitter.com/kuramanga>`_
 
 IRC
 ===
