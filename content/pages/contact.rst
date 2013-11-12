@@ -14,8 +14,6 @@ IRC
 
 IRC is the easiest way to contact me, I am active in several channels as **kuramanga**
 
-::
-
 - **#debian** on **irc.freenode.net**
 - **#python** on **irc.freenode.net**
 - **#pypy** on **irc.freenode.net**
