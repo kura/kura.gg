@@ -27,4 +27,4 @@ Email
 
 ::
 
-    spam [dot] bot [at] kura [dot] io
+    kura [at] kura [dot] io
