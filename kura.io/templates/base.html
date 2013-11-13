@@ -75,7 +75,7 @@
                 {% if GITHUB_URL %}
                 <li><div class="btn primary"><a href="{{ GITHUB_URL }}" target="_blank">GitHub</a></div></li>
                 {% endif %}
-                <li><div class="btn twitter"><a href="{{ SITEURL }}/contact/" target="_blank">Contact</a></div></li>
+                <li><div class="btn twitter"><a href="{{ SITEURL }}/contact/">Contact</a></div></li>
                 {% if FEED_RSS %}
                 <li><div class="btn primary"><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" target="_blank">RSS</a></div></li>
                 {% endif %}
@@ -125,9 +125,7 @@
                 {% if GITHUB_URL %}
                 <li><div class="btn primary"><a href="{{ GITHUB_URL }}" target="_blank">GitHub</a></div></li>
                 {% endif %}
-                {% if TWITTER_URL %}
-                <li><div class="btn twitter"><a href="{{ TWITTER_URL }}" target="_blank">Twitter</a></div></li>
-                {% endif %}
+                <li><div class="btn twitter"><a href="{{ SITEURL }}/contact/">Contact</a></div></li>
                 {% if FEED_RSS %}
                 <li><div class="btn primary"><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" target="_blank">RSS</a></div></li>
                 {% endif %}
