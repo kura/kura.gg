@@ -12,7 +12,7 @@ Twitter
 IRC
 ===
 
-**kuramanga@irce.freenode.net**
+**kuramanga@irc.freenode.net**
 
 I can usually be found in the following channels;
 
