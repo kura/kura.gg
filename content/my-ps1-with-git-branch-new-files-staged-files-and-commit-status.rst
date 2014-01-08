@@ -1,5 +1,5 @@
-My $PS1 with git branch, new files, staged files and commit staus
-#################################################################
+My $PS1 with git branch, new files, staged files and commit status
+##################################################################
 :date: 2013-08-18 17:25
 :author: kura
 :category: coding
