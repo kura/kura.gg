@@ -1,5 +1,5 @@
-haproxy1.5-dev1, nginx 1.5.8, SPDY & pagespeed 1.7.30.2
-#######################################################
+haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2
+########################################################
 :date: 2014-01-08 13:00
 :author: kura
 :category: deb builds
