@@ -116,6 +116,7 @@ enable SPDY in your server configuration as below.
         srvtimeout 50000
 
     frontend http
+        mode http
         bind 0.0.0.0:80
         redirect sheme https if !{ ssl_fc }
 
@@ -142,6 +143,7 @@ frontend http
 ::
 
     frontend http
+        mode http
         bind 0.0.0.0:80
         redirect sheme https if !{ ssl_fc }
 
