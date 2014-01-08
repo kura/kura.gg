@@ -56,7 +56,7 @@ Source
 ------
 
 +--------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------------------------+
-| `haproxy_1.5-dev21.tar.gz <https://kura.io/static/files/haproxy_1.5-dev21.tar.gz>`__ | `GPG <https://kura.io/static/files/haproxy_1.5-dev21.tar.gz.asc>`__ | `MD5 <https://kura.io/static/files/haproxy_1.5-dev21.tar.gz.md5>`__ | `SHA1 <https://kura.io/static/files/haproxy_1.5-dev21.tar.gz.sha1>`__ |
+| `haproxy-1.5-dev21.tar.gz <https://kura.io/static/files/haproxy-1.5-dev21.tar.gz>`__ | `GPG <https://kura.io/static/files/haproxy-1.5-dev21.tar.gz.asc>`__ | `MD5 <https://kura.io/static/files/haproxy-1.5-dev21.tar.gz.md5>`__ | `SHA1 <https://kura.io/static/files/haproxy-1.5-dev21.tar.gz.sha1>`__ |
 +--------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 nginx
