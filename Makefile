@@ -42,6 +42,7 @@ help:
 
 
 html: clean $(OUTPUTDIR)/index.html
+	sh cssmin.sh
 
 $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

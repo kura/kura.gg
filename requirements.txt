@@ -1,4 +1,8 @@
-Pillow==2.1.0
-pelican==3.2.2
-pelican-gist==0.2.0
-rst2pdf==0.93.dev
+Pillow
+Pygments
+cssmin
+pelican
+pelican-gist
+pelican-vimeo
+pelican-youtube
+rst2pdf
