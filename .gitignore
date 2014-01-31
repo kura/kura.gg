@@ -3,3 +3,4 @@ pelican.pid
 srv.pid
 pelican-plugins
 .ropeproject
+*.pyc
