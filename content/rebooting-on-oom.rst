@@ -70,7 +70,7 @@ run this you do so at your own risk**.
 Compilation
 -----------
 
-You can download the `source here <https://kura.io/static/files/oom.c>`_.
+You can download the `source here <https://kura.io/files/oom.c>`_.
 
 To compile run the command below
 
@@ -78,7 +78,7 @@ To compile run the command below
 
     gcc -O2 oom.c -o oom
 
-Or download a `pre-compiled version here <https://kura.io/static/files/oom>`_.
+Or download a `pre-compiled version here <https://kura.io/files/oom>`_.
 
 Usage
 -----

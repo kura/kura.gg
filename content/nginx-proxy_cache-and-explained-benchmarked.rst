@@ -42,7 +42,7 @@ that further.
 If you've not read the aforementioned article I would strongly suggest
 you do before continuing with this one - `Debian, Apache 2, Nginx, WordPress MU & WP-Super-Cache`_.
 
-.. _Debian, Apache 2, Nginx, WordPress MU & WP-Super-Cache: http://syslog.tv/2010/01/11/debian-apache-2-nginx-wordpress-mu/
+.. _Debian, Apache 2, Nginx, WordPress MU & WP-Super-Cache: https://kura.io/2010/01/11/debian-apache-2-nginx-wordpress-mu/
 
 Everything has changed?
 -----------------------

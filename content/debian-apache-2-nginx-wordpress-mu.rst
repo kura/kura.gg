@@ -11,11 +11,11 @@ Debian, Apache 2, Nginx, WordPress MU & WP-Super-Cache
 *This is a rather old article, for more up-to-date information please
 see;*
 
-1. `http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`_
-2. `http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/`_
+1. `https://kura.io/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`_
+2. `https://kura.io/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/`_
 
-.. _`http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`: http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/
-.. _`http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/`: http://syslog.tv/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
+.. _`https://kura.io/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`: https://kura.io/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/
+.. _`https://kura.io/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/`: https://kura.io/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
 
 I've started collecting a few blogs on my servers now and figured from
 this one on I would consolidate it in to one workable, usable location.

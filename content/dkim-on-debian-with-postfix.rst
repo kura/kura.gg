@@ -9,7 +9,7 @@ HOWTO: DKIM with Postfix on Debian
 *There is a much newer article on this subject `here`_ and covers
 DomainKeys and DKIM.*
 
-.. _here: http://syslog.tv/2011/09/17/postfix-dk-dkim-spf/
+.. _here: https://kura.io/2011/09/17/postfix-dk-dkim-spf/
 
 Mail and mail servers have always been my forté if I'm to be honest, my
 home mail server has been spam free for years now, nothing really gets

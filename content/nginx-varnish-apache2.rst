@@ -224,9 +224,9 @@ X-Cache header information for debug purposes and can be ignored.
 Varnish is now configured.
 
 You can find a copy of my default.vcl file here -
-`https://kura.io/static/files/syslog-varnish-default-vcl-26-sept-2010`_
+`https://kura.io/files/syslog-varnish-default-vcl-26-sept-2010`_
 
-.. _`https://kura.io/static/files/syslog-varnish-default-vcl-26-sept-2010`: https://kura.io/static/files/syslog-varnish-default-vcl-26-sept-2010
+.. _`https://kura.io/files/syslog-varnish-default-vcl-26-sept-2010`: https://kura.io/files/syslog-varnish-default-vcl-26-sept-2010
 
 Configuring nginx
 -----------------

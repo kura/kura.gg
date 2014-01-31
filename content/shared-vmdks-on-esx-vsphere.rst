@@ -21,12 +21,12 @@ Next up we create the VMDK, I find it easiest to do this by adding
 hardware to an already existing machine, I'm going to use one that I
 want the VMDK shared with to make it even simpler.
 
-.. image:: https://kura.io/static/images/shared-vmdks-on-esx-vsphere1.png
+.. image:: https://kura.io/images/shared-vmdks-on-esx-vsphere1.png
 
 You will need to enable clustering features as shown below, this means
 you cannot use thin provisioning.
 
-.. image:: https://kura.io/static/images/shared-vmdks-on-esx-vsphere2.png
+.. image:: https://kura.io/images/shared-vmdks-on-esx-vsphere2.png
 
 You will need to add the VMDK to a new SCSI BUS, this will usually begin
 with 1: or 2: depending on how many SCSI BUS you have connected already,
@@ -34,13 +34,13 @@ I'm using 1:0 as shown below.
 
 You will also need to set it's MODE as "Independent" and "Persistent".
 
-.. image:: https://kura.io/static/images/shared-vmdks-on-esx-vsphere3.png
+.. image:: https://kura.io/images/shared-vmdks-on-esx-vsphere3.png
 
 Once the drive has been added it will appear in your VM hardware list
 along with the new SCSI controller. Click on the controller to modify it
 and set it as "Physical" as shown below.
 
-.. image:: https://kura.io/static/images/shared-vmdks-on-esx-vsphere4.png
+.. image:: https://kura.io/images/shared-vmdks-on-esx-vsphere4.png
 
 Once this is down, close out of the hardware panel and modify the other
 VMs you wish this disk to be shared to, do exactly as above but adding

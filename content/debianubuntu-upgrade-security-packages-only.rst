@@ -10,7 +10,7 @@ Debian/Ubuntu upgrade security packages only
 work and should continue to work (until you upgrade to a new distro
 version e.g. 10.04 -> 12.04) please see `here`_.**
 
-.. _here: http://syslog.tv/2011/09/21/debianubuntu-upgrade-security-packages-only-a-better-way-to-do-it/
+.. _here: https://kura.io/2011/09/21/debianubuntu-upgrade-security-packages-only-a-better-way-to-do-it/
 
 Really simple, should work for most cases, I've not found anything wrong
 with it.

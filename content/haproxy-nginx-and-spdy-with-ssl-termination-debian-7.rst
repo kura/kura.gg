@@ -60,10 +60,10 @@ Download the deb file below, use either the GPG key or MD5/SHA1 sums to verify i
 +---------------------------------------+------------------+------------------+------------------+
 
 
-.. _`haproxy_1.5~dev19_amd64.deb`: https://kura.io/static/files/haproxy_1.5~dev19_amd64.deb
-.. _`owGMeXVU1G...`: https://kura.io/static/files/haproxy_1.5~dev19_amd64.deb.asc
-.. _`715317e082...`: https://kura.io/static/files/haproxy_1.5~dev19_amd64.deb.md5
-.. _`e116e1c597...`: https://kura.io/static/files/haproxy_1.5~dev19_amd64.deb.sha1
+.. _`haproxy_1.5~dev19_amd64.deb`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb
+.. _`owGMeXVU1G...`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb.asc
+.. _`715317e082...`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb.md5
+.. _`e116e1c597...`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb.sha1
 
 If you already have haproxy installed, make sure to remove it first.
 

@@ -12,9 +12,9 @@ This is part 4 of my series on configuring a mail server, please see
 `part one`_, `part two`_ and `part three`_ if you're not familiar with
 them.
 
-.. _part one: http://syslog.tv/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/
-.. _part two: http://syslog.tv/2011/09/16/postfix-spamassassin-clamav-procmail/
-.. _part three: http://syslog.tv/2011/09/17/postfix-dk-dkim-spf/
+.. _part one: https://kura.io/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/
+.. _part two: https://kura.io/2011/09/16/postfix-spamassassin-clamav-procmail/
+.. _part three: https://kura.io/2011/09/17/postfix-dk-dkim-spf/
 
 The content of this article was written to work with the previous three
 articles but should work on any SpamAssassin set-up.
@@ -74,4 +74,4 @@ And we're all done.
 
 `« Part 3 - Postfix + DK (DomainKeys) + DKIM + SPF`_
 
-.. _« Part 3 - Postfix + DK (DomainKeys) + DKIM + SPF: http://syslog.tv/2011/09/22/spamassassin-razor-pyzor/
+.. _« Part 3 - Postfix + DK (DomainKeys) + DKIM + SPF: https://kura.io/2011/09/22/spamassassin-razor-pyzor/

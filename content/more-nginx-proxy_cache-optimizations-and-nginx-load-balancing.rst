@@ -12,9 +12,9 @@ This is yet another follow up to post to several previous posts about
 using nginx as a reverse proxy with caching. It is actually a direct
 addition to my post from a week or so ago which outlined how to actually
 using nginx's proxy caching feature which can be read here --
-`http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`_.
+`https://kura.io/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`_.
 
-.. _`http://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`: https://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/
+.. _`https://kura.io/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/`: https://syslog.tv/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/
 
 Even more changes?
 ------------------

@@ -9,7 +9,7 @@ Debian/Ubuntu upgrade security packages only - a better way to do it
 **I have created a scripts that handle these tasks for you, available
 `here`_.**
 
-.. _here: http://syslog.tv/apt-security/
+.. _here: https://kura.io/apt-security/
 
 First thing we need to do is create an sources list specifically for
 security.

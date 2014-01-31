@@ -9,7 +9,7 @@ Apache 2, Nginx & WordPress MU - Follow up
 This is a quick follow up to a previous post about getting this blog
 `running on nginx with a reverse proxy to Apache 2`_.
 
-.. _running on nginx with a reverse proxy to Apache 2: http://syslog.tv/2010/01/11/debian-apache-2-nginx-wordpress-mu/
+.. _running on nginx with a reverse proxy to Apache 2: https://kura.io/2010/01/11/debian-apache-2-nginx-wordpress-mu/
 
 It seems the issue stems from 3 mods I had installed and enabled
 

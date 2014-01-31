@@ -180,4 +180,4 @@ send and receive mail.
 
 `Part 2 - Postfix + SpamAssassin + ClamAV + Procmail »`_
 
-.. _Part 2 - Postfix + SpamAssassin + ClamAV + Procmail »: http://syslog.tv/2011/09/16/postfix-spamassassin-clamav-procmail/
+.. _Part 2 - Postfix + SpamAssassin + ClamAV + Procmail »: https://kura.io/2011/09/16/postfix-spamassassin-clamav-procmail/

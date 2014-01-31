@@ -11,7 +11,7 @@ Postfix + DK (DomainKeys) + DKIM + SPF on Debian 6/Ubuntu
 This is part 3 of my guide to getting a mail server configured with all
 the sexy bits to improve deliverability, spam and virus protection.
 
-You can view `part 1 here <http://syslog.tv/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/>`_ and `part 2 here <http://syslog.tv/2011/09/16/postfix-spamassassin-clamav-procmail/>`_.
+You can view `part 1 here <https://kura.io/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/>`_ and `part 2 here <https://kura.io/2011/09/16/postfix-spamassassin-clamav-procmail/>`_.
 
 The key pair
 ------------
@@ -190,5 +190,5 @@ signatures in the source.
 
 `Part 4 - SpamAssassin + Razor + Pyzor »`_
 
-.. _« Part 2 - Postfix + SpamAssassin + ClamAV + Procmail: http://syslog.tv/2011/09/16/postfix-spamassassin-clamav-procmail/
-.. _Part 4 - SpamAssassin + Razor + Pyzor »: http://syslog.tv/2011/09/22/spamassassin-razor-pyzor/
+.. _« Part 2 - Postfix + SpamAssassin + ClamAV + Procmail: https://kura.io/2011/09/16/postfix-spamassassin-clamav-procmail/
+.. _Part 4 - SpamAssassin + Razor + Pyzor »: https://kura.io/2011/09/22/spamassassin-razor-pyzor/

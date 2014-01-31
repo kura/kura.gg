@@ -35,9 +35,9 @@ Unsurprisingly I was the only speaker at the event that
 didn't have a Mac. I have a ginormous Alienware M17x R3 running
 Linux.
 
-1. .. image:: https://kura.io/static/images/djugl-june-2013-3.jpg
+1. .. image:: https://kura.io/images/djugl-june-2013-3.jpg
        :alt: I look like a hairy beast...
-2. .. image:: https://kura.io/static/images/djugl-june-2013-2.jpg
+2. .. image:: https://kura.io/images/djugl-june-2013-2.jpg
        :alt: I look like a hairy beast...
-3. .. image:: https://kura.io/static/images/djugl-june-2013-1.jpg
+3. .. image:: https://kura.io/images/djugl-june-2013-1.jpg
        :alt: I look like a hairy beast...

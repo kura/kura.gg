@@ -66,17 +66,18 @@ stopserver:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-	gpg --armor --export kura@kura.io > $(OUTPUTDIR)/static/files/kura.asc
+	gpg --armor --export kura@kura.io > $(OUTPUTDIR)/files/kura.asc
+	sh cssmin.sh
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
 rsync_upload:
-	sed -i "s/# 'pdf',/'pdf',/g" pelicanconf.py
-	make publish
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app1:$(SSH_TARGET_DIR) --cvs-exclude
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
-	sed -i "s/'pdf',/# 'pdf',/g" pelicanconf.py
+	#sed -i "s/# 'pdf',/'pdf',/g" pelicanconf.py
+	#make publish
+	#rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app1:$(SSH_TARGET_DIR) --cvs-exclude
+	#rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
+	#sed -i "s/'pdf',/# 'pdf',/g" pelicanconf.py
 	make publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app1:$(SSH_TARGET_DIR) --cvs-exclude
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
