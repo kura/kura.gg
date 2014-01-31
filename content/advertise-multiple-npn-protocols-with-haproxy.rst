@@ -3,7 +3,7 @@ Advertise multiple NPN protocols with haproxy
 :date: 2014-01-31 15:25
 :author: kura
 :category: tutorials
-:tags: haproxy, npn, spdy, http/1.1, http/1.0
+:tags: haproxy, npn, spdy, http/1.1
 :slug: advertise-multiple-npn-protocols-with-haproxy
 
 I have previously written an article on `using SPDY with haproxy
@@ -27,4 +27,4 @@ npn list, using commas as a delimiter.
 
 .. code::
 
-    npn spdy/2,http/1.1,http/1.0
+    npn spdy/2,http/1.1
