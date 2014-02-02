@@ -6,6 +6,8 @@ kura.io's A* SSL rating
 :tags: ssl
 :slug: kura.io-a-star-ssl-rating
 
+.. contents::
+
 I am a firm believer in using SSL as much as possible, for me that is pretty
 much everywhere and, thanks to the wonderful guys at
 `GlobalSign <https://www.globalsign.com/>`__, most of
@@ -50,6 +52,7 @@ further back to ECDH+AES128 or DH+AES.
 
 For most browser versions this should provide extremely secure connectivity
 and `Forward Secrecy <https://community.qualys.com/blogs/securitylabs/2013/06/25/ssl-labs-deploying-forward-secrecy>`__.
+Please consult the `Notes`_ section for more information.
 
 Forcing SSL usage
 =================
