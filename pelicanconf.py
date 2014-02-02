@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Kura'
 SITENAME = u'kura.io'
-SITEURL = 'http://kura.io/new'
+SITEURL = 'https://kura.io/'
 
 THEME = 'kura.io'
 TIMEZONE = 'Europe/Paris'
@@ -39,8 +39,6 @@ MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
                 'extra/favicon.ico', ]
 
-PDF_STYLE_PATH = ''
-PDF_STYLE = "twelvepoint"
 FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
                  ('extra/favicon.ico', 'favicon.ico'), )
 EXTRA_PATH_METADATA = {
@@ -48,6 +46,9 @@ EXTRA_PATH_METADATA = {
     # 'extra/robots.txt': {'path': 'robots.txt'},
     # 'extra/favicon.ico': {'path': 'favicon.ico'},
 }
+
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search',
+                     '404'))
 
 # Blogroll
 LINKS = ()
@@ -69,6 +70,7 @@ PLUGINS = [
     # 'gzip_cache',
     'pelican_vimeo',
     'pelican_youtube',
+    'tipue_search',
     # 'pdf',
     # ...
 ]

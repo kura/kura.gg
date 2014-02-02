@@ -1,0 +1,130 @@
+/*
+Tipue Search 3.1
+Copyright (c) 2013 Tipue
+Tipue Search is released under the MIT License
+http://www.tipue.com/search
+*/
+#tipue_search_content
+{
+    clear: left;
+    margin: 0;
+    padding: 25px 0 13px 0;
+    font-family: "Open Sans";
+    text-rendering: optimizeLegibility;
+}
+#tipue_search_loading
+{
+    background: #fff url('/theme/img/loader.gif') no-repeat left;
+    padding-top: 60px;
+}
+#tipue_search_warning
+{
+    color: #333;
+    font: 12px/1.6;
+    margin: 7px 0;
+}
+#tipue_search_warning a
+{
+    color: #3f72d8;
+    text-decoration: none;
+}
+#tipue_search_warning a:hover
+{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1px;
+}
+#tipue_search_results_count, #tipue_search_warning_head
+{
+    font-size: 3em;
+    font-weight: normal;
+    margin: 20px 0 20px 0;
+    padding: 5px 5px 15px 5px;
+}
+.tipue_search_content_title
+{
+    font-size: 42px;
+    font-size: 2.625rem;
+    font-weight: 300;
+    color: #444444;
+    padding-top: 0.273em;
+    line-height: 1.15538em;
+    padding-bottom: 0.273em;
+}
+
+.tipue_search_content_text
+{
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    margin-bottom: 13px;
+    line-height: 1.625em;
+    list-style: none;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+}
+
+.tipue_search_content_text b {
+    font-size: 1.3em;
+}
+
+.tipue_search_content_loc
+{
+    font: 300 13px/1.7;
+    overflow: auto;
+}
+.tipue_search_content_loc a
+{
+    color: #555;
+    text-decoration: none;
+}
+.tipue_search_content_loc a:hover
+{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1px;
+}
+#tipue_search_foot
+{
+    margin: 51px 0 21px 0;
+}
+#tipue_search_foot_boxes
+{
+    font: 12px/1;
+    margin: 0;
+    padding: 0;
+}
+#tipue_search_foot_boxes li
+{
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#tipue_search_foot_boxes li a
+{
+    background-color: #f1f1f1;
+    border-radius: 1px;
+    border: 1px solid #dcdcdc;
+    color: #333;
+    margin-right: 7px;
+    padding: 7px 13px 8px 13px;
+    text-align: center;
+    text-decoration: none;
+}
+#tipue_search_foot_boxes li.current
+{
+    background: #fff;
+    border-radius: 1px;
+    border: 1px solid #dcdcdc;
+    color: #333;
+    margin-right: 7px;
+    padding: 7px 13px 8px 13px;
+    text-align: center;
+}
+#tipue_search_foot_boxes li a:hover
+{
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+}
+
