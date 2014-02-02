@@ -36,10 +36,8 @@ I do not support SSLv2 or SSLv3 but I do support much stronger protocols;
 Cipher suites & key exchanges
 =============================
 
-I only support `Elliptic curve Diffie–Hellman <https://en.wikipedia.org/wiki/Elliptic_curve_Diffie%E2%80%93Hellman>`__,
-`Diffie–Hellman <https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange>`__
-and fall back to `RSA <https://en.wikipedia.org/wiki/RSA_(algorithm)>`__
-if the browser does not support ECDH or DH.
+I only support `Elliptic curve Diffie–Hellman <https://en.wikipedia.org/wiki/Elliptic_curve_Diffie%E2%80%93Hellman>`__ and
+`Diffie–Hellman <https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange>`__ for key exchange.
 
 The website prefers ECDH+AESGCM or DH+AESGCM which specifically uses AES-128,
 if AESGCM isn't supported by the browser (at time of writing, it's only
