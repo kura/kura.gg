@@ -27,12 +27,11 @@ I use a 4096 bit RSA key that is no a `Debian weak key
 Protcols
 ========
 
-I do not support SSLv2 but do support much stronger protocols
+I do not support SSLv2 or SSLv3 but I do support much stronger protocols;
 
 - TLS 1.2,
-- TLS 1.1,
-- TLS 1.0 and,
-- SSL 3
+- TLS 1.1 and,
+- TLS 1.0.
 
 Cipher suites & key exchanges
 =============================
@@ -45,14 +44,11 @@ if the browser does not support ECDH or DH.
 The website prefers ECDH+AESGCM or DH+AESGCM which specifically uses AES-128,
 if AESGCM isn't supported by the browser (at time of writing, it's only
 support by Chrome 32) it will fall back to ECDH+AES256 or DH+AES256 or fall
-further back to ECDH+AES128, DH+AES. Finally to make sure we can support
-back to IE6 we allow ECDH+3DES, DH+3DES, RSA+AES and finally RSA+3DES,
-preferring the most secure cipher suite and key exchange that the browser
-supports.
+further back to ECDH+AES128 or DH+AES.
 
 .. code::
 
-    ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AES:RSA+3DES:HIGH:!aNULL:!MD5:!DSS
+    ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:HIGH:!aNULL:!MD5:!DSS:!3DES
 
 For most browser versions this should provide extremely secure connectivity
 and `Forward Secrecy <https://community.qualys.com/blogs/securitylabs/2013/06/25/ssl-labs-deploying-forward-secrecy>`__.
@@ -82,6 +78,14 @@ is done by simply providing an STS header as shown below.
 .. code::
 
     Strict-Transport-Security: max-age=15768000
+
+Notes
+=====
+
+This configuration does not allow for Windows XP operating system or IE6. It
+supports IE7 and above on Windows Vista or higher.
+
+Consult `Hynek's article <https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/`>__ for support for Windows XP and IE6.
 
 Testing
 =======
