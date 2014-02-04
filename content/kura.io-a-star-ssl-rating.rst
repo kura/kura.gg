@@ -35,6 +35,29 @@ I do not support SSLv2 or SSLv3 but I do support much stronger protocols;
 - TLS 1.1 and,
 - TLS 1.0.
 
+dhparam
+=======
+
+It's a good idea to generate a set of DH parameters with a prime that is larger than the RSA key being used.
+For me that's 4096 so to generate this I use:
+
+.. code:: bash
+
+    openssl dhparam 4096
+
+Once generated it gets appended to our PEM chain.
+
+.. code::
+
+    -----BEGIN CERTIFICATE-----
+    -----END CERTIFICATE----- 
+    -----BEGIN RSA PRIVATE KEY-----
+    -----END RSA PRIVATE KEY-----
+    -----BEGIN CERTIFICATE----- # intermediate cert
+    -----END CERTIFICATE-----
+    -----BEGIN DH PARAMETERS-----
+    -----END DH PARAMETERS-----
+
 Cipher suites & key exchanges
 =============================
 
@@ -48,7 +71,7 @@ further back to ECDH+AES128 or DH+AES.
 
 .. code::
 
-    ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:HIGH:!aNULL:!MD5:!DSS:!3DES
+    ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:HIGH:!aNULL:!eNULL:!EXPORT:!MD5:!DSS:!DES:!3DES:!RC4:!PSK
 
 For most browser versions this should provide extremely secure connectivity
 and `Forward Secrecy <https://community.qualys.com/blogs/securitylabs/2013/06/25/ssl-labs-deploying-forward-secrecy>`__.
@@ -86,7 +109,7 @@ Notes
 This configuration does not allow for Windows XP operating system or IE6. It
 supports IE7 and above on Windows Vista or higher.
 
-Consult `Hynek's article <https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/`>__ for support for Windows XP and IE6.
+Consult `Hynek's article <https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/>`__ for support for Windows XP and IE6.
 
 Testing
 =======
@@ -95,3 +118,11 @@ You can use `SSL Labs by Qualys <https://www.ssllabs.com/ssltest/analyze.html>`_
 to determine your own website's security and you can look at the
 `Qualys report <https://www.ssllabs.com/ssltest/analyze.html?d=kura.io>`__ for
 this website as a comparison.
+
+
+More information
+================
+
+- `Hynek's article <https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/>`__
+- `Mozilla Security/Server Side TLS article <https://wiki.mozilla.org/Security/Server_Side_TLS>`__
+
