@@ -7,7 +7,7 @@ SITENAME = u'kura.io'
 SITEURL = 'https://kura.io/'
 
 THEME = 'kura.io'
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Europe/London'
 
 GITHUB_URL = 'https://github.com/kura'
 TWITTER_URL = 'https://twitter.com/kuramanga'
@@ -47,8 +47,8 @@ EXTRA_PATH_METADATA = {
     # 'extra/favicon.ico': {'path': 'favicon.ico'},
 }
 
-DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search',
-                     '404'))
+#DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search',
+#                     '404'))
 
 # Blogroll
 LINKS = ()
