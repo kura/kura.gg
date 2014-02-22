@@ -9,14 +9,19 @@ Shields for PyPI packages
 .. contents::
 
 .. image:: https://pypip.in/d/blackhole/badge.png
+   :alt: Downloads for blackhole
 
 .. image:: https://pypip.in/v/blackhole/badge.png
+   :alt: Latest version of blackhole
 
 .. image:: https://pypip.in/egg/blackhole/badge.png
+   :alt: blackhole's egg status
 
 .. image:: https://pypip.in/wheel/blackhole/badge.png
+   :alt: blackhole's wheel status
 
 .. image:: https://pypip.in/license/blackhole/badge.png
+   :alt: blackhole's license
 
 
 Some time back in April 2013 I was bored and looking for a new project to keep
@@ -28,6 +33,7 @@ but no time to implement it, this idea was to have shields like those of
 download counts.
 
 .. image:: https://api.travis-ci.org/kura/blackhole.png?branch=master
+   :alt: Status of blackhole on Travis CI
 
 Tech stack
 ==========

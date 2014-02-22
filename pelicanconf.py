@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Kura'
 SITENAME = u'kura.io'
-SITEURL = 'https://kura.io/'
+SITEURL = 'https://kura.io'
 
 THEME = 'kura.io'
 TIMEZONE = 'Europe/London'
@@ -34,16 +34,16 @@ MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
                 'extra/favicon.ico', ]
 
-FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
-                 ('extra/favicon.ico', 'favicon.ico'), )
 EXTRA_PATH_METADATA = {
     'files': {'path': 'files'},
-    # 'extra/robots.txt': {'path': 'robots.txt'},
-    # 'extra/favicon.ico': {'path': 'favicon.ico'},
+    'images': {'path': 'images'},
+    'slides': {'path': 'slides'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/robots.txt': {'path': 'robots.txt'},
 }
 
-#DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search',
-#                     '404'))
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search',
+                     '404'))
 
 # Blogroll
 LINKS = ()
