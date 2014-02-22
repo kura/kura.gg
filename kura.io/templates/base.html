@@ -70,9 +70,11 @@
 </head>
 
 <body id="index" class="home">
-    <div class="container.nopad">
-        <footer id="credits" class="row">
-            <div class="seven columns left-center"></div>
+    <div class="container.nopad hbg">
+        <header id="logo" class="row">
+            <div class="seven columns left-center">
+                <h1><a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
+            </div>
             <div class="seven columns">
                 <div class="row">
                     <ul class="socbtns">
@@ -90,11 +92,10 @@
                     </ul>
                 </div>
             </div>
-        </footer>
+        </header>
     </div>
     <div class="container">
         <div class="row">
-            <header id="banner" class="container.nopad hbg"><h1><a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1></header>
             {% block content %}
             {% endblock %}
         </div><!-- /.row -->

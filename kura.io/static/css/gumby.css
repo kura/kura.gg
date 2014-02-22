@@ -7099,6 +7099,11 @@ div.buttons .primary {
     margin-bottom: 20px;
   }
 }
+
+header#logo .socbtns {
+  float: right;
+}
+
 footer#credits .socbtns {
   float: right;
 }
