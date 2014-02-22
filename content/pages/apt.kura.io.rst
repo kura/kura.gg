@@ -9,8 +9,8 @@ After releasing my own versions of haproxy with SPDY support and nginx with
 ngx_pagespeed and SPDY support, I decided it would make sense to actually
 host these in my own apt repository, so I did.
 
-Support distros and versions
-============================
+Supported distros and versions
+==============================
 
 The packages are built on Debian 7 (Wheezy) AMD 64 and are designed to work on
 the following versions but should work on any newer version.
