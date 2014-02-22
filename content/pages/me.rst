@@ -16,3 +16,8 @@ Debian-based distribution designed for fast provisioning and scale for
 web-based applications.
 
 I have a masters degree in Artificial Intelligence and also in Physics.
+
+PGP
+===
+
+`My PGP key is available on keyserver.pgp.com <https://keyserver.pgp.com/vkd/SubmitSearch.event?SearchCriteria=kura%40kura.io>`__.

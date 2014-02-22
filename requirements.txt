@@ -6,3 +6,4 @@ pelican-gist
 pelican-vimeo
 pelican-youtube
 rst2pdf
+webassets

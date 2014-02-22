@@ -42,7 +42,6 @@ help:
 
 
 html: clean $(OUTPUTDIR)/index.html
-	sh cssmin.sh
 
 $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -66,8 +65,7 @@ stopserver:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-	gpg --armor --export kura@kura.io > $(OUTPUTDIR)/files/kura.asc
-	sh cssmin.sh
+	#gpg --armor --export kura@kura.io > $(OUTPUTDIR)/files/kura.asc
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
