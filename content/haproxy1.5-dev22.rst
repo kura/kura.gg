@@ -36,7 +36,7 @@ This haproxy build is compiled against openssl, providing the npn module,
 allowing for haproxy to work under SSL/TLS and allowing the use of SPDY/2 and
 SPDY/3.
 
-This version is available on `apt.kura.io <http://localhost:8000/2014/01/26/apt.kura.io>`__
+This version is available on `apt.kura.io <https://kura.io/apt.kura.io/>`__
 or as a manual download, from the link below.
 
 Manual download
