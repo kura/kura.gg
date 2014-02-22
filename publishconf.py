@@ -10,16 +10,10 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://kura.io'
+
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+FEED_ATOM = "feeds/atom.xml"
+FEED_RSS = "feeds/rss.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
-
-# Following items are often useful when publishing
-
-#DISQUS_SITENAME = ""
-DISQUS_SITENAME = "syslogtv"
-GOOGLE_ANALYTICS = 'UA-12479444-1'

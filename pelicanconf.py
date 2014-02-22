@@ -18,12 +18,6 @@ DISPLAY_PAGES_ON_MENU = False
 
 DEFAULT_LANG = u'en'
 
-# Feed generation is usually not desired when developing
-FEED_ATOM = "feeds/atom.xml"
-FEED_ALL_ATOM = "feeds/all.atom.xml"
-FEED_RSS = "feeds/rss.xml"
-FEED_ALL_RSS = "feeds/all.rss.xml"
-
 MENUITEMS = ()
 
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
@@ -34,6 +28,7 @@ PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 TAG_URL = 't/{slug}'
 TAG_SAVE_AS = 't/{slug}/index.html'
+
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
 STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
