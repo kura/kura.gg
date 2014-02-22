@@ -2,5 +2,6 @@ output
 pelican.pid
 srv.pid
 pelican-plugins
+pelican-themes
 .ropeproject
 *.pyc

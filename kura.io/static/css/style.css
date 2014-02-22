@@ -249,12 +249,12 @@ a:focus { color: #3085D6; }
 
 /* Header
 --------------------------------------------------------- */
-.hbg { border-bottom:5px solid #3498DB; }
+.hbg { border-bottom:2px solid #3498DB; }
 
 
 /* Footer
 --------------------------------------------------------- */
-.fbg { margin-top:35px; padding-top:25px; border-top:5px solid #3498DB; }
+.fbg { margin-top:35px; padding-top:25px; border-top:2px solid #3498DB; }
 
 
 
