@@ -207,8 +207,9 @@ p { max-width: 80%; }
 }
 #contents { margin-bottom: 15px; }
 
-a, a:hover { color: #3498DB; }
-a:focus { color: #34495E; }
+a { color: #3498DB; }
+a:hover,
+a:focus { color: #3085D6; }
 
 .btn a:hover,
 .btn a:focus {color:#eee; }
