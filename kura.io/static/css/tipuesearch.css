@@ -35,20 +35,26 @@ http://www.tipue.com/search
 }
 #tipue_search_results_count, #tipue_search_warning_head
 {
-    font-size: 3em;
-    font-weight: normal;
-    margin: 20px 0 20px 0;
-    padding: 5px 5px 15px 5px;
+    font-size: 42px;
+    font-size: 2.625rem;
+    font-family: "Open Sans";
+    font-weight: 300;
+    line-height: 1.15538em;
+    padding-bottom: 0.273em;
+    padding-top: 0.273em;
+    text-rendering: optimizelegibility;
 }
 .tipue_search_content_title
 {
     font-size: 42px;
     font-size: 2.625rem;
-    font-weight: 300;
     color: #444444;
-    padding-top: 0.273em;
+    font-family: "Open Sans";
+    font-weight: 300;
     line-height: 1.15538em;
     padding-bottom: 0.273em;
+    padding-top: 0.273em;
+    text-rendering: optimizelegibility;
 }
 
 .tipue_search_content_text
