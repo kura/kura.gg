@@ -17,15 +17,29 @@ Supported distros and versions
 The packages are built on Debian 7 (Wheezy) AMD 64 and are designed to work on
 the following versions but should work on any newer version.
 
+Supported
+---------
+
 Debian
-------
+~~~~~~
 
 - 7 (Wheezy)
 
 Ubuntu
-------
+~~~~~~
 
 - 12.04 (Precise)
+
+Unsupported but enabled
+-----------------------
+
+Ubuntu
+~~~~~~
+
+- 12.10 (Quantal)
+- 13.04 (Raring)
+- 13.10 (Saucy)
+- 14.04 (Trusty)
 
 Enabling
 ========
@@ -35,7 +49,7 @@ You can enable this by adding it to your apt config.
 .. code:: bash
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D38F85FF650A63B9
-    echo "deb https://apt.kura.io/ `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/apt.kura.io.list
+    sudo wget https://apt.kura.io/`lsb_release -cs`.list -O /etc/apt/sources.list.d/apt.kura.io.list
     sudo apt-get update
 
 By default this repository is run over SSL, to use the non-SSL version you will

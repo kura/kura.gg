@@ -36,9 +36,11 @@ Installation
 Debian/Ubuntu
 -------------
 
+You can get it from `apt.kura.io <https://kura.io/apt.kura.io/>`__.
+
 .. code:: bash
 
-    sudo cp vagrant /etc/bash_completion.d/
+    sudo make install
     . ~/bashrc
 
 OS X
