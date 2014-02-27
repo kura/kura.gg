@@ -5,6 +5,8 @@ PyBozo
 :tags: bruteforce, hack, hash, md5
 :slug: pybozo
 
+.. contents::
+
 PyBozo is a Python implementation of `BozoCrack`_ which was originally
 written by `Juuso Salonen`_ in Ruby.
 

@@ -4,6 +4,8 @@ Deiman
 :author: kura
 :slug: deiman
 
+.. contents::
+
 Deiman is a Python utility class for daemonizing a process.
 It has start and stop methods as well as a method for
 retrieving a process status information. It can also detect
@@ -32,12 +34,6 @@ From PyPI
 .. code:: bash
 
     pip install deiman
-
-Or
-
-.. code:: bash
-
-    easy_install deiman
 
 From GitHub
 -----------

@@ -5,6 +5,8 @@ Am I Secure?
 :tags: apache2, denyhosts, nginx, openssh, php, php5, python, security, ssh
 :slug: amisecure
 
+.. contents::
+
 This program is still in Alpha phase and is nowhere
 near complete. It's purpose is quite simply to be run on a server and
 let you know if there are any possible security holes in your

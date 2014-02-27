@@ -5,6 +5,7 @@ SimpleMTA
 :tags: eventlet, fake mail, greenlet, mta, python, simplemta
 :slug: simplemta
 
+.. contents::
 
 SimpleMTA is a Python and Eventlet powered MTA that can be configured to pretend to receive, bounce or mix responses to incoming messages. It can also be used to fake outbound sends.
 

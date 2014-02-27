@@ -4,6 +4,8 @@ go-bash-completion
 :author: kura
 :slug: go-bash-completion
 
+.. contents::
+
 go-bash-completion is as it sounds - bash completion
 script for the `Go programming language <http://golang.org/>`_.
 

@@ -5,6 +5,8 @@ apt.kura.io
 :tags: apt
 :slug: apt.kura.io
 
+.. contents::
+
 After releasing my own versions of haproxy with SPDY support and nginx with
 ngx_pagespeed and SPDY support, I decided it would make sense to actually
 host these in my own apt repository, so I did.
@@ -32,7 +34,7 @@ You can enable this by adding it to your apt config.
 
 .. code:: bash
 
-    wget -qO - https://apt.kura.io/apt.kura.io.key | sudo apt-key add -
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D38F85FF650A63B9
     echo "deb https://apt.kura.io/ `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/apt.kura.io.list
     sudo apt-get update
 

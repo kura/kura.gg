@@ -5,6 +5,8 @@ apt-security
 :tags: apt, security
 :slug: apt-security
 
+.. contents::
+
 A set of programs to update packages from the APT security repositories.
 
 This program does not improve your system security, it is merely a tool

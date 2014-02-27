@@ -5,6 +5,8 @@ Pelican Vimeo
 :tags: python, pelican, vimeo
 :slug: pelican-vimeo
 
+.. contents::
+
 Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages
 and articles.
 

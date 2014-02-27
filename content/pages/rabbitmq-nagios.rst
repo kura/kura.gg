@@ -5,6 +5,8 @@ rabbitmq-nagios
 :tags: nagios, rabbitmq, rabbitmqctl
 :slug: rabbitmq-nagios
 
+.. contents::
+
 A set of plugins for Nagios to monitor RabbitMQ using rabbitmqctl.
 
 Downloads

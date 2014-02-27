@@ -4,6 +4,8 @@ vagrant-bash-completion
 :author: kura
 :slug: vagrant-bash-completion
 
+.. contents::
+
 vagrant-bash-completion is as it sounds - bash completion
 script for `Vagrant <http://www.vagrantup.com/>`_.
 

@@ -5,6 +5,8 @@ Pelican YouTube
 :tags: python, pelican, youtube
 :slug: pelican-youtube
 
+.. contents::
+
 Pelican YouTube is a plugin to enabled you to embed YouTube videos in your pages
 and articles.
 
