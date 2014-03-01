@@ -34,7 +34,7 @@ repository and then run the following command to install the package.
 Install manually
 ~~~~~~~~~~~~~~~~
 
-Downloads the source file from above and run the commands below.
+Download the source file from above and run the commands below.
 
 .. code:: bash
 
