@@ -21,7 +21,15 @@ Installation
 Debian/Ubuntu
 -------------
 
-You can get it from `apt.kura.io <https://kura.io/apt.kura.io/>`__ or,
+apt.kura.io
+~~~~~~~~~~~
+
+Follow instructions on enabling `apt.kura.io <https://kura.io/apt.kura.io/>`__
+repository and then run the following command to install the package.
+
+.. code:: bash
+
+    sudo apt-get install go-bash-completion
 
 Install manually
 ~~~~~~~~~~~~~~~~
