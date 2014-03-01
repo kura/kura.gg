@@ -21,7 +21,12 @@ Installation
 Debian/Ubuntu
 -------------
 
-You can get it from `apt.kura.io <https://kura.io/apt.kura.io/>`__.
+You can get it from `apt.kura.io <https://kura.io/apt.kura.io/>`__ or,
+
+Install manually
+~~~~~~~~~~~~~~~~
+
+Downloads the source file from above and run the commands below.
 
 .. code:: bash
 
