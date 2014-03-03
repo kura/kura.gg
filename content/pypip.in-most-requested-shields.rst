@@ -12,16 +12,15 @@ pypip.in
 ========
 
 `pypip.in <https://pypip.in/>`__ is a website `I have written about before
-<https://kura.io/2013/12/24/shields-for-pypi-packages/>`__.
+<https://kura.io/2013/12/24/shields-for-pypi-packages/>`__. I decided I would
+look at the shields and see which ones were the most requested so far this
+year.
 
-I decided I would look at the shields and see which ones were the most
-requested so far this year.
-
-Due to the volumn of requests, I only keep 90 days of logs from nginx and no
-logs from Varnish, pypipin or the local version of buckler.
-
-nginx sits in front of Varnish so, even if Varnish responds with a cached
-version of the shield, a log line is still written to say it was requested.
+Due to the volumn of requests, I only keep 90 days
+of logs from nginx and no logs from Varnish, pypipin or the local version of
+buckler. nginx sits in front of Varnish so, even if Varnish responds with a
+cached version of the shield, a log line is still written to say it was
+requested.
 
 Top 20
 ======
