@@ -41,6 +41,13 @@ Download the source file from above and run the commands below.
     sudo make install
     . ~/bashrc
 
+Or you can do it the lazy way
+
+.. code:: bash
+
+    sudo wget https://raw.github.com/kura/go-bash-completion/master/etc/bash_completion.d/go -O /etc/bash_completion.d/go
+    . ~/bashrc
+
 Source
 ======
 
