@@ -12,8 +12,8 @@ A set of plugins for Nagios to monitor RabbitMQ using rabbitmqctl.
 Downloads
 ---------
 
-- .tar.gz`_
-- .zip`_
+- `.tar.gz`_
+- `.zip`_
 
 .. _.tar.gz: https://github.com/kura/rabbitmq-nagios/tarball/master
 .. _.zip: https://github.com/kura/rabbitmq-nagios/zipball/master
@@ -51,7 +51,7 @@ called
 
 ::
 
-    command[check\_rabbitmq\_queue\_length]=sudo /usr/lib/nagios/plugins/check\_rabbitmq\_queue\_length -w 10000 -c 20000 -v /
+    command[check_rabbitmq_queue_length]=sudo /usr/lib/nagios/plugins/check_rabbitmq_queue_length -w 10000 -c 20000 -v /
 
 And finally add that check to your host within your main Nagios
 installation.
