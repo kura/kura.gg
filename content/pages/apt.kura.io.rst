@@ -14,8 +14,8 @@ host these in my own apt repository, so I did.
 Supported distros and versions
 ==============================
 
-The packages are built on Debian 7 (Wheezy) AMD 64 and are designed to work on
-the following versions but should work on any newer version.
+The packages are built on Debian 7 (Wheezy) AMD64 and i386 and are designed to
+work on the following versions but should work on any newer version.
 
 Supported
 ---------
