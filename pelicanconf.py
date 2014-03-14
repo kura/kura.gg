@@ -11,7 +11,6 @@ TIMEZONE = 'Europe/London'
 
 GITHUB_URL = 'https://github.com/kura'
 TWITTER_URL = 'https://twitter.com/kuramanga'
-GOOGLE_ANALYTICS = 'UA-12479444-1'
 DISQUS_SITENAME = "syslogtv"
 
 DISPLAY_PAGES_ON_MENU = False
@@ -61,22 +60,7 @@ PLUGINS = [
     'assets',
     'pelican_gist',
     'archive_unique_dates',
-    'sitemap',
     'pelican_vimeo',
     'pelican_youtube',
     'tipue_search',
 ]
-
-SITEMAP = {
-    'format': 'xml',
-    'priorities': {
-        'articles': 0.5,
-        'indexes': 0.5,
-        'pages': 0.5,
-    },
-    'changefreqs': {
-        'articles': 'daily',
-        'indexes': 'daily',
-        'pages': 'daily',
-    }
-}
