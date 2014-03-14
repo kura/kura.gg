@@ -48,6 +48,25 @@ Or you can do it the lazy way
     sudo wget https://raw.github.com/kura/go-bash-completion/master/etc/bash_completion.d/go -O /etc/bash_completion.d/go
     . ~/bashrc
 
+OS X
+----
+
+With `homebrew <http://brew.sh/>`_ you can install the
+ `go-completion` recipe to use this plugin
+
+.. code:: bash
+
+    brew tap homebrew/completions
+    brew install go-completion
+
+then add the following lines to your ~/.bashrc
+
+.. code:: bash
+
+    if [ -f `brew --prefix`/etc/bash_completion.d/go ]; then
+        source `brew --prefix`/etc/bash_completion.d/go
+    fi
+
 Source
 ======
 

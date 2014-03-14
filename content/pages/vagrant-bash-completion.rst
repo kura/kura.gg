@@ -67,7 +67,7 @@ OS X
 ----
 
 With `homebrew <http://brew.sh/>`_ you can install the
-`vagrant-completion` recipe to use this plugin
+ `vagrant-completion` recipe to use this plugin
 
 .. code:: bash
 
