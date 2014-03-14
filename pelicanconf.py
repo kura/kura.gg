@@ -58,17 +58,13 @@ RELATIVE_URLS = True
 
 PLUGIN_PATH = "plugins/"
 PLUGINS = [
-    # ...
     'assets',
     'pelican_gist',
     'archive_unique_dates',
     'sitemap',
-    # 'gzip_cache',
     'pelican_vimeo',
     'pelican_youtube',
     'tipue_search',
-    # 'pdf',
-    # ...
 ]
 
 SITEMAP = {

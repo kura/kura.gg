@@ -17,3 +17,5 @@ FEED_ATOM = "feeds/atom.xml"
 FEED_RSS = "feeds/rss.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
+
+PLUGINS.append('minify')

@@ -24,7 +24,7 @@ help:
 	@echo '   make serve                       serve site at http://localhost:8000'
 	@echo '   make devserver                   start/restart develop_server.sh    '
 	@echo '   make stopserver                  stop local server                  '
-	@echo '   rsync_upload                     upload the web site via rsync+ssh  '
+	@echo '   make rsync                     upload the web site via rsync+ssh  '
 	@echo '                                                                       '
 
 
@@ -53,8 +53,8 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-rsync_upload: publish
+rsync: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app1:$(SSH_TARGET_DIR) --cvs-exclude
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
 
-.PHONY: html help clean regenerate serve devserver publish rsync_upload
+.PHONY: html help clean regenerate serve devserver publish rsync

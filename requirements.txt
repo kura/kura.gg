@@ -7,3 +7,4 @@ pelican-vimeo
 pelican-youtube
 rst2pdf
 webassets
+pelican-minify
