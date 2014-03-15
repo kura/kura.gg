@@ -6,7 +6,13 @@ denyhosts-unban
 
 .. contents::
 
-Tool for unbanning people from DenyHosts
+Tool for unbanning people from DenyHosts.
+
+Downloads
+=========
+
+- `.tar.gz <https://github.com/kura//tarball/master>`_
+- `.zip <https://github.com/kura/denyhosts-unban/zipball/master>`_
 
 Installation
 ============
@@ -29,7 +35,7 @@ Lazy way
 
 .. code:: bash
 
-    sudo wget https://github.com/kura/denyhosts-unban/blob/master/denyhosts-unban -O /usr/sbin/denyhosts-unban
+    sudo wget https://raw.github.com/kura/denyhosts-unban/master/usr/sbin/denyhosts-unban -O /usr/sbin/denyhosts-unban
     sudo chmod +x /usr/sbin/denyhosts-unban
 
 From archive
