@@ -16,6 +16,8 @@
      {% include 'sidebar.html' %}
  </div>
 </section>
+{% endblock content %}
+{% block additional_js %}
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function() {
@@ -29,4 +31,4 @@ $(document).ready(function() {
 });
 //]]>
 </script>
-{% endblock content %}
+{% endblock additional_js %}
