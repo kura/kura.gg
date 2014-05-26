@@ -6,7 +6,7 @@ nginx, proxy_cache and reverse proxying explained & benchmarked
 :tags: apache, cache, debian, howto, nginx, php, ubuntu, wordpress
 :slug: nginx-proxy_cache-and-explained-benchmarked
 
-.. contents::
+
 
 The beginning
 -------------

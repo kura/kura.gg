@@ -2,11 +2,13 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Kura'
-SITENAME = u'kura.io'
+AUTHOR = 'Kura'
+SITENAME = 'kura.io'
 SITEURL = 'https://kura.io'
 
-THEME = 'kura.io'
+THEME = 'ghastly'
+# THEME = 'kura.io'
+
 TIMEZONE = 'Europe/London'
 
 GITHUB_URL = 'https://github.com/kura'
@@ -15,7 +17,13 @@ DISQUS_SITENAME = "syslogtv"
 
 DISPLAY_PAGES_ON_MENU = False
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
+
+DEFAULT_DATE_FORMAT = '%d %b %Y %H:%M'
+
+DATE_FORMATS = {
+    'en': DEFAULT_DATE_FORMAT
+}
 
 MENUITEMS = ()
 
@@ -41,8 +49,7 @@ EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
 }
 
-DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search',
-                     '404'))
+DIRECT_TEMPLATES = (('index', 'archives', '404'))
 
 # Blogroll
 LINKS = ()
@@ -59,8 +66,6 @@ PLUGIN_PATH = "plugins/"
 PLUGINS = [
     'assets',
     'pelican_gist',
-    'archive_unique_dates',
     'pelican_vimeo',
     'pelican_youtube',
-    'tipue_search',
 ]

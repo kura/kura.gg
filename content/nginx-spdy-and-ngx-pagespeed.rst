@@ -6,7 +6,7 @@ nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)
 :tags: debian, ubuntu, nginx, spdy, pagespeed, ngx_pagespeed, mod_pagespeed
 :slug: nginx-spdy-and-ngx-pagespeed
 
-.. contents::
+
 
 I decided to rebuild syslog.tv as pure HTML using RST and
 `Pelican`_ and rebrand it as kura.io.

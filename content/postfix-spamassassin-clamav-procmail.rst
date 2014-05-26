@@ -6,7 +6,7 @@ Postfix + SpamAssassin + ClamAV + Procmail on Debian 6/Ubuntu
 :tags: clamav, clamsmtp, debian, email, mail, postfix, procmail, spamassassin, ubuntu
 :slug: postfix-spamassassin-clamav-procmail
 
-.. contents::
+
 
 This is part 2 of my series on mail servers on Debian 6/Ubuntu 10.04, it
 should work on other versions of each though. `Part 1 is available here <https://kura.io/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/>`_.

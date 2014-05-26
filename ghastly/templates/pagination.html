@@ -1,0 +1,17 @@
+{% if DEFAULT_PAGINATION %}
+
+    <nav class="pagination" role="navigation">
+        {% if articles_page and articles_page.has_previous() %}
+            {% if articles_page.previous_page_number() == 1 %}
+                <a class="newer-posts" href="{{ SITEURL }}/{{ page_name }}.html">&larr; Previous</a>
+            {% else %}
+                <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">&larr; Previous</a>
+            {% endif %}
+        {% endif %}
+        {% if articles_page %}<span class="page-number">Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}</span>{% endif %}
+        {% if articles_page and articles_page.has_next() %}
+        <a class="older-posts" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">Next &rarr;</a>
+        {% endif %}
+    </nav>
+
+{% endif %}

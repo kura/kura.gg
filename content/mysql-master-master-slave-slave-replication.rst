@@ -6,7 +6,7 @@ MySQL Master-Master-Slave-Slave Replication
 :tags: mysql, replication
 :slug: mysql-master-master-slave-slave-replication
 
-.. contents::
+
 
 Quick introduction
 ------------------

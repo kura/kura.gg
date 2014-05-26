@@ -6,7 +6,7 @@ kura.io's A* SSL rating
 :tags: ssl
 :slug: kura.io-a-star-ssl-rating
 
-.. contents::
+
 
 I am a firm believer in using SSL as much as possible, for me that is pretty
 much everywhere and, thanks to the wonderful guys at

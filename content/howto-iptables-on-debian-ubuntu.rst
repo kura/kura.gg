@@ -6,7 +6,7 @@ HOWTO: IPTables on Debian/Ubuntu
 :tags: debian, howto, iptables, networking, security, ubuntu
 :slug: howto-iptables-on-debian-ubuntu
 
-.. contents::
+
 
 Installation
 ------------

@@ -39,15 +39,13 @@ clean:
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
-serve:
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server
-
-devserver:
+startserver:
 	$(BASEDIR)/develop_server.sh restart
 
 stopserver:
 	kill -9 `cat pelican.pid`
 	kill -9 `cat srv.pid`
+	kill `ps aux | grep pelican.server | grep -v grep | awk '{print $2}'`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
@@ -58,4 +56,4 @@ rsync: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
 	rm -rf $(OUTPUTDIR)/*
 
-.PHONY: html help clean regenerate serve devserver publish rsync
+.PHONY: html help clean regenerate startserver stopserver publish rsync

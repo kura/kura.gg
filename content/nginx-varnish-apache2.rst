@@ -6,7 +6,7 @@ WordPress + nginx + Varnish + Apache 2
 :tags: apache, nginx, varnish, wordpress
 :slug: nginx-varnish-apache2
 
-.. contents::
+
 
 Lately I've been doing a lot of work with Varnish, this includes testing
 it within a load balanced environment, putting it behind nginx, putting

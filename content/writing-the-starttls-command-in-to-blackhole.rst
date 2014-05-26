@@ -6,7 +6,7 @@ Writing the STARTTLS command in to Blackhole
 :tags: python, tornado, iostream, ssl, starttls, blackhole
 :slug: writing-the-starttls-command-in-to-blackhole
 
-.. contents::
+
 
 Blackhole has always been able to handle unencrypted SMTP and
 for a long time it's been able to handle encrypted SMTP via TLSv1.

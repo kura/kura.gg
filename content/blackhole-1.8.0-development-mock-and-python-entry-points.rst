@@ -6,7 +6,7 @@ Blackhole 1.8.0 development, Mock and Python entry_points
 :tags: python, blackhole, setup.py, entry_points, mock, tests, testing
 :slug: blackhole-1.8.0-development-mock-and-python-entry-points
 
-.. contents::
+
 
 Over the last week I've been doing a huge amount of refactoring of
 `Blackhole <http://blackhole.io>`_ as well as writing dozens of additional

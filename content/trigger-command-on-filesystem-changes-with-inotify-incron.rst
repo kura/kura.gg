@@ -6,7 +6,7 @@ Trigger command on filesystem changes with inotify + incron
 :tags: incron, infobright, inotify, mysql
 :slug: trigger-command-on-filesystem-changes-with-inotify-incron
 
-.. contents::
+
 
 During a seemingly normal work day a colleague pointed out a problem to
 me and asked if I had any solution.

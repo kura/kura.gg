@@ -6,7 +6,7 @@ HOWTO: SSH config on Debian/Ubuntu
 :tags: debian, howto, ssh, ssh_config, ubuntu
 :slug: howto-ssh-config-on-debian-ubuntu
 
-.. contents::
+
 
 Today I *finally* got round to setting up my local user ssh config on my
 new work laptop and figured I'd do a quick write up on it and it's uses.

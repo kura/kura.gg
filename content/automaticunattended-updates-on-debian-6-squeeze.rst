@@ -6,7 +6,7 @@ Automatic/Unattended updates on Debian 6 (Squeeze)
 :tags: automatic update, debian, unattended-upgrades, update
 :slug: automaticunattended-updates-on-debian-6-squeeze
 
-.. contents::
+
 
 The unattended-upgrades package used on Debian is based on the one from
 Ubuntu. It is generally pretty safe in my opinion but I only ever enable

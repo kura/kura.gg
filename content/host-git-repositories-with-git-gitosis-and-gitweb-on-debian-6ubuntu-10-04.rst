@@ -6,7 +6,7 @@ Host git repositories with git, gitosis and gitweb on Debian 6/Ubuntu 10.04
 :tags: debian, git, gitosis, gitweb, ubuntu
 :slug: host-git-repositories-with-git-gitosis-and-gitweb-on-debian-6ubuntu-10-04
 
-.. contents::
+
 
 Installation
 ------------

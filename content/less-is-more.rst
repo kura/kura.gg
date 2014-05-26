@@ -6,7 +6,7 @@ less is more
 :tags: less, linux, unix
 :slug: less-is-more
 
-.. contents::
+
 
 To my surprise I have found that there are still people out there who
 use *"more"*, this has shocked me.

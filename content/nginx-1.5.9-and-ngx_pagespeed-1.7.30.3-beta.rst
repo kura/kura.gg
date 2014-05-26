@@ -6,7 +6,7 @@ nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta
 :tags: debian, ubuntu, haproxy, nginx, spdy, pagespeed, ngx_pagespeed
 :slug: nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta
 
-.. contents::
+
 
 I have built and released nginx 1.5.9 with ngx_pagespeed module 1.7.30.3-beta
 and published them on `apt.kura.io <http://apt.kura.io>`__.
