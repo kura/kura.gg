@@ -200,7 +200,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Noto Serif', serif;
+    font-family: FiraSans, 'Noto Serif', serif;
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #3A4145;
@@ -276,7 +276,11 @@ div#contents p {
     letter-spacing: -1px;
     text-indent: -2px;
     font-weight: bold;
-    margin: 0;
+    margin: 1em 0;
+}
+
+div#contents li a {
+    text-decoration: none;
 }
 
 p, ul, ol, dl {
@@ -528,7 +532,7 @@ h1.blog-title a {
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
-    font-family: FiraSan, 'Noto Serif', serif;
+    font-family: FiraSans, 'Noto Serif', serif;
     letter-spacing: 0;
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
