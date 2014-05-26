@@ -6,7 +6,7 @@ haproxy stats
 :tags: haproxy, stats
 :slug: haproxy-stats
 
-
+.. contents::
 
 I recently wrote an article on `using haproxy, SSL and
 SPDY with nginx backend servers

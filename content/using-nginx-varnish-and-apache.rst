@@ -6,7 +6,7 @@ Using nginx, Varnish and Apache
 :tags: apache, cache, nginx, varnish
 :slug: using-nginx-varnish-and-apache
 
-
+.. contents::
 
 The problem
 -----------

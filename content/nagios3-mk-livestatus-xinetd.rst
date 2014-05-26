@@ -6,7 +6,7 @@ Nagios3 + MK Livestatus + xinetd on Debian 6/Ubuntu
 :tags: mk livestatus, nagios, nagios 3, nagios broker, xinetd
 :slug: nagios3-mk-livestatus-xinetd
 
-
+.. contents::
 
 Preparation
 -----------

@@ -6,7 +6,7 @@ nginx 1.5.10 with SPDY 3.1
 :tags: debian, ubuntu, nginx, spdy, pagespeed, ngx_pagespeed
 :slug: nnginx-1.5.10-with-spdy3.1
 
-
+.. contents::
 
 I have built and released nginx 1.5.10 with SPDY 3.1. Like the `nginx 1.5.9
 release <https://kura.io/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/>`__

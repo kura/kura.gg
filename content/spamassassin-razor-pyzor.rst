@@ -6,7 +6,7 @@ SpamAssassin + Razor + Pyzor on Debian 6/Ubuntu
 :tags: email, mail, postfix, pyzor, razor, spam, spamassassin
 :slug: spamassassin-razor-pyzor
 
-
+.. contents::
 
 This is part 4 of my series on configuring a mail server, please see
 `part one`_, `part two`_ and `part three`_ if you're not familiar with

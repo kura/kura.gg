@@ -6,7 +6,7 @@ HOWTO: Using SPF to validate outgoing mail
 :tags: howto, mail
 :slug: howto-using-spf-to-validate-outgoing-mail
 
-
+.. contents::
 
 You can get a basic overview on what SPF is, what it's for and it's more
 advanced usages here - `http://www.openspf.org/`_

@@ -6,7 +6,7 @@ pypip.in most requested shields
 :tags: python, pypi, pip
 :slug: pypip.in-most-requested-shields
 
-
+.. contents::
 
 pypip.in
 ========

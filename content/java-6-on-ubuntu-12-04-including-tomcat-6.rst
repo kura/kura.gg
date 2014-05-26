@@ -6,7 +6,7 @@ Java 6 on Ubuntu 12.04 (including Tomcat 6)
 :category: tutorials
 :slug: java-6-on-ubuntu-12-04-including-tomcat-6
 
-
+.. contents::
 
 If like me you run in to issue when using OpenJDK, my issues come from
 it's memory problems when you're allocating and using large amounts of

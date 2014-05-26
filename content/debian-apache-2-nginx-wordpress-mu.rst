@@ -6,7 +6,7 @@ Debian, Apache 2, Nginx, WordPress MU & WP-Super-Cache
 :tags: apache, cache, debian, nginx, wordpress
 :slug: debian-apache-2-nginx-wordpress-mu
 
-
+.. contents::
 
 *This is a rather old article, for more up-to-date information please
 see;*

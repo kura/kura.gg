@@ -6,7 +6,7 @@ Postfix + Dovecot (IMAP/IMAPS) + SASL + Maildir on Debian 6/Ubuntu
 :tags: debian, dovecot, email, imap, imaps, mail, maildir, postfix, sasl, ubuntu
 :slug: postfix-dovecot-imapimaps-sasl-maildir
 
-
+.. contents::
 
 This guide is part 1 of what I plan will be a couple of guides that take
 you through installing a base mail system, SpamAssassin, DKIM and much

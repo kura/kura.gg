@@ -6,7 +6,7 @@ HOWTO: Guest Virtual Machine disk extend online with Debian/Ubuntu, LVM2 and VMW
 :tags: cfdisk, debian, esx, howto, logical volume management, lvm, lvm2, partition, ubuntu, vmware
 :slug: howto-guest-virtual-machine-disk-extend-online-with-debian-ubuntu-lvm2-and-vmware-esx
 
-
+.. contents::
 
 Over the last two days I've had the interesting task of online some VMs
 from clones and increasing their disk space to accommodate a mass of

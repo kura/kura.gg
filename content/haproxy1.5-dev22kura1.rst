@@ -6,7 +6,7 @@ haproxy1.5-dev22kura1
 :tags: debian, ubuntu, haproxy, spdy, ssl
 :slug: haproxy1.5-dev22kura1
 
-
+.. contents::
 
 Changes
 =======

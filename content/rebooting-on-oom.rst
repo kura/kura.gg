@@ -6,7 +6,7 @@ Rebooting on OOM
 :tags: kernel panic, oom, reboot
 :slug: rebooting-on-oom
 
-
+.. contents::
 
 ***I would generally not advise using this unless you have skill at
 debugging why OOM has spawned and also debugging kernel panics after

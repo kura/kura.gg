@@ -6,7 +6,7 @@ haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2
 :tags: debian, ubuntu, haproxy, nginx, spdy, pagespeed, ngx_pagespeed
 :slug: haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2
 
-
+.. contents::
 
 I have previously released `haproxy1.5-dev19 with SSL & SPDY support enabled
 <https://kura.io/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/>`__

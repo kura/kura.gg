@@ -6,7 +6,7 @@ Postfix spam protection with greylisting using Postgrey on Debian 6/Ubuntu
 :tags: debian, email, greylist, mail, postfix, postgrey, spam, ubuntu
 :slug: postfix-spam-protection-with-greylisting-using-postgrey-on-debian-6ubuntu
 
-
+.. contents::
 
 A simple yet effective method for protecting your mail server from spam
 is to use greylisting. In simple terms, when an email is received the

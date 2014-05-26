@@ -6,7 +6,7 @@ vagrant-bash-completion & go-bash-completion on apt.kura.io
 :tags: debian, ubuntu, vagrant, go, bash, completion
 :slug: vagrant-bash-completion-and-go-bash-completion-on-apt.kura.io
 
-
+.. contents::
 
 Requirements
 ============

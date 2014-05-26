@@ -6,7 +6,7 @@ Wrapping a Tornado IOStream with SSL
 :tags: python, tornado, iostream, ssl, blackhole
 :slug: wrapping-a-tornado-iostream-with-ssl
 
-
+.. contents::
 
 As part of my effort to make `Blackhole <http://blackhole.io/>`_ as
 useful and usable as possible, I needed to be able to support SSL/TLS
