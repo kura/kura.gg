@@ -222,7 +222,6 @@ h1, h2, h3,
 h4, h5, h6 {
     text-rendering: optimizeLegibility;
     line-height: 1;
-    margin-top: 0;
     font-family: FiraSans, 'Open Sans', sans-serif;
 }
 

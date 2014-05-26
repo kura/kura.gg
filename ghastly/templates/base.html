@@ -48,7 +48,11 @@
         {% block content %}{% endblock %}
     </main>
     <footer class="site-footer">
-        <a class="subscribe icon-feed" href="http://kura.ghost.io/rss/"><span class="tooltip">RSS</span></a>
+        {% if FEED_RSS %}
+            <a class="subscribe icon-feed" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}"><span class="tooltip">RSS</span></a>
+        {% elif FEED_ATOM %}
+            <a class="subscribe icon-feed" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}"><span class="tooltip">Atom</span></a>
+        {% endif %}
         <div class="inner">
             <section class="copyright">This website source and content are release under the <a href="{{ SITEURL }}/license/">MIT License</a>.</section>
             <section class="poweredby">Powered by love &amp; rainbow sparkles.</section>
@@ -60,7 +64,7 @@
     </style>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js" async></script>
-    {% assets filters="rjsmin", output="js/kura.io.js", "js/index.js", "js/modernizr.js" %}
+    {% assets filters="rjsmin", output="js/ghastly.js", "js/index.js", "js/modernizr.js" %}
         <script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}" async></script>
     {% endassets %}
 </body>
