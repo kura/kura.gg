@@ -270,6 +270,14 @@ h4 a, h5 a, h6 a {
     text-decoration: none;
 }
 
+div#contents p {
+    font-size: 4rem;
+    line-height: 1.2em;
+    letter-spacing: -1px;
+    text-indent: -2px;
+    font-weight: bold;
+    margin: 0;
+}
 
 p, ul, ol, dl {
     margin: 1.6em 0;
