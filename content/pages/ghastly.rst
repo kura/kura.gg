@@ -76,12 +76,16 @@ Screenshots
 ===========
 
 .. image:: https://raw.githubusercontent.com/kura/ghastly/master/homepage.png
+    :alt: Homepage
 
 .. image:: https://raw.githubusercontent.com/kura/ghastly/master/article1.png
+    :alt: An example of article content
 
 .. image:: https://raw.githubusercontent.com/kura/ghastly/master/article2.png
+    :alt: An example of article content
 
 .. image:: https://raw.githubusercontent.com/kura/ghastly/master/article3.png
+    :alt: An example of article content
 
 Requirements
 ============
