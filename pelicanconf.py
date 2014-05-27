@@ -65,6 +65,7 @@ RELATIVE_URLS = True
 PLUGIN_PATH = "plugins/"
 PLUGINS = [
     'assets',
+    'extract_toc',
     'pelican_gist',
     'pelican_vimeo',
     'pelican_youtube',

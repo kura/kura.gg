@@ -15,7 +15,10 @@
     <span class="post-meta">
         <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}">View on GitHub</a>
     </span>
-    <section class="post-content">{{ article.content }}</section>
+    <section class="post-content">
+        {% if article.toc %}{{ article.toc }}{% endif %}
+        {{ article.content }}
+    </section>
     <footer class="post-footer">
         {% include 'share.html' %}
         {% include 'disqus.html' %}

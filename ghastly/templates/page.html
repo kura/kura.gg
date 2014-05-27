@@ -10,6 +10,9 @@
     <span class="post-meta">
         <a href="https://raw.github.com/kura/kura.io/master/content/{{ page.get_relative_source_path() }}">View on GitHub</a>
     </span>
-    <section class="post-content">{{ page.content }}</section>
+    <section class="post-content">
+        {% if page.toc %}{{ page.toc }}{% endif %}
+        {{ page.content }}
+    </section>
 </article>
 {% endblock %}
