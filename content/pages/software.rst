@@ -118,3 +118,12 @@ Bash completion
 - `go-bash-completion <https://kura.io/go-bash-completion/>`__
 - `vagrant-bash-completion <https://kura.io/vagrant-bash-completion/>`__
 - `tugboat-bash-completion <https://github.com/kura/tugboat-bash-completion>`__
+
+Ghastly
+=======
+
+A clean and minimal, lightweight theme for the
+`Pelican <http://getpelican.com>`__ blogging platform. Ghastly is based
+heavily off of Casper, the default theme for `Ghost <https://ghost.org>`__.
+
+`/ghastly <https://kura.io/ghastly/>`__
