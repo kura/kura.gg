@@ -62,10 +62,5 @@
         @import url('{{ SITEURL }}/{{ ASSET_URL }}');
     {% endassets %}
     </style>
-
-    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js" async></script>
-    {% assets filters="rjsmin", output="js/ghastly.js", "js/index.js", "js/modernizr.js" %}
-        <script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}" async></script>
-    {% endassets %}
 </body>
 </html>
