@@ -146,12 +146,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Apply these base styles to all icons */
-.icon-ghost:before,
 .icon-feed:before,
 .icon-twitter:before,
 .icon-google-plus:before,
-.icon-facebook:before,
-.icon-mail:before  {
+.icon-facebook:before {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -162,28 +160,23 @@ table { border-collapse: collapse; border-spacing: 0; }
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 1.6em;
 }
 
 /* Each icon is created by inserting the corret character into the
    content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-    content: "\e000";
-}
 .icon-feed:before {
     content: "\e001";
 }
 .icon-twitter:before {
     content: "\e002";
-    font-size: 1.1em;
+    font-size: 1.8em;
 }
 .icon-google-plus:before {
     content: "\e003";
 }
 .icon-facebook:before {
     content: "\e004";
-}
-.icon-mail:before {
-    content: "\e005";
 }
 
 
@@ -928,10 +921,10 @@ h1.blog-title a {
 
 /* The RSS icon, inserted via icon font */
 .subscribe:before {
-    font-size: 10px;
+    font-size: 16px;
     position: absolute;
-    top: 9px;
-    left: 9px;
+    top: 6px;
+    left: 6px;
     font-weight: bold;
     transition: color 0.5s ease;
 }
