@@ -6,13 +6,13 @@ Ghastly - A theme for Pelican
 :tags: pelican, ghost
 :slug: ghastly-a-theme-for-pelican
 
-.. contents::
-    :backlinks: none
-
 .. figure:: /images/gastly.png
     :alt: Gastly, the Ghost Pokemon
 
     (Image by `Raiba-art <http://raiba-art.deviantart.com/art/Gastly-294533100>`__)
+
+.. contents::
+    :backlinks: none
 
 Introduction
 ============

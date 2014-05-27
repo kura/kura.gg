@@ -17,12 +17,12 @@ I run my own APT repository with custom builds of;
 
 and several of my own packages;
 
-- `vagrant-bash-completion <https://kura.io/vagrant-bash-completion/>`__
-- `go-bash-completion <https://kura.io/go-bash-completion/>`__
-- `denyhosts-unban <https://kura.io/denyhosts-unban/>`__
+- `vagrant-bash-completion </vagrant-bash-completion/>`__
+- `go-bash-completion </go-bash-completion/>`__
+- `denyhosts-unban </denyhosts-unban/>`__
 
-A detailed guide on how to use this repository can be found 
-`here <https://kura.io/apt.kura.io/>`__.
+A detailed guide on how to use this repository can be found
+`here </apt.kura.io/>`__.
 
 Software
 ========
@@ -54,7 +54,7 @@ Am I Secure
 Am I Secure is a relatively simple Python script that will check *some* of your
 server configuration and report on security and configuration issues.
 
-`/amisecure <https://kura.io/amisecure/>`__
+`/amisecure </amisecure/>`__
 
 pypipin
 -------
@@ -71,7 +71,7 @@ Deiman is a Python utility class for daemonizing a process. It has start and
 stop methods as well as a method for retrieving a process status information.
 It can also detect stale PIDs and remove them.
 
-`/deiman <https://kura.io/deiman/>`__
+`/deiman </deiman/>`__
 
 PyBozo
 ------
@@ -79,7 +79,7 @@ PyBozo
 PyBozo is a Python implementation of BozoCrack for using Google to crack
 unsalted MD5 passwords.
 
-`/pybozo <https://kura.io/pybozo/>`__
+`/pybozo </pybozo/>`__
 
 Pelican [YouTube/Vimeo]
 -----------------------
@@ -87,8 +87,8 @@ Pelican [YouTube/Vimeo]
 Pelican YouTube and Vimeo are a set of plugins that enable you to embed videos
 in to your pages and articles.
 
-`/pelican-youtube <https://kura.io/pelican-youtube/>`__
-`/pelican-vimeo <https://kura.io/pelican-vimeo/>`__
+`/pelican-youtube </pelican-youtube/>`__
+`/pelican-vimeo </pelican-vimeo/>`__
 
 apt-security
 ------------
@@ -96,14 +96,14 @@ apt-security
 A simple set of commands to allow you to update to the security releases
 without updating your entire operating system.
 
-`/apt-security <https://kura.io/apt-security/>`__
+`/apt-security </apt-security/>`__
 
 rabbitmq-nagios
 ---------------
 
 A set of plugins for Nagios to monitor RabbitMQ using *rabbitmqctl*.
 
-`/rabbitmq-nagios <https://kura.io/rabbitmq-nagios/>`__
+`/rabbitmq-nagios </rabbitmq-nagios/>`__
 
 denyhosts-unban
 ---------------
@@ -111,13 +111,13 @@ denyhosts-unban
 Tool for unbanning people from DenyHosts without having to manually edit half a
 dozen files.
 
-`/denyhosts-unban <https://kura.io/denyhosts-unban/>`__
+`/denyhosts-unban </denyhosts-unban/>`__
 
 Bash completion
 ---------------
 
-- `go-bash-completion <https://kura.io/go-bash-completion/>`__
-- `vagrant-bash-completion <https://kura.io/vagrant-bash-completion/>`__
+- `go-bash-completion </go-bash-completion/>`__
+- `vagrant-bash-completion </vagrant-bash-completion/>`__
 - `tugboat-bash-completion <https://github.com/kura/tugboat-bash-completion>`__
 
 Ghastly
@@ -127,4 +127,4 @@ A clean and minimal, lightweight theme for the
 `Pelican <http://getpelican.com>`__ blogging platform. Ghastly is based
 heavily off of Casper, the default theme for `Ghost <https://ghost.org>`__.
 
-`/ghastly <https://kura.io/ghastly/>`__
+`/ghastly </ghastly/>`__

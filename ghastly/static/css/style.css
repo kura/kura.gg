@@ -981,7 +981,8 @@ h1.blog-title a {
 div.figure p.caption {
     color: #BBC7CC;
     font-family: FiraSans,'Open Sans',sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
+    font-style: italic;
     line-height: 1.7em;
 }
 
