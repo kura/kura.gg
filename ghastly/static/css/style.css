@@ -985,6 +985,12 @@ h1.blog-title a {
     top: -33px;
 }
 
+div.figure p.caption {
+    color: #BBC7CC;
+    font-family: FiraSans,'Open Sans',sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.7em;
+}
 
 /* ==========================================================================
    10. Media Queries - Smaller than 900px
