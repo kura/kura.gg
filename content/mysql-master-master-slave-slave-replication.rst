@@ -7,6 +7,7 @@ MySQL Master-Master-Slave-Slave Replication
 :slug: mysql-master-master-slave-slave-replication
 
 .. contents::
+    :backlinks: none
 
 Quick introduction
 ------------------

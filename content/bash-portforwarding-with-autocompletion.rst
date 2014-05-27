@@ -7,6 +7,7 @@ Bash portforwarding with autocompletion
 :slug: bash-portforwarding-with-autocompletion
 
 .. contents::
+    :backlinks: none
 
 I spend a LOT of time with tunnels open to multiple machines, connecting
 directly to PostgreSQL, RabbitMQ and many other services all via SSH.

@@ -5,6 +5,7 @@ Software
 :slug: software
 
 .. contents::
+    :backlinks: none
 
 apt
 ===

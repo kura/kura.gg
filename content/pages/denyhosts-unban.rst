@@ -5,6 +5,7 @@ denyhosts-unban
 :slug: denyhosts-unban
 
 .. contents::
+    :backlinks: none
 
 Tool for unbanning people from DenyHosts.
 

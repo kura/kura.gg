@@ -7,6 +7,7 @@ haproxy1.5-dev22kura1
 :slug: haproxy1.5-dev22kura1
 
 .. contents::
+    :backlinks: none
 
 Changes
 =======

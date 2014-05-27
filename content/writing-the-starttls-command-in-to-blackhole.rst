@@ -7,6 +7,7 @@ Writing the STARTTLS command in to Blackhole
 :slug: writing-the-starttls-command-in-to-blackhole
 
 .. contents::
+    :backlinks: none
 
 Blackhole has always been able to handle unencrypted SMTP and
 for a long time it's been able to handle encrypted SMTP via TLSv1.

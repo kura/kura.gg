@@ -6,6 +6,7 @@ PyBozo
 :slug: pybozo
 
 .. contents::
+    :backlinks: none
 
 PyBozo is a Python implementation of `BozoCrack`_ which was originally
 written by `Juuso Salonen`_ in Ruby.

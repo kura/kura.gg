@@ -7,6 +7,7 @@ Mount Amazon S3 bucket locally on Debian 5 & 6/Ubuntu 10.04
 :slug: mount-amazon-s3-bucket-locally
 
 .. contents::
+    :backlinks: none
 
 I've recently been toying with my `Raspberry Pi mirror`_ including
 moving it out on to Amazon's S3. I've written an article on `how to back

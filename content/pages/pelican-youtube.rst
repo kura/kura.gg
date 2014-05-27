@@ -6,6 +6,7 @@ Pelican YouTube
 :slug: pelican-youtube
 
 .. contents::
+    :backlinks: none
 
 Pelican YouTube is a plugin to enabled you to embed YouTube videos in your pages
 and articles.

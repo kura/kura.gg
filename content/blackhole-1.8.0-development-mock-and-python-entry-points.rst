@@ -7,6 +7,7 @@ Blackhole 1.8.0 development, Mock and Python entry_points
 :slug: blackhole-1.8.0-development-mock-and-python-entry-points
 
 .. contents::
+    :backlinks: none
 
 Over the last week I've been doing a huge amount of refactoring of
 `Blackhole <http://blackhole.io>`_ as well as writing dozens of additional

@@ -6,6 +6,7 @@ Am I Secure?
 :slug: amisecure
 
 .. contents::
+    :backlinks: none
 
 This program is still in Alpha phase and is nowhere
 near complete. It's purpose is quite simply to be run on a server and

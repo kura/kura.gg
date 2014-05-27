@@ -7,6 +7,7 @@ New syslog.tv nginx wordpress site configuration explained
 :slug: new-syslog-tv-nginx-wordpress-site-configuration
 
 .. contents::
+    :backlinks: none
 
 Configuration changes
 ---------------------

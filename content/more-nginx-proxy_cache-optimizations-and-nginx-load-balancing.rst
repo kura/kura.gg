@@ -7,6 +7,7 @@ More nginx proxy_cache optimizations and nginx load balancing
 :slug: more-nginx-proxy_cache-optimizations-and-nginx-load-balancing
 
 .. contents::
+    :backlinks: none
 
 This is yet another follow up to post to several previous posts about
 using nginx as a reverse proxy with caching. It is actually a direct

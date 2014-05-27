@@ -6,6 +6,7 @@ SimpleMTA
 :slug: simplemta
 
 .. contents::
+    :backlinks: none
 
 SimpleMTA is a Python and Eventlet powered MTA that can be configured to pretend to receive, bounce or mix responses to incoming messages. It can also be used to fake outbound sends.
 

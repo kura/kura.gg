@@ -5,6 +5,7 @@ go-bash-completion
 :slug: go-bash-completion
 
 .. contents::
+    :backlinks: none
 
 go-bash-completion is as it sounds - bash completion
 script for the `Go programming language <http://golang.org/>`_.

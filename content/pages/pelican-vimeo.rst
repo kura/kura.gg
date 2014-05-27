@@ -6,6 +6,7 @@ Pelican Vimeo
 :slug: pelican-vimeo
 
 .. contents::
+    :backlinks: none
 
 Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages
 and articles.

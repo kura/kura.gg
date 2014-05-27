@@ -6,6 +6,7 @@ Ghastly - A theme for Pelican
 :slug: ghastly
 
 .. contents::
+    :backlinks: none
 
 .. figure:: /images/gastly.png
     :alt: Gastly, the Ghost Pokemon

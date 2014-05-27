@@ -7,6 +7,7 @@ Load balancing HTTP/HTTPS with Pound on Debian 6/Ubuntu
 :slug: load-balancing-httphttps-with-pound-on-debian-6ubuntu
 
 .. contents::
+    :backlinks: none
 
 Pound is a great little load balancer, it's fast, opensource and
 supports SSL termination, which is great!

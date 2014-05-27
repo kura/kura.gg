@@ -7,6 +7,7 @@ vagrant-bash-completion & go-bash-completion on apt.kura.io
 :slug: vagrant-bash-completion-and-go-bash-completion-on-apt.kura.io
 
 .. contents::
+    :backlinks: none
 
 Requirements
 ============

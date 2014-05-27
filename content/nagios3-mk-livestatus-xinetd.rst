@@ -7,6 +7,7 @@ Nagios3 + MK Livestatus + xinetd on Debian 6/Ubuntu
 :slug: nagios3-mk-livestatus-xinetd
 
 .. contents::
+    :backlinks: none
 
 Preparation
 -----------

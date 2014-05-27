@@ -7,6 +7,7 @@ Building nginx on Red Hat and Debian to RPM/DEB-style locations
 :slug: building-nginx-on-red-hat-and-debian-to-rpmdeb-style-locations
 
 .. contents::
+    :backlinks: none
 
 The title of this post is a bit stupid, but I honestly couldn't think of
 any other way to write it...

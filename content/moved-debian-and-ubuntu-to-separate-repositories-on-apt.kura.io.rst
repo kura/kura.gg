@@ -7,6 +7,7 @@ Moved debian and ubuntu to separate repositories on apt.kura.io
 :slug: moved-debian-and-ubuntu-to-separate-repositories-on-apt.kura.io
 
 .. contents::
+    :backlinks: none
 
 I have made a breaking change to the `apt.kura.io <https://kura.io/apt.kura.io/>`__ 
 repositories.

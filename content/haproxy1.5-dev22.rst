@@ -7,6 +7,7 @@ haproxy1.5-dev22
 :slug: haproxy1.5-dev22
 
 .. contents::
+    :backlinks: none
 
 Requirements
 ============

@@ -7,6 +7,7 @@ HOWTO: Debian server security
 :slug: howto-debian-server-security
 
 .. contents::
+    :backlinks: none
 
 Server security is something I've always tried to keep myself up-to-date
 on. I have at least a dozen RSS feeds that I read daily to learn about

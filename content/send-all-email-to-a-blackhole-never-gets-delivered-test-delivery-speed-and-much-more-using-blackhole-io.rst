@@ -7,6 +7,7 @@ Send all email to a blackhole (never gets delivered), test delivery speed and mu
 :slug: send-all-email-to-a-blackhole-never-gets-delivered-test-delivery-speed-and-much-more-using-blackhole-io
 
 .. contents::
+    :backlinks: none
 
 I have built and released an open-source email server in the past for
 testing send rates and speeds, this project was called SimpleMTA and is

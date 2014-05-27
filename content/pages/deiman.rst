@@ -5,6 +5,7 @@ Deiman
 :slug: deiman
 
 .. contents::
+    :backlinks: none
 
 Deiman is a Python utility class for daemonizing a process.
 It has start and stop methods as well as a method for

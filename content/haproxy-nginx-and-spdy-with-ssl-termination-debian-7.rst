@@ -7,6 +7,7 @@ haproxy, nginx and SPDY with SSL termination (Debian 7)
 :slug: haproxy-nginx-and-spdy-with-ssl-termination-debian-7
 
 .. contents::
+    :backlinks: none
 
 `I wrote an article last week`_ explaining that I had changed my blog
 and built my own nginx packages with `SPDY`_ built in.

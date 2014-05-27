@@ -7,6 +7,7 @@ Shields for PyPI packages
 :slug: shields-for-pypi-packages
 
 .. contents::
+    :backlinks: none
 
 .. image:: https://pypip.in/d/blackhole/badge.png
    :alt: Downloads for blackhole

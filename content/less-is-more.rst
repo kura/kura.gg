@@ -7,6 +7,7 @@ less is more
 :slug: less-is-more
 
 .. contents::
+    :backlinks: none
 
 To my surprise I have found that there are still people out there who
 use *"more"*, this has shocked me.

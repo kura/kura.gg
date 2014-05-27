@@ -7,6 +7,7 @@ Wrapping a Tornado IOStream with SSL
 :slug: wrapping-a-tornado-iostream-with-ssl
 
 .. contents::
+    :backlinks: none
 
 As part of my effort to make `Blackhole <http://blackhole.io/>`_ as
 useful and usable as possible, I needed to be able to support SSL/TLS

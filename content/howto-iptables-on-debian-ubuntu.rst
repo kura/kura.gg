@@ -7,6 +7,7 @@ HOWTO: IPTables on Debian/Ubuntu
 :slug: howto-iptables-on-debian-ubuntu
 
 .. contents::
+    :backlinks: none
 
 Installation
 ------------

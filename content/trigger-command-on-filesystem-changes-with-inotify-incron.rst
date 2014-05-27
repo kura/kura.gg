@@ -7,6 +7,7 @@ Trigger command on filesystem changes with inotify + incron
 :slug: trigger-command-on-filesystem-changes-with-inotify-incron
 
 .. contents::
+    :backlinks: none
 
 During a seemingly normal work day a colleague pointed out a problem to
 me and asked if I had any solution.

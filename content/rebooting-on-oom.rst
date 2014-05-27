@@ -7,6 +7,7 @@ Rebooting on OOM
 :slug: rebooting-on-oom
 
 .. contents::
+    :backlinks: none
 
 ***I would generally not advise using this unless you have skill at
 debugging why OOM has spawned and also debugging kernel panics after

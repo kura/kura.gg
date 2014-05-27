@@ -7,6 +7,7 @@ Adding swap while the server is online with Debian and VMWare ESX
 :slug: adding-swap-while-the-server-is-online-with-debian-and-vmware-esx
 
 .. contents::
+    :backlinks: none
 
 Recently I had to install Oracle on a virtual machine but didn't find
 out until after I'd spun up of the machine that Oracle required at least

@@ -7,6 +7,7 @@ haproxy stateful SSL session resumption
 :slug: haproxy-stateful-ssl-session-resumption
 
 .. contents::
+    :backlinks: none
 
 By default haproxy enables stateless SSL session resumption, but you can enable
 stateful session resumption in accordance with

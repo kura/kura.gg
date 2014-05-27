@@ -7,6 +7,7 @@ Using nginx, Varnish and Apache
 :slug: using-nginx-varnish-and-apache
 
 .. contents::
+    :backlinks: none
 
 The problem
 -----------

@@ -7,6 +7,7 @@ Bye bye Google Analytics, hello self-hosted Open Web Analytics & DuckDuckGo sear
 :slug: bye-bye-google-analytics-hello-self-hosted-open-web-analytics-duckduckgo-search
 
 .. contents::
+    :backlinks: none
 
 Today I can happily announce that `the Google Analytics tracking code has been
 removed from this website

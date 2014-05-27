@@ -7,6 +7,7 @@ pypip.in most requested shields
 :slug: pypip.in-most-requested-shields
 
 .. contents::
+    :backlinks: none
 
 pypip.in
 ========

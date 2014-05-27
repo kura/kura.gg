@@ -6,6 +6,7 @@ apt-security
 :slug: apt-security
 
 .. contents::
+    :backlinks: none
 
 A set of programs to update packages from the APT security repositories.
 

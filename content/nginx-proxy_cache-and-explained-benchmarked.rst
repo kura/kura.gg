@@ -7,6 +7,7 @@ nginx, proxy_cache and reverse proxying explained & benchmarked
 :slug: nginx-proxy_cache-and-explained-benchmarked
 
 .. contents::
+    :backlinks: none
 
 The beginning
 -------------

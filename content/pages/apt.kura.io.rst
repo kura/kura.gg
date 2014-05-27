@@ -6,6 +6,7 @@ apt.kura.io
 :slug: apt.kura.io
 
 .. contents::
+    :backlinks: none
 
 After releasing my own versions of haproxy with SPDY support and nginx with
 ngx_pagespeed and SPDY support, I decided it would make sense to actually

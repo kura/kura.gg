@@ -7,6 +7,7 @@ HOWTO: Debian - Sudo(ers) explained
 :slug: howto-debian-sudoers-explained
 
 .. contents::
+    :backlinks: none
 
 Ah sudo, one of my favourites, funnily enough I've noticed a lot of
 Linux users use sudo (mainly because Ubuntu installs and configures your
