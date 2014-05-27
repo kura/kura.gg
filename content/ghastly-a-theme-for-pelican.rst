@@ -77,16 +77,16 @@ The Ghastly theme uses both FiraSans for general typography and FiraMono for
 Screenshots
 ===========
 
-.. image:: /images/homepage.png
-    :alt: Homepage
+.. image:: /images/ghastly-homepage.png
+    :alt: An example of the homepage
 
-.. image:: /images/article1.png
+.. image:: /images/ghastly-article1.png
     :alt: An example of article content
 
-.. image:: /images/article2.png
+.. image:: /images/ghastly-article2.png
     :alt: An example of article content
 
-.. image:: /images/article3.png
+.. image:: /images/ghastly-article3.png
     :alt: An example of article content
 
 Requirements
