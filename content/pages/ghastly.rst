@@ -23,7 +23,7 @@ Ghastly is based heavily off of Casper, the default theme for
 `Ghost <https://ghost.org>`__.
 
 
-It's name is derived from the the D&D monster, the Ghast and Gastly, the
+It's name is derived from the D&D monster, the Ghast and Gastly, the
 Pokemon.
 
 
