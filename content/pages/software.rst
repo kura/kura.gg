@@ -118,7 +118,7 @@ Bash completion
 
 - `go-bash-completion </go-bash-completion/>`__
 - `vagrant-bash-completion </vagrant-bash-completion/>`__
-- `tugboat-bash-completion <https://github.com/kura/tugboat-bash-completion>`__
+- `tugboat-bash-completion </tugboat-bash-completion>`__
 
 Ghastly
 =======
