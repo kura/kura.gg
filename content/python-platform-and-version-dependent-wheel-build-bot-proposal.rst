@@ -1,6 +1,6 @@
 Python platform and version dependent wheel build bot proposal
 ##############################################################
-:date: 2014-05-26 23:00
+:date: 2014-05-29 12:30
 :author: kura
 :category: coding
 :tags: python, wheel
