@@ -10,7 +10,7 @@ Abstract
 ========
 
 This proposal describes a build system for generating "wheel" archives and is
-very, very informal. This plan was drawn up after a random dicussion with
+very, very informal. This plan was drawn up after a random discussion with
 Jannis Liedel on Twitter and IRC.
 
 Wheel files can be platform and Python-version dependent, a way of generating
