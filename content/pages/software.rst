@@ -13,7 +13,7 @@ apt
 I run my own APT repository with custom builds of;
 
 - nginx (1.7.1 with pagespeed 1.7.30.3-beta)
-- haproxy (1.5-dev25)
+- haproxy (1.5-dev26)
 
 and several of my own packages;
 
