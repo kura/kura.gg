@@ -22,7 +22,7 @@ Design
 
 After discussions with Jannis, I believe the simplest
 solution would likely be the best solution for this problem. As such, I feel
-that using a custom-build, lightweight solution makes more sense than using
+that using a custom-built, lightweight solution makes more sense than using
 something like buildbot.
 
 Technology
