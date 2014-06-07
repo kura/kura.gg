@@ -236,6 +236,13 @@ h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
     color: #50585D;
     text-decoration: none;
+    transition: color 0.3s ease 0s;
+}
+
+h1 a:hover, h2 a:hover,
+h3 a:hover, h4 a:hover,
+h5 a:hover, h6 a:hover {
+    color: #57A3E8;
 }
 
 div#contents p {
@@ -482,7 +489,13 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 h1.blog-title a {
-    color: #ffffff;
+    color: #fff;
+    transition: color 0.3s ease 0s;
+    text-decoration: none;
+}
+
+h1.blog-title a:hover {
+    color: #57A3E8;
 }
 
 .blog-description {
@@ -532,8 +545,13 @@ h1.blog-title a {
 }
 
 .post-title a {
+    transition: color 0.3s ease 0s;
     text-decoration: none;
     color: #222;
+}
+
+.post-title a:hover {
+    color: #57A3E8;
 }
 
 .post-excerpt p {
