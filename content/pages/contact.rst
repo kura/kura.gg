@@ -4,23 +4,23 @@ Contact
 :author: kura
 :slug: contact
 
-GitHub
-======
+:fa:`fa-github` (GitHub)
+========================
 
 `@kura <https://github.com/kura>`__
 
-Gittip
-======
+:fa:`fa-gittip` (Gittip)
+========================
 
 `@kura <https://www.gittip.com/kura/>`__
 
-Twitter
-=======
+:fa:`fa-twitter` (Twitter)
+==========================
 
 `@kuramanga <https://twitter.com/kuramanga>`__
 
-IRC
-===
+#IRC
+====
 
 `kuramanga@irc.freenode.net <irc://irc.freenode.net>`__
 
@@ -34,8 +34,8 @@ I can usually be found in the following channels;
     #distutils
     #twisted
 
-Email
-=====
+:fa:`fa-envelope` (Email)
+=========================
 
 ::
 

@@ -64,6 +64,7 @@ RELATIVE_URLS = True
 
 PLUGIN_PATH = "plugins/"
 PLUGINS = [
+    'fontawesome',
     'assets',
     'extract_toc',
     'pelican_gist',
