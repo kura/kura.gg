@@ -2,7 +2,6 @@ Pelican Vimeo
 ##############
 :date: 2011-10-20 11:38
 :author: kura
-:tags: python, pelican, vimeo
 :slug: pelican-vimeo
 
 .. contents::

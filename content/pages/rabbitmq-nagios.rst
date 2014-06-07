@@ -2,7 +2,6 @@ rabbitmq-nagios
 ###############
 :date: 2011-11-10 20:56
 :author: kura
-:tags: nagios, rabbitmq, rabbitmqctl
 :slug: rabbitmq-nagios
 
 .. contents::

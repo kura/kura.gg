@@ -2,7 +2,6 @@ Ghastly - A theme for Pelican
 #############################
 :date: 2014-05-26 23:00
 :author: kura
-:tags: pelican, ghost
 :slug: ghastly
 
 .. figure:: /images/gastly.png

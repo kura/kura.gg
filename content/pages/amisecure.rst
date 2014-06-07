@@ -2,7 +2,6 @@ Am I Secure?
 ############
 :date: 2011-10-20 11:38
 :author: kura
-:tags: apache2, denyhosts, nginx, openssh, php, php5, python, security, ssh
 :slug: amisecure
 
 .. contents::

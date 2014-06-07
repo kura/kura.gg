@@ -2,7 +2,6 @@ apt-security
 ############
 :date: 2011-09-22 12:13
 :author: kura
-:tags: apt, security
 :slug: apt-security
 
 .. contents::

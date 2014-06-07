@@ -2,7 +2,6 @@ PyBozo
 ######
 :date: 2011-11-10 20:49
 :author: kura
-:tags: bruteforce, hack, hash, md5
 :slug: pybozo
 
 .. contents::
