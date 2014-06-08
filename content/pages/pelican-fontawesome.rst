@@ -36,7 +36,8 @@ Include the FontAwesome CSS in your base template.
 Usage
 =====
 
-In your article or page, you simply need to add a line to embed you video.
+In your article or page, you simply need to add a reference to FontAwesome and
+then the icon name.
 
 .. code-block:: rst
 
