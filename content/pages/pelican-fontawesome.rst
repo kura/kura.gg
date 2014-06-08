@@ -48,7 +48,7 @@ Which will result in:
 
     <span class="fa fa-github"></span>
 
-And to the user will see: :fa:`fa-github`.
+And to the user will see: :fa:`fa-github`
 
 You can also increase the size, just like the `FontAwesome documentation
 <https://fortawesome.github.io/Font-Awesome/examples/>`__ shows.
