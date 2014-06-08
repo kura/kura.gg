@@ -90,6 +90,13 @@ in to your pages and articles.
 `/pelican-youtube </pelican-youtube/>`__
 `/pelican-vimeo </pelican-vimeo/>`__
 
+Pelican FontAwesome
+-------------------
+
+Pelican FontAwesome allows you to embed FontAwesome icons in your RST documents.
+
+`/pelican-fontawesome </pelican-fontawesome>`__
+
 apt-security
 ------------
 

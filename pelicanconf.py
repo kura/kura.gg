@@ -64,10 +64,10 @@ RELATIVE_URLS = True
 
 PLUGIN_PATH = "plugins/"
 PLUGINS = [
-    'fontawesome',
     'assets',
     'extract_toc',
     'pelican_gist',
     'pelican_vimeo',
     'pelican_youtube',
+    'pelican_fontawesome',
 ]

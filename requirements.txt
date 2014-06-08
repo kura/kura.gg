@@ -8,3 +8,4 @@ pelican-youtube
 rst2pdf
 webassets
 pelican-minify
+pelican-fontawesome
