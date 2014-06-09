@@ -127,11 +127,26 @@ Bash completion
 - `vagrant-bash-completion </vagrant-bash-completion/>`__
 - `tugboat-bash-completion </tugboat-bash-completion>`__
 
+Pelican Themes
+==============
+
 Ghastly
-=======
+-------
 
 A clean and minimal, lightweight theme for the
 `Pelican <http://getpelican.com>`__ blogging platform. Ghastly is based
 heavily off of Casper, the default theme for `Ghost <https://ghost.org>`__.
 
 `/ghastly </ghastly/>`__
+
+Hauntr
+------
+
+Hauntr is a minimal, lightweight and clean theme for the
+`Pelican <http://getpelican.com>`__ blogging platform.
+
+It is named after the Pokemon 'Haunter' because it is a modified version
+(you might say evolved) of my previous theme, `Ghastly
+<https://kura.io/ghastly/>`__.
+
+`/hauntr </hauntr/>`__
