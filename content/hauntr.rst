@@ -75,7 +75,7 @@ Requirements
 Installation
 ============
 
-You can find Ghastly `on GitHub <https://github.com/kura/hauntr>`__ and you
+You can find Hauntr `on GitHub <https://github.com/kura/hauntr>`__ and you
 can find installation instructions for themes in the `pelican documentation
 <http://docs.getpelican.com/en/latest/pelican-themes.html>`__.
 
