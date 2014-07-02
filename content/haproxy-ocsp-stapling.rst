@@ -56,6 +56,31 @@ You should see a response like the one below.
     /path/to/your/certificate: good
     This Update: Jul  2 23:01:54 2014 GMT
 
+If you get any errors from this, you may need to try these additional arguments;
+
+Disables nonces
+---------------
+
+::
+
+    -no_nonce
+
+This will disable nonces, some servers are no able to handle nonces.
+
+Send a "Host" header
+--------------------
+
+::
+
+    -header Host OCSP_URI_DOMAIN
+
+For my certificate the OCSP URI is *http://ocsp2.globalsign.com/gsdomainvalsha2g2*
+so the Host header would be like below.
+
+::
+
+    -header Host ocsp2.globalsign.com
+
 Proving OCSP data to haproxy
 ============================
 
