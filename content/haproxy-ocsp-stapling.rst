@@ -6,6 +6,9 @@ haproxy OCSP stapling
 :tags: haproxy, ssl, ocsp, ocsp stapling
 :slug: haproxy-ocsp-stapling
 
+.. contents::
+    :backlinks: none
+
 With haproxy 1.5 finally being released we are lucky enough to get a basic
 interface around OCSP stapling.
 
