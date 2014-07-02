@@ -58,8 +58,8 @@ You should see a response like the one below.
 
 If you get any errors from this, you may need to try these additional arguments;
 
-Disables nonces
----------------
+Disable nonces
+--------------
 
 ::
 
@@ -69,6 +69,9 @@ This will disable nonces, some servers are no able to handle nonces.
 
 Send a "Host" header
 --------------------
+
+If you get an HTTP error like a 403 or 404 error then you may need to specify
+a host header.
 
 ::
 
