@@ -71,7 +71,7 @@ need to disable them.
 Send a "Host" header
 --------------------
 
-If you get an HTTP error like a 403 or 404 error then you may need to specify
+If you get an HTTP status like a 403 or 404 then you may need to specify
 a host header.
 
 ::
