@@ -65,7 +65,8 @@ Disable nonces
 
     -no_nonce
 
-This will disable nonces, some servers are no able to handle nonces.
+This will disable nonces, some servers are not able to handle nonces so you may
+need to disable them.
 
 Send a "Host" header
 --------------------
