@@ -5,3 +5,4 @@ pelican-plugins
 pelican-themes
 .ropeproject
 *.pyc
+cache/
