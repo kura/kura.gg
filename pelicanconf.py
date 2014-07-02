@@ -62,7 +62,7 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-PLUGIN_PATH = "plugins/"
+PLUGIN_PATHS = ["plugins/",]
 PLUGINS = [
     'assets',
     'extract_toc',
