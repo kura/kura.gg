@@ -1,2 +1,4 @@
 {% extends "index.html" %}
+{% block body_class %}post-template{% endblock body_class %}
+{% block masthead %}{% include 'masthead.html' %}{% endblock masthead %}
 {% block title %}Articles tagged as '{{ tag }}'{% endblock %}

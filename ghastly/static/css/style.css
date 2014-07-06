@@ -4,24 +4,28 @@
   font-weight: 300;
   src: local('FiraSans Light'), local('FiraSans-Light'), url(../fonts/FiraSans-Light.woff) format('woff');
 }
+
 @font-face {
   font-family: 'FiraSans';
   font-style: normal;
   font-weight: 400;
   src: local('FiraSans'), local('FiraSans-Regular'), url(../fonts/FiraSans-Regular.woff) format('woff');
 }
+
 @font-face {
   font-family: 'FiraSans';
   font-style: normal;
   font-weight: 600;
   src: local('FiraSans SemiBold'), local('FiraSans-SemiBold'), url(../fonts/FiraSans-SemiBold.woff) format('woff');
 }
+
 @font-face {
   font-family: 'FiraSans';
   font-style: normal;
   font-weight: 700;
   src: local('FiraSans Bold'), local('FiraSans-Bold'), url(../fonts/FiraSans-Bold.woff) format('woff');
 }
+
 @font-face {
   font-family: 'FiraMono';
   font-style: normal;
@@ -29,79 +33,183 @@
   src: local('FiraMono'), local('FiraMono-Regular'), url(../fonts/FiraMono-Regular.woff) format('woff');
 }
 
-article, aside, details,
-figcaption, figure,
-footer, header, hgroup,
-main, nav, section,
-summary { display: block; }
-audio, canvas, video { display: inline-block; }
-audio:not([controls]) { display: none; height: 0; }
-[hidden], template { display: none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav,
+section, summary {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden], template {
+    display: none;
+}
+
 html {
    font-family: FiraSans, sans-serif;
    -ms-text-size-adjust: 100%;
    -webkit-text-size-adjust: 100%;
 }
-body { margin: 0; }
-a { background: transparent; }
-a:focus { outline: thin dotted; }
-a:active, a:hover { outline: 0; }
-h1 { font-size: 2em; margin: 0.67em 0; }
-abbr[title] { border-bottom: 1px dotted; }
-b, strong { font-weight: bold; }
-dfn { font-style: italic; }
+
+body {
+    margin: 0;
+}
+
+a {
+    background: transparent;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
 hr {
    -moz-box-sizing: content-box;
    box-sizing: content-box;
    height: 0;
 }
-mark { background: #ff0; color: #000; }
-code, kbd, pre,
-samp { font-family: FiraMono, monospace, serif; font-size: 1em; }
-pre { white-space: pre-wrap; }
-q { quotes: "\201C" "\201D" "\2018" "\2019"; }
-small { font-size: 80%; }
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+code, kbd, pre, samp {
+    font-family: FiraMono, monospace, serif;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+    font-size: 80%;
+}
+
 sub, sup {
    font-size: 75%;
    line-height: 0;
    position: relative;
    vertical-align: baseline;
 }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-img { border: 0; }
-svg:not(:root) { overflow: hidden; }
-figure { margin: 0; }
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
 fieldset {
    border: 1px solid #c0c0c0;
    margin: 0 2px;
    padding: 0.35em 0.625em 0.75em;
 }
-legend { border: 0; padding: 0; }
-button, input, select,
-textarea { font-family: inherit; font-size: 100%; margin: 0; }
-button, input { line-height: normal; }
-button, select { text-transform: none; }
-button, html input[type="button"],
-input[type="reset"], input[type="submit"] {
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
    -webkit-appearance: button;
    cursor: pointer;
 }
-button[disabled], html input[disabled] { cursor: default; }
-input[type="checkbox"],
-input[type="radio"] { box-sizing: border-box; padding: 0; }
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
 input[type="search"] {
    -webkit-appearance: textfield;
    -moz-box-sizing: content-box;
    -webkit-box-sizing: content-box;
    box-sizing: content-box;
 }
+
 input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-button::-moz-focus-inner,
-input::-moz-focus-inner { border: 0; padding: 0; }
-textarea { overflow: auto; vertical-align: top; }
-table { border-collapse: collapse; border-spacing: 0; }
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 
 /* ==========================================================================
@@ -121,9 +229,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Apply these base styles to all icons */
-.icon-feed:before,
-.icon-twitter:before,
-.icon-google-plus:before,
+.icon-feed:before, .icon-twitter:before, .icon-google-plus:before,
 .icon-facebook:before {
     font-family: 'icons';
     speak: none;
@@ -143,13 +249,16 @@ table { border-collapse: collapse; border-spacing: 0; }
 .icon-feed:before {
     content: "\e001";
 }
+
 .icon-twitter:before {
     content: "\e002";
     font-size: 1.8em;
 }
+
 .icon-google-plus:before {
     content: "\e003";
 }
+
 .icon-facebook:before {
     content: "\e004";
 }
@@ -186,8 +295,7 @@ body {
     text-shadow: none;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     text-rendering: optimizeLegibility;
     line-height: 1;
     font-family: FiraSans, 'Open Sans', sans-serif;
@@ -232,16 +340,13 @@ a:hover {
     color: #57A3E8;
 }
 
-h1 a, h2 a, h3 a,
-h4 a, h5 a, h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #50585D;
     text-decoration: none;
     transition: color 0.3s ease 0s;
 }
 
-h1 a:hover, h2 a:hover,
-h3 a:hover, h4 a:hover,
-h5 a:hover, h6 a:hover {
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
     color: #57A3E8;
 }
 
@@ -261,8 +366,7 @@ p, ul, ol, dl {
     margin: 0.6em 0;
 }
 
-ol ol, ul ul,
-ul ol, ol ul {
+ol ol, ul ul, ul ol, ol ul {
     margin: 0.4em 0;
 }
 
@@ -275,12 +379,12 @@ dl dt {
     text-overflow: ellipsis;
     white-space: nowrap;
     font-weight: bold;
-    margin-bottom: 1em
+    margin-bottom: 1em;
 }
 
 dl dd {
     margin-left: 200px;
-    margin-bottom: 1em
+    margin-bottom: 1em;
 }
 
 hr {
@@ -308,17 +412,21 @@ blockquote p {
 blockquote small {
     display: inline-block;
     margin: 0.8em 0 0.8em 1.5em;
-    font-size:0.9em;
+    font-size: 0.9em;
     color: #ccc;
 }
 
-blockquote small:before { content: '\2014 \00A0'; }
-
-blockquote cite {
-    font-weight:bold;
+blockquote small:before {
+    content: '\2014 \00A0';
 }
 
-blockquote cite a { font-weight: normal; }
+blockquote cite {
+    font-weight: bold;
+}
+
+blockquote cite a {
+    font-weight: normal;
+}
 
 mark {
     background-color: #ffc336;
@@ -371,13 +479,12 @@ table {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1.6em 0;
-    width:100%;
+    width: 100%;
     max-width: 100%;
     background-color: transparent;
 }
 
-table th,
-table td {
+table th, table td {
     padding: 8px;
     line-height: 20px;
     text-align: left;
@@ -385,7 +492,9 @@ table td {
     border-top: 1px solid #efefef;
 }
 
-table th { color: #000; }
+table th {
+    color: #000;
+}
 
 table caption + thead tr:first-child th,
 table caption + thead tr:first-child td,
@@ -396,9 +505,13 @@ table thead:first-child tr:first-child td {
     border-top: 0;
 }
 
-table tbody + tbody { border-top: 2px solid #efefef; }
+table tbody + tbody {
+    border-top: 2px solid #efefef;
+}
 
-table table table { background-color: #fff; }
+table table table {
+    background-color: #fff;
+}
 
 table tbody > tr:nth-child(odd) > td,
 table tbody > tr:nth-child(odd) > th {
@@ -427,13 +540,18 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 /* Clears shit */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
     content: " ";
     display: table;
 }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
 
 /* Hides shit */
 .hidden {
@@ -511,7 +629,7 @@ h1.blog-title a:hover {
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width:80%;
+    width: 80%;
     max-width: 1000px;
     margin: 4rem auto;
     padding-bottom: 4rem;
@@ -540,7 +658,7 @@ h1.blog-title a:hover {
 }
 
 .post-title {
-    margin:0;
+    margin: 0;
     color: #222;
 }
 
@@ -626,6 +744,10 @@ h1.blog-title a:hover {
 .post-template .post-header {
     padding: 60px 0;
     text-align: center;
+}
+
+.post .post-header {
+    text-align: left;
 }
 
 .post-template .blog-title {
@@ -720,8 +842,7 @@ h1.blog-title a:hover {
 }
 
 /* Push the previous/next links out to the left/right */
-.older-posts,
-.newer-posts {
+.older-posts, .newer-posts {
     position: absolute;
     display: inline-block;
     padding: 0 15px;
@@ -744,8 +865,7 @@ h1.blog-title a:hover {
     left: 0;
 }
 
-.older-posts:hover,
-.newer-posts:hover {
+.older-posts:hover, .newer-posts:hover {
     border-color: #9EABB3;
 }
 
@@ -814,10 +934,10 @@ h1.blog-title a:hover {
 
 /* CSS tooltip saying "Subscribe!" - initially hidden */
 .tooltip {
-    opacity:0;
+    opacity: 0;
     display: inline-block;
     padding: 4px 8px 5px 8px;
-    position:absolute;
+    position: absolute;
     top: -23px;
     left: -21px;
     color: rgba(255,255,255,0.9);
@@ -825,24 +945,24 @@ h1.blog-title a:hover {
     line-height: 1em;
     text-align: center;
     background: #50585D;
-    border-radius:20px;
+    border-radius: 20px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     transition: opacity 0.3s ease, top 0.3s ease;
 }
 
 /* The little chiclet arrow under the tooltip, pointing down */
 .tooltip:after {
-    content:"";
-    border-width:5px 5px 0 5px;
-    border-style:solid;
+    content: "";
+    border-width: 5px 5px 0 5px;
+    border-style: solid;
     border-color: #50585D transparent;
-    display:block;
-    position:absolute;
-    bottom:-4px;
-    left:50%;
-    margin-left:-5px;
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -5px;
     z-index: 220;
-    width:0;
+    width: 0;
 }
 
 /* On hover, show the tooltip! */
@@ -935,7 +1055,7 @@ div.figure p.caption {
     }
 
     .post {
-        width:auto;
+        width: auto;
         margin-left: 16px;
         margin-right: 16px;
         font-size: 0.8em;
@@ -953,7 +1073,6 @@ div.figure p.caption {
     .blog-description {
         font-size: 1.5rem;
     }
-
 
     h1, h2 {
         font-size: 3rem;
@@ -1018,8 +1137,7 @@ div.figure p.caption {
         margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
-    .older-posts,
-    .newer-posts {
+    .older-posts, .newer-posts {
         position: static;
         margin: 10px 0;
     }

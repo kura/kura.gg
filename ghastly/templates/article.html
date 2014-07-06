@@ -3,30 +3,30 @@
 {% block body_class %}post-template{% endblock body_class %}
 {% block masthead %}{% include 'masthead.html' %}{% endblock masthead %}
 {% block content %}
-<article class="post">
-    <span class="post-meta">
-        <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
-        in <a href="{{ SITEURL }}/{{ article.category.url }}/">{{ article.category }}</a>
-        {% if article.tags %}
-            with tags:
-            {% for tag in article.tags %}
-                <a href="{{ SITEURL }}/{{ tag.url}}/">{{ tag }}</a>
-            {% endfor %}
-        {% endif %}
-    </span>
-    <h1 class="post-title">
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-    </h1>
-    <span class="post-meta">
-        <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}">View on GitHub</a>
-    </span>
-    <section class="post-content">
-        {% if article.toc %}{{ article.toc }}{% endif %}
-        {{ article.content }}
-    </section>
-    <footer class="post-footer">
-        {% include 'share.html' %}
-        {% include 'disqus.html' %}
-    <footer>
-</article>
+    <article class="post">
+        <span class="post-meta">
+            <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
+            in <a href="{{ SITEURL }}/{{ article.category.url }}/">{{ article.category }}</a>
+            {% if article.tags %}
+                with tags:
+                {% for tag in article.tags %}
+                    <a href="{{ SITEURL }}/{{ tag.url}}/">{{ tag }}</a>
+                {% endfor %}
+            {% endif %}
+        </span>
+        <h1 class="post-title">
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+        </h1>
+        <span class="post-meta">
+            <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}">View on GitHub</a>
+        </span>
+        <section class="post-content">
+            {% if article.toc %}{{ article.toc }}{% endif %}
+            {{ article.content }}
+        </section>
+        <footer class="post-footer">
+            {% include 'share.html' %}
+            {% include 'disqus.html' %}
+        <footer>
+    </article>
 {% endblock %}

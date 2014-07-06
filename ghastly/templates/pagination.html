@@ -1,5 +1,4 @@
 {% if DEFAULT_PAGINATION %}
-
     <nav class="pagination" role="navigation">
         {% if articles_page and articles_page.has_previous() %}
             {% if articles_page.previous_page_number() == 1 %}
@@ -13,5 +12,4 @@
         <a class="older-posts" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">Next &rarr;</a>
         {% endif %}
     </nav>
-
 {% endif %}

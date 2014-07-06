@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-        {% assets filters="cssmin", output="css/ghastly.css", "css/style.css", "css/pygment.css" %}
+        {% assets filters="cssmin", output="css/ghastly.%(version)s.css", "css/style.css", "css/pygment.css" %}
             <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet">
         {% endassets %}
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         {% block head %}
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
