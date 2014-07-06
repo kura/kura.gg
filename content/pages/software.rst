@@ -12,8 +12,8 @@ apt
 
 I run my own APT repository with custom builds of;
 
-- nginx (1.7.1 with pagespeed 1.7.30.3-beta)
-- haproxy (1.5-dev26)
+- nginx (1.7.2 with pagespeed 1.7.30.3-beta)
+- haproxy (1.6-dev0)
 
 and several of my own packages;
 
