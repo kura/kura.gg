@@ -701,6 +701,10 @@ h1.blog-title a:hover {
     line-height: 1.5em;
 }
 
+img .shield {
+    margin-right: 5px;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
