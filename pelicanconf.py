@@ -38,6 +38,8 @@ TAG_SAVE_AS = 't/{slug}/index.html'
 
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
+SUMMARY_MAX_LENGTH = 75
+
 STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
                 'extra/favicon.ico', ]
 
@@ -57,12 +59,12 @@ LINKS = ()
 # Social widget
 SOCIAL = ()
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 20
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-PLUGIN_PATHS = ["plugins/",]
+PLUGIN_PATHS = ["plugins/", ]
 PLUGINS = [
     'assets',
     'extract_toc',

@@ -1,67 +1,59 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
-<head>
-        {% assets filters="cssmin", output="css/ghastly.%(version)s.css", "css/style.css", "css/pygment.css" %}
-            <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet">
-        {% endassets %}
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        {% block head %}
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <head>
+            {% assets filters="cssmin", output="css/ghastly.%(version)s.css", "css/style.css", "css/pygment.css" %}
+                <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet">
+            {% endassets %}
+            <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+            {% block head %}
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <meta name="author" property="author" content="Kura" />
-        <meta name="description" property="description" content="Lots of articles on programming thoughts and ideas, software and solid configurations, server hardware and more." />
-        <meta name="twitter:site" property="twitter:site" content="@kuramanga" />
-        <meta name="twitter:url" property="twitter:url" content="https://kura.io/" />
-        <meta name="twitter:title" property="twitter:title" content="{{ self.title() }}" />
-        <meta name="twitter:card" property="twitter:card" content="summary" />
-        <meta name="twitter:description" property="twitter:description" content="Lots of articles on programming thoughts and ideas, software and solid configurations, server hardware and more." />
-        <meta name="twitter:image:src" property="twitter:image:src" content="/theme/img/preview.png" />
-        <meta name="og:site_name" property="og:site_name" content="kura.io" />
-        <meta name="og:type" property="og:type" content="profile" />
-        <meta name="og:title" property="og:title" content="{{ self.title() }}" />
-        <meta name="og:url" property="og:url" content="https://kura.io/" />
-        <meta name="og:description" property="og:description" content="Lots of articles on programming thoughts and ideas, software and solid configurations, server hardware and more." />
-        {% if FEED_ATOM %}
-            <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }}" />
-        {% endif %}
-        {% if FEED_RSS %}
-            <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }}" />
-        {% endif %}
-        <link rel="shortcut icon" href="{{ SITEURL}}/favicon.ico" />
-        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    {% endblock head %}
-</head>
-
-<body class="{% block body_class %}home-template{% endblock body_class %}">
-    {% block masthead %}
-        <header id="header" class="site-head" >
-            <div class="vertical">
-                <div class="site-head-content inner">
-                    <h1 class="blog-title"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
-                    <h2 class="blog-description">
-                        <a href="{{ SITEURL }}/contact/">Contact</a> | <a href="{{ SITEURL }}/software/">Software</a>
-                    </h2>
-                </div>
-            </div>
+            <meta name="author" property="author" content="Kura" />
+            <meta name="description" property="description" content="Lots of articles on programming thoughts and ideas, software and solid configurations, server hardware and more." />
+            <meta name="twitter:site" property="twitter:site" content="@kuramanga" />
+            <meta name="twitter:url" property="twitter:url" content="https://kura.io/" />
+            <meta name="twitter:title" property="twitter:title" content="{{ self.title() }}" />
+            <meta name="twitter:card" property="twitter:card" content="summary" />
+            <meta name="twitter:description" property="twitter:description" content="Lots of articles on programming thoughts and ideas, software and solid configurations, server hardware and more." />
+            <meta name="twitter:image:src" property="twitter:image:src" content="/theme/img/preview.png" />
+            <meta name="og:site_name" property="og:site_name" content="kura.io" />
+            <meta name="og:type" property="og:type" content="profile" />
+            <meta name="og:title" property="og:title" content="{{ self.title() }}" />
+            <meta name="og:url" property="og:url" content="https://kura.io/" />
+            <meta name="og:description" property="og:description" content="Lots of articles on programming thoughts and ideas, software and solid configurations, server hardware and more." />
+            {% if FEED_ATOM %}
+                <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }}" />
+            {% endif %}
+            {% if FEED_RSS %}
+                <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }}" />
+            {% endif %}
+            <link rel="shortcut icon" href="{{ SITEURL}}/favicon.ico" />
+            <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        {% endblock head %}
+    </head>
+    <body class="post-template">
+        <header class="site-head">
+            <h1 class="blog-title"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+            <h2 class="blog-description">
+                <a href="{{ SITEURL }}/contact/">Contact</a> | <a href="{{ SITEURL }}/software/">Software</a>
+            </h2>
         </header>
-    {% endblock %}
-    <main id="content" class="content" role="main">
-        {% block content %}{% endblock %}
-    </main>
-    <footer class="site-footer">
-        {% if FEED_RSS %}
-            <a class="subscribe icon-feed" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}"><span class="tooltip">RSS</span></a>
-        {% elif FEED_ATOM %}
-            <a class="subscribe icon-feed" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}"><span class="tooltip">Atom</span></a>
-        {% endif %}
-        <div class="inner">
-            <section class="copyright">This website source and content are release under the <a href="{{ SITEURL }}/license/">MIT License</a>.</section>
-            <section class="poweredby">Powered by love &amp; rainbow sparkles.</section>
-        </div>
-    </footer>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-</body>
+        <main id="content" class="content" role="main">
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="site-footer">
+                <a class="subscribe icon-feed" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}"><span class="tooltip">RSS</span></a>
+            {% if FEED_ATOM %}
+                <a class="subscribe icon-feed" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}"><span class="tooltip">Atom</span></a>
+            {% endif %}
+            <div class="inner">
+                <section class="copyright">This website source and content are release under the <a href="{{ SITEURL }}/license/">MIT License</a>.</section>
+                <section class="poweredby">Powered by love &amp; rainbow sparkles.</section>
+            </div>
+        </footer>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    </body>
 </html>

@@ -229,8 +229,7 @@ table {
 }
 
 /* Apply these base styles to all icons */
-.icon-feed:before, .icon-twitter:before, .icon-google-plus:before,
-.icon-facebook:before {
+.icon-feed:before {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -244,25 +243,9 @@ table {
     font-size: 1.6em;
 }
 
-/* Each icon is created by inserting the corret character into the
-   content of the :before pseudo element. Like a boss. */
 .icon-feed:before {
     content: "\e001";
 }
-
-.icon-twitter:before {
-    content: "\e002";
-    font-size: 1.8em;
-}
-
-.icon-google-plus:before {
-    content: "\e003";
-}
-
-.icon-facebook:before {
-    content: "\e004";
-}
-
 
 /* ==========================================================================
    2. General - Setting up some base styles
@@ -350,12 +333,17 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
     color: #57A3E8;
 }
 
+main#content.content {
+    text-align: left;
+}
+
 div#contents p {
     font-size: 4rem;
     line-height: 1.2em;
     letter-spacing: -1px;
     text-indent: -2px;
     font-weight: bold;
+    margin: 1em 0 -15px 0;
 }
 
 div#contents li a {
@@ -363,7 +351,7 @@ div#contents li a {
 }
 
 p, ul, ol, dl {
-    margin: 0.6em 0;
+    margin: 1.6em 0;
 }
 
 ol ol, ul ul, ul ol, ol ul {
@@ -584,12 +572,8 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     display: table;
     width: 100%;
-    height: 60%;
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
     text-align: center;
-    color: #fff;
-    background: #303538 no-repeat center center;
-    background-size: cover;
 }
 
 .blog-logo {
@@ -607,7 +591,6 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 h1.blog-title a {
-    color: #fff;
     transition: color 0.3s ease 0s;
     text-decoration: none;
 }
@@ -740,19 +723,9 @@ h1.blog-title a:hover {
     display: none;
 }
 
-/* Insert some mad padding up in the header for better spacing */
-.post-template .post-header {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.post .post-header {
-    text-align: left;
-}
-
 .post-template .blog-title {
     display: inline-block;
-    padding: 2.5rem 0;
+    padding-top: 2.5rem;
 }
 
 /* Keep images centred and within the bounds of the post-width */
@@ -994,7 +967,7 @@ div.figure p.caption {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         height: auto;
-        min-height: 240px;
+        text-align: center;
         padding: 15% 0;
     }
 
