@@ -228,8 +228,8 @@ table {
     font-style: normal;
 }
 
-/* Apply these base styles to all icons */
-.icon-feed:before {
+.icon-feed:before, .icon-twitter:before, .icon-google-plus:before,
+.icon-facebook:before {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -245,6 +245,19 @@ table {
 
 .icon-feed:before {
     content: "\e001";
+}
+
+.icon-twitter:before {
+    content: "\e002";
+    font-size: 1.8em;
+}
+
+.icon-google-plus:before {
+    content: "\e003";
+}
+
+.icon-facebook:before {
+    content: "\e004";
 }
 
 /* ==========================================================================
