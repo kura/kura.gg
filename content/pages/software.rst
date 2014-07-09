@@ -12,7 +12,7 @@ apt
 
 I run my own APT repository with custom builds of;
 
-- nginx (1.7.2 with pagespeed 1.7.30.3-beta)
+- nginx (1.7.3 with pagespeed 1.8.31.4, naxi 0.53-2)
 - haproxy (1.6-dev0)
 
 and several of my own packages;
