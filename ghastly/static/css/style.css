@@ -731,8 +731,6 @@ img .shield {
 /* Tweak the .post wrapper style */
 .post-template .post {
     margin-top: 0;
-    border-bottom: none;
-    padding-bottom: 0;
 }
 
 /* Kill that stylish little circle that was on the border, too */
