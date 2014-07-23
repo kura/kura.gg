@@ -20,7 +20,6 @@ DELETE_OUTPUT_DIRECTORY = True
 
 PLUGINS.append('minify')
 PLUGINS.append('sitemap')
-PLUGINS.append('touch')
 
 SITEMAP = {
     'format': 'xml',
