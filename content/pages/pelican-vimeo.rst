@@ -10,11 +10,11 @@ Pelican Vimeo
 Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages
 and articles.
 
-.. image:: https://pypip.in/d/pelican_vimeo/badge.png
+.. image:: https://pypip.in/d/pelican_vimeo/badge.svg?style=flat
     :alt: pelican_vimeo downloads
     :target: https://crate.io/packages/pelican_vimeo
 
-.. image:: https://pypip.in/v/pelican_vimeo/badge.png
+.. image:: https://pypip.in/v/pelican_vimeo/badge.svg?style=flat
     :alt: pelican_vimeo version
     :target: https://crate.io/packages/pelican_vimeo
 

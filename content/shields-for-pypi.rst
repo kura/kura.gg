@@ -9,23 +9,23 @@ Shields for PyPI packages
 .. contents::
     :backlinks: none
 
-.. image:: https://pypip.in/d/blackhole/badge.png
+.. image:: https://pypip.in/d/blackhole/badge.svg?style=flat
    :alt: Downloads for blackhole
    :class: shield
 
-.. image:: https://pypip.in/v/blackhole/badge.png
+.. image:: https://pypip.in/v/blackhole/badge.svg?style=flat
    :alt: Latest version of blackhole
    :class: shield
 
-.. image:: https://pypip.in/egg/blackhole/badge.png
+.. image:: https://pypip.in/egg/blackhole/badge.svg?style=flat
    :alt: blackhole's egg status
    :class: shield
 
-.. image:: https://pypip.in/wheel/blackhole/badge.png
+.. image:: https://pypip.in/wheel/blackhole/badge.svg?style=flat
    :alt: blackhole's wheel status
    :class: shield
 
-.. image:: https://pypip.in/license/blackhole/badge.png
+.. image:: https://pypip.in/license/blackhole/badge.svg?style=flat
    :alt: blackhole's license
    :class: shield
 

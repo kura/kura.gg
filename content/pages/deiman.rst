@@ -12,11 +12,11 @@ It has start and stop methods as well as a method for
 retrieving a process status information. It can also detect
 stale PIDs and remove them.
 
-.. image:: https://pypip.in/d/deiman/badge.png
+.. image:: https://pypip.in/d/deiman/badge.svg?style=flat
     :alt: Deiman downloads
     :target: https://crate.io/packages/deiman
 
-.. image:: https://pypip.in/v/deiman/badge.png
+.. image:: https://pypip.in/v/deiman/badge.svg?style=flat
     :alt: Deiman version
     :target: https://crate.io/packages/deiman
 
