@@ -13,10 +13,12 @@ and articles.
 .. image:: https://pypip.in/d/pelican_youtube/badge.svg?style=flat
     :alt: pelican_youtube downloads
     :target: https://crate.io/packages/pelican_youtube
+    :class: shield
 
 .. image:: https://pypip.in/v/pelican_youtube/badge.svg?style=flat
     :alt: pelican_youtube version
     :target: https://crate.io/packages/pelican_youtube
+    :class: shield
 
 
 Installation

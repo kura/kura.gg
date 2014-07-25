@@ -13,10 +13,12 @@ and articles.
 .. image:: https://pypip.in/d/pelican_vimeo/badge.svg?style=flat
     :alt: pelican_vimeo downloads
     :target: https://crate.io/packages/pelican_vimeo
+    :class: shield
 
 .. image:: https://pypip.in/v/pelican_vimeo/badge.svg?style=flat
     :alt: pelican_vimeo version
     :target: https://crate.io/packages/pelican_vimeo
+    :class: shield
 
 Installation
 ============

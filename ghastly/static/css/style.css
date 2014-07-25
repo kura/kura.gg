@@ -714,8 +714,8 @@ h1.blog-title a:hover {
     line-height: 1.5em;
 }
 
-img .shield {
-    margin-right: 5px;
+img.shield {
+    display: inline !important;
 }
 
 /* ==========================================================================
