@@ -716,6 +716,7 @@ h1.blog-title a:hover {
 
 img.shield {
     display: inline !important;
+    padding-right: 5px !important;
 }
 
 /* ==========================================================================
