@@ -114,6 +114,17 @@ And install the dev requirements from the pypipins directory.
 
     pip install -r /path/to/pypipins/clone/requirements-dev.txt
 
+You'll need to edit shields.py, commenting out the img.shields.io host and
+uncommon the local one.
+
+.. code:: python
+
+    /path/to/pypipins/clone/shields/shields.py
+
+
+    # SHIELD_URL = "http://img.shields.io/badge/%s-%s-%s.%s"
+    SHIELD_URL = "http://localhost:9000/badge/%s-%s-%s.%s"  # pypip.in uses a local version of img.shields.io
+
 Once this is done, you can test the pypipins server.
 
 .. code:: bash
