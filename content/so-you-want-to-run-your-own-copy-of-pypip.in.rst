@@ -271,7 +271,8 @@ I personally use PyPy for running the pypipins server because, it's a long
 running process and PyPy speeds it up wonderfully.
 
 If you're using Debian 7, the latest version of PyPy as of writing is 2.3.1 and
-requires libffi6, which is only available in Jessie which is currently in testing.
+requires libffi6, if you're using one of the prebuilt binaries. libffi6 is only
+available in Jessie which is currently in testing.
 
 You can either use an older version of PyPy or, backport libffi6 from Jessie.
 
