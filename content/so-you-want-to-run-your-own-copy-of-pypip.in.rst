@@ -10,7 +10,7 @@ So you want to run your own copy of pypip.in?
     :backlinks: none
 
 While pypip.in is available under the MIT license on `GitHub
-<https://github.com/badges/pypipin>`_, it's not explained how to really use it
+<https://github.com/badges/pypipins>`_, it's not explained how to really use it
 properly.
 
 You can gather how to set-up the Python source of the project and get the
