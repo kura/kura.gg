@@ -97,6 +97,14 @@ Pelican FontAwesome allows you to embed FontAwesome icons in your RST documents.
 
 `/pelican-fontawesome </pelican-fontawesome>`__
 
+Pelican GitHub Projects
+-----------------------
+
+Pelican GitHub Projects allows you to embed a list of your public GitHub
+projects in your pages.
+
+`/pelican-githubprojects </pelican-githubprojects>`_
+
 apt-security
 ------------
 
