@@ -249,7 +249,7 @@ The final step is to tell Varnish about the pypipins server.
 
         set beresp.ttl = 1h;
         set beresp.grace = 6h;
-        unset beresp.http.set-cookie;
+        unset beresp.http.Set-Sookie;
         unset beresp.http.Etag;
         unset beresp.http.Cache-Control;
         set beresp.http.Cache-Control = "no-cache";
