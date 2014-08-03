@@ -227,21 +227,32 @@ The final step is to tell Varnish about the pypipins server.
         .port = "8888";
     }
 
-    sub vcl_fetch {
-        if (beresp.status != 200 && beresp.status != 403 && beresp.status != 404 && beresp.status != 301 && beresp.status != 302) {
-           return (restart);
+    sub vcl_recv {
+        if (req.request != "GET") {
+            return(pipe);
         }
 
-        # if i cant connect to the backend, ill set the grace period to be 600 seconds to hold onto content
-        set beresp.ttl = 6h;
+        if (req.request == "GET") {
+            remove req.http.cookie;
+            remove req.http.authenticate;
+            remove req.http.Etag;
+            remove req.http.If-None-Match;
+            return(lookup);
+        }
+        return(pass);
+    }
+
+    sub vcl_fetch {
+        if (beresp.status >= 300) {
+            return(hit_for_pass);
+        }
+
+        set beresp.ttl = 1h;
         set beresp.grace = 6h;
         unset beresp.http.set-cookie;
-
-        if (beresp.status == 404 || beresp.status >= 500) {
-            set beresp.ttl = 0s;
-        }
-
-        set beresp.http.X-Cacheable = "YES";
+        unset beresp.http.Etag;
+        unset beresp.http.Cache-Control;
+        set beresp.http.Cache-Control = "no-cache";
         return (deliver);
     }
 
