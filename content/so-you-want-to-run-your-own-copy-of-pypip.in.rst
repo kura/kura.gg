@@ -159,6 +159,8 @@ and also for pypipins server.
     command=node server 9000
     stdout_logfile=/var/log/supervisor/shields.log
     stderr_logfile=/var/log/supervisor/shields.error.log
+    user=www-data
+    group=www-data
     autostart=true
     autorestart=true
 
@@ -171,6 +173,8 @@ and also for pypipins server.
     command=/path/to/virtualenv/bin/python /path/to/pypipin/clone/shields/shields.py
     stdout_logfile=/var/log/supervisor/pypipin.log
     stderr_logfile=/var/log/supervisor/pypipin.error.log
+    user=www-data
+    group=www-data
     autostart=true
     autorestart=true
 
