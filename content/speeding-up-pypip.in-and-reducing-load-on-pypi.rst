@@ -13,7 +13,7 @@ As you might expect, `pypip.in <https://pypip.in>`_ employes a fair amount of
 caching in the backend to control load on the imaging API and servers.
 
 For a long time, this cache was entirely managed by Varnish and was doing a
-fantastic job. Varnish has a hit:miss ration of 10:1, for every 10 hits we get
+fantastic job. Varnish has a hit:miss ratio of 10:1, for every 10 hits we get
 1 miss. This is a fairly decent ratio when you consider where these images are
 displayed, how often they are viewed and that Varnish only caches the images
 for an hour.
