@@ -102,7 +102,7 @@ To do this properly, you'll need to make sure you have virtualenv for Python.
 .. code:: bash
 
     sudo apt-get install python-dev
-    sudo wget -O - https://bootstrap.pypa.io/get-pip.py | python
+    wget -O - https://bootstrap.pypa.io/get-pip.py | sudo python
     sudo pip install virtualenv
 
 Next, you'll need to create a virtual environment.
