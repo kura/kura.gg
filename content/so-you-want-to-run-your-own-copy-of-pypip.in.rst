@@ -52,6 +52,15 @@ And then make and install node.
 
     make && sudo make install
 
+Redis
+-----
+
+Redis is used to temporarily store PyPI responses.
+
+.. code:: bash
+
+    sudo apt-get install redis-server
+
 shields
 -------
 
