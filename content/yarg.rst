@@ -3,7 +3,7 @@ yarg(1) -- A semi hard Cornish cheese, also queries PyPI
 :date: 2014-08-09 13:30
 :author: kura
 :category: coding
-:tags: pypi
+:tags: python, pypi
 :slug: yarg
 
 .. contents::
