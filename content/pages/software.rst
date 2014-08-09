@@ -1,7 +1,5 @@
 Software
 ########
-:date: 2014-05-26 12:30:00
-:author: kura
 :slug: software
 
 .. contents::
@@ -26,6 +24,15 @@ A detailed guide on how to use this repository can be found
 
 Software
 ========
+
+Yarg
+----
+
+Yarg is a PyPI client, it was written for `pypip.in
+<https://pypip.in>`_ and can search packages as well as read the RSS feeds
+from PyPI for new packages and new package version releases.
+
+`/yarg </yarg>`_
 
 Blackhole
 ---------
