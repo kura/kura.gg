@@ -51,4 +51,7 @@ Updated packages interface
     >>> packages[0].url
     u'http://pypi.python.org/pypi/yarg/0.1.2
 
+Documentation
+-------------
+
 Full documentation is at <https://yarg.readthedocs.org>.
