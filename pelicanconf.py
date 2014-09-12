@@ -73,3 +73,5 @@ PLUGINS = [
     'pelican_vimeo',
     'pelican_youtube',
 ]
+
+GIST_CACHE_ENABLED = False
