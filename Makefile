@@ -8,9 +8,6 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-SSH_HOST=kura.io
-SSH_PORT=2222
-SSH_USER=kura
 SSH_TARGET_DIR=/var/www/kura.io
 
 help:
@@ -49,10 +46,12 @@ stopserver:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	echo "$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)"
 
 rsync: publish
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvzt --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app1:$(SSH_TARGET_DIR) --cvs-exclude
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvzt --delete $(OUTPUTDIR)/ $(SSH_USER)@kura.io.app2:$(SSH_TARGET_DIR) --cvs-exclude
+	rsync -e "ssh" -P -rvzt --delete $(OUTPUTDIR)/ fax.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
+	rsync -e "ssh" -P -rvzt --delete $(OUTPUTDIR)/ jet.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
+	rsync -e "ssh" -P -rvzt --delete $(OUTPUTDIR)/ ski.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
 	rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate startserver stopserver publish rsync
