@@ -32,7 +32,7 @@ Module interface
     >>> client = Client()
     >>> client.authorize("abcde12345")
     >>> client.droplets
-    [<Droplet ego.kura.io>, <Droplet fax.kura.io>, <jet.kura.io>, <ski.kura.io>]
+    [<Droplet ego.kura.io>, <Droplet fax.kura.io>, <Droplet jet.kura.io>, <Droplet ski.kura.io>]
     >>> client.droplet_reboot(1234)
 
 CLI interface
