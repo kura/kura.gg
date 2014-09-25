@@ -8,7 +8,7 @@
             <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark" title="Permalink to {{ page.title|striptags }}">{{ page.title }}</a>
         </h1>
         <span class="post-meta">
-            <a href="https://raw.github.com/kura/kura.io/master/content/{{ page.get_relative_source_path() }}">View on GitHub</a>
+            <a href="https://raw.github.com/kura/kura.io/master/content/{{ page.get_relative_source_path() }}">View on <span class="fa fa-github"></span></a>
         </span>
         <section class="post-content">
             {% if page.toc %}{{ page.toc }}{% endif %}

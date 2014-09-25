@@ -18,7 +18,7 @@
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
         </h1>
         <span class="post-meta">
-            <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}">View on GitHub</a>
+            <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}">View on <span class="fa fa-github"></span></a>
         </span>
         <section class="post-content">
             {% if article.toc %}{{ article.toc }}{% endif %}
