@@ -10,7 +10,7 @@ apt
 
 I run my own APT repository with custom builds of;
 
-- nginx (1.7.4 with pagespeed 1.8.31.4, naxsi 0.53-2)
+- nginx (1.7.6 with pagespeed 1.9.32.1, naxsi 0.53-2)
 - haproxy (1.6-dev0)
 
 and several of my own packages;
