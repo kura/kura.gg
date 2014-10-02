@@ -30,16 +30,6 @@ Ubuntu
 ~~~~~~
 
 - 12.04 (Precise)
-
-Unsupported but enabled
------------------------
-
-Ubuntu
-~~~~~~
-
-- 12.10 (Quantal)
-- 13.04 (Raring)
-- 13.10 (Saucy)
 - 14.04 (Trusty)
 
 Enabling
