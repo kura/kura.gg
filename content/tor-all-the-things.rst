@@ -73,7 +73,7 @@ slightly more disgusting, as befits my warped personality.
 * `EjactulatingWhale E803339621BD78503AC333F0FDA35DB705B18071 <https://globe.torproject.org/#/relay/E803339621BD78503AC333F0FDA35DB705B18071>`_.
 
 Feel free to contact the address listed on the nodes if you have any queries or
-questions regarding the nodes or running your own. Bitcoin donationg are always
+questions regarding the nodes or running your own. Bitcoin donations are always
 welcome and will help keep these nodes running and allow more to be onlined.
 
 Relay, relay, relay
