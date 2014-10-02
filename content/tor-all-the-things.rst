@@ -36,9 +36,9 @@ anyone interested in firing off a donation.
 
 At time of writing, the servers are part of the Tor network but they are
 currently in their initial phase of being rarely used by the network itself.
-A `blog post on the Tor blog
+A `post on the Tor blog
 <https://blog.torproject.org/blog/lifecycle-of-a-new-relay>`_ gives some
-anocdotable information as to each phase, why it happens and what it means. I
+anecdotal information as to each phase, why it happens and what it means. I
 suggest giving it a read since it's quite interesting.
 
 In my experience, within about two weeks, all three new nodes will be available
