@@ -23,7 +23,8 @@ had any reference to me being their operator.
 
 Sadly, these seven nodes will always remain a secret due to the hassle that
 inherently comes with running Tor Exit nodes. These issues include some mean
-emails and IP addresses and blocks being blacklisted by services like Netflix.
+emails and IP addresses and CIDR blocks being blacklisted by services like
+Netflix.
 
 New nodes!
 ----------
