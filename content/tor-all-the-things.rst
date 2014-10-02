@@ -80,11 +80,12 @@ Relay, relay, relay
 -------------------
 
 As a final note, running a relay is pretty damn safe. You can do it pretty
-cheaply too on AWS, with DigitalOcean or any other VPS provided. Relays are
+cheaply too on AWS, with DigitalOcean or any other VPS provide. Relays are
 generally allowed to be run on those environments too, although dropping an
 email or support ticket to say you're doing it is always a good idea.
 
 The Tor network needs nodes, especially Guards and Exits. Exits are a
 difficult thing for most people to run but relays and Guards are easy. A Guard
-relay is simply just a standard relay that has currently chosen to have the
-Guard flag, which is in a time period-based rotation, so it really is simple.
+relay is simply just a standard relay that has currently been chosen to have
+the Guard flag, which is in a time period-based rotation, so it really is
+simple.
