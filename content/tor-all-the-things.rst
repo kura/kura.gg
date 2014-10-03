@@ -6,6 +6,8 @@ Tor all the things!
 :tags: tor
 :slug: tor-all-the-things
 
+.. contents::
+
 Privacy is key
 --------------
 
