@@ -55,3 +55,4 @@ rsync: publish
 	rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate startserver stopserver publish rsync
+
