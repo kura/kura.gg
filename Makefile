@@ -11,18 +11,17 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 SSH_TARGET_DIR=/var/www/kura.io
 
 help:
-	@echo 'Makefile for a pelican Web site                                        '
-	@echo '                                                                       '
-	@echo 'Usage:                                                                 '
-	@echo '   make html                        (re)generate the web site          '
-	@echo '   make clean                       remove the generated files         '
-	@echo '   make regenerate                  regenerate files upon modification '
-	@echo '   make publish                     generate using production settings '
-	@echo '   make startserver                 start/restart develop_server.sh    '
-	@echo '   make stopserver                  stop local server                  '
-	@echo '   make rsync                       upload the web site via rsync+ssh  '
-	@echo '                                                                       '
-
+	@echo 'Makefile for a pelican Web site'
+	@echo ''
+	@echo 'Usage:'
+	@echo '   make html           (re)generate the web site'
+	@echo '   make clean          remove the generated files'
+	@echo '   make regenerate     regenerate files upon modification'
+	@echo '   make publish        generate using production settings'
+	@echo '   make startserver    start/restart develop_server.sh'
+	@echo '   make stopserver     stop local server'
+	@echo '   make rsync          upload the web site via rsync+ssh '
+	@echo ''
 
 html: clean $(OUTPUTDIR)/index.html
 
@@ -55,4 +54,3 @@ rsync: publish
 	rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate startserver stopserver publish rsync
-

@@ -7,7 +7,6 @@ SITENAME = 'kura.io'
 SITEURL = 'https://kura.io'
 
 THEME = 'ghastly'
-# THEME = 'kura.io'
 
 TIMEZONE = 'Europe/London'
 

@@ -1,36 +1,36 @@
 @font-face {
-  font-family: 'FiraSans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('FiraSans Light'), local('FiraSans-Light'), url(../fonts/FiraSans-Light.woff) format('woff');
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('FiraSans Light'), local('FiraSans-Light'), url(../fonts/FiraSans-Light.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'FiraSans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('FiraSans'), local('FiraSans-Regular'), url(../fonts/FiraSans-Regular.woff) format('woff');
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('FiraSans'), local('FiraSans-Regular'), url(../fonts/FiraSans-Regular.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'FiraSans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('FiraSans SemiBold'), local('FiraSans-SemiBold'), url(../fonts/FiraSans-SemiBold.woff) format('woff');
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('FiraSans SemiBold'), local('FiraSans-SemiBold'), url(../fonts/FiraSans-SemiBold.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'FiraSans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('FiraSans Bold'), local('FiraSans-Bold'), url(../fonts/FiraSans-Bold.woff) format('woff');
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('FiraSans Bold'), local('FiraSans-Bold'), url(../fonts/FiraSans-Bold.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'FiraMono';
-  font-style: normal;
-  font-weight: 400;
-  src: local('FiraMono'), local('FiraMono-Regular'), url(../fonts/FiraMono-Regular.woff) format('woff');
+    font-family: 'FiraMono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('FiraMono'), local('FiraMono-Regular'), url(../fonts/FiraMono-Regular.woff) format('woff');
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav,
@@ -52,9 +52,9 @@ audio:not([controls]) {
 }
 
 html {
-   font-family: FiraSans, sans-serif;
-   -ms-text-size-adjust: 100%;
-   -webkit-text-size-adjust: 100%;
+    font-family: FiraSans, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -91,9 +91,9 @@ dfn {
 }
 
 hr {
-   -moz-box-sizing: content-box;
-   box-sizing: content-box;
-   height: 0;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
 }
 
 mark {
@@ -119,10 +119,10 @@ small {
 }
 
 sub, sup {
-   font-size: 75%;
-   line-height: 0;
-   position: relative;
-   vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 
 sup {
@@ -146,9 +146,9 @@ figure {
 }
 
 fieldset {
-   border: 1px solid #c0c0c0;
-   margin: 0 2px;
-   padding: 0.35em 0.625em 0.75em;
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
@@ -171,8 +171,8 @@ button, select {
 }
 
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
-   -webkit-appearance: button;
-   cursor: pointer;
+    -webkit-appearance: button;
+    cursor: pointer;
 }
 
 button[disabled], html input[disabled] {
@@ -185,10 +185,10 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 input[type="search"] {
-   -webkit-appearance: textfield;
-   -moz-box-sizing: content-box;
-   -webkit-box-sizing: content-box;
-   box-sizing: content-box;
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -471,9 +471,7 @@ kbd {
     font-weight: bold;
     background: #f4f4f4;
     border-radius: 4px;
-    box-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.2),
-        0 1px 0 0 #fff inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
 }
 
 table {
@@ -522,7 +520,7 @@ table tbody > tr:nth-child(odd) > th {
 
 table.plain tbody > tr:nth-child(odd) > td,
 table.plain tbody > tr:nth-child(odd) > th {
-   background: transparent;
+    background: transparent;
 }
 
 iframe, .fluid-width-video-wrapper {
@@ -530,8 +528,6 @@ iframe, .fluid-width-video-wrapper {
     margin: 1.6em 0;
 }
 
-/* When a video is inside the fitvids wrapper, drop the
-margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
     margin: 0;
 }
@@ -541,7 +537,6 @@ margin on the iframe, cause it breaks stuff. */
    3. Utilities - These things get used a lot
    ========================================================================== */
 
-/* Clears shit */
 .clearfix:before, .clearfix:after {
     content: " ";
     display: table;
@@ -555,14 +550,12 @@ margin on the iframe, cause it breaks stuff. */
     *zoom: 1;
 }
 
-/* Hides shit */
 .hidden {
     text-indent: -9999px;
     visibility: hidden;
     display: none;
 }
 
-/* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
     width: 80%;
@@ -570,7 +563,6 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0 auto;
 }
 
-/* Centres vertically yo. (IE8+) */
 .vertical {
     display: table-cell;
     vertical-align: middle;
@@ -581,7 +573,6 @@ margin on the iframe, cause it breaks stuff. */
    4. General - The main styles for the the theme
    ========================================================================== */
 
-/* Big cover image on the home page */
 .site-head {
     position: relative;
     display: table;
@@ -594,7 +585,6 @@ margin on the iframe, cause it breaks stuff. */
     text-decoration: none;
 }
 
-/* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
     margin: 30px 0 0 0;
     font-size: 6rem;
@@ -623,7 +613,6 @@ h1.blog-title a:hover {
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
-/* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
     width: 80%;
@@ -635,8 +624,6 @@ h1.blog-title a:hover {
     hyphens: auto;
 }
 
-/* Add a little circle in the middle of the border-bottom on our .post
-   just for the lolz and stylepoints. */
 .post:after {
     display: block;
     content: "";
@@ -724,18 +711,14 @@ img.shield {
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
-/* Stop .full-img from creating horizontal scroll - slight hack due to
-   imperfections with browser width % calculations and rounding */
 .post-template .content {
     overflow: hidden;
 }
 
-/* Tweak the .post wrapper style */
 .post-template .post {
     margin-top: 0;
 }
 
-/* Kill that stylish little circle that was on the border, too */
 .post-template .post:after {
     display: none;
 }
@@ -745,7 +728,6 @@ img.shield {
     padding-top: 2.5rem;
 }
 
-/* Keep images centred and within the bounds of the post-width */
 .post-content img {
     display: block;
     max-width: 100%;
@@ -754,15 +736,12 @@ img.shield {
     padding: 0.6em 0;
 }
 
-/* Break out larger images to be wider than the main text column
-   the class is applied with jQuery */
 .post-content .full-img {
     width: 126%;
     max-width: none;
     margin: 0 -13%;
 }
 
-/* The author credit area after the post */
 .post-footer {
     position: relative;
     margin: 4rem 0 0 0;
@@ -798,8 +777,6 @@ img.shield {
    7. Third Party Elements - Embeds from other services
    ========================================================================== */
 
-/* Github */
-
 .gist table {
     margin: 0;
     font-size: 1.4rem;
@@ -815,7 +792,6 @@ img.shield {
    8. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
-/* The main wrapper for our pagination links */
 .pagination {
     position: relative;
     width: 80%;
@@ -831,7 +807,6 @@ img.shield {
     color: #9EABB3;
 }
 
-/* Push the previous/next links out to the left/right */
 .older-posts, .newer-posts {
     position: absolute;
     display: inline-block;
@@ -886,7 +861,6 @@ img.shield {
     color: #50585D;
 }
 
-/* The subscribe icon on the footer */
 .subscribe {
     width: 28px;
     height: 28px;
@@ -902,7 +876,6 @@ img.shield {
     transition: box-shadow 0.5s;
 }
 
-/* The RSS icon, inserted via icon font */
 .subscribe:before {
     font-size: 16px;
     position: absolute;
@@ -912,7 +885,6 @@ img.shield {
     transition: color 0.5s ease;
 }
 
-/* Add a box shadow to on hover */
 .subscribe:hover {
     box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
     transition: box-shadow 0.25s;
@@ -922,7 +894,6 @@ img.shield {
     color: #50585D;
 }
 
-/* CSS tooltip saying "Subscribe!" - initially hidden */
 .tooltip {
     opacity: 0;
     display: inline-block;
@@ -940,7 +911,6 @@ img.shield {
     transition: opacity 0.3s ease, top 0.3s ease;
 }
 
-/* The little chiclet arrow under the tooltip, pointing down */
 .tooltip:after {
     content: "";
     border-width: 5px 5px 0 5px;
@@ -955,7 +925,6 @@ img.shield {
     width: 0;
 }
 
-/* On hover, show the tooltip! */
 .subscribe:hover .tooltip {
     opacity: 1;
     top: -33px;
@@ -1097,10 +1066,10 @@ div.figure p.caption {
 
     .post-content .full-img {
         width: auto;
-        width: calc(100% + 32px); /* expand with to image + margins */
-        margin: 0 -16px; /* get rid of margins */
+        width: calc(100% + 32px);
+        margin: 0 -16px;
         min-width: 0;
-        max-width: 112%; /* fallback when calc doesn't work */
+        max-width: 112%;
     }
 
     .post-meta {
