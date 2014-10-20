@@ -15,43 +15,26 @@ Contact
 
 `@kura <https://github.com/kura>`__
 
-:fa:`fa-bitcoin` (Bitcoin)
-==========================
-
-::
-
-    1QFWreLid8ZMPqnmJz1R1K2k3sQJFXcer4
-
-`coinbase.io/kura <https://coinbase.io/kura>`__
-
-:fa:`fa-gittip` (Gittip)
-========================
-
-`@kura <https://www.gittip.com/kura/>`__
-
 :fa:`fa-twitter` (Twitter)
 ==========================
 
 `@kuramanga <https://twitter.com/kuramanga>`__
 
-#IRC
-====
+:fa:`fa-code` (IRC)
+===================
 
 `kuramanga@irc.freenode.net <irc://irc.freenode.net>`__
 
-I can usually be found in the following channels;
+:fa:`fa-comments-o` (Jabber)
+============================
 
 ::
 
-    #debian
-    #python
-    #pypy
-    #distutils
-    #twisted
+    kura@dukgo.com
 
 :fa:`fa-envelope` (Email)
 =========================
 
 ::
 
-    kura [at] kura [dot] io
+    kura [atpersand] kura [period] io

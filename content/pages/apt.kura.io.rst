@@ -45,3 +45,10 @@ You can enable this by adding it to your apt config.
 
 By default this repository is run over SSL, to use the non-SSL version you will
 simply need to substitute https for http above.
+
+If you wish to use the SSL version but are getting an error, you may need to
+install the HTTPS APT transport method.
+
+.. code:: bash
+
+    sudo apt-get install apt-transport-https
