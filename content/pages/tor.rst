@@ -63,4 +63,5 @@ Relays
 |                   |                                          |               | | :fa:`fa-folder` V2Dir   |
 +-------------------+------------------------------------------+---------------+---------------------------+
 
+.. _ElegantEchinda: https://globe.torproject.org/#/relay/E36C680A31C70B39FEB617E91A0F8F2293420167
 .. _EjaculatingWhale: https://globe.torproject.org/#/relay/E803339621BD78503AC333F0FDA35DB705B18071
