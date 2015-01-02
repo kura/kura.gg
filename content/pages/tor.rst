@@ -65,3 +65,27 @@ Relays
 
 .. _ElegantEchinda: https://globe.torproject.org/#/relay/E36C680A31C70B39FEB617E91A0F8F2293420167
 .. _EjaculatingWhale: https://globe.torproject.org/#/relay/E803339621BD78503AC333F0FDA35DB705B18071
+
+torproject.org mirror
+=====================
+
++---------+------------------+
+| Website | Dist / Downloads |
++=========+==================+
+| HTTP_   | `HTTP DIST`_     |
++---------+------------------+
+| HTTPS_  | `HTTPS DIST`_    |
++---------+------------------+
+| FTP_    | `FTP DIST`_      |
++---------+------------------+
+| RSYNC_  | `RSYNC DIST`_    |
++---------+------------------+
+
+.. _HTTP: http://tor-mirror.kura.io/
+.. _`HTTP DIST`: http://tor-mirror.kura.io/dist/
+.. _HTTPS: https://tor-mirror.kura.io/
+.. _`HTTPS DIST`: https://tor-mirror.kura.io/dist/
+.. _FTP: ftp://tor-mirror.kura.io/
+.. _`FTP DIST`: ftp://tor-mirror.kura.io/dist/
+.. _RSYNC: rsync://tor-mirror.kura.io/torproject.org/
+.. _`RSYNC DIST`: rsync://tor-mirror.kura.io/torproject.org/dist/
