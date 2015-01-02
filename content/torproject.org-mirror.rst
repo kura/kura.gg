@@ -15,9 +15,6 @@ With the DDoS attacks on the `torproject.org <https://www.torproject.org>`_
 website over the mid to end of December, I decided it would be prudent to join
 the relatively small list of mirrors.
 
-I decided to online a website mirror that also contains all distribution
-downloads.
-
 Access
 ======
 
