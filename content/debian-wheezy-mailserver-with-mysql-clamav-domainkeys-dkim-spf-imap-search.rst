@@ -18,7 +18,7 @@ SSL
 
 .. code:: bash
 
-    sudo openssl genrsa -out /etc/ssl/private/mail.key 2048
+    sudo openssl genrsa -out /etc/ssl/private/mail.key 4096
     sudo openssl req -new -key /etc/ssl/private/mail.key -out /tmp/mail.csr
     sudo openssl x509 -req -days 365 -in /tmp/mail.csr -signkey /etc/ssl/private/mail.key -out /etc/ssl/certs/mail.crt
 
