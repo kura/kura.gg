@@ -186,9 +186,7 @@ Create a new `/etc/postfix/master.cf` and make it look like below.
 .. code::
 
     smtp      inet  n       -       -       -       -       smtpd
-        -o content_filter=spamassassin
         -o strict_rfc821_envelopes=yes
-        -o smtpd_proxy_filter=127.0.0.1:10025
     submission inet n       -       -       -       -       smtpd
         -o syslog_name=postfix/submission
         -o smtpd_tls_security_level=encrypt
@@ -252,11 +250,6 @@ Create a new `/etc/postfix/master.cf` and make it look like below.
         -o smtpd_sender_restrictions=
         -o smtpd_recipient_restrictions=permit_mynetworks,reject
         -o mynetworks=127.0.0.0/8
-        -o smtpd_authorized_xforward_hosts=127.0.0.0/8
-    127.0.0.1:10026 inet n  -        n      -       10      smtpd
-        -o content_filter=
-        -o receive_override_options=no_unknown_recipient_checks
-        -o smtpd_recipient_restrictions=permit_mynetworks,reject
         -o smtpd_authorized_xforward_hosts=127.0.0.0/8
 
 Next you'll create the config files to query MySQL.
