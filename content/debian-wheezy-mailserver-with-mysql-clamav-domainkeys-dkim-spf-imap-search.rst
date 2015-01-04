@@ -655,7 +655,7 @@ All that needs to be done now is to create two DNS records.
 
 .. code::
 
-    _domainkey.kura.io.	IN TXT "o=-;""
-    mail._domainkey.kura.io. IN TXT "k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGTLLBUsIH..."
+    _domainkey.example.com. IN TXT "o=-;""
+    mail._domainkey.example.com. IN TXT "k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGTLLBUsIH..."
 
 The contents of the latter record are the public key from `/etc/dkimproxy/public.key`.
