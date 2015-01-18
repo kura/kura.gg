@@ -624,7 +624,7 @@ Modify `/etc/dkimproxy/dkimproxy_out.conf` to look like below.
     listen 127.0.0.1:10027
     relay 127.0.0.1:10028
     domain example.com
-    keyfile /etc/dkimproxy/domainkey.key
+    keyfile /etc/dkimproxy/private.key
     selector mail
 
 There seems to be a rather annoying bug where signatures are not modified
