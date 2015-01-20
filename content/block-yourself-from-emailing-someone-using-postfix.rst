@@ -1,10 +1,10 @@
-Block yourself from emailing someone with Postfix
-#################################################
+Block yourself from emailing someone using Postfix
+##################################################
 :date: 2015-01-20 23:38
 :author: kura
 :category: tutorials
 :tags: postfix, smtp
-:slug: block-yourself-from-emailing-someone-with-postfix
+:slug: block-yourself-from-emailing-someone-using-postfix
 
 .. contents::
 
