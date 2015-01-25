@@ -33,6 +33,12 @@ Exits
 |                     |                                          |               | | :fa:`fa-book` HSDir     |
 |                     |                                          |               | | :fa:`fa-folder` V2Dir   |
 +---------------------+------------------------------------------+---------------+---------------------------+
+| ExpensiveBeaver_    | 3A0B0DB73C9CE89C663FD40AA95D188655EADB11 | Sweden        | | :fa:`fa-check` IPv6     |
+|                     |                                          |               | | :fa:`fa-bolt` 1 Gbps    |
+|                     |                                          |               | | :fa:`fa-sign-out` Exit  |
+|                     |                                          |               | | :fa:`fa-book` HSDir     |
+|                     |                                          |               | | :fa:`fa-folder` V2Dir   |
++---------------------+------------------------------------------+---------------+---------------------------+
 | GourmetBanana_      | 1CA9A74EC0C31CEAAA678935CC72E32037EB4DEB | United States | | :fa:`fa-sign-out` Exit  |
 |                     |                                          |               | | :fa:`fa-book` HSDir     |
 |                     |                                          |               | | :fa:`fa-folder` V2Dir   |
@@ -45,6 +51,7 @@ Exits
 .. _GrotesqueCormorant: https://globe.torproject.org/#/relay/59E0155A932612226C8C5CA3BB6927D62440AAAF
 .. _StormyRaccoon: https://globe.torproject.org/#/relay/226473CDDB10674A4859DFD2A1BC2C5153911C64
 .. _StupidSwallow: https://globe.torproject.org/#/relay/8872D2E0397B531AAD6BB547E7364955E1F95C12
+.. _ExpensiveBeaver: https://globe.torproject.org/#/relay/3A0B0DB73C9CE89C663FD40AA95D188655EADB11
 .. _GourmetBanana: https://globe.torproject.org/#/relay/1CA9A74EC0C31CEAAA678935CC72E32037EB4DEB
 .. _BurningPenis: https://globe.torproject.org/#/relay/2B11D8CD5C593E557269BAC65BCE2D237A529957
 
