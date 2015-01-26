@@ -10,6 +10,13 @@ Contact
 - `pgp.mit.edu <http://pgp.mit.edu/pks/lookup?op=vindex&search=0xABD20EBD00AE065E>`__
 - `keybase.io/kura <https://keybase.io/kura>`__
 
+:fa:`fa-user-secret` (OTR)
+==========================
+
+::
+
+    FBE96993 7CEE7110 8ADC0F68 66F3D138 893646E8
+
 :fa:`fa-github` (GitHub)
 ========================
 

@@ -14,8 +14,10 @@ import os.path
 from datetime import datetime
 from logging import warning, info
 from codecs import open
+from pytz import timezone
 
 from pelican import signals, contents
+from pelican.utils import get_date
 
 TXT_HEADER = """{0}/index.html
 {0}/archives.html
@@ -45,12 +47,11 @@ XML_FOOTER = """
 
 def format_date(date):
     if date.tzinfo:
-        tz = date.strftime('%s')
+        tz = date.strftime('%z')
         tz = tz[:-2] + ':' + tz[-2:]
     else:
         tz = "-00:00"
     return date.strftime("%Y-%m-%dT%H:%M:%S") + tz
-
 
 class SitemapGenerator(object):
 
@@ -60,6 +61,11 @@ class SitemapGenerator(object):
         self.context = context
         self.now = datetime.now()
         self.siteurl = settings.get('SITEURL')
+
+
+        self.default_timezone = settings.get('TIMEZONE', 'UTC')
+        self.timezone = getattr(self, 'timezone', self.default_timezone)
+        self.timezone = timezone(self.timezone)
 
         self.format = 'xml'
 
@@ -123,18 +129,26 @@ class SitemapGenerator(object):
                 warning("sitemap plugin: SITEMAP['changefreqs'] must be a dict")
                 warning("sitemap plugin: using the default values")
 
-
-
     def write_url(self, page, fd):
 
         if getattr(page, 'status', 'published') != 'published':
             return
 
-        page_path = os.path.join(self.output_path, page.url)
+        # We can disable categories/authors/etc by using False instead of ''
+        if not page.save_as:
+            return
+
+        page_path = os.path.join(self.output_path, page.save_as)
         if not os.path.exists(page_path):
             return
 
-        lastmod = format_date(getattr(page, 'date', self.now))
+        lastdate = getattr(page, 'date', self.now)
+        try:
+            lastdate = self.get_date_modified(page, lastdate)
+        except ValueError:
+            warning("sitemap plugin: " + page.save_as + " has invalid modification date,")
+            warning("sitemap plugin: using date value as lastmod.")
+        lastmod = format_date(lastdate)
 
         if isinstance(page, contents.Article):
             pri = self.priorities['articles']
@@ -146,12 +160,33 @@ class SitemapGenerator(object):
             pri = self.priorities['indexes']
             chfreq = self.changefreqs['indexes']
 
+        pageurl = '' if page.url == 'index.html' else page.url
 
         if self.format == 'xml':
-            fd.write(XML_URL.format(self.siteurl, page.url, lastmod, chfreq, pri))
+            fd.write(XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri))
         else:
-            fd.write(self.siteurl + '/' + loc + '\n')
+            fd.write(self.siteurl + '/' + pageurl + '\n')
 
+    def get_date_modified(self, page, default):
+        if hasattr(page, 'modified'):
+            if isinstance(page.modified, datetime):
+                return page.modified
+            return get_date(page.modified)
+        else:
+            return default
+
+    def set_url_wrappers_modification_date(self, wrappers):
+        for (wrapper, articles) in wrappers:
+            lastmod = datetime.min.replace(tzinfo=self.timezone)
+            for article in articles:
+                lastmod = max(lastmod, article.date.replace(tzinfo=self.timezone))
+                try:
+                    modified = self.get_date_modified(article, datetime.min).replace(tzinfo=self.timezone)
+                    lastmod = max(lastmod, modified)
+                except ValueError:
+                    # Supressed: user will be notified.
+                    pass
+            setattr(wrapper, 'modified', str(lastmod))
 
     def generate_output(self, writer):
         path = os.path.join(self.output_path, 'sitemap.{0}'.format(self.format))
@@ -160,6 +195,10 @@ class SitemapGenerator(object):
                 + [ c for (c, a) in self.context['categories']] \
                 + [ t for (t, a) in self.context['tags']] \
                 + [ a for (a, b) in self.context['authors']]
+
+        self.set_url_wrappers_modification_date(self.context['categories'])
+        self.set_url_wrappers_modification_date(self.context['tags'])
+        self.set_url_wrappers_modification_date(self.context['authors'])
 
         for article in self.context['articles']:
             pages += article.translations
@@ -176,7 +215,8 @@ class SitemapGenerator(object):
             FakePage = collections.namedtuple('FakePage',
                                               ['status',
                                                'date',
-                                               'url'])
+                                               'url',
+                                               'save_as'])
 
             for standard_page_url in ['index.html',
                                       'archives.html',
@@ -184,7 +224,8 @@ class SitemapGenerator(object):
                                       'categories.html']:
                 fake = FakePage(status='published',
                                 date=self.now,
-                                url=standard_page_url)
+                                url=standard_page_url,
+                                save_as=standard_page_url)
                 self.write_url(fake, fd)
 
             for page in pages:
