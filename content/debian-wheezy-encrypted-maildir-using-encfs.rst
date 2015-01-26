@@ -10,7 +10,7 @@ Debian Wheezy encrypted Maildir using encfs
 
 This is really a follow up article to `one I wrote earlier this year
 </debian-wheezy-tls-mailserver-with-mysql-clamav-domainkeys-dkim-spf-solr-imap-search/>`_
-but is really applicable to any similar set-up with some modifications. The
+but is really applicable to any similar set-up, with some modifications. The
 only configuration similarity this requires is that mail for all users is
 stored on the filesystem in the same place, rather than to separate locations
 i.e. each user having ~/.Maildir.
