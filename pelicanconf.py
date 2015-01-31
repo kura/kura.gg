@@ -71,6 +71,7 @@ PLUGINS = [
     'pelican_gist',
     'pelican_vimeo',
     'pelican_youtube',
+    'touch',
 ]
 
 GIST_CACHE_ENABLED = False

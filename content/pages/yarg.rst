@@ -24,7 +24,7 @@ Search interface
 Newest packages interface
 -------------------------
 
-.. code-block:: python
+.. code:: python
 
     >>> import yarg
     >>> packages = yarg.newest_packages()
@@ -38,7 +38,7 @@ Newest packages interface
 Updated packages interface
 --------------------------
 
-.. code-block:: python
+.. code:: python
 
     >>> import yarg
     >>> packages = yarg.latest_updated_packages()
