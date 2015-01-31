@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
     <head>
-        <link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" />
-        <link href="{{ SITEURL }}/theme/css/pygment.css" rel="stylesheet" />
+        {% assets filters="cssmin", output="css/kura.io.%(version)s.css", "css/style.css", "css/pygment.css" %}
+            <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" />
+        {% endassets %}
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
         {% block head %}
             <meta charset="utf-8" />
