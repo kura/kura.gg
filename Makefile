@@ -35,7 +35,7 @@ regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 startserver:
-	$(BASEDIR)/develop_server.sh restart
+	$(BASEDIR)/develop_server.sh start
 
 stopserver:
 	kill -9 `cat pelican.pid`
