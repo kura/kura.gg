@@ -211,12 +211,6 @@ table {
     border-spacing: 0;
 }
 
-
-/* ==========================================================================
-   1. Icons - Sets up the icon font and respective classes
-   ========================================================================== */
-
-/* Import the font file with the icons in it */
 @font-face {
     font-family: 'icons';
     src:url('../fonts/icons.eot');
@@ -259,10 +253,6 @@ table {
 .icon-facebook:before {
     content: "\e004";
 }
-
-/* ==========================================================================
-   2. General - Setting up some base styles
-   ========================================================================== */
 
 html {
     height: 100%;
@@ -532,11 +522,6 @@ iframe, .fluid-width-video-wrapper {
     margin: 0;
 }
 
-
-/* ==========================================================================
-   3. Utilities - These things get used a lot
-   ========================================================================== */
-
 .clearfix:before, .clearfix:after {
     content: " ";
     display: table;
@@ -567,11 +552,6 @@ iframe, .fluid-width-video-wrapper {
     display: table-cell;
     vertical-align: middle;
 }
-
-
-/* ==========================================================================
-   4. General - The main styles for the the theme
-   ========================================================================== */
 
 .site-head {
     position: relative;
@@ -707,10 +687,6 @@ img.shield {
     padding-right: 5px !important;
 }
 
-/* ==========================================================================
-   5. Single Post - When you click on an individual post
-   ========================================================================== */
-
 .post-template .content {
     overflow: hidden;
 }
@@ -772,11 +748,6 @@ img.shield {
     color: #50585D;
 }
 
-
-/* ==========================================================================
-   7. Third Party Elements - Embeds from other services
-   ========================================================================== */
-
 .gist table {
     margin: 0;
     font-size: 1.4rem;
@@ -786,11 +757,6 @@ img.shield {
     min-width: 25px;
     font-size: 1.1rem;
 }
-
-
-/* ==========================================================================
-   8. Pagination - Tools to let you flick between pages
-   ========================================================================== */
 
 .pagination {
     position: relative;
@@ -833,11 +799,6 @@ img.shield {
 .older-posts:hover, .newer-posts:hover {
     border-color: #9EABB3;
 }
-
-
-/* ==========================================================================
-   9. Footer - The bottom of every page
-   ========================================================================== */
 
 .site-footer {
     position: relative;
@@ -938,10 +899,6 @@ div.figure p.caption {
     line-height: 1.7em;
 }
 
-/* ==========================================================================
-   10. Media Queries - Smaller than 900px
-   ========================================================================== */
-
 @media only screen and (max-width: 900px) {
 
     blockquote {
@@ -998,11 +955,6 @@ div.figure p.caption {
     }
 
 }
-
-/* ==========================================================================
-   11. Media Queries - Smaller than 500px
-   ========================================================================== */
-
 
 @media only screen and (max-width: 500px) {
 

@@ -58,7 +58,7 @@ LINKS = ()
 # Social widget
 SOCIAL = ()
 
-DEFAULT_PAGINATION = 20
+DEFAULT_PAGINATION = 25
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
