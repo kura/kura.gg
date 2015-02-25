@@ -12,7 +12,6 @@ Contact
 :Skype: kuramanga
 :Twitter: `@kuramanga <https://twitter.com/kuramanga/>`__
 
-
 Blurb
 =====
 
@@ -57,8 +56,8 @@ from there.
 Projects
 ========
 
-This list has been cherry picked from the `software page <https://kura.io/software/>`__
-on my website.
+This list has been cherry picked from the
+`software page <https://kura.io/software/>`__ on my website.
 
 MAP
 ---
@@ -154,12 +153,20 @@ Lead Systems Engineer
 
 - Designed, built and maintained virtualised hosting platform using VMWare.
 - Customised Ubuntu heavily to keep system resource usage as low as possible.
-- Management, maintenance and troubleshooting of over 250 virtual machines and around 50 physical boxes. Mostly running Ubuntu, and CentOS.
-- Installation and configuration of a Nagios cluster for monitoring including writing an SMS alert relay Provisioning using Puppet, later moving to Salt Stack.
+- Management, maintenance and troubleshooting of over 250 virtual machines and
+  around 50 physical boxes. Mostly running Ubuntu, and CentOS.
+- Installation and configuration of a Nagios cluster for monitoring including
+  writing an SMS alert relay Provisioning using Puppet, later moving to Salt
+  Stack.
 - Using VMWare templates and the VMWare API.
-- Mentoring, helping and advising the development team of around 30 developers on subjects such as Linux (Debian, Ubuntu, CentOS and RHEL), security, Python, MySQL and PostgreSQL.
-- Acting as a sort of technical architect, helping with platform designs including hardware and software.
-- Introduced a lot of tech that the company had otherwise not used ­ PostgreSQL instead of MySQL, Pound, HAProxy, Varnish, nginx, Solr, Puppet/Salt Stack and others.
+- Mentoring, helping and advising the development team of around 30 developers
+  on subjects such as Linux (Debian, Ubuntu, CentOS and RHEL), security,
+  Python, MySQL and PostgreSQL.
+- Acting as a sort of technical architect, helping with platform designs
+  including hardware and software.
+- Introduced a lot of tech that the company had otherwise not used PostgreSQL
+  instead of MySQL, Pound, HAProxy, Varnish, nginx, Solr, Puppet/Salt Stack and
+  others.
 
 *AUGUST 2009 – MAY 2014*
 
@@ -187,7 +194,8 @@ Developing PHP web applications and general Dev Ops scripts/tasks using Python.
 2004 and earlier
 ----------------
 
-Added this section because people seem to ask about it. I was young, did some freelancing but spent most of my time hacking and learning.
+Added this section because people seem to ask about it. I was young, did some
+freelancing but spent most of my time hacking and learning.
 
 Random list of skills/tech I know and use
 =========================================
