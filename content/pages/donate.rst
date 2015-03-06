@@ -23,4 +23,14 @@ Or via `coinbase.io/kura <https://coinbase.io/kura>`__
 :fa:`fa-usd` / :fa:`fa-gbp`
 ===========================
 
-Via `Gratipay (previously gittip) <https://www.gratipay.com/kura/>`__
+Via `Gratipay (formerly gittip) <https://www.gratipay.com/kura/>`__
+
+Digital Ocean (Hosting)
+=======================
+
+`Link <https://www.digitalocean.com/?refcode=d76795840b23>`__
+
+proxy.sh (VPN)
+==============
+
+`Link <https://proxy.sh/panel/aff.php?aff=079>`__
