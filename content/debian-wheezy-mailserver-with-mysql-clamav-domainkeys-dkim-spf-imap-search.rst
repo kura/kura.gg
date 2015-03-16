@@ -649,7 +649,13 @@ All that needs to be done now is to create two three records.
 .. code::
 
     example.com. IN TXT "v=spf1 a mx -all"
-    _domainkey.example.com. IN TXT "o=-;""
+
+.. code::
+
+    _domainkey.example.com. IN TXT "o=-;"
+
+.. code::
+
     mail._domainkey.example.com. IN TXT "k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGTLLBUsIH..."
 
 
