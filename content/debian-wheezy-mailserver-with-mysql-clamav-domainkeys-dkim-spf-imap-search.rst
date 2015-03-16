@@ -99,7 +99,7 @@ Postfix
 
 .. code:: bash
 
-    sudo apt-get install postfix postfix-mysql
+    sudo apt-get install postfix postfix-mysql postfix-policyd-spf-python
 
 When prompted for a Postfix configuration, just select `Internet Site`. You'll
 also be prompted for a mail name, I'll be using `mail.example.com`.
@@ -644,11 +644,13 @@ Finally, restart dkimproxy.
 DNS
 ===
 
-All that needs to be done now is to create two DNS records.
+All that needs to be done now is to create two three records.
 
 .. code::
 
+    example.com. IN TXT "v=spf1 a mx -all"
     _domainkey.example.com. IN TXT "o=-;""
     mail._domainkey.example.com. IN TXT "k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGTLLBUsIH..."
+
 
 The contents of the latter record are the public key from `/etc/dkimproxy/public.key`.
