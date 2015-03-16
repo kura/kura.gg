@@ -324,15 +324,15 @@ directory for it to be stored in.
 
 .. code:: bash
 
-    mkdir -p /var/mail/vhosts/example.com
+    sudo mkdir -p /var/mail/vhosts/example.com
 
 Add a user and group for the mail and give permissions on the mail directory.
 
 .. code:: bash
 
-    groupadd -g 5000 vmail
-    useradd -g vmail -u 5000 vmail -d /var/mail
-    chown -R vmail:vmail /var/mail
+    sudo groupadd -g 5000 vmail
+    sudo useradd -g vmail -u 5000 vmail -d /var/mail
+    sudo chown -R vmail:vmail /var/mail
 
 Modify the line in `/etc/dovecot/dovecot.conf` so it looks like below.
 
