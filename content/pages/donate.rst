@@ -18,7 +18,7 @@ relay operators.
 
     1QFWreLid8ZMPqnmJz1R1K2k3sQJFXcer4
 
-Or via `coinbase.io/kura <https://coinbase.io/kura>`__
+Or via `coinbase.com/kura <https://coinbase.com/kura>`__
 
 :fa:`fa-usd` / :fa:`fa-gbp`
 ===========================
