@@ -60,7 +60,7 @@ Fingerprint type
 1. SHA-1
 2. SHA-2
 
-I would advise you do not use DSA or ECDSA algorithms and SHA-1 fingerprints.
+I would advise you do not use DSA or ECDSA algorithms or SHA-1 fingerprints.
 
 Add the relevant records to your DNS.
 
