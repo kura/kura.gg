@@ -40,9 +40,11 @@ question and run the command below to get similar content.
 
 Each line in response contains the following information.
 
-+----------+----------+-----------+------------------+------+
-| Hostname | IN SSHFP | Algorithm | Fingerprint type | Hash |
-+----------+----------+-----------+------------------+------+
++---------------+----------+-----------+------------------+------------------------------------------+
+| Hostname      | IN SSHFP | Algorithm | Fingerprint type | Hash                                     |
++===============+==========+===========+==================+==========================================+
+| some.host.tld | IN SSHFP | 1         | 1                | c53bfb3d5d053280b17db76909f707f3ac9cbb47 |
++---------------+----------+-----------+------------------+------------------------------------------+
 
 Algorithm
 ---------
