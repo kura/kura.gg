@@ -11,7 +11,7 @@ I currently use `name.com <https://www.name.com/>`_ as my registrar and I use
 and SSHFP records and of course, DNSSEC.
 
 I'm writing this up because I found getting DNSSEC from Rage4 to work with
-name.com as my registrar was a pain and the name.com support was terrible,
+name.com as my registrar was a pain and the name.com support were not very helpful,
 linking me to a support article that I'd already read and did not help at all.
 
 Rage4
