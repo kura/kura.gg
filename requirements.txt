@@ -8,3 +8,4 @@ pelican-youtube
 webassets
 pelican-minify
 pelican-fontawesome
+beautifulsoup4
