@@ -32,11 +32,11 @@ question and run the command below to get similar content.
 
 .. code:: bash
 
-    $ ssh-keygen -r ego.kura.io
-    ego.kura.io IN SSHFP 1 1 c53bfb3d5d053280b17db76909f707f3ac9cbb47
-    ego.kura.io IN SSHFP 1 2 56310ad73fae7a3861f87c246f1fb7c0884706f9a65e94d75be4fb14ca973275
-    ego.kura.io IN SSHFP 4 1 fe3a67a65b71631c8c16c173c09ad9885b72bd4e
-    ego.kura.io IN SSHFP 4 2 7dd9225ef20b806e78fca60935c8b051565ab6077d7735e2c8d23fdfd26289d2
+    $ ssh-keygen -r some.host.tld
+    some.host.tld IN SSHFP 1 1 c53bfb3d5d053280b17db76909f707f3ac9cbb47
+    some.host.tld IN SSHFP 1 2 56310ad73fae7a3861f87c246f1fb7c0884706f9a65e94d75be4fb14ca973275
+    some.host.tld IN SSHFP 4 1 fe3a67a65b71631c8c16c173c09ad9885b72bd4e
+    some.host.tld IN SSHFP 4 2 7dd9225ef20b806e78fca60935c8b051565ab6077d7735e2c8d23fdfd26289d2
 
 Each line in response contains the following information.
 
