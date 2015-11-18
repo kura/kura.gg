@@ -47,9 +47,7 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 rsync: publish
-	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ fax.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
-	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ jet.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
-	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ ski.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
+	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
 	rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate startserver stopserver publish rsync

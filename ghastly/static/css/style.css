@@ -1063,3 +1063,26 @@ div.figure p.caption {
     }
 
 }
+
+.youtube-4x3 {
+	padding-bottom: 75%;  /* inverse of 4:3 aspect ratio */
+}
+.youtube-16x9 {
+	padding-bottom: 56.25%;  /* inverse of 16:9 aspect ratio */
+}
+.youtube-4x3,
+.youtube-16x9 {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+}
+.youtube-4x3 iframe,
+.youtube-16x9 iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	border: 0;
+}
