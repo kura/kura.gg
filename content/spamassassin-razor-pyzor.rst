@@ -53,7 +53,7 @@ Now we also need to tell Pyzor to discover it's servers.
 
 .. code:: bash
 
-    sudo pyzor discover
+    pyzor --homedir /etc/mail/spamassassin discover
 
 SpamAssassin
 ------------
@@ -62,8 +62,8 @@ Add the following lines to the end of **/etc/spamassassin/local.cf**
 
 .. code:: bash
 
-    sudo razor_config /etc/spamassassin/.razor/razor-agent.conf
-    sudo pyzor_options --homedir /etc/spamassassin
+    razor_config /etc/mail/spamassassin/.razor/razor-agent.conf
+    pyzor_options --homedir /etc/mail/spamassassin
 
 Finally we restart SpamAssassin
 
