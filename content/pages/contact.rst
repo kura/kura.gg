@@ -43,6 +43,10 @@ Contact
 
     kura@jabber.ccc.de
 
+::
+
+    ricochet:woyoum6evy2ng4he
+
 :fa:`fa-envelope` (Email)
 =========================
 
