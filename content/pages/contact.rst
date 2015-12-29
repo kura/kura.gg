@@ -41,7 +41,7 @@ Contact
 
 ::
 
-    kura@dukgo.com
+    kura@jabber.ccc.de
 
 :fa:`fa-envelope` (Email)
 =========================
