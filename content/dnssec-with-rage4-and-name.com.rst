@@ -23,20 +23,20 @@ interface is really easy so you'll figure it out.
 Within the management section for your domain's zone, there is a menu bar of
 icons, the icon pictured below enabled DNSSEC.
 
-.. image:: https://kura.io/images/rage4-dnssec-icon.png
+.. image:: /images/rage4-dnssec-icon.png
     :alt: Enabled DNSSEC
 
 Clicking this will turn on DNSSEC. You will then have a new icon that will
 allow you to display your DNSSEC information.
 
-.. image:: https://kura.io/images/rage4-dnssec-info-icon.png
+.. image:: /images/rage4-dnssec-info-icon.png
     :alt: Display DNSSEC info
 
 Clicking this icon will give you a window that is similar to the image below,
 containing all of the DNSSEC info you need. You will also have several extra
 fields but you'll only need the ones shown below.
 
-.. image:: https://kura.io/images/rage4-dnssec-info.png
+.. image:: /images/rage4-dnssec-info.png
     :alt: DNSSEC info
 
 name.com
@@ -53,7 +53,7 @@ the information provided by Rage4.
 Below is an image of the form with pre-filled data taken from the previous
 image from Rage4.
 
-.. image:: https://kura.io/images/name.com-dnssec-form.png
+.. image:: /images/name.com-dnssec-form.png
     :alt: Pre-filled DNSSEC form
 
 You can fill this form in and submit it for both type 1 (RSASHA1) and type 2

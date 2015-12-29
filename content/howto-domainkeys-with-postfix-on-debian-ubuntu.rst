@@ -9,16 +9,16 @@ HOWTO: DomainKeys with Postfix on Debian/Ubuntu
 **I have written a much newer, clearer and better article on DomainKeys
 signing email `here`_.**
 
-.. _here: https://kura.io/2011/09/17/postfix-dk-dkim-spf/
+.. _here: /2011/09/17/postfix-dk-dkim-spf/
 
 About
 -----
 
 This guide is a sister to another guide I wrote a while back about how
 to use DomainKeys Identified Mail (DKIM) with Postfix on Debian, which
-can be read here - `https://kura.io/2010/01/11/dkim-on-debian-with-postfix/`_.
+can be read here - `/2010/01/11/dkim-on-debian-with-postfix/`_.
 
-.. _`https://kura.io/2010/01/11/dkim-on-debian-with-postfix/`: https://kura.io/2010/01/11/dkim-on-debian-with-postfix/
+.. _`/2010/01/11/dkim-on-debian-with-postfix/`: /2010/01/11/dkim-on-debian-with-postfix/
 
 DomainKeys is an older implementation than DKIM, DKIM is a merge of
 DomainKeys and Identified Mail. Both DomainKeys and DKIM are used so

@@ -13,7 +13,7 @@ pypip.in
 ========
 
 `pypip.in <https://pypip.in/>`__ is a website `I have written about before
-<https://kura.io/2013/12/24/shields-for-pypi-packages/>`__. I decided I would
+</2013/12/24/shields-for-pypi-packages/>`__. I decided I would
 look at the shields and see which ones were the most requested so far this
 year.
 

@@ -43,15 +43,15 @@ This haproxy build is compiled against openssl, providing the npn module,
 allowing for haproxy to work under SSL/TLS and allowing the use of SPDY/2 and
 SPDY/3.
 
-This version is available on `apt.kura.io <https://kura.io/apt.kura.io/>`__
+This version is available on `apt.kura.io </apt.kura.io/>`__
 or as a manual download, from the link below.
 
 Manual download
 ===============
 
-+-----------------------------------------------------------------------------------------------+
-| `haproxy_1.5-dev22kura1_amd64.deb <https://kura.io/files/haproxy_1.5-dev22kura1_amd64.deb>`__ |
-+-----------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+| `haproxy_1.5-dev22kura1_amd64.deb </files/haproxy_1.5-dev22kura1_amd64.deb>`__ |
++--------------------------------------------------------------------------------+
 
 MD5
 ===
@@ -66,4 +66,3 @@ SHA1
 .. code::
 
     9d87ddacde26b75f8c9d723093cf2ef51615ec6e  haproxy_1.5-dev22kura1_amd64.deb
-

@@ -65,11 +65,11 @@ provided that too.
 
 .. code:: bash
 
-    sudo wget https://kura.io/files/sks-index.html -O /var/lib/sks/www/index.html
+    sudo wget /files/sks-index.html -O /var/lib/sks/www/index.html
 
 Now your PGP server should be accessible from a web browser at
 `http://YOUR_SERVER:11371/`_ and it should look like mine
-`https://kura.io:11371/`_
+`:11371/`_
 
 .. _`http://YOUR_SERVER:11371/`: http://YOUR_SERVER:11371/
-.. _`https://kura.io:11371/`: https://syslog.tv/
+.. _`:11371/`: https://syslog.tv/

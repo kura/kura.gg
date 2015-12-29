@@ -10,7 +10,7 @@ Postfix + SpamAssassin + ClamAV + Procmail on Debian 6/Ubuntu
     :backlinks: none
 
 This is part 2 of my series on mail servers on Debian 6/Ubuntu 10.04, it
-should work on other versions of each though. `Part 1 is available here <https://kura.io/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/>`_.
+should work on other versions of each though. `Part 1 is available here </2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/>`_.
 
 SpamAssassin
 ------------
@@ -207,5 +207,5 @@ That should be everything done, good luck!
 `« Part 1 - Postfix + Dovecot (IMAP/IMAPS) + SASL + Maildir`_
  `Part 2 - Postfix + DK (DomainKeys) + DKIM + SPF »`_
 
-.. _« Part 1 - Postfix + Dovecot (IMAP/IMAPS) + SASL + Maildir: https://kura.io/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/
-.. _Part 2 - Postfix + DK (DomainKeys) + DKIM + SPF »: https://kura.io/2011/09/17/postfix-dk-dkim-spf/
+.. _« Part 1 - Postfix + Dovecot (IMAP/IMAPS) + SASL + Maildir: /2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/
+.. _Part 2 - Postfix + DK (DomainKeys) + DKIM + SPF »: /2011/09/17/postfix-dk-dkim-spf/

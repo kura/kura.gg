@@ -74,7 +74,7 @@ Once downloaded simply run
 Example output
 --------------
 
-.. image:: https://kura.io/images/output-amisecure.png
+.. image:: /images/output-amisecure.png
    :alt: Am I Secure?
 
 Issue tracking

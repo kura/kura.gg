@@ -265,8 +265,8 @@ simply make life easier.
 You can get the `Debian version from here`_ or the `RedHat version from
 here`_.
 
-.. _Debian version from here: https://kura.io/files/nginx-debian
-.. _RedHat version from here: https://kura.io/files/nginx-redhat
+.. _Debian version from here: /files/nginx-debian
+.. _RedHat version from here: /files/nginx-redhat
 
 Starting nginx
 --------------

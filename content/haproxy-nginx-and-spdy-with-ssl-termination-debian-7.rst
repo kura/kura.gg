@@ -12,7 +12,7 @@ haproxy, nginx and SPDY with SSL termination (Debian 7)
 `I wrote an article last week`_ explaining that I had changed my blog
 and built my own nginx packages with `SPDY`_ built in.
 
-.. _`I wrote an article last week`: https://kura.io/2013/07/10/nginx-spdy-and-ngx-pagespeed/
+.. _`I wrote an article last week`: /2013/07/10/nginx-spdy-and-ngx-pagespeed/
 .. _`SPDY`: http://www.chromium.org/spdy
 
 I decided I would take things a little further and poke around with
@@ -61,10 +61,10 @@ Download the deb file below, use either the GPG key or MD5/SHA1 sums to verify i
 +---------------------------------------+------------------+------------------+------------------+
 
 
-.. _`haproxy_1.5~dev19_amd64.deb`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb
-.. _`owGMeXVU1G...`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb.asc
-.. _`715317e082...`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb.md5
-.. _`e116e1c597...`: https://kura.io/files/haproxy_1.5~dev19_amd64.deb.sha1
+.. _`haproxy_1.5~dev19_amd64.deb`: /files/haproxy_1.5~dev19_amd64.deb
+.. _`owGMeXVU1G...`: /files/haproxy_1.5~dev19_amd64.deb.asc
+.. _`715317e082...`: /files/haproxy_1.5~dev19_amd64.deb.md5
+.. _`e116e1c597...`: /files/haproxy_1.5~dev19_amd64.deb.sha1
 
 If you already have haproxy installed, make sure to remove it first.
 
@@ -234,7 +234,7 @@ install an SPDY-enabled nginx.
 You can `follow my guide on how to install my
 packaged version of nginx with SPDY enabled`_.
 
-.. _`follow my guide on how to install my packaged version of nginx with SPDY enabled`: https://kura.io/2013/07/10/nginx-spdy-and-ngx-pagespeed/
+.. _`follow my guide on how to install my packaged version of nginx with SPDY enabled`: /2013/07/10/nginx-spdy-and-ngx-pagespeed/
 
 Follow this guide up until the configuration of nginx.
 

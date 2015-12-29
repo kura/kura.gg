@@ -17,17 +17,17 @@ Requirements
 Downloads
 =========
 
-There versions are available on `apt.kura.io <https://kura.io/apt.kura.io/>`__
+There versions are available on `apt.kura.io </apt.kura.io/>`__
 or as a manual download, from the links below.
 
 Manual download
 ===============
 
-+-------------------------------------------------------------------------------------------------+
-| `vagrant-bash-completion-0.0.6.deb <https://kura.io/files/vagrant-bash-completion-0.0.6.deb>`__ |
-+-------------------------------------------------------------------------------------------------+
-| `go-bash-completion-0.0.1.deb <https://kura.io/files/go-bash-completion-0.0.1.deb>`__           |
-+-------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+| `vagrant-bash-completion-0.0.6.deb </files/vagrant-bash-completion-0.0.6.deb>`__ |
++----------------------------------------------------------------------------------+
+| `go-bash-completion-0.0.1.deb </files/go-bash-completion-0.0.1.deb>`__           |
++----------------------------------------------------------------------------------+
 
 
 MD5

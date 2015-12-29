@@ -78,7 +78,7 @@ improve performance and clear up some bugs.
 Sadly Wordpress messes up the config when displayed like that so you can
 view the proper version `here`_.
 
-.. _here: https://kura.io/satic/files/syslog-nginx-config-18-apr-2010
+.. _here: /satic/files/syslog-nginx-config-18-apr-2010
 
 Explanation
 -----------
@@ -195,7 +195,7 @@ post`_. I set the proxy_cache_key to use the variable defined earlier
 contains all of the users cookie information in it's key to make it a
 private cache.
 
-.. _previous blog post: https://kura.io/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
+.. _previous blog post: /2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/
 
 I then pass through some basic validation rules that set HTTP 200 and
 302 responses to cache for 60 minutes and 404 responses to cache for 1

@@ -162,6 +162,6 @@ Hauntr is a minimal, lightweight and clean theme for the
 
 It is named after the Pokemon 'Haunter' because it is a modified version
 (you might say evolved) of my previous theme, `Ghastly
-<https://kura.io/ghastly/>`__.
+</ghastly/>`__.
 
 `/hauntr </hauntr/>`__

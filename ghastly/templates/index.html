@@ -5,15 +5,15 @@
         <header class="post-header">
             <span class="post-meta">
                 <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
-                in <a href="{{ SITEURL }}/{{ article.category.url }}/">{{ article.category }}</a>
+                in <a href="/{{ article.category.url }}/">{{ article.category }}</a>
                 {% if article.tags %}
                     with tags:
                     {% for tag in article.tags %}
-                        <a href="{{ SITEURL }}/{{ tag.url}}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                        <a href="/{{ tag.url}}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 {% endif %}
             </span>
-            <h1 class="post-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+            <h1 class="post-title"><a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
         </header>
         <section class="post-excerpt">
             {{ article.summary }}

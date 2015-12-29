@@ -147,4 +147,4 @@ And finally I create a list of docutils nodes with the HTML we created above.
 And that's really it, it's a simple as that. `You can view full source on
 GitHub <https://github.com/kura/pelican_vimeo>`_ and also `read the manual for
 pelican-vimeo on it's software page on this website
-<https://kura.io/pelican-vimeo>`_.
+</pelican-vimeo>`_.

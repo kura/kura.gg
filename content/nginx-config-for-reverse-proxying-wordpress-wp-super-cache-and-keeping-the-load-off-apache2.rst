@@ -29,7 +29,7 @@ simply replace the **VARIABLES** below and everything should be good to
 go, if copy-pasting from below isn't working properly you can download a
 full copy from `here`_.
 
-.. _here: https://kura.io/files/2011/09/server.txt
+.. _here: /files/2011/09/server.txt
 
 .. code:: nginx
 

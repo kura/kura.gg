@@ -21,13 +21,13 @@ the red @ means a file hasn't been added to Git, a blue @ means a tracked file
 has been modified but not stage and finally a green @ means a file is staged
 but still needs to be committed.
 
-.. image:: https://kura.io/images/new-ps1.png
+.. image:: /images/new-ps1.png
     :alt: PS1 while in a git repository
 
 When I have run `sudo -s` my PS1 changes to alert me to the fact I have
 superuser privileges.
 
-.. image:: https://kura.io/images/new-ps1-root.png
+.. image:: /images/new-ps1-root.png
     :alt: PS1 when I have scary privileges
 
 You can find the source code used to power this PS1 below which is stored in a

@@ -9,7 +9,7 @@ Moved debian and ubuntu to separate repositories on apt.kura.io
 .. contents::
     :backlinks: none
 
-I have made a breaking change to the `apt.kura.io <https://kura.io/apt.kura.io/>`__ 
+I have made a breaking change to the `apt.kura.io </apt.kura.io/>`__ 
 repositories.
 
 Ubuntu is now properly supported, but to do this properly it meant separating 

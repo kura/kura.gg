@@ -5,7 +5,7 @@ Donate
 
 Donations for the work I do are not required but are nice to receive. Most of
 the donations I receive are for the `Tor relays that I provide
-<https://kura.io/tor/>`__.
+</tor/>`__.
 
 If you wish to donate based on my work with Tor, you can also donate using
 `oniontip.com <https://oniontip.com/>`__, distributing your donation between

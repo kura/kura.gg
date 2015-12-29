@@ -7,7 +7,7 @@ Advertise multiple NPN protocols with haproxy
 :slug: advertise-multiple-npn-protocols-with-haproxy
 
 I have previously written an article on `using SPDY with haproxy
-<https://kura.io/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/>`__
+</2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/>`__
 but have been spending some time recently being annoyed that the `SPDY check
 tool <http://spdycheck.org/#kura.io>`__ said I didn't advertise a fall back to
 HTTP over SSL in the NPN protocol list.

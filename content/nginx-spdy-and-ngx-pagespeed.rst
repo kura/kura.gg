@@ -53,25 +53,25 @@ they are only available for amd64);
 +-------------------------------+------------------+------------------+------------------+
 
 
-.. _`nginx_1.4.1_all.deb`: https://kura.io/files/nginx_1.4.1_all.deb
-.. _`owGMl1NwLw...`: https://kura.io/files/nginx_1.4.1_all.deb.asc
-.. _`42f790a1f6...`: https://kura.io/files/nginx_1.4.1_all.deb.md5
-.. _`f4495055e9...`: https://kura.io/files/nginx_1.4.1_all.deb.sha1
+.. _`nginx_1.4.1_all.deb`: /files/nginx_1.4.1_all.deb
+.. _`owGMl1NwLw...`: /files/nginx_1.4.1_all.deb.asc
+.. _`42f790a1f6...`: /files/nginx_1.4.1_all.deb.md5
+.. _`f4495055e9...`: /files/nginx_1.4.1_all.deb.sha1
 
-.. _`nginx-common_1.4.1_all.deb`: https://kura.io/files/nginx-common_1.4.1_all.deb
-.. _`owGMt1NwJU...`: https://kura.io/files/nginx-common_1.4.1_all.deb.asc
-.. _`ca4ec5688d...`: https://kura.io/files/nginx-common_1.4.1_all.deb.md5
-.. _`633bfc2eaa...`: https://kura.io/files/nginx-common_1.4.1_all.deb.sha1
+.. _`nginx-common_1.4.1_all.deb`: /files/nginx-common_1.4.1_all.deb
+.. _`owGMt1NwJU...`: /files/nginx-common_1.4.1_all.deb.asc
+.. _`ca4ec5688d...`: /files/nginx-common_1.4.1_all.deb.md5
+.. _`633bfc2eaa...`: /files/nginx-common_1.4.1_all.deb.sha1
 
-.. _`nginx-full_1.4.1_amd64.deb`: https://kura.io/files/nginx-full_1.4.1_amd64.deb
-.. _`owG09ndUk1...`: https://kura.io/files/nginx-full_1.4.1_amd64.deb.asc
-.. _`4776dc6c7f...`: https://kura.io/files/nginx-full_1.4.1_amd64.deb.md5
-.. _`0e4e124acc...`: https://kura.io/files/nginx-full_1.4.1_amd64.deb.sha1
+.. _`nginx-full_1.4.1_amd64.deb`: /files/nginx-full_1.4.1_amd64.deb
+.. _`owG09ndUk1...`: /files/nginx-full_1.4.1_amd64.deb.asc
+.. _`4776dc6c7f...`: /files/nginx-full_1.4.1_amd64.deb.md5
+.. _`0e4e124acc...`: /files/nginx-full_1.4.1_amd64.deb.sha1
 
-.. _`nginx-doc_1.4.1_all.deb`: https://kura.io/files/nginx-doc_1.4.1_all.deb
-.. _`owGMtlOQJQ...`: https://kura.io/files/nginx-doc_1.4.1_all.deb.asc
-.. _`ad8ae70215...`: https://kura.io/files/nginx-doc_1.4.1_all.deb.md5
-.. _`690563e7cc...`: https://kura.io/files/nginx-doc_1.4.1_all.deb.sha1
+.. _`nginx-doc_1.4.1_all.deb`: /files/nginx-doc_1.4.1_all.deb
+.. _`owGMtlOQJQ...`: /files/nginx-doc_1.4.1_all.deb.asc
+.. _`ad8ae70215...`: /files/nginx-doc_1.4.1_all.deb.md5
+.. _`690563e7cc...`: /files/nginx-doc_1.4.1_all.deb.sha1
 
 You can install them by simply running:
 

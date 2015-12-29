@@ -11,7 +11,7 @@ haproxy stats
 
 I recently wrote an article on `using haproxy, SSL and
 SPDY with nginx backend servers
-<https://kura.io/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/>`_.
+</2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/>`_.
 
 This article is a little extra on top of that to explain
 how to enable statistics for haproxy so you can monitor
@@ -20,7 +20,7 @@ the backend statuses etc.
 Example stats page
 ------------------
 
-.. image:: https://kura.io/images/haproxy-stats.png
+.. image:: /images/haproxy-stats.png
    :alt: Moar stats!
 
 Enabling stats

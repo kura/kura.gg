@@ -14,10 +14,6 @@ Supported Python versions
 
 This one is generated from the list of classifiers you provide to PyPI.
 
-.. image:: https://pypip.in/py_versions/blackhole/badge.svg?style=flat
-   :alt: Supported Python versions
-   :class: shield
-
 If no Python version classifiers exist, it defaults to Python 2.7. This is
 because really, Python 3 is not widely used in production or supported by
 libraries.
@@ -32,19 +28,11 @@ The shield uses the Python implementation classifiers to generate this shield.
 It supports all classifiers that PyPI supports (CPython, Jython, Iron Python,
 PyPy and Stackless) and defaults to CPython is none are set.
 
-.. image:: https://pypip.in/implementation/blackhole/badge.svg?style=flat
-   :alt: Supported Python implementations
-   :class: shield
-
 Styling changes
 ===============
 
 This change is simply because of the upgrade of the shields library. This
 allows us to use the default rounded badges like below.
-
-.. image:: https://pypip.in/py_versions/blackhole/badge.svg
-   :alt: Supported Python versions
-   :class: shield
 
 But also allow you to use a much nicer, cleaner, flat styling like the ones
 used on this page.

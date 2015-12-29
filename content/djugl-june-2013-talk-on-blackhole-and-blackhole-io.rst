@@ -16,7 +16,7 @@ to get round to it.
 
 My talk was on `blackhole/blackhole.io <http://blackhole.io>`_ and
 covered several topics including `PyPy <http://pypy.org>`_,
-`SimpleMTA <https://kura.io/simplemta/>`_ and moved on to talking
+`SimpleMTA </simplemta/>`_ and moved on to talking
 about spamming and starting work on my honey pot suite called
 `Nectar <http://nectar.blackhole.io>`_.
 
@@ -35,9 +35,9 @@ Unsurprisingly I was the only speaker at the event that
 didn't have a Mac. I have a ginormous Alienware M17x R3 running
 Linux.
 
-1. .. image:: https://kura.io/images/djugl-june-2013-3.png
+1. .. image:: /images/djugl-june-2013-3.png
        :alt: I look like a hairy beast...
-2. .. image:: https://kura.io/images/djugl-june-2013-2.png
+2. .. image:: /images/djugl-june-2013-2.png
        :alt: I look like a hairy beast...
-3. .. image:: https://kura.io/images/djugl-june-2013-1.png
+3. .. image:: /images/djugl-june-2013-1.png
        :alt: I look like a hairy beast...

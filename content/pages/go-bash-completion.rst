@@ -25,7 +25,7 @@ Debian/Ubuntu
 apt.kura.io
 ~~~~~~~~~~~
 
-Follow instructions on enabling `apt.kura.io <https://kura.io/apt.kura.io/>`__
+Follow instructions on enabling `apt.kura.io </apt.kura.io/>`__
 repository and then run the following command to install the package.
 
 .. code:: bash

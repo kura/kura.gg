@@ -7,4 +7,4 @@ apt.kura.io now supports i386
 :slug: apt.kura.io-now-supports-i386
 
 I have decided to support the i386 architecture on `apt.kura.io
-<https://kura.io/apt.kura.io/>`__ as well as amd64.
+</apt.kura.io/>`__ as well as amd64.

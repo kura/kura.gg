@@ -2,9 +2,9 @@
 <html lang="en-GB">
     <head>
         {% assets filters="cssmin", output="css/kura.io.%(version)s.css", "css/style.css", "css/pygments.css" %}
-            <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" />
+            <link href="/{{ ASSET_URL }}" rel="stylesheet" />
         {% endassets %}
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
         <meta charset="utf-8" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -28,25 +28,25 @@
         <meta name="og:url" property="og:url" content="https://kura.io/" />
         <meta name="og:description" property="og:description" content="Lots of articles on programming thoughts and ideas, software and solid configurations, server hardware and more." />
 
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }}" />
+        <link href="/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }}" />
         <link rel="shortcut icon" href="{{ SITEURL}}/favicon.ico" />
 
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     </head>
     <body class="post-template">
         <header class="site-head">
-            <h1 class="blog-title"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+            <h1 class="blog-title"><a href="/">{{ SITENAME }}</a></h1>
             <h2 class="blog-description">
-                <a href="{{ SITEURL }}/contact/">Contact</a> | <a href="{{ SITEURL }}/software/">Software</a> | <a href="{{ SITEURL }}/donate/">Donate</a>
+                <a href="/contact/">Contact</a> | <a href="/software/">Software</a> | <a href="/donate/">Donate</a> | <a href="http://omgkuraio276g5wo.onion/">.onion</a>
             </h2>
         </header>
         <main id="content" class="content" role="main">
             {% block content %}{% endblock %}
         </main>
         <footer class="site-footer">
-            <a class="subscribe icon-feed" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}"><span class="tooltip">Atom</span></a>
+            <a class="subscribe icon-feed" href="/{{ FEED_ATOM }}"><span class="tooltip">Atom</span></a>
             <div class="inner">
-                <section class="copyright">This website source and content are release under the <a href="{{ SITEURL }}/license/">MIT License</a>.</section>
+                <section class="copyright">This website source and content are release under the <a href="/license/">MIT License</a>.</section>
                 <section class="poweredby">Powered by love &amp; rainbow sparkles.</section>
             </div>
         </footer>
