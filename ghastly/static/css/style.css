@@ -2,35 +2,35 @@
     font-family: 'FiraSans';
     font-style: normal;
     font-weight: 300;
-    src: local('FiraSans Light'), local('FiraSans-Light'), url(../fonts/FiraSans-Light.woff) format('woff');
+    src: local('FiraSans Light'), local('FiraSans-Light'), url('/theme/fonts/FiraSans-Light.woff') format('woff');
 }
 
 @font-face {
     font-family: 'FiraSans';
     font-style: normal;
     font-weight: 400;
-    src: local('FiraSans'), local('FiraSans-Regular'), url(../fonts/FiraSans-Regular.woff) format('woff');
+    src: local('FiraSans'), local('FiraSans-Regular'), url('/theme/fonts/FiraSans-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'FiraSans';
     font-style: normal;
     font-weight: 600;
-    src: local('FiraSans SemiBold'), local('FiraSans-SemiBold'), url(../fonts/FiraSans-SemiBold.woff) format('woff');
+    src: local('FiraSans SemiBold'), local('FiraSans-SemiBold'), url('/theme/fonts/FiraSans-SemiBold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'FiraSans';
     font-style: normal;
     font-weight: 700;
-    src: local('FiraSans Bold'), local('FiraSans-Bold'), url(../fonts/FiraSans-Bold.woff) format('woff');
+    src: local('FiraSans Bold'), local('FiraSans-Bold'), url('/theme/fonts/FiraSans-Bold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'FiraMono';
     font-style: normal;
     font-weight: 400;
-    src: local('FiraMono'), local('FiraMono-Regular'), url(../fonts/FiraMono-Regular.woff) format('woff');
+    src: local('FiraMono'), local('FiraMono-Regular'), url('/theme/fonts/FiraMono-Regular.woff') format('woff');
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav,
