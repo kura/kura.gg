@@ -30,7 +30,7 @@ Digital Ocean (Hosting)
 
 `Link <https://www.digitalocean.com/?refcode=d76795840b23>`__
 
-proxy.sh (VPN)
-==============
+NordVPN (VPN)
+=============
 
-`Link <https://proxy.sh/panel/aff.php?aff=079>`__
+`Link <http://nordvpn.com/?ref=531854a>`__
