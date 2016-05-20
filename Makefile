@@ -47,6 +47,10 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 rsync: publish
+	knock ego.kura.io
+	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
+	bash screenshot.sh
+	knock ego.kura.io
 	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
 	rm -rf $(OUTPUTDIR)/*
 
