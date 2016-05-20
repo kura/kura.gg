@@ -20,8 +20,8 @@
         <meta name="twitter:card" property="twitter:card" content="summary_large_image" />
         <meta name="twitter:description" property="twitter:description" content="{{ self.title() }}" />
         {% if article or page %}
-            <meta name="twitter:image" property="twitter:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}"/>
-            <meta name="twitter:url" property="twitter:url" content="{{ SITEURL }}/{{ article.url if article else page.url}}index.png" />
+            <meta name="twitter:image" property="twitter:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}index.png"/>
+            <meta name="twitter:url" property="twitter:url" content="{{ SITEURL }}/{{ article.url if article else page.url}}" />
         {% else %}
             <meta name="twitter:image" property="twitter:image" content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}"/>
             <meta name="twitter:url" property="twitter:url" content="{{ SITEURL }}/{{ output_file }}" />
@@ -30,11 +30,10 @@
         <meta name="og:site_name" property="og:site_name" content="kura.io" />
         <meta name="og:type" property="og:type" content="profile" />
         <meta name="og:title" property="og:title" content="{{ self.title() }}" />
-        <meta name="og:url" property="og:url" content="https://kura.io/" />
         <meta name="og:description" property="og:description" content="{{ self.title() }}" />
         {% if article or page %}
-            <meta name="og:image" property="og:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}"/>
-            <meta name="og:url" property="og:url" content="{{ SITEURL }}/{{ article.url if article else page.url}}index.png" />
+            <meta name="og:image" property="og:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}index.png"/>
+            <meta name="og:url" property="og:url" content="{{ SITEURL }}/{{ article.url if article else page.url}}" />
         {% else %}
             <meta name="og:image" property="og:image" content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}"/>
             <meta name="og:url" property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
