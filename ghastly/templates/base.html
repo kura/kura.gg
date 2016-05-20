@@ -20,10 +20,10 @@
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:description" content="{{ self.title() }}" />
         {% if article or page %}
-            <meta property="twitter:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}index.png"/>
+            <meta property="twitter:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}index.png" />
             <meta property="twitter:url" content="{{ SITEURL }}/{{ article.url if article else page.url}}" />
         {% else %}
-            <meta property="twitter:image" content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}"/>
+            <meta property="twitter:image" content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
             <meta property="twitter:url" content="{{ SITEURL }}/{{ output_file }}" />
         {% endif %}
 
@@ -32,11 +32,19 @@
         <meta property="og:title" content="{{ self.title() }}" />
         <meta property="og:description" content="{{ self.title() }}" />
         {% if article or page %}
-            <meta property="og:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}index.png"/>
+            <meta property="og:image" content="{{ SITEURL }}/{{ article.url if article else page.url }}index.png" />
             <meta property="og:url" content="{{ SITEURL }}/{{ article.url if article else page.url}}" />
         {% else %}
-            <meta property="og:image" content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}"/>
+            <meta property="og:image" content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
             <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
+        {% endif %}
+
+        <meta itemprop="name" content="{{ self.title() }}" />
+        <meta itemprop="description" content="{{ self.title() }}" />
+        {% if article or page %}
+            <meta itemprop="image" content="{{ SITEURL }}/{{ article.url if article else page.url }}index.png" />
+        {% else %}
+            <meta itemprop="image" content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
         {% endif %}
 
         <link href="/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }}" />
