@@ -65,9 +65,9 @@ Since Blackhole is a tool written by me, for me and exposed as a service, it
 made complete sense for me to jump-in-at-the-deep-end as it were and rewrite
 the entirety of the software specifically for Python 3.5.
 
-Doing so meant I bypassed the need to use the ``@coroutine`` decorator and use
-``yield from``, instead using their 3.5 equivalents in ``async def`` and
-``await`` respectively.
+Doing so meant I bypassed the need to use the ``@coroutine`` decorator and the
+``yield from`` expression, instead using their 3.5 equivalents in ``async def``
+and ``await`` respectively.
 
 All I see are bytes
 ===================
