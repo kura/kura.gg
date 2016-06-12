@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block content %}
+    <article>
+        <div class="eevee-padding">
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <div>{{ article.locale_date }}</div>
+                <div class="eevee-spacer"></div>
+                <div class="meta__share">
+                    {% include 'partials/share.html' %}
+                </div>
+            </div>
+            <h2>
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                   title="Permalink to {{ article.title|striptags }}">
+                    {{ article.title }}
+                </a>
+            </h2>
+            {% if article.toc %}
+                <section class="eevee-toc">
+                    <h2>Contents</h2>
+                    <nav class="eevee-toc-ribbon">
+                        {{ article.toc }}
+                    </nav>
+                </section>
+            {% endif %}
+            <section class="post-content">
+                {{ article.content }}
+            </section>
+        </div>
+        <div class="eevee-comment">{% include 'partials/disqus.html' %}</div>
+    </article>
+    <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}"
+       target="_blank" id="view-source"
+       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
+              mdl-color--accent mdl-color-text--white">
+        View Source
+    </a>
+{% endblock %}

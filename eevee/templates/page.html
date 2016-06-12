@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{%endblock%}
+{% block content %}
+<article>
+    <div class="eevee-padding">
+        <h2>
+            <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
+               title="Permalink to {{ page.title|striptags }}">
+                {{ page.title }}
+            </a>
+        </h2>
+        {% if page.toc %}
+        <section class="eevee-toc">
+            <h2>Contents</h2>
+            <nav class="eevee-toc-ribbon">
+                {{ page.toc }}
+            </nav>
+        </section>
+        {% endif %}
+        <section class="post-content">
+            {{ page.content }}
+        </section>
+    </article>
+{% endblock %}

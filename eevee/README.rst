@@ -1,8 +1,7 @@
 Eevee - A Material Design theme for Pelican
 ###########################################
-:slug: eevee
 
-.. image:: /images/eeveelutions.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/eeveelutions.png
     :alt: Eevee the Pokémon
     :align: center
 
@@ -14,8 +13,8 @@ Eevee is a theme for `Pelican <http://getpelican.com>`_, based on Google's
 
 It is named after the Pokémon `Eevee
 <http://www.pokemon.com/uk/pokedex/eevee>`_ because, like Eeevee it can evolve
-in to many 'elements.' By default the colour scheme is **deep_purple** for the
-primary and **green** for the accent, both of these colours are configurable.
+in to many 'elements.' By default the colour scheme is **teal** for the primary
+and **pink** for the accent, both of these colours are configurable.
 
 Features
 ========
@@ -44,45 +43,45 @@ used for typography, `Material Icons <https://design.google.com/icons/>`_ and
 Screenshots
 ===========
 
-.. figure:: /images/eevee-homepage-thumb.png
+.. figure:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-homepage-thumb.png
     :alt: Homepage
     :align: center
-    :target: /images/eevee-homepage.png
+    :target: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-homepage.png
 
     Homepage
 
-.. figure:: /images/eevee-footer-thumb.png
+.. figure:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-footer-thumb.png
     :alt: Footer
     :align: center
-    :target: /images/eevee-footer.png
+    :target: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-footer.png
 
     Footer
 
-.. figure:: /images/eevee-pagination-thumb.png
+.. figure:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-pagination-thumb.png
     :alt: Pagination
     :align: center
-    :target: /images/eevee-pagination.png
+    :target: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-pagination.png
 
     Pagination
 
-.. figure:: /images/eevee-article-header-thumb.png
+.. figure:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-article-header-thumb.png
     :alt: Article header
     :align: center
-    :target: /images/eevee-article-header.png
+    :target: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-article-header.png
 
     Article header
 
-.. figure:: /images/eevee-disqus-thumb.png
+.. figure:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-disqus-thumb.png
     :alt: Disqus
     :align: center
-    :target: /images/eevee-disqus.png
+    :target: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-disqus.png
 
     Disqus
 
-.. figure:: /images/eevee-pygments-thumb.png
+.. figure:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-pygments-thumb.png
     :alt: Pygments
     :align: center
-    :target: /images/eevee-pygments.png
+    :target: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-pygments.png
 
     Pygments
 
