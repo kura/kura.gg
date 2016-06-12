@@ -21,6 +21,8 @@
               content="{{ page.title|striptags|escape }}" />
         <meta property="og:url"
               content="{{ SITEURL }}/{{ page.url }}" />
+        <meta property="og:description"
+              content="{{ page.summary|striptags|escape }}" />
         <meta property="og:image"
               content="{{ SITEURL }}/{{ page.url }}index.png" />
     {% else %}
@@ -29,4 +31,6 @@
         <meta property="og:image"
               content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
     {% endif %}
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
 {% endif %}

@@ -26,6 +26,8 @@
               content="{{ page.title|striptags|escape }}" />
         <meta property="twitter:url"
               content="{{ SITEURL }}/{{ page.url }}" />
+        <meta property="twitter:description"
+              content="{{ page.summary|striptags|escape }}" />
         <meta property="twitter:image"
               content="{{ SITEURL }}/{{ page.url }}index.png" />
         <meta property="twitter:card" content="summary_large_image" />
@@ -38,4 +40,6 @@
               content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
         <meta property="twitter:card" content="summary_large_image" />
     {% endif %}
+    <meta property="twitter:image:width" content="1920" />
+    <meta property="twitter:image:height" content="1080" />
 {% endif %}
