@@ -152,12 +152,11 @@ It is named after the Pokemon 'Haunter' because it is a modified version
 Eevee
 -----
 
-Eeve is a minimal, lightweight and clean theme for the
-`Pelican <http://getpelican.com>`_ blogging platform based on Google's
-`Material Design <http://google.com/design/spec/>`_ concept.
+Eevee is a theme for `Pelican <http://getpelican.com>`_, based on Google's
+`Material Design <https://material.google.com/>`_ specification.
 
-It is named after the Pokemon 'Eevee' because it can be configured to use any
-of `Material Design's colour palette
-<https://getmdl.io/customize/index.html>`_.
+It is named after the Pokémon `Eevee
+<http://www.pokemon.com/uk/pokedex/eevee>`_ because -- like the Pokémon Eevee
+-- it can evolve in to many 'elemental types.'
 
 `/eevee </eevee/>`_
