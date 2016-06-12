@@ -37,7 +37,8 @@ Or you can do it the lazy way
 
 .. code-block:: bash
 
-    sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat -O /etc/bash_completion.d/tugboat
+    sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat \
+        -O /etc/bash_completion.d/tugboat
     . ~/bashrc
 
 Notes

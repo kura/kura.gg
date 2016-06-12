@@ -3,7 +3,8 @@ Hauntr - A theme for Pelican
 :slug: hauntr
 
 .. figure:: /images/haunter.png
-    :alt: Haunter, the evolved Pokémon form of Gastly
+    :alt: Haunter, the evolved Pokemon form of Gastly
+    :align: center
 
     (Image by `Kawiku <http://kawiku.deviantart.com/art/Haunter-350580512>`__)
 
@@ -34,6 +35,7 @@ Typography
 
 .. figure:: /images/firasans.png
     :alt: FiraSans map of the World
+    :align: center
 
     (Image by `the guys at Carrois, creators of FiraSans <http://dev.carrois.com/fira-3-1/>`__)
 
@@ -46,17 +48,33 @@ The Hauntr theme uses both FiraSans for general typography and FiraMono for
 Screenshots
 ===========
 
-.. image:: /images/hauntr-homepage.png
+.. figure:: /images/hauntr-homepage-thumb.png
     :alt: An example of the homepage
+    :align: center
+    :target: /images/hauntr-homepage.png
 
-.. image:: /images/hauntr-article1.png
-    :alt: An example of article content
+    An example of the homepage
 
-.. image:: /images/hauntr-article2.png
+.. figure:: /images/hauntr-article1-thumb.png
     :alt: An example of article content
+    :align: center
+    :target: /images/hauntr-article1.png
 
-.. image:: /images/hauntr-article3.png
+    An example of article content
+
+.. figure:: /images/hauntr-article2-thumb.png
     :alt: An example of article content
+    :align: center
+    :target: /images/hauntr-article2.png
+
+    An example of article content
+
+.. figure:: /images/hauntr-article3-thumb.png
+    :alt: An example of article content
+    :align: center
+    :target: /images/hauntr-article3.png
+
+    An example of article content
 
 Requirements
 ============

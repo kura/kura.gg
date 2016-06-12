@@ -1,5 +1,58 @@
+@font-face {
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('FiraSans Light'),
+         local('FiraSans-Light'),
+         url('/theme/fonts/fira-sans-light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('FiraSans'),
+         local('FiraSans-Regular'),
+         url('/theme/fonts/fira-sans-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('FiraSans SemiBold'),
+         local('FiraSans-SemiBold'),
+         url('/theme/fonts/fira-sans-semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('FiraSans Bold'),
+         local('FiraSans-Bold'),
+         url('/theme/fonts/fira-sans-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FiraMono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('FiraMono'),
+         local('FiraMono-Regular'),
+         url('/theme/fonts/fira-mono-regular.ttf') format('truetype');
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'FiraSans', 'sans-serif' !important;
+}
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     text-decoration: none !important;
+}
+
+blockquote, code, kbd, pre, samp, tt {
+    font-family: 'FiraMono', 'monospace', 'serif' !important;
 }
 
 pre, code, blockquote {
@@ -250,7 +303,7 @@ th {
     text-decoration: none;
 }
 
-img.align-center {
+div.align-center img, img.align-center {
   display: block;
   margin-left: auto;
   margin-right: auto;

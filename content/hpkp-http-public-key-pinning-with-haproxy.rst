@@ -24,7 +24,9 @@ Here's a look at what this website publishes as it's HKPK header.
 
 ::
 
-    Public-Key-Pins: pin-sha256="cYf9T3Il8DaCnaMaM0LatIAru1vqmcu2JSwS7uvyEB0="; pin-sha256="u2q8QZ8Hjp3o/efZjsch9NKjnZmrISJQjwoi/rmsKLU="; max-age=15768000; includeSubDomains
+    Public-Key-Pins: pin-sha256="cYf9T3Il8DaCnaMaM0LatIAru1vqmcu2JSwS7uvyEB0=";
+                     pin-sha256="u2q8QZ8Hjp3o/efZjsch9NKjnZmrISJQjwoi/rmsKLU=";
+                     max-age=15768000; includeSubDomains
 
 To explain it, the first `pin-sha265` key is the hash of the public key that
 was used to generate the certificate this website uses, the second `pin-sha256`
@@ -42,20 +44,25 @@ These commands will extract the public key information and encode it in base64.
 
 .. code-block:: bash
 
-    openssl rsa -in KEYFILE -outform der -pubout | openssl dgst -sha256 -binary | base64
+    openssl rsa -in KEYFILE -outform der -pubout | \
+        openssl dgst -sha256 -binary | base64
 
 The above command will extract the public key from a private key generated with
 `openssl genrsa`, you can replace rsa with dsa for DSA keys.
 
 .. code-block:: bash
 
-    openssl req -in CSRFILE -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | base64
+    openssl req -in CSRFILE -pubkey -noout | \
+        openssl rsa -pubin -outform der | \
+        openssl dgst -sha256 -binary | base64
 
 The above command will extract the public key from a CSR.
 
 .. code-block:: bash
 
-    openssl x509 -in PEMFILE -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | base64
+    openssl x509 -in PEMFILE -pubkey -noout | \
+        openssl rsa -pubin -outform der | \
+        openssl dgst -sha256 -binary | base64
 
 And the above command here will extract the public key from an existing x509
 certificate.
@@ -86,7 +93,9 @@ The HPKP header
 
 ::
 
-    Public-Key-Pins: pin-sha256="PUBLIC_KEY"; max-age=EXPIRE_TIME [; includeSubdomains][; report-uri="REPORT_URI"]
+    Public-Key-Pins: pin-sha256="PUBLIC_KEY";
+                     max-age=EXPIRE_TIME [; includeSubdomains]
+                     [; report-uri="REPORT_URI"]
 
 As you can see the header is relatively simple, a definition of each option is
 below.
@@ -96,7 +105,8 @@ pin-sha256
     option multiple times.
 
 max-age
-    The time, in seconds, that the browser should remember that this site is only to be accessed using one of the pinned keys.
+    The time, in seconds, that the browser should remember that this site is
+    only to be accessed using one of the pinned keys.
 
 includeSubdomains *optional*
     If this optional parameter is specified, this rule applies to all of
