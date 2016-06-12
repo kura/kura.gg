@@ -23,14 +23,14 @@ Installation
 From PyPI
 ---------
 
-.. code:: bash
+.. code-block:: bash
 
     pip install deiman
 
 From GitHub
 -----------
 
-.. code:: bash
+.. code-block:: bash
 
     pip install -e git+git://github.com/kura/deiman.git#egg=deiman
 
@@ -39,7 +39,7 @@ From source
 
 Download the latest tarball from PyPI or GitHub. Unpack and run:
 
-.. code:: bash
+.. code-block:: bash
 
     python setup.py install
 
@@ -50,7 +50,7 @@ To use Deiman, you simply need to import the main Deiman class,
 passing a path to where you want the pid to be stored and call
 the start and stop methods as required
 
-.. code:: python
+.. code-block:: python
 
     from deiman import Deiman
 

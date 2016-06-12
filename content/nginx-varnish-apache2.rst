@@ -24,7 +24,7 @@ how to combine them.
 Installing Varnish
 ------------------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install varnish
 
@@ -38,7 +38,7 @@ following file in your favourite editor.
 
 Change the Listen and NameVirtualHost lines to:
 
-.. code:: apache
+.. code-block:: apache
 
     Listen 81
     NameVirtualHost *:81
@@ -48,7 +48,7 @@ definitions to work on port 81.
 
 Example below.
 
-.. code:: apache
+.. code-block:: apache
 
     <VirtualHost *:81>
         ServerAdmin webmaster@example.com
@@ -232,7 +232,7 @@ You can find a copy of my default.vcl file here -
 Configuring nginx
 -----------------
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         listen 80;

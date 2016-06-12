@@ -19,7 +19,7 @@ The key pair
 
 We need to create a key pair to sign emails with::
 
-.. code:: bash
+.. code-block:: bash
 
     openssl genrsa -out private.key 1024
     openssl rsa -in private.key -out public.key -pubout -outform PEM
@@ -34,7 +34,7 @@ DKIM
 
 First we'll need to install an application to sign our emails.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install dkim-filter
 
@@ -42,7 +42,7 @@ Once installed we need to configure it, open up
 **/etc/default/dkim-filter**, modify the file to look like below
 replacing <DOMAIN> with the domain you want to sign email from.
 
-.. code:: bash
+.. code-block:: bash
 
     DAEMON_OPTS="-l -o X-DomainKeys,DomainKey-Signature"
     DAEMON_OPTS="$DAEMON_OPTS -d <DOMAIN> -k /etc/dk/dk.key -s mail"
@@ -57,7 +57,7 @@ DK (DomainKeys)
 The dk-filter package is not installable from APT on Debian 6 for me,
 try to install it using APT
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install dk-filter
 
@@ -68,7 +68,7 @@ replacing <FILE> with the file you downloaded.
 
 .. _`http://ftp.us.debian.org/debian/pool/main/d/dk-milter/`: http://ftp.us.debian.org/debian/pool/main/d/dk-milter/
 
-.. code:: bash
+.. code-block:: bash
 
     sudo dpkg -i <FILE>
 
@@ -76,7 +76,7 @@ Now that it's installed we can configure it, open up
 **/etc/default/dk-filter**, modify the file to look like below replacing
 <DOMAIN> with the domain you want to sign email from.
 
-.. code:: bash
+.. code-block:: bash
 
     DAEMON_OPTS="-l -o DKIM-Signature,X-DKIM"
     DAEMON_OPTS="$DAEMON_OPTS -d <DOMAIN> -s /etc/dk/dk.key -S mail"
@@ -90,7 +90,7 @@ SPF
 
 Install with
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install postfix-policyd-spf-python
 
@@ -178,7 +178,7 @@ like this
 Finally
 -------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/dk-filter restart
     sudo /etc/init.d/dkim-filter restart

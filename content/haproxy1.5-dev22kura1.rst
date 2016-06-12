@@ -23,7 +23,7 @@ haproxy requires openssl-1.0.1d or higher.
 On a standard Debian 7 install you should have openssl-1.0.1e-2, you
 can find which version you have by running
 
-.. code:: bash
+.. code-block:: none bash
 
     dpkg -l openssl
 
@@ -56,13 +56,13 @@ Manual download
 MD5
 ===
 
-.. code::
+.. code-block:: none
 
     5b1fbc3121fdc4ecb6687acd0bf7d83a  haproxy_1.5-dev22kura1_amd64.deb
 
 SHA1
 ====
 
-.. code::
+.. code-block:: none
 
     9d87ddacde26b75f8c9d723093cf2ef51615ec6e  haproxy_1.5-dev22kura1_amd64.deb

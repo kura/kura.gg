@@ -33,7 +33,7 @@ Install
 
 Extract the tarball or zipball and run
 
-.. code:: bash
+.. code-block:: bash
 
     sudo ./installer
 
@@ -45,7 +45,7 @@ Usage
 You will need to resynchronise your package index just like you would
 normally using
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get update
 
@@ -54,7 +54,7 @@ Both commands listed below need to be run as root or sudo.
 apt-security-sources
 ~~~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     /usr/bin/apt-security-sources
 
@@ -66,7 +66,7 @@ operating system.
 apt-get-security
 ~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     /usr/bin/apt-get-security
 

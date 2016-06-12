@@ -67,7 +67,7 @@ Usage
 
 Once downloaded simply run
 
-.. code:: bash
+.. code-block:: bash
 
     sudo python amisecure.py
 

@@ -10,7 +10,7 @@ SSHFP DNS records
 people blindly typing 'yes' when asked if they want to continue connecting to
 an SSH host who's authenticity is unknown.
 
-.. code:: bash
+.. code-block:: none bash
 
     $ ssh some.host.tld
     The authenticity of host 'some.host.tld (123.456.789.10)' can't be established.
@@ -30,7 +30,7 @@ Generating your SSHFP record
 You can get SSH to generate the DNS records for you, log in to the server in
 question and run the command below to get similar content.
 
-.. code:: bash
+.. code-block:: none bash
 
     $ ssh-keygen -r some.host.tld
     some.host.tld IN SSHFP 1 1 c53bfb3d5d053280b17db76909f707f3ac9cbb47
@@ -69,7 +69,7 @@ Add the relevant records to your DNS.
 
 Add the following to your ~/.ssh/config file.
 
-.. code::
+.. code-block:: none
 
     Host *
         VerifyHostKeyDNS yes
@@ -79,7 +79,7 @@ This means SSH will always try to validate host keys from DNS.
 Now, when you try to SSH to a host it should validate against SSHFP records
 automatically.
 
-.. code:: bash
+.. code-block:: none bash
 
     $ ssh -v some.host.tld
     ...

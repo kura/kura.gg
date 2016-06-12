@@ -18,14 +18,14 @@ i.e. each user having ~/.Maildir.
 EncFS
 =====
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install encfs
 
 Once installed, you'll need to make a directory for encrypted and decrypted
 mail to live.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mkdir /var/mail/encrypted /var/mail/decrypted
 
@@ -34,7 +34,7 @@ and the new directories.
 
 For me, this user and group are called *vmail* but yours may be different.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo chgrp mail /var/mail/decrypted
     sudo g+rw /var/mail/decrypted
@@ -44,7 +44,7 @@ For me, this user and group are called *vmail* but yours may be different.
 
 Next you need to build the encrypted volume.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo encfs /var/mail/encrypted /var/mail/decrypted --public
 
@@ -75,14 +75,14 @@ With my setup there are two pleces to modify this, the first is
 exact value should be, due to set-ups being different but if you followed my
 previous article, it'll look like below.
 
-.. code::
+.. code-block:: none
 
     mail_location = maildir:/var/mail/decrypted/vhosts/%d/%n/maildir
 
 The other file that is likely to need modification is
 `/etc/dovecot/conf.d/auth-sql.conf.ext`
 
-.. code::
+.. code-block:: none
 
     userdb {
         driver = static
@@ -91,7 +91,7 @@ The other file that is likely to need modification is
 
 That's everything you technically need to do, just restart Dovecot.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/dovecot restart
 
@@ -101,7 +101,7 @@ Tomcat/Solr
 If you use Solr for IMAP SEARCH, you'll just want to move that index inside of
 the new directory.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/tomcat6 stop
     sudo mv /var/lib/solr /var/mail/decrypted/
@@ -109,20 +109,20 @@ the new directory.
 You'll need to tell Solr to get it's data from this directory, this is done in
 `/etc/solr/conf/solrconfig.xml`
 
-.. code:: xml
+.. code-block:: xml
 
     <dataDir>/var/mail/decrypted/solr</dataDir>
 
 Start tomcat again.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/tomcat6 start
 
 And finally, it's always good when you mess with Solr's indexes like this to
 run optimize task.
 
-.. code:: bash
+.. code-block:: bash
 
     curl http://localhost:8080/solr/update?optimize=true
 
@@ -140,7 +140,7 @@ In each init script for Postfix, Dovecot, Tomcat6 and anything else that will
 try to read data from /var/mail/decrypted you'll want to find where
 `/lib/lsb/init-functions` is loaded and a check after it.
 
-.. code:: bash
+.. code-block:: bash
 
     if ! mount | grep "on /var/mail/decrypted" > /dev/null
     then
@@ -151,7 +151,7 @@ try to read data from /var/mail/decrypted you'll want to find where
 
 It'll look similar to below if you put it in the right place.
 
-.. code:: bash
+.. code-block:: bash
 
     # Define LSB log_* functions.
     # Depend on lsb-base (>= 3.0-6) to ensure that this file is present.

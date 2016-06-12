@@ -36,7 +36,7 @@ Modify your MySQL config file, usually named my.cnf or mysql.cnf
 
 Add the following lines to [mysqld]
 
-.. code:: ini
+.. code-block:: ini
 
     [mysqld]
     server-id=1
@@ -58,7 +58,7 @@ of servers you have as masters, in this example we have 2.
 
 Open up a MySQL prompt and run the following query
 
-.. code:: mysql
+.. code-block:: mysql
 
     GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.2' IDENTIFIED BY 'password';
 
@@ -71,7 +71,7 @@ Modify your MySQL config file.
 
 Add the following in [mysqld]
 
-.. code:: ini
+.. code-block:: ini
 
     [mysqld]
     server-id=2
@@ -92,7 +92,7 @@ Save and restart MySQL.
 
 Now open a MySQL prompt and run the following queries
 
-.. code:: mysql
+.. code-block:: mysql
 
     START SLAVE;
     SHOW SLAVE STATUS\G;
@@ -104,7 +104,7 @@ Master 1 (Slave 2)
 
 Open a MySQL prompt and run the following query
 
-.. code:: mysql
+.. code-block:: mysql
 
     SHOW MASTER STATUS;
 
@@ -114,7 +114,7 @@ Now we need to configure Master 1 to run as Slave 2.
 
 Modify MySQL config and add the following lines to [mysqld]
 
-.. code:: ini
+.. code-block:: ini
 
     [mysqld]
     master-host = 10.1.1.2
@@ -129,7 +129,7 @@ Master 2
 
 Open a MySQL prompt and run the following query
 
-.. code:: mysql
+.. code-block:: mysql
 
     GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.1' IDENTIFIED BY 'password';
 
@@ -138,7 +138,7 @@ Master 1
 
 Open a MySQL prompt and run the following queries
 
-.. code:: mysql
+.. code-block:: mysql
 
     START SLAVE;
     SHOW SLAVE STATUS\G;
@@ -161,7 +161,7 @@ Master 1
 
 Open a MySQL prompt and run the following query
 
-.. code:: mysql
+.. code-block:: mysql
 
     GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.3' IDENTIFIED BY 'password';
 
@@ -170,7 +170,7 @@ Master 2
 
 Open a MySQL prompt and run the following query
 
-.. code:: mysql
+.. code-block:: mysql
 
     GRANT REPLICATION SLAVE ON *.* TO 'replication'@'10.1.1.4' IDENTIFIED BY 'password';
 
@@ -179,7 +179,7 @@ Slave 3
 
 Open your MySQL config file, under [mysqld] put the following
 
-.. code:: ini
+.. code-block:: ini
 
     [mysqld]
     server-id=3
@@ -193,7 +193,7 @@ Save and restart MySQL.
 
 Open a MySQL prompt and run the following queries
 
-.. code:: mysql
+.. code-block:: mysql
 
     START SLAVE;
     SHOW SLAVE STATUS\G;
@@ -205,7 +205,7 @@ Slave 4
 
 Open your MySQL config file, under [mysqld] put the following
 
-.. code:: ini
+.. code-block:: ini
 
     [mysql]
     server-id=4
@@ -219,7 +219,7 @@ Save and restart MySQL.
 
 Open a MySQL prompt and run the following queries
 
-.. code:: mysql
+.. code-block:: mysql
 
     START SLAVE;
     SHOW SLAVE STATUS\G;

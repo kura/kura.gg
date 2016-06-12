@@ -27,7 +27,7 @@ def extract_toc(content):
     if toc:
         toc.extract()
         content._content = soup.decode()
-        content.toc = toc.decode()
+        content.toc = '\n'.join(toc.decode().split('\n')[2:-1])
 
 
 def register():

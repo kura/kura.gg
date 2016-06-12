@@ -15,6 +15,6 @@ version e.g. 10.04 -> 12.04) please see `here`_.**
 Really simple, should work for most cases, I've not found anything wrong
 with it.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo aptitude update && sudo aptitude install '?and(~U,~Asecurity)'

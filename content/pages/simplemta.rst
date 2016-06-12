@@ -28,7 +28,7 @@ Requires
 
 These can be installed by simply running the following command:
 
-.. code:: bash
+.. code-block:: bash
 
     pip install -r requirements.txt
 

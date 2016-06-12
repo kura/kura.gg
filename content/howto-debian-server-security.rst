@@ -52,7 +52,7 @@ DenyHosts
 This is one of my favourite programs, if not my favourite program and is
 of course available from the Debian repository.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install denyhosts
 
@@ -97,7 +97,7 @@ reading the config file to see what they actually do.
 
 Once configured simply restart the DenyHosts daemon.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/denyhosts restart
 
@@ -107,7 +107,7 @@ Logwatch
 Next up is another fantastic little program. It's simple, it's
 lightweight and... it's in the Debian repository.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install logwatch
 
@@ -117,7 +117,7 @@ then emails them to you every day and runs from **/etc/cron.daily**.
 There really is no configuration required for logwatch, I personally
 just edit the cron job to force a mailto.
 
-.. code:: bash
+.. code-block:: bash
 
     /usr/sbin/logwatch --mailto myemail@mydomain.tld
 
@@ -180,19 +180,19 @@ These changes are made to the following conf file on a Debian server.
 
 Only show minimal information in headers.
 
-.. code:: apache
+.. code-block:: apache
 
     ServerTokens Prod
 
 Don't include server version in server-generated pages.
 
-.. code:: apache
+.. code-block:: apache
 
     ServerSignature Off
 
 Disable the icons alias that FancyIndexed directory listings use.
 
-.. code:: apache
+.. code-block:: apache
 
     #Alias /icons/ "/var/www/icons/"
 
@@ -200,13 +200,13 @@ The following change will need to be done to your vhosts too, it
 disallows users from browsing your directory structures when no index
 file is present.
 
-.. code:: apache
+.. code-block:: apache
 
     Options -Indexes
 
 Restart apache and you're good.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/apache2 restart
 
@@ -220,7 +220,7 @@ in the following file.
 
 Turn off PHP exposure.
 
-.. code:: ini
+.. code-block:: ini
 
     expose_php = Off
 
@@ -229,7 +229,7 @@ Preventing session fixation. For more information on this please see
 
 .. _this paper: http://www.acros.si/papers/session_fixation.pdf
 
-.. code:: ini
+.. code-block:: ini
 
     session.use_only_cookies = 1
     session.cookie_httponly = 1
@@ -237,7 +237,7 @@ Preventing session fixation. For more information on this please see
 
 Once changed simply restart Apache.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/apache2 restart
 

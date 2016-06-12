@@ -44,14 +44,14 @@ Installation
 
 Download the S3 tools package list in to apt
 
-.. code:: bash
+.. code-block:: bash
 
     sudo wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
     sudo wget http://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
 
 Update your package list and install s3cmd
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get update && apt-get install s3cmd
 
@@ -60,7 +60,7 @@ Configuration
 
 You'll need to configure the tool to work with your AWS account, so run
 
-.. code:: bash
+.. code-block:: bash
 
     sudo s3cmd --configure
 
@@ -84,19 +84,19 @@ You can create a bucket using the s3cmd command below, but as far as I
 know you can't select a location so I create my buckets manually
 `on the web interface <https://console.aws.amazon.com/s3/home>`_.
 
-.. code:: bash
+.. code-block:: bash
 
     s3cmd mb s3://your-bucket-name
 
 Once done you can see a list of available buckets with
 
-.. code:: bash
+.. code-block:: bash
 
     s3cmd ls
 
 As shown below
 
-.. code:: bash
+.. code-block:: bash
 
     s3cmd ls
 
@@ -104,31 +104,31 @@ As shown below
 
 Now that this is done we can put some data in there, create a test file
 
-.. code:: bash
+.. code-block:: bash
 
     echo "this is a test" > test.file
 
 And put it in S3
 
-.. code:: bash
+.. code-block:: bash
 
     s3cmd put test.file s3://your-bucket-name/
 
 You can see it using
 
-.. code:: bash
+.. code-block:: bash
 
     s3cmd ls s3://your-bucket-name
 
 Download it with
 
-.. code:: bash
+.. code-block:: bash
 
     s3cmd get s3://your-bucket-name/test.file
 
 And delete it with
 
-.. code:: bash
+.. code-block:: bash
 
     s3cmd del s3://your-bucket-name/test.file
 
@@ -139,7 +139,7 @@ directory.
 Example
 -------
 
-.. code:: bash
+.. code-block:: bash
 
     #!/bin/sh
     s3cmd sync --recursive --skip-existing /home/kura

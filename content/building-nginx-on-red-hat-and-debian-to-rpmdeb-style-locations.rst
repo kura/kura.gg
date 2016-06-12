@@ -61,7 +61,7 @@ from yum or apt in the past.
 To check to see if you already have a www-data user run the following
 command as root.
 
-.. code:: bash
+.. code-block:: bash
 
     grep www-data /etc/passwd
 
@@ -74,7 +74,7 @@ number.
 
 If you don't see this user then we will need to create it.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo useradd -d /var/www -m -U www-data
 
@@ -91,14 +91,14 @@ SSL
 Debian
 ^^^^^^
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install libssl-dev
 
 RedHat (yum)
 ^^^^^^^^^^^^
 
-.. code:: bash
+.. code-block:: bash
 
     sudo yum install libssl-dev
 
@@ -113,14 +113,14 @@ Rewrite module
 Debian
 ^^^^^^
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install libpcre3 libpcre3-dev
 
 RedHat (yum)
 ^^^^^^^^^^^^
 
-.. code:: bash
+.. code-block:: bash
 
     sudo yum install libpcre-dev
 
@@ -133,7 +133,7 @@ Configuring
 
 Next we will configure the source
 
-.. code:: bash
+.. code-block:: bash
 
     ./configure --sbin-path=/usr/bin/nginx \
     --conf-path=/etc/nginx/nginx.conf \
@@ -165,7 +165,7 @@ If you didn't want to install openssl or pcre then you will have to
 compile without ssl and pcre. Remove --with-http_ssl_module from above
 and disable the rewrite module.
 
-.. code:: bash
+.. code-block:: bash
 
     --without-http_rewrite_module
 
@@ -174,7 +174,7 @@ Compiling
 
 Once done, if you have no errors you can actually compile nginx.
 
-.. code:: bash
+.. code-block:: bash
 
     make
     sudo make install
@@ -189,7 +189,7 @@ options. First open up nginx's main configuration file
 
 Modify it to look like the one below.
 
-.. code:: nginx
+.. code-block:: nginx
 
     user www-data www-data;
     worker_processes 2;
@@ -217,7 +217,7 @@ Modify it to look like the one below.
 Next we'll create the sub directories for holding site and module
 configuation.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mkdir /etc/nginx/sites-available
     sudo mkdir /etc/nginx/sites-enabled
@@ -229,7 +229,7 @@ Next we'll create the default server definition.
 
 And put the following in it.
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         listen 80;
@@ -252,7 +252,7 @@ And put the following in it.
 
 Now we symlink it in to the sites-enabled directory.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
@@ -271,7 +271,7 @@ here`_.
 Starting nginx
 --------------
 
-.. code:: bash
+.. code-block:: bash
 
     /etc/init.d/nginx start
 
@@ -279,12 +279,12 @@ Starting the service on boot
 
 Edit the following file:
 
-.. code:: bash
+.. code-block:: bash
 
     /etc/rc.local
 
 And add the following before the exit call.
 
-.. code:: bash
+.. code-block:: bash
 
     /etc/init.d/nginx start

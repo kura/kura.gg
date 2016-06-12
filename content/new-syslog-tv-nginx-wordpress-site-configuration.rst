@@ -15,7 +15,7 @@ Configuration changes
 I made some modifications to my nginx configuration this weekend to
 improve performance and clear up some bugs.
 
-.. code:: nginx
+.. code-block:: nginx
 
     upstream backend {
         server 127.0.0.1:81 fail_timeout=120s;
@@ -89,7 +89,7 @@ and why it's configured that way, I'll do this "chunk-by-chunk".
 upstream
 ~~~~~~~~
 
-.. code:: nginx
+.. code-block:: nginx
 
     upstream backend {
         server 127.0.0.1:81 fail_timeout=120s;
@@ -105,7 +105,7 @@ access_log parameters in the first section of the server definition.
 gzip
 ~~~~
 
-.. code:: nginx
+.. code-block:: nginx
 
     gzip on;
     gzip_disable msie6;
@@ -124,7 +124,7 @@ the mimetypes which GZIP is allowed to compress.
 location
 ~~~~~~~~
 
-.. code:: nginx
+.. code-block:: nginx
 
     root /var/www/syslog.tv;
 
@@ -155,7 +155,7 @@ their own private cache if they have certain cookies.
 $my_cache_key
 ~~~~~~~~~~~~~~~
 
-.. code:: nginx
+.. code-block:: nginx
 
     set $my_cache_key "$scheme://$host$uri$is_args$args$wordpress_logged_in$comment_author_email$comment_author";
 
@@ -167,7 +167,7 @@ cookie checks.
 Proxy time!
 ~~~~~~~~~~~
 
-.. code:: nginx
+.. code-block:: nginx
 
     client_max_body_size 8m;
 
@@ -204,7 +204,7 @@ minute, then I simply pass back to the backend system.
 Static location block
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: nginx
+.. code-block:: nginx
 
     location ~* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
         root /var/www/syslog.tv;

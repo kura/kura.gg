@@ -44,7 +44,7 @@ Manual download & install
 MD5
 ===
 
-.. code::
+.. code-block:: none
 
     e3595519df9865941f0bd5c2c28bba18  nginx_1.5.9_all.deb
     b2f3e4dcded2ce419175be8f4329b81e  nginx-common_1.5.9_all.deb
@@ -62,7 +62,7 @@ MD5
 SHA1
 ====
 
-.. code::
+.. code-block:: none
 
     cc1e71b89c30de80083e55acb4b4cebc0f5f1fd7  nginx_1.5.9_all.deb
     07d2bb7bdb038f5491b8707a56dafbf0a10a1b74  nginx-common_1.5.9_all.deb

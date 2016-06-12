@@ -39,7 +39,7 @@ any installation of Debian 7 and requires openssl-1.0.1d or higher.
 On a standard Debian 7 install you should have openssl-1.0.1e-2, you
 can find which version you have by running
 
-.. code:: bash
+.. code-block:: bash
 
     dpkg -l openssl
 
@@ -70,13 +70,13 @@ If you already have haproxy installed, make sure to remove it first.
 
 You can install them by simply running:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo dpkg -i haproxy_1.5~dev19_amd64.deb
 
 You may receive an error due to missing dependencies, to fix this run:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install -f
 
@@ -85,7 +85,7 @@ Configuring haproxy
 
 First we need to enabled haproxy by running the following command
 
-.. code:: bash
+.. code-block:: bash
 
     sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 
@@ -93,7 +93,7 @@ We then need to empty the contents of the haproxy configuration and
 replace it with a nice blank file. The following command will copy
 the original file to a new location and create a blank file
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mv /etc/haproxy/haproxy.cfg{,.orig} && sudo >/etc/haproxy/haproxy.cfg
 
@@ -243,7 +243,7 @@ Configuring nginx
 
 Within nginx we need to enable two virtual hosts
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         listen 80 spdy;

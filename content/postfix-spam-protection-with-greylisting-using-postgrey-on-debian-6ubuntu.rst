@@ -25,7 +25,7 @@ like on Hotmail.com.
 Installation
 ------------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install postgrey
 
@@ -38,7 +38,7 @@ loopback interface so it is not exposed to the outside world.
 If you open up **/etc/default/postgrey** and modify the *POSTGREY_OPTS*
 line you can configure how long to grey list for.
 
-.. code:: bash
+.. code-block:: bash
 
     --delay=60
 
@@ -47,7 +47,7 @@ would greylist the sending server for 60 seconds (the default value is
 sender would automatically become whitelisted, by default this sender is
 whitelisted for 35 days but can be changed using the *--max-age* option
 
-.. code:: bash
+.. code-block:: bash
 
     --max-age=10
 
@@ -55,13 +55,13 @@ would whitelist for 10 days.
 
 They can be combined as below.
 
-.. code:: bash
+.. code-block:: bash
 
     POSTGREY_OPTS="--inet=127.0.0.1:60000 --delay=60 --max-age=10"
 
 Once you're satisfied save and closed and restart Postgrey.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/postgrey restart
 
@@ -88,7 +88,7 @@ SPF and blacklists, see below for an example
 
 Now reload Postfix
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/postfix reload
 

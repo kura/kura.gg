@@ -44,7 +44,7 @@ Fuse
 
 Installing FUSE is simple
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install fuse-utils
 
@@ -54,7 +54,7 @@ s3fs
 We'll need to get build-essential, pkg-config, libfuse-dev,
 libcurl4-openssl-dev and libxml2-dev to be able to compile s3fs
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install build-essential pkg-config libfuse-dev libcurl4-openssl-dev libxml2-dev
 
@@ -70,13 +70,13 @@ issue tracker`_.
 First we need to remove the install fuse-utils and libfuse-dev that we
 install above.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get purge fuse-utils libfuse-dev
 
 You'll need to export a variable with your arch, i.e
 
-.. code:: bash
+.. code-block:: bash
 
     export PLATFORM=amd64
     wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse2_2.8.4-1.1_${PLATFORM}.deb
@@ -86,13 +86,13 @@ You'll need to export a variable with your arch, i.e
 
 Fix missing dependencies
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get -f install
 
 Now run the command below and confirm the output
 
-.. code:: bash
+.. code-block:: bash
 
     pkg-config --modversion fuse
     2.8.4
@@ -104,13 +104,13 @@ archive from `Google code`_.
 
 Once download, gunzip and untar it.
 
-.. code:: bash
+.. code-block:: bash
 
     tar xvzf s3fs-x.xx.tar.gz
 
 Change directory in to your newly extracted archive, and configure.
 
-.. code:: bash
+.. code-block:: bash
 
     ./configure --exec-prefix=/usr/ --prefix=/ --includedir=/usr/include/ --mandir=/usr/share/man/
 
@@ -120,7 +120,7 @@ locations.
 
 Then you'll need to compile and install.
 
-.. code:: bash
+.. code-block:: bash
 
     make
     sudo make install
@@ -146,7 +146,7 @@ separated with a colon.
 
 And for security reasons, change the file permissions
 
-.. code:: bash
+.. code-block:: bash
 
     sudo chmod 0600 /etc/passwd-s3fs
 
@@ -159,7 +159,7 @@ Manual
 Once all the above is done you can mount a bucket using the s3fs binary,
 I'm going to mount directly to /mnt
 
-.. code:: bash
+.. code-block:: bash
 
     sudo s3fs your-bucket-name /mnt
 
@@ -172,7 +172,7 @@ Mounting via fstab requires the above FUSE step to be completed.
 
 Your **/etc/fstab** entry should look like this
 
-.. code:: bash
+.. code-block:: bash
 
     s3fs#your-bucket-name /mnt fuse allow_other,_netdev,nosuid,nodev,url=https://s3.amazonaws.com 0 0
 

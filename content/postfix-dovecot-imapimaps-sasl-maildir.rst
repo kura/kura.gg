@@ -19,7 +19,7 @@ for Debian 5 and Ubuntu 10.04 and above.
 The installation
 ----------------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install dovecot-imapd postfix sasl2-bin libsasl2-2 libsasl2-modules
 
@@ -127,7 +127,7 @@ SASL
 Open up the following file**/etc/default/saslauthd**, we need to modify
 a couple of things. Set START to yes and MECHANISMS to pam.
 
-.. code:: bash
+.. code-block:: bash
 
     START=yes
     MECHANISMS="pam"
@@ -137,31 +137,31 @@ changes for SASL.
 
 First we remove the default SASL run location.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo rm -r /var/run/saslauthd/
 
 Now we make one within the Postfix chroot.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mkdir -p /var/spool/postfix/var/run/saslauthd
 
 Symlink it back to /var/run so things work.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo ln -s /var/spool/postfix/var/run/saslauthd /var/run
 
 Change the group for the directory we created.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo chgrp sasl /var/spool/postfix/var/run/saslauthd
 
 And finally add the Postfix user to the SASL group.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo adduser postfix sasl
 
@@ -170,7 +170,7 @@ Finally
 
 Now we just need to restart our services.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/dovecot restart
     sudo /etc/init.d/postfix restart

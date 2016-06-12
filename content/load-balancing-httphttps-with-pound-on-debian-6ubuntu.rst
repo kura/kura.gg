@@ -15,7 +15,7 @@ supports SSL termination, which is great!
 Install
 -------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install pound
 
@@ -138,7 +138,7 @@ Done
 
 Once configured, reload Pound.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/pound reload
 

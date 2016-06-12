@@ -14,14 +14,14 @@ Debian/Ubuntu upgrade security packages only - a better way to do it
 First thing we need to do is create an sources list specifically for
 security.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo grep "-security" /etc/apt/sources.list | sudo grep -v "#" > /etc/apt/security.sources.list
 
 Now that this is done we can simply continue to use the command below to
 trigger security-only upgrades
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get upgrade -o Dir::Etc::SourceList=/etc/apt/security.sources.list
 

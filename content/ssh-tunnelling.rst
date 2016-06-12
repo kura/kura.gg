@@ -8,7 +8,7 @@ SSH Tunnelling
 
 Quite a simple one:
 
-.. code:: bash
+.. code-block:: bash
 
     ssh -f USER@INTERMEDIATE_DEVICE -L LOCAL_PORT:DESTINATION_DEVICE:DESTINATION_PORT -N
 
@@ -19,14 +19,14 @@ Quite a simple one:
 So use this to tunnel from local port 8000 in to a remote machine on
 port 22 you'd use
 
-.. code:: bash
+.. code-block:: bash
 
     ssh -f user@server.test.com -L 8000:server.destination.com:22 -N
 
 Once the tunnel is open you can use the following to ssh or scp data
 around
 
-.. code:: bash
+.. code-block:: bash
 
     ssh localhost -p 8000
     scp -P 8000 /path/to/local/file user@localhost:~

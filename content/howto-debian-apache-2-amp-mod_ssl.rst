@@ -17,13 +17,13 @@ Installation
 
 First off we'll get Apache and mod_ssl install
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install apache2
 
 SSL should be enabled by default, if not run the following
 
-.. code:: bash
+.. code-block:: bash
 
     sudo a2enmod ssl
 
@@ -38,7 +38,7 @@ starting with self signed.
 Self signed
 ~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     sudp mkdir /etc/apache2/ssl
     sudo /usr/sbin/make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/apache2/ssl/apache.pem
@@ -59,14 +59,14 @@ every time you restart Apache.
 Without a passphrase
 ^^^^^^^^^^^^^^^^^^^^
 
-.. code:: bash
+.. code-block:: bash
 
     openssl genrsa -out DOMAINNAME.key 4096
 
 With a passphrase
 ^^^^^^^^^^^^^^^^^
 
-.. code:: bash
+.. code-block:: bash
 
     openssl genrsa -des3 -out DOMAINNAME.key 4096
 
@@ -78,7 +78,7 @@ specific size.
 
 Next up is actually generating the CSR from the key.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl req -new -key DOMAINNAME.key > DOMAINNAME.csr
 
@@ -103,7 +103,7 @@ sure SSL is enabled.
 
 It should have the following at the bottom.
 
-.. code:: apache
+.. code-block:: apache
 
     <IfModule mod_ssl.c>
         # SSL name based virtual hosts are not yet supported, therefore no
@@ -113,14 +113,14 @@ It should have the following at the bottom.
 
 Now that's sorted we'll move on to your actual virtualhost.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo nano /etc/apache2/sites-available/DOMAINNAME.conf
 
 We'll use a config template I've always used, feel free to edit it at
 need.
 
-.. code:: apache
+.. code-block:: apache
 
     <VirtualHost *>
         ServerAdmin webmaster@DOMAINNAME
@@ -165,7 +165,7 @@ If you used the self signed approach then the above
 **SSLCertificateFile** will be correct, if not replace it with what is
 shown below.
 
-.. code:: apache
+.. code-block:: apache
 
     SSLCertificateFile /etc/ssl/certs/DOMAINANE.crt
     SSLCertificateKeyFile /etc/ssl/private/DOMAINNAME.key
@@ -174,13 +174,13 @@ If you received a bundle file as well as your domains CRT then copy it
 to /etc/ssl/certs/ on your server and add the following line after
 **SSLCertificateKeyFile**.
 
-.. code:: apache
+.. code-block:: apache
 
     SSLCertificateChainFile /etc/ssl/certs/DOMAINNAME.bundle.crt
 
 Save and exit, with that done we need to enable the site.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo a2ensite DOMAINNAME.conf
 
@@ -188,7 +188,7 @@ If you used a self signed certificate or passphrase-free key, this
 should be all you need to do, feel free to test your config and restart
 Apache and test your site.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apache2ctrl configtest
     sudo /etc/init.d/apache2 restart
@@ -200,25 +200,25 @@ supported "hack" below...
 The nasty SSL passphrase hack...
 --------------------------------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo nano /etc/apache2/apache2.conf
 
 Place the following at the end of the file
 
-.. code:: apache
+.. code-block:: apache
 
     SSLPassPhraseDialog exec:/etc/apache2/ssl.sh
 
 Now we need to create this bash file, so...
 
-.. code:: bash
+.. code-block:: bash
 
     sudo nano /etc/apache2/ssl.sh
 
 Place the following in it
 
-.. code:: bash
+.. code-block:: bash
 
     #!/bin/bash
     if [ $1 = 'DOMAINNAME:443' ]; then
@@ -232,14 +232,14 @@ multiple sites to this file.
 
 Now save and make it only usable by root.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo chmod 0700 /etc/apache2/ssl.sh
     sudo chown root:root /etc/apache2/ssl.sh
 
 Now we can follow the config test and restart call from above.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apache2ctl configtest
     sudo /etc/init.d/apache2 restart

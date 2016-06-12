@@ -33,7 +33,7 @@ Manual download
 MD5
 ===
 
-.. code::
+.. code-block:: none
 
     1dcb73ca965b3731df20823a6005392c  vagrant-bash-completion-0.0.6.deb
     db494d0bf1b3dcdbcce5b0111ad377a0  go-bash-completion-0.0.1.deb
@@ -41,7 +41,7 @@ MD5
 SHA1
 ====
 
-.. code::
+.. code-block:: none
 
     ed6890fdd08ac459a0f61112fcfb48f9e3ce953d  vagrant-bash-completion-0.0.6.deb
     fd92cd53f2d6ff98077cb10d3578381025d002e7  go-bash-completion-0.0.1.deb

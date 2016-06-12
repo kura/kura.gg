@@ -18,7 +18,7 @@ quite useful.
 In `/etc/postfix/main.cf` add make the start of your `smtpd_recipient_restrictions`
 look like below.
 
-.. code::
+.. code-block:: none
 
     smtpd_recipient_restrictions =
         check_recipient_access hash:/etc/postfix/recipient_access,
@@ -27,7 +27,7 @@ Create a new file `/etc/postfix/recipient_access` and add the email address you
 wish to block, the word `REJECT` in capitals and optionally; a  reason. Example
 below.
 
-.. code::
+.. code-block:: none
 
     test@example.com REJECT Don't be silly... You're probably drunk.
 
@@ -36,7 +36,7 @@ a new line.
 
 You can see the email is blocked from being sent in `/var/log/mail.log`.
 
-.. code::
+.. code-block:: none
 
     NOQUEUE: reject: RCPT from 123.123.123.123: 554 5.7.1 <test@example.com>: Recipient address rejected: Don't be silly... You're probably drunk.; from=<me@domain.tld> to=<test@example.com> proto=ESMTP helo=<[123.123.123.123]>
 
@@ -44,7 +44,7 @@ You can see the email is blocked from being sent in `/var/log/mail.log`.
 Each time you change the file, you need to generate a new hashed version and
 reload Postfix.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo postmap hash:/etc/postfix/recipient_access
     sudo /etc/init.d/postfix reload

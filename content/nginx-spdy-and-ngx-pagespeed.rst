@@ -75,7 +75,7 @@ they are only available for amd64);
 
 You can install them by simply running:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo dpkg -i nginx*.deb
 
@@ -83,7 +83,7 @@ If you already have nginx installed, make sure to remove it first.
 
 You may receive an error due to missing dependencies, to fix this run:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install -f
 
@@ -93,7 +93,7 @@ Configuring SPDY
 SPDY only works over HTTPS, so bare that in mind. All you need to do is
 enable SPDY in your server configuration as below.
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         listen 443 ssl spdy;
@@ -113,7 +113,7 @@ Configuring ngx_pagespeed
 To enable ngx_pagespeed you first need to create a directory
 that it can write cache files to.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mkdir /var/cache/ngx_pagespeed/
     sudo chown www-data:www-data /var/cache/ngx_pagespeed/
@@ -121,7 +121,7 @@ that it can write cache files to.
 Once this is done you can enable ngx_pagespeed in your
 server configuration as below.
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         # ...

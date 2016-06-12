@@ -47,21 +47,21 @@ Partitioning the newly added space
 
 Once done, go to your VM, and as root run the following command:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo echo "- - -" > /sys/class/scsi_host/**host0**/scan && fdisk -l
 
 If the newly added unpartitioned drive isn't displayed, try again with a
 different **host#** - host1, host2 etc.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo cfdisk /dev/sda
 
 If you don't have cfdisk installed, you should be able to install it
 with the following command on Debian-based systems:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install cfdisk
 
@@ -84,7 +84,7 @@ Adding to an existing LVM
 
 Lets take a look at our current list of physical volumes
 
-.. code:: bash
+.. code-block:: bash
 
     pvs
 
@@ -96,14 +96,14 @@ As you can see we have our existing list of volumes, in my case one.
 So now all we need to do is create another physical volume, my partition
 is labelled **sda6** so that's what I will be using.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo pvcreate /dev/sda6
 
 Now that we've added the volume it's time to add it to the volume group,
 this is really simple and again I'll be using sda6.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo vgextend jeos-base /dev/sda6
 
@@ -113,7 +113,7 @@ with your own groups name.
 Now if we actually take a look at pvs again you will see that your
 physical volume has been created and added to your volume group.
 
-.. code:: bash
+.. code-block:: bash
 
     pvs && lvdisplay
 
@@ -141,7 +141,7 @@ the LVM, so the next step is to actually extend the LVM
 
 Thanks to Ivan Marinkovic from the comments for this improved command::
 
-.. code:: bash
+.. code-block:: bash
 
     sudo lvextend -l+100%FREE /dev/jeos-base/root && lvdisplay
 
@@ -170,7 +170,7 @@ file system too, so that it can use the full extra space freely, this
 can be done online, I'd recommend doing a snapshot or backup of your VM
 before doing this though.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo resize2fs /dev/mapper/jeos--base-root && df -h
 

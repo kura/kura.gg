@@ -19,53 +19,53 @@ So without further ado, lets get the installation going.
 You'll need Debian's "add-apt-repository", on servers this doesn't
 usually come by default so we'll need to install it.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install python-software-properties
 
 Next we need to add Java's PPA.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo add-apt-repository ppa:sun-java-community-team/sun-java6
 
 Once this is done we'll need to update our apt caches and install Java
 6.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install sun-java6-jdk
 
 Now that this is installed we should get the Java version, remember it
 for future.
 
-.. code:: bash
+.. code-block:: bash
 
     java -version
 
 You'll get something like this
 
-.. code:: bash
+.. code-block:: bash
 
     java version "1.6.0_20" OpenJDK Runtime Environment (IcedTea6 1.9.9) (6b20-1.9.9-0ubuntu1~10.04.2)
     OpenJDK 64-Bit Server VM (build 19.0-b09, mixed mode)
 
 Next we update our alternatives to switch OpenJDK with Sun's Java.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo update-java-alternatives -s java-6-sun
 
 And finally we'll confirm the change is made by comparing the new Java
 version against the one from before
 
-.. code:: bash
+.. code-block:: bash
 
     java -version
 
 You should see something similar to this.
 
-.. code:: bash
+.. code-block:: bash
 
     java version "1.6.0_21"
     Java(TM) SE Runtime Environment (build 1.6.0_21-b06)
@@ -82,12 +82,12 @@ using sudo or as root.
 Scroll down, you'll see JAVA_HOME is set, it may be commented out so
 edit it to look like the line below.
 
-.. code:: bash
+.. code-block:: bash
 
     JAVA_HOME=/usr/lib/jvm/java-6-sun
 
 And restart Tomcat.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/tomcat6 restart

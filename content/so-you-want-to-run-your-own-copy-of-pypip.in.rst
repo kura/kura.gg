@@ -32,23 +32,23 @@ First of all you'll need to get the latest source code copy of nodejs from the
 
 Extract it.
 
-.. code:: bash
+.. code-block:: none bash
 
     tar -xvzf node-<VERSION>.tar.gz
 
-.. code:: bash
+.. code-block:: none bash
 
     cd node-<VERSION>
 
 You'll need to install the build tools, if you don't have them already.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install build-essential
 
 And then make and install node.
 
-.. code:: bash
+.. code-block:: none bash
 
     make && sudo make install
 
@@ -57,7 +57,7 @@ Redis
 
 Redis is used to temporarily store PyPI responses.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install redis-server
 
@@ -66,25 +66,25 @@ shields
 
 You'll need to install git for the next step.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install git-core
 
 And get a copy of the shields repository.
 
-.. code:: bash
+.. code-block:: none bash
 
     git clone git@github.com:badges/shields.git
 
 Once it's checked out, you'll need to install it's requirements.
 
-.. code:: bash
+.. code-block:: none bash
 
     cd shields && npm install
 
 You can confirm this works by running the shields server.
 
-.. code:: bash
+.. code-block:: none bash
 
     node server 8080
 
@@ -93,13 +93,13 @@ pypipin
 
 Clone the shields repository, the same way you did for shields above.
 
-.. code:: bash
+.. code-block:: none bash
 
     git clone git@github.com:badges/pypipins.git
 
 To do this properly, you'll need to make sure you have virtualenv for Python.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install python-dev
     wget -O - https://bootstrap.pypa.io/get-pip.py | sudo python
@@ -107,26 +107,26 @@ To do this properly, you'll need to make sure you have virtualenv for Python.
 
 Next, you'll need to create a virtual environment.
 
-.. code:: bash
+.. code-block:: none bash
 
     virtualenv /path/to/where/you/want/it/
 
 Then you can active it.
 
-.. code:: bash
+.. code-block:: none bash
 
     . /path/to/your/virtualenv/bin/activate
 
 And install the dev requirements from the pypipins directory.
 
-.. code:: bash
+.. code-block:: none bash
 
     pip install -r /path/to/pypipins/clone/requirements-dev.txt
 
 You'll need to edit shields.py, commenting out the img.shields.io host and
 uncommon the local one.
 
-.. code:: python
+.. code-block:: none python
 
     /path/to/pypipins/clone/shields/shields.py
 
@@ -136,7 +136,7 @@ uncommon the local one.
 
 Once this is done, you can test the pypipins server.
 
-.. code:: bash
+.. code-block:: none bash
 
     /path/to/your/virtualenv/bin/python /path/to/pypipins/clone/shields/shields.py
 
@@ -145,20 +145,20 @@ supervisor(d)
 
 Always install supervisor from apt, rather than from pip.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install supervisor
 
 Then cd to where conf.d config files are stored for supervisor.
 
-.. code:: bash
+.. code-block:: none bash
 
     cd /etc/supervisor/conf.d/
 
 In here, you'll need to create a configuration for the shields nodejs server
 and also for pypipins server.
 
-.. code::
+.. code-block:: none
 
     shields.conf
 
@@ -173,7 +173,7 @@ and also for pypipins server.
     autostart=true
     autorestart=true
 
-.. code::
+.. code-block:: none
 
     pypipin.conf
 
@@ -189,11 +189,11 @@ and also for pypipins server.
 
 Once this is done, you'll need to load them in to supervisor itself.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo supervisorctl
 
-.. code::
+.. code-block:: none
 
     reread
     add shields
@@ -208,13 +208,13 @@ The final step is to put Varnish in front of the system to cache images for you.
 The shields server has the ability to use redis for caching but, I'd rather do
 this with a proper HTTP cache rather than use redis.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install varnish
 
 Tell Varnish to run on port 80.
 
-.. code::
+.. code-block:: none
 
     /etc/default/varnish
 
@@ -230,7 +230,7 @@ hidden from the world, binding it to port 6082 on the lo interface.
 
 The final step is to tell Varnish about the pypipins server.
 
-.. code::
+.. code-block:: none
 
     /etc/varnish/default.vcl
 
@@ -280,7 +280,7 @@ The final step is to tell Varnish about the pypipins server.
 
 All done, restart Varnish.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo /etc/init.d/varnish restart
 
@@ -300,14 +300,14 @@ available in Jessie which is currently in testing.
 
 You can either use an older version of PyPy or, backport libffi6 from Jessie.
 
-.. code::
+.. code-block:: none
 
     /etc/apt/sources.list
 
 
     deb ftp://ftp.debian.org/debian/ jessie main
 
-.. code::
+.. code-block:: none
 
     /etc/apt/preferences.d/jessie
 
@@ -325,7 +325,7 @@ be pulled from Jessie.
 
 You can then simply install libffi6 from Jessie.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get update
     sudo apt-get -u install libffi6/jessie

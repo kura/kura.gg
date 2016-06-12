@@ -29,7 +29,7 @@ Looking for your OCSP URI
 If you don't know the URI you need to do an OCSP lookup against, you can find
 it in your certificate data.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl x509 -in /path/to/your/certificate -text
 
@@ -44,7 +44,7 @@ Inside the output, look for the following section.
 Testing OCSP response
 =====================
 
-.. code:: bash
+.. code-block:: bash
 
     openssl ocsp -noverify -issuer /path/to/your/ca/root/certificate \
                  -cert /path/to/your/certificate -url "OCSP_URI"
@@ -90,7 +90,7 @@ Proving OCSP data to haproxy
 
 If the above testing was all OK, we can now actually use the data.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl ocsp -noverify -issuer /path/to/your/ca/root/certificate \
                  -cert /path/to/your/certificate \
@@ -104,7 +104,7 @@ You can now simply reload haproxy and check your OCSP staping is working.
 Testing OCSP from haproxy
 =========================
 
-.. code:: bash
+.. code-block:: bash
 
     openssl s_client -connect domain.tld:443 -tls1 -tlsextdebug -status
 

@@ -34,13 +34,13 @@ Adding an RST directive
 Really all we're doing is modifying docutils on-the-fly to tell it how to
 understand new directives, so we need to import directives from docutils
 
-.. code:: python
+.. code-block:: python
 
     from docutils.parsers.rst import directives, Directive
 
 With this in place, we can dynamically register a new directive to docutils
 
-.. code:: python
+.. code-block:: python
 
     directives.register_directive('vimeo', Vimeo)
 
@@ -54,7 +54,7 @@ I'll now break down the Vimeo class and explain what it does, piece by piece.
 
 We will need to import an extra method from docutils
 
-.. code:: python
+.. code-block:: python
 
     from docutils import nodes
 
@@ -63,7 +63,7 @@ This is used to append segments of data together, in our case HTML.
 class Vimeo
 -----------
 
-.. code:: python
+.. code-block:: python
 
     class Vimeo(Directive):
 
@@ -72,7 +72,7 @@ This is pretty self explanatory, we define a new class that inherits from
 
 Next we define a method for handling our alignment choices
 
-.. code:: python
+.. code-block:: python
 
     def align(argument):
         return directives.choice(argument, ('left', 'center', 'right'))
@@ -82,7 +82,7 @@ many arguments are required and so on, it's pretty easy to understand. For the
 alignment option we pass it the callable method declared above, but without
 calling it.
 
-.. code:: python
+.. code-block:: python
 
     required_arguments = 1
     optional_arguments = 2
@@ -100,7 +100,7 @@ the processing.
 
 The method name is called run because that is required by docutils.
 
-.. code:: python
+.. code-block:: python
 
     def run(self):
 
@@ -108,7 +108,7 @@ First I get the videoID from the first argument in the RST, I tend set default
 values for width, height and alignment. Those three arguments are optional, but
 if they have been defined then I override the defaults.
 
-.. code:: python
+.. code-block:: python
 
         videoID = self.arguments[0].strip()
         width = 420
@@ -128,7 +128,7 @@ Next I define the Vimeo URL and the two blocks of HTML that create the
 surrounding div element and the video iframe. Here I also replace the videoID
 in to the URL and also the optional arguments specified above.
 
-.. code:: python
+.. code-block:: python
 
         url = 'https://player.vimeo.com/video/{}'.format(videoID)
         div_block = '<div class="vimeo" align="{}">'.format(align)
@@ -137,7 +137,7 @@ in to the URL and also the optional arguments specified above.
 
 And finally I create a list of docutils nodes with the HTML we created above.
 
-.. code:: python
+.. code-block:: python
 
         return [
             nodes.raw('', div_block, format='html'),

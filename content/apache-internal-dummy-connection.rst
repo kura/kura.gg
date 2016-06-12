@@ -35,7 +35,7 @@ run 2.2.8 which doesn't actually used that same method.
 I applied the well known "work around" for this to test it and see if it
 made any difference.
 
-.. code:: apache
+.. code-block:: apache
 
     RewriteEngine on
     RewriteCond %{HTTP_USER_AGENT} ^.*internal dummy connection.*$ [NC]

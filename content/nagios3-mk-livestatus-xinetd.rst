@@ -15,7 +15,7 @@ Preparation
 First we need to make sure we have all the stuff we need to compile mk
 livestatus and run it
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install make build-essential xinetd ucspi-unix
 
@@ -27,7 +27,7 @@ Grab the mk livestatus source from `here`_, currently it's version
 
 .. _here: http://mathias-kettner.de/check_mk_download.html
 
-.. code:: bash
+.. code-block:: bash
 
     wget http://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
     tar xvzf mk-livestatus-1.1.10p3.tar.gz
@@ -63,7 +63,7 @@ new file called **/etc/xinetd.d/livestatus** and put the following in it
 
 Now we restart xinetd using
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/xinetd restart
 
@@ -79,13 +79,13 @@ line
 
 Now we need to restart Nagios
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/nagios3 restart
 
 If you take a look in **/var/log/nagios3/nagios.log**
 
-.. code:: bash
+.. code-block:: bash
 
     sudo tail -n 100 /var/log/nagios3/nagios.log
 
@@ -101,7 +101,7 @@ you should see something like below
 
 Also, we can ls the newly created socket
 
-.. code:: bash
+.. code-block:: bash
 
     ls -lah /var/lib/nagios3/rw/live
 
@@ -116,7 +116,7 @@ following content
 
 And run the following command
 
-.. code:: bash
+.. code-block:: bash
 
     sudo unixcat < host_query /var/lib/nagios3/rw/live
 

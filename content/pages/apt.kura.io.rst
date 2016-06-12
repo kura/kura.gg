@@ -37,7 +37,7 @@ Enabling
 
 You can enable this by adding it to your apt config.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D38F85FF650A63B9
     sudo wget https://apt.kura.io/`lsb_release -cs`.list -O /etc/apt/sources.list.d/apt.kura.io.list
@@ -49,6 +49,6 @@ simply need to substitute https for http above.
 If you wish to use the SSL version but are getting an error, you may need to
 install the HTTPS APT transport method.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install apt-transport-https

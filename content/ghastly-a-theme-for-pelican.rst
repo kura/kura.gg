@@ -97,7 +97,7 @@ Requirements
 - cssmin
 - pelican webassets from `pelican-plugins <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__
 
-.. code:: bash
+.. code-block:: bash
 
     pip install pelican webassets cssmin
 
@@ -111,7 +111,7 @@ can find installation instructions for themes in the `pelican documentation
 Configuration
 =============
 
-.. code:: python
+.. code-block:: python
 
     THEME = 'ghastly'
     DIRECT_TEMPLATES = (('index', 'archives', '404'))

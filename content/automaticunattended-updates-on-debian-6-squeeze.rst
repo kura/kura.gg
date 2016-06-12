@@ -16,7 +16,7 @@ it for security upgrades.
 Installation
 ------------
 
-.. code:: bash
+.. code-block:: bash
 
     apt-get install unattended-upgrades apticron
 

@@ -32,7 +32,7 @@ The first set of changes are in the main nginx configuration file
 
 These changes basically just change the proxy_cache key
 
-.. code:: nginx
+.. code-block:: nginx
 
     proxy_cache_path /var/www/nginx_cache levels=1:2 keys_zone=cache:8m max_size=1000m inactive=600m;
     proxy_temp_path /tmp/nginx;
@@ -59,7 +59,7 @@ definition.
 
 /etc/nginx/sites-available/syslog.tv
 
-.. code:: nginx
+.. code-block:: nginx
 
     upstream apachesyslogtv {
         server apache.syslog.tv weight=1 fail_timeout=60s;
@@ -72,7 +72,7 @@ timeout of 60 seconds. You would actually be able to add multiple server
 definitions to this with different weights and fail timeouts. This is
 used for load balancing.
 
-.. code:: nginx
+.. code-block:: nginx
 
     upstream apachesyslogtv {
         server apache1.syslog.tv weight=1 fail_timeout=60s;
@@ -86,7 +86,7 @@ There are quite a lot of changes that are made to the actual server
 definition, I will go through these step-by-step to explain what has
 changed and why it's changed.
 
-.. code:: nginx
+.. code-block:: nginx
 
     location / {
         root /path/to/site;
@@ -121,7 +121,7 @@ And finally is a change to proxy_pass, this now points to the name of
 my upstream definition, which nginx will then use to decide which server
 to use.
 
-.. code:: nginx
+.. code-block:: nginx
 
     location ~* .(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
         proxy_cache_valid 200 120m;
@@ -154,7 +154,7 @@ performance dramatically.
 The full config
 ---------------
 
-.. code:: nginx
+.. code-block:: nginx
 
     upstream apachesyslogtv {
         server apache.syslog.tv weight=1 fail_timeout=60s;

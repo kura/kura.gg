@@ -45,14 +45,14 @@ running.
 
 First step is to install opendkim.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install opendkim
 
 Leave the install process to complete, we'll configure it later, first
 we'll make the public and private keys required for signing.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl genrsa -out private.key 1024
     openssl rsa -in private.key -out public.key -pubout -outform PEM
@@ -89,7 +89,7 @@ Set a custom selector if you want.
 Next we open up **/etc/default/opendkim** and change it to the
 following:
 
-.. code:: bash
+.. code-block:: bash
 
     # Command-line options specified here will override the contents of
     # /etc/opendkim.conf. See opendkim(8) for a complete list of options.
@@ -107,7 +107,7 @@ following:
 
 That's opendkim all configured, start the daemon with
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/opendkim start
 

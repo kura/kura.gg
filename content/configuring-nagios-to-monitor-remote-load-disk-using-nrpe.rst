@@ -18,7 +18,7 @@ Remote server -- the server to be monitored
 First we'll install the needed plugins and daemon on the **remote**
 server.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install nagios-plugins nagios-nrpe-server
 
@@ -45,7 +45,7 @@ any time you want.
 
 Start the nagios-nrpe-server daemon.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/nagios-nrpe-server start
 
@@ -54,13 +54,13 @@ Monitoring server -- the server with Nagios installed
 
 Install the nagios nrpe plugin
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install nagios-nrpe-plugin
 
 Now test the connection to the remote server we set up just now.
 
-.. code:: bash
+.. code-block:: bash
 
     /usr/lib/nagios/plugins/check_nrpe -H REMOTE.SERVER.IP
     NRPE v2.8.1
@@ -96,6 +96,6 @@ you can actually pass arguments using check_nrpe as below.
 
 Save, exit and reload nagios.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/nagios2 restart

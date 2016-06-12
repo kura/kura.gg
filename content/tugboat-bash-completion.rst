@@ -30,14 +30,14 @@ Install manually
 
 Download the source file from above and run the commands below.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo make install
     . ~/bashrc
 
 Or you can do it the lazy way
 
-.. code:: bash
+.. code-block:: bash
 
     sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat -O /etc/bash_completion.d/tugboat
     . ~/bashrc

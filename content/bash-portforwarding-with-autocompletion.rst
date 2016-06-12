@@ -31,18 +31,18 @@ Usage is pretty simply, just called portforward from the command line,
 pressing <TAB> as you type in a server name from your ~/.ssh/config file
 and the same with the port.
 
-.. code:: bash
+.. code-block:: bash
 
     portforward sy<TAB>
 
 Will become:
 
-.. code:: bash
+.. code-block:: bash
 
     portforward syslog.tv
 
 And finally
 
-.. code:: bash
+.. code-block:: bash
 
     portforward syslog.tv 15672

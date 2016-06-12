@@ -14,7 +14,7 @@ Installation
 
 Simple, if it's not installed already then run the following commands
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install iptables
     sudo /etc/init.d/iptables start
@@ -29,7 +29,7 @@ Configuration
 
 So, first we'll create an empty temp rules file
 
-.. code:: bash
+.. code-block:: bash
 
     sudo touch /etc/iptables.temp.rules
 
@@ -74,20 +74,20 @@ Add some simple rules to it::
 
 Next we apply this rule set to the currently running iptables instance
 
-.. code:: bash
+.. code-block:: bash
 
     sudo iptables-restore < /etc/iptables.temp.rules
 
 Check to make sure they loaded correctly
 
-.. code:: bash
+.. code-block:: bash
 
     sudo iptables -L
 
 If everything looks OK and ready to go then we simply save, this time to
 the secondary file that I mentioned earlier
 
-.. code:: bash
+.. code-block:: bash
 
     sudo iptables-save > /etc/iptables.up.rules
 
@@ -105,13 +105,13 @@ Find the following lines::
 
 And add this to the end
 
-.. code:: bash
+.. code-block:: bash
 
     pre-up iptables-restore < /etc/iptables.up.rules
 
 So that it becomes
 
-.. code:: bash
+.. code-block:: bash
 
     auto lo
     iface lo inet loopback

@@ -15,13 +15,13 @@ Installation
 First up we'll need to install git and some Python tools to get Gitosis
 installed.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install -y git-core gitweb python-setuptools
 
 Next we have to clone gitosis from it's git repository and install it.
 
-.. code:: bash
+.. code-block:: bash
 
     cd /tmp
     git clone git://eagain.net/gitosis.git
@@ -31,7 +31,7 @@ Next we have to clone gitosis from it's git repository and install it.
 Adding your git user
 --------------------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo adduser --system --shell /bin/sh --gecos 'git version control' --group --disabled-password --home /home/git git
 
@@ -46,7 +46,7 @@ You'll need an SSH key for this, if you have one simply copy the
 contents of it to your new git server, if you do not have one then you
 can generate one on your machine using
 
-.. code:: bash
+.. code-block:: bash
 
     ssh-keygen
 
@@ -54,7 +54,7 @@ And then copy the contents to your server.
 
 My file was copied to **/tmp/kura.pub** so to initialise I used
 
-.. code:: bash
+.. code-block:: bash
 
     sudo -H -u git gitosis-init < /tmp/kura.pub
 
@@ -93,7 +93,7 @@ automatically pick them up.
 
 So you need to run
 
-.. code:: bash
+.. code-block:: bash
 
     git clone git@YOUR_SERVER:gitosis-admin.git
 
@@ -110,7 +110,7 @@ key and it must end in *.pub*.
 So open up **gitosis.conf** in your favourite editor and add the
 following
 
-.. code:: ini
+.. code-block:: ini
 
     [gitosis]
     gitweb = yes
@@ -145,21 +145,21 @@ HTAUTH.**
 
 Now the changes have been made you need to commit them to git.
 
-.. code:: bash
+.. code-block:: bash
 
     git add *
     git commit -m "Initial configuration"
 
 And push them back to the server
 
-.. code:: bash
+.. code-block:: bash
 
     git push origin master
 
 Now that is done you can test your access to the test repository created
 earlier.
 
-.. code:: bash
+.. code-block:: bash
 
     git clone git@YOUR_SERVER:test.git
     cd test
@@ -192,13 +192,13 @@ Configure gitweb
 Open up **/etc/gitweb.conf** in your favourite editor and change
 ***$projectroot*** to
 
-.. code:: bash
+.. code-block:: bash
 
     $projectroot = "/home/git/repositories/"
 
 You will also need to add the Apache user to the git group
 
-.. code:: bash
+.. code-block:: bash
 
     sudo usermod -G www-data,git www-data
 

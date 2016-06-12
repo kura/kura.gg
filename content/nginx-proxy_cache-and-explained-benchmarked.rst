@@ -65,7 +65,7 @@ actual nginx main configuration file, on Debian/Ubuntu this is in
 
     /etc/nginx/nginx.conf
 
-.. code:: nginx
+.. code-block:: nginx
 
     proxy_cache_path /var/www/syslog.tv/cache levels=1:2 keys_zone=one:8m max_size=1000m inactive=600m;
     proxy_temp_path /tmp;
@@ -77,7 +77,7 @@ and nginx won't start.
 The biggest chain was in this site's server definition, it now looks
 like this
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         listen 174.143.241.61:80;

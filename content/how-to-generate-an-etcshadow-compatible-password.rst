@@ -9,7 +9,7 @@ How to generate an  /etc/shadow compatible password
 You'll need mkpasswd, on Debian 6 and Ubuntu 12.04 you can install this
 using:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install whois
 
@@ -17,6 +17,6 @@ It is pretty weird that it comes with the whois package though...
 
 And then run
 
-.. code:: bash
+.. code-block:: bash
 
     mkpasswd -m sha-512

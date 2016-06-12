@@ -18,13 +18,13 @@ multiple protocols using npn and haproxy.
 Previously my article called for using the following section of configuration
 at the end of the bind line.
 
-.. code::
+.. code-block:: none
 
     npn spdy/2
 
 To advertise HTTP protocols as well as SPDY you simply need to add them to the
 npn list, using commas as a delimiter.
 
-.. code::
+.. code-block:: none
 
     npn spdy/2,http/1.1

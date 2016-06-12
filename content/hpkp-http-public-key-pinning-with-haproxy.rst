@@ -40,20 +40,20 @@ Extracting the public key information
 
 These commands will extract the public key information and encode it in base64.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl rsa -in KEYFILE -outform der -pubout | openssl dgst -sha256 -binary | base64
 
 The above command will extract the public key from a private key generated with
 `openssl genrsa`, you can replace rsa with dsa for DSA keys.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl req -in CSRFILE -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | base64
 
 The above command will extract the public key from a CSR.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl x509 -in PEMFILE -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | base64
 
@@ -74,7 +74,7 @@ The backup key is actually really simple, you make any number of backups and
 store them for future use in case of problems or emergencies with the primary
 key file.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl genrsa -out backup1.key 4096
 

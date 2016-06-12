@@ -38,7 +38,7 @@ You will need to give the nagios user sudo privileges to run these
 scripts, making sure that you only allow a passwordless sudo to the
 scripts you want to use
 
-.. code:: bash
+.. code-block:: bash
 
     nagios ALL=(ALL)
     NOPASSWD:/usr/lib/nagios/plugins/check_rabbitmq_queue_length

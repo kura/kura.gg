@@ -32,14 +32,14 @@ Next you need nginx compiled with realip module -
 On Ubuntu/Debian servers this module comes by default, otherwise you may
 have to compile it in yourself using the following option:
 
-.. code:: bash
+.. code-block:: bash
 
     --with-http_realip_module
 
 Once this is all done modify your nginx vhosts and add the following 2
 lines
 
-.. code:: nginx
+.. code-block:: nginx
 
     set_real_ip_from [IP];
     real_ip_header X-Forwarded-For;

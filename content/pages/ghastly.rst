@@ -5,7 +5,7 @@ Ghastly - A theme for Pelican
 :slug: ghastly
 
 .. figure:: /images/gastly.png
-    :alt: Gastly, the Ghost Pokemon
+    :alt: Gastly, the Ghost Pokémon
 
     (Image by `Raiba-art <http://raiba-art.deviantart.com/art/Gastly-294533100>`__)
 
@@ -23,7 +23,7 @@ Ghastly is based heavily off of Casper, the default theme for
 
 
 It's name is derived from the D&D monster, the Ghast and Gastly, the
-Pokemon.
+Pokémon.
 
 
 Features
@@ -95,7 +95,7 @@ Requirements
 - cssmin
 - pelican webassets from `pelican-plugins <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__
 
-.. code:: bash
+.. code-block:: bash
 
     pip install pelican webassets cssmin
 
@@ -109,7 +109,7 @@ can find installation instructions for themes in the `pelican documentation
 Configuration
 =============
 
-.. code:: python
+.. code-block:: python
 
     THEME = 'ghastly'
     DIRECT_TEMPLATES = (('index', 'archives', '404'))

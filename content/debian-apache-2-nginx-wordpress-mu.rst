@@ -82,7 +82,7 @@ simple, I have Apache 2 running bound to 1 IP and nginx bound to
 another, I simply created a new vhost for nginx and filled it with the
 lovely data needed as shown below.
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         listen 174.143.241.61:80;

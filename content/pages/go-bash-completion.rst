@@ -28,7 +28,7 @@ apt.kura.io
 Follow instructions on enabling `apt.kura.io </apt.kura.io/>`__
 repository and then run the following command to install the package.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install go-bash-completion
 
@@ -37,14 +37,14 @@ Install manually
 
 Download the source file from above and run the commands below.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo make install
     . ~/bashrc
 
 Or you can do it the lazy way
 
-.. code:: bash
+.. code-block:: bash
 
     sudo wget https://raw.github.com/kura/go-bash-completion/master/etc/bash_completion.d/go -O /etc/bash_completion.d/go
     . ~/bashrc
@@ -55,14 +55,14 @@ OS X
 With `homebrew <http://brew.sh/>`_ you can install the
  `go-completion` recipe to use this plugin
 
-.. code:: bash
+.. code-block:: bash
 
     brew tap homebrew/completions
     brew install go-completion
 
 then add the following lines to your ~/.bashrc
 
-.. code:: bash
+.. code-block:: bash
 
     if [ -f `brew --prefix`/etc/bash_completion.d/go ]; then
         source `brew --prefix`/etc/bash_completion.d/go

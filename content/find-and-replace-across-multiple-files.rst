@@ -9,12 +9,12 @@ Find and replace across multiple files
 I needed to quickly modify 500 hundred XML files, each was about 10MB in
 size, thankfully Linux makes that pretty fast and very easy.
 
-.. code:: bash
+.. code-block:: bash
 
     find . -name "*.xml" -print | xargs sed -i 's/FROM/TO/g'
 
 A semi "real world" example:
 
-.. code:: bash
+.. code-block:: bash
 
     find . -name "*.xml" -print | xargs sed -i 's/foo/bar/g'

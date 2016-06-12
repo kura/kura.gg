@@ -12,7 +12,7 @@ from PyPI for new packages and new package version releases.
 Search interface
 ----------------
 
-.. code:: python
+.. code-block:: python
 
     >>> import yarg
     >>> package = yarg.get("yarg")
@@ -24,7 +24,7 @@ Search interface
 Newest packages interface
 -------------------------
 
-.. code:: python
+.. code-block:: python
 
     >>> import yarg
     >>> packages = yarg.newest_packages()
@@ -38,7 +38,7 @@ Newest packages interface
 Updated packages interface
 --------------------------
 
-.. code:: python
+.. code-block:: python
 
     >>> import yarg
     >>> packages = yarg.latest_updated_packages()

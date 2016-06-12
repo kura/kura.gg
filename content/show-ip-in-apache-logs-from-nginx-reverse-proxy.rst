@@ -13,7 +13,7 @@ proxied to Apache through nginx.
 You need the rpaf module for Apache, on Debian and Ubuntu this is simple
 to install
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install libapache2-mod-rpaf
     sudo a2enmod rpaf
@@ -30,13 +30,13 @@ Once installed you simple need to be sure to pass the correct headers
 through, so open up one of your nginx site configuration files and add
 the following within the server definition.
 
-.. code:: nginx
+.. code-block:: nginx
 
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
 So you should have something that looks like this, but without the "... snip ..."
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
         # ...snip...

@@ -17,7 +17,7 @@ SpamAssassin
 
 First off we'll get SpamAssassin installed and configured.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install spamassassin
 
@@ -29,7 +29,7 @@ so we'll need to make some changes.
 
 We'll add a group called **spamd** with GID**5001**.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo groupadd -g 5001 spamd
 
@@ -37,27 +37,27 @@ Next we add a user spamd with UID **5001** and add it to the spamd
 group, as well as set it's home directory as **/var/lib/spamassassin**
 and make sure it has no shell access or SSH access.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo useradd -u 5001 -g spamd -s /usr/sbin/nologin -d /var/lib/spamassassin spamd
 
 Now we make that users home directory.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mkdir /var/lib/spamassassin
 
 And finally change the permissions of that directory so the spamd user
 can write there.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo chown spamd:spamd /var/lib/spamassassin
 
 Next up we have to enabled the daemon and configure it. Open up
 **/etc/default/spamassassin** and make the following changes.
 
-.. code:: bash
+.. code-block:: bash
 
     ENABLED=1
     CRON=1
@@ -65,7 +65,7 @@ Next up we have to enabled the daemon and configure it. Open up
 This will actually allow the spamassassin daemon to start. We also need
 to configure it's new home directory and more.
 
-.. code:: bash
+.. code-block:: bash
 
     SAHOME="/var/lib/spamassassin/"
     OPTIONS="--create-prefs --max-children 5 --username spamd --helper-home-dir ${SAHOME} -s /var/log/spamd.log"
@@ -95,7 +95,7 @@ it, we'll configure that later. Now on to...
 ClamAV
 ------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install clamsmtp clamav-freshclam
 
@@ -119,13 +119,13 @@ Now we move on to...
 Procmail
 --------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install procmail
 
 Now we need to create **/etc/procmailrc** and add the following to it
 
-.. code:: bash
+.. code-block:: bash
 
     DROPPRIVS=YES
     ORGMAIL=$HOME/Maildir
@@ -196,7 +196,7 @@ These changes tell Postfix to talk to ClamAV and SpamAssassin.
 Finally
 -------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/spamassassin restart
     sudo /etc/init.d/clamsmtp restart

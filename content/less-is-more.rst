@@ -23,7 +23,7 @@ now, and unlike more it actually has the ability to do backwards and
 forwards scrolling with Page Up, Page Down, arrow keys and spacebar.
 It's a fantastic little command!
 
-.. code:: bash
+.. code-block:: bash
 
     less FILE
 

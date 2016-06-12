@@ -42,16 +42,16 @@ dhparam
 It's a good idea to generate a set of DH parameters with a prime that is larger than the RSA key being used.
 For me that's 4096 so to generate this I use:
 
-.. code:: bash
+.. code-block:: bash
 
     openssl dhparam 4096
 
 Once generated it gets appended to our PEM chain.
 
-.. code::
+.. code-block:: none
 
     -----BEGIN CERTIFICATE-----
-    -----END CERTIFICATE----- 
+    -----END CERTIFICATE-----
     -----BEGIN RSA PRIVATE KEY-----
     -----END RSA PRIVATE KEY-----
     -----BEGIN CERTIFICATE----- # intermediate cert
@@ -70,7 +70,7 @@ if AESGCM isn't supported by the browser (at time of writing, it's only
 support by Chrome 32) it will fall back to ECDH+AES256 or DH+AES256 or fall
 further back to ECDH+AES128 or DH+AES.
 
-.. code::
+.. code-block:: none
 
     ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:HIGH:!aNULL:!eNULL:!EXPORT:!MD5:!DSS:!DES:!3DES:!RC4:!PSK
 
@@ -100,7 +100,7 @@ telling my browser it should only access this website via a secure method, this
 is done by simply providing an STS header as shown below.
 
 
-.. code::
+.. code-block:: none
 
     Strict-Transport-Security: max-age=15768000
 
@@ -126,4 +126,3 @@ More information
 
 - `Hynek's article <https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/>`__
 - `Mozilla Security/Server Side TLS article <https://wiki.mozilla.org/Security/Server_Side_TLS>`__
-

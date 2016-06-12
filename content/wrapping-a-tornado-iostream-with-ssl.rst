@@ -27,7 +27,7 @@ connection is to the encrypted or unencrypted socket.
 Code
 ====
 
-.. code:: python
+.. code-block:: python
 
     def connection_stream(connection):
         """
@@ -62,7 +62,7 @@ So let's explain a little bit how this works.
 if connection.getsockname...
 ============================
 
-.. code:: python
+.. code-block:: python
 
     if connection.getsockname()[1] == options.ssl_port and options.ssl:
 
@@ -75,7 +75,7 @@ SSL/TLS is turned on.
 1st try... except...
 ====================
 
-.. code:: python
+.. code-block:: python
 
     try:
         ssl_connection = ssl.wrap_socket(connection, **sslkwargs)
@@ -90,7 +90,7 @@ SSL/TLS is turned on.
 The first try/except group will attemp to wrap the socket using Python's
 built-in SSL.
 
-.. code:: python
+.. code-block:: python
 
     ssl_connection = ssl.wrap_socket(connection, **sslkwargs)
 
@@ -102,7 +102,7 @@ to reach the else (I may be wrong on this point though...).
 2nd try... except...
 ====================
 
-.. code:: python
+.. code-block:: python
 
     # Do a nasty blanket Exception until SSL exceptions are fully known
     try:
@@ -119,7 +119,7 @@ raised, logged and the connection will be close.
 else
 ====
 
-.. code:: python
+.. code-block:: python
 
     else:
         return iostream.IOStream(connection)

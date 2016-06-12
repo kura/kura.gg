@@ -31,7 +31,7 @@ full copy from `here`_.
 
 .. _here: /files/2011/09/server.txt
 
-.. code:: nginx
+.. code-block:: nginx
 
     server {
       listen 80;

@@ -22,7 +22,7 @@ script I've always used distutils' scripts, this can be seen `in blackhole's
 setup.py on GitHub <https://github.com/kura/blackhole/blob/05c6647aeb25ecfcc17d9df535db330a68016a24/setup.py#L37-L39>`_
 or in the three line example below.
 
-.. code:: python
+.. code-block:: python
 
       scripts=[
           'blackhole/bin/blackhole',
@@ -41,7 +41,7 @@ option and also make it's new entry point as testable as possible.
 setup.py entry_point change
 ---------------------------
 
-.. code:: python
+.. code-block:: python
 
     entry_points = {
         'console_scripts': [
@@ -75,7 +75,7 @@ parts.
 
 For example the `run` method is below.
 
-.. code:: python
+.. code-block:: python
 
     def run():
         """
@@ -128,7 +128,7 @@ from the socket library.
 After playing with Mock, I decided I would actually write tests for this piece
 of functionality and thankfully Mock made it insanely simple.
 
-.. code:: python
+.. code-block:: python
 
     class TestMailNameFile(unittest.TestCase):
         check_value = "file.blackhole.io"
@@ -156,7 +156,7 @@ Python 3 the `open` method was moved from `__builtin__.open` to `builtins.open`.
 As such I have to attempt to run the Python 2.X version of the code and fallback
 to Python 3.X version if the import fails.
 
-.. code:: python
+.. code-block:: python
 
     class TestMailNameSocket(unittest.TestCase):
         check_value = "socket.blackhole.io"
@@ -188,7 +188,7 @@ With Mock I am able to to mock `sys.stdout` and have it write the output to
 `StringIO` instead, so I can test the contents of `StringIO` and confirm they
 match what I expect them to be.
 
-.. code:: python
+.. code-block:: python
 
     class TestSetOptionsDebug(unittest.TestCase):
 
@@ -232,7 +232,7 @@ Thankfully Mock allows you to mock calls and confirm that they have indeed been
 called, for example the stop method calls `sys.exit`, so I can confirm that this
 call has actually been made.
 
-.. code:: python
+.. code-block:: python
 
     class TestDaemonStop(unittest.TestCase):
 

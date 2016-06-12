@@ -12,13 +12,13 @@ Refresh Linux partition table online
 If the device is not mounted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     sudo blockdev --rereadpt DEVICE
 
 E.g.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo blockdev --rereadpt /dev/sda
 
@@ -27,7 +27,7 @@ If the device is mounted
 
 Parted is awesome and does this job amazingly.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install parted
     sudo partprobe

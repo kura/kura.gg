@@ -16,7 +16,7 @@ from PyPI for new packages and new package version releases.
 Search interface
 ----------------
 
-.. code:: python
+.. code-block:: python
 
     >>> import yarg
     >>> package = yarg.get("yarg")

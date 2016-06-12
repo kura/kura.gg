@@ -29,7 +29,7 @@ Getting started
 
 Lets start off by installing the dk-filter
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install dk-filter
 
@@ -37,7 +37,7 @@ Once installed you can can create a public and private key set using the
 commands below, if you're already using DKIM you can skip this step and
 just use your already existing key.
 
-.. code:: bash
+.. code-block:: bash
 
     openssl genrsa -out private.key 1024
     openssl rsa -in private.key -out public.key -pubout -outform PEM
@@ -52,7 +52,7 @@ Open the following file
 
 You should see something like this
 
-.. code:: bash
+.. code-block:: bash
 
     # Sane defaults: log to syslog
     DAEMON_OPTS="-l"
@@ -71,7 +71,7 @@ You should see something like this
 You will need to modify the DAEMON_OPTS, changing the domain (-d), key
 file and location (-s) and selector (-S), an example is below
 
-.. code:: bash
+.. code-block:: bash
 
     # Sane defaults: log to syslog
     DAEMON_OPTS="-l"
@@ -95,7 +95,7 @@ On Debian Sid I had problems with DAEMON_OPTS, for some reason the
 second DAEMON_OPTS was not overwriting and including the first, so I
 modified it to look like this
 
-.. code:: bash
+.. code-block:: bash
 
     # Sane defaults: log to syslog
     #DAEMON_OPTS="-l"
@@ -109,7 +109,7 @@ this issue for me.
 
 Now that dk-filter is configured, we can start it
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/dk-filter start
 
@@ -177,7 +177,7 @@ Becomes
 
 Now we simply reload the Postfix config with
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/postfix reload
 

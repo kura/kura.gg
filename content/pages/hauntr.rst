@@ -3,7 +3,7 @@ Hauntr - A theme for Pelican
 :slug: hauntr
 
 .. figure:: /images/haunter.png
-    :alt: Haunter, the evolved Pokemon form of Gastly
+    :alt: Haunter, the evolved Pokémon form of Gastly
 
     (Image by `Kawiku <http://kawiku.deviantart.com/art/Haunter-350580512>`__)
 
@@ -16,7 +16,7 @@ Introduction
 Hauntr is a minimal, lightweight and clean theme for the
 `Pelican <http://getpelican.com>`__ blogging platform.
 
-It is named after the Pokemon 'Haunter' because it is a modified version
+It is named after the Pokémon 'Haunter' because it is a modified version
 (you might say evolved) of my previous theme, `Ghastly
 </ghastly/>`__.
 
@@ -66,7 +66,7 @@ Requirements
 - cssmin
 - pelican webassets from `pelican-plugins <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__
 
-.. code:: bash
+.. code-block:: bash
 
     pip install pelican webassets cssmin
 
@@ -80,7 +80,7 @@ can find installation instructions for themes in the `pelican documentation
 Configuration
 =============
 
-.. code:: python
+.. code-block:: python
 
     THEME = 'hauntr'
     DIRECT_TEMPLATES = (('index', 'archives', '404'))

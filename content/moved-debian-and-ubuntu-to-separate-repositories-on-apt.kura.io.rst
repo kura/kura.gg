@@ -25,13 +25,13 @@ reconfigure their APT settings.
 Debian
 ------
 
-.. code::
+.. code-block:: none
 
     sudo sed -i 's/apt.kura.io\//apt.kura.io\/debian\//g' /etc/apt/sources.list.d/apt.kura.io.list
 
 Ubuntu
 ------
 
-.. code::
+.. code-block:: none
 
     sudo sed -i 's/apt.kura.io\//apt.kura.io\/ubuntu\//g' /etc/apt/sources.list.d/apt.kura.io.list

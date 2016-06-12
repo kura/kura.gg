@@ -12,7 +12,7 @@ host these in my own apt repository, so I did.
 
 You can enable this by adding it to your apt config.
 
-.. code:: bash
+.. code-block:: bash
 
     wget -qO - http://apt.kura.io/apt.kura.io.key | sudo apt-key add -
     echo "deb http://apt.kura.io/ `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/apt.kura.io.list

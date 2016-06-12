@@ -21,7 +21,7 @@ Detecting the new SCSI drive and partitioning it
 
 This bit is simple, I'm going to assume you're logged in as root.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo echo "- - -" > /sys/class/scsi_host/**host0**/scan && fdisk -l
 
@@ -29,7 +29,7 @@ If host0 doesn't work, try changing to host1, host2 etc.
 
 Now we need to format the drive, for me it was /dev/sdb.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo cfdisk /dev/sdb
 
@@ -42,7 +42,7 @@ Adding swap
 Next we simply add the swap space to the machine and enable it, for me
 it was /dev/sdb5
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mkswap /dev/sdb5
     sudo swapon /dev/sdb5

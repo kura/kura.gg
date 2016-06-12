@@ -30,7 +30,7 @@ The first thing I had to do was refactor the code that created the
 instance of `tornado.iostream.IOStream` and `tornado.iostream.SSLIOStream`
 so that it didn't actually do the ssl wrapping.
 
-.. code:: python
+.. code-block:: python
 
     def connection_stream(connection):
         """
@@ -52,7 +52,7 @@ ssl_connection
 In doing so I added another method that actually created an instance of
 `tornado.iostream.SSLIOStream`.
 
-.. code:: python
+.. code-block:: python
 
     def ssl_connection(connection):
         try:
@@ -80,7 +80,7 @@ Broken file descriptors
 
 Tornado would error out when `STARTTLS` was called with the following error
 
-.. code:: python
+.. code-block:: python
 
     Exception in callback <functools.partial object at 0x26d8260>
         Traceback (most recent call last):
@@ -128,7 +128,7 @@ me in the right direction.
 In the end the simple fix was to modify the instance of `tornado.ioloop.IOLoop` during run time
 and removed the original instance of `IOStream` from it.
 
-.. code:: python
+.. code-block:: python
 
     if line.lower().startswith("starttls"):
         fileno = mail_state.stream.socket.fileno()
@@ -140,7 +140,7 @@ connection_ready
 
 You can see this at work in the final version of the connect_ready method.
 
-.. code:: python
+.. code-block:: python
 
     def connection_ready(sock, fd, events):
         """

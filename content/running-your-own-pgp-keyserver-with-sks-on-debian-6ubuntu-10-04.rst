@@ -14,32 +14,32 @@ Installation
 
 To install we need to run the following command:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install -y sks
 
 Now we build the key database:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo sks build
 
 And change the permissions for the sks user:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo chown -R debian-sks:debian-sks /var/lib/sks/DB
 
 Next we need to make sks start from init, open up **/etc/default/sks**
 in your favourite editor and ***initstart*** to look like below:
 
-.. code:: bash
+.. code-block:: bash
 
     initstart=yes
 
 Now we can start the service with:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/sks start
 
@@ -50,20 +50,20 @@ Web interface
 
 We'll need to create a web folder within sks with the following command:
 
-.. code:: bash
+.. code-block:: bash
 
     sudo mkdir -p /var/lib/sks/www/
 
 Change it's permissions so the sks user can access it.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo chown -R debian-sks:debian-sks /var/lib/sks/www
 
 And finally we need create a single HTML file for the interface, I have
 provided that too.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo wget /files/sks-index.html -O /var/lib/sks/www/index.html
 

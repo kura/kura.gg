@@ -16,7 +16,7 @@ I'll warn you all now, this is a long article.
 SSL
 ===
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo openssl genrsa -out /etc/ssl/private/mail.key 4096
     sudo openssl req -new -key /etc/ssl/private/mail.key -out /tmp/mail.csr
@@ -25,7 +25,7 @@ SSL
 MySQL
 =====
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install mysql-server
 
@@ -34,26 +34,26 @@ just come up with something nice and secure.
 
 The first thing to set-up will be the MySQL database and schema.
 
-.. code:: bash
+.. code-block:: none bash
 
     mysql -u root -p
 
 Next up, create the database.
 
-.. code:: sql
+.. code-block:: none sql
 
      CREATE DATABASE mailserver CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 And grant some privileges, you'll need to set a password yourself.
 
-.. code:: sql
+.. code-block:: none sql
 
     GRANT ALL PRIVILEGES ON mailserver.* TO 'mailuser'@'localhost' IDENTIFIED BY '<PASSWORD_HERE>';
     FLUSH PRIVILEGES;
 
 Next, set up the schema.
 
-.. code:: sql
+.. code-block:: none sql
 
     CREATE TABLE `virtual_domains` (
         `id` int(11) NOT NULL auto_increment,
@@ -82,7 +82,7 @@ Next, set up the schema.
 
 Finally, add a domain name, user and alias.
 
-.. code:: sql
+.. code-block:: none sql
 
     INSERT INTO virtual_domains (name) VALUES ('example.com');
     INSERT INTO virtual_users (domain_id, password, email) VALUES (1, ENCRYPT('<PASSWORD_HERE>', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), 'user@example.com');
@@ -90,14 +90,14 @@ Finally, add a domain name, user and alias.
 
 Drop back to the Bash prompt using `CTRL-D` or with
 
-.. code::
+.. code-block:: none
 
     EXIT
 
 Postfix
 =======
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install postfix postfix-mysql postfix-policyd-spf-python
 
@@ -106,14 +106,14 @@ also be prompted for a mail name, I'll be using `mail.example.com`.
 
 Back up the original `main.cf` and `master.cf` for Postfix.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo mv /etc/postfix/main.cf{,.orig}
     sudo mv /etc/postfix/master.cf{,.org}
 
 Create a new `/etc/postfix/main.cf` with the content below.
 
-.. code::
+.. code-block:: none
 
     smtpd_banner = $myhostname ESMTP
     biff = no
@@ -183,7 +183,7 @@ Create a new `/etc/postfix/main.cf` with the content below.
 
 Create a new `/etc/postfix/master.cf` and make it look like below.
 
-.. code::
+.. code-block:: none
 
     smtp      inet  n       -       -       -       -       smtpd
         -o strict_rfc821_envelopes=yes
@@ -256,7 +256,7 @@ Next you'll create the config files to query MySQL.
 
 Create `/etc/postfix/mysql-virtual-mailbox-domains.cf` with the content below.
 
-.. code::
+.. code-block:: none
 
     user = mailuser
     password = <MYSQL_PASSWORD>
@@ -266,7 +266,7 @@ Create `/etc/postfix/mysql-virtual-mailbox-domains.cf` with the content below.
 
 Create `/etc/postfix/mysql-virtual-mailbox-maps.cf` with the content below.
 
-.. code::
+.. code-block:: none
 
     user = mailuser
     password = <MYSQL_PASSWORD>
@@ -276,7 +276,7 @@ Create `/etc/postfix/mysql-virtual-mailbox-maps.cf` with the content below.
 
 Create `/etc/postfix/mysql-virtual-alias-maps.cf` with the content below.
 
-.. code::
+.. code-block:: none
 
     user = mailuser
     password = <MYSQL_PASSWORD>
@@ -286,7 +286,7 @@ Create `/etc/postfix/mysql-virtual-alias-maps.cf` with the content below.
 
 Reload Postfix and test that the domain and users work.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo /etc/init.d/postfix reload
     postmap -q example.com mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
@@ -295,7 +295,7 @@ Reload Postfix and test that the domain and users work.
 
 You should see output similar to below
 
-.. code::
+.. code-block:: none
 
     1
     1
@@ -304,13 +304,13 @@ You should see output similar to below
 Dovecot
 =======
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install dovecot-core dovecot-imapd dovecot-lmtpd dovecot-mysql
 
 Backup the default Dovecot config files.
 
-.. code::
+.. code-block:: none
 
     sudo cp /etc/dovecot/dovecot.conf{,.orig}
     sudo cp /etc/dovecot/conf.d/10-mail.conf{,.orig}
@@ -322,13 +322,13 @@ Backup the default Dovecot config files.
 For each domain you want to serve mail for, you will need to create a
 directory for it to be stored in.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo mkdir -p /var/mail/vhosts/example.com
 
 Add a user and group for the mail and give permissions on the mail directory.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo groupadd -g 5000 vmail
     sudo useradd -g vmail -u 5000 vmail -d /var/mail
@@ -336,14 +336,14 @@ Add a user and group for the mail and give permissions on the mail directory.
 
 Modify the line in `/etc/dovecot/dovecot.conf` so it looks like below.
 
-.. code::
+.. code-block:: none
 
     !include_try /usr/share/dovecot/protocols.d/*.protocol
     protocols = imap lmtp
 
 Modify `/etc/dovecot/dovecot.conf` so it has the following lines.
 
-.. code::
+.. code-block:: none
 
     mail_location = maildir:/var/mail/vhosts/%d/%n
     mail_privileged_group = mail
@@ -352,19 +352,19 @@ Edit `/etc/dovecot/conf.d/10-auth.conf`.
 
 You'll need to uncomment the following line.
 
-.. code::
+.. code-block:: none
 
     disable_plaintext_auth = yes
 
 Set `auth_mechanisms` to look like below
 
-.. code::
+.. code-block:: none
 
     auth_mechanisms = plain login
 
 Next up, make sure the include lines look like below.
 
-.. code::
+.. code-block:: none
 
     #!include auth-system.conf.ext
     !include auth-sql.conf.ext
@@ -376,7 +376,7 @@ Next up, make sure the include lines look like below.
 
 Create `/etc/dovecot/conf.d/auth-sql.conf.ext` and add the content below.
 
-.. code::
+.. code-block:: none
 
     passdb {
         driver = sql
@@ -390,7 +390,7 @@ Create `/etc/dovecot/conf.d/auth-sql.conf.ext` and add the content below.
 
 Edit `/etc/dovecot/dovecot-sql.conf.ext` and set the following values.
 
-.. code::
+.. code-block:: none
 
     driver = mysql
     connect = host=127.0.0.1 dbname=mailserver user=mailuser password=<PASSWORD>
@@ -399,7 +399,7 @@ Edit `/etc/dovecot/dovecot-sql.conf.ext` and set the following values.
 
 Add the following content to `/etc/dovecot/conf.d/10-master.conf`
 
-.. code::
+.. code-block:: none
 
     service imap-login {
         inet_listener imaps {
@@ -435,7 +435,7 @@ Add the following content to `/etc/dovecot/conf.d/10-master.conf`
 
 Modify `/etc/dovecot/conf.d/10-ssl.conf` to have the following lines.
 
-.. code::
+.. code-block:: none
 
     ssl_cert = </etc/ssl/certs/mail.crt
     ssl_key = </etc/ssl/private/mail.key
@@ -444,7 +444,7 @@ Modify `/etc/dovecot/conf.d/10-ssl.conf` to have the following lines.
 For fulltext searching, you'll want to enable wheezy-backports and install
 `dovecot-solr` from there.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo echo "deb http://ftp.debian.org/debian wheezy-backports main contrib non-free" >> /etc/apt/sources.list
     sudo apt-get update
@@ -456,14 +456,14 @@ you'll have to do it by downloading `orig.tar.gz` from `the Debian website
 
 Extract the archive and copy the included schema in to Solr.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo cp docs/solr-schema.xml /etc/solr/conf/schema.xml
 
 For security reasons, modify `/etc/tomcat6/server.xml` to have the local address
 in the Connectory.
 
-.. code:: xml
+.. code-block:: none xml
 
     <Connector address="127.0.0.1" port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
@@ -472,13 +472,13 @@ in the Connectory.
 
 Modify `/etc/dovecot/conf.d/20-imap.conf` to have the following line.
 
-.. code::
+.. code-block:: none
 
     mail_plugins = $mail_plugins fts fts_solr
 
 Next up, add the following lines to `/etc/dovecot/conf.d/90-plugin.conf`
 
-.. code::
+.. code-block:: none
 
     plugin {
         fts = solr
@@ -487,21 +487,21 @@ Next up, add the following lines to `/etc/dovecot/conf.d/90-plugin.conf`
 
 Create `/etc/cron.daily/solr` with the following contents.
 
-.. code:: bash
+.. code-block:: none bash
 
     #!/bin/sh
     curl http://localhost:8080/solr/update?optimize=true
 
 Create `/etc/cron.hourly/solr` with the following contents.
 
-.. code:: bash
+.. code-block:: none bash
 
     #!/bin/sh
     curl http://localhost:8080/solr/update?commit=true
 
 Make both files executable.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo chmod +x /etc/cron.daily/solr /etc/cron.hourly/solr
 
@@ -511,7 +511,7 @@ things fast.
 
 That's all for Dovecot and Solr, so restart them.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo /etc/init.d/dovecot restart
     sudo /etc/init.d/tomcat6 restart
@@ -519,33 +519,33 @@ That's all for Dovecot and Solr, so restart them.
 ClamAV and SpamAssassin milters
 ===============================
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install clamav-milter clamav-unofficial-sigs spamass-milter
 
 You'll likely get an error when installing these, don't worry.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo freshclam
     sudo /etc/init.d/clamav-daemon start
 
 Uncomment the last line in `/etc/default/clamav-milter`.
 
-.. code::
+.. code-block:: none
 
     SOCKET_RWGROUP=postfix
 
 Now create somewhere for the clamav-milter socket to reside.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo mkdir /var/spool/postfix/clamav
     sudo chown clamav /var/spool/postfix/clamav
 
 Edit `/etc/clamav/clamav-milter.conf` to look like below.
 
-.. code::
+.. code-block:: none
 
     MilterSocket /var/spool/postfix/clamav/clamav-milter.ctl
     FixStaleSocket true
@@ -578,20 +578,20 @@ Edit `/etc/clamav/clamav-milter.conf` to look like below.
 
 Edit `/etc/default/spamass-milter` and add the following line.
 
-.. code::
+.. code-block:: none
 
     OPTIONS="-u spamass-milter -i 127.0.0.1 -m -r -1 -I"
 
 Edit `/etc/default/spamassassin` to have the following values.
 
-.. code::
+.. code-block:: none
 
     ENABLED=1
     CRON=1
 
 Update SpamAssassin and start the service.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo sa-update
     sudo /etc/init.d/spamassassin start
@@ -599,27 +599,27 @@ Update SpamAssassin and start the service.
 DKIMProxy
 =========
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo apt-get install dkimproxy
 
 Create a private and public keypair.
 
-.. code:: bash
+.. code-block:: none bash
 
     sudo openssl genrsa -out /etc/dkimproxy/private.key 1024
     sudo openssl rsa -in /etc/dkimproxy/private.key -out /etc/dkimproxy/public.key -pubout -outform PEM
 
 Modify `/etc/dkimproxy/dkimproxy_in.conf` to look like below.
 
-.. code::
+.. code-block:: none
 
     listen 127.0.0.1:10025
     relay 27.0.0.1:10026
 
 Modify `/etc/dkimproxy/dkimproxy_out.conf` to look like below.
 
-.. code::
+.. code-block:: none
 
     listen 127.0.0.1:10027
     relay 127.0.0.1:10028
@@ -631,13 +631,13 @@ There seems to be a rather annoying bug where signatures are not modified
 based on the config, I found the easiest way to cheat this is to just modify
 the init.d file for dkimproxy.
 
-.. code:: bash
+.. code-block:: none bash
 
     DKIMPROXY_OUT_ARGS="${COMMON_ARGS} --pidfile=${PIDDKIMPROXY_OUT} --min_servers=${DKIMPROXY_OUT_MIN_SERVERS} --domain=example.com --method=simple --conf_file=${DKOUT_CONF} --keyfile=/etc/dkimproxy/private.key --selector=mail --signature=dkim(a=rsa-sha256) --signature=domainkeys(a=rsa-sha1)"
 
 Finally, restart dkimproxy.
 
-.. code:: bash
+.. code-block:: none bash
 
     /etc/init.d/dkimproxy restart
 
@@ -646,15 +646,15 @@ DNS
 
 All that needs to be done now is to create two three records.
 
-.. code::
+.. code-block:: none
 
     example.com. IN TXT "v=spf1 a mx -all"
 
-.. code::
+.. code-block:: none
 
     _domainkey.example.com. IN TXT "o=-;"
 
-.. code::
+.. code-block:: none
 
     mail._domainkey.example.com. IN TXT "k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGTLLBUsIH..."
 

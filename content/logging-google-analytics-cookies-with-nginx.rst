@@ -22,13 +22,13 @@ format like below
 
 This log format can then be added to your access log like below:
 
-.. code:: nginx
+.. code-block:: nginx
 
     access_log /var/log/nginx/access.example.com.log g-a;
 
 Reload nginx
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/nginx reload
 

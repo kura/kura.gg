@@ -21,7 +21,7 @@ tool.
 Think before implementing this and use at your own risk, I take zero
 responsibility for you using this.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo sysctl vm.panic_on_oom=1
     sudo sysctl kernel.panic=X # X is the amount of seconds to wait before rebooting
@@ -32,7 +32,7 @@ This will inject the changes in to a system that is currently running
 but will be forgotten on reboot so use the lines below to save
 permanently.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo echo "vm.panic_on_oom=1" >> /etc/sysctl.conf
     sudo echo "kernel.panic=X" >> /etc/sysctl.conf
@@ -46,7 +46,7 @@ Testing
 You can test the changes with a simple C program. **Please note if you
 run this you do so at your own risk**.
 
-.. code:: c
+.. code-block:: c
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -75,7 +75,7 @@ You can download the `source here </files/oom.c>`_.
 
 To compile run the command below
 
-.. code:: bash
+.. code-block:: bash
 
     gcc -O2 oom.c -o oom
 
@@ -86,7 +86,7 @@ Usage
 
 And simply run it using
 
-.. code:: bash
+.. code-block:: bash
 
     ./oom
 

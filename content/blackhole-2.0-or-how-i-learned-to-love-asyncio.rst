@@ -99,7 +99,7 @@ on top of asyncio in Python 3.5.
 
 First up I'll show the method that waits for data to be received on the socket.
 
-.. code:: python
+.. code-block:: python3
 
     async def wait(self):
         """
@@ -123,7 +123,7 @@ First up I'll show the method that waits for data to be received on the socket.
 This function waits for data to be received from a client and returns it once
 it's been received.
 
-.. code:: python
+.. code-block:: python3
 
     async def wait(self):
 
@@ -132,14 +132,14 @@ The declaration of this function is different to how you'd write it for Python
 
 The equivalent of this declaration for Python 3.4 is as follows:
 
-.. code:: python
+.. code-block:: python3
 
     @coroutine
     def wait(self):
 
 Both ways declare that the function is an asynchronous coroutine.
 
-.. code:: python
+.. code-block:: python3
 
     while not self.connection_close:
 
@@ -154,7 +154,7 @@ while this method is still waiting for new data.
 
 The ``try except`` block actually works with the while statement.
 
-.. code:: python
+.. code-block:: python3
 
     try:
         line = await asyncio.wait_for(self._reader.readline(),
@@ -175,13 +175,13 @@ sets the event loop that the code executes on.
 
 As a example.
 
-.. code:: python
+.. code-block:: python3
 
     await asyncio.wait_for(self._reader.readline(), 10)
 
 Would wait for data for 10 seconds before raising a timeout error.
 
-.. code:: python
+.. code-block:: python3
 
     except asyncio.TimeoutError:
         await self.timeout()
@@ -193,7 +193,7 @@ timeout exception is raised, part of the code that handles that in the
 
 And finally the data received is returned.
 
-.. code:: python
+.. code-block:: python3
 
     return line
 
@@ -201,7 +201,7 @@ Without going in to too much detail, below is the piece of code for handling
 a timeout and terminating a connection, setting ``connection_closed`` to exit
 all possibly running ``while`` loops.
 
-.. code:: python
+.. code-block:: python3
 
     async def timeout(self):
         """
@@ -242,7 +242,7 @@ expecting it to.
 The original piece of code iterated over each socket object and created an
 asyncio server object for that socket as below.
 
-.. code:: python
+.. code-block:: python3
 
     async def _start(self):
         """Create an asyncio 'server' for each socket."""
@@ -254,7 +254,7 @@ asyncio server object for that socket as below.
 I wanted to change this code to pass in a set of flags that also belonged to
 that specific socket, as below.
 
-.. code:: python
+.. code-block:: python3
 
     async def _start(self):
         """Create an asyncio 'server' for each socket."""
@@ -276,7 +276,7 @@ I'm not sure why that's the case and I never actually looked it up to find out
 why either. I knew the way to fix it was to use ``functools.partial`` and it's
 also a nice, cleaner way to do it so I did.
 
-.. code:: python
+.. code-block:: python3
 
     async def _start(self):
         """Create an asyncio 'server' for each socket."""

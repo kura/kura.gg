@@ -38,7 +38,7 @@ Requires
 Usage
 -----
 
-.. code:: bash
+.. code-block:: bash
 
     python bozo.py HASHES.TXT
 

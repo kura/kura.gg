@@ -40,7 +40,7 @@ lazy, so I decided to just use incron.
 Installation
 ------------
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install inotify incron
 
@@ -67,21 +67,21 @@ incrontab just like you do crontab
 Listing incron tasks
 ~~~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     incrontab -l
 
 Adding/editing tasks
 ~~~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     incrontab -e
 
 Delete all tasks
 ~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     incrontab -r
 
@@ -141,13 +141,13 @@ users home directory.
 
 Open up a second root shell on the system and tail syslog
 
-.. code:: bash
+.. code-block:: bash
 
     sudo tail -f /var/log/syslog
 
 And simply create a random file on the system in /root/
 
-.. code:: bash
+.. code-block:: bash
 
     >test-incron
 

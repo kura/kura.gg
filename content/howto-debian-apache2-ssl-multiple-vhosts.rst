@@ -33,7 +33,7 @@ Replace my IPs with your own.
 
 Restart networking.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo /etc/init.d/networking restart
 
@@ -43,7 +43,7 @@ Next task is Apache 2 to configure it to listen on both IPs.
 
 My changes
 
-.. code:: apache
+.. code-block:: apache
 
     <IfModule mod_ssl.c>
         Listen 10.1.1.7:443
@@ -61,7 +61,7 @@ directives to make things easier to read.
 
 Host 1
 
-.. code:: apache
+.. code-block:: apache
 
     <VirtualHost 10.1.1.7:443>
         ServerName web1.example.com
@@ -70,7 +70,7 @@ Host 1
 
 Host 2
 
-.. code:: apache
+.. code-block:: apache
 
     <VirtualHost 10.1.1.8:443>
         ServerName web2.example.com
@@ -80,7 +80,7 @@ Host 2
 That is a very basic config but I hope it helps you understand how each
 VirtualHost actually works when multiple IPs are used.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apache2ctl configtest
     sudo /etc/init.d/apache2 restart

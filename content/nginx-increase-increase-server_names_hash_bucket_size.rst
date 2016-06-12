@@ -11,7 +11,7 @@ nginx.
 
 I ran the nginx config test, as I usually do before I restart it.
 
-.. code:: bash
+.. code-block:: bash
 
     nginx -t
 
@@ -27,7 +27,7 @@ in length, nginx's default max length.
 
 Thankfully the fix was simple.
 
-.. code:: nginx
+.. code-block:: nginx
 
     http {
         # ...snip...

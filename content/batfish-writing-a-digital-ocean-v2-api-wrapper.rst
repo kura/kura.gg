@@ -26,7 +26,7 @@ much coverage as possible and eaked out all of the bugs. You can find the
 Module interface
 ----------------
 
-.. code:: python
+.. code-block:: python
 
     >>> from batfish import Client
     >>> client = Client()
@@ -38,7 +38,7 @@ Module interface
 CLI interface
 -------------
 
-.. code:: bash
+.. code-block:: bash
 
     $ batfish authorize
     abcde12345
@@ -52,7 +52,7 @@ CLI interface
 Console interface
 -----------------
 
-.. code:: bash
+.. code-block:: bash
 
     batfish> authorize
     abcde12345

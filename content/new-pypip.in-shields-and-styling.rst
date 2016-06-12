@@ -43,6 +43,6 @@ SVG > PNG
 The final change is that by default pypip.in now returns SVG images by default,
 rather than PNG. You can of course get the badge in whatever format you wish.
 
-.. code::
+.. code-block:: none
 
     https://pypip.in/download/<PACKAGE>/badge.<MIMETYPE>

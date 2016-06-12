@@ -57,7 +57,7 @@ Projects
 ========
 
 This list has been cherry picked from the
-`software page <https://kura.io/software/>`__ on my website.
+`software page </software/>`__ on my website.
 
 MAP
 ---
@@ -72,7 +72,7 @@ Tornado, Pika, Celery, Redis and RabbitMQ.
 Yarg
 ----
 
-`/yarg <https://kura.io/yarg/>`__
+`/yarg </yarg/>`__
 
 Yarg is a PyPI client, it was written for pypip.in and can search packages as
 well as read the RSS feeds from PyPI for new packages and new package version
@@ -91,7 +91,7 @@ messages.
 Am I Secure
 -----------
 
-`/amisecure <https://kura.io/amisecure/>`__
+`/amisecure </amisecure/>`__
 
 Am I Secure is a relatively simple Python script that will check some of your
 server configuration and report on security and configuration issues.
@@ -108,7 +108,7 @@ pretty much the defacto shield generator for projects on PyPI.
 Deiman
 ------
 
-`/deiman <https://kura.io/deiman/>`__
+`/deiman </deiman/>`__
 
 Deiman is a Python utility class for daemonizing a process. It has start and
 stop methods as well as a method for retrieving a process status information.
@@ -117,7 +117,7 @@ It can also detect stale PIDs and remove them.
 vagrant-bash-completion
 -----------------------
 
-`/vagrant-bash-completion <https://kura.io/vagrant-bash-completion/>`__
+`/vagrant-bash-completion </vagrant-bash-completion/>`__
 
 Originally a fork of another repository, this completion script was written for
 the developers on a team I worked on at the time. It is now part of Vagrant
@@ -204,6 +204,10 @@ Mostly to make sure it's here in case it's not covered or clear above.
 
 - Python
 - Linux (Debian/Ubuntu)
+- AWS
+- OpenStack
+- VMWare
+- Xen
 - nginx
 - Apache2
 - Haproxy
@@ -216,6 +220,7 @@ Mostly to make sure it's here in case it's not covered or clear above.
 - RabbitMQ
 - Postgres
 - MySQL (sadly)
+- Chef
 - Puppet
 - Salt
 - Ansible

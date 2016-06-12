@@ -24,7 +24,7 @@ apt.kura.io
 Follow instructions on enabling `apt.kura.io </apt.kura.io/>`__
 repository and then run the following command to install the package.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo apt-get install denyhosts-unban
 
@@ -34,7 +34,7 @@ Manual Installation
 Lazy way
 ~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     sudo wget https://raw.github.com/kura/denyhosts-unban/master/usr/sbin/denyhosts-unban -O /usr/sbin/denyhosts-unban
     sudo chmod +x /usr/sbin/denyhosts-unban
@@ -44,7 +44,7 @@ From archive
 
 Download the tar.gz or zip archive from GitHub, extract etc.
 
-.. code:: bash
+.. code-block:: bash
 
     sudo make install
 
