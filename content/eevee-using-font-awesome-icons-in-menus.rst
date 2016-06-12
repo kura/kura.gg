@@ -16,9 +16,9 @@ Eevee -- Using Font Awesome icons in menus
 Introduction
 ============
 
-Eevee is a theme for `Pelican <http://getpelican.com>`_, based on Google's
-`Material Design <https://material.google.com/>`_ specification that I released
-in June 2016.
+`Eevee </eevee/>`__ is a theme for `Pelican <http://getpelican.com>`_, based on
+Google's `Material Design <https://material.google.com/>`_ specification that I
+released in June 2016.
 
 Eevee allows configuring menu links in the header and footer of a template --
 including social links.
