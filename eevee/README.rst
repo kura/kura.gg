@@ -9,12 +9,14 @@ Introduction
 ============
 
 Eevee is a theme for `Pelican <http://getpelican.com>`_, based on Google's
-`Material Design <https://material.google.com/>`_ concept.
+`Material Design <https://material.google.com/>`_ specification.
 
 It is named after the Pokémon `Eevee
-<http://www.pokemon.com/uk/pokedex/eevee>`_ because, like Eeevee it can evolve
-in to many 'elements.' By default the colour scheme is **teal** for the primary
-and **pink** for the accent, both of these colours are configurable.
+<http://www.pokemon.com/uk/pokedex/eevee>`_ because -- like the Pokémon Eevee
+-- it can evolve in to many 'elemental types.'
+
+By default the colour scheme is **blue_grey** for the primary and **pink**
+for the accent, both of these colours are configurable.
 
 Features
 ========
@@ -35,6 +37,10 @@ Features
 
 Typography
 ==========
+
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/eevee-typography.png
+    :alt: Eevee Typography
+    :align: center
 
 Google's `Roboto <https://material.google.com/style/typography.html>`_ font is
 used for typography, `Material Icons <https://design.google.com/icons/>`_ and
@@ -123,7 +129,7 @@ that won't work well with the primary colour you choose.
 
     THEME_ACCENT = 'amber'
 
-The default colour scheme is **deep_purple** and **green**.
+The default colour scheme is **blue_grey** and **pink**.
 
 .. code-block:: python
 
