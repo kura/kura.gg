@@ -2,7 +2,7 @@ Eevee -- A Material Design theme for Pelican
 ############################################
 :date: 2016-06-12 10:25
 :author: kura
-:category: coding
+:category: eevee
 :tags: pelican
 :slug: eevee-a-material-design-theme-for-pelican
 

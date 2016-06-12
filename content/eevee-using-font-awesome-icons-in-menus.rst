@@ -2,7 +2,7 @@ Eevee -- Using Font Awesome icons in menus
 ##########################################
 :date: 2016-06-12 23:40
 :author: kura
-:category: coding
+:category: eevee
 :tags: pelican
 :slug: eevee-using-font-awesome-icons-in-menus
 

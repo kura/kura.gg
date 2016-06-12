@@ -312,6 +312,11 @@ feeds respectively.
 
     FEED_ATOM = 'feeds/atom.xml'
 
+Additional tweaks and modifications
+===================================
+
+Additional things you can tweak and modify are available on `kura.io
+</c/eevee/>`__.
 
 License
 =======
