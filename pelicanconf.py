@@ -7,7 +7,7 @@ SITENAME = 'kura.io'
 SITEURL = 'https://kura.io'
 
 THEME = 'eevee'
-THEME_PRIMARY = 'indigo'
+THEME_PRIMARY = 'deep_purple'
 THEME_ACCENT = 'pink'
 
 TIMEZONE = 'Europe/London'
@@ -28,9 +28,9 @@ DATE_FORMATS = {
 MENUITEMS = (('Contact', '/contact/'), ('Software', '/software/'),
              ('Donate', '/donate/'),
              ('.onion', 'http://omgkuraio276g5wo.onion/'))
-SOCIAL = (('Github', 'https://github.com/kura'),
-          ('Twitter', 'https://twitter.com/kuramanga'),
-          ('Keybase', 'https://keybase.io/kura'))
+SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i> Github', 'https://github.com/kura'),
+          ('<i class="fa fa-twitter aria-hidden="true"></i> Twitter', 'https://twitter.com/kuramanga'),
+          ('<i class="fa fa-key aria-hidden="true"></i> Keybase', 'https://keybase.io/kura'))
 LINKS = (('blackhole.io', 'https://blackhole.io'),
          ('Yarg', 'https://kura.io/yarg'),
          ('Eevee', 'https://kura.io/eevee'),
@@ -68,6 +68,8 @@ EXTRA_PATH_METADATA = {
 }
 
 DIRECT_TEMPLATES = (('index', 'archives', '404'))
+
+TOC_HEADER = False
 
 # Blogroll
 # LINKS = ()

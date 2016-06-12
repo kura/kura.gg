@@ -7,9 +7,11 @@ Running a Tor exit node is not as scary as it sounds
 :slug: running-a-tor-exit-node-is-not-as-scary-as-it-sounds
 
 .. contents::
+    :backlinks: none
 
 There is a variety of information out there about being a Tor exit node
-operator. Articles like `this one <https://testbit.eu/tor-exit-node-less-week/>`_
+operator. Articles like `this one
+<https://testbit.eu/tor-exit-node-less-week/>`_
 make the thought of running a Tor exit as scary prospect, it's understandable,
 some countries have laws that make running an exit scary too.
 

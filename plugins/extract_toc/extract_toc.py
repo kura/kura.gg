@@ -27,7 +27,11 @@ def extract_toc(content):
     if toc:
         toc.extract()
         content._content = soup.decode()
-        content.toc = '\n'.join(toc.decode().split('\n')[2:-1])
+        keep_header = content.settings.get('TOC_HEADER', True)
+        if keep_header is False:
+            content.toc = '\n'.join(toc.decode().split('\n')[2:-1])
+        else:
+            content.toc = toc.decode()
 
 
 def register():

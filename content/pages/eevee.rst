@@ -1,5 +1,5 @@
-Eevee - A Material Design theme for Pelican
-###########################################
+Eevee -- A Material Design theme for Pelican
+############################################
 :slug: eevee
 
 .. image:: /images/eeveelutions.png
@@ -220,7 +220,7 @@ as a variable called ``toc`` in the article or page object.
 
 The `extract_toc
 <https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>`_ adds
-a ``toc`` option for RST content.
+a ``toc`` option for RST and Markdown content.
 
 The extract_toc plugin adds an ugly header element by default, I have a
 modified version `on GitHub
