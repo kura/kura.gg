@@ -15,7 +15,9 @@
     {% include 'partials/feeds.html' %}
     {% include 'partials/facebook.html' %}
     {% include 'partials/twitter.html' %}
-    <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="/favicon.png" sizes="16x16 32x32 48x48 64x64 128x128" type="image/png">
+    <link rel="apple-touch-icon" sizes="16x16 32x32 48x48 64x64 128x128" href="/favicon.png">
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 </head>
 <body>
