@@ -10,12 +10,14 @@ Introduction
 ============
 
 Eevee is a theme for `Pelican <http://getpelican.com>`_, based on Google's
-`Material Design <https://material.google.com/>`_ concept.
+`Material Design <https://material.google.com/>`_ specification.
 
 It is named after the Pokémon `Eevee
-<http://www.pokemon.com/uk/pokedex/eevee>`_ because, like Eeevee it can evolve
-in to many 'elements.' By default the colour scheme is **deep_purple** for the
-primary and **green** for the accent, both of these colours are configurable.
+<http://www.pokemon.com/uk/pokedex/eevee>`_ because -- like the Pokémon Eevee
+-- it can evolve in to many 'elemental types.'
+
+By default the colour scheme is **deep_purple** for the primary and **green**
+for the accent, both of these colours are configurable.
 
 Features
 ========
