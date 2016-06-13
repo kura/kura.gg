@@ -97,6 +97,7 @@ PLUGIN_PATHS = ["plugins/", ]
 PLUGINS = [
     'assets',
     'extract_toc',
+    'lightbox',
     'pelican_fontawesome',
     'pelican_gist',
     'pelican_vimeo',

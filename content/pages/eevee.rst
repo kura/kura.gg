@@ -54,47 +54,54 @@ used for typography, `Material Icons <https://design.google.com/icons/>`_ and
 Screenshots
 ===========
 
-.. figure:: /images/eevee-homepage-thumb.png
+.. lightbox::
+    :thumb: /images/eevee-homepage-thumb.png
+    :large: /images/eevee-homepage.png
     :alt: Homepage
+    :caption: Homepage
     :align: center
-    :target: /images/eevee-homepage.png
 
-    Homepage
-
-.. figure:: /images/eevee-footer-thumb.png
+.. lightbox::
+    :thumb: /images/eevee-footer-thumb.png
+    :large: /images/eevee-footer.png
     :alt: Footer
+    :caption: Footer
     :align: center
-    :target: /images/eevee-footer.png
 
-    Footer
-
-.. figure:: /images/eevee-pagination-thumb.png
+.. lightbox::
+    :thumb: /images/eevee-pagination-thumb.png
+    :large: /images/eevee-pagination.png
     :alt: Pagination
+    :caption: Pagination
     :align: center
-    :target: /images/eevee-pagination.png
 
-    Pagination
-
-.. figure:: /images/eevee-article-header-thumb.png
+.. lightbox::
+    :thumb: /images/eevee-article-header-thumb.png
+    :large: /images/eevee-article-header.png
     :alt: Article header
+    :caption: Article header
     :align: center
-    :target: /images/eevee-article-header.png
 
-    Article header
+.. lightbox::
+    :thumb: /images/eevee-article-header-thumb.png
+    :large: /images/eevee-article-header.png
+    :alt: Article header
+    :caption: Article header
+    :align: center
 
-.. figure:: /images/eevee-disqus-thumb.png
+.. lightbox::
+    :thumb: /images/eevee-disqus-thumb.png
+    :large: /images/eevee-disqus.png
     :alt: Disqus
+    :caption: Disqus
     :align: center
-    :target: /images/eevee-disqus.png
 
-    Disqus
-
-.. figure:: /images/eevee-pygments-thumb.png
+.. lightbox::
+    :thumb: /images/eevee-pygments-thumb.png
+    :large: /images/eevee-pygments.png
     :alt: Pygments
+    :caption: Pygments
     :align: center
-    :target: /images/eevee-pygments.png
-
-    Pygments
 
 Requirements
 ============
