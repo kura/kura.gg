@@ -323,6 +323,7 @@ p.align-center {
     margin-right: 40px;
     margin-bottom: 40px;
     z-index: 900;
+        font-family: 'FiraSans', 'sans-serif' !important;
 }
 
 .lightbox {
