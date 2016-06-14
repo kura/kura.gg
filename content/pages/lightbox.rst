@@ -194,26 +194,28 @@ Basic CSS for Lightbox
 .. code-block:: css
 
     .lightbox {
-    	display: none;
-    	position: fixed;
-    	z-index: 999;
-    	width: 100%;
-    	height: 100%;
-    	text-align: center;
-    	top: 0;
-    	left: 0;
-    	background: rgba(0, 0, 0, 0.8);
+        display: none;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
     }
 
     .lightbox img {
-    	max-width: 98%;
-    	max-height: 90%;
-    	margin-top: 2%;
+        max-width: 98%;
+        max-height: 90%;
+        margin-top: 2%;
     }
 
     .lightbox:target {
-    	outline: none;
-    	display: block;
+        outline: none;
+        display: block;
     }
 
     .lightbox-divider {
