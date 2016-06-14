@@ -95,6 +95,13 @@ projects in your pages.
 
 `/pelican-githubprojects </pelican-githubprojects>`_
 
+Lightbox for Pelican
+--------------------
+
+Lightbox is a pure CSS image 'lightbox' for Pelican.
+
+`/lightbox </lightbox>`_
+
 apt-security
 ------------
 

@@ -6,6 +6,12 @@ Lightbox -- A pure CSS lightbox for Pelican
 :tags: pelican, lightbox, eevee
 :slug: lightbox--a-pure-css-lightbox-for-pelican
 
+.. figure:: /images/lightbox.png
+    :alt: Lightbox
+    :align: center
+
+    Credit: `Kimberly Coles <http://www.kimberlycoles.com/>`_
+
 .. contents::
     :backlinks: none
 

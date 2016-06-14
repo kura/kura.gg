@@ -2,6 +2,12 @@ Lightbox -- A pure CSS lightbox for Pelican
 ###########################################
 :slug: lightbox
 
+.. figure:: /images/lightbox.png
+    :alt: Lightbox
+    :align: center
+
+    Credit: `Kimberly Coles <http://www.kimberlycoles.com/>`_
+
 .. contents::
     :backlinks: none
 
@@ -222,3 +228,15 @@ Basic CSS for Lightbox
 
 You can get a copy of this `basic CSS file from GitHub
 <https://github.com/kura/lightbox/blob/master/lightbox.css>`_.
+
+Source code
+===========
+
+The source code of Lightbox is `hosted on GitHub
+<https://github.com/kura/lightbox/>`__.
+
+License
+=======
+
+Lightbox is released under the `MIT license
+<https://github.com/kura/lightbox/blob/master/LICENSE>`__.
