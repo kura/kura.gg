@@ -75,11 +75,11 @@ Will result in the following HTML.
 .. code-block:: html
 
     <div class="align-left">
-        <a href="#005da263-b70e-4a84-b8c3-e2c989527613">
-            <img src="/images/eevee-article-header-thumb.png" class="align-left" />
+        <a href="#005da263-b70e-4a84-b8c3-e2c989527613" title="(click to view large image)">
+            <img src="/images/eevee-article-header-thumb.png" class="align-left" alt="(click to view large image)" />
         </a>
-        <a class="lightbox" href="#_" id="005da263-b70e-4a84-b8c3-e2c989527613">
-            <img src="/images/eevee-article-header.png" />
+        <a class="lightbox" href="#_" id="005da263-b70e-4a84-b8c3-e2c989527613" title="Click to close">
+            <img src="/images/eevee-article-header.png" alt="Click to close" />
         </a>
     </div>
     <div class="lightbox-divider"></div>
@@ -161,8 +161,8 @@ The large image and the anchor that closes it have the class attribute
 
 .. code-block:: html
 
-    <a href="#_" class="lightbox">
-        <img class="lightbox" />
+    <a href="#_" class="lightbox" title="Click to close">
+        <img class="lightbox" alt="Click to close" />
     </a>
 
 Finally, the parent ``div`` element is closed and a final ``div`` element with
@@ -178,13 +178,13 @@ Putting all elements together, this is how the final HTML will be returned.
 .. code-block:: html
 
     <div class="lightbox-block align-center">
-        <a href="#e17813e9-ba4c-4037-be9a-3b0bb81fa0e5" title="Homepage">
-            <img alt="Homepage" class="align-center" src="/images/eevee-homepage-thumb.png" />
+        <a href="#e17813e9-ba4c-4037-be9a-3b0bb81fa0e5" title="Homepage (click to view large image)">
+            <img alt="Homepage (click to view large image)" class="align-center" src="/images/eevee-homepage-thumb.png" />
         </a>
         <a class="lightbox" href="#_" id="e17813e9-ba4c-4037-be9a-3b0bb81fa0e5" title="Click to close">
             <img alt="Click to close" src="/images/eevee-homepage.png" />
         </a>
-        <p class="align-center">Homepage</p>
+        <p class="align-center">Homepage (click to view large image)</p>
     </div>
     <div class="lightbox-divider"></div>
 
