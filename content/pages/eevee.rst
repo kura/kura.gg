@@ -144,12 +144,13 @@ that won't work well with the primary colour you choose.
 
     THEME_ACCENT = 'amber'
 
-The default colour scheme is **blue_grey** and **pink**.
+By default the colour scheme is :blue-grey:`blue grey` for the primary and
+:pink:`pink` for the accent.
 
 .. code-block:: python
 
-    THEME_PRIMARY = 'deep_purple'
-    THEME_ACCENT = 'green'
+    THEME_PRIMARY = 'blue_grey'
+    THEME_ACCENT = 'pink'
 
 Header and footer options
 =========================
