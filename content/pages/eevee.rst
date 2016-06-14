@@ -19,8 +19,11 @@ It is named after the Pokémon `Eevee
 <http://www.pokemon.com/uk/pokedex/eevee>`_ because -- like the Pokémon Eevee
 -- it can evolve in to many 'elemental types.'
 
-By default the colour scheme is **blue_grey** for the primary and **pink**
-for the accent, both of these colours are configurable.
+.. role:: blue-grey
+.. role:: pink
+
+By default the colour scheme is :blue-grey:`blue grey` for the primary and
+:pink:`pink` for the accent, both of these colours are configurable.
 
 Features
 ========
