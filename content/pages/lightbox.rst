@@ -75,8 +75,8 @@ Will result in the following HTML.
 .. code-block:: html
 
     <div class="align-left">
-        <a href="#005da263-b70e-4a84-b8c3-e2c989527613" title="(click to view large image)">
-            <img src="/images/eevee-article-header-thumb.png" class="align-left" alt="(click to view large image)" />
+        <a href="#005da263-b70e-4a84-b8c3-e2c989527613" title="Click to view large image">
+            <img src="/images/eevee-article-header-thumb.png" class="align-left" alt="Click to view large image" />
         </a>
         <a class="lightbox" href="#_" id="005da263-b70e-4a84-b8c3-e2c989527613" title="Click to close">
             <img src="/images/eevee-article-header.png" alt="Click to close" />
