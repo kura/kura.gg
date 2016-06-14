@@ -54,7 +54,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 blockquote, code, kbd, pre, samp, tt {
     font-family: 'FiraMono', 'monospace', 'serif' !important;
-    letter-spacing: -1px;
 }
 
 pre, code, blockquote {
@@ -64,6 +63,7 @@ pre, code, blockquote {
     padding: 0 0 0 1.6em;
     border-left: #424242 0.4em solid;
     font-size: 14px;
+    letter-spacing: 0px;
 }
 
 table {
@@ -340,7 +340,7 @@ p.align-center {
 
 .lightbox img {
 	max-width: 98%;
-	max-height: 98%;
+	max-height: 90%;
 	margin-top: 2%;
 }
 

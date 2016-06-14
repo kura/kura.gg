@@ -3,7 +3,7 @@ Eevee -- A Material Design theme for Pelican
 :slug: eevee
 
 .. image:: /images/eeveelutions.png
-    :alt: Eevee the Pokémon
+    :alt: Eevee, the Pokémon
     :align: center
 
 .. contents::
