@@ -201,9 +201,13 @@ div.eevee-page-spacer {
     margin: 60px 0 -60px 0;
 }
 
-.eevee-comment {
+div.eevee-comment {
     background-color: #f5f5f5;
     padding: 10px 56px 20px 56px;
+}
+
+div.eevee-comment div.muut {
+    margin-bottom: -26px;
 }
 
 .eevee-spacer {
