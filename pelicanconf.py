@@ -97,7 +97,6 @@ RELATIVE_URLS = True
 PLUGIN_PATHS = ['plugins/', ]
 PLUGINS = [
     'assets',
-    'dropcap',
     'extract_toc',
     'lightbox',
     'pelican_fontawesome',
