@@ -13,8 +13,8 @@ THEME_ACCENT = 'pink'
 TIMEZONE = 'Europe/London'
 
 TWITTER_USERNAME = 'kuramanga'
-# DISQUS_SITENAME = "syslogtv"
-MUUT_SITENAME = 'kura-io'
+DISQUS_SITENAME = "syslogtv"
+# MUUT_SITENAME = 'kura-io'
 
 DISPLAY_PAGES_ON_MENU = False
 
@@ -97,6 +97,7 @@ RELATIVE_URLS = True
 PLUGIN_PATHS = ['plugins/', ]
 PLUGINS = [
     'assets',
+    'dropcap',
     'extract_toc',
     'lightbox',
     'pelican_fontawesome',

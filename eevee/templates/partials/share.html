@@ -37,7 +37,7 @@
                 {% if article %}
                     {% if MUUT_SITENAME or DISQUS_SITENAME %}
                         <li class="social-share__link social-share__link--comment">
-                            <a href="#article-comments">
+                            <a href="#article-comments" title="Discuss '{{ share_title|striptags }}'">
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>
                             </a>
                         </li>
