@@ -56,6 +56,10 @@ Muut site name.
 This will automatically cause Eevee to enable the Muut comment template which
 will styled similarly to how the Disqus comments section is styled.
 
+Please be aware that if ``DISQUS_SITENAME`` and ``MUUT_SITENAME`` are
+configured, Disqus will be prioritized over Muut and therefore only the Disqus
+template will be loaded.
+
 .. lightbox::
     :thumb: /images/eevee-0.0.3-muut-thumb.png
     :large: /images/eevee-0.0.3-muut.png
