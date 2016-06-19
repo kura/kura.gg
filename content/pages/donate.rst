@@ -3,30 +3,24 @@ Donate
 :author: kura
 :slug: donate
 
-If you wish to donate based on my work with Tor, you can also donate using
-`oniontip.com <https://oniontip.com/>`__, distributing your donation between
-relay operators.
+All donations are used to cover the costs of maintaining my Tor nodes and
+the servers that power `blackhole.io <https://blackhole.io/>`_.
 
-:fa:`fa-bitcoin`
-================
-
-::
-
-    1QFWreLid8ZMPqnmJz1R1K2k3sQJFXcer4
-
-Or via `coinbase.com/kura <https://coinbase.com/kura>`__
+You can leave a note or send me a message if you'd like you donation to be used
+for a specific purpose. Also listed below is the Gratipay page for Blackhole,
+donations made on that page will be used solely for the Blackhole service.
 
 :fa:`fa-usd` / :fa:`fa-gbp`
 ===========================
 
-Via `Gratipay (formerly gittip) <https://www.gratipay.com/kura/>`__
+`Gratipay <https://www.gratipay.com/~kura/>`__
+
+You can donate specifically to the Blackhole organisation to ensure the
+donation goes towards maintaining the Blackhole service and nothing else.
+
+`Blackhole Gratipay organisation <https://gratipay.com/blackhole.io/>`__
 
 Digital Ocean (Hosting)
 =======================
 
-`Link <https://www.digitalocean.com/?refcode=d76795840b23>`__
-
-NordVPN (VPN)
-=============
-
-`Link <http://nordvpn.com/?ref=531854a>`__
+`Digital Ocean <https://www.digitalocean.com/?refcode=d76795840b23>`__
