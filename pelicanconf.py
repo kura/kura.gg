@@ -14,7 +14,6 @@ TIMEZONE = 'Europe/London'
 
 TWITTER_USERNAME = 'kuramanga'
 DISQUS_SITENAME = "syslogtv"
-# MUUT_SITENAME = 'kura-io'
 
 DISPLAY_PAGES_ON_MENU = False
 
@@ -58,11 +57,7 @@ MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 SUMMARY_MAX_LENGTH = 150
 
 STATIC_PATHS = ['images', 'files', 'slides', 'extra/robots.txt',
-                'extra/favicon.ico', 'extra/favicon.png',
-                'extra/favicon16.ico', 'extra/favicon16.png',
-                'extra/favicon32.ico', 'extra/favicon32.png',
-                'extra/favicon64.ico', 'extra/favicon64.png',
-                'extra/favicon128.ico', 'extra/favicon128.png', ]
+                'extra/favicon.ico', 'extra/favicon.png', ]
 
 EXTRA_PATH_METADATA = {
     'files': {'path': 'files'},

@@ -15,13 +15,13 @@
     {% include 'partials/feeds.html' %}
     {% include 'partials/facebook.html' %}
     {% include 'partials/twitter.html' %}
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128" type="image/vnd.microsoft.icon">
-    <link rel="icon" href="/favicon.png" sizes="16x16 32x32 48x48 64x64 128x128" type="image/png">
+    <link rel="icon" href="/favicon.png" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/png">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/vnd.microsoft.icon">
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 </head>
 <body>
-    <div class="eevee-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
-       <header class="eevee-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+    <div class="eevee-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-50">
+       <header class="eevee-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-50 mdl-color-text--grey-800">
            <div class="mdl-layout__header-row">
                 <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
                    <h3>
@@ -73,7 +73,7 @@
     </div>
 </body>
 {% assets filters="cssmin", output="css/eevee.%(version)s.css",
-    "css/material.indigo-pink.min.css", "css/fonts.css",
+    "css/material.deep_orange-red.min.css", "css/fonts.css",
     "css/font-awesome.css", "css/material-icons.css", "css/pygments.css",
     "css/eevee.css" %}
     <link rel="stylesheet" href="/{{ ASSET_URL }}" />
