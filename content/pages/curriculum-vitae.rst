@@ -3,6 +3,7 @@ Curriculum Vitae
 :date: 2011-10-20 11:38
 :author: kura
 :slug: curriculum-vitae
+:status: hidden
 
 Contact
 =======
@@ -57,7 +58,7 @@ Projects
 ========
 
 This list has been cherry picked from the
-`software page </software/>`__ on my website.
+`software page <https://kura.io/software/>`__ on my website.
 
 MAP
 ---
@@ -72,7 +73,7 @@ Tornado, Pika, Celery, Redis and RabbitMQ.
 Yarg
 ----
 
-`/yarg </yarg/>`__
+`/yarg <https://kura.io/yarg/>`__
 
 Yarg is a PyPI client, it was written for pypip.in and can search packages as
 well as read the RSS feeds from PyPI for new packages and new package version
@@ -88,10 +89,26 @@ bounce or reject all inbound and outbound email without actually processing or
 storing any of the data. This makes it safe for handling large volumes of email
 messages.
 
+Written to work with Python 3.5 utilising the asyncio standard library modules
+and using the ``async def`` and ``await`` statements. Originally written for
+Python 2.7 and earlier version of Python 3 and PyPy using the Tornado library.
+
+Source `https://github.com/kura/blackhole
+<https://github.com/kura/blackhole>`__
+
+Pelican
+-------
+
+- `Pelican <https://github.com/getpelican/>`__
+- `/themes & plugins <https://kura.io/software/>`__
+
+I am one of the developers of the Pelican static blogging platform. I have also
+authored many plugins and themes for this platform.
+
 Am I Secure
 -----------
 
-`/amisecure </amisecure/>`__
+`/amisecure <https://kura.io/amisecure/>`__
 
 Am I Secure is a relatively simple Python script that will check some of your
 server configuration and report on security and configuration issues.
@@ -99,7 +116,7 @@ server configuration and report on security and configuration issues.
 pypipin
 -------
 
-`https://pypip.in <https://pypip.in/>`__
+`pypipin <https://github.com/badges/pypipins/>`__
 
 pypipin is a SaaS that provides shields for your GitHub repository,
 documentation or website powered by information directly from PyPI. This is
@@ -108,7 +125,7 @@ pretty much the defacto shield generator for projects on PyPI.
 Deiman
 ------
 
-`/deiman </deiman/>`__
+`/deiman <https://kura.io/deiman/>`__
 
 Deiman is a Python utility class for daemonizing a process. It has start and
 stop methods as well as a method for retrieving a process status information.
@@ -117,7 +134,7 @@ It can also detect stale PIDs and remove them.
 vagrant-bash-completion
 -----------------------
 
-`/vagrant-bash-completion </vagrant-bash-completion/>`__
+`/vagrant-bash-completion <https://kura.io/vagrant-bash-completion/>`__
 
 Originally a fork of another repository, this completion script was written for
 the developers on a team I worked on at the time. It is now part of Vagrant

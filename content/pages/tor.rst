@@ -2,6 +2,7 @@ Tor
 ###
 :author: kura
 :slug: tor
+:status: hidden
 
 .. contents::
     :backlinks: none

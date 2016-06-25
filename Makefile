@@ -18,8 +18,8 @@ help:
 	@echo '   make clean          remove the generated files'
 	@echo '   make regenerate     regenerate files upon modification'
 	@echo '   make publish        generate using production settings'
-	@echo '   make startserver    start/restart develop_server.sh'
-	@echo '   make stopserver     stop local server'
+	@echo '   make start          start/restart develop_server.sh'
+	@echo '   make stop           stop local server'
 	@echo '   make rsync          upload the web site via rsync+ssh '
 	@echo ''
 
@@ -34,10 +34,10 @@ clean:
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
-startserver:
+start:
 	$(BASEDIR)/develop_server.sh start
 
-stopserver:
+stop:
 	kill -9 `cat srv.pid`
 	kill -9 `cat pelican.pid`
 	kill -9 `cat srv.pid`

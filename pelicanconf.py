@@ -9,6 +9,8 @@ SITEURL = 'https://kura.io'
 THEME = 'eevee'
 THEME_PRIMARY = 'deep_purple'
 THEME_ACCENT = 'pink'
+USE_TWITTER_CARDS = True
+USE_OPEN_GRAPH = True
 
 TIMEZONE = 'Europe/London'
 
@@ -25,17 +27,18 @@ DATE_FORMATS = {
     'en': DEFAULT_DATE_FORMAT
 }
 
-MENUITEMS = (('Contact', '/contact/'), ('Software', '/software/'),
-             ('Donate', '/donate/'),
-             ('.onion', 'http://omgkuraio276g5wo.onion/'))
+MENUITEMS = (('<i class="material-icons">chat</i> Contact', '/contact/'),
+             ('<i class="material-icons">code</i> Software', '/software/'),
+             ('<i class="material-icons">attach_money</i> Donate', '/donate/'),
+             ('<i class="material-icons">security</i> .onion', 'http://omgkuraio276g5wo.onion/'))
 SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i> Github', 'https://github.com/kura'),
           ('<i class="fa fa-twitter aria-hidden="true"></i> Twitter', 'https://twitter.com/kuramanga'),
           ('<i class="fa fa-key aria-hidden="true"></i> Keybase', 'https://keybase.io/kura'))
-LINKS = (('blackhole.io', 'https://blackhole.io'),
-         ('Yarg', 'https://kura.io/yarg'),
-         ('Eevee', 'https://kura.io/eevee'),
-         ('Hauntr', 'https://kura.io/hauntr'),
-         ('Ghastly', 'https://kura.io/ghastly'),)
+LINKS = (('<i class="material-icons">code</i> blackhole.io', 'https://blackhole.io'),
+         ('<i class="material-icons">code</i> Yarg', 'https://kura.io/yarg'),
+         ('<i class="material-icons">code</i> Eevee', 'https://kura.io/eevee'),
+         ('<i class="material-icons">code</i> Hauntr', 'https://kura.io/hauntr'),
+         ('<i class="material-icons">code</i> Ghastly', 'https://kura.io/ghastly'),)
 DISPLAY_CATEGORIES_ON_MENU = False
 
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
@@ -46,12 +49,15 @@ PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 TAG_URL = 't/{slug}'
 TAG_SAVE_AS = 't/{slug}/index.html'
+AUTHOR_URL = 'authors/{slug}/index.html'
+AUTHOR_SAVE_AS = 'authors/{slug}/index.html'
 
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
 )
 
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
 SUMMARY_MAX_LENGTH = 150
@@ -89,6 +95,24 @@ DEFAULT_PAGINATION = 25
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5,
+    },
+    'changefreqs': {
+        'articles': 'daily',
+        'indexes': 'daily',
+        'pages': 'daily',
+    },
+    'exclude': ['tag/', 'category/'],
+}
+
+FEED_ATOM = "feeds/atom.xml"
+FEED_RSS = "feeds/rss.xml"
+
 PLUGIN_PATHS = ['plugins/', ]
 PLUGINS = [
     'assets',
@@ -98,10 +122,8 @@ PLUGINS = [
     'pelican_gist',
     'pelican_vimeo',
     'pelican_youtube',
+    # 'sitemap',
     'touch',
 ]
 
 GIST_CACHE_ENABLED = False
-
-USE_TWITTER_CARDS = True
-USE_OPEN_GRAPH = True

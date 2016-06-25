@@ -1,6 +1,7 @@
 html, body, h1, h2, h3, h4, h5, h6 {
     font-family: 'FiraSans', 'sans-serif' !important;
-    letter-spacing: -1px;
+    font-feature-settings: 'liga' !important;
+    letter-spacing: -3px;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -9,6 +10,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 blockquote, code, kbd, pre, samp, tt {
     font-family: 'FiraMono', 'monospace', 'serif' !important;
+    font-feature-settings: 'liga' !important;
 }
 
 pre, code, blockquote {
@@ -16,7 +18,7 @@ pre, code, blockquote {
     box-sizing: border-box;
     margin: 1.6em 0 1.6em -2.2em;
     padding: 0 0 0 1.6em;
-    border-left: rgb(66, 66, 66) 0.4em solid;
+    border-left: rgb(230, 74, 25) 0.6em solid;
     font-size: 14px;
     letter-spacing: 0px;
 }
@@ -98,7 +100,7 @@ th {
 .eevee-nav, .eevee-logo, .eevee-logo a {
     font-weight: 400;
     margin: 0;
-    opacity: 0.87;
+    opacity: 0.95;
     text-decoration: none;
 }
 
@@ -180,6 +182,8 @@ div.eevee-page-spacer {
     justify-content: flex-start;
     height: auto;
     width: 100%;
+    letter-spacing: -1px;
+    padding-left: 3px;
 }
 
 .eevee-toc {
@@ -191,7 +195,7 @@ div.eevee-page-spacer {
     box-sizing: border-box;
     margin: 1.6em 0 3em -2.2em;
     padding: 0.2em 0 0.2em 1.6em;
-    border-left: rgb(66, 66, 66) 0.4em solid;
+    border-left: rgb(230, 74, 25) 0.6em solid;
 }
 
 .eevee-toc ul {
@@ -214,6 +218,7 @@ div.eevee-page-spacer {
     margin: 60px 0 -60px 0;
     text-align: center;
     padding-top: 10px;
+    letter-spacing: -1px !important;
 }
 
 div.eevee-comment {
@@ -248,11 +253,27 @@ div.eevee-comment div.muut {
     -ms-flex-pack: start;
     justify-content: flex-start;
     height: auto;
+    letter-spacing: -1px !important;
 }
 
 .eevee-footer a, .mdl-logo a {
     color: rgb(255, 255, 255);
     text-decoration: none;
+}
+
+
+.mdl-mega-footer--link-list a:hover, .mdl-mega-footer__link-list a:hover {
+    color: rgb(255, 255, 255) !important;
+}
+
+.mdl-mega-footer--link-list i.material-icons,
+.mdl-mega-footer__link-list i.material-icons {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.mdl-logo > a:hover, .eevee-footer > a:hover {
+    color: #9e9e9e !important;
 }
 
 div.align-center img, img.align-center {
@@ -274,6 +295,15 @@ p.align-center {
     margin-bottom: 30px;
     z-index: 900;
     font-family: 'FiraSans', 'sans-serif' !important;
+}
+
+a {
+    -webkit-transition: color 0.3s ease 0s !important;
+    transition: color 0.3s ease 0s !important;
+}
+
+a:hover {
+    color: rgb(66,66,66) !important;
 }
 
 .lightbox {
@@ -370,7 +400,6 @@ ul.social-share {
     float: right;
 }
 
-
 .social-share__link {
     float: left;
     height: 45px;
@@ -380,6 +409,10 @@ ul.social-share {
     -webkit-transition: background-color .3s ease-out 0s;
     transition: background-color .3s ease-out 0s;
     color: rgb(255, 255, 255);
+}
+
+.social-share__link a:hover {
+    color: rgb(255, 255, 255) !important;
 }
 
 .social-share__link--twitter {
@@ -414,11 +447,14 @@ ul.social-share {
     background-color: rgb(0, 212, 232);
 }
 
-a {
-    -webkit-transition: font-weight .3s ease-out 0s;
-    transition: font-weight .3s ease-out 0s;
+.mdl-mega-footer--heading, .mdl-mega-footer__heading {
+    letter-spacing: -1px !important;
 }
 
-a:hover {
-    font-weight: 600px;
+.mdl-logo a {
+    letter-spacing: 0 !important;
+}
+
+.mdl-logo > a:hover, .eevee-footer a:hover {
+    color: #9e9e9e !important;
 }
