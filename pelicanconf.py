@@ -27,18 +27,19 @@ DATE_FORMATS = {
     'en': DEFAULT_DATE_FORMAT
 }
 
-MENUITEMS = (('<i class="material-icons">chat</i> Contact', '/contact/'),
-             ('<i class="material-icons">code</i> Software', '/software/'),
-             ('<i class="material-icons">attach_money</i> Donate', '/donate/'),
-             ('<i class="material-icons">security</i> .onion', 'http://omgkuraio276g5wo.onion/'))
+MENUITEMS = (('<i class="material-icons">&#xE0B7;</i> Contact', '/contact/'),
+             ('<i class="material-icons">&#xE86F;</i> Software', '/software/'),
+             ('<i class="material-icons">&#xE02F;</i> Archives', '/archives/'),
+             ('<i class="material-icons">&#xE263;</i> Donate', '/donate/'),
+             ('<i class="material-icons">&#xE62F;</i> .onion', 'http://omgkuraio276g5wo.onion/'))
 SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i> Github', 'https://github.com/kura'),
           ('<i class="fa fa-twitter aria-hidden="true"></i> Twitter', 'https://twitter.com/kuramanga'),
           ('<i class="fa fa-key aria-hidden="true"></i> Keybase', 'https://keybase.io/kura'))
-LINKS = (('<i class="material-icons">code</i> blackhole.io', 'https://blackhole.io'),
-         ('<i class="material-icons">code</i> Yarg', 'https://kura.io/yarg'),
-         ('<i class="material-icons">code</i> Eevee', 'https://kura.io/eevee'),
-         ('<i class="material-icons">code</i> Hauntr', 'https://kura.io/hauntr'),
-         ('<i class="material-icons">code</i> Ghastly', 'https://kura.io/ghastly'),)
+LINKS = (('<i class="material-icons">&#xE250;</i> blackhole.io', 'https://blackhole.io'),
+         ('<i class="material-icons">&#xE250;</i> Yarg', 'https://kura.io/yarg'),
+         ('<i class="material-icons">&#xE250;</i> Eevee', 'https://kura.io/eevee'),
+         ('<i class="material-icons">&#xE250;</i> Hauntr', 'https://kura.io/hauntr'),
+         ('<i class="material-icons">&#xE250;</i> Ghastly', 'https://kura.io/ghastly'),)
 DISPLAY_CATEGORIES_ON_MENU = False
 
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
