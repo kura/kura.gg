@@ -28,15 +28,15 @@ important to index or, it can help a user with a screen reader get to the
 important content more easily. These structures are more commonly known as
 microformats or microdata.
 
-Structures are beautiful things
-===============================
+Structure is a beautiful thing
+==============================
 
-HTML, by it's very design is structured, the difference is that the content
+HTML -- by it's very design is structured -- the difference is that the content
 defines or modifies that structure.
 
-By using microformat structures from schema.org you can define what elements
-are more prominent or important through a large set of additional vocabulary,
-improving the experience for everyone that uses your website.
+By using microformat data structures from schema.org you can define what
+elements are more prominent or important through a large set of additional
+vocabulary, improving the experience for everyone that uses your website.
 
 .. code-block:: html
 
@@ -55,7 +55,7 @@ improving the experience for everyone that uses your website.
         <div class="eevee-article eevee-article-padding">
             <div class="eevee-meta mdl-color-text--grey-500">
                 <time datetime="2016-06-25T21:00:00+01:00"
-                       itemprop="datePublished">
+                      itemprop="datePublished">
                      25 Jun 2016
                 </time>
             </div>
@@ -86,19 +86,20 @@ outline each important section and explain what it does.
     <article itemscope itemtype="http://schema.org/BlogPosting">
 
 This simply tells the client which schema is being used for the content within
-it. The client uses that data to know what elements should be provided based
-on that schema. Here I'm using the `BlogPosting
+it. The client uses that data to determine what elements should be provided
+based on that schema. Here I'm using the `BlogPosting
 <http://schema.org/BlogPosting>`__ schema.
 
 .. code-block:: html
 
     <meta itemprop="accessibilityControl" content="fullKeyboardControl" />
     <meta itemprop="accessibilityControl" content="fullMouseControl" />
+    <meta itemprop="accessibilityControl" content="bookmarks" />
     <meta itemprop="accessibilityAPI" content="ARIA" />
 
-These elements -- as you may have guess from their names -- are to improve
-accessibility. More information on available options is available on the
-`W3C wiki <https://www.w3.org/wiki/WebSchemas/Accessibility>`__
+These elements -- as you may have guess from their names -- are used to improve
+accessibility. More information on available options is provided on the
+`W3C wiki <https://www.w3.org/wiki/WebSchemas/Accessibility>`__.
 
 .. code-block:: html
 
@@ -114,8 +115,8 @@ content is located. Note that it uses a different schema named `Person
 <https://schema.org/Person>`__.
 
 Because the div element has no style and consists of only meta data, a role
-is defined that tells screen reads this data is only for presentation purposes
-and can be ignored.
+is defined that tells screen readers this data is only for presentation
+purposes and can be ignored.
 
 .. code-block:: html
 
@@ -127,13 +128,12 @@ and any tags it may have.
 .. code-block:: html
 
     <time datetime="2016-06-25T21:00:00+01:00"
-           itemprop="datePublished">
+          itemprop="datePublished">
          25 Jun 2016
     </time>
 
-This element is pretty self explanatory, it is a date both as a universally
-understood value and in a more user-friendly format that is displayed to the
-user.
+This element is a date provided as a universally understood value and in a
+more user-friendly format that is displayed to the user.
 
 .. code-block:: html
 
