@@ -1,29 +1,61 @@
-{% if THEME_PRIMARY is not defined or THEME_ACCENT is not defined %}
-    {% set THEME_PRIMARY = 'deep_purple' %}
-    {% set THEME_ACCENT = 'green' %}
-{% endif %}
-{% if MEGA_FOOTER is not defined %}
-    {% set MEGA_FOOTER = True %}
-{% endif %}
 <!DOCTYPE html>
+<!--
+    (The MIT License)
+
+    Copyright (c) 2016 Kura
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the 'Software'), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+{% from 'partials/_defaults.html' import OWA_URL with context %}
+{% from 'partials/_defaults.html' import OWA_SITE_ID with context %}
+{% from 'partials/_defaults.html' import PIWIK_SSL_URL with context %}
+{% from 'partials/_defaults.html' import MUUT_SITENAME with context %}
+{% from 'partials/_defaults.html' import THEME_PRIMARY with context %}
+{% from 'partials/_defaults.html' import THEME_ACCENT with context %}
+{% from 'partials/_defaults.html' import MEGA_FOOTER with context %}
+{% from 'partials/_defaults.html' import DISCLAIMER with context %}
+{% from 'partials/_defaults.html' import COPYRIGHT with context %}
 <html lang="{{ DEFAULT_LANG }}">
 <head id="head">
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport"
-          content="width=device-width,initial-scale=1,maximum-scale=1" />
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     {% include 'partials/prefetch.html' %}
     {% include 'partials/feeds.html' %}
     {% include 'partials/facebook.html' %}
     {% include 'partials/twitter.html' %}
-    <link rel="icon" href="/favicon.png" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/png">
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="/favicon.png"
+          sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/png">
+    <link rel="icon" href="/favicon.ico"
+          sizes="16x16 32x32 48x48 64x64 128x128 256x256"
+          type="image/vnd.microsoft.icon">
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 </head>
 <body>
-    <div class="eevee-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-50">
-       <header class="eevee-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-50 mdl-color-text--grey-800"
-               itemscope itemtype="http://schema.org/WPHeader">
-           <div class="mdl-layout__header-row" id="top">
+    <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+        <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+                itemscope itemtype="http://schema.org/WPHeader">
+            <div class="mdl-layout__header-row" id="top">
+                <div aria-expanded="false" role="button" tabindex="0"
+                     class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+                    <i class="material-icons">&#xE5D2;</i>
+                </div>
                 <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
                     <h3>
                         <a href="{{ SITEURL }}" rel="bookmark"
@@ -33,9 +65,31 @@
                     </h3>
                 </span>
                 <div class="mdl-layout-spacer" role="presentation"></div>
-                {% include 'partials/header_menu.html' %}
+                <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+                     itemscope itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                    {% include 'partials/header_menu.html' %}
+                </nav>
             </div>
         </header>
+        <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden="true">
+            <span class="mdl-layout-title">
+                <h3 class="eevee-mobile-logo mdl-color-text--accent">
+                    {{ SITENAME }}
+                </h3>
+            </span>
+            <div class="mdl-navigation mdl-color--white">
+                <nav class="eevee-nav mdl-navigation" itemscope
+                     itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                    <a class="mdl-color-text--accent mdl-navigation__link"
+                       href="{{ SITEURL }}" itemprop="url" rel="bookmark">
+                        <i class="material-icons">&#xE88A;</i> Home
+                    </a>
+                    {% include 'partials/header_menu.html' %}
+                </nav>
+            </div>
+        </div>
         <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
         </div>
         <main class="eevee-main mdl-layout__content">
@@ -48,49 +102,73 @@
                     {% block content %}{% endblock %}
                 </div>
             </div>
-            <footer class="mdl-mega-footer" itemscope
-                    itemtype="http://schema.org/SiteNavigationElement">
-                <div class="mdl-mega-footer--top-section">
-                    <div class="mdl-mega-footer--drop-down-section">
-                        <ul class="mdl-mega-footer--link-list">
-                            <li>
-                                <a href="#top"
-                                   title="Back to the top of the page">
-                                    Back to the top of the page
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                {% if MEGA_FOOTER == True %}
-                    {% include 'partials/mega_footer.html' %}
-                {% endif %}
-                <div class="mdl-mega-footer--bottom-section">
-                    <div class="mdl-logo">
-                        <a href="{{ SITEURL }}" rel="bookmark"
-                           title="{{ SITENAME }}">
-                            {{ SITENAME }}
-                        </a>
-                    </div>
-                    <ul class="eevee-footer mdl-mega-footer--link-list">
-                        <li>Powered by love &amp; rainbow sparkles.</li>
+        </main>
+        <div class="eevee-container mdl-grid">
+            <div role="presentation"
+                 class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                {% include 'partials/pagination.html' %}
+            </div>
+        </div>
+        <footer class="mdl-mega-footer" itemscope
+                itemtype="http://schema.org/SiteNavigationElement">
+            <div class="mdl-mega-footer--top-section">
+                <div class="mdl-mega-footer--drop-down-section">
+                    <ul class="mdl-mega-footer--link-list">
                         <li>
-                            This website source and content are released under
-                            the <a href="/license/">MIT license</a>.
+                            <a href="#top"
+                               title="Back to the top of the page">
+                                Back to the top of the page
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </footer>
-        </main>
+            </div>
+            {% if MEGA_FOOTER == True %}
+                {% include 'partials/mega_footer.html' %}
+            {% endif %}
+            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">
+                    <a href="{{ SITEURL }}" rel="bookmark"
+                       title="{{ SITENAME }}">
+                        {{ SITENAME }}
+                    </a>
+                </div>
+                {% if DISCLAIMER or COPYRIGHT %}
+                    <ul class="eevee-footer mdl-mega-footer--link-list">
+                        {% if DISCLAIMER %}
+                            <li>{{ DISCLAIMER }}</li>
+                        {% endif %}
+                        {% if COPYRIGHT %}
+                            <li>{{ COPYRIGHT }}</li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </footer>
     </div>
+    {% if 'assets' in PLUGINS %}
+        {% include 'partials/_minify_css.html' with context %}
+        {% include 'partials/_minify_js.html' with context %}
+    {% else %}
+        <link rel="stylesheet" type="text/css"
+              href="{{ SITEURL }}/theme/css/fonts.css">
+        <link rel="stylesheet" type="text/css"
+              href="{{ SITEURL }}/theme/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css"
+              href="{{ SITEURL }}/theme/css/material-icons.css">
+        <link rel="stylesheet" type="text/css"
+              href="{{ SITEURL }}/theme/css/pygments.css">
+        <link rel="stylesheet" type="text/css"
+              href="{{ SITEURL }}/theme/css/eevee.css">
+        <link rel="stylesheet" type="text/css"
+              href="{{ SITEURL }}/theme/css/custom.css">
+        <script async src="{{ SITEURL }}/theme/js/material.js">
+        </script>
+        <script async src="{{ SITEURL }}/theme/js/disqus.js">
+        </script>
+    {% endif %}
+    {% include 'partials/analytics.html' %}
 </body>
-{% assets filters="cssmin", output="css/%(version)s.css",
-    "css/material.deep_orange-red.min.css", "css/fonts.css",
-    "css/font-awesome.css", "css/material-icons.css", "css/pygments.css",
-    "css/eevee.css" %}
-    <link rel="stylesheet" href="/{{ ASSET_URL }}" />
-{% endassets %}
-{% assets filters="jsmin", output="css/%(version)s.js", "js/disqus.js" %}
-    <script type="text/javascript" src="/{{ ASSET_URL }}"></script>
-{% endassets %}
 </html>

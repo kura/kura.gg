@@ -47,12 +47,16 @@ stop:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-rsync: publish
+rsync:
+	rm -rf $(OUTPUTDIR)/*
+	make publish
+	python3.5 touch.py
+	rm -rf output/theme/fonts/
 	knock ego.kura.io
-	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
+	rsync -e "ssh" -ac --delete --exclude $(OUTPUTDIR)/theme/fonts $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
 	bash screenshot.sh
 	knock ego.kura.io
-	rsync -e "ssh" -P -avhp --delete $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR) --cvs-exclude
+	rsync -e "ssh" -ac --delete --exclude $(OUTPUTDIR)/theme/fonts $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
 	rm -rf $(OUTPUTDIR)/*
 
-.PHONY: html help clean regenerate startserver stopserver publish rsync
+.PHONY: html help clean regenerate start stop publish rsync

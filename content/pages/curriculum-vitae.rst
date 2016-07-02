@@ -10,7 +10,6 @@ Contact
 
 :GitHub: `kura <https://github.com/kura/>`__
 :Email: kura [atpersand] kura [dot] io
-:Skype: kuramanga
 :Twitter: `@kuramanga <https://twitter.com/kuramanga/>`__
 
 Blurb

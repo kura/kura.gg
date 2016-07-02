@@ -6,3 +6,4 @@ pelican-themes
 .ropeproject
 *.pyc
 cache/
+eevee_original/

@@ -12,10 +12,7 @@ from pelicanconf import *
 
 
 RELATIVE_URLS = False
-
-FEED_ATOM = "feeds/atom.xml"
-FEED_RSS = "feeds/rss.xml"
-
 DELETE_OUTPUT_DIRECTORY = True
 
 PLUGINS.append('minify')
+PLUGINS.append('touch')

@@ -2,6 +2,7 @@ Donate
 ######
 :author: kura
 :slug: donate
+:status: hidden
 
 All donations are used to cover the costs of maintaining my Tor nodes and
 the servers that power `blackhole.io <https://blackhole.io/>`_.

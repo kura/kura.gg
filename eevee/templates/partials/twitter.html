@@ -1,42 +1,31 @@
-{% if USE_TWITTER_CARDS is not defined %}
-    {% set USE_TWITTER_CARDS = False %}
-{% endif %}
-{% if OPEN_GRAPH_IMAGE is not defined %}
-    {% set OPEN_GRAPH_IMAGE = False %}
-{% endif %}
+{% from 'partials/_defaults.html' import OPEN_GRAPH_IMAGE with context %}
+{% from 'partials/_defaults.html' import USE_TWITTER_CARDS with context %}
 {% if USE_TWITTER_CARDS %}
+    {% from 'partials/_defaults.html' import share_title with context %}
+    {% from 'partials/_defaults.html' import share_url with context %}
+    {% from 'partials/_defaults.html' import obj with context %}
     {% if TWITTER_USERNAME %}
-        <meta property="twitter:site" content="@{{ TWITTER_USERNAME }}" />
+        <meta property="twitter:site" content="@{{ TWITTER_USERNAME }}">
     {% endif %}
-    {% if article %}
+    {% if obj is defined %}
         <meta property="twitter:title"
-              content="{{ article.title|striptags|escape }}" />
+              content="{{ obj.title|striptags|escape|replace('¶', '') }}">
         <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ article.url }}" />
+              content="{{ SITEURL }}/{{ obj.url }}">
         <meta property="twitter:description"
-              content="{{ article.summary|striptags|escape }}" />
+              content="{{ obj.summary|striptags|escape|replace('¶', '') }}">
         <meta property="twitter:image"
-              content="{{ SITEURL }}/{{ article.url }}index.png" />
-        <meta property="twitter:card" content="summary_large_image" />
-    {% elif page %}
-        <meta property="twitter:title"
-              content="{{ page.title|striptags|escape }}" />
-        <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ page.url }}" />
-        <meta property="twitter:description"
-              content="{{ page.summary|striptags|escape }}" />
-        <meta property="twitter:image"
-              content="{{ SITEURL }}/{{ page.url }}index.png" />
-        <meta property="twitter:card" content="summary_large_image" />
+              content="{{ SITEURL }}/{{ obj.url }}index.png">
+        <meta property="twitter:card" content="summary_large_image">
     {% else %}
         <meta property="twitter:title"
-              content="{{ SITENAME|striptags|escape }}" />
+              content="{{ SITENAME|striptags|escape }}">
         <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ output_file }}" />
+              content="{{ SITEURL }}/{{ output_file }}">
         <meta property="twitter:image"
-              content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
-        <meta property="twitter:card" content="summary_large_image" />
+              content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}">
+        <meta property="twitter:card" content="summary_large_image">
     {% endif %}
-    <meta property="twitter:image:width" content="1920" />
-    <meta property="twitter:image:height" content="1080" />
+    <meta property="twitter:image:width" content="1920">
+    <meta property="twitter:image:height" content="1080">
 {% endif %}
