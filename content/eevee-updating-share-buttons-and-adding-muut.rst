@@ -5,6 +5,7 @@ Eevee -- Updating share buttons and adding Muut
 :category: eevee
 :tags: pelican, eevee, muut
 :slug: eevee-updating-share-buttons-and-adding-muut
+:series: Eevee
 
 .. image:: /images/eeveelutions.png
     :alt: Eevee the Pokémon

@@ -5,6 +5,7 @@ Eevee -- Adding more structure to posts
 :category: eevee
 :tags: pelican
 :slug: eevee-adding-more-structure-to-posts
+:series: Eevee
 
 .. image:: /images/eeveelutions.png
     :alt: Eevee the Pokémon

@@ -2,7 +2,7 @@
     <li>
         <h3>
             {% if MONTH_ARCHIVE_SAVE_AS %}
-                <a href="{{ SITEURL }}/archives/{{ year }}/{{ articles[0].date.strftime('%m') }}/"
+                <a href="{{ SITEURL }}/{{ MONTH_ARCHIVE_SAVE_AS.format(date=articles[0].date) }}"
                    rel="bookmark" title="Archives for {{ articles[0].date.strftime('%B') }} {{ year }}"
                    itemprop="url">
                     {{ articles[0].date.strftime('%B') }}

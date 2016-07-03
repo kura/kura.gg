@@ -1,31 +1,4 @@
 <!DOCTYPE html>
-<!--
-    (The MIT License)
-
-    Copyright (c) 2016 Kura
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the 'Software'), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
--->
-{% from 'partials/_defaults.html' import OWA_URL with context %}
-{% from 'partials/_defaults.html' import OWA_SITE_ID with context %}
-{% from 'partials/_defaults.html' import PIWIK_SSL_URL with context %}
-{% from 'partials/_defaults.html' import MUUT_SITENAME with context %}
 {% from 'partials/_defaults.html' import THEME_PRIMARY with context %}
 {% from 'partials/_defaults.html' import THEME_ACCENT with context %}
 {% from 'partials/_defaults.html' import MEGA_FOOTER with context %}
@@ -103,21 +76,23 @@
                 </div>
             </div>
         </main>
-        <div class="eevee-container mdl-grid">
-            <div role="presentation"
-                 class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        {% if DEFAULT_PAGINATION %}
+            <div class="eevee-pagination__container eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                    {% include 'partials/pagination.html' %}
+                </div>
             </div>
-            <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-                {% include 'partials/pagination.html' %}
-            </div>
-        </div>
+        {% endif %}
         <footer class="mdl-mega-footer" itemscope
                 itemtype="http://schema.org/SiteNavigationElement">
             <div class="mdl-mega-footer--top-section">
                 <div class="mdl-mega-footer--drop-down-section">
                     <ul class="mdl-mega-footer--link-list">
                         <li>
-                            <a href="#top"
+                            <a href="#top" itemprop="url"
                                title="Back to the top of the page">
                                 Back to the top of the page
                             </a>
@@ -130,7 +105,7 @@
             {% endif %}
             <div class="mdl-mega-footer--bottom-section">
                 <div class="mdl-logo">
-                    <a href="{{ SITEURL }}" rel="bookmark"
+                    <a href="{{ SITEURL }}" rel="bookmark" itemprop="url"
                        title="{{ SITENAME }}">
                         {{ SITENAME }}
                     </a>

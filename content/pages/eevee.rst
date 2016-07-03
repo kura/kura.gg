@@ -16,8 +16,8 @@ Eevee is a theme for `Pelican <http://getpelican.com>`__, based on Google's
 `Material Design <https://material.google.com/>`__ specification.
 
 It is named after the Pokémon `Eevee
-<http://www.pokemon.com/uk/pokedex/eevee>`__ because -- like the Pokémon Eevee
--- it can evolve in to many 'elemental types.'
+<http://www.pokemon.com/uk/pokedex/eevee>`__ because -- like the Pokémon -- it
+can evolve in to many 'elemental types.'
 
 .. role:: blue-grey
 .. role:: pink
@@ -34,11 +34,10 @@ Features
 - responsive layout with mobile friendly header and navigation scheme,
 - inclusion of a ``custom.css`` file allowing easy overwriting of the theme
   without breaking the base CSS,
-- `DNS prefetching
-  <https://www.chromium.org/developers/design-documents/dns-prefetching>`__,
+- `DNS prefetch`_,
 - comments via `Disqus <https://disqus.com/>`__ or `Muut
   <https://muut.com/>`__,
-- share buttons for Twitter, Facebook and Google+,
+- share buttons for Twitter, Facebook, Google+, email and comments,
 - Twitter and Open Graph meta tags,
 - CSS and JS minifying via `webassets
   <https://webassets.readthedocs.io/en/latest/>`__, cssmin and jsmin,
@@ -51,9 +50,9 @@ Features
 - `Aria <https://en.wikipedia.org/wiki/WAI-ARIA>`__ accessibility,
 - includes `Material Icons <https://design.google.com/icons/>`__, `Font Awesome
   <http://fontawesome.io/>`__ and `Roboto font
-  <https://typecast.com/preview/google/Roboto>`__,
-- and seamless upgrading with `getmdl.io's Material
-  Javascript <https://getmdl.io/started/index.html#download>`__.
+  <https://typecast.com/preview/google/Roboto>`__ and,
+- seamless upgrading with `getmdl.io's Material Javascript
+  <https://getmdl.io/started/index.html#download>`__.
 
 Plugins supported out-of-the-box
 ================================
@@ -63,21 +62,21 @@ does not need any of them to function. If a plugin is supported but not used,
 the HTML, CSS and JavaScript simply won't be included.
 
 - `assets
-  <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__
+  <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__,
 - `extract_toc
-  <https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>`__
+  <https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>`__,
 - `headerid
-  <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__
+  <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__,
 - `lightbox
-  <https://github.com/getpelican/kura/lightbox>`__
+  <https://github.com/getpelican/kura/lightbox>`__,
 - `neighbors
-  <https://github.com/getpelican/pelican-plugins/tree/master/neighbors>`__
+  <https://github.com/getpelican/pelican-plugins/tree/master/neighbors>`__,
 - `related_posts
-  <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`__
+  <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`__,
 - `series
-  <https://github.com/getpelican/pelican-plugins/tree/master/series>`__
+  <https://github.com/getpelican/pelican-plugins/tree/master/series>`__ and,
 - `tipue_search
-  <https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__
+  <https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__.
 
 Typography
 ==========
@@ -101,51 +100,77 @@ Screenshots
     :align: center
 
 .. lightbox::
-    :thumb: /images/eevee-footer-thumb.png
-    :large: /images/eevee-footer.png
-    :alt: Footer
-    :caption: Footer
+    :thumb: /images/eevee-homepage-separator-thumb.png
+    :large: /images/eevee-homepage-separator.png
+    :alt: Homepage separator
+    :caption: Homepage separator
     :align: center
 
 .. lightbox::
-    :thumb: /images/eevee-pagination-thumb.png
-    :large: /images/eevee-pagination.png
-    :alt: Pagination
-    :caption: Pagination
+    :thumb: /images/eevee-homepage-pagination-thumb.png
+    :large: /images/eevee-homepage-pagination.png
+    :alt: Homepage pagination
+    :caption: Homepage pagination
     :align: center
 
 .. lightbox::
-    :thumb: /images/eevee-article-header-thumb.png
-    :large: /images/eevee-article-header.png
+    :thumb: /images/eevee-mega-footer-thumb.png
+    :large: /images/eevee-mega-footer.png
+    :alt: Mega footer
+    :caption: Mega footer
+    :align: center
+
+.. lightbox::
+    :thumb: /images/eevee-article-top-thumb.png
+    :large: /images/eevee-article-top.png
     :alt: Article header
     :caption: Article header
     :align: center
 
 .. lightbox::
-    :thumb: /images/eevee-article-header-thumb.png
-    :large: /images/eevee-article-header.png
-    :alt: Article header
-    :caption: Article header
+    :thumb: /images/eevee-article-bottom-thumb.png
+    :large: /images/eevee-article-bottom.png
+    :alt: Article footer
+    :caption: Article footer
     :align: center
 
 .. lightbox::
-    :thumb: /images/eevee-disqus-thumb.png
-    :large: /images/eevee-disqus.png
-    :alt: Disqus
-    :caption: Disqus
+    :thumb: /images/eevee-headerlinks-thumb.png
+    :large: /images/eevee-headerlinks.png
+    :alt: Article header links
+    :caption: Article header links
     :align: center
 
 .. lightbox::
-    :thumb: /images/eevee-pygments-thumb.png
-    :large: /images/eevee-pygments.png
-    :alt: Pygments
-    :caption: Pygments
+    :thumb: /images/eevee-related-author-card-thumb.png
+    :large: /images/eevee-related-author-card.png
+    :alt: Related articles and author card
+    :caption:
+    :align: center
+
+.. lightbox::
+    :thumb: /images/eevee-toc-series-thumb.png
+    :large: /images/eevee-toc-series.png
+    :alt: Table of contents
+    :caption: Table of contents
+    :align: center
+
+.. lightbox::
+    :thumb: /images/eevee-archives-thumb.png
+    :large: /images/eevee-archives.png
+    :alt: Archives
+    :caption: Archives
+    :align: center
+
+.. lightbox::
+    :thumb: /images/eevee-search-thumb.png
+    :large: /images/eevee-search.png
+    :alt: Search
+    :caption: Search
     :align: center
 
 Requirements
 ============
-
-- pelican
 
 .. code-block:: bash
 
@@ -157,6 +182,8 @@ Installation
 You can find Eevee `on GitHub <https://github.com/kura/eevee>`__ and you can
 find installation instructions for themes in the `pelican documentation
 <http://docs.getpelican.com/en/latest/pelican-themes.html>`__.
+
+.. _colours:
 
 Configuring the primary and accent colours
 ==========================================
@@ -341,6 +368,73 @@ modified version `on GitHub
 <https://github.com/kura/kura.io/tree/master/plugins/extract_toc>`__ that
 returns nicer HTML.
 
+Adding author card to articles
+==============================
+
+The author card is disabled by default, below are instructions on enabling it
+and customising it.
+
+Enabling the author card
+------------------------
+
+Enabling the author card is as simple as setting an option in
+``pelicanconf.py``.
+
+.. code-block:: python
+
+    USE_AUTHOR_CARD = True
+
+You can disable it by setting to ``False`` or removing the setting entirely.
+
+.. code-block:: python
+
+    USE_AUTHOR_CARD = False
+
+Using your own avatar
+---------------------
+
+A default avatar placeholder is provided with the theme, you can easily use
+your own avatar by setting an option in ``pelicanconf.py``.
+
+.. code-block:: python
+
+    AUTHOR_CARD_AVATAR = '/images/kura.png'
+
+The maximum size that you should use are 250x250 pixels.
+
+Setting a description
+---------------------
+
+Like all the other options above, setting a description for your author card
+requires a single config option.
+
+.. code-block:: python
+
+    AUTHOR_CARD_DESCRIPTION = 'My name is Kura and I break things.'
+
+You can add HTML and other various things to this description.
+
+Social buttons
+--------------
+
+By default, the author card section will display links from your ``SOCIAL``
+list.
+
+This isn't always what you want though.
+
+The ``SOCIAL`` list is used in other parts of the theme and the format may not
+look good added to your author card.
+
+To make things more flexible, the author card section can have it's own social
+links.
+
+.. code-block:: python
+
+    AUTHOR_CARD_SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i>',
+                   'https://github.com/kura'),
+                  ('<i class="fa fa-twitter aria-hidden="true"></i>',
+                   'https://twitter.com/kuramanga'), )
+
 Using Disqus or Muut for comments
 =================================
 
@@ -366,21 +460,32 @@ Muut
 
 Setting this option will enable Muut for articles.
 
+Comments on pages
+-----------------
+
+You can display comments on pages as well as articles with the following
+option. By default this is disabled.
+
+.. code-block:: python
+
+    COMMENTS_ON_PAGES = True
+
 Sharing options
 ===============
 
 Share buttons
 -------------
 
-By default three share buttons are configured;
+By default four share buttons are configured;
 
 - Twitter,
-- Facebook
-- and Google+
+- Facebook,
+- Google+,
+- and Email.
 
 These buttons will appear on all articles and pages.
 
-If you have comments enabled either using Disqus or Muut, on articles a fourth
+If you have comments enabled either using Disqus or Muut, on articles a fifth
 button will be shown which shows the user comments for the current article.
 
 Configuration options
@@ -491,6 +596,17 @@ feeds respectively.
 
     FEED_ATOM = 'feeds/atom.xml'
 
+Feed menu item
+--------------
+
+Enabling either ``FEED_RSS`` or ``FEED_ATOM`` will automatically add a menu
+item for that feed. If ``MEGA_FOOTER`` is also enabled a link to the feed will
+be added there too.
+
+Eevee prefers RSS over ATOM, if you enable both feed types a menu item will
+only be created for RSS, although both feeds will be added as alternate link
+tags.
+
 Minimising/compressing CSS and JavaScript
 =========================================
 
@@ -590,7 +706,23 @@ pagination without going back to the index page.
 The default Pelican pagination settings are not very pleasing, for more
 information on how to customise them to better and be more intuitive please
 look at the `Pelican documentation
-<http://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>`__.
+<http://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>`__.-
+
+DNS prefetch
+============
+
+`DNS prefetching
+<https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching>`__
+is enabled by default and managed automatically.
+
+The following features will have respective DNS prefetch settings that will
+be applied if the feature is enabled;
+
+- Disqus,
+- Piwik,
+- GoSquared,
+- Google Analytics and,
+- Open Web Analytics.
 
 Additional tweaks and modifications
 ===================================

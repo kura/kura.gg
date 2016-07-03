@@ -7,8 +7,6 @@ SITENAME = 'kura.io'
 SITEURL = 'https://kura.io'
 
 THEME = 'eevee'
-# THEME_PRIMARY = 'deep_purple'
-# THEME_ACCENT = 'pink'
 THEME_PRIMARY = 'deep_orange'
 THEME_ACCENT = 'red'
 USE_TWITTER_CARDS = True
@@ -39,6 +37,8 @@ MENUITEMS = (('<i class="material-icons">&#xE0B7;</i> Contact', '/contact/'),
 SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i> Github', 'https://github.com/kura'),
           ('<i class="fa fa-twitter aria-hidden="true"></i> Twitter', 'https://twitter.com/kuramanga'),
           ('<i class="fa fa-key aria-hidden="true"></i> Keybase', 'https://keybase.io/kura'))
+AUTHOR_CARD_SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i>', 'https://github.com/kura'),
+                      ('<i class="fa fa-twitter aria-hidden="true"></i>', 'https://twitter.com/kuramanga'),)
 LINKS = (('<i class="material-icons">&#xE250;</i> blackhole.io', 'https://blackhole.io'),
          ('<i class="material-icons">&#xE250;</i> Yarg', 'https://kura.io/yarg'),
          ('<i class="material-icons">&#xE250;</i> Eevee', 'https://kura.io/eevee'),
@@ -121,6 +121,7 @@ FEED_RSS = "feeds/rss.xml"
 PLUGIN_PATHS = ['plugins/', ]
 PLUGINS = [
     'assets',
+    'better_tables',
     'extract_toc',
     'headerid',
     'lightbox',
@@ -151,3 +152,12 @@ SEARCH_IGNORE = [
     '2014/06/08/pelican-fontawesome/',
     '2016/06/13/lightbox--a-pure-css-lightbox-for-pelican/',
 ]
+
+DISCLAIMER = 'Powered by love &amp; rainbow sparkles.'
+COPYRIGHT = 'Source code and content released under the <a href="/license/">MIT license</a>.'
+
+COMMENTS_ON_PAGES = True
+USE_AUTHOR_CARD = True
+AUTHOR_CARD_AVATAR = '/images/default_avatar.png'
+AUTHOR_CARD_ON_PAGES = True
+AUTHOR_CARD_DESCRIPTION = '''Anarchist. Humanist. Activist. Egalitarian. Feminist. Hacker. Debian developer. Tor advocate &amp; node operator. Hyperpolyglot. Musician. Ex pro gamer. Cunt.'''

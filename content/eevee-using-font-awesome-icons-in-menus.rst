@@ -5,6 +5,7 @@ Eevee -- Using Font Awesome icons in menus
 :category: eevee
 :tags: pelican
 :slug: eevee-using-font-awesome-icons-in-menus
+:series: Eevee
 
 .. image:: /images/eeveelutions.png
     :alt: Eevee the Pokémon

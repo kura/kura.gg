@@ -16,8 +16,8 @@
 {% if FEED_RSS or FEED_ATOM %}
     <a class="mdl-color-text--accent mdl-navigation__link"
        href="{{ SITEURL }}/{{ FEED_RSS if FEED_RSS else FEED_ATOM }}"
-       title="{{ 'RSS' if FEED_RSS else 'Atom' }} Feed" itemprop="url">
-        <i class="material-icons">rss_feed</i>
+       title="{{ 'RSS' if FEED_RSS else 'Atom' }}" itemprop="url">
+        <i class="material-icons">&#xE0E5;</i>
         {{ 'RSS' if FEED_RSS else 'Atom' }}
     </a>
 {% endif %}
@@ -25,7 +25,7 @@
     <div class="eevee-search-menu mdl-textfield">
         <label class="mdl-color-text--accent mdl-button mdl-button--icon"
                for="tipue_search_input">
-            <i class="material-icons">search</i>
+            <i class="material-icons">&#xE8B6;</i>
         </label>
         <div>
             <form action="{{ SITEURL }}/search.html">

@@ -1,7 +1,7 @@
 {% for year, date_year in dates|groupby('date.year')|sort(reverse=True) %}
     <h2>
         {% if YEAR_ARCHIVE_SAVE_AS %}
-            <a href="{{ SITEURL }}/archives/{{ year }}/"
+            <a href="{{ SITEURL }}/{{ YEAR_ARCHIVE_SAVE_AS.format(date=articles[0].date) }}"
                rel="bookmark" title="Archives for {{ year }}"
                itemprop="url">
                 {{ year }}
@@ -12,7 +12,7 @@
     </h2>
     <nav class="eevee-toc-ribbon">
         <ul>
-            {% include 'partials/archive-month.html' %}
+            {% include 'partials/archive_month.html' %}
         </ul>
     </nav>
 {% endfor %}
