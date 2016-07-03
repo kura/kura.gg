@@ -9,6 +9,9 @@ SITEURL = 'https://kura.io'
 THEME = 'eevee'
 THEME_PRIMARY = 'deep_orange'
 THEME_ACCENT = 'red'
+# THEME = 'eevee_original'
+# THEME_PRIMARY = 'blue_grey'
+# THEME_ACCENT = 'pink'
 USE_TWITTER_CARDS = True
 USE_OPEN_GRAPH = True
 

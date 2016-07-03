@@ -169,6 +169,13 @@ Screenshots
     :caption: Search
     :align: center
 
+.. lightbox::
+    :thumb: /images/eevee-mobile.png
+    :large: /images/eevee-mobile.png
+    :alt: Mobile view and menu
+    :caption: Mobile view and menu
+    :align: center
+
 Requirements
 ============
 
