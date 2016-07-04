@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% from 'partials/_defaults.html' import DISCLAIMER with context %}
+{% from 'partials/_defaults.html' import COPYRIGHT with context %}
+<html lang="{{ DEFAULT_LANG }}">
+<head id="head">
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="/favicon.png"
+          sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/png">
+    <link rel="icon" href="/favicon.ico"
+          sizes="16x16 32x32 48x48 64x64 128x128 256x256"
+          type="image/vnd.microsoft.icon">
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+</head>
+<body>
+    <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50"
+         id="top">
+        <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+        </div>
+        <main class="eevee-main mdl-layout__content">
+            <div class="eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="eevee-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+                     aria-label="Main content">
+                     <article itemscope itemtype="http://schema.org/WebPage">
+                         <div class="eevee-page-spacer" role="presentation"></div>
+                         <div class="eevee-page">
+                             <h2 itemprop="name">
+                                 <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
+                                    title="Permalink to '{{ page.title|striptags }}'"
+                                    itemprop="url">
+                                     {{ page.title }}
+                                 </a>
+                             </h2>
+                             {% include 'partials/toc.html' %}
+                             <section itemprop="mainContentOfPage" class="page-content">
+                                 {{ page.content }}
+                             </section>
+                         </div>
+                     </article>
+                </div>
+            </div>
+        </main>
+        <footer class="mdl-mega-footer" itemscope
+                itemtype="http://schema.org/SiteNavigationElement">
+            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">
+                    <a href="{{ SITEURL }}" rel="bookmark" itemprop="url"
+                       title="{{ SITENAME }}">
+                        {{ SITENAME }}
+                    </a>
+                </div>
+                {% if DISCLAIMER or COPYRIGHT %}
+                    <ul class="eevee-footer mdl-mega-footer--link-list">
+                        {% if DISCLAIMER %}
+                            <li>{{ DISCLAIMER }}</li>
+                        {% endif %}
+                        {% if COPYRIGHT %}
+                            <li>{{ COPYRIGHT }}</li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </footer>
+    </div>
+    {% if 'assets' in PLUGINS %}
+        {% include 'partials/_minify_css.html' with context %}
+        {% include 'partials/_minify_js.html' with context %}
+    {% endif %}
+</body>
+</html>

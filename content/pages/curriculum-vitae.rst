@@ -4,6 +4,7 @@ Curriculum Vitae
 :author: kura
 :slug: curriculum-vitae
 :status: hidden
+:template: cv
 
 Contact
 =======

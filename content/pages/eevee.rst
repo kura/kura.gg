@@ -29,7 +29,8 @@ Features
 ========
 
 - Built around `Google's Material Design <https://material.google.com/>`__
-  specification,
+  specification on top of Goole's `Material Design Lite library
+  <https://github.com/google/material-design-lite>`__,
 - configurable colour scheme,
 - responsive layout with mobile friendly header and navigation scheme,
 - inclusion of a ``custom.css`` file allowing easy overwriting of the theme
@@ -49,9 +50,9 @@ Features
 - `Microdata <https://en.wikipedia.org/wiki/Microdata_(HTML)>`__,
 - `Aria <https://en.wikipedia.org/wiki/WAI-ARIA>`__ accessibility,
 - includes `Material Icons <https://design.google.com/icons/>`__, `Font Awesome
-  <http://fontawesome.io/>`__ and `Roboto font
+  <http://fontawesome.io/>`__ and Google's `Roboto font
   <https://typecast.com/preview/google/Roboto>`__ and,
-- seamless upgrading with `getmdl.io's Material Javascript
+- seamless feature upgrade with Material Design Lite's `Javascript library
   <https://getmdl.io/started/index.html#download>`__.
 
 Plugins supported out-of-the-box
