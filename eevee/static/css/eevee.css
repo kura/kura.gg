@@ -521,7 +521,6 @@ li.series-active, li.series-active a {
 
 .lightbox-divider:last-child {
     background: none;
-    width: 100%;
     height: 0;
     margin: 0;
 }

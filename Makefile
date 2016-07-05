@@ -1,6 +1,6 @@
 PY=python
 PELICAN=pelican
-PELICANOPTS=
+PELICANOPTS='-D'
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
@@ -53,10 +53,10 @@ rsync:
 	python3.5 touch.py
 	rm -rf output/theme/fonts/
 	knock ego.kura.io
-	rsync -e "ssh" -ac --delete --exclude $(OUTPUTDIR)/theme/fonts $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
+	rsync -e "ssh" -ac --delete --progress --exclude $(OUTPUTDIR)/theme/fonts $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
 	bash screenshot.sh
 	knock ego.kura.io
-	rsync -e "ssh" -ac --delete --exclude $(OUTPUTDIR)/theme/fonts $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
+	rsync -e "ssh" -ac --delete --progress --exclude $(OUTPUTDIR)/theme/fonts $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
 	rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate start stop publish rsync

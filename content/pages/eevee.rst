@@ -666,24 +666,6 @@ be added there too.
 Eevee prefers RSS over ATOM, if you enable both feed types a menu item will
 only be created for RSS, although both feeds will be added as alternate link
 tags.
-
-Minimising/compressing CSS and JavaScript
------------------------------------------
-
-To minimise/compress all CSS or JavaScript, simply install the `assets <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__ plugin.
-
-Eevee is configured to automatically compress all CSS and JavaScript files it
-uses if the assets plugin is enabled, including files related to the search_
-functionality.
-
-.. code-block:: python
-
-    PLUGINS = [
-        # ...
-        'assets',
-        # ...
-    ]
-
 .. _search:
 
 Search functionality
@@ -767,6 +749,71 @@ Eevee is configured out-of-the-box to support adding these references using the
 `headerid
 <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__
 plugin.
+
+Related articles
+----------------
+
+.. lightbox::
+    :thumb: /images/eevee-related.png
+    :large: /images/eevee-related.png
+    :alt: Related articles
+    :caption: Related articles
+    :align: center
+
+Related articles functionality is provided by the `related_posts
+<https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`__
+plugin.
+
+Installing it will automatically enabled the functionality within Eevee.
+
+.. code-block:: python
+
+    PLUGINS = [
+        # ...
+        'related_posts',
+        # ...
+    ]
+
+Articles in a series
+--------------------
+
+.. lightbox::
+    :thumb: /images/eevee-series.png
+    :large: /images/eevee-series.png
+    :alt: Articles in a series
+    :caption: Articles in a series
+    :align: center
+
+Series article functionality is provided by the `series
+<https://github.com/getpelican/pelican-plugins/tree/master/series>`__
+plugin.
+
+Installing it will automatically enabled the functionality within Eevee.
+
+.. code-block:: python
+
+    PLUGINS = [
+        # ...
+        'series',
+        # ...
+    ]
+
+Minimising/compressing CSS and JavaScript
+-----------------------------------------
+
+To minimise/compress all CSS or JavaScript, simply install the `assets <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__ plugin.
+
+Eevee is configured to automatically compress all CSS and JavaScript files it
+uses if the assets plugin is enabled, including files related to the search_
+functionality.
+
+.. code-block:: python
+
+    PLUGINS = [
+        # ...
+        'assets',
+        # ...
+    ]
 
 Advanced pagination
 -------------------
