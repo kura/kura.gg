@@ -666,6 +666,7 @@ be added there too.
 Eevee prefers RSS over ATOM, if you enable both feed types a menu item will
 only be created for RSS, although both feeds will be added as alternate link
 tags.
+
 .. _search:
 
 Search functionality
@@ -844,6 +845,20 @@ be applied if the feature is enabled;
 - GoSquared,
 - Google Analytics and,
 - Open Web Analytics.
+
+For example, the following would be applied if you had Disqus and Google
+Analytics enabled.
+
+.. code-block:: html
+
+    <link rel="dns-prefetch" href="EXAMPLE.COM">
+    <link rel="dns-prefetch" href="//code.getmdl.io">
+    <link rel="dns-prefetch" href="//disqus.com">
+    <link rel="dns-prefetch" href="//a.disquscdn.com">
+    <link rel="dns-prefetch" href="//EXAMPLE.disqus.com">
+    <link rel="dns-prefetch" href="//glitter-services.disqus.com">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
 
 All configuration settings
 ==========================
