@@ -170,19 +170,19 @@ Screenshots
     :caption: Search
     :align: center
 
+Responsive mobile design
+========================
+
+By default Eevee will modify it's design -- specifically the logo and menu --
+on smaller screened devices, like cell phones or tablets. A ``Home`` link is
+automatically added to the navigation list.
+
 .. lightbox::
     :thumb: /images/eevee-mobile.png
     :large: /images/eevee-mobile.png
     :alt: Mobile view and menu
     :caption: Mobile view and menu
     :align: center
-
-Requirements
-============
-
-.. code-block:: bash
-
-    pip install pelican
 
 Installation
 ============
@@ -191,10 +191,13 @@ You can find Eevee `on GitHub <https://github.com/kura/eevee>`__ and you can
 find installation instructions for themes in the `pelican documentation
 <http://docs.getpelican.com/en/latest/pelican-themes.html>`__.
 
+Customising Eevee
+=================
+
 .. _colours:
 
-Configuring the primary and accent colours
-==========================================
+Primary and accent colours
+--------------------------
 
 The primary and accent colours are configured using the ``THEME_PRIMARY`` and
 ``THEME_ACCENT`` options respectively.
@@ -219,15 +222,8 @@ By default the colour scheme is :blue-grey:`blue grey` for the primary and
     THEME_PRIMARY = 'blue_grey'
     THEME_ACCENT = 'pink'
 
-Responsive mobile design
-========================
-
-By default Eevee will modify it's design -- specifically the logo and menu --
-on smaller screened devices, like cell phones or tablets. A ``Home`` link is
-automatically added to the navigation list.
-
-Customising the CSS
-===================
+CSS
+---
 
 `Inside the Eevee static folder is a custom.css file
 <https://github.com/kura/eevee/tree/master/static/css>`__. Anything added to
@@ -239,10 +235,17 @@ This allows you to tinker with the design as much as you like without breaking
 the core theme.
 
 Header and footer options
-=========================
+-------------------------
 
 Header
-------
+~~~~~~
+
+.. lightbox::
+    :thumb: /images/eevee-menu.png
+    :large: /images/eevee-menu.png
+    :alt: Header menu
+    :caption: Header menu
+    :align: center
 
 To configure links in the header, use the ``MENUITEMS`` option.
 
@@ -259,7 +262,14 @@ Using ``DISPLAY_PAGES_ON_MENU`` will automatically add pages to the menu.
     DISPLAY_PAGES_ON_MENU = True
 
 Footer
-------
+~~~~~~
+
+.. lightbox::
+    :thumb: /images/eevee-footer-menu-thumb.png
+    :large: /images/eevee-footer-menu.png
+    :alt: Footer menu
+    :caption: Footer menu
+    :align: center
 
 You can display links in the footer, by default this option is enabled but
 can be turned off using the ``MEGA_FOOTER`` option. See the `Screenshots`_
@@ -309,8 +319,15 @@ And finally, the fourth column displays links from ``LINKS``.
 The footer will scale based on options you configure, so if you set
 ``MENUITEMS`` and ``LINKS`` but not ``SOCIAL``, there will be no gap.
 
-Customising the copyright notice and disclaimer
-===============================================
+Copyright notice and disclaimer
+-------------------------------
+
+.. lightbox::
+    :thumb: /images/eevee-copyright-disclaimer-thumb.png
+    :large: /images/eevee-copyright-disclaimer.png
+    :alt: Copyright and disclaimer
+    :caption: Copyright and disclaimer
+    :align: center
 
 You can change the disclaimer and copyright notice displayed in the footer with
 the following variables.
@@ -337,7 +354,14 @@ obligation to keep either of them.
     COPYRIGHT = '<a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a>'
 
 Archives
-========
+--------
+
+.. lightbox::
+    :thumb: /images/eevee-menu.png
+    :large: /images/eevee-menu.png
+    :alt: Header menu
+    :caption: Header menu
+    :align: center
 
 Eevee supports full archives and archives broken down by year and month.
 
@@ -361,8 +385,15 @@ More information on archive settings can be found in the
 `Pelican documentation
 <http://docs.getpelican.com/en/3.6.3/settings.html#url-settings>`__.
 
-Adding table of contents to articles and pages
-==============================================
+Table of contents for articles and pages
+----------------------------------------
+
+.. lightbox::
+    :thumb: /images/eevee-toc.png
+    :large: /images/eevee-toc.png
+    :alt: Table of contents
+    :caption: Table of contents
+    :align: center
 
 A table of contents section is added to an article or page if it exists
 as a variable called ``toc`` in the article or page object.
@@ -376,14 +407,21 @@ modified version `on GitHub
 <https://github.com/kura/kura.io/tree/master/plugins/extract_toc>`__ that
 returns nicer HTML.
 
-Adding author card to articles
-==============================
+Author card
+-----------
+
+.. lightbox::
+    :thumb: /images/eevee-author-card.png
+    :large: /images/eevee-author-card.png
+    :alt: Author card
+    :caption: Author card
+    :align: center
 
 The author card is disabled by default, below are instructions on enabling it
 and customising it.
 
 Enabling the author card
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enabling the author card is as simple as setting an option in
 ``pelicanconf.py``.
@@ -399,7 +437,7 @@ You can disable it by setting to ``False`` or removing the setting entirely.
     USE_AUTHOR_CARD = False
 
 Using your own avatar
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 A default avatar placeholder is provided with the theme, you can easily use
 your own avatar by setting an option in ``pelicanconf.py``.
@@ -411,7 +449,7 @@ your own avatar by setting an option in ``pelicanconf.py``.
 The maximum size that you should use are 250x250 pixels.
 
 Setting a description
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Like all the other options above, setting a description for your author card
 requires a single config option.
@@ -423,7 +461,7 @@ requires a single config option.
 You can add HTML and other various things to this description.
 
 Social buttons
---------------
+~~~~~~~~~~~~~~
 
 By default, the author card section will display links from your ``SOCIAL``
 list.
@@ -443,15 +481,15 @@ links.
                   ('<i class="fa fa-twitter aria-hidden="true"></i>',
                    'https://twitter.com/kuramanga'), )
 
-Using Disqus or Muut for comments
-=================================
+Disqus or Muut for comments
+---------------------------
 
 You can only enable `Disqus <https://disqus.com/home/>`__ or `Muut
 <https://muut.com/>`__, not both. Disqus takes priority over Muut
 in terms of how the configuration variables are handled.
 
 Disqus
-------
+~~~~~~
 
 .. code-block:: python
 
@@ -460,7 +498,7 @@ Disqus
 Setting this option will enable Disqus for articles.
 
 Muut
-----
+~~~~
 
 .. code-block:: python
 
@@ -469,7 +507,7 @@ Muut
 Setting this option will enable Muut for articles.
 
 Comments on pages
------------------
+~~~~~~~~~~~~~~~~~
 
 You can display comments on pages as well as articles with the following
 option. By default this is disabled.
@@ -479,10 +517,17 @@ option. By default this is disabled.
     COMMENTS_ON_PAGES = True
 
 Sharing options
-===============
+---------------
+
+.. lightbox::
+    :thumb: /images/eevee-share-buttons.png
+    :large: /images/eevee-share-buttons.png
+    :alt: Share buttons
+    :caption: Share buttons
+    :align: center
 
 Share buttons
--------------
+~~~~~~~~~~~~~
 
 By default four share buttons are configured;
 
@@ -496,8 +541,8 @@ These buttons will appear on all articles and pages.
 If you have comments enabled either using Disqus or Muut, on articles a fifth
 button will be shown which shows the user comments for the current article.
 
-Configuration options
----------------------
+Options
+~~~~~~~
 
 .. code-block:: python
 
@@ -518,7 +563,7 @@ If set, Twitter meta tags will be added.
 Used in conjunction with ``USE_TWITTER_CARDS``, adds the "via" meta tag.
 
 Adding an image to Open Graph and Twitter meta tags
----------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are two ways of adding an image to Twitter and Open Graph so that when
 someone shares your content, an image will be added too.
@@ -553,21 +598,21 @@ Or you can set ``OPEN_GRAPH_IMAGE`` to an image location in the
         # ...
     }
 
-Using Google Analytics, Piwik, Open Web Analytics and GoSquared
-===============================================================
+Google Analytics, Piwik, Open Web Analytics and GoSquared
+---------------------------------------------------------
 
 All four of these options can be enabled at the same time, should you wish to
 do so.
 
 Google Analytics
-----------------
+~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
     GOOGLE_ANALYTICS = 'abc1234'
 
 Piwik
------
+~~~~~
 
 .. code-block:: python
 
@@ -576,7 +621,7 @@ Piwik
     # PIWIK_SSL_URL = ''  # Defaults to https://PIWIK_URL
 
 Open Web Analytics
-------------------
+~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -584,14 +629,14 @@ Open Web Analytics
     OWA_URL = 'https://example.com/owa/'
 
 GoSquared
----------
+~~~~~~~~~
 
 .. code-block:: python
 
     GOSQUARED_SITENAME = '123456'
 
-Enabling feeds
-==============
+Feeds
+-----
 
 You can use the ``FEED_RSS`` and ``FEED_ATOM`` options to enable RSS and Atom
 feeds respectively.
@@ -605,7 +650,14 @@ feeds respectively.
     FEED_ATOM = 'feeds/atom.xml'
 
 Feed menu item
---------------
+~~~~~~~~~~~~~~
+
+.. lightbox::
+    :thumb: /images/eevee-menu.png
+    :large: /images/eevee-menu.png
+    :alt: Feed menu item
+    :caption: Feed menu item
+    :align: center
 
 Enabling either ``FEED_RSS`` or ``FEED_ATOM`` will automatically add a menu
 item for that feed. If ``MEGA_FOOTER`` is also enabled a link to the feed will
@@ -616,7 +668,7 @@ only be created for RSS, although both feeds will be added as alternate link
 tags.
 
 Minimising/compressing CSS and JavaScript
-=========================================
+-----------------------------------------
 
 To minimise/compress all CSS or JavaScript, simply install the `assets <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__ plugin.
 
@@ -634,8 +686,15 @@ functionality.
 
 .. _search:
 
-Enabling search functionality
-=============================
+Search functionality
+--------------------
+
+.. lightbox::
+    :thumb: /images/eevee-search-menu-item.png
+    :large: /images/eevee-search-menu-item.png
+    :alt: Search menu item
+    :caption: Search menu item
+    :align: center
 
 Eevee is configured to work with `tipue_search
 <https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__
@@ -657,7 +716,7 @@ template setting.
     ]
 
 Category and tag pages
-======================
+----------------------
 
 To display all articles in specific categories or tags, you need to add the
 relevant settings.
@@ -690,8 +749,15 @@ And below is an example for tags.
         # ...
     ]
 
-Adding permalinks to headlines
-==============================
+Permalinks in headlines
+-----------------------
+
+.. lightbox::
+    :thumb: /images/eevee-headerid.png
+    :large: /images/eevee-headerid.png
+    :alt: Header permalink
+    :caption: Header permalink
+    :align: center
 
 reStructuredText does not add anchors to headings by default, adding reference
 links on headings means you can send the link to someone and have the browser
@@ -702,8 +768,8 @@ Eevee is configured out-of-the-box to support adding these references using the
 <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__
 plugin.
 
-Advanced pagination of articles
-===============================
+Advanced pagination
+-------------------
 
 By default, Eevee will display pagination links on the index page of articles.
 Enabling the `neighbors
@@ -717,7 +783,7 @@ look at the `Pelican documentation
 <http://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>`__.-
 
 DNS prefetch
-============
+------------
 
 `DNS prefetching
 <https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching>`__
@@ -731,6 +797,153 @@ be applied if the feature is enabled;
 - GoSquared,
 - Google Analytics and,
 - Open Web Analytics.
+
+All configuration settings
+==========================
+
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| Setting name                   | Default                              | Description                                                        |
++================================+======================================+====================================================================+
+| ``SITENAME``                   |                                      | The title of your website                                          |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``AUTHOR``                     |                                      | Your name                                                          |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``THEME_PRIMARY``              | :blue-grey:`blue_grey`               | Primary colour scheme                                              |
+|                                |                                      |                                                                    |
+|                                |                                      | `Primary and accent colours`_                                      |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``THEME_ACCENT``               | :pink:`pink`                         | Accent colour scheme                                               |
+|                                |                                      |                                                                    |
+|                                |                                      | `Primary and accent colours`_                                      |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``MEGA_FOOTER``                | ``True``                             | Display the mega footer                                            |
+|                                |                                      |                                                                    |
+|                                |                                      | `Header and footer options`_                                       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``DISCLAIMER``                 |                                      | Disclaimer displayed on the footer                                 |
+|                                |                                      |                                                                    |
+|                                |                                      | `Primary and accent colours`_                                      |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``COPYRIGHT``                  |                                      | Copyright notice displayed on the footer                           |
+|                                |                                      |                                                                    |
+|                                |                                      | `Primary and accent colours`_                                      |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``USE_AUTHOR_CARD``            | ``False``                            | Display about author card on articles                              |
+|                                |                                      |                                                                    |
+|                                |                                      | `Author card`_                                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``AUTHOR_CARD_ON_PAGES``       | ``False``                            | Display about author card on pages                                 |
+|                                |                                      |                                                                    |
+|                                |                                      | `Author card`_                                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``AUTHOR_CARD_AVATAR``         | ``/theme/images/default_avatar.png`` | Avatar to display on the author card                               |
+|                                |                                      |                                                                    |
+|                                |                                      | `Author card`_                                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``AUTHOR_CARD_DESCRIPTION``    |                                      | Description to display on the author card                          |
+|                                |                                      |                                                                    |
+|                                |                                      | `Author card`_                                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``AUTHOR_CARD_SOCIAL``         | ``SOCIAL``                           | Social media links to display on the author card                   |
+|                                |                                      |                                                                    |
+|                                |                                      | `Author card`_                                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``MENUITEMS``                  | ``[]``                               | Displayed on header and mega footer                                |
+|                                |                                      |                                                                    |
+|                                |                                      | `Header and footer options`_                                       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``LINKS``                      | ``[]``                               | Blogroll to display on the mega footer                             |
+|                                |                                      |                                                                    |
+|                                |                                      | `Header and footer options`_                                       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``SOCIAL``                     | ``[]``                               | Social links to display on the menu and mega footer                |
+|                                |                                      |                                                                    |
+|                                |                                      | `Header and footer options`_                                       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``DISPLAY_PAGES_ON_MENU``      | ``False``                            | Display pages on the menu and mega footer                          |
+|                                |                                      |                                                                    |
+|                                |                                      | `Header and footer options`_                                       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``DISPLAY_CATEGORIES_ON_MENU`` | ``False``                            | Display categories on the menu and mega footer                     |
+|                                |                                      |                                                                    |
+|                                |                                      | `Header and footer options`_                                       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``COMMENTS_ON_PAGES``          | ``False``                            | Add Diqus or Muut comments on pages                                |
+|                                |                                      |                                                                    |
+|                                |                                      | `Disqus or Muut for comments`_                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``MUUT_SITENAME``              |                                      | Muut unique identifier for the website                             |
+|                                |                                      |                                                                    |
+|                                |                                      | `Disqus or Muut for comments`_                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``DISQUS_SITENAME``            |                                      | Disqus unique identifier for the website                           |
+|                                |                                      |                                                                    |
+|                                |                                      | `Disqus or Muut for comments`_                                     |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``USE_OPEN_GRAPH``             | ``False``                            | Add Open Graph meta tags                                           |
+|                                |                                      |                                                                    |
+|                                |                                      | `Sharing options`_                                                 |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``USE_TWITTER_CARDS``          | ``False``                            | Add Twitter meta tags                                              |
+|                                |                                      |                                                                    |
+|                                |                                      | `Sharing options`_                                                 |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``TWITTER_USERNAME``           |                                      | Add your Twitter username to mega tags                             |
+|                                |                                      |                                                                    |
+|                                |                                      | `Sharing options`_                                                 |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``OPEN_GRAPH_IMAGE``           |                                      | Add an image to Twitter and Open Graph                             |
+|                                |                                      |                                                                    |
+|                                |                                      | `Sharing options`_                                                 |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``OWA_SITE_ID``                |                                      | OWA unique identifier for the website                              |
+|                                |                                      |                                                                    |
+|                                |                                      | `Google Analytics, Piwik, Open Web Analytics and GoSquared`_       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``OWA_URL``                    |                                      | URL to the OWA installation                                        |
+|                                |                                      |                                                                    |
+|                                |                                      | `Google Analytics, Piwik, Open Web Analytics and GoSquared`_       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``PIWIK_SITE_ID``              |                                      | Piwik unique identifier for the website                            |
+|                                |                                      |                                                                    |
+|                                |                                      | `Google Analytics, Piwik, Open Web Analytics and GoSquared`_       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``PIWIK_URL``                  |                                      | URL to the Piwik installation                                      |
+|                                |                                      |                                                                    |
+|                                |                                      | `Google Analytics, Piwik, Open Web Analytics and GoSquared`_       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``PIWIK_SSL_URL``              | ``PIWIK_URL``                        | Secure URL to the Piwik installation                               |
+|                                |                                      |                                                                    |
+|                                |                                      | `Google Analytics, Piwik, Open Web Analytics and GoSquared`_       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``GOOGLE_ANALYTICS``           |                                      | Google Analytics unique identifier for the website                 |
+|                                |                                      |                                                                    |
+|                                |                                      | `Google Analytics, Piwik, Open Web Analytics and GoSquared`_       |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``ARCHIVES_URL``               |                                      | URL for archives and add a menu item for it                        |
+|                                |                                      |                                                                    |
+|                                |                                      | `Archives`_                                                        |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``ARCHIVES_SAVE_AS``           |                                      | Location to save archives                                          |
+|                                |                                      |                                                                    |
+|                                |                                      | `Archives`_                                                        |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``MONTH_ARCHIVE_SAVE_AS``      |                                      | Location to save monthly archives                                  |
+|                                |                                      |                                                                    |
+|                                |                                      | `Archives`_                                                        |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``YEAR_ARCHIVE_SAVE_AS``       |                                      | Location to save yearly archives                                   |
+|                                |                                      |                                                                    |
+|                                |                                      | `Archives`_                                                        |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``FEED_RSS``                   |                                      | Enable the RSS feed and add a menu item for it                     |
+|                                |                                      |                                                                    |
+|                                |                                      | `Feeds`_                                                           |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
+| ``FEED_ATOM``                  |                                      | Enable the Atom feed and add a menu item for it                    |
+|                                |                                      |                                                                    |
+|                                |                                      | `Feeds`_                                                           |
++--------------------------------+--------------------------------------+--------------------------------------------------------------------+
 
 Additional tweaks and modifications
 ===================================
