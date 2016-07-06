@@ -58,26 +58,33 @@ Features
 Plugins supported out-of-the-box
 ================================
 
-Eevee ships with all the HTML and CSS required for the following plugins but
-does not need any of them to function. If a plugin is supported but not used,
-the HTML, CSS and JavaScript simply won't be included.
+Eevee ships with all the HTML, CSS and JavaScript required for the following
+plugins but does not need any of them to function correctly. If a plugin is
+supported but not used, the HTML, CSS and JavaScript simply won't be included.
 
 - `assets
-  <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__,
+  <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__ (see
+  `Plugin: Minimise CSS and JavaScript`_ section for more information),
 - `extract_toc
-  <https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>`__,
+  <https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>`__ (
+  see `Table of contents for articles and pages`_ section for more
+  information),
 - `headerid
-  <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__,
+  <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__ (see
+  `Plugin: Permalinks in headlines`_ section for more information),
 - `lightbox
-  <https://github.com/getpelican/kura/lightbox>`__,
+  <https://github.com/kura/lightbox>`__,
 - `neighbors
   <https://github.com/getpelican/pelican-plugins/tree/master/neighbors>`__,
 - `related_posts
-  <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`__,
+  <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`__
+  (see `Plugin: Related articles`_ section for more information),
 - `series
-  <https://github.com/getpelican/pelican-plugins/tree/master/series>`__ and,
+  <https://github.com/getpelican/pelican-plugins/tree/master/series>`__ (see
+  `Plugin: Articles in a series`_ section for more information) and,
 - `tipue_search
-  <https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__.
+  <https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__ (
+  see `Plugin: Search functionality`_ section for more information.)
 
 Typography
 ==========
@@ -187,9 +194,22 @@ automatically added to the navigation list.
 Installation
 ============
 
-You can find Eevee `on GitHub <https://github.com/kura/eevee>`__ and you can
-find installation instructions for themes in the `pelican documentation
-<http://docs.getpelican.com/en/latest/pelican-themes.html>`__.
+Download the latest Eevee release
+`from GitHub <https://github.com/kura/eevee/releases>`__ and extract it in to
+your Pelican website directory and rename the directory to ``eevee``.
+
+Install the theme using ``pelican-themes``.
+
+.. code-block:: bash
+
+    pelican-themes -i eevee
+
+All you need to do after that is set the ``THEME`` variable to ``eevee`` in
+your ``pelicanconf.py``.
+
+.. code-block:: python
+
+    THEME = 'eevee'
 
 Customising Eevee
 =================
@@ -222,8 +242,8 @@ By default the colour scheme is :blue-grey:`blue grey` for the primary and
     THEME_PRIMARY = 'blue_grey'
     THEME_ACCENT = 'pink'
 
-CSS
----
+Custom CSS
+----------
 
 `Inside the Eevee static folder is a custom.css file
 <https://github.com/kura/eevee/tree/master/static/css>`__. Anything added to
@@ -319,8 +339,8 @@ And finally, the fourth column displays links from ``LINKS``.
 The footer will scale based on options you configure, so if you set
 ``MENUITEMS`` and ``LINKS`` but not ``SOCIAL``, there will be no gap.
 
-Copyright notice and disclaimer
--------------------------------
+Setting your own copyright notice and disclaimer
+------------------------------------------------
 
 .. lightbox::
     :thumb: /images/eevee-copyright-disclaimer-thumb.png
@@ -352,38 +372,6 @@ obligation to keep either of them.
 
     DISCLAIMER = 'Powered by love &amp; rainbow sparkles.'
     COPYRIGHT = '<a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a>'
-
-Archives
---------
-
-.. lightbox::
-    :thumb: /images/eevee-menu.png
-    :large: /images/eevee-menu.png
-    :alt: Header menu
-    :caption: Header menu
-    :align: center
-
-Eevee supports full archives and archives broken down by year and month.
-
-To enable the full archive section, you need to enable the relevant setting in
-your ``pelicanconf.py`` file.
-
-.. code-block:: python
-
-    ARCHIVES_URL = 'archives.html'
-    ARCHIVES_SAVE_AS = 'archives.html'
-
-Enabling the periodic archives for year and/or month is as simple as enabling
-their respective options in ``pelicanconf.py``
-
-.. code-block:: python
-
-    YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
-    MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
-
-More information on archive settings can be found in the
-`Pelican documentation
-<http://docs.getpelican.com/en/3.6.3/settings.html#url-settings>`__.
 
 Table of contents for articles and pages
 ----------------------------------------
@@ -477,9 +465,9 @@ links.
 .. code-block:: python
 
     AUTHOR_CARD_SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i>',
-                   'https://github.com/kura'),
-                  ('<i class="fa fa-twitter aria-hidden="true"></i>',
-                   'https://twitter.com/kuramanga'), )
+                           'https://github.com/kura'),
+                          ('<i class="fa fa-twitter aria-hidden="true"></i>',
+                           'https://twitter.com/kuramanga'), )
 
 Disqus or Muut for comments
 ---------------------------
@@ -598,6 +586,38 @@ Or you can set ``OPEN_GRAPH_IMAGE`` to an image location in the
         # ...
     }
 
+Archives
+--------
+
+.. lightbox::
+    :thumb: /images/eevee-menu.png
+    :large: /images/eevee-menu.png
+    :alt: Header menu
+    :caption: Header menu
+    :align: center
+
+Eevee supports full archives and archives broken down by year and month.
+
+To enable the full archive section, you need to enable the relevant setting in
+your ``pelicanconf.py`` file.
+
+.. code-block:: python
+
+    ARCHIVES_URL = 'archives.html'
+    ARCHIVES_SAVE_AS = 'archives.html'
+
+Enabling the periodic archives for year and/or month is as simple as enabling
+their respective options in ``pelicanconf.py``
+
+.. code-block:: python
+
+    YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+    MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+
+More information on archive settings can be found in the
+`Pelican documentation
+<http://docs.getpelican.com/en/3.6.3/settings.html#url-settings>`__.
+
 Google Analytics, Piwik, Open Web Analytics and GoSquared
 ---------------------------------------------------------
 
@@ -667,37 +687,6 @@ Eevee prefers RSS over ATOM, if you enable both feed types a menu item will
 only be created for RSS, although both feeds will be added as alternate link
 tags.
 
-.. _search:
-
-Search functionality
---------------------
-
-.. lightbox::
-    :thumb: /images/eevee-search-menu-item.png
-    :large: /images/eevee-search-menu-item.png
-    :alt: Search menu item
-    :caption: Search menu item
-    :align: center
-
-Eevee is configured to work with `tipue_search
-<https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__
-out-of-the-box, all you need to do is enable the plugin and add the search
-template setting.
-
-.. code-block:: python
-
-    PLUGINS = [
-        # ...
-        'tipue_search',
-        # ...
-    ]
-
-    DIRECT_TEMPLATES = [
-        # ...
-        'search',
-        # ...
-    ]
-
 Category and tag pages
 ----------------------
 
@@ -732,8 +721,39 @@ And below is an example for tags.
         # ...
     ]
 
-Permalinks in headlines
------------------------
+.. _search:
+
+Plugin: Search functionality
+----------------------------
+
+.. lightbox::
+    :thumb: /images/eevee-search-menu-item.png
+    :large: /images/eevee-search-menu-item.png
+    :alt: Search menu item
+    :caption: Search menu item
+    :align: center
+
+Eevee is configured to work with `tipue_search
+<https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__
+out-of-the-box, all you need to do is enable the plugin and add the search
+template setting.
+
+.. code-block:: python
+
+    PLUGINS = [
+        # ...
+        'tipue_search',
+        # ...
+    ]
+
+    DIRECT_TEMPLATES = [
+        # ...
+        'search',
+        # ...
+    ]
+
+Plugin: Permalinks in headlines
+-------------------------------
 
 .. lightbox::
     :thumb: /images/eevee-headerid.png
@@ -751,8 +771,8 @@ Eevee is configured out-of-the-box to support adding these references using the
 <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__
 plugin.
 
-Related articles
-----------------
+Plugin: Related articles
+------------------------
 
 .. lightbox::
     :thumb: /images/eevee-related.png
@@ -775,8 +795,8 @@ Installing it will automatically enabled the functionality within Eevee.
         # ...
     ]
 
-Articles in a series
---------------------
+Plugin: Articles in a series
+----------------------------
 
 .. lightbox::
     :thumb: /images/eevee-series.png
@@ -799,8 +819,8 @@ Installing it will automatically enabled the functionality within Eevee.
         # ...
     ]
 
-Minimising/compressing CSS and JavaScript
------------------------------------------
+Plugin: Minimise CSS and JavaScript
+-----------------------------------
 
 To minimise/compress all CSS or JavaScript, simply install the `assets <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__ plugin.
 
@@ -828,7 +848,7 @@ pagination without going back to the index page.
 The default Pelican pagination settings are not very pleasing, for more
 information on how to customise them to better and be more intuitive please
 look at the `Pelican documentation
-<http://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>`__.-
+<http://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>`__.
 
 DNS prefetch
 ------------

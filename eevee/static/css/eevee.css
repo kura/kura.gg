@@ -18,6 +18,55 @@ img {
     height: auto;
 }
 
+h1 {
+    font-size: 42px;
+    line-height: 1.35;
+    margin: 24px 0
+}
+
+h1, h2 {
+    font-weight: 400
+}
+
+h2 {
+    font-size: 38px;
+    line-height: 48px
+}
+
+h2, h3 {
+    margin: 24px 0
+}
+
+h3 {
+    font-size: 34px;
+    line-height: 40px
+}
+
+h3, h4 {
+    font-weight: 400
+}
+
+h4 {
+    font-size: 30px;
+    line-height: 32px;
+    margin: 24px 0 16px
+}
+
+h5 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+h5, h6 {
+    margin: 24px 0 16px
+}
+
+h6 {
+    font-weight: 400;
+    line-height: 26px
+}
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     text-decoration: none !important;
 }
@@ -313,7 +362,7 @@ p.align-center {
 
 .eevee-share {
     float: right;
-    padding: 36px 56px 0 56px;
+    padding: 36px 56px 36px 56px;
 }
 
 ul.social-share {
@@ -408,7 +457,6 @@ h6 > a.headerlink:hover {
     color: rgb(66, 66, 66) !important;
     visibility: hidden;
     vertical-align: text-top;
-    font-size: 40px;
     padding: 0 4px;
     text-decoration: none;
     -webkit-transition: color 0.3s ease 0s !important;
@@ -420,10 +468,9 @@ h3 > a.headerlink,
 h4 > a.headerlink,
 h5 > a.headerlink,
 h6 > a.headerlink {
+    padding: 0 4px;
     color: rgb(224, 224, 224);
     vertical-align: text-top;
-    font-size: 40px;
-    padding: 0 4px;
     visibility: hidden;
 }
 
@@ -432,11 +479,44 @@ h3:hover > a.headerlink,
 h4:hover > a.headerlink,
 h5:hover > a.headerlink,
 h6:hover > a.headerlink {
+    padding: 0 4px;
     visibility: visible;
     vertical-align: text-top;
-    font-size: 40px;
-    padding: 0 4px;
     color: rgb(224, 224, 224);
+}
+
+h2 > a.headerlink:hover,
+h2 > a.headerlink,
+h2:hover > a.headerlink {
+    font-size: 38px;
+    line-height: 48px
+}
+
+h3 > a.headerlink:hover,
+h3 > a.headerlink,
+h3:hover > a.headerlink {
+    font-size: 34px;
+    line-height: 40px
+}
+
+h4 > a.headerlink:hover,
+h4 > a.headerlink,
+h4:hover > a.headerlink {
+    font-size: 30px;
+    line-height: 32px;
+}
+
+h5 > a.headerlink:hover,
+h5 > a.headerlink,
+h5:hover > a.headerlink {
+    font-size: 28px;
+    line-height: 1;
+}
+
+h6 > a.headerlink:hover,
+h6 > a.headerlink,
+h6:hover > a.headerlink {
+    line-height: 26px
 }
 
 .summary-content a.headerlink {
