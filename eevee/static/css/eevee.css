@@ -19,7 +19,7 @@ img {
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 36px;
     line-height: 1.35;
     margin: 24px 0
 }
@@ -29,7 +29,7 @@ h1, h2 {
 }
 
 h2 {
-    font-size: 38px;
+    font-size: 34px;
     line-height: 48px
 }
 
@@ -38,7 +38,7 @@ h2, h3 {
 }
 
 h3 {
-    font-size: 34px;
+    font-size: 32px;
     line-height: 40px
 }
 
@@ -344,6 +344,16 @@ div.eevee-comment div.muut {
     text-decoration: none;
 }
 
+.mdl-logo a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.mdl-mega-footer--heading {
+    font-size: 14px;
+}
+
 .mdl-mega-footer--link-list i.material-icons,
 .mdl-mega-footer__link-list i.material-icons {
     font-size: 14px;
@@ -578,6 +588,10 @@ li.series-active, li.series-active a {
     background: rgba(0, 0, 0, 0.8);
 }
 
+.lightbox-block {
+    padding: 30px 0;
+}
+
 .lightbox img {
     max-width: 98%;
     max-height: 90%;
@@ -589,8 +603,8 @@ li.series-active, li.series-active a {
     display: block;
 }
 
-.lightbox-divider {
-    background: rgb(224, 224, 224);
+/*.lightbox-divider {
+    background: rgb(255,138,101);
     width: 100%;
     height: 3px;
     -webkit-flex-shrink: 0;
@@ -599,8 +613,8 @@ li.series-active, li.series-active a {
     margin: 30px 0;
 }
 
-.lightbox-divider:last-child {
+.lightbox-divider:last-child, .lightbox-divider:only-child {
     background: none;
     height: 0;
     margin: 0;
-}
+}*/
