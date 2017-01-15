@@ -1,12 +1,15 @@
+{% from 'partials/_defaults.html' import obj with context %}
 {% if DISQUS_SITENAME or MUUT_SITENAME %}
+  {% if obj is defined and obj.comments|title != 'False' %}
     <div class="eevee-comment" id="article-comments">
-        <section itemscope itemtype='http://schema.org/UserComments'>
-            <h2>Join the discussion</h2>
-            {% if DISQUS_SITENAME %}
-                {% include 'partials/disqus.html' %}
-            {% elif MUUT_SITENAME %}
-                {% include 'partials/muut.html' %}
-            {% endif %}
-        </section>
+      <section itemscope itemtype='http://schema.org/UserComments'>
+        <h2>Join the discussion</h2>
+        {% if DISQUS_SITENAME %}
+          {% include 'partials/disqus.html' %}
+        {% elif MUUT_SITENAME %}
+          {% include 'partials/muut.html' %}
+        {% endif %}
+      </section>
     </div>
+  {% endif %}
 {% endif %}

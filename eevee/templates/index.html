@@ -1,36 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for article in (articles_page.object_list if articles_page else articles) %}
-        <article class="eevee-padding" itemscope
-                 itemtype="http://schema.org/BlogPosting">
-            {% include 'partials/structured_data.html' %}
-            <div class="eevee-meta mdl-color-text--grey-500">
-                <time datetime="{{ article.date.isoformat() }}"
-                      itemprop="datePublished">
-                    {{ article.locale_date }}
-                </time>
-            </div>
-            <h2 itemprop="name">
-                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                   title="Permalink to '{{ article.title|striptags }}'"
-                   itemprop="url">
-                {{ article.title }}
-                </a>
-            </h2>
-            <section itemprop="articleBody" class="summary-content">
-                {{ article.summary }}
-            </section>
-            {% if not loop.last %}
-                <div class="eevee-divider mdl-color--accent" role="presentation">
-                </div>
-                <div class="eevee-divider-to-top">
-                    <a href="#top" title="Back to the top of the page"
-                       itemprop="url">
-                        Back to the top of the page
-                    </a>
-                </div>
-            {% endif %}
-        </article>
-    {% endfor %}
-    <div class="eevee-page-spacer" role="presentation"></div>
+{% for article in (articles_page.object_list if articles_page else articles) %}
+  <article class="eevee-padding" itemscope
+           itemtype="http://schema.org/BlogPosting">
+    {% include 'partials/structured_data.html' %}
+    <div class="eevee-meta mdl-color-text--grey-500">
+      <time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">
+        {{ article.locale_date }}
+      </time>
+    </div>
+    <h2 itemprop="name" class="article-title">
+      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+         title="Permalink to '{{ article.title|striptags }}'"
+         itemprop="url">
+        {{ article.title }}
+      </a>
+    </h2>
+    <section itemprop="articleBody" class="summary-content">
+      {{ article.summary }}
+    </section>
+    {% if not loop.last %}
+      <div class="eevee-divider mdl-color--accent" role="presentation"></div>
+        <div class="eevee-divider-to-top">
+          <a href="#top" title="Back to the top of the page"
+             itemprop="url">
+            Back to the top of the page
+          </a>
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+  <div class="eevee-page-spacer" role="presentation"></div>
 {% endblock content %}

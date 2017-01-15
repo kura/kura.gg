@@ -1,9 +1,9 @@
 {% from 'partials/_defaults.html' import OWA_URL with context %}
 {% from 'partials/_defaults.html' import OWA_SITE_ID with context %}
 {% if OWA_URL and OWA_SITE_ID %}
-    <script src="{{ OWA_URL }}/modules/base/js/owa.tracker-combined-min.js">
-    </script>
-    <script>
-        OWA.setSetting("baseUrl","{{ OWA_URL }}"),OWATracker=new OWA.tracker,OWATracker.setSiteId("{{ OWA_SITE_ID }}"),OWATracker.trackPageView(),OWATracker.trackClicks(),OWATracker.trackDomStream();
-    </script>
+  <script src="{{ OWA_URL }}/modules/base/js/owa.tracker-combined-min.js">
+  </script>
+  <script>
+    OWA.setSetting("baseUrl","{{ OWA_URL }}"),OWATracker=new OWA.tracker,OWATracker.setSiteId("{{ OWA_SITE_ID }}"),OWATracker.trackPageView(),OWATracker.trackClicks(),OWATracker.trackDomStream();
+  </script>
 {% endif %}

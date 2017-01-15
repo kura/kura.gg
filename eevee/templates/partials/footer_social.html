@@ -1,14 +1,15 @@
 {% if SOCIAL %}
-    <div class="mdl-mega-footer--drop-down-section">
-        <h1 class="mdl-mega-footer--heading">Social</h1>
-        <ul class="mdl-mega-footer--link-list">
-            {% for title, url in SOCIAL %}
-                <li>
-                    <a href="{{ url }}" itemprop="url" rel="bookmark">
-                        {{ title }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Social</h1>
+    <ul class="mdl-mega-footer--link-list">
+      {% for html, title, url in SOCIAL %}
+        <li>
+          <a href="{{ url }}" itemprop="url" rel="bookmark"
+             title="{{ title }}">
+            {{ html }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endif %}

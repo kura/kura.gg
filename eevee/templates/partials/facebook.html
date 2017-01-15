@@ -4,24 +4,24 @@
 {% from 'partials/_defaults.html' import share_url with context %}
 {% from 'partials/_defaults.html' import obj with context %}
 {% if USE_OPEN_GRAPH %}
-    <meta property="og:site_name" content="{{ SITENAME|striptags|escape }}">
-    <meta property="og:type" content="article">
-    {% if obj is defined %}
-        <meta property="og:title"
-              content="{{ obj.title|striptags|escape|replace('¶', '') }}">
-        <meta property="og:url"
-              content="{{ SITEURL }}/{{ obj.url }}">
-        <meta property="og:description"
-              content="{{ obj.summary|striptags|escape|replace('¶', '') }}">
-        <meta property="og:image"
-              content="{{ SITEURL }}/{{ obj.url }}index.png">
-    {% else %}
-        <meta property="og:title"
-              content="{{ SITENAME|striptags|escape|replace('¶', '') }}">
-        <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}">
-        <meta property="og:image"
-              content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}">
-    {% endif %}
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="1080">
+  <meta property="og:site_name" content="{{ SITENAME|striptags|escape }}" />
+  <meta property="og:type" content="article" />
+  {% if obj is defined %}
+    <meta property="og:title"
+          content="{{ obj.title|striptags|escape|replace('※', '') }}" />
+    <meta property="og:url"
+          content="{{ SITEURL }}/{{ obj.url }}" />
+    <meta property="og:description"
+          content="{{ obj.summary|striptags|escape|replace('※', '') }}" />
+    <meta property="og:image"
+          content="{{ SITEURL }}/{{ obj.url }}index.png" />
+  {% else %}
+    <meta property="og:title"
+          content="{{ SITENAME|striptags|escape }}" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
+    <meta property="og:image"
+          content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
+  {% endif %}
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
 {% endif %}

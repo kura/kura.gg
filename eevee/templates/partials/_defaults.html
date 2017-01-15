@@ -1,121 +1,121 @@
 {% if USE_OPEN_GRAPH is not defined %}
-    {% set USE_OPEN_GRAPH = False %}
+  {% set USE_OPEN_GRAPH = False %}
 {% else %}
-    {% set USE_OPEN_GRAPH = USE_OPEN_GRAPH %}
+  {% set USE_OPEN_GRAPH = USE_OPEN_GRAPH %}
 {% endif %}
 
 {% if USE_TWITTER_CARDS is not defined %}
-    {% set USE_TWITTER_CARDS = False %}
+  {% set USE_TWITTER_CARDS = False %}
 {% else %}
-    {% set USE_TWITTER_CARDS = USE_TWITTER_CARDS %}
+  {% set USE_TWITTER_CARDS = USE_TWITTER_CARDS %}
 {% endif %}
 
 {% if OPEN_GRAPH_IMAGE is not defined %}
-    {% set OPEN_GRAPH_IMAGE = False %}
+  {% set OPEN_GRAPH_IMAGE = False %}
 {% else %}
-    {% set OPEN_GRAPH_IMAGE = OPEN_GRAPH_IMAGE %}
+  {% set OPEN_GRAPH_IMAGE = OPEN_GRAPH_IMAGE %}
 {% endif %}
 
 {% if PIWIK_SITE_ID and PIWIK_URL %}
-    {% if PIWIK_SSL_URL is not defined %}
-        {% set PIWIK_SSL_URL = PIWIK_URL %}
-    {% else %}
-        {% set PIWIK_SSL_URL = PIWIK_SSL_URL %}
-    {% endif %}
+  {% if PIWIK_SSL_URL is not defined %}
+    {% set PIWIK_SSL_URL = PIWIK_URL %}
+  {% else %}
+    {% set PIWIK_SSL_URL = PIWIK_SSL_URL %}
+  {% endif %}
 {% endif %}
 
 {% if OWA_URL is not defined %}
-    {% set OWA_URL = False %}
+  {% set OWA_URL = False %}
 {% else %}
-    {% set OWA_URL = OWA_URL %}
+  {% set OWA_URL = OWA_URL %}
 {% endif %}
 {% if OWA_SITE_ID is not defined %}
-    {% set OWA_SITE_ID = False %}
+  {% set OWA_SITE_ID = False %}
 {% else %}
-    {% set OWA_SITE_ID = OWA_SITE_ID %}
+  {% set OWA_SITE_ID = OWA_SITE_ID %}
 {% endif %}
 
 {% if MUUT_SITENAME is not defined %}
-    {% set MUUT_SITENAME = False %}
+  {% set MUUT_SITENAME = False %}
 {% else %}
-    {% set MUUT_SITENAME = MUUT_SITENAME %}
+  {% set MUUT_SITENAME = MUUT_SITENAME %}
 {% endif %}
 
 {% if COMMENTS_ON_PAGES is not defined %}
-    {% set COMMENTS_ON_PAGES = False %}
+  {% set COMMENTS_ON_PAGES = False %}
 {% else %}
-    {% set COMMENTS_ON_PAGES = COMMENTS_ON_PAGES %}
+  {% set COMMENTS_ON_PAGES = COMMENTS_ON_PAGES %}
 {% endif %}
 
 {% if article %}
-    {% set share_title = article.title|striptags|escape %}
-    {% set share_url = SITEURL ~ '/' ~ article.url %}
-    {% set obj = article %}
+  {% set share_title = article.title|striptags|escape %}
+  {% set share_url = SITEURL ~ '/' ~ article.url %}
+  {% set obj = article %}
 {% elif page %}
-    {% set share_title = page.title|striptags|escape %}
-    {% set share_url = SITEURL ~ '/' ~ page.url %}
-    {% set obj = page %}
+  {% set share_title = page.title|striptags|escape %}
+  {% set share_url = SITEURL ~ '/' ~ page.url %}
+  {% set obj = page %}
 {% else %}
-    {% set share_title = SITENAME|striptags|escape %}
-    {% set share_url = SITEURL %}
+  {% set share_title = SITENAME|striptags|escape %}
+  {% set share_url = SITEURL %}
 {% endif %}
 
 {% if THEME_PRIMARY is not defined %}
-    {% set THEME_PRIMARY = 'blue_grey' %}
+  {% set THEME_PRIMARY = 'blue_grey' %}
 {% else %}
-    {% set THEME_PRIMARY = THEME_PRIMARY %}
+  {% set THEME_PRIMARY = THEME_PRIMARY %}
 {% endif %}
 
 {% if THEME_ACCENT is not defined %}
-    {% set THEME_ACCENT = 'pink' %}
+  {% set THEME_ACCENT = 'pink' %}
 {% else %}
-    {% set THEME_ACCENT = THEME_ACCENT %}
+  {% set THEME_ACCENT = THEME_ACCENT %}
 {% endif %}
 
 {% if MEGA_FOOTER is not defined %}
-    {% set MEGA_FOOTER = True %}
+  {% set MEGA_FOOTER = True %}
 {% else %}
-    {% set MEGA_FOOTER = MEGA_FOOTER %}
+  {% set MEGA_FOOTER = MEGA_FOOTER %}
 {% endif %}
 
 {% if DISCLAIMER is not defined %}
-    {% set DISCLAIMER = 'Powered by love &amp; rainbow sparkles.' %}
+  {% set DISCLAIMER = 'Powered by love &amp; rainbow sparkles.' %}
 {% else %}
-    {% set DISCLAIMER = DISCLAIMER %}
+  {% set DISCLAIMER = DISCLAIMER %}
 {% endif %}
 
 {% if COPYRIGHT is not defined %}
-    {% set COPYRIGHT = '<a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a>' %}
+  {% set COPYRIGHT = '<a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a>' %}
 {% else %}
-    {% set COPYRIGHT = COPYRIGHT %}
+  {% set COPYRIGHT = COPYRIGHT %}
 {% endif %}
 
 {% if USE_AUTHOR_CARD is not defined %}
-    {% set USE_AUTHOR_CARD = False %}
+  {% set USE_AUTHOR_CARD = False %}
 {% else %}
-    {% set USE_AUTHOR_CARD = USE_AUTHOR_CARD %}
+  {% set USE_AUTHOR_CARD = USE_AUTHOR_CARD %}
 {% endif %}
 
 {% if AUTHOR_CARD_ON_PAGES is not defined %}
-    {% set AUTHOR_CARD_ON_PAGES = False %}
+  {% set AUTHOR_CARD_ON_PAGES = False %}
 {% else %}
-    {% set AUTHOR_CARD_ON_PAGES = AUTHOR_CARD_ON_PAGES %}
+  {% set AUTHOR_CARD_ON_PAGES = AUTHOR_CARD_ON_PAGES %}
 {% endif %}
 
 {% if AUTHOR_CARD_AVATAR is not defined %}
-    {% set AUTHOR_CARD_AVATAR = False %}
+  {% set AUTHOR_CARD_AVATAR = False %}
 {% else %}
-    {% set AUTHOR_CARD_AVATAR = AUTHOR_CARD_AVATAR %}
+  {% set AUTHOR_CARD_AVATAR = AUTHOR_CARD_AVATAR %}
 {% endif %}
 
 {% if AUTHOR_CARD_DESCRIPTION is not defined %}
-    {% set AUTHOR_CARD_DESCRIPTION = False %}
+  {% set AUTHOR_CARD_DESCRIPTION = False %}
 {% else %}
-    {% set AUTHOR_CARD_DESCRIPTION = AUTHOR_CARD_DESCRIPTION %}
+  {% set AUTHOR_CARD_DESCRIPTION = AUTHOR_CARD_DESCRIPTION %}
 {% endif %}
 
 {% if AUTHOR_CARD_SOCIAL is not defined %}
-    {% set AUTHOR_CARD_SOCIAL = SOCIAL %}
+  {% set AUTHOR_CARD_SOCIAL = SOCIAL %}
 {% else %}
-    {% set AUTHOR_CARD_SOCIAL = AUTHOR_CARD_SOCIAL %}
+  {% set AUTHOR_CARD_SOCIAL = AUTHOR_CARD_SOCIAL %}
 {% endif %}

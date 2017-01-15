@@ -1,9 +1,16 @@
 {% from 'partials/_defaults.html' import obj with context %}
 {% if obj is defined and obj.toc %}
-    <section class="eevee-toc">
-        <h2>Contents</h2>
-        <nav class="eevee-toc-ribbon">
-            {{ obj.toc }}
-        </nav>
-    </section>
+  <section class="eevee-toc">
+    <h2 id="toc">
+      {% if HEADERID_LINK_CHAR and 'headerid' in PLUGINS %}
+        <a class="headerlink" href="#toc"
+           title="Permalink to this headline">{{ HEADERID_LINK_CHAR }}</a>Contents
+      {% else %}
+        Contents
+      {% endif %}
+    </h2>
+    <nav class="eevee-toc-ribbon">
+      {{ obj.toc }}
+    </nav>
+  </section>
 {% endif %}

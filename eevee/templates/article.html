@@ -1,36 +1,35 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
 {% block content %}
-    <article itemscope itemtype="http://schema.org/BlogPosting">
-        {% include 'partials/structured_data.html' %}
-        {% include 'partials/share.html' %}
-        <div class="eevee-article">
-            <div class="eevee-meta mdl-color-text--grey-500">
-                <time datetime="{{ article.date.isoformat() }}"
-                      itemprop="datePublished">
-                    {{ article.locale_date }}
-                </time>
-            </div>
-            <h1 itemprop="name">
-                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                   title="Permalink to '{{ article.title|striptags }}'"
-                   itemprop="url">
-                    {{ article.title }}
-                </a>
-            </h1>
-            {% include 'partials/series.html' %}
-            {% include 'partials/toc.html' %}
-            <section itemprop="articleBody" class="article-content">
-                {{ article.content }}
-            </section>
-        </div>
-        {% include 'partials/related.html' %}
-        {% include 'partials/author_card.html' %}
-        {% include 'partials/comment.html' %}
-    </article>
-    <a href="https://github.com/kura/kura.io/blob/master/content/{{ article.get_relative_source_path() }}"
-       id="view-source"
-       class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
-        <i class="material-icons">&#xE86F;</i> View Source
-    </a>
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+    {% include 'partials/structured_data.html' %}
+    {% include 'partials/share.html' %}
+    <div class="eevee-article">
+      <div class="eevee-meta mdl-color-text--grey-500">
+        <time datetime="{{ article.date.isoformat() }}"
+              itemprop="datePublished">
+          {{ article.locale_date }}
+        </time>
+      </div>
+      <h1 itemprop="name">
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+           title="Permalink to '{{ article.title|striptags }}'" itemprop="url">
+          {{ article.title }}
+        </a>
+      </h1>
+      {% include 'partials/series.html' %}
+      {% include 'partials/toc.html' %}
+      <section itemprop="articleBody" class="article-content">
+        {{ article.content }}
+      </section>
+    </div>
+    {% include 'partials/related.html' %}
+    {% include 'partials/author_card.html' %}
+    {% include 'partials/comment.html' %}
+  </article>
+  <a href="https://github.com/kura/kura.io/blob/master/content/{{ article.get_relative_source_path() }}"
+     id="view-source" title="View '{{ article.title|striptags }}' on GitHub"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
+    <i class="material-icons">&#xE86F;</i> View Source
+  </a>
 {% endblock %}

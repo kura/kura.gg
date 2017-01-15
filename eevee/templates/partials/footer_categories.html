@@ -1,15 +1,15 @@
 {% if DISPLAY_CATEGORIES_ON_MENU != False %}
-    <div class="mdl-mega-footer--drop-down-section">
-        <h1 class="mdl-mega-footer--heading">Categories</h1>
-        <ul class="mdl-mega-footer--link-list">
-            {% for cat, null in categories  %}
-                <li>
-                    <a href="{{ SITEURL }}/{{ cat.url }}" itemprop="url"
-                       rel="bookmark">
-                        <i class="material-icons">&#xE886;</i> {{ cat }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Categories</h1>
+    <ul class="mdl-mega-footer--link-list">
+      {% for cat, null in categories  %}
+        <li>
+          <a href="{{ SITEURL }}/{{ cat.url }}" itemprop="url"
+             rel="bookmark" title="{{ cat }}">
+            <i class="material-icons">&#xE886;</i> {{ cat }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+  </div>
 {% endif %}

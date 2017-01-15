@@ -3,33 +3,33 @@
 {% from 'partials/_defaults.html' import COMMENTS_ON_PAGES with context %}
 {% from 'partials/_defaults.html' import AUTHOR_CARD_ON_PAGES with context %}
 {% block content %}
-    <article itemscope itemtype="http://schema.org/WebPage">
-        {% include 'partials/structured_data.html' %}
-        {% include 'partials/share.html' %}
-        <div class="eevee-page-spacer" role="presentation"></div>
-        <div class="eevee-page">
-            <h1 itemprop="name">
-                <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
-                   title="Permalink to '{{ page.title|striptags }}'"
-                   itemprop="url">
-                    {{ page.title }}
-                </a>
-            </h1>
-            {% include 'partials/toc.html' %}
-            <section itemprop="mainContentOfPage" class="page-content">
-                {{ page.content }}
-            </section>
-        </div>
-        {% if AUTHOR_CARD_ON_PAGES %}
-            {% include 'partials/author_card.html' %}
-        {% endif %}
-        {% if COMMENTS_ON_PAGES %}
-            {% include 'partials/comment.html' %}
-        {% endif %}
-    </article>
-    <a href="https://github.com/kura/kura.io/blob/master/content/{{ page.get_relative_source_path() }}"
-       id="view-source"
-       class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
-        <i class="material-icons">&#xE86F;</i> View Source
-    </a>
+  {% include 'partials/share.html' %}
+  <article itemscope itemtype="http://schema.org/WebPage">
+    {% include 'partials/structured_data.html' %}
+
+    <div class="eevee-page-spacer" role="presentation"></div>
+    <div class="eevee-page">
+      <h1 itemprop="name">
+        <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
+           title="Permalink to '{{ page.title|striptags }}'" itemprop="url">
+          {{ page.title }}
+        </a>
+      </h1>
+      {% include 'partials/toc.html' %}
+      <section itemprop="mainContentOfPage" class="page-content">
+        {{ page.content }}
+      </section>
+    </div>
+    {% if AUTHOR_CARD_ON_PAGES %}
+      {% include 'partials/author_card.html' %}
+    {% endif %}
+    {% if COMMENTS_ON_PAGES %}
+      {% include 'partials/comment.html' %}
+    {% endif %}
+  </article>
+  <a href="https://github.com/kura/kura.io/blob/master/content/{{ page.get_relative_source_path() }}"
+     id="view-source" title="View '{{ page.title|striptags }}' on GitHub"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
+    <i class="material-icons">&#xE86F;</i> View Source
+  </a>
 {% endblock %}

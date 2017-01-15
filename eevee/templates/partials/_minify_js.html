@@ -1,5 +1,4 @@
-{% assets filters="jsmin", output="js/%(version)s.js", "js/disqus.js",
-    "js/material.js" %}
-    <script async src="{{ SITEURL }}/{{ ASSET_URL }}">
-    </script>
+{% assets filters="jsmin", output="js/eevee.min.js", "js/disqus.js",
+   "js/material.js" %}
+  <script async src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
 {% endassets %}
