@@ -2,11 +2,9 @@ Lightbox -- A pure CSS lightbox for Pelican
 ###########################################
 :slug: lightbox
 
-.. figure:: /images/lightbox.png
+.. image:: /images/lightbox.png
     :alt: Lightbox
     :align: center
-
-    Credit: `Kimberly Coles <http://www.kimberlycoles.com/>`_
 
 .. contents::
     :backlinks: none

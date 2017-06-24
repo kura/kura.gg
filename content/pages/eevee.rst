@@ -9,21 +9,16 @@ Eevee -- A Material Design theme for Pelican
 .. contents::
     :backlinks: none
 
+.. role:: blue-grey
+.. role:: pink
+
 Introduction
 ============
 
 Eevee is a theme for `Pelican <http://getpelican.com>`__, based on Google's
-`Material Design <https://material.google.com/>`__ specification.
-
-It is named after the Pokémon `Eevee
-<http://www.pokemon.com/uk/pokedex/eevee>`__ because -- like the Pokémon -- it
-can evolve in to many 'elemental types.'
-
-.. role:: blue-grey
-.. role:: pink
-
-By default the colour scheme is :blue-grey:`blue grey` for the primary and
-:pink:`pink` for the accent, both of these colours are configurable.
+`Material Design <https://material.google.com/>`__ specification. It is named
+after the Pokémon `Eevee <http://www.pokemon.com/uk/pokedex/eevee>`__ because
+-- like the Pokémon -- it can evolve in to many 'elemental types.'
 
 Features
 ========
@@ -31,21 +26,25 @@ Features
 - Built around `Google's Material Design <https://material.google.com/>`__
   specification on top of Goole's `Material Design Lite library
   <https://github.com/google/material-design-lite>`__,
-- configurable colour scheme,
+- configurable colour scheme (see `Primary and accent colours`_),
 - responsive layout with mobile friendly header and navigation scheme,
 - inclusion of a ``custom.css`` file allowing easy overwriting of the theme
-  without breaking the base CSS,
-- `DNS prefetch`_,
+  without breaking the base CSS (see `Custom CSS`_),
+- `DNS prefetch`_ (see `DNS prefetch`_),
 - comments via `Disqus <https://disqus.com/>`__ or `Muut
-  <https://muut.com/>`__,
-- share buttons for Twitter, Facebook, Google+, email and comments,
-- Twitter and Open Graph meta tags,
+  <https://muut.com/>`__ (see `Disqus or Muut for comments`_),
+- share buttons for Twitter, Facebook, Google+, email and comments (see
+  `Sharing options`_),
+- Twitter and Open Graph meta tags (see `Sharing options`_),
 - CSS and JS minifying via `webassets
-  <https://webassets.readthedocs.io/en/latest/>`__, cssmin and jsmin,
+  <https://webassets.readthedocs.io/en/latest/>`__, cssmin and jsmin (see
+  `Plugin: Minimise CSS and JavaScript`_),
 - analytics from `Google Analytics <https://analytics.google.com>`__,
   `Piwik <https://piwik.org/>`__, `GoSquared <https://www.gosquared.com/>`__
-  and `Open Web Analytics <http://www.openwebanalytics.com/>`__,
-- easy customisation, including menus and footer,
+  and `Open Web Analytics <http://www.openwebanalytics.com/>`__ (see
+  `Google Analytics, Piwik, Open Web Analytics and GoSquared`_),
+- easy customisation, including menus and footer (see `Header and footer
+  options`_),
 - custom 404 error page,
 - `Microdata <https://en.wikipedia.org/wiki/Microdata_(HTML)>`__,
 - `Aria <https://en.wikipedia.org/wiki/WAI-ARIA>`__ accessibility,
@@ -100,96 +99,8 @@ used for typography, `Material Icons <https://design.google.com/icons/>`__ and
 Screenshots
 ===========
 
-.. lightbox::
-    :thumb: /images/eevee-homepage-thumb.png
-    :large: /images/eevee-homepage.png
-    :alt: Homepage
-    :caption: Homepage
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-homepage-separator-thumb.png
-    :large: /images/eevee-homepage-separator.png
-    :alt: Homepage separator
-    :caption: Homepage separator
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-homepage-pagination-thumb.png
-    :large: /images/eevee-homepage-pagination.png
-    :alt: Homepage pagination
-    :caption: Homepage pagination
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-mega-footer-thumb.png
-    :large: /images/eevee-mega-footer.png
-    :alt: Mega footer
-    :caption: Mega footer
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-article-top-thumb.png
-    :large: /images/eevee-article-top.png
-    :alt: Article header
-    :caption: Article header
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-article-bottom-thumb.png
-    :large: /images/eevee-article-bottom.png
-    :alt: Article footer
-    :caption: Article footer
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-headerlinks-thumb.png
-    :large: /images/eevee-headerlinks.png
-    :alt: Article header links
-    :caption: Article header links
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-related-author-card-thumb.png
-    :large: /images/eevee-related-author-card.png
-    :alt: Related articles and author card
-    :caption:
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-toc-series-thumb.png
-    :large: /images/eevee-toc-series.png
-    :alt: Table of contents
-    :caption: Table of contents
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-archives-thumb.png
-    :large: /images/eevee-archives.png
-    :alt: Archives
-    :caption: Archives
-    :align: center
-
-.. lightbox::
-    :thumb: /images/eevee-search-thumb.png
-    :large: /images/eevee-search.png
-    :alt: Search
-    :caption: Search
-    :align: center
-
-Responsive mobile design
-========================
-
-By default Eevee will modify it's design -- specifically the logo and menu --
-on smaller screened devices, like cell phones or tablets. A ``Home`` link is
-automatically added to the navigation list.
-
-.. lightbox::
-    :thumb: /images/eevee-mobile.png
-    :large: /images/eevee-mobile.png
-    :alt: Mobile view and menu
-    :caption: Mobile view and menu
-    :align: center
+.. gallery:: content/images/eevee_page/
+    :columns: 3
 
 Installation
 ============
@@ -469,6 +380,73 @@ links.
                           ('<i class="fa fa-twitter aria-hidden="true"></i>',
                            'https://twitter.com/kuramanga'), )
 
+Some default styling rules are included with Eevee, they are as follow:
+
+.. role:: ac-twitter
+.. role:: ac-twitter-hover
+.. role:: ac-facebook
+.. role:: ac-facebook-hover
+.. role:: ac-google-plus
+.. role:: ac-google-plus-hover
+.. role:: ac-github
+.. role:: ac-github-hover
+.. role:: ac-instagram
+.. role:: ac-instagram-hover
+
++-----------+---------------------------+---------------------------------+
+| Site      | Link colour               | Hover colour                    |
++===========+===========================+=================================+
+| Twitter   | :ac-twitter:`#039BE5`     | :ac-twitter-hover:`#0277BD`     |
++-----------+---------------------------+---------------------------------+
+| Facebook  | :ac-facebook:`#1565C0`    | :ac-facebook-hover:`#0D47A1`    |
++-----------+---------------------------+---------------------------------+
+| Google+   | :ac-google-plus:`#F44336` | :ac-google-plus-hover:`#D32F2F` |
++-----------+---------------------------+---------------------------------+
+| GitHub    | :ac-github:`#212121`      | :ac-github-hover:`#616161`      |
++-----------+---------------------------+---------------------------------+
+| Instagram | :ac-instagram:`#8BC34A`   | :ac-instagram-hover:`#689F38`   |
++-----------+---------------------------+---------------------------------+
+
+
+You can add your own new styles or overwrite an existing style using the
+``href`` selector.
+
+For example, adding a selector style for ``https://kura.io`` would be done
+like the example below.
+
+.. code-block:: css
+
+    nav.eevee-ac-author__social a[href^="https://kura.io"] {
+      color: #039BE5 !important;
+    }
+
+    nav.eevee-ac-author__social a[href^="https://kura.io"]:hover {
+      color: #0277BD !important;
+    }
+
+Dynamically disabling author card on an article or page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As of Eevee version 0.0.12, it is now possible to disable the author card
+feature on a per-article or per-page basis using metadata.
+
+Using reStructuredText:
+
+.. code-block:: rst
+
+    Example title
+    #############
+    :slug: example
+    :author_card: False
+
+Using Markdown:
+
+.. code-block:: md
+
+    Title: Example title
+    Slug: example
+    Author_card: False
+
 Disqus or Muut for comments
 ---------------------------
 
@@ -503,6 +481,33 @@ option. By default this is disabled.
 .. code-block:: python
 
     COMMENTS_ON_PAGES = True
+
+Dynamically disabling comments on an article or page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As of Eevee version 0.0.12, it is now possible to disable comments on a
+per-article or per-page basis using metadata.
+
+Using reStructuredText:
+
+.. code-block:: rst
+
+    Example title
+    #############
+    :slug: example
+    :comments: False
+
+    Example content
+
+Using Markdown:
+
+.. code-block:: markdown
+
+    Title: Example title
+    Slug: example
+    Comments: False
+
+    Example content
 
 Sharing options
 ---------------
@@ -559,12 +564,24 @@ someone shares your content, an image will be added too.
 You can add ``og_image`` to the file metadata of an article or page, allowing
 you to configure and image to use per item.
 
+Using reStructuredText:
+
 .. code-block:: rst
 
-    Title
-    =====
+    Example title
+    #############
     :slug: example
     :og_image: /images/example.png
+
+    Example content
+
+Using Markdown:
+
+.. code-block:: markdown
+
+    Title: Example title
+    Slug: example
+    Og_image: /images/example.png
 
     Example content
 
@@ -1032,6 +1049,129 @@ Additional tweaks and modifications
 
 Additional things you can tweak and modify are available on `kura.io
 </category/eevee/>`__.
+
+Changelog
+=========
+
+0.0.12
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.11...0.0.12>`__
+
+- Updated share colours to be from the Material Design palette.
+- Added some automatic colouring of links/icons for AUTHOR_CARD
+- Added ability to disable comments and author_card for a specific page or
+  article using metadata.
+
+  Using reStructuredText:
+
+  .. code-block:: rst
+
+      Example title
+      #############
+      :slug: example
+      :author_card: False
+      :comments: False
+
+  Using Markdown:
+
+  .. code-block:: md
+
+      Title: Example title
+      Slug: example
+      Author_card: False
+      Comments: False
+
+0.0.11
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.10...0.0.11>`__
+
+- Stop using base64 fonts, dumb idea to begin with.
+- Tidy up font sizes in headers.
+
+0.0.10
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.9...0.0.10>`__
+
+- Bug fixes in template styles.
+
+0.0.9
+-----
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.8...0.0.9>`__
+
+- Huge overhaul of theme... Too much to list, check out the documentation.
+
+0.0.8
+-----
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.7...0.0.8>`__
+
+- Added better templates for `tags` and `categories`.
+
+0.0.7
+-----
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.6...0.0.7>`__
+
+- Fixed RSS and Atom having the wrong types.
+
+0.0.6
+-----
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.5...0.0.6>`__
+
+- Updated archive templates so they aren't terrible.
+- archive will automatically links to year and month archives if
+  ``YEAR_ARCHIVE_SAVE_AS`` or ``MONTH_ARCHIVE_SAVE_AS`` are set.
+- partial_archives template now works as expected instead of showing every
+  article.
+- Added archive to header and footer menus.
+
+0.0.5
+-----
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.4...0.0.5>`__
+
+- Template clean up, mostly making the HTML itself look prettier to edit.
+- Added aria labels to elements to improve accessibility.
+- Added structures to articles and pages, using `schema.org
+  <https://schema.org/>`__ additional markup.
+
+0.0.4
+-----
+
+- Accidentally messed up Disqus and variable names where not used, so comments
+  didn't actually work properly...
+- Load fonts from base64 in the CSS file.
+
+0.0.3
+-----
+
+- Add ability to use muut instead of Disqus using ``MUUT_SITENAME`` variable.
+- Make the share buttons nicer.
+- Added "back to top" links.
+
+0.0.2
+-----
+
+- Replace ``vh`` definitions with ``em`` for ribbon.
+- Replace truetype fonts with woff2 and woff.
+
+0.0.1
+-----
+
+- Eevee released
 
 License
 =======

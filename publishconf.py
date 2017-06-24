@@ -15,4 +15,3 @@ RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True
 
 PLUGINS.append('minify')
-PLUGINS.append('touch')

@@ -17,9 +17,7 @@ Eevee -- A Material Design theme for Pelican
 Introduction
 ============
 
-Eevee is a theme for `Pelican <http://getpelican.com>`_, based on Google's
-`Material Design <https://material.google.com/>`_ specification.
-
-It is named after the Pokémon `Eevee
-<http://www.pokemon.com/uk/pokedex/eevee>`_ because -- like the Pokémon -- it
-can evolve in to many 'elemental types.'
+Eevee is a theme for `Pelican <http://getpelican.com>`__, based on Google's
+`Material Design <https://material.google.com/>`__ specification. It is named
+after the Pokémon `Eevee <http://www.pokemon.com/uk/pokedex/eevee>`__ because
+-- like the Pokémon -- it can evolve in to many 'elemental types.'

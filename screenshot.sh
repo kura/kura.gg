@@ -1,7 +1,17 @@
-for page in `find output/ -name "*.html" | grep -v '/c/' | grep -v '/t/' | egrep -v '[0-9][0-9]\/index\.html'`
+#!/bin/bash
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: $0 OUTPUTDIR"
+    exit 1
+fi
+
+for page in `find $1 -name "*.html" | grep -v '/tor/' | grep -v '/donate/' | grep -v '/apt.kura.io/' | grep -v '/curriculum-vitae/'`
 do
     output=`echo $page | sed -e 's/\.html/\.png/g'`
-    url=`echo "https://kura.io/${page}" | sed -e 's/output\///g'`
+    url=`echo "https://kura.io/${page}" | sed -e "s|$1||g"`
     echo "${url} -> ${output}"
-    phantomjs screenshot.js $url $output
+    phantomjs screenshot.js $url $output-orig.png
+    pngquant $output-orig.png -o $output
+    rm $output-orig.png
 done

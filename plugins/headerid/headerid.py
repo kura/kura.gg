@@ -12,20 +12,21 @@ def init_headerid(sender):
     if char:
         LINK_CHAR = char
 
+
+class HeaderIDPatchedPelicanHTMLTranslator(PelicanHTMLTranslator):
+    def depart_title(self, node):
+        close_tag = self.context[-1]
+        parent = node.parent
+        if isinstance(parent, nodes.section) and parent.hasattr('ids') and parent['ids']:
+            anchor_name = parent['ids'][0]
+            # add permalink anchor
+            if close_tag.startswith('</h'):
+                html = ('<a class="headerlink" href="#{}" title="Permalink to '
+                        'this headline">{}</a>').format(anchor_name, LINK_CHAR)
+                self.body.insert(-1, html)
+        PelicanHTMLTranslator.depart_title(self, node)
+
+
 def register():
     signals.initialized.connect(init_headerid)
-
-
-    class HeaderIDPatchedPelicanHTMLTranslator(PelicanHTMLTranslator):
-        def depart_title(self, node):
-            close_tag = self.context[-1]
-            parent = node.parent
-            if isinstance(parent, nodes.section) and parent.hasattr('ids') and parent['ids']:
-                anchor_name = parent['ids'][0]
-                # add permalink anchor
-                if close_tag.startswith('</h'):
-                    self.body.append(
-                        '<a class="headerlink" href="#%s" title="Permalink to this headline">%s</a>' %
-                        (anchor_name, LINK_CHAR))
-            PelicanHTMLTranslator.depart_title(self, node)
     readers.PelicanHTMLTranslator = HeaderIDPatchedPelicanHTMLTranslator

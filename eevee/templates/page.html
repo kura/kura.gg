@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ page.title }}{%endblock%}
+{% block title %}{{ page.title|striptags }}{%endblock%}
 {% from 'partials/_defaults.html' import COMMENTS_ON_PAGES with context %}
 {% from 'partials/_defaults.html' import AUTHOR_CARD_ON_PAGES with context %}
 {% block content %}

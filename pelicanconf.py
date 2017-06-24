@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Kura'
 SITENAME = 'kura.io'
-SITEURL = 'https://kura.io'
+SITEURL = 'https://kura.github.io'
+#SITEURL = 'https://kura.io'
 
 THEME = 'eevee'
 THEME_PRIMARY = 'deep_orange'
@@ -30,23 +31,39 @@ DATE_FORMATS = {
     'en': DEFAULT_DATE_FORMAT
 }
 
-HEADERID_LINK_CHAR = '&para;'
+HEADERID_LINK_CHAR = r'&#x203B;'
+# HEADERID_LINK_CHAR = r'<i class="material-icons">&#xE8AB;</i>'
 
-MENUITEMS = (('<i class="material-icons">&#xE0B7;</i> Contact', '/contact/'),
-             ('<i class="material-icons">&#xE86F;</i> Software', '/software/'),
-             ('<i class="material-icons">&#xE02F;</i> Archives', '/archives/'),
-             ('<i class="material-icons">&#xE263;</i> Donate', 'https://gratipay.com/~kura/'),
-             ('<i class="material-icons">&#xE62F;</i> .onion', 'http://omgkuraio276g5wo.onion/'))
-SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i> Github', 'https://github.com/kura'),
-          ('<i class="fa fa-twitter aria-hidden="true"></i> Twitter', 'https://twitter.com/kuramanga'),
-          ('<i class="fa fa-key aria-hidden="true"></i> Keybase', 'https://keybase.io/kura'))
-AUTHOR_CARD_SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i>', 'https://github.com/kura'),
-                      ('<i class="fa fa-twitter aria-hidden="true"></i>', 'https://twitter.com/kuramanga'),)
-LINKS = (('<i class="material-icons">&#xE250;</i> blackhole.io', 'https://blackhole.io'),
-         ('<i class="material-icons">&#xE250;</i> Yarg', 'https://kura.io/yarg'),
-         ('<i class="material-icons">&#xE250;</i> Eevee', 'https://kura.io/eevee'),
-         ('<i class="material-icons">&#xE250;</i> Hauntr', 'https://kura.io/hauntr'),
-         ('<i class="material-icons">&#xE250;</i> Ghastly', 'https://kura.io/ghastly'),)
+MENUITEMS = (('<i class="material-icons" aria-hidden="true">&#xE871;</i> '
+              'Eevee', 'Eevee', '/eevee/'),
+             ('<i class="material-icons" aria-hidden="true">&#xE0B7;</i> '
+              'Contact', 'Contact', '/contact/'),
+             ('<i class="material-icons" aria-hidden="true">&#xE86F;</i> '
+              'Software', 'Software', '/software/'),
+             ('<i class="material-icons" aria-hidden="true">&#xE263;</i> '
+              'Donate', 'Donate', 'https://gratipay.com/~kura/'),
+             ('<i class="material-icons" aria-hidden="true">&#xE62F;</i> '
+              '.onion', '.onion', 'http://omgkuraiol4aunji.onion/'), )
+SOCIAL = (('<i class="fa" aria-hidden="true">&#xF09B;</i> Github', 'GitHub',
+           'https://github.com/kura'),
+          ('<i class="fa" aria-hidden="true">&#xF099;</i> Twitter',
+           'Twitter', 'https://twitter.com/kuramanga'),
+          ('<i class="fa" aria-hidden="true">&#xF084;</i> Keybase',
+           'Keybase', 'https://keybase.io/kura'))
+AUTHOR_CARD_SOCIAL = (('<i class="fa" aria-hidden="true">&#xF09B;</i>',
+                       'GitHub', 'https://github.com/kura'),
+                      ('<i class="fa" aria-hidden="true">&#xF099;</i>',
+                       'Twitter', 'https://twitter.com/kuramanga'), )
+LINKS = (('<i class="material-icons" aria-hidden="true">&#xE86F;</i> '
+          'blackhole.io', 'Blackhole', 'https://blackhole.io'),
+         ('<i class="material-icons" aria-hidden="true">&#xE86F;</i> Yarg',
+         'Yarg', 'https://kura.io/yarg'),
+         ('<i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee',
+         'Eevee', 'https://kura.io/eevee'),
+         ('<i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr',
+         'Hauntr', 'https://kura.io/hauntr'),
+         ('<i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly',
+         'Ghastly', 'https://kura.io/ghastly'), )
 DISPLAY_CATEGORIES_ON_MENU = False
 
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
@@ -86,7 +103,8 @@ EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
 }
 
-DIRECT_TEMPLATES = ('index', 'archives', '404', 'tags', 'categories', 'search', )
+DIRECT_TEMPLATES = ('404', '500', 'archives', 'categories', 'index',
+                    'tags', )
 
 TOC_HEADER = False
 
@@ -126,6 +144,7 @@ PLUGINS = [
     'assets',
     'better_tables',
     'extract_toc',
+    'gallery',
     'headerid',
     'lightbox',
     'neighbors',
@@ -136,7 +155,6 @@ PLUGINS = [
     'related_posts',
     'series',
     'sitemap',
-    'touch',
 ]
 
 GIST_CACHE_ENABLED = False
@@ -157,10 +175,14 @@ SEARCH_IGNORE = [
 ]
 
 DISCLAIMER = 'Powered by love &amp; rainbow sparkles.'
-COPYRIGHT = 'Source code and content released under the <a href="/license/">MIT license</a>.'
+COPYRIGHT = ('Source code and content released under the <a href="/license/" '
+             'title="MIT license">MIT license</a>.')
 
 COMMENTS_ON_PAGES = True
 USE_AUTHOR_CARD = True
 AUTHOR_CARD_AVATAR = '/images/default_avatar.png'
 AUTHOR_CARD_ON_PAGES = True
-AUTHOR_CARD_DESCRIPTION = '''Anarchist. Humanist. Activist. Egalitarian. Feminist. Hacker. Debian developer. Tor advocate &amp; node operator. Hyperpolyglot. Musician. Ex pro gamer. Cunt.'''
+AUTHOR_CARD_DESCRIPTION = ('Anarchist. Humanist. Activist. Egalitarian. '
+                           'Feminist. Hacker. Debian developer. Tor advocate '
+                           '&amp; node operator. Hyperpolyglot. Musician. Ex '
+                           'pro gamer. Cunt.')
