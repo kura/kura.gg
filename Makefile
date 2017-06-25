@@ -1,6 +1,6 @@
 PY=python
 PELICAN=pelican
-PELICANOPTS=
+PELICANOPTS=--fatal=errors
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
@@ -46,6 +46,11 @@ stop:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+
+install:
+	pip install -r requirements.txt
+
+test: rsync
 
 rsync:
 	rm -rf $(OUTPUTDIR)/*
