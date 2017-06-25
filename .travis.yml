@@ -11,9 +11,10 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token:
+    secure: XdjTEiXO+wBt8/MmW19uDAZxAqL4XJSHXtIPkJxMPSjfyy3u+GoXQWQULI9YVdksOvLlQ/vuZofS2xDUuQJIFSyS/evrmBFESVTzlkLKcagUc5pF6fAavzeR+IV4vIvn3r4R7R3xsQWYqMnhDpIqaAamkDIcYJGLqIWra3gDzvQ=
   local_dir: output/
-  repo: kura/kura.github.io
+  repo: kura.github.io
   target_branch: master
   on:
     branch: master
