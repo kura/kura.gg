@@ -4,7 +4,6 @@ python:
 cache: pip
 dist: trusty
 sudo: false
-group: edge
 install:
   - make install
 script:
