@@ -95,6 +95,9 @@ SUMMARY_MAX_LENGTH = 150
 STATIC_PATHS = ['images', 'files', 'extra/robots.txt',
                 'extra/favicon.ico', 'extra/favicon.png', ]
 
+PAGE_EXCLUDES = ['files']
+ARTICLE_EXCLUDES = ['files']
+
 EXTRA_PATH_METADATA = {
     'files': {'path': 'files'},
     'images': {'path': 'images'},
