@@ -187,5 +187,5 @@ AUTHOR_CARD_AVATAR = '/images/default_avatar.png'
 AUTHOR_CARD_ON_PAGES = True
 AUTHOR_CARD_DESCRIPTION = ('Anarchist. Humanist. Activist. Egalitarian. '
                            'Feminist. Hacker. Debian developer. Tor advocate '
-                           '&amp; node operator. Hyperpolyglot. Musician. Ex '
-                           'pro gamer. Cunt.')
+                           '& operator. Hyperpolyglot. Musician. '
+                           'Ex pro gamer. Cunt.')
