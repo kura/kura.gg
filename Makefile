@@ -59,16 +59,16 @@ rsync:
 	make publish
 	rm -rf output/theme/fonts/roboto*
 	bash headerid.sh $(OUTPUTDIR)/
-	bash pngquant.sh $(OUTPUTDIR)/
-	bash compress.sh $(OUTPUTDIR)/
-	bash perms.sh $(OUTPUTDIR)/
-	bash md5.sh $(OUTPUTDIR)/
-#	knock ego.kura.io
-#	rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
-#	bash screenshot.sh $(OUTPUTDIR)/
-#	bash perms.sh $(OUTPUTDIR)/
-#	knock ego.kura.io
-#	rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
-#	rm -rf $(OUTPUTDIR)/*
+	# bash pngquant.sh $(OUTPUTDIR)/
+	# bash compress.sh $(OUTPUTDIR)/
+	# bash perms.sh $(OUTPUTDIR)/
+	# bash md5.sh $(OUTPUTDIR)/
+	# knock ego.kura.io
+	# rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
+	# bash screenshot.sh $(OUTPUTDIR)/
+	# bash perms.sh $(OUTPUTDIR)/
+	# knock ego.kura.io
+	# rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
+	# rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate start stop publish rsync
