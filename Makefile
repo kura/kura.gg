@@ -65,7 +65,7 @@ rsync:
 	# bash md5.sh $(OUTPUTDIR)/
 	# knock ego.kura.io
 	# rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
-	# bash screenshot.sh $(OUTPUTDIR)/
+	bash screenshot.sh $(OUTPUTDIR)/
 	# bash perms.sh $(OUTPUTDIR)/
 	# knock ego.kura.io
 	# rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
