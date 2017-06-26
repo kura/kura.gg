@@ -59,7 +59,7 @@ rsync:
 	make publish
 	rm -rf output/theme/fonts/roboto*
 	bash headerid.sh $(OUTPUTDIR)/
-	# bash pngquant.sh $(OUTPUTDIR)/
+	bash pngquant.sh $(OUTPUTDIR)/
 	# bash compress.sh $(OUTPUTDIR)/
 	# bash perms.sh $(OUTPUTDIR)/
 	# bash md5.sh $(OUTPUTDIR)/

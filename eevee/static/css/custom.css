@@ -387,7 +387,7 @@ div.eevee-article span.dropcap {
 }
 
 
-a[href^="https://kura.io"]:before, a[href^="/"]:before,
+a[href^="https://kura.github.io"]:before, a[href^="/"]:before,
 ol.series-parts a:before, li.social-share__link a:before,
 .eevee-related a:before, .eevee-ac a:before, #view-source:before {
   content: "" !important;
