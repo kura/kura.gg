@@ -472,3 +472,14 @@ ol.series-parts a:before, li.social-share__link a:before,
   padding: 10px !important;
   font-weight: 600;
 }
+
+.netneutrality {
+  display: block;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+a[href^="https://www.battleforthenet.com"]:before {
+  content: "" !important;
+  display: none !important;
+}
