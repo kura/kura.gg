@@ -52,7 +52,7 @@ publish:
 install:
 	pip install -r requirements.txt
 	sudo mkdir -p /usr/share/fonts/truetype/
-	sudo cp eevee/static/fonts/*.tff /usr/share/fonts/truetype/kura.io/
+	sudo cp eevee/static/fonts/*.ttf /usr/share/fonts/truetype/kura.io/
 	sudo fc-cache -v
 
 test: clean rsync
