@@ -11,7 +11,7 @@ do
     output=`echo $page | sed -e 's/\.html/\.png/g'`
     url=`echo "https://kura.github.io/${page}" | sed -e "s|$1||g"`
     echo "${url} -> ${output}"
-    phantomjs screenshot.js $url $output-orig.png
+    phantomjs screenshot/screenshot.js $url $output-orig.png
     pngquant $output-orig.png -o $output
     rm $output-orig.png
 done
