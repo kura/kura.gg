@@ -7,7 +7,8 @@
   src: local('FiraSans Light'),
        local('FiraSans-Light'),
        url('/theme/fonts/firasans-light.woff2') format('woff2'),
-       url('/theme/fonts/firasans-light.woff') format('woff');
+       url('/theme/fonts/firasans-light.woff') format('woff'),
+       url('/theme/fonts/firasans-light.ttf') format('ttf');
 }
 
 @font-face {
@@ -17,7 +18,8 @@
   src: local('FiraSans'),
        local('FiraSans-Regular'),
        url('/theme/fonts/firasans-regular.woff2') format('woff2'),
-       url('/theme/fonts/firasans-regular.woff') format('woff');
+       url('/theme/fonts/firasans-regular.woff') format('woff'),
+       url('/theme/fonts/firasans-regular.ttf') format('ttf');
 }
 
 @font-face {
@@ -27,7 +29,8 @@
   src: local('FiraSans SemiBold'),
        local('FiraSans-SemiBold'),
        url('/theme/fonts/firasans-semibold.woff2') format('woff2'),
-       url('/theme/fonts/firasans-semibold.woff') format('woff');
+       url('/theme/fonts/firasans-semibold.woff') format('woff'),
+       url('/theme/fonts/firasans-semibold.ttf') format('ttf');
 }
 
 @font-face {
@@ -37,7 +40,8 @@
   src: local('FiraSans Bold'),
        local('FiraSans-Bold'),
        url('/theme/fonts/firasans-bold.woff2') format('woff2'),
-       url('/theme/fonts/firasans-bold.woff') format('woff');
+       url('/theme/fonts/firasans-bold.woff') format('woff'),
+       url('/theme/fonts/firasans-bold.ttf') format('ttf');
 }
 
 @font-face {
@@ -47,7 +51,8 @@
   src: local('FiraMono'),
        local('FiraMono-Regular'),
        url('/theme/fonts/firamono-regular.woff2') format('woff2'),
-       url('/theme/fonts/firamono-regular.woff') format('woff');
+       url('/theme/fonts/firamono-regular.woff') format('woff'),
+       url('/theme/fonts/firasans-regular.ttf') format('ttf');
 }
 
 @font-face {
@@ -57,7 +62,8 @@
   src: local('Font Awesome'),
        local('Font-Awesome'),
        url('/theme/fonts/fontawesome.woff2') format('woff2'),
-       url('/theme/fonts/fontawesome.woff') format('woff');
+       url('/theme/fonts/fontawesome.woff') format('woff'),
+       url('/theme/fonts/fontawesome.ttf') format('ttf');
 }
 
 @font-face {
@@ -67,7 +73,8 @@
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
        url('/theme/fonts/materialicons-regular.woff2') format('woff2'),
-       url('/theme/fonts/materialicons-regular.woff') format('woff');
+       url('/theme/fonts/materialicons-regular.woff') format('woff'),
+       url('/theme/fonts/materialicons-regular.ttf') format('ttf');
 }
 
 html, body, h1, h2, h3, h4, h5, h6 {
