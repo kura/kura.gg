@@ -12,6 +12,7 @@ do
     url=`echo "https://kura.github.io/${page}" | sed -e "s|$1||g"`
     echo "${url} -> ${output}"
     phantomjs screenshot/screenshot.js $url $output-orig.png
+    convert $output-orig.png -resize 25% $output-orig.png
     pngquant $output-orig.png -o $output
     rm $output-orig.png
 done
