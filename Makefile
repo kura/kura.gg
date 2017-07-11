@@ -61,7 +61,7 @@ rsync:
 	bash scripts/headerid.sh $(OUTPUTDIR)/
 	bash scripts/pngquant.sh $(OUTPUTDIR)/
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/
-	bash scripts/compress.sh $(OUTPUTDIR)/
+	# bash scripts/compress.sh $(OUTPUTDIR)/
 	bash scripts/perms.sh $(OUTPUTDIR)/
 	bash scripts/md5.sh $(OUTPUTDIR)/
 	rm -rf $(OUTPUTDIR)/*
