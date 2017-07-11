@@ -37,13 +37,13 @@ regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 start:
-	$(BASEDIR)/develop_server.sh start
+	$(BASEDIR)/scripts/develop_server.sh start
 
 stop:
 	kill -9 `cat srv.pid`
 	kill -9 `cat pelican.pid`
-	kill -9 `cat srv.pid`
 	kill `ps aux | grep pelican.server | grep -v grep | awk '{print $2}'`
+	rm -f srv.pid pelican.pid
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
@@ -58,17 +58,12 @@ rsync:
 	rm -rf $(OUTPUTDIR)/*
 	make publish
 	rm -rf output/theme/fonts/roboto*
-	bash headerid.sh $(OUTPUTDIR)/
-	bash pngquant.sh $(OUTPUTDIR)/
-	# bash compress.sh $(OUTPUTDIR)/
-	# bash perms.sh $(OUTPUTDIR)/
-	# bash md5.sh $(OUTPUTDIR)/
-	# knock ego.kura.io
-	# rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
-	bash screenshot.sh $(OUTPUTDIR)/
-	# bash perms.sh $(OUTPUTDIR)/
-	# knock ego.kura.io
-	# rsync -e "ssh" -ac --progress $(OUTPUTDIR)/ ego.kura.io:$(SSH_TARGET_DIR)
-	# rm -rf $(OUTPUTDIR)/*
+	bash scripts/headerid.sh $(OUTPUTDIR)/
+	bash scripts/pngquant.sh $(OUTPUTDIR)/
+	bash prtsc/screenshot.sh $(OUTPUTDIR)/
+	bash scripts/compress.sh $(OUTPUTDIR)/
+	bash scripts/perms.sh $(OUTPUTDIR)/
+	bash scripts/md5.sh $(OUTPUTDIR)/
+	rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate start stop publish rsync
