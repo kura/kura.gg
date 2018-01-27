@@ -10,7 +10,7 @@ Contact
 =======
 
 :GitHub: `kura <https://github.com/kura/>`__
-:Email: kura [dot] hax [atpersand] kura [dot] io
+:Email: kura [dot] hax [atpersand] gmail [dot] com
 :Twitter: `@kuramanga <https://twitter.com/kuramanga/>`__
 
 Blurb
