@@ -59,8 +59,9 @@ test: clean rsync
 
 rsync:
 	rm -rf $(OUTPUTDIR)/*
-	make publish
+	$(MAKE) publish
 	rm -rf output/theme/fonts/roboto*
+	rm -rf $(OUTPUTDIR)/curriculum-vitae/ && mv cv $(OUTPUTDIR)/curriculum-vitae/
 	bash scripts/headerid.sh $(OUTPUTDIR)/
 	bash scripts/pngquant.sh $(OUTPUTDIR)/
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/

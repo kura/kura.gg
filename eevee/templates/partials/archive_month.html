@@ -13,7 +13,7 @@
       {% endif %}
     </h3>
   </li>
-  {% for article in articles|sort(reverse=True) %}
+  {% for article in articles|reverse %}
     <li>
       <a href="{{ SITEURL }}/{{ article.url }}" itemprop="url"
          rel="bookmark"
