@@ -18,13 +18,6 @@
           <i class="fa" aria-hidden="true">&#xF09A;</i>
         </a>
       </li>
-      <li class="social-share__link social-share__link--google-plus">
-        <a href="https://plus.google.com/share?url={{ share_url|urlencode }}"
-           title="Share '{{ share_title|striptags }}' on Google+"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-          <i class="fa" aria-hidden="true">&#xF1A0;</i>
-        </a>
-      </li>
       <li class="social-share__link social-share__link--email">
         <a href="mailto:?subject={{ share_title|striptags|urlencode }}&amp;body=I%20thought%20you%20might%20like%20'{{ share_title|striptags|urlencode }}'%20--%20{{ share_url|urlencode }}"
            title="Share '{{ share_title|striptags }}' via email">
