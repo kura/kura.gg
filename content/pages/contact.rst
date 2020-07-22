@@ -9,7 +9,7 @@ Email
 
 ::
 
-    kura [atpersand] kura [period] io
+    kura [atpersand] kura [period] gg
 
 Pretty Good Privacy (PGP)
 =========================

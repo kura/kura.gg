@@ -89,22 +89,22 @@ LINKS = (
     (
         '<i class="material-icons" aria-hidden="true">&#xE86F;</i> Yarg',
         "Yarg",
-        "https://kura.io/yarg",
+        "https://kura.gg/yarg",
     ),
     (
         '<i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee',
         "Eevee",
-        "https://kura.io/eevee",
+        "https://kura.gg/eevee",
     ),
     (
         '<i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr',
         "Hauntr",
-        "https://kura.io/hauntr",
+        "https://kura.gg/hauntr",
     ),
     (
         '<i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly',
         "Ghastly",
-        "https://kura.io/ghastly",
+        "https://kura.gg/ghastly",
     ),
 )
 DISPLAY_CATEGORIES_ON_MENU = False

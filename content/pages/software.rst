@@ -36,7 +36,7 @@ Blackhole is designed mostly for testing purposes and can be used to test numero
 
 It is available as source and as SaaS.
 
-`https://blackhole.io <https://blackhole.io/>`_
+`/blackhole </blackhole>`_
 
 Am I Secure
 -----------

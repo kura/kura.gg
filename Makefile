@@ -64,10 +64,10 @@ rsync:
 	rm -rf $(OUTPUTDIR)/curriculum-vitae/ && cp -R cv $(OUTPUTDIR)/curriculum-vitae/
 	bash scripts/headerid.sh $(OUTPUTDIR)/
 	bash scripts/pngquant.sh $(OUTPUTDIR)/
-	# bash screenshot/screenshot.sh $(OUTPUTDIR)/
+	bash screenshot/screenshot.sh $(OUTPUTDIR)/
 	# bash scripts/compress.sh $(OUTPUTDIR)/
 	bash scripts/perms.sh $(OUTPUTDIR)/
-	# bash scripts/md5.sh $(OUTPUTDIR)/
+	bash scripts/md5.sh $(OUTPUTDIR)/
 	# rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate start stop publish rsync

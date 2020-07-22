@@ -37,10 +37,10 @@ Installation
 Debian/Ubuntu
 -------------
 
-apt.kura.io
+apt.kura.gg
 ~~~~~~~~~~~
 
-Follow instructions on enabling `apt.kura.io </apt.kura.io/>`__
+Follow instructions on enabling `apt.kura.gg </apt.kura.gg/>`__
 repository and then run the following command to install the package.
 
 .. code-block:: bash

@@ -282,7 +282,7 @@ obligation to keep either of them.
 .. code-block:: python
 
     DISCLAIMER = 'Powered by love &amp; rainbow sparkles.'
-    COPYRIGHT = '<a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a>'
+    COPYRIGHT = '<a href="https://kura.gg/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.gg/" title="kura.gg">kura.gg</a>'
 
 Table of contents for articles and pages
 ----------------------------------------
@@ -303,7 +303,7 @@ adds a ``toc`` option for RST and Markdown content.
 
 The extract_toc plugin adds an ugly header element by default, I have a
 modified version `on GitHub
-<https://github.com/kura/kura.io/tree/master/plugins/extract_toc>`__ that
+<https://github.com/kura/kura.gg/tree/master/plugins/extract_toc>`__ that
 returns nicer HTML.
 
 Author card
@@ -411,16 +411,16 @@ Some default styling rules are included with Eevee, they are as follow:
 You can add your own new styles or overwrite an existing style using the
 ``href`` selector.
 
-For example, adding a selector style for ``https://kura.io`` would be done
+For example, adding a selector style for ``https://kura.gg`` would be done
 like the example below.
 
 .. code-block:: css
 
-    nav.eevee-ac-author__social a[href^="https://kura.io"] {
+    nav.eevee-ac-author__social a[href^="https://kura.gg"] {
       color: #039BE5 !important;
     }
 
-    nav.eevee-ac-author__social a[href^="https://kura.io"]:hover {
+    nav.eevee-ac-author__social a[href^="https://kura.gg"]:hover {
       color: #0277BD !important;
     }
 
@@ -1047,11 +1047,27 @@ All configuration settings
 Additional tweaks and modifications
 ===================================
 
-Additional things you can tweak and modify are available on `kura.io
+Additional things you can tweak and modify are available on `kura.gg
 </category/eevee/>`__.
 
 Changelog
 =========
+
+0.0.14
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.13...0.0.14>`__
+
+- Remove references to kura.io
+
+0.0.13
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.12...0.0.13>`__
+
+- Removed Google Plugs from share template.
 
 0.0.12
 ------
