@@ -524,3 +524,7 @@ a[href^="https://www.battleforthenet.com"]:before {
 .mdl-color-text--grey-800, th, li.series-active, li.series-active a {
   color: rgb(238, 238, 238) !important;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    margin-left: -10px;
+}
