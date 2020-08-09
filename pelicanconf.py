@@ -174,7 +174,7 @@ PLUGINS = [
     "better_tables",
     "extract_toc",
     "gallery",
-    "headerid",
+    # "headerid",
     "lightbox",
     "neighbors",
     "pelican_fontawesome",

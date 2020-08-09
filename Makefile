@@ -63,7 +63,7 @@ rsync:
 	rm -rf output/theme/fonts/roboto*
 	rm -rf $(OUTPUTDIR)/curriculum-vitae/ && cp -R cv $(OUTPUTDIR)/curriculum-vitae/
 	echo "kura.gg" > $(OUTPUTDIR)/CNAME
-	bash scripts/headerid.sh $(OUTPUTDIR)/
+	# bash scripts/headerid.sh $(OUTPUTDIR)/
 	bash scripts/pngquant.sh $(OUTPUTDIR)/
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/
 	# bash scripts/compress.sh $(OUTPUTDIR)/
