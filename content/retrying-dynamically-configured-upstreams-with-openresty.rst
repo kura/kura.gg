@@ -13,12 +13,12 @@ OpenResty is a modified version of nginx with LuaJIT compiled in and many
 nginx options that can be controlled or modified via Lua. It is very commonly
 used in content delivery networks for it's configurability.
 
-As such, we use OpenResty and one of the features we use it the ability to
-dynamically modify backend upstreams. To achieve this we use some logic within
+As such, we use OpenResty and one of the features we use is the ability to
+dynamically modify upstream backends. To achieve this we use some logic within
 OpenResty to update upstreams based on DNS records. This means we can pull
 upstreams in and out of service via DNS records and have OpenResty
-update it's upstream proxy passing configuration without needing to reload
-or push configs out to hundreds of servers.
+update it's upstream proxy passing configuration without needing to push
+configs out to hundreds of servers and reload daemons.
 
 The logic behind how we update the upstream backends is beyond the scope of
 this post, so let's just say we have a table of upstream servers.
@@ -85,7 +85,7 @@ With this block each request will pick a random server from the table and use
 it for reverse proxying.
 
 This approach is great for multiple reasons; you can dynamically update the
-server of backends available, you can add logic to how a backend is chosen
+server of backends available, you can add logic to how a backend is chosen,
 and more.
 
 The downside to this approach is in using it you are disabling nginx's builtin

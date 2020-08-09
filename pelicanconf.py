@@ -134,8 +134,8 @@ PAGE_EXCLUDES = ["files"]
 ARTICLE_EXCLUDES = ["files"]
 
 EXTRA_PATH_METADATA = {
-    "files": {"path": "files"},
-    "images": {"path": "images"},
+    # "files": {"path": "files"},
+    # "images": {"path": "images"},
     "extra/favicon.ico": {"path": "favicon.ico"},
     "extra/favicon.png": {"path": "favicon.png"},
     "extra/robots.txt": {"path": "robots.txt"},
