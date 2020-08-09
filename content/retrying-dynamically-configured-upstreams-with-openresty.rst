@@ -26,8 +26,10 @@ this post, so let's just say we have a table of upstream servers.
 .. code:: lua
 
     local upstream_servers = {
-        port=80,
-        ips={"10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4"}
+        "10.0.0.1:443",
+        "10.0.0.2:443",
+        "10.0.0.3:443",
+        "10.0.0.4:443",
     }
 
 Introduction to `balancer_by_lua`
@@ -38,10 +40,10 @@ In nginx you'd normally specify multiple backends in an upstream block.
 .. code:: nginx
 
     upstream backend {
-        server 10.0.0.1:80 max_fails=3 fail_timeout=3;
-        server 10.0.0.2:80 max_fails=3 fail_timeout=3;
-        server 10.0.0.3:80 max_fails=3 fail_timeout=3;
-        server 10.0.0.4:80 max_fails=3 fail_timeout=3;
+        server 10.0.0.1:443 max_fails=3 fail_timeout=3;
+        server 10.0.0.2:443 max_fails=3 fail_timeout=3;
+        server 10.0.0.3:443 max_fails=3 fail_timeout=3;
+        server 10.0.0.4:443 max_fails=3 fail_timeout=3;
     }
 
 Doing this in OpenResty with a dynamic set of backends is slightly different
@@ -64,8 +66,10 @@ table.
 
     init_by_lua_block {
         local upstream_servers = {
-            port=80,
-            ips={"10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4"}
+            "10.0.0.1:443",
+            "10.0.0.2:443",
+            "10.0.0.3:443",
+            "10.0.0.4:443",
         }
     }
 
@@ -73,11 +77,11 @@ table.
         server 127.0.0.1 fail_timeout=3;
         balancer_by_lua_block {
             local balancer = require("ngx.balancer")
-            local port = upstream_servers["port"]
-            local ips = upstream_servers["ips"]
+
             -- Pick a random backend
-            local ip = ips[math.random(#ips)]
-            ok, err = balancer.set_current_peer(ip, port)
+            local server = upstream_servers[math.random(#upstream_servers)]
+
+            ok, err = balancer.set_current_peer(server)
             if not ok then
                 ngx.log(ngx.ERR, "set_current_peer failed: ", err)
                 return ngx.exit(500)
@@ -108,8 +112,10 @@ it's called `set_more_tries`. So let's implement it.
 
     init_by_lua_block {
         local upstream_servers = {
-            port=80,
-            ips={"10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4"}
+            "10.0.0.1:443",
+            "10.0.0.2:443",
+            "10.0.0.3:443",
+            "10.0.0.4:443",
         }
     }
 
@@ -117,18 +123,17 @@ it's called `set_more_tries`. So let's implement it.
         server 127.0.0.1 fail_timeout=3;
         balancer_by_lua_block {
             local balancer = require("ngx.balancer")
-            local port = upstream_servers["port"]
-            local ips = upstream_servers["ips"]
+
             -- Pick a random backend
-            local ip = ips[math.random(#ips)]
+            local server = upstream_servers[math.random(#upstream_servers)]
             
             -- set up more tries using the length of the server list minus 1.
-            ok, err = balancer.set_more_tries(#ips - 1)
+            ok, err = balancer.set_more_tries(#upstream_servers - 1)
             if not ok then
                 ngx.log(ngx.ERR, "set_more_tries failed: ", err)
             end
             
-            ok, err = balancer.set_current_peer(ip, port)
+            ok, err = balancer.set_current_peer(server)
             if not ok then
                 ngx.log(ngx.ERR, "set_current_peer failed: ", err)
                 return ngx.exit(500)
@@ -146,8 +151,10 @@ We can fix that using the request context.
 
     init_by_lua_block {
         local upstream_servers = {
-            port=80,
-            ips={"10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4"}
+            "10.0.0.1:443",
+            "10.0.0.2:443",
+            "10.0.0.3:443",
+            "10.0.0.4:443",
         }
     }
 
@@ -155,10 +162,9 @@ We can fix that using the request context.
         server 127.0.0.1 fail_timeout=3;
         balancer_by_lua_block {
             local balancer = require("ngx.balancer")
-            local port = upstream_servers["port"]
-            local ips = upstream_servers["ips"]
+
             -- Pick a random backend
-            local ip = ips[math.random(#ips)]
+            local server = upstream_servers[math.random(#upstream_servers)]
             
             -- This block will only trigger if ngx.ctx.retry is not true.
             -- We set this to true during the initial request so future
@@ -166,13 +172,13 @@ We can fix that using the request context.
             if not ngx.ctx.retry then
                 ngx.ctx.retry = true
                 -- set up more tries using the length of the server list minus 1.
-                ok, err = balancer.set_more_tries(#ips - 1)
+                ok, err = balancer.set_more_tries(#upstream_servers - 1)
                 if not ok then
                     ngx.log(ngx.ERR, "set_more_tries failed: ", err)
                 end
             end
             
-            ok, err = balancer.set_current_peer(ip, port)
+            ok, err = balancer.set_current_peer(server)
             if not ok then
                 ngx.log(ngx.ERR, "set_current_peer failed: ", err)
                 return ngx.exit(500)
