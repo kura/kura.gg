@@ -25,7 +25,7 @@ this post, so let's just say we have a table of upstream servers.
 
 .. code:: lua
 
-    upstream_servers = {
+    local upstream_servers = {
         port=80,
         ips={"10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4"}
     }
@@ -50,7 +50,7 @@ and requires using `balancer_by_lua_block` or `balancer_by_lua_file`.
 .. code:: lua
 
     upstream backend {
-        server 127.0.0.1:9999 max_fails=3 fail_timeout=3;
+        server 127.0.0.1 fail_timeout=3;
         balancer_by_lua_block {
             local balancer = require("ngx.balancer")
             -- ...
@@ -70,7 +70,7 @@ table.
     }
 
     upstream backend {
-        server 127.0.0.1:9999 max_fails=3 fail_timeout=3;
+        server 127.0.0.1 fail_timeout=3;
         balancer_by_lua_block {
             local balancer = require("ngx.balancer")
             local port = upstream_servers["port"]
@@ -114,7 +114,7 @@ it's called `set_more_tries`. So let's implement it.
     }
 
     upstream backend {
-        server 127.0.0.1:9999 max_fails=3 fail_timeout=3;
+        server 127.0.0.1 fail_timeout=3;
         balancer_by_lua_block {
             local balancer = require("ngx.balancer")
             local port = upstream_servers["port"]
@@ -152,7 +152,7 @@ We can fix that using the request context.
     }
 
     upstream backend {
-        server 127.0.0.1:9999 max_fails=3 fail_timeout=3;
+        server 127.0.0.1 fail_timeout=3;
         balancer_by_lua_block {
             local balancer = require("ngx.balancer")
             local port = upstream_servers["port"]
