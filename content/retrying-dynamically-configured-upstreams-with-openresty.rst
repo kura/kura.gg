@@ -77,7 +77,11 @@ table.
             local ips = upstream_servers["ips"]
             -- Pick a random backend
             local ip = ips[math.random(#ips)]
-            balancer.set_current_peer(ip, port)
+            ok, err = balancer.set_current_peer(ip, port)
+            if not ok then
+                ngx.log(ngx.ERR, "set_current_peer failed: ", err)
+                return ngx.exit(500)
+            end
         }
     }
 
@@ -119,9 +123,16 @@ it's called `set_more_tries`. So let's implement it.
             local ip = ips[math.random(#ips)]
             
             -- set up more tries using the length of the server list minus 1.
-            balancer.set_more_tries(#ips - 1)
+            ok, err = balancer.set_more_tries(#ips - 1)
+            if not ok then
+                ngx.log(ngx.ERR, "set_more_tries failed: ", err)
+            end
             
-            balancer.set_current_peer(ip, port)
+            ok, err = balancer.set_current_peer(ip, port)
+            if not ok then
+                ngx.log(ngx.ERR, "set_current_peer failed: ", err)
+                return ngx.exit(500)
+            end
         }
     }
 
@@ -153,12 +164,19 @@ We can fix that using the request context.
             -- We set this to true during the initial request so future
             -- requests within this context will not go down this path.
             if not ngx.ctx.retry then
-                -- set up more tries using the length of the server list minus 1.
-                balancer.set_more_tries(#ips - 1)
                 ngx.ctx.retry = true
+                -- set up more tries using the length of the server list minus 1.
+                ok, err = balancer.set_more_tries(#ips - 1)
+                if not ok then
+                    ngx.log(ngx.ERR, "set_more_tries failed: ", err)
+                end
             end
             
-            balancer.set_current_peer(ip, port)
+            ok, err = balancer.set_current_peer(ip, port)
+            if not ok then
+                ngx.log(ngx.ERR, "set_current_peer failed: ", err)
+                return ngx.exit(500)
+            end
         }
     }
 
