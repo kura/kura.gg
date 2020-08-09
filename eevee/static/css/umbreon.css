@@ -149,7 +149,7 @@ th {
 }
 
 .eevee-toc-ribbon {
-  border-left: rgb(230, 74, 25) 0.6em solid;
+  border-left: rgb(251, 192, 45) 0.6em solid;
 }
 
 .eevee-meta {
@@ -481,34 +481,28 @@ ol.series-parts a:before, li.social-share__link a:before,
   font-weight: 600;
 }
 
-.netneutrality {
-  display: block;
-  padding-top: 20px;
-  margin: 0 auto;
-}
-
 a[href^="https://www.battleforthenet.com"]:before {
   content: "" !important;
   display: none !important;
 }
 
 .eevee-header, .eevee-layout {
-  background-color: rgb(63, 64, 64) !important;
+  background-color: rgb(50, 50, 50) !important;
 }
 
 .eevee-content {
   background-color: rgb(34, 34, 34) !important;
 }
 
-.eevee-related {
+.eevee-related, table {
   background-color: rgb(32, 32, 32) !important;
 }
 
-.eevee-ac {
+.eevee-ac, tr:hover {
   background-color: rgb(30, 30, 30) !important;
 }
 
-.eevee-comment, table {
+.eevee-comment {
   background-color: rgb(28, 28, 28) !important;
 }
 

@@ -33,7 +33,7 @@ Features
 - `DNS prefetch`_ (see `DNS prefetch`_),
 - comments via `Disqus <https://disqus.com/>`__ or `Muut
   <https://muut.com/>`__ (see `Disqus or Muut for comments`_),
-- share buttons for Twitter, Facebook, Google+, email and comments (see
+- share buttons for Twitter, Facebook, email and comments (see
   `Sharing options`_),
 - Twitter and Open Graph meta tags (see `Sharing options`_),
 - CSS and JS minifying via `webassets
@@ -120,7 +120,7 @@ your ``pelicanconf.py``.
 
 .. code-block:: python
 
-    THEME = 'eevee'
+    THEME = "eevee"
 
 Customising Eevee
 =================
@@ -139,19 +139,19 @@ accents that won't work well with the primary colour you choose.
 
 .. code-block:: python
 
-    THEME_PRIMARY = 'blue'
+    THEME_PRIMARY = "blue"
 
 .. code-block:: python
 
-    THEME_ACCENT = 'amber'
+    THEME_ACCENT = "amber"
 
 By default the colour scheme is :blue-grey:`blue grey` for the primary and
 :pink:`pink` for the accent.
 
 .. code-block:: python
 
-    THEME_PRIMARY = 'blue_grey'
-    THEME_ACCENT = 'pink'
+    THEME_PRIMARY = "blue_grey"
+    THEME_ACCENT = "pink"
 
 Custom CSS
 ----------
@@ -182,9 +182,11 @@ To configure links in the header, use the ``MENUITEMS`` option.
 
 .. code-block:: python
 
-    MENUITEMS = (('Contact', '/contact/'), ('Software', '/software/'),
-                 ('Donate', '/donate/'),
-                 ('.onion', 'http://omgkuraio276g5wo.onion/'))
+    MENUITEMS = [
+        ("Contact", "/contact/"),
+        ("Eevee", "/eevee/"),
+        ("Software", "/software/"),
+    ]
 
 Using ``DISPLAY_PAGES_ON_MENU`` will automatically add pages to the menu.
 
@@ -217,9 +219,11 @@ The first column displays the links from ``MENUITEMS``.
 
 .. code-block:: python
 
-    MENUITEMS = (('Contact', '/contact/'), ('Software', '/software/'),
-                 ('Donate', '/donate/'),
-                 ('.onion', 'http://omgkuraio276g5wo.onion/'))
+    MENUITEMS = [
+        ("Contact", "/contact/"),
+        ("Eevee", "/eevee/"),
+        ("Software", "/software/"),
+    ]
 
 Using ``DISPLAY_PAGES_ON_MENU`` will automatically add pages to the menu.
 
@@ -238,14 +242,19 @@ The third column displays social links from ``SOCIAL``.
 
 .. code-block:: python
 
-    SOCIAL = (('Github', 'https://github.com/kura'),
-              ('Twitter', 'https://twitter.com/kuramanga'))
+    SOCIAL = [
+        ("Github", "https://github.com/kura"),
+        ("Twitter", "https://twitter.com/kuramanga"),
+    ]
 
 And finally, the fourth column displays links from ``LINKS``.
 
 .. code-block:: python
 
-    LINKS = (('blackhole.io', 'https://blackhole.io'), )
+    LINKS = [
+        ("Eevee", "https://kura.gg/eevee/"),
+        ("Blackhole", "https://kura.gg/blackhole/"),
+    ]
 
 The footer will scale based on options you configure, so if you set
 ``MENUITEMS`` and ``LINKS`` but not ``SOCIAL``, there will be no gap.
@@ -265,8 +274,8 @@ the following variables.
 
 .. code-block:: python
 
-    DISCLAIMER = 'Powered by love &amp; rainbow sparkles.'
-    COPYRIGHT = 'Source code and content are released under the <a href="/license/">MIT license</a>.'
+    DISCLAIMER = "Powered by love &amp; rainbow sparkles."
+    COPYRIGHT = """Source code and content are released under the <a href="/license/">MIT license</a>."""
 
 You can see either or both to ``False`` to disable these notices being
 displayed.
@@ -281,8 +290,8 @@ obligation to keep either of them.
 
 .. code-block:: python
 
-    DISCLAIMER = 'Powered by love &amp; rainbow sparkles.'
-    COPYRIGHT = '<a href="https://kura.gg/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.gg/" title="kura.gg">kura.gg</a>'
+    DISCLAIMER = "Powered by love &amp; rainbow sparkles."
+    COPYRIGHT = """<a href="https://kura.gg/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.gg/" title="kura.gg">kura.gg</a>"""
 
 Table of contents for articles and pages
 ----------------------------------------
@@ -343,7 +352,7 @@ your own avatar by setting an option in ``pelicanconf.py``.
 
 .. code-block:: python
 
-    AUTHOR_CARD_AVATAR = '/images/kura.png'
+    AUTHOR_CARD_AVATAR = "/images/kura.png"
 
 The maximum size that you should use are 250x250 pixels.
 
@@ -355,7 +364,7 @@ requires a single config option.
 
 .. code-block:: python
 
-    AUTHOR_CARD_DESCRIPTION = 'My name is Kura and I break things.'
+    AUTHOR_CARD_DESCRIPTION = "My name is Kura and I break things."
 
 You can add HTML and other various things to this description.
 
@@ -375,10 +384,10 @@ links.
 
 .. code-block:: python
 
-    AUTHOR_CARD_SOCIAL = (('<i class="fa fa-github aria-hidden="true"></i>',
-                           'https://github.com/kura'),
-                          ('<i class="fa fa-twitter aria-hidden="true"></i>',
-                           'https://twitter.com/kuramanga'), )
+    AUTHOR_CARD_SOCIAL = [
+        ("""<i class="fa fa-github" aria-hidden="true"></i>""", "https://github.com/kura"),
+        ("""<i class="fa fa-twitter" aria-hidden="true"></i>""", "https://twitter.com/kuramanga"),
+    ]
 
 Some default styling rules are included with Eevee, they are as follow:
 
@@ -459,7 +468,7 @@ Disqus
 
 .. code-block:: python
 
-    DISQUS_SITENAME = 'somethinghere'
+    DISQUS_SITENAME = "somethinghere"
 
 Setting this option will enable Disqus for articles.
 
@@ -468,7 +477,7 @@ Muut
 
 .. code-block:: python
 
-    MUUT_SITENAME = 'somethinghere'
+    MUUT_SITENAME = "somethinghere"
 
 Setting this option will enable Muut for articles.
 
@@ -551,7 +560,7 @@ If set, Twitter meta tags will be added.
 
 .. code-block:: python
 
-    TWITTER_USERNAME = 'kuramanga'
+    TWITTER_USERNAME = "kuramanga"
 
 Used in conjunction with ``USE_TWITTER_CARDS``, adds the "via" meta tag.
 
@@ -591,15 +600,15 @@ Or you can set ``OPEN_GRAPH_IMAGE`` to an image location in the
 
 .. code-block:: python
 
-    OPEN_GRAPH_IMAGE = '/images/example.png'
+    OPEN_GRAPH_IMAGE = "/images/example.png"
     STATIC_PATHS = [
         # ...
-        'images',
+        "images",
         # ...
     ]
     EXTRA_PATH_METADATA = {
         # ...
-        'images': {'path': 'images'},
+        "images": {"path": "images"},
         # ...
     }
 
@@ -620,16 +629,16 @@ your ``pelicanconf.py`` file.
 
 .. code-block:: python
 
-    ARCHIVES_URL = 'archives.html'
-    ARCHIVES_SAVE_AS = 'archives.html'
+    ARCHIVES_URL = "archives.html"
+    ARCHIVES_SAVE_AS = "archives.html"
 
 Enabling the periodic archives for year and/or month is as simple as enabling
 their respective options in ``pelicanconf.py``
 
 .. code-block:: python
 
-    YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
-    MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+    YEAR_ARCHIVE_SAVE_AS = "{date:%Y}/index.html"
+    MONTH_ARCHIVE_SAVE_AS = "{date:%Y}/{date:%m}/index.html"
 
 More information on archive settings can be found in the
 `Pelican documentation
@@ -646,31 +655,31 @@ Google Analytics
 
 .. code-block:: python
 
-    GOOGLE_ANALYTICS = 'abc1234'
+    GOOGLE_ANALYTICS = "abc1234"
 
 Piwik
 ~~~~~
 
 .. code-block:: python
 
-    PIWIK_SITE_ID = '123456'
-    PIWIK_URL = 'example.com'
-    # PIWIK_SSL_URL = ''  # Defaults to https://PIWIK_URL
+    PIWIK_SITE_ID = "123456"
+    PIWIK_URL = "example.com"
+    # PIWIK_SSL_URL = ""  # Defaults to https://PIWIK_URL
 
 Open Web Analytics
 ~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    OWA_SITE_ID = '123456'
-    OWA_URL = 'https://example.com/owa/'
+    OWA_SITE_ID = "123456"
+    OWA_URL = "https://example.com/owa/"
 
 GoSquared
 ~~~~~~~~~
 
 .. code-block:: python
 
-    GOSQUARED_SITENAME = '123456'
+    GOSQUARED_SITENAME = "123456"
 
 Feeds
 -----
@@ -680,11 +689,11 @@ feeds respectively.
 
 .. code-block:: python
 
-    FEED_RSS = 'feeds/rss.xml'
+    FEED_RSS = "feeds/rss.xml"
 
 .. code-block:: python
 
-    FEED_ATOM = 'feeds/atom.xml'
+    FEED_ATOM = "feeds/atom.xml"
 
 Feed menu item
 ~~~~~~~~~~~~~~
@@ -714,13 +723,13 @@ An example for categories is below.
 
 .. code-block:: python
 
-    CATEGORY_URL = 'category/{slug}/'
-    CATEGORY_SAVE_AS = 'category/{slug}/index.html'
-    CATEGORIES_URL = 'categories/'
-    CATEGORIES_SAVE_AS = 'categories/index.html'
+    CATEGORY_URL = "category/{slug}/"
+    CATEGORY_SAVE_AS = "category/{slug}/index.html"
+    CATEGORIES_URL = "categories/"
+    CATEGORIES_SAVE_AS = "categories/index.html"
     DIRECT_TEMPLATES = [
         # ...
-        'categories',
+        "categories",
         # ...
     ]
 
@@ -728,13 +737,13 @@ And below is an example for tags.
 
 .. code-block:: python
 
-    TAG_URL = 'tag/{slug}/'
-    TAG_SAVE_AS = 'tag/{slug}/index.html'
-    TAGS_URL = 'tags/'
-    TAGS_SAVE_AS = 'tags/index.html'
+    TAG_URL = "tag/{slug}/"
+    TAG_SAVE_AS = "tag/{slug}/index.html"
+    TAGS_URL = "tags/"
+    TAGS_SAVE_AS = "tags/index.html"
     DIRECT_TEMPLATES = [
         # ...
-        'tags',
+        "tags",
         # ...
     ]
 
@@ -759,13 +768,13 @@ template setting.
 
     PLUGINS = [
         # ...
-        'tipue_search',
+        "tipue_search",
         # ...
     ]
 
     DIRECT_TEMPLATES = [
         # ...
-        'search',
+        "search",
         # ...
     ]
 
@@ -808,7 +817,7 @@ Installing it will automatically enabled the functionality within Eevee.
 
     PLUGINS = [
         # ...
-        'related_posts',
+        "related_posts",
         # ...
     ]
 
@@ -832,7 +841,7 @@ Installing it will automatically enabled the functionality within Eevee.
 
     PLUGINS = [
         # ...
-        'series',
+        "series",
         # ...
     ]
 
@@ -849,7 +858,7 @@ functionality.
 
     PLUGINS = [
         # ...
-        'assets',
+        "assets",
         # ...
     ]
 

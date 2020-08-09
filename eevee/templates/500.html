@@ -1,10 +1,15 @@
 {% extends "base.html" %}
-{% block title %}50X{%endblock%}
+{% block title %}5XX: The server encountered an error{%endblock%}
 {% block content %}
   <div class="eevee-padding">
-    <h2>50X</h2>
+    <h2>5XX: The server encountered an error</h2>
     <section class="post-content">
-      <p>The server encountered an error.</p>
+      <p>
+        <img src="{{ SITEURL }}/theme/images/error.png"
+             alt="5XX: The server encountered an error"
+             title="5XX: The server encountered an error"
+        />
+      </p>
       <p>
         <a href="{{ SITEURL }}" itemprop="url">
           Go back to the {{ SITENAME }} homepage.

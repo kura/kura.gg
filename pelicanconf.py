@@ -32,81 +32,68 @@ DATE_FORMATS = {"en": DEFAULT_DATE_FORMAT}
 HEADERID_LINK_CHAR = r"&#x203B;"
 # HEADERID_LINK_CHAR = r'<i class="material-icons">&#xE8AB;</i>'
 
-MENUITEMS = (
+MENUITEMS = [
     (
-        '<i class="material-icons" aria-hidden="true">&#xE871;</i> ' "Eevee",
+        """<i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee""",
         "Eevee",
         "/eevee/",
     ),
     (
-        '<i class="material-icons" aria-hidden="true">&#xE0B7;</i> ' "Contact",
+        """<i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact""",
         "Contact",
         "/contact/",
     ),
     (
-        '<i class="material-icons" aria-hidden="true">&#xE86F;</i> '
-        "Software",
+        """<i class="material-icons" aria-hidden="true">&#xE86F;</i> Software""",
         "Software",
         "/software/",
     ),
-)
-SOCIAL = (
+]
+
+SOCIAL = [
     (
-        '<i class="fa" aria-hidden="true">&#xF09B;</i> Github',
+        """<i class="fa" aria-hidden="true">&#xF09B;</i> Github""",
         "GitHub",
         "https://github.com/kura",
-    ),
+    )
+]
+
+AUTHOR_CARD_SOCIAL = [
     (
-        '<i class="fa" aria-hidden="true">&#xF099;</i> Twitter',
-        "Twitter",
-        "https://twitter.com/kuramanga",
-    ),
-    (
-        '<i class="fa" aria-hidden="true">&#xF084;</i> Keybase',
-        "Keybase",
-        "https://keybase.io/kura",
-    ),
-)
-AUTHOR_CARD_SOCIAL = (
-    (
-        '<i class="fa" aria-hidden="true">&#xF09B;</i>',
+        """<i class="fa" aria-hidden="true">&#xF09B;</i>""",
         "GitHub",
         "https://github.com/kura",
-    ),
+    )
+]
+
+LINKS = [
     (
-        '<i class="fa" aria-hidden="true">&#xF099;</i>',
-        "Twitter",
-        "https://twitter.com/kuramanga",
-    ),
-)
-LINKS = (
-    (
-        '<i class="material-icons" aria-hidden="true">&#xE86F;</i> '
-        "Blackhole",
+        """<i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole""",
         "Blackhole",
         "https://kura.gg/blackhole",
     ),
     (
-        '<i class="material-icons" aria-hidden="true">&#xE86F;</i> Yarg',
+        """<i class="material-icons" aria-hidden="true">&#xE86F;</i> Yarg""",
         "Yarg",
         "https://kura.gg/yarg",
     ),
     (
-        '<i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee',
+        """<i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee""",
         "Eevee",
         "https://kura.gg/eevee",
     ),
     (
-        '<i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr',
+        """<i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr""",
         "Hauntr",
         "https://kura.gg/hauntr",
     ),
     (
-        '<i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly',
+        """<i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly""",
         "Ghastly",
         "https://kura.gg/ghastly",
     ),
-)
+]
+
 DISPLAY_CATEGORIES_ON_MENU = False
 
 ARTICLE_URL = "{date:%Y}/{date:%m}/{date:%d}/{slug}/"
@@ -154,7 +141,7 @@ EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
 }
 
-DIRECT_TEMPLATES = ("404", "500", "archives", "categories", "index", "tags")
+DIRECT_TEMPLATES = ["404", "500", "archives", "categories", "index", "tags"]
 
 TOC_HEADER = False
 
@@ -217,8 +204,8 @@ SEARCH_IGNORE = [
 
 DISCLAIMER = "Powered by love &amp; rainbow sparkles."
 COPYRIGHT = (
-    'Source code and content released under the <a href="/license/" '
-    'title="MIT license">MIT license</a>.'
+    """Source code and content released under the <a href="/license/" """
+    """title="MIT license">MIT license</a>."""
 )
 
 COMMENTS_ON_PAGES = True
@@ -226,6 +213,6 @@ USE_AUTHOR_CARD = True
 AUTHOR_CARD_AVATAR = "/images/default_avatar.png"
 AUTHOR_CARD_ON_PAGES = True
 AUTHOR_CARD_DESCRIPTION = (
-    "Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex pro"
+    "Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-pro "
     "gamer. Cunt."
 )
