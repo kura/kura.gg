@@ -210,9 +210,9 @@ COPYRIGHT = (
 
 COMMENTS_ON_PAGES = True
 USE_AUTHOR_CARD = True
-AUTHOR_CARD_AVATAR = "/images/default_avatar.png"
+AUTHOR_CARD_AVATAR = "/images/avatar.png"
 AUTHOR_CARD_ON_PAGES = True
 AUTHOR_CARD_DESCRIPTION = (
-    "Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-pro "
-    "gamer. Cunt."
+    "Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex pro "
+    "gamer. Cunt. They/Them."
 )
