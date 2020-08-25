@@ -36,15 +36,14 @@ clean:
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
-start:
-	$(BASEDIR)/scripts/develop_server.sh start
+start-dev:
+	pelican --autoreload --listen content/ &
 
-stop:
-	kill -9 `cat srv.pid`
-	kill -9 `cat pelican.pid`
-	kill `ps aux | grep pelican.server | grep -v grep | awk '{print $2}'`
-	rm -f srv.pid pelican.pid
-	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
+stop-dev:
+	for pid in `ps aux | grep pelican | grep -v grep | awk '{print$$2}'`; do \
+		kill $$pid ; \
+	done
+	@echo 'Stopped Pelican.'
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS) --debug
