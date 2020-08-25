@@ -36,10 +36,10 @@ clean:
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
-start-dev:
+dev-start:
 	pelican --autoreload --listen content/ &
 
-stop-dev:
+dev-stop:
 	for pid in `ps aux | grep pelican | grep -v grep | awk '{print$$2}'`; do \
 		kill $$pid ; \
 	done
