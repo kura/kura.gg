@@ -334,6 +334,137 @@ Passing the request back to nginx
 
 This final block is where nginx is told which backend to send the client to.
 
+Putting it all together
+=======================
+
+Below is the full example written as a single `nginx.conf`. Sadly syntax
+highlighters have issues with nginx and Lua in a single file.
+
+.. code:: nginx
+
+    # set 2 worker processes to show the timer spawning on each one
+    worker_processes 2;
+
+    events {
+        worker_connections 1024;
+    }
+
+    http {
+
+        # Do this for each worker so each worker has it's own copy of the DNS
+        # records.
+        init_worker_by_lua_block {
+            _backend_servers = {}
+        
+            local function update_dns()
+                -- Set up the resolver
+                local resolver = require "resty.dns.resolver"
+                local r, err = resolver:new{
+                    nameservers = {"1.1.1.1", {"1.0.0.1", 53} },  -- Cloudflare
+                    retrans = 5,  -- 5 retransmissions on receive timeout
+                    timeout = 1000,  -- 1 sec
+                }
+                if not r then
+                    ngx.log(ngx.ERR, "failed to instantiate resolver: ", err)
+                    return
+                end
+
+                -- Pull DNS records
+                -- Use a hardcoded domain to make this example easier
+                local answers, err, tries = r:query("kura.gg", nil, {})
+                if not answers then
+                    ngx.log(ngx.ERR, "failed to query resolved: ", err)
+                    return
+                end
+                if answers.errcode then
+                    ngx.log(ngx.ERR, "server returned error code: ", answers.errcode,
+                            ": ", answers.errstr)
+                    -- Have a return here so that the old servers remain even if
+                    -- this lookup fails.
+                    return
+                end
+
+                -- Dump records in a global variable
+                -- Note I am only pulling out addresses not CNAMEs
+                _new_backend_servers = {}
+                for i, ans in ipairs(answers) do
+                    table.insert(_new_backend_servers, ans.address)
+                end
+                _backend_servers = _new_backend_servers
+            end
+
+            -- Run an at timer to force update_dns to trigger on worker init
+            ngx.timer.at(0, update_dns)
+            -- Set a timer to run every 10 seconds
+            ngx.timer.every(10, update_dns)
+        }
+
+        upstream backend {
+            server 127.0.0.1;
+
+            balancer_by_lua_block {
+                local balancer = require("ngx.balancer")
+
+                if #_backend_servers == 0 then
+                    ngx.log(ngx.ERR, "no backend servers available")
+                    return ngx.exit(500)
+                end
+
+                -- This block will only trigger if ngx.ctx.retry is not true or is
+                -- unset.
+                -- We set this to true during the initial request so future
+                -- requests within this context will not go down this path.
+                if not ngx.ctx.retry then
+                    ngx.ctx.retry = true
+                    -- Pick a random backend to start with
+                    server = _backend_servers[math.random(#_backend_servers)]
+
+                    -- Kinda messy but, create a context table we dump tried
+                    -- backends to.
+                    ngx.ctx.tried = {}
+                    ngx.ctx.tried[server] = true
+
+                    -- set up more tries using the length of the server list minus 1.
+                    ok, err = balancer.set_more_tries(#_backend_servers - 1)
+                    if not ok then
+                        ngx.log(ngx.ERR, "set_more_tries failed: ", err)
+                    end
+
+                else
+                    -- This block will trigger on a retry
+                    -- Here we'll run through the backends and pick one we haven't
+                    -- tried yet.
+                    for i, ip in ipairs(_backend_servers) do
+                        in_ctx = ngx.ctx.tried[ip] ~= nil
+                        if in_ctx == false then
+                            ngx.ctx.tried[ip] = true
+                            server = ip
+                            break
+                        end
+                    end
+                end
+
+                -- Hardcoded port again to make example easier
+                ok, err = balancer.set_current_peer(server, 443)
+                if not ok then
+                    ngx.log(ngx.ERR, "set_current_peer failed: ", err)
+                    return ngx.exit(500)
+                end
+            }
+        }
+
+        server {
+            listen 80;
+            server_name localhost;
+
+            location / {
+                proxy_pass http://backend;
+            }
+        }
+
+    }
+
+
 Full example on GitHub
 ======================
 
