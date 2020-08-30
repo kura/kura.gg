@@ -5,6 +5,7 @@ Retrying dynamically configured upstreams with OpenResty
 :category: misc
 :tags: nginx, openresty, lua
 :slug: retrying-dynamically-configured-upstreams-with-openresty
+:series: OpenResty upstreams
 
 .. contents::
     :backlinks: none

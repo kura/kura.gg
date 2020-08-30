@@ -37,7 +37,7 @@ regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 dev-start:
-	pelican --autoreload --listen content/ &
+	pelican -rlD content/ &
 
 dev-stop:
 	for pid in `ps aux | grep pelican | grep -v grep | awk '{print$$2}'`; do \
