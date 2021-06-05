@@ -11,4 +11,3 @@ Pillow
 Pygments
 typogrify
 webassets
-
