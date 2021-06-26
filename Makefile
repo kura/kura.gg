@@ -68,6 +68,7 @@ rsync:
 	# bash scripts/compress.sh $(OUTPUTDIR)/
 	bash scripts/perms.sh $(OUTPUTDIR)/
 	bash scripts/md5.sh $(OUTPUTDIR)/
+	bash scripts/sha1.sh $(OUTPUTDIR)/
 	# rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate start stop publish rsync
