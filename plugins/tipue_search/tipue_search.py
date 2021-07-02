@@ -30,6 +30,7 @@ class Tipue_Search_JSON_Generator(object):
         self.output_path = output_path
         self.context = context
         self.siteurl = settings.get('SITEURL')
+        self.relative_urls = settings.get('RELATIVE_URLS')
         self.tpages = settings.get('TEMPLATE_PAGES')
         self.output_path = output_path
         self.json_nodes = []
@@ -39,9 +40,6 @@ class Tipue_Search_JSON_Generator(object):
 
         if getattr(page, 'status', 'published') != 'published':
             return
-        if page.url in page.settings.get('SEARCH_IGNORE', []):
-            print('Ignoring {}'.format(page.url))
-            return
 
         soup_title = BeautifulSoup(page.title.replace('&nbsp;', ' '), 'html.parser')
         page_title = soup_title.get_text(' ', strip=True).replace('“', '"').replace('”', '"').replace('’', "'").replace('^', '&#94;')
@@ -50,17 +48,17 @@ class Tipue_Search_JSON_Generator(object):
         page_text = soup_text.get_text(' ', strip=True).replace('“', '"').replace('”', '"').replace('’', "'").replace('¶', ' ').replace('^', '&#94;')
         page_text = ' '.join(page_text.split())
 
-        if getattr(page, 'category', 'None') == 'None':
-            page_category = ''
-        else:
-            page_category = page.category.name
+        page_category = page.category.name if getattr(page, 'category', 'None') != 'None' else ''
 
-        page_url = self.siteurl + '/' + page.url
+        page_url = '.'
+        if page.url:
+            page_url = page.url if self.relative_urls else (self.siteurl + '/' + page.url)
 
         node = {'title': page_title,
                 'text': page_text,
                 'tags': page_category,
-                'url': page_url}
+                'url': page_url,
+                'loc': page_url} # changed from 'url' following http://blog.siphos.be/2015/08/updates-on-my-pelican-adventure/ (an update to Pelican made it not work, because the update (e.g., in the theme folder, static/tipuesearch/tipuesearch.js is looking for the 'loc' attribute.
 
         self.json_nodes.append(node)
 
@@ -69,17 +67,11 @@ class Tipue_Search_JSON_Generator(object):
 
         srcfile = open(os.path.join(self.output_path, self.tpages[srclink]), encoding='utf-8')
         soup = BeautifulSoup(srcfile, 'html.parser')
+        page_title = soup.title.string if soup.title is not None else ''
         page_text = soup.get_text()
-
-        # What happens if there is not a title.
-        if soup.title is not None:
-            page_title = soup.title.string
-        else:
-            page_title = ''
 
         # Should set default category?
         page_category = ''
-
         page_url = urljoin(self.siteurl, self.tpages[srclink])
 
         node = {'title': page_title,
@@ -91,7 +83,7 @@ class Tipue_Search_JSON_Generator(object):
 
 
     def generate_output(self, writer):
-        path = os.path.join(self.output_path, 'tipuesearch_content.json')
+        path = os.path.join(self.output_path, 'tipuesearch_content.js')
 
         pages = self.context['pages'] + self.context['articles']
 
@@ -104,9 +96,11 @@ class Tipue_Search_JSON_Generator(object):
         for page in pages:
             self.create_json_node(page)
         root_node = {'pages': self.json_nodes}
+        
+        root_node_js = 'var tipuesearch = ' + json.dumps(root_node, separators=(',', ':'), ensure_ascii=False) + ';'
 
         with open(path, 'w', encoding='utf-8') as fd:
-            json.dump(root_node, fd, separators=(',', ':'), ensure_ascii=False)
+            fd.write(root_node_js)
 
 
 def get_generators(generators):

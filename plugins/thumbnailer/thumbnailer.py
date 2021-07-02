@@ -10,7 +10,7 @@ try:
     from PIL import Image, ImageOps
     enabled = True
 except ImportError:
-    logging.warning("Unable to load PIL, disabling thumbnailer")
+    logger.warning("Unable to load PIL, disabling thumbnailer")
     enabled = False
 
 DEFAULT_IMAGE_DIR = "pictures"
@@ -23,7 +23,7 @@ DEFAULT_THUMBNAIL_SIZES = {
 DEFAULT_TEMPLATE = """<a href="{url}" rel="shadowbox" title="{filename}"><img src="{thumbnail}" alt="{filename}"></a>"""
 DEFAULT_GALLERY_THUMB = "thumbnail_square"
 
-class _resizer(object):
+class Resizer(object):
     """ Resizes based on a text specification, see readme """
 
     REGEX = re.compile(r'(\d+|\?)x(\d+|\?)')
@@ -84,13 +84,15 @@ class _resizer(object):
                 targeth = int(tmph)
                 resizer = self._exact_resize
 
-        logging.debug("Using resizer {0}".format(resizer.__name__))
+        logger.debug("Using resizer {0}".format(resizer.__name__))
         return resizer(targetw, targeth, image)
 
     def get_thumbnail_name(self, in_path):
         # Find the partial path + filename beyond the input image directory.
         prefix = path.commonprefix([in_path, self._root])
-        new_filename = in_path[len(prefix) + 1:]
+        new_filename = in_path[len(prefix):]
+        if new_filename.startswith('/'):
+            new_filename = new_filename[1:]
 
         # Generate the new filename.
         (basename, ext) = path.splitext(new_filename)
@@ -132,12 +134,19 @@ def resize_thumbnails(pelican):
 
     in_path = _image_path(pelican)
 
+    include_regex = pelican.settings.get('THUMBNAIL_INCLUDE_REGEX')
+    if include_regex:
+        pattern = re.compile(include_regex)
+        is_included = lambda name: pattern.match(name)
+    else:
+        is_included = lambda name: not name.startswith('.')
+
     sizes = pelican.settings.get('THUMBNAIL_SIZES', DEFAULT_THUMBNAIL_SIZES)
-    resizers = dict((k, _resizer(k, v, in_path)) for k,v in sizes.items())
+    resizers = dict((k, Resizer(k, v, in_path)) for k,v in sizes.items())
     logger.debug("Thumbnailer Started")
     for dirpath, _, filenames in os.walk(in_path):
         for filename in filenames:
-            if not filename.startswith('.'):
+            if is_included(filename):
                 for name, resizer in resizers.items():
                     in_filename = path.join(dirpath, filename)
                     out_path = get_out_path(pelican, in_path, in_filename, name)
@@ -179,7 +188,7 @@ def expand_gallery(generator, metadata):
     template = generator.settings.get('GALLERY_TEMPLATE', DEFAULT_TEMPLATE)
     thumbnail_name = generator.settings.get("GALLERY_THUMBNAIL", DEFAULT_GALLERY_THUMB)
     thumbnail_prefix = generator.settings.get("")
-    resizer = _resizer(thumbnail_name, '?x?', base_path)
+    resizer = Resizer(thumbnail_name, '?x?', base_path)
     for dirpath, _, filenames in os.walk(in_path):
         for filename in filenames:
             if not filename.startswith('.'):

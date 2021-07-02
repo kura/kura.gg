@@ -1,6 +1,8 @@
 Series plugin
 -------------
 
+**NOTE:** [This plugin has been moved to its own repository](https://github.com/pelican-plugins/series). Please file any issues/PRs there. Once all plugins have been migrated to the [new Pelican Plugins organization](https://github.com/pelican-plugins), this monolithic repository will be archived.
+
 The series plugin allows you to join different posts into a series.
 
 In order to mark posts as part of a series, use the `:series:` metadata:
@@ -14,9 +16,10 @@ or, in Markdown syntax
 The plugin collects all articles belonging to the same series and provides
 series-related variables that you can use in your template.
 
+#### Indexing
 By default articles in a series are ordered by date and then automatically numbered.
 
-If you want to force a given order just specify the `:series_index` metadata,
+If you want to force a given order just specify the `:series_index:` metadata or in Markdown `series_index:`,
 starting from 1. All articles with this enforced index are put at the beginning of
 the series and ordered according to the index itself. All the remaining articles
 come after them, ordered by date.

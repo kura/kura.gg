@@ -12,7 +12,6 @@ def set_file_utime(path, datetime):
     mtime = time.mktime(datetime.timetuple())
     logger.info('touching %s', path)
     os.utime(path, (mtime, mtime))
-    os.utime(path.replace('index.html', ''), (mtime, mtime))
 
 
 def touch_file(path, context):

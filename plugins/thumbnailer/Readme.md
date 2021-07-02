@@ -1,6 +1,10 @@
 Thumbnail Creation of images
 ============================
 
+**NOTE:** [This plugin has been moved to its own repository](https://github.com/pelican-plugins/thumbnailer). Please file any issues/PRs there. Once all plugins have been migrated to the [new Pelican Plugins organization](https://github.com/pelican-plugins), this monolithic repository will be archived.
+
+-------------------------------------------------------------------------------
+
 This plugin creates thumbnails for all of the images found under a specific directory, in various thumbnail sizes.
 It requires `PIL` to function properly since `PIL` is used to resize the images, and the thumbnail will only be re-built
 if it doesn't already exist (to save processing time).
@@ -23,6 +27,7 @@ Configuration
   The generated filename will be `originalname_thumbnailname.ext` unless `THUMBNAIL_KEEP_NAME` is set.
 * `THUMBNAIL_KEEP_NAME` is a Boolean that, if set, puts the file with the original name in a thumbnailname folder, named like the key in `THUMBNAIL_SIZES`.
 * `THUMBNAIL_KEEP_TREE` is a Boolean that, if set, saves the image directory tree.
+* `THUMBNAIL_INCLUDE_REGEX` is an optional string that is used as regular expression to restrict thumbnailing to matching files. By default all files not starting with a dot are respected.
 
 Sizes can be specified using any of the following formats:
 
