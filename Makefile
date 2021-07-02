@@ -69,6 +69,7 @@ rsync:
 	bash scripts/perms.sh $(OUTPUTDIR)/
 	bash scripts/md5.sh $(OUTPUTDIR)/
 	bash scripts/sha1.sh $(OUTPUTDIR)/
+	python3 touch.py
 	# rm -rf $(OUTPUTDIR)/*
 
 .PHONY: html help clean regenerate start stop publish rsync
