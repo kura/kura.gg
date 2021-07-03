@@ -177,6 +177,7 @@ PLUGINS = [
     # "headerid",
     "lightbox",
     "neighbors",
+    "pelican-ert",
     "pelican_fontawesome",
     "pelican_gist",
     "pelican_vimeo",

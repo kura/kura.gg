@@ -7,7 +7,7 @@
     <div class="eevee-meta mdl-color-text--grey-500">
       <time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">
         {{ article.locale_date }}
-      </time>
+      </time>&nbsp;-- {% if article.ert %}{{ article.ert }}{% endif %}
     </div>
     <h2 itemprop="name" class="article-title">
       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"

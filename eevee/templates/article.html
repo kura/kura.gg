@@ -9,7 +9,7 @@
         <time datetime="{{ article.date.isoformat() }}"
               itemprop="datePublished">
           {{ article.locale_date }}
-        </time>
+        </time>&nbsp;-- {% if article.ert %}{{ article.ert }}{% endif %}
       </div>
       <h1 itemprop="name">
         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
