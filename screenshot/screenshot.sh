@@ -23,9 +23,6 @@ do
     screenshot $url $output &
 done
 
+sleep 2
 echo "waiting for screenshot jobs to complete"
-for job in `jobs -p`
-do
-    wait $job
-done
-
+wait < <(jobs -p)
