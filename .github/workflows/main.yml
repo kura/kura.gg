@@ -1,0 +1,45 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+      - name: apt install  
+        run: sudo apt install -y pngquant imagemagick phantomjs
+      - name: pip install
+        run: make install
+      - name: clean
+        run: make clean
+      - name: publish
+        run: make publish
+      - name: cname
+        run: make cname
+      - name: pngquant
+        run: make pngquant
+      - name: screenshot
+        run: make screenshot
+      - name: perms
+        run: make perms
+      - name: hash
+        run: make hash
+      - name: touch
+        run: make touch
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+            external_repository: kura/kura.github.io
+            publish_branch: master
+            publish_dir: ./output

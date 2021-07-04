@@ -20,9 +20,9 @@ for page in `find $1 -name "*.html" | grep -v '/tor/' | grep -v '/donate/' | gre
 do
     output=`echo $page | sed -e 's/\.html/\.png/g'`
     url=`echo "https://kura.gg/${page}" | sed -e "s|$1||g"`
-    screenshot $url $output &
+    screenshot $url $output
 done
 
-sleep 2
-echo "waiting for screenshot jobs to complete"
-wait < <(jobs -p)
+# sleep 2
+# echo "waiting for screenshot jobs to complete"
+# wait < <(jobs -p)

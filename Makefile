@@ -23,39 +23,73 @@ help:
 	@echo '   make rsync          upload the web site via rsync+ssh '
 	@echo ''
 
+.PHONY: html
 html: clean $(OUTPUTDIR)/index.html
 
 $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
+.PHONY: clean
 clean:
 	[ ! -d $(OUTPUTDIR) ] || find $(OUTPUTDIR) -mindepth 1 -delete
 	find . -type f -iname "*.pyc" -delete
 	find . -type d -iname "__pycache__" -delete
 
+.PHONY: regenerate
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
+.PHONY: dev-start
 dev-start:
 	pelican -rlD content/ &
 
+.PHONY: dev-stop
 dev-stop:
 	for pid in `ps aux | grep pelican | grep -v grep | awk '{print$$2}'`; do \
 		kill $$pid ; \
 	done
 	@echo 'Stopped Pelican.'
 
+.PHONY: publish
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS) --debug
 
+.PHONY: install
 install:
 	pip install -r requirements.txt
 	sudo mkdir -p /usr/share/fonts/truetype/kura.io/
 	sudo cp eevee/static/fonts/*.ttf /usr/share/fonts/truetype/kura.io/
 	sudo fc-cache -v
 
+.PHONY: test
 test: clean rsync
 
+.PHONY: cname
+cname:
+	echo "kura.gg" > $(OUTPUTDIR)/CNAME
+
+.PHONY: pngquant
+pngquant:
+	bash scripts/pngquant.sh $(OUTPUTDIR)/
+
+.PHONY: screenshot
+screenshot:
+	bash screenshot/screenshot.sh $(OUTPUTDIR)/
+
+.PHONY: perms
+perms:
+	bash scripts/perms.sh $(OUTPUTDIR)/
+
+.PHONY: hash
+hash:
+	bash scripts/md5.sh $(OUTPUTDIR)/
+	bash scripts/sha1.sh $(OUTPUTDIR)/
+
+.PHONY: touch
+touch:
+	python3 touch.py
+
+.PHONY: rsync
 rsync:
 	rm -rf $(OUTPUTDIR)/*
 	$(MAKE) publish
@@ -72,4 +106,3 @@ rsync:
 	python3 touch.py
 	# rm -rf $(OUTPUTDIR)/*
 
-.PHONY: html help clean regenerate start stop publish rsync
