@@ -27,7 +27,10 @@ jobs:
       - name: clean
         run: make clean
       - name: publish
-        run: make publish
+        run: |
+          make publish
+          rm -rf output/theme/fonts/roboto*
+          rm -rf $(OUTPUTDIR)/curriculum-vitae/ && cp -R cv $(OUTPUTDIR)/curriculum-vitae/
       - name: cname
         run: make cname
       - name: pngquant
