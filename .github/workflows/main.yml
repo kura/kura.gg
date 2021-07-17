@@ -30,7 +30,7 @@ jobs:
         run: |
           make publish
           rm -rf output/theme/fonts/roboto*
-          rm -rf $(OUTPUTDIR)/curriculum-vitae/ && cp -R cv $(OUTPUTDIR)/curriculum-vitae/
+          rm -rf output/curriculum-vitae/ && cp -R cv output/curriculum-vitae/
       - name: cname
         run: make cname
       - name: pngquant
