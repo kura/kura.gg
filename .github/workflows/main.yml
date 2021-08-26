@@ -21,7 +21,9 @@ jobs:
           path: ~/.cache/pip
           key: cache_file
       - name: apt install  
-        run: sudo apt install -y pngquant imagemagick phantomjs
+        run: |
+          sudo apt update
+          sudo apt install -y pngquant imagemagick phantomjs
       - name: pip install
         run: make install
       - name: clean
