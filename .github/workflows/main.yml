@@ -48,5 +48,5 @@ jobs:
         with:
             personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
             external_repository: kura/kura.github.io
-            publish_branch: master
+            publish_branch: main
             publish_dir: ./output
