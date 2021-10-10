@@ -89,6 +89,10 @@ hash:
 touch:
 	python3 touch.py
 
+.PHONE: update_cv
+update_cv:
+	scripts/update_cv.sh
+
 .PHONY: rsync
 rsync:
 	rm -rf $(OUTPUTDIR)/*
