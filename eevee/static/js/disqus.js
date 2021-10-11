@@ -1,5 +1,5 @@
 var disqus_config = function () {
-  this.page.url = "https://kura.io" + window.location.pathname;
+  this.page.url = "https://kura.gg" + window.location.pathname;
   this.page.identifier = window.location.pathname;
 };
 

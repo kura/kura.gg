@@ -1,15 +1,15 @@
-Moved debian and ubuntu to separate repositories on apt.kura.io
+Moved debian and ubuntu to separate repositories on apt.kura.gg
 ###############################################################
 :date: 2014-03-24 19:19
 :author: kura
 :category: deb builds
 :tags: apt
-:slug: moved-debian-and-ubuntu-to-separate-repositories-on-apt.kura.io
+:slug: moved-debian-and-ubuntu-to-separate-repositories-on-apt.kura.gg
 
 .. contents::
     :backlinks: none
 
-I have made a breaking change to the `apt.kura.io </apt.kura.io/>`__ 
+I have made a breaking change to the `apt.kura.gg </apt.kura.gg/>`__ 
 repositories.
 
 Ubuntu is now properly supported, but to do this properly it meant separating 
@@ -19,7 +19,7 @@ issues.
 Breaking changes
 ================
 
-Anyone currently using apt.kura.io as it is will get 404 errors and will need to 
+Anyone currently using apt.kura.gg as it is will get 404 errors and will need to 
 reconfigure their APT settings.
 
 Debian
@@ -27,11 +27,11 @@ Debian
 
 .. code-block:: none
 
-    sudo sed -i 's/apt.kura.io\//apt.kura.io\/debian\//g' /etc/apt/sources.list.d/apt.kura.io.list
+    sudo sed -i 's/apt.kura.gg\//apt.kura.gg\/debian\//g' /etc/apt/sources.list.d/apt.kura.gg.list
 
 Ubuntu
 ------
 
 .. code-block:: none
 
-    sudo sed -i 's/apt.kura.io\//apt.kura.io\/ubuntu\//g' /etc/apt/sources.list.d/apt.kura.io.list
+    sudo sed -i 's/apt.kura.gg\//apt.kura.gg\/ubuntu\//g' /etc/apt/sources.list.d/apt.kura.gg.list

@@ -1,10 +1,10 @@
-kura.io's A* SSL rating
+kura.gg's A* SSL rating
 #######################
 :date: 2014-02-02 15:18
 :author: kura
 :category: tutorials
 :tags: ssl
-:slug: kura.io-a-star-ssl-rating
+:slug: kura.gg-a-star-ssl-rating
 
 .. contents::
     :backlinks: none
@@ -117,7 +117,7 @@ Testing
 
 You can use `SSL Labs by Qualys <https://www.ssllabs.com/ssltest/analyze.html>`__
 to determine your own website's security and you can look at the
-`Qualys report <https://www.ssllabs.com/ssltest/analyze.html?d=kura.io>`__ for
+`Qualys report <https://www.ssllabs.com/ssltest/analyze.html?d=kura.gg>`__ for
 this website as a comparison.
 
 

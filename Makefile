@@ -8,7 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-SSH_TARGET_DIR=/var/www/kura.io
+SSH_TARGET_DIR=/var/www/kura.gg
 
 help:
 	@echo 'Makefile for a pelican Web site'
@@ -57,8 +57,8 @@ publish:
 .PHONY: install
 install:
 	pip install -U -r requirements.txt
-	sudo mkdir -p /usr/share/fonts/truetype/kura.io/
-	sudo cp eevee/static/fonts/*.ttf /usr/share/fonts/truetype/kura.io/
+	sudo mkdir -p /usr/share/fonts/truetype/kura.gg/
+	sudo cp eevee/static/fonts/*.ttf /usr/share/fonts/truetype/kura.gg/
 	sudo fc-cache -v
 
 .PHONY: test

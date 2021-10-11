@@ -96,8 +96,8 @@ If the above testing was all OK, we can now actually use the data.
                  -cert /path/to/your/certificate \
                  -url "OCSP_URI" -respout /path/to/your/certificate.ocsp
 
-One thing to note is, if your certificate file is */etc/ssl/certs/kura.io.crt*
-then you must set -respout to */etc/ssl/certs/kura.io.crt.ocsp*
+One thing to note is, if your certificate file is */etc/ssl/certs/kura.gg.crt*
+then you must set -respout to */etc/ssl/certs/kura.gg.crt.ocsp*
 
 You can now simply reload haproxy and check your OCSP staping is working.
 

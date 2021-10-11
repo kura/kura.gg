@@ -23,7 +23,7 @@ Search interface
     >>> package.name
     u'yarg'
     >>> package.author
-    Author(name=u'Kura', email=u'kura@kura.io')
+    Author(name=u'Kura', email=u'kura@kura.gg')
 
 Newest packages interface
 -------------------------

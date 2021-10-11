@@ -50,7 +50,7 @@ vocabulary, improving the experience for everyone that uses your website.
              itemtype="https://schema.org/Person" role="presentation">
             <meta itemprop="name" content="Kura" />
             <meta itemprop="name"
-                  content="https://kura.io/authors/kura/" />
+                  content="https://kura.gg/authors/kura/" />
         </div>
         <meta itemprop="keywords" content="eevee,html,pelican" />
         <div class="eevee-article eevee-article-padding">
@@ -61,7 +61,7 @@ vocabulary, improving the experience for everyone that uses your website.
                 </time>
             </div>
             <h2 itemprop="name">
-                <a href="https://kura.io/eevee" rel="bookmark"
+                <a href="https://kura.gg/eevee" rel="bookmark"
                    title="Permalink to 'Eevee -- A Material Design theme for Pelican'"
                    itemprop="url">
                     Eevee -- A Material Design theme for Pelican
@@ -108,7 +108,7 @@ accessibility. More information on available options is provided on the
          itemtype="https://schema.org/Person" role="presentation">
         <meta itemprop="name" content="Kura" />
         <meta itemprop="name"
-              content="https://kura.io/authors/kura/" />
+              content="https://kura.gg/authors/kura/" />
     </div>
 
 This set of markup simply defines who the author is and where more of their
@@ -139,7 +139,7 @@ more user-friendly format that is displayed to the user.
 .. code-block:: html
 
     <h2 itemprop="name">
-        <a href="https://kura.io/eevee" rel="bookmark"
+        <a href="https://kura.gg/eevee" rel="bookmark"
            title="Permalink to 'Eevee -- A Material Design theme for Pelican'"
            itemprop="url">
             Eevee -- A Material Design theme for Pelican

@@ -32,7 +32,7 @@ Module interface
     >>> client = Client()
     >>> client.authorize("abcde12345")
     >>> client.droplets
-    [<Droplet ego.kura.io>, <Droplet fax.kura.io>, <Droplet jet.kura.io>, <Droplet ski.kura.io>]
+    [<Droplet ego.kura.gg>, <Droplet fax.kura.gg>, <Droplet jet.kura.gg>, <Droplet ski.kura.gg>]
     >>> client.droplet_reboot(1234)
 
 CLI interface
@@ -43,10 +43,10 @@ CLI interface
     $ batfish authorize
     abcde12345
     $ batfish droplets
-    ego.kura.io [id: 12345] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
-    fax.kura.io [id: 12346] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
-    jet.kura.io [id: 12347] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
-    ski.kura.io [id: 12348] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    ego.kura.gg [id: 12345] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    fax.kura.gg [id: 12346] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    jet.kura.gg [id: 12347] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    ski.kura.gg [id: 12348] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
     $ batfish droplet_reboot 12345
 
 Console interface
@@ -57,8 +57,8 @@ Console interface
     batfish> authorize
     abcde12345
     batfish> droplets
-    ego.kura.io [id: 12345] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
-    fax.kura.io [id: 12346] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
-    jet.kura.io [id: 12347] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
-    ski.kura.io [id: 12348] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    ego.kura.gg [id: 12345] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    fax.kura.gg [id: 12346] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    jet.kura.gg [id: 12347] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
+    ski.kura.gg [id: 12348] (cpu(s): 1, mem: 512MB, disk: 20GB, ip: 123.123.123.123 status: active, region: Amsterdam 3)
     batfish> droplet_reboot 12345

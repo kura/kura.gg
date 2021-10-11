@@ -121,19 +121,19 @@ enable SPDY in your server configuration as below.
         bind 0.0.0.0:80
         redirect sheme https if !{ ssl_fc }
 
-    frontend kura-io
+    frontend kura-gg
         mode tcp
-        bind 0.0.0.0:443 ssl crt /etc/ssl/certs/kura.io.pem npn spdy/2 # pem is certificate, intermediate and finally private key
+        bind 0.0.0.0:443 ssl crt /etc/ssl/certs/kura.gg.pem npn spdy/2 # pem is certificate, intermediate and finally private key
         use_backend kura-app-spdy if { ssl_fc_npn -i spdy/2 }
         default_backend kura-app-http
 
     backend kura-app-spdy
         mode tcp
-        server kura-io-app1 127.0.0.1:80 check
+        server kura-gg-app1 127.0.0.1:80 check
 
     backend kura-app-http
         mode http
-        server kura-io-app1 127.0.0.1:81 check
+        server kura-gg-app1 127.0.0.1:81 check
 
 You don't need to worry about the *global* and *defaults* sections, I will now
 explain what the final four sections do.
@@ -151,14 +151,14 @@ frontend http
 This tells haproxy to listen on port 80 and redirect all traffic
 to the HTTPS version of the site.
 
-frontend kura-io
+frontend kura-gg
 ----------------
 
 ::
 
-    frontend kura-io
+    frontend kura-gg
         mode tcp
-        bind 0.0.0.0:443 ssl crt /etc/ssl/certs/kura.io.pem npn spdy/2 # pem is certificate, intermediate and finally private key
+        bind 0.0.0.0:443 ssl crt /etc/ssl/certs/kura.gg.pem npn spdy/2 # pem is certificate, intermediate and finally private key
         use_backend kura-app-spdy if { ssl_fc_npn -i spdy/2 }
         default_backend kura-app-http
 
@@ -197,7 +197,7 @@ backend kura-app-spdy
 
     backend kura-app-spdy
         mode tcp
-        server kura-io-app1 127.0.0.1:80 check
+        server kura-gg-app1 127.0.0.1:80 check
 
 This section simply defines the server we should talk to if
 the client is using an SPDY enabled connection.
@@ -213,7 +213,7 @@ backend kura-app-http
 
     backend kura-app-http
         mode http
-        server kura-io-app1 127.0.0.1:81 check
+        server kura-gg-app1 127.0.0.1:81 check
 
 And finally, here I am defining the http backends
 to fall back on for non-SPDY connections.
@@ -247,28 +247,28 @@ Within nginx we need to enable two virtual hosts
 
     server {
         listen 80 spdy;
-        server_name kura.io;
+        server_name kura.gg;
 
         # make nginx 301 redirects work
         port_in_redirect off;
         server_name_in_redirect off;
 
         location / {
-                root   /var/www/kura.io/;
+                root   /var/www/kura.gg/;
                 index  index.html index.htm;
         }
     }
 
     server {
         listen 81;
-        server_name kura.io;
+        server_name kura.gg;
 
         # make nginx 301 redirects work
         port_in_redirect off;
         server_name_in_redirect off;
 
         location / {
-                root   /var/www/kura.io/;
+                root   /var/www/kura.gg/;
                 index  index.html index.htm;
         }
     }
@@ -281,7 +281,7 @@ running on port 81.
 
 We have two lines *port_in_redirect* and *server_name_in_redirect*
 set to *off* because otherwise nginx would try to redirect to
-http://kura.io:81/ and cause issues with haproxy.
+http://kura.gg:81/ and cause issues with haproxy.
 
 It's a simple as that, you can test this using the `Firefox`_ and
 `Chrome`_ extensions that show you websites with SPDY enabled.

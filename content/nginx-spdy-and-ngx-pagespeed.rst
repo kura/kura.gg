@@ -10,7 +10,7 @@ nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)
     :backlinks: none
 
 I decided to rebuild syslog.tv as pure HTML using RST and
-`Pelican`_ and rebrand it as kura.io.
+`Pelican`_ and rebrand it as kura.gg.
 
 .. _`Pelican`: http://blog.getpelican.com/
 
@@ -97,7 +97,7 @@ enable SPDY in your server configuration as below.
 
     server {
         listen 443 ssl spdy;
-        server_name kura.io;
+        server_name kura.gg;
         # ...
     }
 

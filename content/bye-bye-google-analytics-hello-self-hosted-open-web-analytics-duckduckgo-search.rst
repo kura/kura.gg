@@ -11,7 +11,7 @@ Bye bye Google Analytics, hello self-hosted Open Web Analytics & DuckDuckGo sear
 
 Today I can happily announce that `the Google Analytics tracking code has been
 removed from this website
-<https://github.com/kura/kura.io/commit/5e82c14bab3922d81b430549dd258a2047d1367f>`_.
+<https://github.com/kura/kura.gg/commit/5e82c14bab3922d81b430549dd258a2047d1367f>`_.
 
 Goodybye Google Analytics & hello Open Web Analytics
 ====================================================

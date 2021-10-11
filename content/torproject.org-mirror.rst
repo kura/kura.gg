@@ -30,11 +30,11 @@ Access
 | RSYNC_  | `RSYNC DIST`_    |
 +---------+------------------+
 
-.. _HTTP: http://tor-mirror.kura.io/
-.. _`HTTP DIST`: http://tor-mirror.kura.io/dist/
-.. _HTTPS: https://tor-mirror.kura.io/
-.. _`HTTPS DIST`: https://tor-mirror.kura.io/dist/
-.. _FTP: ftp://tor-mirror.kura.io/
-.. _`FTP DIST`: ftp://tor-mirror.kura.io/dist/
-.. _RSYNC: rsync://tor-mirror.kura.io/torproject.org/
-.. _`RSYNC DIST`: rsync://tor-mirror.kura.io/torproject.org/dist/
+.. _HTTP: http://tor-mirror.kura.gg/
+.. _`HTTP DIST`: http://tor-mirror.kura.gg/dist/
+.. _HTTPS: https://tor-mirror.kura.gg/
+.. _`HTTPS DIST`: https://tor-mirror.kura.gg/dist/
+.. _FTP: ftp://tor-mirror.kura.gg/
+.. _`FTP DIST`: ftp://tor-mirror.kura.gg/dist/
+.. _RSYNC: rsync://tor-mirror.kura.gg/torproject.org/
+.. _`RSYNC DIST`: rsync://tor-mirror.kura.gg/torproject.org/dist/

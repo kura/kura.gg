@@ -1,10 +1,10 @@
-vagrant-bash-completion & go-bash-completion on apt.kura.io
+vagrant-bash-completion & go-bash-completion on apt.kura.gg
 ###########################################################
 :date: 2014-02-27 23:14
 :author: kura
 :category: deb builds
 :tags: debian, ubuntu, vagrant, go, bash, completion
-:slug: vagrant-bash-completion-and-go-bash-completion-on-apt.kura.io
+:slug: vagrant-bash-completion-and-go-bash-completion-on-apt.kura.gg
 
 .. contents::
     :backlinks: none
@@ -17,7 +17,7 @@ Requirements
 Downloads
 =========
 
-There versions are available on `apt.kura.io </apt.kura.io/>`__
+There versions are available on `apt.kura.gg </apt.kura.gg/>`__
 or as a manual download, from the links below.
 
 Manual download
