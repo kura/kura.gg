@@ -1,0 +1,91 @@
+backend default {
+    .host = "localhost";
+    .port = "81";
+}
+
+acl purge {
+    "localhost";
+}
+
+sub vcl_recv {
+    set req.grace = 6h;
+
+    if (req.request == "PURGE") {
+        if(!client.ip ~ purge) {
+            error 405 "Not allowed.";
+        }
+
+        purge("req.url ~ ^" req.url "$ && req.http.host == "req.http.host);
+    }
+
+    if (req.url ~ "\.(jpg|png|gif|gz|tgz|bz2|lzma|tbz)(\?.*|)$") {
+        remove req.http.Accept-Encoding;
+    } elsif (req.http.Accept-Encoding ~ "gzip") {
+        set req.http.Accept-Encoding = "gzip";
+    } elsif (req.http.Accept-Encoding ~ "deflate") {
+        set req.http.Accept-Encoding = "deflate";
+    } else {
+        remove req.http.Accept-Encoding;
+    }
+
+    if (req.url ~ "wp-(login|admin)") {
+        return (pass);
+    }
+
+    if (req.request != "GET" && req.request != "HEAD") {
+        return (pass);
+    }
+
+    unset req.http.cookie;
+
+    if (req.url ~ "\.(jpeg|jpg|png|gif|ico|swf|js|css|txt|gz|zip|rar|bz2|tgz|tbz|html|htm|pdf|pls|torrent)(\?.*|)$") {
+        unset req.http.Authenticate;
+        unset req.http.POSTDATA;
+        set req.request = "GET";
+        set req.url = regsub(req.url, "\?.*$", "");
+    }
+}
+
+sub vcl_pipe {
+    set bereq.http.connection = "close";
+
+    if (req.http.X-Forwarded-For) {
+        set bereq.http.X-Forwarded-For = req.http.X-Forwarded-For;
+    } else {
+        set bereq.http.X-Forwarded-For = regsub(client.ip, ":.*", "");
+    }
+}
+
+sub vcl_pass {
+    set bereq.http.connection = "close";
+
+    if (req.http.X-Forwarded-For) {
+        set bereq.http.X-Forwarded-For = req.http.X-Forwarded-For;
+    } else {
+        set bereq.http.X-Forwarded-For = regsub(client.ip, ":.*", "");
+    }
+}
+
+sub vcl_fetch {
+    set beresp.ttl = 1h;
+    set req.grace = 6h;
+
+    if (req.url ~ "wp-(login|admin)") {
+        return (pass);
+    }
+
+    unset beresp.http.set-cookie;
+
+    if (req.url ~ "\.(jpeg|jpg|png|gif|ico|swf|js|css|txt|gz|zip|rar|bz2|tgz|tbz|html|htm|pdf|pls|torrent)$") {
+        set beresp.ttl = 24h;
+    }
+}
+
+sub vcl_deliver {
+    if (obj.hits > 0) {
+        set resp.http.X-Cache = "HIT";
+        set resp.http.X-Cache-Hits = obj.hits;
+    } else {
+        set resp.http.X-Cache = "MISS";
+    }
+}

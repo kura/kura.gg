@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - misc</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/misc.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2020-08-30T17:30:00+01:00</updated><entry><title>Configuring upstreams dynamically with DNS in OpenResty</title><link href="https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/" rel="alternate"></link><published>2020-08-30T17:30:00+01:00</published><updated>2020-08-30T17:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2020-08-30:/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</id><summary type="html">
+&lt;p&gt;This article is a continuation of &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
+upstreams&lt;/a&gt;
+that gives an example of how you can configure OpenResty to update your
+upstream backend servers dynamically with &lt;span class="caps"&gt;DNS&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="section" id="breaking-down-init-worker-by-lua-block"&gt;
+&lt;h2&gt;Breaking down &lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt; can be used to make an nginx worker do some fun
+stuff. In this instance we’re going to use it in conjunction with
+&lt;cite&gt;ngx.timer.every&lt;/cite&gt; and the &lt;cite&gt;resty.dns.resolver&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;Here is the full example of my &lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt;.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="n"&gt;init_worker_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="kr"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="c1"&gt;-- Set up the resolver&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s2"&gt;"resty.dns.resolver"&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;nameservers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.1.1.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.0.0.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;53&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;  &lt;span class="c1"&gt;-- Cloudflare&lt;/span&gt;
+            &lt;span class="n"&gt;retrans&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 5 retransmissions on receive timeout&lt;/span&gt;
+            &lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 1 sec&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"failed to instantiate resolver: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;return&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- Pull DNS …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;This article is a continuation of &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
+upstreams&lt;/a&gt;
+that gives an example of how you can configure OpenResty to update your
+upstream backend servers dynamically with &lt;span class="caps"&gt;DNS&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="section" id="breaking-down-init-worker-by-lua-block"&gt;
+&lt;h2&gt;Breaking down &lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt; can be used to make an nginx worker do some fun
+stuff. In this instance we’re going to use it in conjunction with
+&lt;cite&gt;ngx.timer.every&lt;/cite&gt; and the &lt;cite&gt;resty.dns.resolver&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;Here is the full example of my &lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt;.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="n"&gt;init_worker_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="kr"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="c1"&gt;-- Set up the resolver&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s2"&gt;"resty.dns.resolver"&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;nameservers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.1.1.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.0.0.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;53&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;  &lt;span class="c1"&gt;-- Cloudflare&lt;/span&gt;
+            &lt;span class="n"&gt;retrans&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 5 retransmissions on receive timeout&lt;/span&gt;
+            &lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 1 sec&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"failed to instantiate resolver: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;return&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- Pull DNS records&lt;/span&gt;
+        &lt;span class="c1"&gt;-- Use a hardcoded domain to make this example easier&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tries&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kura.gg"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{})&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"failed to query resolved: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;return&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errcode&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"server returned error code: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errcode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="s2"&gt;": "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errstr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="c1"&gt;-- Have a return here so that the old servers remain even if&lt;/span&gt;
+            &lt;span class="c1"&gt;-- this lookup fails.&lt;/span&gt;
+            &lt;span class="kr"&gt;return&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- Dump records in a global variable&lt;/span&gt;
+        &lt;span class="c1"&gt;-- Note I am only pulling out addresses not CNAMEs&lt;/span&gt;
+        &lt;span class="n"&gt;_new_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+        &lt;span class="kr"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ans&lt;/span&gt; &lt;span class="kr"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;ipairs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kr"&gt;do&lt;/span&gt;
+            &lt;span class="nb"&gt;table.insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_new_backend_servers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+        &lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_new_backend_servers&lt;/span&gt;
+    &lt;span class="kr"&gt;end&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Run an at timer to force update_dns to trigger on worker init&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;-- Set a timer to run every 10 seconds&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;every&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="section" id="configuring-the-dns-resolver"&gt;
+&lt;h3&gt;Configuring the &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver&lt;/h3&gt;
+&lt;p&gt;Let’s break this block down in to easier to understand blocks.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here we define an empty backend servers table that’ll be modified by modified
+by &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver and is used by the balancer module for direction clients.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="kr"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="c1"&gt;-- Set up the resolver&lt;/span&gt;
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s2"&gt;"resty.dns.resolver"&lt;/span&gt;
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;nameservers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.1.1.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.0.0.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;53&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;  &lt;span class="c1"&gt;-- Cloudflare&lt;/span&gt;
+        &lt;span class="n"&gt;retrans&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 5 retransmissions on receive timeout&lt;/span&gt;
+        &lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 1 sec&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here we’re defining the &lt;cite&gt;update_dns&lt;/cite&gt; function and within that setting up a
+&lt;span class="caps"&gt;DNS&lt;/span&gt; resolver using the &lt;cite&gt;resty.dns.resolver&lt;/cite&gt; module.
+I’m using Cloudflare’s &lt;span class="caps"&gt;DNS&lt;/span&gt; servers in this example with 5 retransmissions and
+a timeout of 1 second.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"failed to instantiate resolver: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;return&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;If instantiating the resolver fails, the function will return, leaving the
+backend server table unmodified. If this happens randomly during operation then
+the old server table will remain in use. If it fails during start up, the
+backend server table will be empty and cause &lt;cite&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt; 500&lt;/cite&gt; errors to be thrown
+(this is set up later.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="querying-the-dns-resolver"&gt;
+&lt;h3&gt;Querying the &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver&lt;/h3&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="c1"&gt;-- Pull DNS records&lt;/span&gt;
+&lt;span class="c1"&gt;-- Use a hardcoded domain to make this example easier&lt;/span&gt;
+&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tries&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kura.gg"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{})&lt;/span&gt;
+&lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"failed to query resolved: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;return&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here we query the &lt;span class="caps"&gt;DNS&lt;/span&gt; server for records, I’m using my own domain &lt;cite&gt;kura.gg&lt;/cite&gt; in
+this example.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errcode&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"server returned error code: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errcode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;": "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errstr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;-- Have a return here so that the old servers remain even if&lt;/span&gt;
+    &lt;span class="c1"&gt;-- this lookup fails.&lt;/span&gt;
+    &lt;span class="kr"&gt;return&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;If querying the records fails or if no records are found the
+function will return and leave the backend server table unmodified, allowing
+clients to attempt to use the old servers if they’re still alive.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="using-the-returned-dns-records-to-configure-the-backend"&gt;
+&lt;h3&gt;Using the returned &lt;span class="caps"&gt;DNS&lt;/span&gt; records to configure the backend&lt;/h3&gt;
+&lt;pre class="code lua literal-block"&gt;
+    &lt;span class="c1"&gt;-- Dump records in a global variable&lt;/span&gt;
+    &lt;span class="c1"&gt;-- Note I am only pulling out addresses not CNAMEs&lt;/span&gt;
+    &lt;span class="n"&gt;_new_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+    &lt;span class="kr"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ans&lt;/span&gt; &lt;span class="kr"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;ipairs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kr"&gt;do&lt;/span&gt;
+        &lt;span class="nb"&gt;table.insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_new_backend_servers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;end&lt;/span&gt;
+    &lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_new_backend_servers&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Finally we reach this block if no errors have occured. This will create a new
+table of backend servers from the &lt;span class="caps"&gt;DNS&lt;/span&gt; records queried and replace the old table
+with the new one.&lt;/p&gt;
+&lt;p&gt;It’s worth noting that this code will only store records that have an &lt;cite&gt;A&lt;/cite&gt; or
+&lt;cite&gt;&lt;span class="caps"&gt;AAAA&lt;/span&gt;&lt;/cite&gt; record, not &lt;cite&gt;&lt;span class="caps"&gt;CNAMES&lt;/span&gt;&lt;/cite&gt; etc. Although it’s easy enough to modify it to
+change this behaviour.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="set-up-a-timer-to-update-the-backend-servers-periodically"&gt;
+&lt;h3&gt;Set up a timer to update the backend servers periodically&lt;/h3&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="c1"&gt;-- Run an at timer to force update_dns to trigger on worker init&lt;/span&gt;
+&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;-- Set a timer to run every 10 seconds&lt;/span&gt;
+&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;every&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here we’re setting up 2 timers. The first is an &lt;cite&gt;ngx.timer.at&lt;/cite&gt; timer that
+tiggers when a worker is started to attempt to set up the backend server table
+on worker init.&lt;/p&gt;
+&lt;p&gt;The second is an &lt;cite&gt;ngx.timer.every&lt;/cite&gt; timer that runs in the worker every 10 seconds.&lt;/p&gt;
+&lt;p&gt;Each worker will do this and have it’s own copy of the backend servers table.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="breaking-down-balancer-by-lua-block"&gt;
+&lt;h2&gt;Breaking down &lt;cite&gt;balancer_by_lua_block&lt;/cite&gt;&lt;/h2&gt;
+&lt;p&gt;Just like in the  &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
+upstreams&lt;/a&gt;
+article we’ll use OpenResty’s &lt;cite&gt;balancer_by_lua_block&lt;/cite&gt; to allow the balancer
+to use these records.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="n"&gt;balancer_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ngx.balancer"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+        &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"no backend servers available"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- This block will only trigger if ngx.ctx.retry is not true.&lt;/span&gt;
+    &lt;span class="c1"&gt;-- We set this to true during the initial request so future&lt;/span&gt;
+    &lt;span class="c1"&gt;-- requests within this context will not go down this path.&lt;/span&gt;
+    &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+        &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+        &lt;span class="c1"&gt;-- Pick a random backend to start with&lt;/span&gt;
+        &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_backend_servers&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;math.random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- Kinda messy but, create a context table we dump tried&lt;/span&gt;
+        &lt;span class="c1"&gt;-- backends to.&lt;/span&gt;
+        &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+        &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- set up more tries using the length of the server list minus 1.&lt;/span&gt;
+        &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_more_tries&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_more_tries failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+
+    &lt;span class="kr"&gt;else&lt;/span&gt;
+        &lt;span class="c1"&gt;-- This block will trigger on a retry&lt;/span&gt;
+        &lt;span class="c1"&gt;-- Here we'll run through the backends and pick one we haven't&lt;/span&gt;
+        &lt;span class="c1"&gt;-- tried yet.&lt;/span&gt;
+        &lt;span class="kr"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ip&lt;/span&gt; &lt;span class="kr"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;ipairs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kr"&gt;do&lt;/span&gt;
+            &lt;span class="n"&gt;in_ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ip&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;~=&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt;
+            &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="n"&gt;in_ctx&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+                &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ip&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+                &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ip&lt;/span&gt;
+                &lt;span class="kr"&gt;break&lt;/span&gt;
+            &lt;span class="kr"&gt;end&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+    &lt;span class="kr"&gt;end&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Hardcoded port again to make example easier&lt;/span&gt;
+    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_current_peer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+        &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_current_peer failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;As with the &lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt; I’ll break the &lt;cite&gt;balancer_by_lua_block&lt;/cite&gt;
+block down in more manageable chunks.&lt;/p&gt;
+&lt;div class="section" id="setting-up-balancer-by-lua"&gt;
+&lt;h3&gt;Setting up balancer_by_lua&lt;/h3&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ngx.balancer"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"no backend servers available"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;First thing we do is include the &lt;cite&gt;ngx.balancer&lt;/cite&gt; module, then we check to see
+if the backend servers table has any records. If not all we can do is write
+an error message to log and send the client an &lt;cite&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt; 500&lt;/cite&gt; because we have no
+backends available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="handling-an-initial-request"&gt;
+&lt;h3&gt;Handling an initial request&lt;/h3&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="c1"&gt;-- This block will only trigger if ngx.ctx.retry is not true or is&lt;/span&gt;
+&lt;span class="c1"&gt;-- unset.&lt;/span&gt;
+&lt;span class="c1"&gt;-- We set this to true during the initial request so future&lt;/span&gt;
+&lt;span class="c1"&gt;-- requests within this context will not go down this path.&lt;/span&gt;
+&lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+    &lt;span class="c1"&gt;-- Pick a random backend to start with&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_backend_servers&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;math.random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Kinda messy but, create a context table we dump tried&lt;/span&gt;
+    &lt;span class="c1"&gt;-- backends to.&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- set up more tries using the length of the server list minus 1.&lt;/span&gt;
+    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_more_tries&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+        &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_more_tries failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here we set up what happens when &lt;cite&gt;ngx.ctx.retry&lt;/cite&gt; is undefined or false, which
+will happen on first request for a client.&lt;/p&gt;
+&lt;p&gt;Within this block we pick a random backend, set up a table of addresses already
+tried so if a retry is necessary it won’t use the same host.&lt;/p&gt;
+&lt;p&gt;Then we set the number of retries to attempt as the length of the server table
+minus one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="handling-a-retry-request"&gt;
+&lt;h3&gt;Handling a retry request&lt;/h3&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="kr"&gt;else&lt;/span&gt;
+    &lt;span class="c1"&gt;-- This block will trigger on a retry&lt;/span&gt;
+    &lt;span class="c1"&gt;-- Here we'll run through the backends and pick one we haven't&lt;/span&gt;
+    &lt;span class="c1"&gt;-- tried yet.&lt;/span&gt;
+    &lt;span class="kr"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ip&lt;/span&gt; &lt;span class="kr"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;ipairs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_backend_servers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kr"&gt;do&lt;/span&gt;
+        &lt;span class="n"&gt;in_ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ip&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;~=&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="n"&gt;in_ctx&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tried&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ip&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+            &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ip&lt;/span&gt;
+            &lt;span class="kr"&gt;break&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+    &lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;This block is what will be called if the request is a retry. In it we simply
+iterate through the backend server table looking for a backend we haven’t tried
+yet. Once we find one we add it to the list of servers tried and break the loop
+to send the client to that server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="passing-the-request-back-to-nginx"&gt;
+&lt;h3&gt;Passing the request back to nginx&lt;/h3&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="c1"&gt;-- Hardcoded port again to make example easier&lt;/span&gt;
+&lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_current_peer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_current_peer failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;This final block is where nginx is told which backend to send the client to.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="putting-it-all-together"&gt;
+&lt;h2&gt;Putting it all together&lt;/h2&gt;
+&lt;p&gt;Below is the full example written as a single &lt;cite&gt;nginx.conf&lt;/cite&gt;. Sadly syntax
+highlighters have issues with nginx and Lua in a single file.&lt;/p&gt;
+&lt;pre class="code nginx literal-block"&gt;
+&lt;span class="c1"&gt;# set 2 worker processes to show the timer spawning on each one
+&lt;/span&gt;&lt;span class="k"&gt;worker_processes&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;events&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kn"&gt;worker_connections&lt;/span&gt; &lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Do this for each worker so each worker has it's own copy of the DNS
+&lt;/span&gt;    &lt;span class="c1"&gt;# records.
+&lt;/span&gt;    &lt;span class="kn"&gt;init_worker_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kn"&gt;_backend_servers&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+
+        &lt;span class="kn"&gt;local&lt;/span&gt; &lt;span class="s"&gt;function&lt;/span&gt; &lt;span class="s"&gt;update_dns()&lt;/span&gt;
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Set&lt;/span&gt; &lt;span class="s"&gt;up&lt;/span&gt; &lt;span class="s"&gt;the&lt;/span&gt; &lt;span class="s"&gt;resolver&lt;/span&gt;
+            &lt;span class="s"&gt;local&lt;/span&gt; &lt;span class="s"&gt;resolver&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;require&lt;/span&gt; &lt;span class="s"&gt;"resty.dns.resolver"&lt;/span&gt;
+            &lt;span class="s"&gt;local&lt;/span&gt; &lt;span class="s"&gt;r,&lt;/span&gt; &lt;span class="s"&gt;err&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;resolver:new&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="kn"&gt;nameservers&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="kn"&gt;"1.1.1.1",&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="kn"&gt;"1.0.0.1",&lt;/span&gt; &lt;span class="mi"&gt;53&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="s"&gt;,&lt;/span&gt;  &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Cloudflare&lt;/span&gt;
+                &lt;span class="s"&gt;retrans&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="s"&gt;,&lt;/span&gt;  &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="s"&gt;retransmissions&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt; &lt;span class="s"&gt;receive&lt;/span&gt; &lt;span class="s"&gt;timeout&lt;/span&gt;
+                &lt;span class="s"&gt;timeout&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="s"&gt;,&lt;/span&gt;  &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="s"&gt;sec&lt;/span&gt;
+            &lt;span class="err"&gt;}&lt;/span&gt;
+            &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;r&lt;/span&gt; &lt;span class="s"&gt;then&lt;/span&gt;
+                &lt;span class="s"&gt;ngx.log(ngx.ERR,&lt;/span&gt; &lt;span class="s"&gt;"failed&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;instantiate&lt;/span&gt; &lt;span class="s"&gt;resolver:&lt;/span&gt; &lt;span class="s"&gt;",&lt;/span&gt; &lt;span class="s"&gt;err)&lt;/span&gt;
+                &lt;span class="s"&gt;return&lt;/span&gt;
+            &lt;span class="s"&gt;end&lt;/span&gt;
+
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Pull&lt;/span&gt; &lt;span class="s"&gt;DNS&lt;/span&gt; &lt;span class="s"&gt;records&lt;/span&gt;
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Use&lt;/span&gt; &lt;span class="s"&gt;a&lt;/span&gt; &lt;span class="s"&gt;hardcoded&lt;/span&gt; &lt;span class="s"&gt;domain&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;make&lt;/span&gt; &lt;span class="s"&gt;this&lt;/span&gt; &lt;span class="s"&gt;example&lt;/span&gt; &lt;span class="s"&gt;easier&lt;/span&gt;
+            &lt;span class="s"&gt;local&lt;/span&gt; &lt;span class="s"&gt;answers,&lt;/span&gt; &lt;span class="s"&gt;err,&lt;/span&gt; &lt;span class="s"&gt;tries&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;r:query("kura.gg",&lt;/span&gt; &lt;span class="s"&gt;nil,&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="kn"&gt;)&lt;/span&gt;
+            &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;answers&lt;/span&gt; &lt;span class="s"&gt;then&lt;/span&gt;
+                &lt;span class="s"&gt;ngx.log(ngx.ERR,&lt;/span&gt; &lt;span class="s"&gt;"failed&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;query&lt;/span&gt; &lt;span class="s"&gt;resolved:&lt;/span&gt; &lt;span class="s"&gt;",&lt;/span&gt; &lt;span class="s"&gt;err)&lt;/span&gt;
+                &lt;span class="s"&gt;return&lt;/span&gt;
+            &lt;span class="s"&gt;end&lt;/span&gt;
+            &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;answers.errcode&lt;/span&gt; &lt;span class="s"&gt;then&lt;/span&gt;
+                &lt;span class="s"&gt;ngx.log(ngx.ERR,&lt;/span&gt; &lt;span class="s"&gt;"server&lt;/span&gt; &lt;span class="s"&gt;returned&lt;/span&gt; &lt;span class="s"&gt;error&lt;/span&gt; &lt;span class="s"&gt;code:&lt;/span&gt; &lt;span class="s"&gt;",&lt;/span&gt; &lt;span class="s"&gt;answers.errcode,&lt;/span&gt;
+                        &lt;span class="s"&gt;":&lt;/span&gt; &lt;span class="s"&gt;",&lt;/span&gt; &lt;span class="s"&gt;answers.errstr)&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Have&lt;/span&gt; &lt;span class="s"&gt;a&lt;/span&gt; &lt;span class="s"&gt;return&lt;/span&gt; &lt;span class="s"&gt;here&lt;/span&gt; &lt;span class="s"&gt;so&lt;/span&gt; &lt;span class="s"&gt;that&lt;/span&gt; &lt;span class="s"&gt;the&lt;/span&gt; &lt;span class="s"&gt;old&lt;/span&gt; &lt;span class="s"&gt;servers&lt;/span&gt; &lt;span class="s"&gt;remain&lt;/span&gt; &lt;span class="s"&gt;even&lt;/span&gt; &lt;span class="s"&gt;if&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;this&lt;/span&gt; &lt;span class="s"&gt;lookup&lt;/span&gt; &lt;span class="s"&gt;fails.&lt;/span&gt;
+                &lt;span class="s"&gt;return&lt;/span&gt;
+            &lt;span class="s"&gt;end&lt;/span&gt;
+
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Dump&lt;/span&gt; &lt;span class="s"&gt;records&lt;/span&gt; &lt;span class="s"&gt;in&lt;/span&gt; &lt;span class="s"&gt;a&lt;/span&gt; &lt;span class="s"&gt;global&lt;/span&gt; &lt;span class="s"&gt;variable&lt;/span&gt;
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Note&lt;/span&gt; &lt;span class="s"&gt;I&lt;/span&gt; &lt;span class="s"&gt;am&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="s"&gt;ly&lt;/span&gt; &lt;span class="s"&gt;pulling&lt;/span&gt; &lt;span class="s"&gt;out&lt;/span&gt; &lt;span class="s"&gt;addresses&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;CNAMEs&lt;/span&gt;
+            &lt;span class="s"&gt;_new_backend_servers&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+            &lt;span class="kn"&gt;for&lt;/span&gt; &lt;span class="s"&gt;i,&lt;/span&gt; &lt;span class="s"&gt;ans&lt;/span&gt; &lt;span class="s"&gt;in&lt;/span&gt; &lt;span class="s"&gt;ipairs(answers)&lt;/span&gt; &lt;span class="s"&gt;do&lt;/span&gt;
+                &lt;span class="s"&gt;table.insert(_new_backend_servers,&lt;/span&gt; &lt;span class="s"&gt;ans.address)&lt;/span&gt;
+            &lt;span class="s"&gt;end&lt;/span&gt;
+            &lt;span class="s"&gt;_backend_servers&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;_new_backend_servers&lt;/span&gt;
+        &lt;span class="s"&gt;end&lt;/span&gt;
+
+        &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Run&lt;/span&gt; &lt;span class="s"&gt;an&lt;/span&gt; &lt;span class="s"&gt;at&lt;/span&gt; &lt;span class="s"&gt;timer&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;force&lt;/span&gt; &lt;span class="s"&gt;update_dns&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;trigger&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt; &lt;span class="s"&gt;worker&lt;/span&gt; &lt;span class="s"&gt;init&lt;/span&gt;
+        &lt;span class="s"&gt;ngx.timer.at(0,&lt;/span&gt; &lt;span class="s"&gt;update_dns)&lt;/span&gt;
+        &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Set&lt;/span&gt; &lt;span class="s"&gt;a&lt;/span&gt; &lt;span class="s"&gt;timer&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;run&lt;/span&gt; &lt;span class="s"&gt;every&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="s"&gt;seconds&lt;/span&gt;
+        &lt;span class="s"&gt;ngx.timer.every(10,&lt;/span&gt; &lt;span class="s"&gt;update_dns)&lt;/span&gt;
+    &lt;span class="err"&gt;}&lt;/span&gt;
+
+    &lt;span class="s"&gt;upstream&lt;/span&gt; &lt;span class="s"&gt;backend&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt;&lt;span class="s"&gt;.0.0.1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="kn"&gt;balancer_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="kn"&gt;local&lt;/span&gt; &lt;span class="s"&gt;balancer&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;require("ngx.balancer")&lt;/span&gt;
+
+            &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="c1"&gt;#_backend_servers == 0 then
+&lt;/span&gt;                &lt;span class="s"&gt;ngx.log(ngx.ERR,&lt;/span&gt; &lt;span class="s"&gt;"no&lt;/span&gt; &lt;span class="s"&gt;backend&lt;/span&gt; &lt;span class="s"&gt;servers&lt;/span&gt; &lt;span class="s"&gt;available")&lt;/span&gt;
+                &lt;span class="s"&gt;return&lt;/span&gt; &lt;span class="s"&gt;ngx.exit(500)&lt;/span&gt;
+            &lt;span class="s"&gt;end&lt;/span&gt;
+
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;This&lt;/span&gt; &lt;span class="s"&gt;block&lt;/span&gt; &lt;span class="s"&gt;will&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="s"&gt;ly&lt;/span&gt; &lt;span class="s"&gt;trigger&lt;/span&gt; &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;ngx.ctx.retry&lt;/span&gt; &lt;span class="s"&gt;is&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;true&lt;/span&gt; &lt;span class="s"&gt;or&lt;/span&gt; &lt;span class="s"&gt;is&lt;/span&gt;
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;unset.&lt;/span&gt;
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;We&lt;/span&gt; &lt;span class="s"&gt;set&lt;/span&gt; &lt;span class="s"&gt;this&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;true&lt;/span&gt; &lt;span class="s"&gt;during&lt;/span&gt; &lt;span class="s"&gt;the&lt;/span&gt; &lt;span class="s"&gt;initial&lt;/span&gt; &lt;span class="s"&gt;request&lt;/span&gt; &lt;span class="s"&gt;so&lt;/span&gt; &lt;span class="s"&gt;future&lt;/span&gt;
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;requests&lt;/span&gt; &lt;span class="s"&gt;within&lt;/span&gt; &lt;span class="s"&gt;this&lt;/span&gt; &lt;span class="s"&gt;context&lt;/span&gt; &lt;span class="s"&gt;will&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;go&lt;/span&gt; &lt;span class="s"&gt;down&lt;/span&gt; &lt;span class="s"&gt;this&lt;/span&gt; &lt;span class="s"&gt;path.&lt;/span&gt;
+            &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;ngx.ctx.retry&lt;/span&gt; &lt;span class="s"&gt;then&lt;/span&gt;
+                &lt;span class="s"&gt;ngx.ctx.retry&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;true&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Pick&lt;/span&gt; &lt;span class="s"&gt;a&lt;/span&gt; &lt;span class="s"&gt;random&lt;/span&gt; &lt;span class="s"&gt;backend&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;start&lt;/span&gt; &lt;span class="s"&gt;with&lt;/span&gt;
+                &lt;span class="s"&gt;server&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;_backend_servers[math.random(&lt;/span&gt;&lt;span class="c1"&gt;#_backend_servers)]
+&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Kinda&lt;/span&gt; &lt;span class="s"&gt;messy&lt;/span&gt; &lt;span class="s"&gt;but,&lt;/span&gt; &lt;span class="s"&gt;create&lt;/span&gt; &lt;span class="s"&gt;a&lt;/span&gt; &lt;span class="s"&gt;context&lt;/span&gt; &lt;span class="s"&gt;table&lt;/span&gt; &lt;span class="s"&gt;we&lt;/span&gt; &lt;span class="s"&gt;dump&lt;/span&gt; &lt;span class="s"&gt;tried&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;backends&lt;/span&gt; &lt;span class="s"&gt;to.&lt;/span&gt;
+                &lt;span class="s"&gt;ngx.ctx.tried&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+                &lt;span class="kn"&gt;ngx.ctx.tried[server]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;true&lt;/span&gt;
+
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;set&lt;/span&gt; &lt;span class="s"&gt;up&lt;/span&gt; &lt;span class="s"&gt;more&lt;/span&gt; &lt;span class="s"&gt;tries&lt;/span&gt; &lt;span class="s"&gt;using&lt;/span&gt; &lt;span class="s"&gt;the&lt;/span&gt; &lt;span class="s"&gt;length&lt;/span&gt; &lt;span class="s"&gt;of&lt;/span&gt; &lt;span class="s"&gt;the&lt;/span&gt; &lt;span class="s"&gt;server&lt;/span&gt; &lt;span class="s"&gt;list&lt;/span&gt; &lt;span class="s"&gt;minus&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="s"&gt;.&lt;/span&gt;
+                &lt;span class="s"&gt;ok,&lt;/span&gt; &lt;span class="s"&gt;err&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;balancer.set_more_tries(&lt;/span&gt;&lt;span class="c1"&gt;#_backend_servers - 1)
+&lt;/span&gt;                &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;ok&lt;/span&gt; &lt;span class="s"&gt;then&lt;/span&gt;
+                    &lt;span class="s"&gt;ngx.log(ngx.ERR,&lt;/span&gt; &lt;span class="s"&gt;"set_more_tries&lt;/span&gt; &lt;span class="s"&gt;failed:&lt;/span&gt; &lt;span class="s"&gt;",&lt;/span&gt; &lt;span class="s"&gt;err)&lt;/span&gt;
+                &lt;span class="s"&gt;end&lt;/span&gt;
+
+            &lt;span class="s"&gt;else&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;This&lt;/span&gt; &lt;span class="s"&gt;block&lt;/span&gt; &lt;span class="s"&gt;will&lt;/span&gt; &lt;span class="s"&gt;trigger&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt; &lt;span class="s"&gt;a&lt;/span&gt; &lt;span class="s"&gt;retry&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Here&lt;/span&gt; &lt;span class="s"&gt;we'll&lt;/span&gt; &lt;span class="s"&gt;run&lt;/span&gt; &lt;span class="s"&gt;through&lt;/span&gt; &lt;span class="s"&gt;the&lt;/span&gt; &lt;span class="s"&gt;backends&lt;/span&gt; &lt;span class="s"&gt;and&lt;/span&gt; &lt;span class="s"&gt;pick&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="s"&gt;e&lt;/span&gt; &lt;span class="s"&gt;we&lt;/span&gt; &lt;span class="s"&gt;haven't&lt;/span&gt;
+                &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;tried&lt;/span&gt; &lt;span class="s"&gt;yet.&lt;/span&gt;
+                &lt;span class="s"&gt;for&lt;/span&gt; &lt;span class="s"&gt;i,&lt;/span&gt; &lt;span class="s"&gt;ip&lt;/span&gt; &lt;span class="s"&gt;in&lt;/span&gt; &lt;span class="s"&gt;ipairs(_backend_servers)&lt;/span&gt; &lt;span class="s"&gt;do&lt;/span&gt;
+                    &lt;span class="s"&gt;in_ctx&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;ngx.ctx.tried[ip]&lt;/span&gt; &lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;=&lt;/span&gt; &lt;span class="s"&gt;nil&lt;/span&gt;
+                    &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;in_ctx&lt;/span&gt; &lt;span class="p"&gt;==&lt;/span&gt; &lt;span class="s"&gt;false&lt;/span&gt; &lt;span class="s"&gt;then&lt;/span&gt;
+                        &lt;span class="s"&gt;ngx.ctx.tried[ip]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;true&lt;/span&gt;
+                        &lt;span class="s"&gt;server&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;ip&lt;/span&gt;
+                        &lt;span class="s"&gt;break&lt;/span&gt;
+                    &lt;span class="s"&gt;end&lt;/span&gt;
+                &lt;span class="s"&gt;end&lt;/span&gt;
+            &lt;span class="s"&gt;end&lt;/span&gt;
+
+            &lt;span class="s"&gt;--&lt;/span&gt; &lt;span class="s"&gt;Hardcoded&lt;/span&gt; &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="s"&gt;again&lt;/span&gt; &lt;span class="s"&gt;to&lt;/span&gt; &lt;span class="s"&gt;make&lt;/span&gt; &lt;span class="s"&gt;example&lt;/span&gt; &lt;span class="s"&gt;easier&lt;/span&gt;
+            &lt;span class="s"&gt;ok,&lt;/span&gt; &lt;span class="s"&gt;err&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;balancer.set_current_peer(server,&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt;&lt;span class="s"&gt;)&lt;/span&gt;
+            &lt;span class="s"&gt;if&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;ok&lt;/span&gt; &lt;span class="s"&gt;then&lt;/span&gt;
+                &lt;span class="s"&gt;ngx.log(ngx.ERR,&lt;/span&gt; &lt;span class="s"&gt;"set_current_peer&lt;/span&gt; &lt;span class="s"&gt;failed:&lt;/span&gt; &lt;span class="s"&gt;",&lt;/span&gt; &lt;span class="s"&gt;err)&lt;/span&gt;
+                &lt;span class="s"&gt;return&lt;/span&gt; &lt;span class="s"&gt;ngx.exit(500)&lt;/span&gt;
+            &lt;span class="s"&gt;end&lt;/span&gt;
+        &lt;span class="err"&gt;}&lt;/span&gt;
+    &lt;span class="err"&gt;}&lt;/span&gt;
+
+    &lt;span class="s"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="full-example-on-github"&gt;
+&lt;h2&gt;Full example on GitHub&lt;/h2&gt;
+&lt;p&gt;The full example nginx config is &lt;a class="reference external" href="https://github.com/kura/openresty-upstream-dns-example/blob/master/nginx.conf"&gt;available on GitHub&lt;/a&gt;
+so you can quickly spin it up yourself and try it out.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="nginx"></category><category term="openresty"></category><category term="lua"></category></entry><entry><title>Retrying dynamically configured upstreams with OpenResty</title><link href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/" rel="alternate"></link><published>2020-08-09T17:00:00+01:00</published><updated>2020-08-09T17:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2020-08-09:/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/</id><summary type="html">
+&lt;div class="section" id="preamble"&gt;
+&lt;h2&gt;Preamble&lt;/h2&gt;
+&lt;p&gt;OpenResty is a modified version of nginx with LuaJIT compiled in and many
+nginx options that can be controlled or modified via Lua. It is very commonly
+used in content delivery networks for it’s configurability.&lt;/p&gt;
+&lt;p&gt;As such, we use OpenResty and one of the features we use is the ability to
+dynamically modify upstream backends. To achieve this we use some logic within
+OpenResty to update upstreams based on &lt;span class="caps"&gt;DNS&lt;/span&gt; records. This means we can pull
+upstreams in and out of service via &lt;span class="caps"&gt;DNS&lt;/span&gt; records and have OpenResty
+update it’s upstream proxy passing configuration without needing to push
+configs out to hundreds of servers and reload daemons.&lt;/p&gt;
+&lt;p&gt;The logic behind how we update the upstream backends is beyond the scope of
+this post, so let’s just say we have a table of upstream servers.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"10.0.0.2 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+&lt;div class="section" id="preamble"&gt;
+&lt;h2&gt;Preamble&lt;/h2&gt;
+&lt;p&gt;OpenResty is a modified version of nginx with LuaJIT compiled in and many
+nginx options that can be controlled or modified via Lua. It is very commonly
+used in content delivery networks for it’s configurability.&lt;/p&gt;
+&lt;p&gt;As such, we use OpenResty and one of the features we use is the ability to
+dynamically modify upstream backends. To achieve this we use some logic within
+OpenResty to update upstreams based on &lt;span class="caps"&gt;DNS&lt;/span&gt; records. This means we can pull
+upstreams in and out of service via &lt;span class="caps"&gt;DNS&lt;/span&gt; records and have OpenResty
+update it’s upstream proxy passing configuration without needing to push
+configs out to hundreds of servers and reload daemons.&lt;/p&gt;
+&lt;p&gt;The logic behind how we update the upstream backends is beyond the scope of
+this post, so let’s just say we have a table of upstream servers.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"10.0.0.2:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"10.0.0.3:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"10.0.0.4:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="introduction-to-balancer-by-lua"&gt;
+&lt;h2&gt;Introduction to &lt;cite&gt;balancer_by_lua&lt;/cite&gt;&lt;/h2&gt;
+&lt;p&gt;In nginx you’d normally specify multiple backends in an upstream block.&lt;/p&gt;
+&lt;pre class="code nginx literal-block"&gt;
+&lt;span class="k"&gt;upstream&lt;/span&gt; &lt;span class="s"&gt;backend&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="n"&gt;10.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;max_fails=3&lt;/span&gt; &lt;span class="s"&gt;fail_timeout=3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="n"&gt;10.0.0.2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;max_fails=3&lt;/span&gt; &lt;span class="s"&gt;fail_timeout=3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="n"&gt;10.0.0.3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;max_fails=3&lt;/span&gt; &lt;span class="s"&gt;fail_timeout=3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="n"&gt;10.0.0.4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;max_fails=3&lt;/span&gt; &lt;span class="s"&gt;fail_timeout=3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Doing this in OpenResty with a dynamic set of backends is slightly different
+and requires using &lt;cite&gt;balancer_by_lua_block&lt;/cite&gt; or &lt;cite&gt;balancer_by_lua_file&lt;/cite&gt;.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="n"&gt;upstream&lt;/span&gt; &lt;span class="n"&gt;backend&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="mf"&gt;127.0.0.1&lt;/span&gt; &lt;span class="n"&gt;fail_timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;balancer_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ngx.balancer"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c1"&gt;-- ...&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Using this as a base we can get &lt;cite&gt;balancer_by_lua&lt;/cite&gt; to pick a backend from our table.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="n"&gt;init_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.2:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.3:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.4:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;upstream&lt;/span&gt; &lt;span class="n"&gt;backend&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="mf"&gt;127.0.0.1&lt;/span&gt; &lt;span class="n"&gt;fail_timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;balancer_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ngx.balancer"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- Pick a random backend&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;math.random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;upstream_servers&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+        &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_current_peer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_current_peer failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;With this block each request will pick a random server from the table and use
+it for reverse proxying.&lt;/p&gt;
+&lt;p&gt;This approach is great for multiple reasons; you can dynamically update the
+server of backends available, you can add logic to how a backend is chosen,
+and more.&lt;/p&gt;
+&lt;p&gt;The downside to this approach is in using it you are disabling nginx’s builtin
+retry logic.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fixing-retries"&gt;
+&lt;h2&gt;Fixing retries&lt;/h2&gt;
+&lt;p&gt;The &lt;cite&gt;ngx.balancer&lt;/cite&gt; module of OpenResty has a method for setting up retries and
+it’s called &lt;cite&gt;set_more_tries&lt;/cite&gt;. So let’s implement it.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="c1"&gt;-- DO NOT COPY AND PASTE THIS WITHOUT READING FURTHER. IT HAS A DELIBERATE&lt;/span&gt;
+&lt;span class="c1"&gt;-- BUG TO SHOW HOW JUST USING set_more_tries WON'T WORK.&lt;/span&gt;
+
+&lt;span class="n"&gt;init_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.2:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.3:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.4:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;upstream&lt;/span&gt; &lt;span class="n"&gt;backend&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="mf"&gt;127.0.0.1&lt;/span&gt; &lt;span class="n"&gt;fail_timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;balancer_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ngx.balancer"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- Pick a random backend&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;math.random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;upstream_servers&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- set up more tries using the length of the server list minus 1.&lt;/span&gt;
+        &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_more_tries&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_more_tries failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+
+        &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_current_peer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_current_peer failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;This approach will allow retries to happen, but it also introduces a bug.
+Each time &lt;cite&gt;balancer_by_lua_block&lt;/cite&gt; is called it sets &lt;cite&gt;set_more_tries&lt;/cite&gt;,
+including for retries. Which means a client will retry endlessly.&lt;/p&gt;
+&lt;p&gt;We can fix that using the request context.&lt;/p&gt;
+&lt;pre class="code lua literal-block"&gt;
+&lt;span class="n"&gt;init_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.2:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.3:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s2"&gt;"10.0.0.4:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;upstream&lt;/span&gt; &lt;span class="n"&gt;backend&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="mf"&gt;127.0.0.1&lt;/span&gt; &lt;span class="n"&gt;fail_timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;balancer_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ngx.balancer"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- Pick a random backend&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;math.random&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;upstream_servers&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+        &lt;span class="c1"&gt;-- This block will only trigger if ngx.ctx.retry is not true.&lt;/span&gt;
+        &lt;span class="c1"&gt;-- We set this to true during the initial request so future&lt;/span&gt;
+        &lt;span class="c1"&gt;-- requests within this context will not go down this path.&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+            &lt;span class="c1"&gt;-- set up more tries using the length of the server list minus 1.&lt;/span&gt;
+            &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_more_tries&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+                &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_more_tries failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;end&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+
+        &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;balancer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_current_peer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
+            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"set_current_peer failed: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kr"&gt;end&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Obviously this approach isn’t perfect. It picks a random backend server to use
+for the initial request and for retries, which means a client could get
+unlucky and hit the same bad backend multiple times. This is just an example
+of what you can do with OpenResty and Lua.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="nginx"></category><category term="openresty"></category><category term="lua"></category></entry><entry><title>Farewell Ian</title><link href="https://kura.gg/2015/12/30/farewell-ian/" rel="alternate"></link><published>2015-12-30T22:34:00+00:00</published><updated>2015-12-30T22:34:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-12-30:/2015/12/30/farewell-ian/</id><content type="html">&lt;div class="figure"&gt;
+&lt;img alt="Ian Murdock" src="/images/ian-murdock.png"/&gt;
+&lt;p class="caption"&gt;Image by Stephen Shankland&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Today news arrived that broke my heart, Ian Murdock has passed away. I never
+met Ian but he had an enormous impact on my life, through his work.&lt;/p&gt;
+&lt;p&gt;Debian has been my operating system of choice for many years now, it runs on
+all of my servers and my home computers. Ian’s vision for the operating system
+is why I started using it and use it to this day. It’s why I’ve continued to
+work on the operating system and create packages of all of my work for it.&lt;/p&gt;
+&lt;p&gt;Ian is, without a doubt, one of the biggest influences on my career and on my life.&lt;/p&gt;
+&lt;p&gt;Farewell sir, you will be missed.&lt;/p&gt;
+</content><category term="misc"></category><category term="Ian Murdock"></category><category term="Debian"></category></entry><entry><title>Running a Tor exit node is not as scary as it sounds</title><link href="https://kura.gg/2015/02/02/running-a-tor-exit-node-is-not-as-scary-as-it-sounds/" rel="alternate"></link><published>2015-02-02T09:59:00+00:00</published><updated>2015-02-02T09:59:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-02-02:/2015/02/02/running-a-tor-exit-node-is-not-as-scary-as-it-sounds/</id><summary type="html">
+&lt;p&gt;There is a variety of information out there about being a Tor exit node
+operator. Articles like &lt;a class="reference external" href="https://testbit.eu/tor-exit-node-less-week/"&gt;this one&lt;/a&gt;
+make the thought of running a Tor exit as scary prospect, it’s understandable,
+some countries have laws that make running an exit scary too.&lt;/p&gt;
+&lt;p&gt;I run &lt;a class="reference external" href="/tor/"&gt;a variety of relays&lt;/a&gt; in various countries in this crazy World
+and thought I’d share my experiences.&lt;/p&gt;
+&lt;div class="section" id="choosing-a-hosting-partner"&gt;
+&lt;h2&gt;Choosing a hosting partner&lt;/h2&gt;
+&lt;p&gt;I personally choose to use a third party hosting provider for my relays,
+rather than using colocation. I just find this is easier and I don’t have to
+think about the hardware much at all.&lt;/p&gt;
+&lt;p&gt;Finding a provider can be a pain, there is a decent list on the &lt;a class="reference external" href="https://trac.torproject.org/projects/tor/wiki/doc/GoodBadISPs"&gt;Tor wiki&lt;/a&gt;. I use
+some of the providers on this list but I’ve also found it can be a really
+good idea to just contact a provider and talk to them …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;There is a variety of information out there about being a Tor exit node
+operator. Articles like &lt;a class="reference external" href="https://testbit.eu/tor-exit-node-less-week/"&gt;this one&lt;/a&gt;
+make the thought of running a Tor exit as scary prospect, it’s understandable,
+some countries have laws that make running an exit scary too.&lt;/p&gt;
+&lt;p&gt;I run &lt;a class="reference external" href="/tor/"&gt;a variety of relays&lt;/a&gt; in various countries in this crazy World
+and thought I’d share my experiences.&lt;/p&gt;
+&lt;div class="section" id="choosing-a-hosting-partner"&gt;
+&lt;h2&gt;Choosing a hosting partner&lt;/h2&gt;
+&lt;p&gt;I personally choose to use a third party hosting provider for my relays,
+rather than using colocation. I just find this is easier and I don’t have to
+think about the hardware much at all.&lt;/p&gt;
+&lt;p&gt;Finding a provider can be a pain, there is a decent list on the &lt;a class="reference external" href="https://trac.torproject.org/projects/tor/wiki/doc/GoodBadISPs"&gt;Tor wiki&lt;/a&gt;. I use
+some of the providers on this list but I’ve also found it can be a really
+good idea to just contact a provider and talk to them. There is a company I
+spoke to recently that is quite small and were really happy about the idea of
+having an exit operator using them. When we have figured things out, I’ll
+add them to the wiki.&lt;/p&gt;
+&lt;p&gt;You’ll really want to find a provider with 1Gbps link and lots of bandwidth, I
+like to find or pay for unmetered 1Gbps connectivity, but &lt;span class="caps"&gt;10TB&lt;/span&gt;/month should be
+a good amount.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-good-exit-policy"&gt;
+&lt;h2&gt;A good exit policy&lt;/h2&gt;
+&lt;p&gt;The exit policy is everything, it can mean the difference between lots of abuse
+complaints or very few. There is a &lt;a class="reference external" href="https://trac.torproject.org/projects/tor/wiki/doc/ReducedExitPolicy"&gt;good reduced exit policy on the Tor Wiki&lt;/a&gt;, I use
+this on all of my nodes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="abuse-complaints"&gt;
+&lt;h2&gt;Abuse complaints&lt;/h2&gt;
+&lt;p&gt;With the reduced exit policy from the Tor wiki, I find abuse complaints are
+actually very rare.&lt;/p&gt;
+&lt;p&gt;The complaints I get are usually automatic emails from some hosting companies
+that have &lt;span class="caps"&gt;HTTP&lt;/span&gt; brute force attempts logged. Not many companies use these
+things but there are a few. There’s not much you can do, they are automated
+and you should reply to them like you should reply to all abuse complaints but,
+the response will never be read.&lt;/p&gt;
+&lt;p&gt;The majority of complaints I get are related to &lt;a class="reference external" href="http://stopforumspam.com/"&gt;stopforumspam.com&lt;/a&gt;. Again, there’s not really anything you can do
+about this except reply.&lt;/p&gt;
+&lt;p&gt;Generally though, I will receive maybe one complaint per month on each node,
+sometimes two, but that’s about it and it’s always one of the two abuse reports
+I mentioned above.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="use-the-exit-notice"&gt;
+&lt;h2&gt;Use the exit notice&lt;/h2&gt;
+&lt;p&gt;I can’t really give any evidence as to whether or not this helps but, use the
+&lt;a class="reference external" href="https://svn.torproject.org/svn/tor/branches/hidserv-perf/contrib/tor-exit-notice.html"&gt;Tor exit notice&lt;/a&gt;
+on port 80. This means any admins that look up your &lt;span class="caps"&gt;IP&lt;/span&gt; may browse to it and see
+it’s a Tor exit node and also has your email address in case they want to get
+in touch about blocking their servers from your node.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="incorporate"&gt;
+&lt;h2&gt;Incorporate&lt;/h2&gt;
+&lt;p&gt;I haven’t had any reason to result to this myself but, I started my own
+company (easy to do in the &lt;span class="caps"&gt;UK&lt;/span&gt;) and my servers are paid for through this company.&lt;/p&gt;
+&lt;p&gt;It’s really not much hassle to set-up a company and a company bank account.&lt;/p&gt;
+&lt;p&gt;Any of the donations I receive that aren’t Bitcoin are paid in to this company
+too to continue paying for my nodes and put new ones online.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="tor"></category></entry><entry><title>Hauntr - A theme for Pelican</title><link href="https://kura.gg/2014/06/09/hauntr/" rel="alternate"></link><published>2014-06-09T18:00:00+01:00</published><updated>2014-06-09T18:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-06-09:/2014/06/09/hauntr/</id><content type="html">&lt;div class="figure align-center"&gt;
+&lt;img alt="Haunter, the evolved Pokémon form of Gastly" src="/images/haunter.png"/&gt;
+&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="http://kawiku.deviantart.com/art/Haunter-350580512"&gt;Kawiku&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hauntr is a minimal, lightweight and clean theme for the
+&lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
+&lt;p&gt;It is named after the Pokémon ‘Haunter’ because it is a modified version
+(you might say evolved) of my previous theme, &lt;a class="reference external" href="/ghastly/"&gt;Ghastly&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="features"&gt;
+&lt;h2&gt;Features&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Disqus&lt;/li&gt;
+&lt;li&gt;Pygments&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;CSS&lt;/span&gt; minifying using webassets&lt;/li&gt;
+&lt;li&gt;Share buttons&lt;/li&gt;
+&lt;li&gt;Custom 404 page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="pelican"></category></entry><entry><title>pypip.in most requested shields</title><link href="https://kura.gg/2014/03/03/pypip.in-most-requested-shields/" rel="alternate"></link><published>2014-03-03T21:40:00+00:00</published><updated>2014-03-03T21:40:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-03-03:/2014/03/03/pypip.in-most-requested-shields/</id><summary type="html">
+&lt;div class="section" id="pypip-in"&gt;
+&lt;h2&gt;pypip.in&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://pypip.in/"&gt;pypip.in&lt;/a&gt; is a website &lt;a class="reference external" href="/2013/12/24/shields-for-pypi-packages/"&gt;I have written about before&lt;/a&gt;. I decided I would
+look at the shields and see which ones were the most requested so far this year.&lt;/p&gt;
+&lt;p&gt;Due to the volumn of requests, I only keep 90 days
+of logs from nginx and no logs from Varnish, pypipin or the local version of
+buckler. nginx sits in front of Varnish so, even if Varnish responds with a
+cached version of the shield, a log line is still written to say it was requested.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="top-20"&gt;
+&lt;h2&gt;Top 20&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;Pillow [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;Theano [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.django-cms.org/en/"&gt;django-cms&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;django-cms [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/sivel/speedtest-cli"&gt;speedtest-cli&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;speedtest-cli [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/globocom/thumbor"&gt;thumbor&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;thumbor [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pythonhosted.org/tweepy/html/"&gt;tweepy&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;tweepy [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;pymssql [version]&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first thing that struck me is that I actually hadn’t heard of or used
+quite a lot of …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+&lt;div class="section" id="pypip-in"&gt;
+&lt;h2&gt;pypip.in&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://pypip.in/"&gt;pypip.in&lt;/a&gt; is a website &lt;a class="reference external" href="/2013/12/24/shields-for-pypi-packages/"&gt;I have written about before&lt;/a&gt;. I decided I would
+look at the shields and see which ones were the most requested so far this year.&lt;/p&gt;
+&lt;p&gt;Due to the volumn of requests, I only keep 90 days
+of logs from nginx and no logs from Varnish, pypipin or the local version of
+buckler. nginx sits in front of Varnish so, even if Varnish responds with a
+cached version of the shield, a log line is still written to say it was requested.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="top-20"&gt;
+&lt;h2&gt;Top 20&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;Pillow [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;Theano [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.django-cms.org/en/"&gt;django-cms&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;django-cms [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/sivel/speedtest-cli"&gt;speedtest-cli&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;speedtest-cli [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/globocom/thumbor"&gt;thumbor&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;thumbor [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pythonhosted.org/tweepy/html/"&gt;tweepy&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;tweepy [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;pymssql [version]&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first thing that struck me is that I actually hadn’t heard of or used
+quite a lot of those packages from the list.&lt;/p&gt;
+&lt;p&gt;The second thing that struck me is the popularity of the pymssql package, but
+that popularity in this instance is only based on the number of requests for
+the shields and cannot be used to verify the usage popularity of the package itself.&lt;/p&gt;
+&lt;p&gt;Anyway, pretty much useless information, but I was bored.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="python"></category><category term="pypi"></category><category term="pip"></category></entry><entry><title>Bye bye Google Analytics, hello self-hosted Open Web Analytics &amp; DuckDuckGo search</title><link href="https://kura.gg/2013/09/17/bye-bye-google-analytics-hello-self-hosted-open-web-analytics-duckduckgo-search/" rel="alternate"></link><published>2013-09-17T18:00:00+01:00</published><updated>2013-09-17T18:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-09-17:/2013/09/17/bye-bye-google-analytics-hello-self-hosted-open-web-analytics-duckduckgo-search/</id><summary type="html">
+&lt;p&gt;Today I can happily announce that &lt;a class="reference external" href="https://github.com/kura/kura.gg/commit/5e82c14bab3922d81b430549dd258a2047d1367f"&gt;the Google Analytics tracking code has been
+removed from this website&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="goodybye-google-analytics-hello-open-web-analytics"&gt;
+&lt;h2&gt;Goodybye Google Analytics &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; hello Open Web Analytics&lt;/h2&gt;
+&lt;p&gt;I’ve been planning on doing it from a while because I do not like Google Analytics,
+I don’t like being tracked and I actively stopped trying to use Google services
+for my own reasons.&lt;/p&gt;
+&lt;p&gt;The company I work for uses &lt;a class="reference external" href="http://piwik.org/"&gt;Piwik&lt;/a&gt;
+for some of our clients, I am not a fan
+of Piwik or how it works and does things. I did some research and found some
+service providers but their free options were limited or I felt they weren’t a
+good fit, eventually I stumbled upon &lt;a class="reference external" href="http://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
+not only suited my purposes, but it meant servers I control would hold the
+analytical data, rather than some third party.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hello-duckduckgo"&gt;
+&lt;h2&gt;Hello DuckDuckGo&lt;/h2&gt;
+&lt;p&gt;After launching the new version of …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;Today I can happily announce that &lt;a class="reference external" href="https://github.com/kura/kura.gg/commit/5e82c14bab3922d81b430549dd258a2047d1367f"&gt;the Google Analytics tracking code has been
+removed from this website&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="goodybye-google-analytics-hello-open-web-analytics"&gt;
+&lt;h2&gt;Goodybye Google Analytics &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; hello Open Web Analytics&lt;/h2&gt;
+&lt;p&gt;I’ve been planning on doing it from a while because I do not like Google Analytics,
+I don’t like being tracked and I actively stopped trying to use Google services
+for my own reasons.&lt;/p&gt;
+&lt;p&gt;The company I work for uses &lt;a class="reference external" href="http://piwik.org/"&gt;Piwik&lt;/a&gt;
+for some of our clients, I am not a fan
+of Piwik or how it works and does things. I did some research and found some
+service providers but their free options were limited or I felt they weren’t a
+good fit, eventually I stumbled upon &lt;a class="reference external" href="http://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
+not only suited my purposes, but it meant servers I control would hold the
+analytical data, rather than some third party.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hello-duckduckgo"&gt;
+&lt;h2&gt;Hello DuckDuckGo&lt;/h2&gt;
+&lt;p&gt;After launching the new version of my site, I got upset at the fact I had lost
+my search functionality. Sadly &lt;a class="reference external" href="http://docs.getpelican.com/"&gt;Pelican&lt;/a&gt;
+does not have any working search
+functionality and I undertook the task of building &lt;a class="reference external" href="http://sphinx-doc.org/"&gt;Sphinx&lt;/a&gt;
+-style searches
+in to Pelican, making it entirely static.&lt;/p&gt;
+&lt;p&gt;The task of building this functionality is still under way, but I decided that
+I would like a more immediate option.&lt;/p&gt;
+&lt;p&gt;I’ve been using DuckDuckGo as my primary and only search provider for quite a
+long time now and learned that you can embed it on your site easily, just like
+with Google site searches.&lt;/p&gt;
+&lt;p&gt;So there it is, embded happily and with adverts enabled on their end to make
+sure they make some revenue from it.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="google analytics"></category><category term="duckduckgo"></category><category term="open web analytics"></category><category term="owa"></category></entry><entry><title>Visualised: 24 hours of SSH attacks against a single server</title><link href="https://kura.gg/2012/03/02/visualised-24-hours-of-ssh-attacks-against-a-single-server/" rel="alternate"></link><published>2012-03-02T18:36:00+00:00</published><updated>2012-03-02T18:36:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2012-03-02:/2012/03/02/visualised-24-hours-of-ssh-attacks-against-a-single-server/</id><content type="html">&lt;p&gt;24 hours of &lt;span class="caps"&gt;SSH&lt;/span&gt; attacks against a single server, visualised on a world
+map using Python.&lt;/p&gt;
+&lt;p&gt;When a country stays lit up for more than 1 tick of the clock in the
+left hand corner it means that multiple attacks are happening from
+different &lt;span class="caps"&gt;IP&lt;/span&gt; addresses. An attacker is banned after;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;1 failed root login,&lt;/li&gt;
+&lt;li&gt;3 failed user logins (including invalid users) and&lt;/li&gt;
+&lt;li&gt;3 failed system logins.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center" class="vimeo"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="500" mozallowfullscreen="" src="https://player.vimeo.com/video/37818131" webkitallowfullscreen="" width="800"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="section" id="direct-links"&gt;
+&lt;h2&gt;Direct links&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://vimeo.com/37818131"&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.youtube.com/watch?v=S_p0G2oLuDU"&gt;YouTube&lt;/a&gt; - older version of the video with yellow colouring instead of red.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="bruteforce"></category><category term="ssh"></category></entry><entry><title>code_swarm - Apache, Python and PostgreSQL commit visualization</title><link href="https://kura.gg/2010/02/13/code_swarm-apache-python-and-postgresql-commit-visualization/" rel="alternate"></link><published>2010-02-13T23:01:00+00:00</published><updated>2010-02-13T23:01:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2010-02-13:/2010/02/13/code_swarm-apache-python-and-postgresql-commit-visualization/</id><content type="html">
+&lt;p&gt;These videos are pretty old now and I had forgotten about them until a
+colleague tweeted about a Twitter code_swarm visualization which made
+me remember.&lt;/p&gt;
+&lt;p&gt;So here they are, best viewed in full screen mode.&lt;/p&gt;
+&lt;div class="section" id="apache"&gt;
+&lt;h2&gt;Apache&lt;/h2&gt;
+&lt;div align="center" class="vimeo"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="500" mozallowfullscreen="" src="https://player.vimeo.com/video/1076588" webkitallowfullscreen="" width="800"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h2&gt;Python&lt;/h2&gt;
+&lt;div align="center" class="vimeo"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="500" mozallowfullscreen="" src="https://player.vimeo.com/video/1093745" webkitallowfullscreen="" width="800"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="postgresql"&gt;
+&lt;h2&gt;PostgreSQL&lt;/h2&gt;
+&lt;div align="center" class="vimeo"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="500" mozallowfullscreen="" src="https://player.vimeo.com/video/1081680" webkitallowfullscreen="" width="800"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
+</content><category term="misc"></category><category term="apache"></category><category term="code_swarm"></category><category term="postgresql"></category><category term="python"></category></entry></feed>

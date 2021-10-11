@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kura.gg/sitemap.xml

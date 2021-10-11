@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - talks</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/talks.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2013-07-17T21:00:00+01:00</updated><entry><title>DJUGL June 2013 talk on blackhole and blackhole.io</title><link href="https://kura.gg/2013/07/17/djugl-june-2013-talk-on-blackhole-and-blackhole-io/" rel="alternate"></link><published>2013-07-17T21:00:00+01:00</published><updated>2013-07-17T21:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-17:/2013/07/17/djugl-june-2013-talk-on-blackhole-and-blackhole-io/</id><summary type="html">&lt;p&gt;I have been a frequent audience member of &lt;a class="reference external" href="http://www.djugl.org/item/443153"&gt;&lt;span class="caps"&gt;DJUGL&lt;/span&gt;&lt;/a&gt;
+for a few years now and spend most of the time asking questions,
+playing devils advocate and generally being my annoying self.&lt;/p&gt;
+&lt;p&gt;I have repeatedly said I would do a talk but never got round to it
+until &lt;a class="reference external" href="https://twitter.com/JonWebJobs"&gt;Jon&lt;/a&gt; basically forced me
+to get round to it.&lt;/p&gt;
+&lt;p&gt;My talk was on &lt;a class="reference external" href="http://blackhole.io"&gt;blackhole/blackhole.io&lt;/a&gt; and
+covered several topics including &lt;a class="reference external" href="http://pypy.org"&gt;PyPy&lt;/a&gt;,
+&lt;a class="reference external" href="/simplemta/"&gt;SimpleMTA&lt;/a&gt; and moved on to talking
+about spamming and starting work on my honey pot suite called
+&lt;a class="reference external" href="http://nectar.blackhole.io"&gt;Nectar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can find the slides on &lt;a class="reference external" href="https://speakerdeck.com/kura/djugl-june-2013"&gt;Speaker Deck&lt;/a&gt;,
+sadly I ran out of time when creating them and although I was
+promised time to finish them at work, I got busy. So I replaced
+content with “Taylor Replacements(tm)”.&lt;/p&gt;
+&lt;p&gt;The event, attendees and other speakers are listen on the &lt;a class="reference external" href="http://lanyrd.com/2013/djugl-june/"&gt;Lanyrd
+event page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Several people took photos of the event, I don’t remember …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been a frequent audience member of &lt;a class="reference external" href="http://www.djugl.org/item/443153"&gt;&lt;span class="caps"&gt;DJUGL&lt;/span&gt;&lt;/a&gt;
+for a few years now and spend most of the time asking questions,
+playing devils advocate and generally being my annoying self.&lt;/p&gt;
+&lt;p&gt;I have repeatedly said I would do a talk but never got round to it
+until &lt;a class="reference external" href="https://twitter.com/JonWebJobs"&gt;Jon&lt;/a&gt; basically forced me
+to get round to it.&lt;/p&gt;
+&lt;p&gt;My talk was on &lt;a class="reference external" href="http://blackhole.io"&gt;blackhole/blackhole.io&lt;/a&gt; and
+covered several topics including &lt;a class="reference external" href="http://pypy.org"&gt;PyPy&lt;/a&gt;,
+&lt;a class="reference external" href="/simplemta/"&gt;SimpleMTA&lt;/a&gt; and moved on to talking
+about spamming and starting work on my honey pot suite called
+&lt;a class="reference external" href="http://nectar.blackhole.io"&gt;Nectar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can find the slides on &lt;a class="reference external" href="https://speakerdeck.com/kura/djugl-june-2013"&gt;Speaker Deck&lt;/a&gt;,
+sadly I ran out of time when creating them and although I was
+promised time to finish them at work, I got busy. So I replaced
+content with “Taylor Replacements(tm)”.&lt;/p&gt;
+&lt;p&gt;The event, attendees and other speakers are listen on the &lt;a class="reference external" href="http://lanyrd.com/2013/djugl-june/"&gt;Lanyrd
+event page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Several people took photos of the event, I don’t remember who they
+were to give them credit but you can view them below.&lt;/p&gt;
+&lt;p&gt;Unsurprisingly I was the only speaker at the event that
+didn’t have a Mac. I have a ginormous Alienware M17x R3 running Linux.&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;img alt="I look like a hairy beast..." class="first" src="/images/djugl-june-2013-3.png"/&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;img alt="I look like a hairy beast..." class="first" src="/images/djugl-june-2013-2.png"/&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;img alt="I look like a hairy beast..." class="first" src="/images/djugl-june-2013-1.png"/&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content><category term="talks"></category><category term="python"></category><category term="pypy"></category><category term="blackhole"></category><category term="blackhole.io"></category><category term="mta"></category><category term="email"></category><category term="honeypot"></category></entry></feed>
