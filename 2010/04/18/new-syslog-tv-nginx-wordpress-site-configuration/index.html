@@ -86,7 +86,7 @@
         <span class=kn>proxy_cache_key</span> <span class=nv>$my_cache_key</span><span class=p>;</span>
         <span class=kn>proxy_cache_valid</span> <span class=mi>200</span> <span class=mi>302</span> <span class=mi>60m</span><span class=p>;</span>
         <span class=kn>proxy_cache_valid</span> <span class=mi>404</span> <span class=mi>1m</span><span class=p>;</span>
-        <span class=kn>proxy_pass</span> <span class=s>http://backend</span><span class=p>;</span>
+        <span class=kn>proxy_pass</span> <span class=s>https://backend</span><span class=p>;</span>
     <span class=p>}</span>
 
     <span class=kn>location</span> <span class=p>~</span><span class=sr>*</span> <span class=s>.(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)</span>$ <span class=p>{</span>
@@ -132,7 +132,7 @@
 <span class=k>proxy_cache_key</span> <span class=nv>$my_cache_key</span><span class=p>;</span>
 <span class=k>proxy_cache_valid</span> <span class=mi>200</span> <span class=mi>302</span> <span class=mi>60m</span><span class=p>;</span>
 <span class=k>proxy_cache_valid</span> <span class=mi>404</span> <span class=mi>1m</span><span class=p>;</span>
-<span class=k>proxy_pass</span> <span class=s>http://backend</span><span class=p>;</span>
+<span class=k>proxy_pass</span> <span class=s>https://backend</span><span class=p>;</span>
 </pre></div> <p>Here I am setting the maximum size of the client body content to <span class=caps>8MB</span>, disabling proxy redirects, passing through some basic headers to the backend which allows my backend system to see which host the user is trying to access, their real <span class=caps>IP</span> address rather than the <span class=caps>IP</span> of the nginx server and x-Forwarded-For also contains the users <span class=caps>IP</span> address, it’s basically standard when proxying.</p> <p>Next I pass Set-Cookie headers back to the backend, tell it to use a cache definition called “cache” which I set up in a <a href=/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/ class="reference external">previous blog post</a>. I set the proxy_cache_key to use the variable defined earlier contains all of the users cookie information in it’s key to make it a private cache.</p> <p>I then pass through some basic validation rules that set <span class=caps>HTTP</span> 200 and 302 responses to cache for 60 minutes and 404 responses to cache for 1 minute, then I simply pass back to the backend system.</p> </div> <div class=section id=static-location-block> <h3>Static location block</h3> <div class=highlight><pre><span></span><span class=k>location</span> <span class=p>~</span><span class=sr>*</span> <span class=s>.(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)</span>$ <span class=p>{</span>
     <span class=kn>root</span> <span class=s>/var/www/syslog.tv</span><span class=p>;</span>
 <span class=p>}</span>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - tutorials</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/tutorials.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2015-10-18T03:30:00+01:00</updated><entry><title>SSHFP DNS records</title><link href="https://kura.gg/2015/10/18/sshfp-dns-records/" rel="alternate"></link><published>2015-10-18T03:30:00+01:00</published><updated>2015-10-18T03:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-10-18:/2015/10/18/sshfp-dns-records/</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://tools.ietf.org/html/rfc4255"&gt;&lt;span class="caps"&gt;SSHFP&lt;/span&gt;&lt;/a&gt; records are a defense against
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - tutorials</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/tutorials.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2015-10-18T03:30:00+01:00</updated><entry><title>SSHFP DNS records</title><link href="https://kura.gg/2015/10/18/sshfp-dns-records/" rel="alternate"></link><published>2015-10-18T03:30:00+01:00</published><updated>2015-10-18T03:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-10-18:/2015/10/18/sshfp-dns-records/</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://tools.ietf.org/html/rfc4255"&gt;&lt;span class="caps"&gt;SSHFP&lt;/span&gt;&lt;/a&gt; records are a defense against
 people blindly typing ‘yes’ when asked if they want to continue connecting to
 an &lt;span class="caps"&gt;SSH&lt;/span&gt; host who’s authenticity is unknown.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ssh some.host.tld
@@ -14,7 +14,7 @@ this prompt.&lt;/p&gt;
 server’s key fingerprints via &lt;span class="caps"&gt;DNS&lt;/span&gt; and having &lt;span class="caps"&gt;SSH&lt;/span&gt; authenticate them for you.&lt;/p&gt;
 &lt;div class="section" id="generating-your-sshfp-record"&gt;
 &lt;h2&gt;Generating your &lt;span class="caps"&gt;SSHFP&lt;/span&gt; record&lt;/h2&gt;
-&lt;p&gt;You can get &lt;span class="caps"&gt;SSH&lt;/span&gt; to generate the &lt;span class="caps"&gt;DNS&lt;/span&gt; records for you, log in …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://tools.ietf.org/html/rfc4255"&gt;&lt;span class="caps"&gt;SSHFP&lt;/span&gt;&lt;/a&gt; records are a defense against
+&lt;p&gt;You can get &lt;span class="caps"&gt;SSH&lt;/span&gt; to generate the &lt;span class="caps"&gt;DNS&lt;/span&gt; records for you, log in …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="https://tools.ietf.org/html/rfc4255"&gt;&lt;span class="caps"&gt;SSHFP&lt;/span&gt;&lt;/a&gt; records are a defense against
 people blindly typing ‘yes’ when asked if they want to continue connecting to
 an &lt;span class="caps"&gt;SSH&lt;/span&gt; host who’s authenticity is unknown.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ssh some.host.tld
@@ -147,7 +147,7 @@ image from Rage4.&lt;/p&gt;
 &lt;div class="section" id="testing"&gt;
 &lt;h2&gt;Testing&lt;/h2&gt;
 &lt;p&gt;It may take some time for your &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; information to propagate but you can test
-it using &lt;a class="reference external" href="http://dnssec-debugger.verisignlabs.com/"&gt;the debugger from Verisign&lt;/a&gt;.&lt;/p&gt;
+it using &lt;a class="reference external" href="https://dnssec-debugger.verisignlabs.com/"&gt;the debugger from Verisign&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="dnssec"></category><category term="dns"></category><category term="rage4. name.com"></category></entry><entry><title>HPKP: HTTP Public Key Pinning with HAProxy</title><link href="https://kura.gg/2015/01/27/hpkp-http-public-key-pinning-with-haproxy/" rel="alternate"></link><published>2015-01-27T07:04:00+00:00</published><updated>2015-01-27T07:04:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-01-27:/2015/01/27/hpkp-http-public-key-pinning-with-haproxy/</id><summary type="html">
 &lt;p&gt;Public Key Pinning is a security feature that tells a web browser to associate
@@ -350,7 +350,7 @@ sudo mv /var/lib/solr /var/mail/decrypted/
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And finally, it’s always good when you mess with Solr’s indexes like this to
 run optimize task.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl http://localhost:8080/solr/update?optimize&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl https://localhost:8080/solr/update?optimize&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="init-d"&gt;
@@ -789,7 +789,7 @@ ssl = required
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For fulltext searching, you’ll want to enable wheezy-backports and install
 &lt;cite&gt;dovecot-solr&lt;/cite&gt; from there.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo echo "deb http://ftp.debian.org/debian wheezy-backports main contrib non-free" &amp;gt;&amp;gt; /etc/apt/sources.list
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo echo "deb https://ftp.debian.org/debian wheezy-backports main contrib non-free" &amp;gt;&amp;gt; /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install dovecot-solr solr-tomcat
 &lt;/pre&gt;&lt;/div&gt;
@@ -811,16 +811,16 @@ in the Connectory.&lt;/p&gt;
 &lt;p&gt;Next up, add the following lines to &lt;cite&gt;/etc/dovecot/conf.d/90-plugin.conf&lt;/cite&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plugin {
     fts = solr
-    fts_solr = break-imap-search url=http://localhost:8080/solr/
+    fts_solr = break-imap-search url=https://localhost:8080/solr/
 }
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Create &lt;cite&gt;/etc/cron.daily/solr&lt;/cite&gt; with the following contents.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#!/bin/sh
-curl http://localhost:8080/solr/update?optimize=true
+curl https://localhost:8080/solr/update?optimize=true
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Create &lt;cite&gt;/etc/cron.hourly/solr&lt;/cite&gt; with the following contents.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#!/bin/sh
-curl http://localhost:8080/solr/update?commit=true
+curl https://localhost:8080/solr/update?commit=true
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Make both files executable.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo chmod +x /etc/cron.daily/solr /etc/cron.hourly/solr
@@ -966,8 +966,8 @@ it in your certificate data.&lt;/p&gt;
 &lt;p&gt;Inside the output, look for the following section.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Authority Information Access:
-    CA Issuers - URI:http://secure.globalsign.com/cacert/gsdomainvalsha2g2r1.crt
-    OCSP - URI:http://ocsp2.globalsign.com/gsdomainvalsha2g2
+    CA Issuers - URI:https://secure.globalsign.com/cacert/gsdomainvalsha2g2r1.crt
+    OCSP - URI:https://ocsp2.globalsign.com/gsdomainvalsha2g2
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="testing-ocsp-response"&gt;
@@ -996,7 +996,7 @@ a host header.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 -header Host OCSP_URI_DOMAIN
 &lt;/pre&gt;
-&lt;p&gt;For my certificate the &lt;span class="caps"&gt;OCSP&lt;/span&gt; &lt;span class="caps"&gt;URI&lt;/span&gt; is &lt;em&gt;http://ocsp2.globalsign.com/gsdomainvalsha2g2&lt;/em&gt;
+&lt;p&gt;For my certificate the &lt;span class="caps"&gt;OCSP&lt;/span&gt; &lt;span class="caps"&gt;URI&lt;/span&gt; is &lt;em&gt;https://ocsp2.globalsign.com/gsdomainvalsha2g2&lt;/em&gt;
 so the Host header would be like below.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 -header Host ocsp2.globalsign.com
@@ -1046,7 +1046,7 @@ to update your certificate.ocsp file.&lt;/p&gt;
 </content><category term="tutorials"></category><category term="haproxy"></category><category term="ssl"></category><category term="ocsp"></category><category term="ocsp stapling"></category></entry><entry><title>haproxy stateful SSL session resumption</title><link href="https://kura.gg/2014/02/22/haproxy-stateful-ssl-session-resumption/" rel="alternate"></link><published>2014-02-22T05:10:00+00:00</published><updated>2014-02-22T05:10:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-22:/2014/02/22/haproxy-stateful-ssl-session-resumption/</id><content type="html">
 &lt;p&gt;By default haproxy enables stateless &lt;span class="caps"&gt;SSL&lt;/span&gt; session resumption, but you can enable
 stateful session resumption in accordance with
-&lt;a class="reference external" href="http://www.ietf.org/rfc/rfc5077.txt"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 5077&lt;/a&gt;. This functionality, like
+&lt;a class="reference external" href="https://www.ietf.org/rfc/rfc5077.txt"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 5077&lt;/a&gt;. This functionality, like
 the &lt;span class="caps"&gt;SSL&lt;/span&gt; handling it relies on is only available from haproxy 1.5.&lt;/p&gt;
 &lt;div class="section" id="configuration"&gt;
 &lt;h2&gt;Configuration&lt;/h2&gt;
@@ -1178,7 +1178,7 @@ this website as a comparison.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="ssl"></category></entry><entry><title>Advertise multiple NPN protocols with haproxy</title><link href="https://kura.gg/2014/01/31/advertise-multiple-npn-protocols-with-haproxy/" rel="alternate"></link><published>2014-01-31T15:25:00+00:00</published><updated>2014-01-31T15:25:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-31:/2014/01/31/advertise-multiple-npn-protocols-with-haproxy/</id><content type="html">&lt;p&gt;I have previously written an article on &lt;a class="reference external" href="/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/"&gt;using &lt;span class="caps"&gt;SPDY&lt;/span&gt; with haproxy&lt;/a&gt;
-but have been spending some time recently being annoyed that the &lt;a class="reference external" href="http://spdycheck.org/#kura.gg"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt; check
+but have been spending some time recently being annoyed that the &lt;a class="reference external" href="https://spdycheck.org/#kura.gg"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt; check
 tool&lt;/a&gt; said I didn’t advertise a fall back to
 &lt;span class="caps"&gt;HTTP&lt;/span&gt; over &lt;span class="caps"&gt;SSL&lt;/span&gt; in the &lt;span class="caps"&gt;NPN&lt;/span&gt; protocol list.&lt;/p&gt;
 &lt;p&gt;After some digging I discovered it was actually quite simple to advertise
@@ -1217,11 +1217,11 @@ file (&lt;em&gt;/etc/haproxy/haproxy.cfg&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;Be sure to replace &lt;em&gt;admin:admin&lt;/em&gt; with your a proper
 username and password, username first, password
 after the colon.&lt;/p&gt;
-&lt;p&gt;Restart haproxy, and then browse to &lt;a class="reference external" href="http://yoursite.com:8000"&gt;http://yousite.com:8000&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Restart haproxy, and then browse to &lt;a class="reference external" href="https://yoursite.com:8000"&gt;https://yousite.com:8000&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="haproxy"></category><category term="stats"></category></entry><entry><title>haproxy, nginx and SPDY with SSL termination (Debian 7)</title><link href="https://kura.gg/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/" rel="alternate"></link><published>2013-07-15T22:30:00+01:00</published><updated>2013-07-15T22:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-15:/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/</id><summary type="html">
 &lt;p&gt;&lt;a class="reference external" href="/2013/07/10/nginx-spdy-and-ngx-pagespeed/"&gt;I wrote an article last week&lt;/a&gt; explaining that I had changed my blog
-and built my own nginx packages with &lt;a class="reference external" href="http://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; built in.&lt;/p&gt;
+and built my own nginx packages with &lt;a class="reference external" href="https://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; built in.&lt;/p&gt;
 &lt;p&gt;I decided I would take things a little further and poke around with
 haproxy some more. The initial plan was to compile the latest dev
 source of haproxy with &lt;span class="caps"&gt;SSL&lt;/span&gt; termination enabled.&lt;/p&gt;
@@ -1237,7 +1237,7 @@ non-&lt;span class="caps"&gt;SPDY&lt;/span&gt; connections were passed on to an 
 &lt;h2&gt;Requirements&lt;/h2&gt;
 &lt;p&gt;I have released my haproxy build as a debian file below …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;&lt;a class="reference external" href="/2013/07/10/nginx-spdy-and-ngx-pagespeed/"&gt;I wrote an article last week&lt;/a&gt; explaining that I had changed my blog
-and built my own nginx packages with &lt;a class="reference external" href="http://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; built in.&lt;/p&gt;
+and built my own nginx packages with &lt;a class="reference external" href="https://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; built in.&lt;/p&gt;
 &lt;p&gt;I decided I would take things a little further and poke around with
 haproxy some more. The initial plan was to compile the latest dev
 source of haproxy with &lt;span class="caps"&gt;SSL&lt;/span&gt; termination enabled.&lt;/p&gt;
@@ -1456,15 +1456,15 @@ which is configured to run on port 80.&lt;/p&gt;
 running on port 81.&lt;/p&gt;
 &lt;p&gt;We have two lines &lt;em&gt;port_in_redirect&lt;/em&gt; and &lt;em&gt;server_name_in_redirect&lt;/em&gt;
 set to &lt;em&gt;off&lt;/em&gt; because otherwise nginx would try to redirect to
-&lt;a class="reference external" href="http://kura.gg:81/"&gt;http://kura.gg:81/&lt;/a&gt; and cause issues with haproxy.&lt;/p&gt;
+&lt;a class="reference external" href="https://kura.gg:81/"&gt;https://kura.gg:81/&lt;/a&gt; and cause issues with haproxy.&lt;/p&gt;
 &lt;p&gt;It’s a simple as that, you can test this using the &lt;a class="reference external" href="https://addons.mozilla.org/en-us/firefox/addon/spdy-indicator/"&gt;Firefox&lt;/a&gt; and
 &lt;a class="reference external" href="https://chrome.google.com/webstore/detail/spdy-indicator/mpbpobfflnpcgagjijhmgnchggcjblin"&gt;Chrome&lt;/a&gt; extensions that show you websites with &lt;span class="caps"&gt;SPDY&lt;/span&gt; enabled.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="debian"></category><category term="ubuntu"></category><category term="haproxy"></category><category term="nginx"></category><category term="spdy"></category><category term="ssl"></category><category term="ssl termination"></category></entry><entry><title>nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)</title><link href="https://kura.gg/2013/07/10/nginx-spdy-and-ngx-pagespeed/" rel="alternate"></link><published>2013-07-10T22:30:00+01:00</published><updated>2013-07-10T22:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-10:/2013/07/10/nginx-spdy-and-ngx-pagespeed/</id><summary type="html">
 &lt;p&gt;I decided to rebuild syslog.tv as pure &lt;span class="caps"&gt;HTML&lt;/span&gt; using &lt;span class="caps"&gt;RST&lt;/span&gt; and
-&lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and rebrand it as kura.gg.&lt;/p&gt;
-&lt;p&gt;In doing so I decided I would go all out and use &lt;a class="reference external" href="http://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; and
-&lt;a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_spdy_module.html"&gt;ngx_pagespeed&lt;/a&gt; (&lt;a class="reference external" href="https://developers.google.com/speed/"&gt;mod_pagespeed&lt;/a&gt;) for fun to see exactly
+&lt;a class="reference external" href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and rebrand it as kura.gg.&lt;/p&gt;
+&lt;p&gt;In doing so I decided I would go all out and use &lt;a class="reference external" href="https://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; and
+&lt;a class="reference external" href="https://nginx.org/en/docs/http/ngx_http_spdy_module.html"&gt;ngx_pagespeed&lt;/a&gt; (&lt;a class="reference external" href="https://developers.google.com/speed/"&gt;mod_pagespeed&lt;/a&gt;) for fun to see exactly
 what I could do.&lt;/p&gt;
 &lt;p&gt;Sadly no version of nginx has been officially released with &lt;span class="caps"&gt;SPDY&lt;/span&gt;
 or ngx_pagespeed enabled, you can compile nginx from source to
@@ -1495,9 +1495,9 @@ they are only available for amd64);&lt;/p&gt;
 &lt;td&gt;&lt;a class="reference external" href="/files/nginx-common_1.4.1_all.deb.md5"&gt;ca4ec5688d…&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a class="reference external" href="/files/nginx-common_1.4.1_all.deb.sha1"&gt;633bfc2eaa …&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I decided to rebuild syslog.tv as pure &lt;span class="caps"&gt;HTML&lt;/span&gt; using &lt;span class="caps"&gt;RST&lt;/span&gt; and
-&lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and rebrand it as kura.gg.&lt;/p&gt;
-&lt;p&gt;In doing so I decided I would go all out and use &lt;a class="reference external" href="http://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; and
-&lt;a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_spdy_module.html"&gt;ngx_pagespeed&lt;/a&gt; (&lt;a class="reference external" href="https://developers.google.com/speed/"&gt;mod_pagespeed&lt;/a&gt;) for fun to see exactly
+&lt;a class="reference external" href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and rebrand it as kura.gg.&lt;/p&gt;
+&lt;p&gt;In doing so I decided I would go all out and use &lt;a class="reference external" href="https://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; and
+&lt;a class="reference external" href="https://nginx.org/en/docs/http/ngx_http_spdy_module.html"&gt;ngx_pagespeed&lt;/a&gt; (&lt;a class="reference external" href="https://developers.google.com/speed/"&gt;mod_pagespeed&lt;/a&gt;) for fun to see exactly
 what I could do.&lt;/p&gt;
 &lt;p&gt;Sadly no version of nginx has been officially released with &lt;span class="caps"&gt;SPDY&lt;/span&gt;
 or ngx_pagespeed enabled, you can compile nginx from source to
@@ -1737,10 +1737,10 @@ edit it to look like the line below.&lt;/p&gt;
 testing send rates and speeds, this project was called SimpleMTA and is
 available &lt;a class="reference external" href="https://syslog.tv/simplemta/"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Recently I have rebuilt this project for an internal project at work
-using the &lt;a class="reference external" href="http://www.tornadoweb.org/"&gt;Tornado framework&lt;/a&gt;. Sadly this project as a whole cannot be
+using the &lt;a class="reference external" href="https://www.tornadoweb.org/"&gt;Tornado framework&lt;/a&gt;. Sadly this project as a whole cannot be
 released but a version of this code will be released in the near future.&lt;/p&gt;
 &lt;p&gt;Until that is released I have launched a new service called
-&lt;a class="reference external" href="http://blackhole.io"&gt;blackhole.io&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://blackhole.io"&gt;blackhole.io&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="what-is-blackhole-io"&gt;
 &lt;h2&gt;What is blackhole.io?&lt;/h2&gt;
 &lt;p&gt;blackhole.io is a completely open mail relay that forgets anything that
@@ -1753,10 +1753,10 @@ command without ever using &lt;span class="caps"&gt;HELO&lt;/span&gt;, &lt;span 
 testing send rates and speeds, this project was called SimpleMTA and is
 available &lt;a class="reference external" href="https://syslog.tv/simplemta/"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Recently I have rebuilt this project for an internal project at work
-using the &lt;a class="reference external" href="http://www.tornadoweb.org/"&gt;Tornado framework&lt;/a&gt;. Sadly this project as a whole cannot be
+using the &lt;a class="reference external" href="https://www.tornadoweb.org/"&gt;Tornado framework&lt;/a&gt;. Sadly this project as a whole cannot be
 released but a version of this code will be released in the near future.&lt;/p&gt;
 &lt;p&gt;Until that is released I have launched a new service called
-&lt;a class="reference external" href="http://blackhole.io"&gt;blackhole.io&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://blackhole.io"&gt;blackhole.io&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="what-is-blackhole-io"&gt;
 &lt;h2&gt;What is blackhole.io?&lt;/h2&gt;
 &lt;p&gt;blackhole.io is a completely open mail relay that forgets anything that
@@ -1809,13 +1809,13 @@ is not available currently.&lt;/p&gt;
 it and what you think of it.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="blackhole"></category><category term="blackhole.io"></category><category term="email"></category><category term="mail"></category></entry><entry><title>Mount Amazon S3 bucket locally on Debian 5 &amp; 6/Ubuntu 10.04</title><link href="https://kura.gg/2012/03/03/mount-amazon-s3-bucket-locally/" rel="alternate"></link><published>2012-03-03T16:05:00+00:00</published><updated>2012-03-03T16:05:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2012-03-03:/2012/03/03/mount-amazon-s3-bucket-locally/</id><summary type="html">
-&lt;p&gt;I’ve recently been toying with my &lt;a class="reference external" href="http://rpi.syslog.tv/"&gt;Raspberry Pi mirror&lt;/a&gt; including
+&lt;p&gt;I’ve recently been toying with my &lt;a class="reference external" href="https://rpi.syslog.tv/"&gt;Raspberry Pi mirror&lt;/a&gt; including
 moving it out on to Amazon’s S3. I’ve written an article on &lt;a class="reference external" href="https://syslog.tv/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/"&gt;how to back
 up to S3&lt;/a&gt;, but that isn’t enough when it comes to serving data
 from S3.&lt;/p&gt;
 &lt;p&gt;I needed the ability to &lt;span class="caps"&gt;RSYNC&lt;/span&gt; data from the official Raspberry Pi
-servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="http://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
-&lt;a class="reference external" href="http://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="https://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
+&lt;a class="reference external" href="https://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;You can actually do this successfully without requiring &lt;span class="caps"&gt;FUSE&lt;/span&gt;, just by
@@ -1836,13 +1836,13 @@ thus allowing us to give other users access and auto-mount using /etc/fstab.&lt
 &lt;div class="section" id="id3"&gt;
 &lt;h3&gt;s3fs&lt;/h3&gt;
 &lt;p&gt;We …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
-&lt;p&gt;I’ve recently been toying with my &lt;a class="reference external" href="http://rpi.syslog.tv/"&gt;Raspberry Pi mirror&lt;/a&gt; including
+&lt;p&gt;I’ve recently been toying with my &lt;a class="reference external" href="https://rpi.syslog.tv/"&gt;Raspberry Pi mirror&lt;/a&gt; including
 moving it out on to Amazon’s S3. I’ve written an article on &lt;a class="reference external" href="https://syslog.tv/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/"&gt;how to back
 up to S3&lt;/a&gt;, but that isn’t enough when it comes to serving data
 from S3.&lt;/p&gt;
 &lt;p&gt;I needed the ability to &lt;span class="caps"&gt;RSYNC&lt;/span&gt; data from the official Raspberry Pi
-servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="http://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
-&lt;a class="reference external" href="http://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="https://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
+&lt;a class="reference external" href="https://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;You can actually do this successfully without requiring &lt;span class="caps"&gt;FUSE&lt;/span&gt;, just by
@@ -1869,7 +1869,7 @@ libcurl4-openssl-dev and libxml2-dev to be able to compile s3fs&lt;/p&gt;
 &lt;div class="section" id="debian-5-ubuntu-10-04"&gt;
 &lt;h4&gt;Debian 5 &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Ubuntu 10.04&lt;/h4&gt;
 &lt;p&gt;If installing either Debian 5 or Ubuntu 10.04, you’ll need to install a
-newer version of fuse than is packaged, I found this info on the &lt;a class="reference external" href="http://code.google.com/p/s3fs/issues/detail?id=143#c2"&gt;s3fs
+newer version of fuse than is packaged, I found this info on the &lt;a class="reference external" href="https://code.google.com/p/s3fs/issues/detail?id=143#c2"&gt;s3fs
 issue tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;First we need to remove the install fuse-utils and libfuse-dev that we
 install above.&lt;/p&gt;
@@ -1877,9 +1877,9 @@ install above.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You’ll need to export a variable with your arch, i.e&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;amd64
-wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse2_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb
-wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse-dev_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb
-wget http://ftp.us.debian.org/debian/pool/main/f/fuse/fuse-utils_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb
+wget https://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse2_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb
+wget https://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse-dev_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb
+wget https://ftp.us.debian.org/debian/pool/main/f/fuse/fuse-utils_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb
 sudo dpkg -i libfuse2_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb libfuse-dev_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb fuse-utils_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PLATFORM&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.deb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Fix missing dependencies&lt;/p&gt;
@@ -1890,7 +1890,7 @@ sudo dpkg -i libfuse2_2.8.4-1.1_&lt;span class="si"&gt;${&lt;/span&gt;&lt;span c
 &lt;span class="m"&gt;2&lt;/span&gt;.8.4
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;s3fs has to be done manually, first off go download the latest revision
-archive from &lt;a class="reference external" href="http://code.google.com/p/s3fs/downloads/list"&gt;Google code&lt;/a&gt;.&lt;/p&gt;
+archive from &lt;a class="reference external" href="https://code.google.com/p/s3fs/downloads/list"&gt;Google code&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Once download, gunzip and untar it.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar xvzf s3fs-x.xx.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
@@ -1951,43 +1951,43 @@ the file system and&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="aws"></category><category term="fstab"></category><category term="fuse"></category><category term="mount"></category><category term="s3"></category><category term="s3fs"></category></entry><entry><title>Backup a Linux server to Amazon S3 on Debian 6/Ubuntu 10.04</title><link href="https://kura.gg/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/" rel="alternate"></link><published>2012-02-29T20:55:00+00:00</published><updated>2012-02-29T20:55:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2012-02-29:/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/</id><summary type="html">
-&lt;p&gt;I have several servers powering syslog including it’s &lt;a class="reference external" href="http://rpi.syslog.tv/"&gt;Raspberry Pi&lt;/a&gt;
+&lt;p&gt;I have several servers powering syslog including it’s &lt;a class="reference external" href="https://rpi.syslog.tv/"&gt;Raspberry Pi&lt;/a&gt;
 mirror, load balancer and email servers. All of my servers are hosted
-using &lt;a class="reference external" href="http://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622"&gt;Linode&lt;/a&gt; in their London data centre and have Linode’s back-up
+using &lt;a class="reference external" href="https://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622"&gt;Linode&lt;/a&gt; in their London data centre and have Linode’s back-up
 system doing both daily and weekly snapshots.&lt;/p&gt;
 &lt;p&gt;For the app and database servers I do server-side backups storing each
 website and it’s database in it’s own folder within /backup in case I
 require a quick back-up to fix something, rather than the server has died.&lt;/p&gt;
 &lt;p&gt;This is all well and good but I like having an off-site backup too and
-for that I use &lt;a class="reference external" href="http://aws.amazon.com/s3/"&gt;S3&lt;/a&gt;…&lt;/p&gt;
+for that I use &lt;a class="reference external" href="https://aws.amazon.com/s3/"&gt;S3&lt;/a&gt;…&lt;/p&gt;
 &lt;div class="section" id="about-s3"&gt;
 &lt;h2&gt;About S3&lt;/h2&gt;
 &lt;p&gt;Amazon’s S3 is pretty cheap and very easy to use. Because only data is
 going in you don’t pay a transfer fee and the cost of storage is very
-affordable, you can see a &lt;a class="reference external" href="http://aws.amazon.com/s3/#pricing"&gt;pricing list here&lt;/a&gt;.&lt;/p&gt;
+affordable, you can see a &lt;a class="reference external" href="https://aws.amazon.com/s3/#pricing"&gt;pricing list here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To do the backup I use a …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
-&lt;p&gt;I have several servers powering syslog including it’s &lt;a class="reference external" href="http://rpi.syslog.tv/"&gt;Raspberry Pi&lt;/a&gt;
+&lt;p&gt;I have several servers powering syslog including it’s &lt;a class="reference external" href="https://rpi.syslog.tv/"&gt;Raspberry Pi&lt;/a&gt;
 mirror, load balancer and email servers. All of my servers are hosted
-using &lt;a class="reference external" href="http://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622"&gt;Linode&lt;/a&gt; in their London data centre and have Linode’s back-up
+using &lt;a class="reference external" href="https://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622"&gt;Linode&lt;/a&gt; in their London data centre and have Linode’s back-up
 system doing both daily and weekly snapshots.&lt;/p&gt;
 &lt;p&gt;For the app and database servers I do server-side backups storing each
 website and it’s database in it’s own folder within /backup in case I
 require a quick back-up to fix something, rather than the server has died.&lt;/p&gt;
 &lt;p&gt;This is all well and good but I like having an off-site backup too and
-for that I use &lt;a class="reference external" href="http://aws.amazon.com/s3/"&gt;S3&lt;/a&gt;…&lt;/p&gt;
+for that I use &lt;a class="reference external" href="https://aws.amazon.com/s3/"&gt;S3&lt;/a&gt;…&lt;/p&gt;
 &lt;div class="section" id="about-s3"&gt;
 &lt;h2&gt;About S3&lt;/h2&gt;
 &lt;p&gt;Amazon’s S3 is pretty cheap and very easy to use. Because only data is
 going in you don’t pay a transfer fee and the cost of storage is very
-affordable, you can see a &lt;a class="reference external" href="http://aws.amazon.com/s3/#pricing"&gt;pricing list here&lt;/a&gt;.&lt;/p&gt;
+affordable, you can see a &lt;a class="reference external" href="https://aws.amazon.com/s3/#pricing"&gt;pricing list here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To do the backup I use a daily cron job which then uploads the data to
-S3 using &lt;a class="reference external" href="http://s3tools.org/s3cmd"&gt;s3cmd&lt;/a&gt;.&lt;/p&gt;
+S3 using &lt;a class="reference external" href="https://s3tools.org/s3cmd"&gt;s3cmd&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Download the S3 tools package list in to apt&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
-sudo wget http://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo wget -O- -q https://s3tools.org/repo/deb-all/stable/s3tools.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+sudo wget https://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Update your package list and install s3cmd&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get install s3cmd
@@ -2209,7 +2209,7 @@ provided that too.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo wget /files/sks-index.html -O /var/lib/sks/www/index.html
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now your &lt;span class="caps"&gt;PGP&lt;/span&gt; server should be accessible from a web browser at
-&lt;a class="reference external" href="http://YOUR_SERVER:11371/"&gt;http://YOUR_SERVER:11371/&lt;/a&gt; and it should look like mine
+&lt;a class="reference external" href="https://YOUR_SERVER:11371/"&gt;https://YOUR_SERVER:11371/&lt;/a&gt; and it should look like mine
 &lt;a class="reference external" href="https://syslog.tv/"&gt;:11371/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="debian"></category><category term="keyserver"></category><category term="pgp"></category><category term="sks"></category><category term="ubuntu"></category></entry><entry><title>Host git repositories with git, gitosis and gitweb on Debian 6/Ubuntu 10.04</title><link href="https://kura.gg/2011/12/17/host-git-repositories-with-git-gitosis-and-gitweb-on-debian-6ubuntu-10-04/" rel="alternate"></link><published>2011-12-17T15:40:00+00:00</published><updated>2011-12-17T15:40:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2011-12-17:/2011/12/17/host-git-repositories-with-git-gitosis-and-gitweb-on-debian-6ubuntu-10-04/</id><summary type="html">
@@ -2377,7 +2377,7 @@ you’ll need to a [repo] section as shown above.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;By default Debian and Ubuntu will symlink in an Apache2 config to
 &lt;strong&gt;/etc/apache2/conf.d/gitweb&lt;/strong&gt; which is accessible from a browser on
-&lt;a class="reference external" href="http://YOUR_SERVER/gitweb"&gt;http://YOUR_SERVER/gitweb&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://YOUR_SERVER/gitweb"&gt;https://YOUR_SERVER/gitweb&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="debian"></category><category term="git"></category><category term="gitosis"></category><category term="gitweb"></category><category term="ubuntu"></category></entry><entry><title>Rebooting on OOM</title><link href="https://kura.gg/2011/10/25/rebooting-on-oom/" rel="alternate"></link><published>2011-10-25T10:26:00+01:00</published><updated>2011-10-25T10:26:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2011-10-25:/2011/10/25/rebooting-on-oom/</id><summary type="html">
 &lt;p&gt;&lt;strong&gt;*I would generally not advise using this unless you have skill at
@@ -2465,9 +2465,9 @@ livestatus and run it&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mk-livestatus"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;MK&lt;/span&gt; Livestatus&lt;/h2&gt;
-&lt;p&gt;Grab the mk livestatus source from &lt;a class="reference external" href="http://mathias-kettner.de/check_mk_download.html"&gt;here&lt;/a&gt;, currently it’s version
+&lt;p&gt;Grab the mk livestatus source from &lt;a class="reference external" href="https://mathias-kettner.de/check_mk_download.html"&gt;here&lt;/a&gt;, currently it’s version
 1.1.10p3 but update the commands below to match your version.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
 tar xvzf mk-livestatus-1.1.10p3.tar.gz
 &lt;span class="nb"&gt;cd&lt;/span&gt; mk-livestatus-1.1.10p3
 ./configure
@@ -2503,9 +2503,9 @@ livestatus and run it&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mk-livestatus"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;MK&lt;/span&gt; Livestatus&lt;/h2&gt;
-&lt;p&gt;Grab the mk livestatus source from &lt;a class="reference external" href="http://mathias-kettner.de/check_mk_download.html"&gt;here&lt;/a&gt;, currently it’s version
+&lt;p&gt;Grab the mk livestatus source from &lt;a class="reference external" href="https://mathias-kettner.de/check_mk_download.html"&gt;here&lt;/a&gt;, currently it’s version
 1.1.10p3 but update the commands below to match your version.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
 tar xvzf mk-livestatus-1.1.10p3.tar.gz
 &lt;span class="nb"&gt;cd&lt;/span&gt; mk-livestatus-1.1.10p3
 ./configure
@@ -2554,9 +2554,9 @@ event_broker_options=-1 broker_module=/usr/local/lib/mk-livestatus/livestatus.o 
 &lt;p&gt;you should see something like below&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 [1318547328] livestatus: Livestatus 1.1.10p3 by Mathias Kettner. Socket: '/var/lib/nagios3/rw/live'
-[1318547328] livestatus: Please visit us at http://mathias-kettner.de/
+[1318547328] livestatus: Please visit us at https://mathias-kettner.de/
 [1318547328] livestatus: Hint: please try out OMD - the Open Monitoring Distribution
-[1318547328] livestatus: Please visit OMD at http://omdistro.org
+[1318547328] livestatus: Please visit OMD at https://omdistro.org
 [1318547328] Event broker module '/usr/local/lib/mk-livestatus/livestatus.o' initialized successfully.
 &lt;/pre&gt;
 &lt;p&gt;Also, we can ls the newly created socket&lt;/p&gt;
@@ -2649,7 +2649,7 @@ full copy from &lt;a class="reference external" href="/files/2011/09/server.txt"
     &lt;span class="p"&gt;}&lt;/span&gt;
 
     &lt;span class="kn"&gt;client_max_body_size&lt;/span&gt; &lt;span class="mi"&gt;2m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# increase this to increase file upload size&lt;/span&gt;
-    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://localhost:**APACHE_PORT**&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://localhost:**APACHE_PORT**&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="p"&gt;}&lt;/span&gt;
 
   &lt;span class="c1"&gt;# handle uploaded files&lt;/span&gt;
@@ -2662,7 +2662,7 @@ full copy from &lt;a class="reference external" href="/files/2011/09/server.txt"
     &lt;span class="c1"&gt;# if the static file doesn't exist, handle it with Apache&lt;/span&gt;
     &lt;span class="kn"&gt;if&lt;/span&gt; &lt;span class="s"&gt;(!-f&lt;/span&gt; &lt;span class="nv"&gt;$request_filename&lt;/span&gt;&lt;span class="s"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="kn"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://localhost:**APACHE_PORT**&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://localhost:**APACHE_PORT**&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="p"&gt;}&lt;/span&gt;
 
   &lt;span class="p"&gt;}&lt;/span&gt;
@@ -2930,7 +2930,7 @@ smtpd_recipient_restrictions = permit_mynetworks,
 &lt;p&gt;Now if you tail your mail.log you will see your Postgrey instance
 rejecting incoming email like below.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-Sept 24 22:26:18 heimdall postfix/smtpd[4256]: NOQUEUE: reject: RCPT from example.com[xxx.xxx.xxx.xxx]: 450: Recipient address rejected: Greylisted for 300 seconds (see http://isg.ee.ethz.ch/tools/postgrey/help/spammed.com.html); from=to=proto=ESMTP helo=&amp;lt;example.com&amp;gt;
+Sept 24 22:26:18 heimdall postfix/smtpd[4256]: NOQUEUE: reject: RCPT from example.com[xxx.xxx.xxx.xxx]: 450: Recipient address rejected: Greylisted for 300 seconds (see https://isg.ee.ethz.ch/tools/postgrey/help/spammed.com.html); from=to=proto=ESMTP helo=&amp;lt;example.com&amp;gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="debian"></category><category term="email"></category><category term="greylist"></category><category term="mail"></category><category term="postfix"></category><category term="postgrey"></category><category term="spam"></category><category term="ubuntu"></category></entry><entry><title>Postfix spam protection with blacklists</title><link href="https://kura.gg/2011/09/24/postfix-spam-protection-with-blacklists/" rel="alternate"></link><published>2011-09-24T21:05:00+01:00</published><updated>2011-09-24T21:05:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2011-09-24:/2011/09/24/postfix-spam-protection-with-blacklists/</id><summary type="html">&lt;p&gt;This really should be quite a quick and simple post.&lt;/p&gt;
@@ -2972,7 +2972,7 @@ with &lt;strong&gt;reject_rbl_client&lt;/strong&gt; and &lt;strong&gt;reject_rhs
 | rhsbl.ahbl.org       | Domains sending spam, domains owned by spammers, comment spam domains, spammed URLs                  | +———————————+———————————————————————————————————————————————————+&lt;/p&gt;
 &lt;p&gt;The description for each of these services was shamelessly taken from
 Wikipedia, I have listed the services that I actually use but you can
-find a much larger list on the &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Comparison_of_DNS_blacklists"&gt;page that I took the descriptions
+find a much larger list on the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Comparison_of_DNS_blacklists"&gt;page that I took the descriptions
 from&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;*Please note that the &lt;span class="caps"&gt;SORBS&lt;/span&gt; lists are generally classed as being
 aggressive and a lot of people advise not to use them due to this. They
@@ -3135,7 +3135,7 @@ try to install it using &lt;span class="caps"&gt;APT&lt;/span&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install dk-filter
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If it doesn’t work then install it by hand, go to
-&lt;a class="reference external" href="http://ftp.us.debian.org/debian/pool/main/d/dk-milter/"&gt;http://ftp.us.debian.org/debian/pool/main/d/dk-milter/&lt;/a&gt; and download
+&lt;a class="reference external" href="https://ftp.us.debian.org/debian/pool/main/d/dk-milter/"&gt;https://ftp.us.debian.org/debian/pool/main/d/dk-milter/&lt;/a&gt; and download
 the .deb file for your architecture. To install it run the command below
 replacing &amp;lt;&lt;span class="caps"&gt;FILE&lt;/span&gt;&amp;gt; with the file you downloaded.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo dpkg -i &amp;lt;FILE&amp;gt;
@@ -3300,7 +3300,7 @@ add the spam score too, like this &lt;strong&gt;*&lt;/strong&gt; &lt;span class=
 report_safe will attach the spam email as a plain text attachment to
 the email to filter out any bad stuff. The 3 bayes options enabled the
 Bayesian classifier and enable auto learn functionality. For more info
-on Bayesian cliassifier, go &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Bayesian_spam_filtering"&gt;here&lt;/a&gt;.&lt;/p&gt;
+on Bayesian cliassifier, go &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Bayesian_spam_filtering"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;SpamAssassin is now configured but Postfix doesn’t know how to talk to
 it, we’ll configure that later. Now on to…&lt;/p&gt;
 &lt;/div&gt;
@@ -3560,7 +3560,7 @@ End
 &lt;/pre&gt;
 &lt;p&gt;Once this is done, reload Pound.&lt;/p&gt;
 &lt;p&gt;Next you need nginx compiled with realip module -
-&lt;a class="reference external" href="http://wiki.nginx.org/NginxHttpRealIpModule"&gt;http://wiki.nginx.org/NginxHttpRealIpModule&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://wiki.nginx.org/NginxHttpRealIpModule"&gt;https://wiki.nginx.org/NginxHttpRealIpModule&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;On Ubuntu/Debian servers this module comes by default, otherwise you may
 have to compile it in yourself using the following option:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--with-http_realip_module
@@ -3583,7 +3583,7 @@ End
 &lt;/pre&gt;
 &lt;p&gt;Once this is done, reload Pound.&lt;/p&gt;
 &lt;p&gt;Next you need nginx compiled with realip module -
-&lt;a class="reference external" href="http://wiki.nginx.org/NginxHttpRealIpModule"&gt;http://wiki.nginx.org/NginxHttpRealIpModule&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://wiki.nginx.org/NginxHttpRealIpModule"&gt;https://wiki.nginx.org/NginxHttpRealIpModule&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;On Ubuntu/Debian servers this module comes by default, otherwise you may
 have to compile it in yourself using the following option:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--with-http_realip_module
@@ -3950,7 +3950,7 @@ sub vcl_deliver {
         &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Real-IP&lt;/span&gt; &lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt; &lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_pass_header&lt;/span&gt; &lt;span class="s"&gt;Set-Cookie&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://localhost:6081&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://localhost:6081&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -4250,7 +4250,7 @@ reboots. Open the following file:&lt;/p&gt;
 &lt;p&gt;During a seemingly normal work day a colleague pointed out a problem to
 me and asked if I had any solution.&lt;/p&gt;
 &lt;p&gt;The problem was that they were trying to use InfoBright
-(&lt;a class="reference external" href="http://www.infobright.com/"&gt;http://www.infobright.com/&lt;/a&gt;) for some data crunching, export the data
+(&lt;a class="reference external" href="https://www.infobright.com/"&gt;https://www.infobright.com/&lt;/a&gt;) for some data crunching, export the data
 to &lt;span class="caps"&gt;CSV&lt;/span&gt; and then import in to MySQL. My first idea was to output the data
 from InfoBright as &lt;span class="caps"&gt;SQL&lt;/span&gt; and pipe it directly in to MySQL, this turned out
 to not be possible as the version of &lt;span class="caps"&gt;IB&lt;/span&gt; they were using only supported
@@ -4264,7 +4264,7 @@ which was slightly annoying.&lt;/p&gt;
 &lt;p&gt;During a seemingly normal work day a colleague pointed out a problem to
 me and asked if I had any solution.&lt;/p&gt;
 &lt;p&gt;The problem was that they were trying to use InfoBright
-(&lt;a class="reference external" href="http://www.infobright.com/"&gt;http://www.infobright.com/&lt;/a&gt;) for some data crunching, export the data
+(&lt;a class="reference external" href="https://www.infobright.com/"&gt;https://www.infobright.com/&lt;/a&gt;) for some data crunching, export the data
 to &lt;span class="caps"&gt;CSV&lt;/span&gt; and then import in to MySQL. My first idea was to output the data
 from InfoBright as &lt;span class="caps"&gt;SQL&lt;/span&gt; and pipe it directly in to MySQL, this turned out
 to not be possible as the version of &lt;span class="caps"&gt;IB&lt;/span&gt; they were using only supported
@@ -4552,7 +4552,7 @@ improve performance and clear up some bugs.&lt;/p&gt;
         &lt;span class="kn"&gt;proxy_cache_key&lt;/span&gt; &lt;span class="nv"&gt;$my_cache_key&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="mi"&gt;302&lt;/span&gt; &lt;span class="mi"&gt;60m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;404&lt;/span&gt; &lt;span class="mi"&gt;1m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 
     &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt; &lt;span class="s"&gt;.(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)&lt;/span&gt;$ &lt;span class="p"&gt;{&lt;/span&gt;
@@ -4645,7 +4645,7 @@ cookie checks.&lt;/p&gt;
 &lt;span class="k"&gt;proxy_cache_key&lt;/span&gt; &lt;span class="nv"&gt;$my_cache_key&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="mi"&gt;302&lt;/span&gt; &lt;span class="mi"&gt;60m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;404&lt;/span&gt; &lt;span class="mi"&gt;1m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Here I am setting the maximum size of the client body content to &lt;span class="caps"&gt;8MB&lt;/span&gt;,
 disabling proxy redirects, passing through some basic headers to the
@@ -4775,7 +4775,7 @@ require some extra modules install on your system.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo yum install libssl-dev
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If you don’t have yum installed you will either need to find an &lt;span class="caps"&gt;RPM&lt;/span&gt; or
-install openssl from source (&lt;a class="reference external" href="http://www.openssl.org/source/"&gt;http://www.openssl.org/source/&lt;/a&gt;)&lt;/p&gt;
+install openssl from source (&lt;a class="reference external" href="https://www.openssl.org/source/"&gt;https://www.openssl.org/source/&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="rewrite-module"&gt;
@@ -4789,7 +4789,7 @@ install openssl from source (&lt;a class="reference external" href="http://www.o
 &lt;h4&gt;RedHat (yum)&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo yum install libpcre-dev
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Or compile from source (&lt;a class="reference external" href="http://www.pcre.org/"&gt;http://www.pcre.org/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Or compile from source (&lt;a class="reference external" href="https://www.pcre.org/"&gt;https://www.pcre.org/&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="configuring"&gt;
@@ -4944,7 +4944,7 @@ of Apache waking it’s child processes.&lt;/p&gt;
 127.0.0.1 - - [23/Mar/2010:17:02:38 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache (internal dummy connection)"
 &lt;/pre&gt;
 &lt;p&gt;This in itself is normal and nothing to worry about, generally, it is
-known and also mentioned on the Apache wiki (&lt;a class="reference external" href="http://wiki.apache.org/httpd/InternalDummyConnection"&gt;explanation here&lt;/a&gt;) that
+known and also mentioned on the Apache wiki (&lt;a class="reference external" href="https://wiki.apache.org/httpd/InternalDummyConnection"&gt;explanation here&lt;/a&gt;) that
 servers running 2.2.6 or lower can suffer performance problems due to
 how Apache wakes it’s children because it used &lt;span class="caps"&gt;GET&lt;/span&gt; / to wake them, but I
 run 2.2.8 which doesn’t actually used that same method.&lt;/p&gt;
@@ -5511,8 +5511,8 @@ Filesystem Size Used Avail Use% Mounted on
 space has now increased in size.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Credits&lt;/em&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.randombugs.com/linux/howto-extend-lvm-partition-online.html"&gt;Original guide that I partially followed with a colleague&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;cite&gt;Federico Marani, the colleague that helped &amp;lt;`http://marro.wordpress.com/&lt;/cite&gt;&amp;gt;_ (Italian)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.randombugs.com/linux/howto-extend-lvm-partition-online.html"&gt;Original guide that I partially followed with a colleague&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;cite&gt;Federico Marani, the colleague that helped &amp;lt;`https://marro.wordpress.com/&lt;/cite&gt;&amp;gt;_ (Italian)&lt;/li&gt;
 &lt;li&gt;Thanks to Mike Heald for linking me to reloading &lt;span class="caps"&gt;SCSI&lt;/span&gt; list&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -5609,7 +5609,7 @@ changed and why it’s changed.&lt;/p&gt;
     &lt;span class="kn"&gt;proxy_cache&lt;/span&gt; &lt;span class="s"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="mi"&gt;302&lt;/span&gt; &lt;span class="mi"&gt;60m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;404&lt;/span&gt; &lt;span class="mi"&gt;1m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Ok, so that’s the first location, definition. Several things have
@@ -5625,7 +5625,7 @@ to use.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt; &lt;span class="s"&gt;.(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)&lt;/span&gt;$ &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="mi"&gt;120m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="kn"&gt;expires&lt;/span&gt; &lt;span class="mi"&gt;604800&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="kn"&gt;proxy_cache&lt;/span&gt; &lt;span class="s"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -5677,13 +5677,13 @@ performance dramatically.&lt;/p&gt;
         &lt;span class="kn"&gt;proxy_cache&lt;/span&gt; &lt;span class="s"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="mi"&gt;302&lt;/span&gt; &lt;span class="mi"&gt;60m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;404&lt;/span&gt; &lt;span class="mi"&gt;1m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 
     &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt; &lt;span class="s"&gt;.(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)&lt;/span&gt;$ &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="mi"&gt;120m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;expires&lt;/span&gt; &lt;span class="mi"&gt;604800&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://apachesyslogtv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache&lt;/span&gt; &lt;span class="s"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -5847,13 +5847,13 @@ propagated. You will see any errors in &lt;strong&gt;/var/log/mail.log&lt;/stron
 &lt;/div&gt;
 </content><category term="tutorials"></category><category term="debian"></category><category term="dkim"></category><category term="domainkeys"></category><category term="howto"></category><category term="mail"></category><category term="postfix"></category><category term="ubuntu"></category></entry><entry><title>HOWTO: Using SPF to validate outgoing mail</title><link href="https://kura.gg/2010/02/11/howto-using-spf-to-validate-outgoing-mail/" rel="alternate"></link><published>2010-02-11T18:25:00+00:00</published><updated>2010-02-11T18:25:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2010-02-11:/2010/02/11/howto-using-spf-to-validate-outgoing-mail/</id><summary type="html">
 &lt;p&gt;You can get a basic overview on what &lt;span class="caps"&gt;SPF&lt;/span&gt; is, what it’s for and it’s more
-advanced usages here - &lt;a class="reference external" href="http://www.openspf.org/"&gt;http://www.openspf.org/&lt;/a&gt;&lt;/p&gt;
+advanced usages here - &lt;a class="reference external" href="https://www.openspf.org/"&gt;https://www.openspf.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This article is to give only a basic insight in to how you can use an
 &lt;span class="caps"&gt;SPF&lt;/span&gt; record to valid mail from your servers.&lt;/p&gt;
 &lt;div class="section" id="the-dns"&gt;
 &lt;h2&gt;The &lt;span class="caps"&gt;DNS&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span class="caps"&gt;SPF&lt;/span&gt; records work from your &lt;span class="caps"&gt;DNS&lt;/span&gt;, it’s really simple. Technically there is
-a &lt;span class="caps"&gt;DNS&lt;/span&gt; type defined for &lt;span class="caps"&gt;SPF&lt;/span&gt; records as of &lt;a class="reference external" href="http://tools.ietf.org/html/rfc4408"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 4408&lt;/a&gt;, but since not all
+a &lt;span class="caps"&gt;DNS&lt;/span&gt; type defined for &lt;span class="caps"&gt;SPF&lt;/span&gt; records as of &lt;a class="reference external" href="https://tools.ietf.org/html/rfc4408"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 4408&lt;/a&gt;, but since not all
 servers recognise this type it also works in the &lt;span class="caps"&gt;TXT&lt;/span&gt; type.&lt;/p&gt;
 &lt;p&gt;A simple usage of &lt;span class="caps"&gt;SPF&lt;/span&gt; is&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -5865,13 +5865,13 @@ would be valid senders.&lt;/p&gt;
 &lt;p&gt;The hypen (-) before &lt;em&gt;all&lt;/em&gt; means that if the mail appears to be coming
 from a server that isn …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;You can get a basic overview on what &lt;span class="caps"&gt;SPF&lt;/span&gt; is, what it’s for and it’s more
-advanced usages here - &lt;a class="reference external" href="http://www.openspf.org/"&gt;http://www.openspf.org/&lt;/a&gt;&lt;/p&gt;
+advanced usages here - &lt;a class="reference external" href="https://www.openspf.org/"&gt;https://www.openspf.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This article is to give only a basic insight in to how you can use an
 &lt;span class="caps"&gt;SPF&lt;/span&gt; record to valid mail from your servers.&lt;/p&gt;
 &lt;div class="section" id="the-dns"&gt;
 &lt;h2&gt;The &lt;span class="caps"&gt;DNS&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span class="caps"&gt;SPF&lt;/span&gt; records work from your &lt;span class="caps"&gt;DNS&lt;/span&gt;, it’s really simple. Technically there is
-a &lt;span class="caps"&gt;DNS&lt;/span&gt; type defined for &lt;span class="caps"&gt;SPF&lt;/span&gt; records as of &lt;a class="reference external" href="http://tools.ietf.org/html/rfc4408"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 4408&lt;/a&gt;, but since not all
+a &lt;span class="caps"&gt;DNS&lt;/span&gt; type defined for &lt;span class="caps"&gt;SPF&lt;/span&gt; records as of &lt;a class="reference external" href="https://tools.ietf.org/html/rfc4408"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 4408&lt;/a&gt;, but since not all
 servers recognise this type it also works in the &lt;span class="caps"&gt;TXT&lt;/span&gt; type.&lt;/p&gt;
 &lt;p&gt;A simple usage of &lt;span class="caps"&gt;SPF&lt;/span&gt; is&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -6071,7 +6071,7 @@ secure your server.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;The beginning&lt;/h2&gt;
 &lt;p&gt;Where to begin? nginx would be a good start I suppose. It’s far easier
 and makes much for sense for you to actually read about nginx from it’s
-own website - &lt;a class="reference external" href="http://nginx.org/en/"&gt;http://nginx.org/en/&lt;/a&gt; - but just to give a simple
+own website - &lt;a class="reference external" href="https://nginx.org/en/"&gt;https://nginx.org/en/&lt;/a&gt; - but just to give a simple
 explanation too; `nginx is king of static content &lt;span class="caps"&gt;HTTP&lt;/span&gt; servers.`&lt;/p&gt;
 &lt;p&gt;Anyone that has dealt with Apache on medium to high traffic websites
 will know that Apache is bit of a `wheezy, old geezer` when it comes
@@ -6086,7 +6086,7 @@ do we do?!&lt;/p&gt;
 &lt;h2&gt;The beginning&lt;/h2&gt;
 &lt;p&gt;Where to begin? nginx would be a good start I suppose. It’s far easier
 and makes much for sense for you to actually read about nginx from it’s
-own website - &lt;a class="reference external" href="http://nginx.org/en/"&gt;http://nginx.org/en/&lt;/a&gt; - but just to give a simple
+own website - &lt;a class="reference external" href="https://nginx.org/en/"&gt;https://nginx.org/en/&lt;/a&gt; - but just to give a simple
 explanation too; `nginx is king of static content &lt;span class="caps"&gt;HTTP&lt;/span&gt; servers.`&lt;/p&gt;
 &lt;p&gt;Anyone that has dealt with Apache on medium to high traffic websites
 will know that Apache is bit of a `wheezy, old geezer` when it comes
@@ -6147,7 +6147,7 @@ like this&lt;/p&gt;
         &lt;span class="kn"&gt;proxy_cache_key&lt;/span&gt; &lt;span class="s"&gt;syslog.tv&lt;/span&gt;&lt;span class="nv"&gt;$request_uri&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="mi"&gt;302&lt;/span&gt; &lt;span class="mi"&gt;60m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt; &lt;span class="mi"&gt;404&lt;/span&gt; &lt;span class="mi"&gt;1m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://apache.syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://apache.syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -6337,7 +6337,7 @@ restrictive, it literally caches everything except my admin pages. This
 is not at all viable on these websites due to dynamic user content etc.&lt;/p&gt;
 &lt;p&gt;So the next step was to introduce conditional nginx caching.&lt;/p&gt;
 &lt;p&gt;I was rather unsure of exactly how to achieve this but the nginx forums
-yielded amazingly useful information (&lt;a class="reference external" href="http://forum.nginx.org/"&gt;http://forum.nginx.org/&lt;/a&gt;) which
+yielded amazingly useful information (&lt;a class="reference external" href="https://forum.nginx.org/"&gt;https://forum.nginx.org/&lt;/a&gt;) which
 helped me create a very simple caching mechanism; a user hits the
 website, all content is served by nginx which reverse proxies dynamic
 content to Apache, the page content is cached when a user does not have
@@ -6359,7 +6359,7 @@ honest, we may need something like this in the future for some much
 higher traffic sites or to port older, high traffic sites on to.&lt;/p&gt;
 &lt;p&gt;So what’s the plan? &lt;strong&gt;Varnish&lt;/strong&gt;. Not the kind you use on wood or on your
 nails but a very powerful &lt;span class="caps"&gt;HTTP&lt;/span&gt; caching engine -
-&lt;a class="reference external" href="http://varnish-cache.org/wiki/Introduction"&gt;http://varnish-cache.org/wiki/Introduction&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://varnish-cache.org/wiki/Introduction"&gt;https://varnish-cache.org/wiki/Introduction&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Varnish is currently used in conjunction with nginx on some very highly
 used sites; WordPress.com, Gravatar and I’m sure many more.&lt;/p&gt;
 &lt;p&gt;The idea is simple, a visitor will come to the site, nginx will do one
@@ -6632,7 +6632,7 @@ in the following file.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;expose_php&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;Off&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Preventing session fixation. For more information on this please see
-&lt;a class="reference external" href="http://www.acros.si/papers/session_fixation.pdf"&gt;this paper&lt;/a&gt;.&lt;/p&gt;
+&lt;a class="reference external" href="https://www.acros.si/papers/session_fixation.pdf"&gt;this paper&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;session.use_only_cookies&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;1&lt;/span&gt;
 &lt;span class="na"&gt;session.cookie_httponly&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;1&lt;/span&gt;
 &lt;span class="na"&gt;session.use_trans_sid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;0&lt;/span&gt;
@@ -7168,7 +7168,7 @@ as complicated and “awesome” as it can possibly be, without growing legs
 and running off to stomp a city.&lt;/p&gt;
 &lt;div class="section" id="love"&gt;
 &lt;h2&gt;Love&lt;/h2&gt;
-&lt;p&gt;I’ve fallen in-love with nginx (&lt;a class="reference external" href="http://nginx.org/"&gt;http://nginx.org/&lt;/a&gt;) over the last 6
+&lt;p&gt;I’ve fallen in-love with nginx (&lt;a class="reference external" href="https://nginx.org/"&gt;https://nginx.org/&lt;/a&gt;) over the last 6
 months or so, I’d been an avid user of LighTTPD for a very long time
 before but started to look in to nginx mid year as a replacement. I
 learned that at my new job they used …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
@@ -7186,7 +7186,7 @@ as complicated and “awesome” as it can possibly be, without growing legs
 and running off to stomp a city.&lt;/p&gt;
 &lt;div class="section" id="love"&gt;
 &lt;h2&gt;Love&lt;/h2&gt;
-&lt;p&gt;I’ve fallen in-love with nginx (&lt;a class="reference external" href="http://nginx.org/"&gt;http://nginx.org/&lt;/a&gt;) over the last 6
+&lt;p&gt;I’ve fallen in-love with nginx (&lt;a class="reference external" href="https://nginx.org/"&gt;https://nginx.org/&lt;/a&gt;) over the last 6
 months or so, I’d been an avid user of LighTTPD for a very long time
 before but started to look in to nginx mid year as a replacement. I
 learned that at my new job they used nginx for image server and, after
@@ -7235,7 +7235,7 @@ lovely data needed as shown below.&lt;/p&gt;
     &lt;span class="kn"&gt;access_log&lt;/span&gt; &lt;span class="s"&gt;/var/log/nginx/syslog.tv.access.log&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
     &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://apache.syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://apache.syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_redirect&lt;/span&gt; &lt;span class="no"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;Host&lt;/span&gt; &lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Real-IP&lt;/span&gt; &lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;

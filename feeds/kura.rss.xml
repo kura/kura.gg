@@ -48,7 +48,7 @@ this post, so let’s just say we have a table of upstream servers.&lt;/p&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
 Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
 released in June 2016.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://schema.org/"&gt;Schema.org&lt;/a&gt; is a collaborative effort, including
@@ -104,12 +104,12 @@ turn it in to an &lt;span class="caps"&gt;RST&lt;/span&gt; directive to plug dir
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
 Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
 released in June 2016.&lt;/p&gt;
 &lt;p&gt;Eevee allows configuring menu links in the header and footer of a template —
 including social links.&lt;/p&gt;
-&lt;p&gt;Eevee also includes &lt;a class="reference external" href="http://fontawesome.io/"&gt;Font Awesome&lt;/a&gt; by default, at
+&lt;p&gt;Eevee also includes &lt;a class="reference external" href="https://fontawesome.com/"&gt;Font Awesome&lt;/a&gt; by default, at
 time of release and writing of this article it provides Font Awesome version 4.6.3.&lt;/p&gt;
 &lt;p&gt;Because the links are totally customisable, it means you can inject &lt;span class="caps"&gt;HTML&lt;/span&gt;
 directly in to a link name and — because Font Awesome is included by default
@@ -127,16 +127,16 @@ the list below.&lt;/p&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Eevee is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on Google’s
+&lt;p&gt;Eevee is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on Google’s
 &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification. It is named
-after the Pokémon &lt;a class="reference external" href="http://www.pokemon.com/uk/pokedex/eevee"&gt;Eevee&lt;/a&gt; because
+after the Pokémon &lt;a class="reference external" href="https://www.pokemon.com/uk/pokedex/eevee"&gt;Eevee&lt;/a&gt; because
 — like the Pokémon — it can evolve in to many ‘elemental types.’&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 12 Jun 2016 10:25:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2016-06-12:/2016/06/12/eevee-a-material-design-theme-for-pelican/</guid><category>eevee</category><category>pelican</category></item><item><title>Blackhole 2.0: or, How I Learned to Love Asyncio</title><link>https://kura.gg/2016/05/21/blackhole-2.0-or-how-i-learned-to-love-asyncio/</link><description>
 &lt;p&gt;A brief history of a tiny part of the Internet.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://blackhole.io/1"&gt;Blackhole 1 — Blackhole as it was originally
 known&lt;/a&gt; — was written on &lt;a class="reference external" href="https://docs.python.org/2/whatsnew/2.7.html"&gt;Python 2.7&lt;/a&gt;, briefly supporting &lt;a class="reference external" href="https://docs.python.org/2.6/whatsnew/2.6.html"&gt;Python 2.6&lt;/a&gt; for a time and also
-supporting early version of &lt;a class="reference external" href="https://docs.python.org/3.2/whatsnew/3.2.html"&gt;Python 3&lt;/a&gt;, &lt;a class="reference external" href="http://www.pypy.org/features.html"&gt;PyPy 2&lt;/a&gt; and &lt;a class="reference external" href="http://www.pypy.org/features.html"&gt;PyPy 3&lt;/a&gt;. Built on top of &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/"&gt;Tornado&lt;/a&gt;, it was asynchronous in a fashion and
+supporting early version of &lt;a class="reference external" href="https://docs.python.org/3.2/whatsnew/3.2.html"&gt;Python 3&lt;/a&gt;, &lt;a class="reference external" href="https://www.pypy.org/features.html"&gt;PyPy 2&lt;/a&gt; and &lt;a class="reference external" href="https://www.pypy.org/features.html"&gt;PyPy 3&lt;/a&gt;. Built on top of &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/"&gt;Tornado&lt;/a&gt;, it was asynchronous in a fashion and
 — quite simply — worked.&lt;/p&gt;
 &lt;p&gt;The original prototype that became Blackhole was &lt;a class="reference external" href="/simplemta"&gt;SimpleMTA&lt;/a&gt; — a
 prototype that was created quickly, to serve a very simple testing purpose that
@@ -157,7 +157,7 @@ is why I started using it and use it to this day. It’s why I’ve continued to
 work on the operating system and create packages of all of my work for it.&lt;/p&gt;
 &lt;p&gt;Ian is, without a doubt, one of the biggest influences on my career and on my life.&lt;/p&gt;
 &lt;p&gt;Farewell sir, you will be missed.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 30 Dec 2015 22:34:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2015-12-30:/2015/12/30/farewell-ian/</guid><category>misc</category><category>Ian Murdock</category><category>Debian</category></item><item><title>SSHFP DNS records</title><link>https://kura.gg/2015/10/18/sshfp-dns-records/</link><description>&lt;p&gt;&lt;a class="reference external" href="http://tools.ietf.org/html/rfc4255"&gt;&lt;span class="caps"&gt;SSHFP&lt;/span&gt;&lt;/a&gt; records are a defense against
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 30 Dec 2015 22:34:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2015-12-30:/2015/12/30/farewell-ian/</guid><category>misc</category><category>Ian Murdock</category><category>Debian</category></item><item><title>SSHFP DNS records</title><link>https://kura.gg/2015/10/18/sshfp-dns-records/</link><description>&lt;p&gt;&lt;a class="reference external" href="https://tools.ietf.org/html/rfc4255"&gt;&lt;span class="caps"&gt;SSHFP&lt;/span&gt;&lt;/a&gt; records are a defense against
 people blindly typing ‘yes’ when asked if they want to continue connecting to
 an &lt;span class="caps"&gt;SSH&lt;/span&gt; host who’s authenticity is unknown.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ssh some.host.tld
@@ -290,27 +290,17 @@ the relatively small list of mirrors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="access"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Access&lt;/a&gt;&lt;/h2&gt;
-&lt;table class="docutils"&gt;
-&lt;thead&gt;
-&lt;tr&gt;&lt;th class="head"&gt;Website&lt;/th&gt;
-&lt;th class="head"&gt;Dist / Downloads&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://tor-mirror.kura.gg/"&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="http://tor-mirror.kura.gg/dist/"&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="https://tor-mirror.kura.gg/"&gt;&lt;span class="caps"&gt;HTTPS&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="https://tor-mirror.kura.gg/dist/"&gt;&lt;span class="caps"&gt;HTTPS&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="ftp://tor-mirror.kura.gg/"&gt;&lt;span class="caps"&gt;FTP&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="ftp://tor-mirror.kura.gg/dist/"&gt;&lt;span class="caps"&gt;FTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="rsync://tor-mirror.kura.gg/torproject.org/"&gt;&lt;span class="caps"&gt;RSYNC&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="rsync://tor-mirror.kura.gg/torproject.org/dist/"&gt;&lt;span class="caps"&gt;RSYNC&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;+——- —-+—————————+
+| Website | Dist / Downloads |
++=========+==================+
+| &lt;span class="caps"&gt;HTTP&lt;/span&gt;    | &lt;span class="caps"&gt;HTTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;        |
++————-+—————————+
+| &lt;span class="caps"&gt;HTTPS&lt;/span&gt;   | &lt;span class="caps"&gt;HTTPS&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;       |
++————-+—————————+
+| &lt;span class="caps"&gt;FTP&lt;/span&gt;     | &lt;span class="caps"&gt;FTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;         |
++————-+—————————+
+| &lt;span class="caps"&gt;RSYNC&lt;/span&gt;   | &lt;span class="caps"&gt;RSYNC&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;       | +————-+—————————+&lt;/p&gt;
+&lt;p&gt;Note: This mirror is now dead and links have been removed.&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 02 Jan 2015 04:48:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2015-01-02:/2015/01/02/torproject.org-mirror/</guid><category>tor</category><category>tor</category></item><item><title>Santa’s tor relay changes</title><link>https://kura.gg/2014/12/27/santas-tor-relay-changes/</link><description>
 &lt;div class="section" id="exiting-relays"&gt;
@@ -392,7 +382,7 @@ from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
 &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'yarg'&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;
-&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'http://pypi.python.org/pypi/yarg&lt;/span&gt;
+&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'https://pypi.python.org/pypi/yarg&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="updated-packages-interface"&gt;
@@ -406,7 +396,7 @@ from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;
 &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'0.1.2'&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;
-&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'http://pypi.python.org/pypi/yarg/0.1.2&lt;/span&gt;
+&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'https://pypi.python.org/pypi/yarg/0.1.2&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="documentation"&gt;
@@ -446,7 +436,7 @@ shields nodejs code, pypipin itself and even cover off supervisord and Varnish 
 &lt;div class="section" id="nodejs"&gt;
 &lt;h3&gt;nodejs&lt;/h3&gt;
 &lt;p&gt;First of all you’ll need to get the latest source code copy of nodejs from the
-&lt;a class="reference external" href="http://nodejs.org/download/"&gt;nodejs download page&lt;/a&gt;.&lt;/p&gt;
+&lt;a class="reference external" href="https://nodejs.org/download/"&gt;nodejs download page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Extract it.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -xvzf node-&amp;lt;VERSION&amp;gt;.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
@@ -507,13 +497,13 @@ it in your certificate data.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Authority Information Access …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 02 Jul 2014 23:45:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2014-07-02:/2014/07/02/haproxy-ocsp-stapling/</guid><category>tutorials</category><category>haproxy</category><category>ssl</category><category>ocsp</category><category>ocsp stapling</category></item><item><title>Hauntr - A theme for Pelican</title><link>https://kura.gg/2014/06/09/hauntr/</link><description>&lt;div class="figure align-center"&gt;
 &lt;img alt="Haunter, the evolved Pokémon form of Gastly" src="/images/haunter.png"/&gt;
-&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="http://kawiku.deviantart.com/art/Haunter-350580512"&gt;Kawiku&lt;/a&gt;)&lt;/p&gt;
+&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="https://kawiku.deviantart.com/art/Haunter-350580512"&gt;Kawiku&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hauntr is a minimal, lightweight and clean theme for the
-&lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
+&lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
 &lt;p&gt;It is named after the Pokémon ‘Haunter’ because it is a modified version
 (you might say evolved) of my previous theme, &lt;a class="reference external" href="/ghastly/"&gt;Ghastly&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -562,7 +552,7 @@ then the icon name.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="license"&gt;
 &lt;h2&gt;License&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://opensource.org/licenses/MIT"&gt;&lt;span class="caps"&gt;MIT&lt;/span&gt;&lt;/a&gt; license.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://opensource.org/licenses/MIT"&gt;&lt;span class="caps"&gt;MIT&lt;/span&gt;&lt;/a&gt; license.&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 08 Jun 2014 11:30:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2014-06-08:/2014/06/08/pelican-fontawesome/</guid><category>coding</category><category>pelican</category><category>fontawesome</category><category>icons</category><category>python</category></item><item><title>Python platform and version dependent wheel build bot proposal</title><link>https://kura.gg/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/</link><description>&lt;div class="section" id="abstract"&gt;
 &lt;h2&gt;Abstract&lt;/h2&gt;
@@ -658,13 +648,13 @@ droplets or images.&lt;/p&gt;
 &lt;p&gt;This software is licensed using the &lt;span class="caps"&gt;MIT&lt;/span&gt; License.
 The …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 28 May 2014 09:00:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2014-05-28:/2014/05/28/tugboat-bash-completion/</guid><category>coding</category><category>digital ocean</category><category>tugboat</category><category>bash</category><category>completion</category></item><item><title>Ghastly - A theme for Pelican</title><link>https://kura.gg/2014/05/26/ghastly-a-theme-for-pelican/</link><description>&lt;div class="figure"&gt;
 &lt;img alt="Gastly, the Ghost Pokémon" src="/images/gastly.png"/&gt;
-&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="http://raiba-art.deviantart.com/art/Gastly-294533100"&gt;Raiba-art&lt;/a&gt;)&lt;/p&gt;
+&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="https://raiba-art.deviantart.com/art/Gastly-294533100"&gt;Raiba-art&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I’d like to introduce Ghastly, a clean and minimal, lightweight theme for the
-&lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
+&lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
 &lt;p&gt;Ghastly is based heavily off of Casper, the default theme for
 &lt;a class="reference external" href="https://ghost.org"&gt;Ghost&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It’s name is derived from the D&amp;amp;D monster, the Ghast and Gastly, the Pokémon.&lt;/p&gt;
@@ -731,25 +721,25 @@ cached version of the shield, a log line is still written to say it was request
 &lt;div class="section" id="top-20"&gt;
 &lt;h2&gt;Top 20&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;Pillow [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;Theano [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.django-cms.org/en/"&gt;django-cms&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;django-cms [version]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/sivel/speedtest-cli"&gt;speedtest-cli&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;speedtest-cli [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/globocom/thumbor"&gt;thumbor&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;thumbor [version]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://pythonhosted.org/tweepy/html/"&gt;tweepy&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;tweepy [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;pymssql [version]&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The first thing that struck me is that I actually hadn’t heard of or used
@@ -833,7 +823,7 @@ or as a manual download, from the link below.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sat, 22 Feb 2014 05:32:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2014-02-22:/2014/02/22/haproxy1.5-dev22/</guid><category>deb builds</category><category>debian</category><category>ubuntu</category><category>haproxy</category><category>spdy</category><category>ssl</category></item><item><title>haproxy stateful SSL session resumption</title><link>https://kura.gg/2014/02/22/haproxy-stateful-ssl-session-resumption/</link><description>
 &lt;p&gt;By default haproxy enables stateless &lt;span class="caps"&gt;SSL&lt;/span&gt; session resumption, but you can enable
 stateful session resumption in accordance with
-&lt;a class="reference external" href="http://www.ietf.org/rfc/rfc5077.txt"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 5077&lt;/a&gt;. This functionality, like
+&lt;a class="reference external" href="https://www.ietf.org/rfc/rfc5077.txt"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 5077&lt;/a&gt;. This functionality, like
 the &lt;span class="caps"&gt;SSL&lt;/span&gt; handling it relies on is only available from haproxy 1.5.&lt;/p&gt;
 &lt;div class="section" id="configuration"&gt;
 &lt;h2&gt;Configuration&lt;/h2&gt;
@@ -850,7 +840,7 @@ bind 0.0.0.0:443 ssl ... no-tls-tickets
 &lt;p&gt;I have built and released nginx 1.5.10 with &lt;span class="caps"&gt;SPDY&lt;/span&gt; 3.1. Like the &lt;a class="reference external" href="/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/"&gt;nginx 1.5.9
 release&lt;/a&gt;
 , this release comes with ngx_pagespeed 1.7.30.3-beta and is available
-on &lt;a class="reference external" href="http://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt; or as downloads below.&lt;/p&gt;
+on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt; or as downloads below.&lt;/p&gt;
 &lt;div class="section" id="manual-download"&gt;
 &lt;h2&gt;Manual download&lt;/h2&gt;
 &lt;table class="docutils"&gt;
@@ -890,7 +880,7 @@ edc55aa4866036eade02cd49957a9126  nginx-common_1.5.10_all.deb
 833264c08fc6212f55ae37c26bd5cbc5  nginx-light_1.5.10_amd64.deb
 c5c1ffa0dd93673ac4a859a11d1b3b50  nginx-full_1.5.10_amd64 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Thu, 06 Feb 2014 03:30:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2014-02-06:/2014/02/06/nnginx-1.5.10-with-spdy3.1/</guid><category>deb builds</category><category>debian</category><category>ubuntu</category><category>nginx</category><category>spdy</category><category>pagespeed</category><category>ngx_pagespeed</category></item><item><title>nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta</title><link>https://kura.gg/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/</link><description>
 &lt;p&gt;I have built and released nginx 1.5.9 with ngx_pagespeed module 1.7.30.3-beta
-and published them on &lt;a class="reference external" href="http://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
+and published them on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="manual-download-install"&gt;
 &lt;h2&gt;Manual download &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; install&lt;/h2&gt;
 &lt;table class="docutils"&gt;
@@ -957,7 +947,7 @@ would like to know more and get good explanations about each part.&lt;/p&gt;
 &lt;div class="section" id="dhparam"&gt;
 &lt;h2&gt;dhparam&lt;/h2&gt;
 &lt;p&gt;It’s a …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 02 Feb 2014 15:18:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2014-02-02:/2014/02/02/kura.gg-a-star-ssl-rating/</guid><category>tutorials</category><category>ssl</category></item><item><title>Advertise multiple NPN protocols with haproxy</title><link>https://kura.gg/2014/01/31/advertise-multiple-npn-protocols-with-haproxy/</link><description>&lt;p&gt;I have previously written an article on &lt;a class="reference external" href="/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/"&gt;using &lt;span class="caps"&gt;SPDY&lt;/span&gt; with haproxy&lt;/a&gt;
-but have been spending some time recently being annoyed that the &lt;a class="reference external" href="http://spdycheck.org/#kura.gg"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt; check
+but have been spending some time recently being annoyed that the &lt;a class="reference external" href="https://spdycheck.org/#kura.gg"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt; check
 tool&lt;/a&gt; said I didn’t advertise a fall back to
 &lt;span class="caps"&gt;HTTP&lt;/span&gt; over &lt;span class="caps"&gt;SSL&lt;/span&gt; in the &lt;span class="caps"&gt;NPN&lt;/span&gt; protocol list.&lt;/p&gt;
 &lt;p&gt;After some digging I discovered it was actually quite simple to advertise
@@ -974,8 +964,8 @@ npn list, using commas as a delimiter.&lt;/p&gt;
 ngx_pagespeed and &lt;span class="caps"&gt;SPDY&lt;/span&gt; support, I decided it would make sense to actually
 host these in my own apt repository, so I did.&lt;/p&gt;
 &lt;p&gt;You can enable this by adding it to your apt config.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget -qO - http://apt.kura.gg/apt.kura.gg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
-&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb http://apt.kura.gg/ `lsb_release -cs` main"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/apt.kura.gg.list
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget -qO - https://apt.kura.gg/apt.kura.gg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb https://apt.kura.gg/ `lsb_release -cs` main"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/apt.kura.gg.list
 sudo apt-get update
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Simple.&lt;/p&gt;
@@ -1025,7 +1015,7 @@ download counts.&lt;/p&gt;
 &lt;div class="section" id="tech-stack"&gt;
 &lt;h2&gt;Tech stack&lt;/h2&gt;
 &lt;p&gt;From the very start I decided to use
-&lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/"&gt;Tornado framework&lt;/a&gt;, although this may
+&lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/"&gt;Tornado framework&lt;/a&gt;, although this may
 change in the future.&lt;/p&gt;
 &lt;p&gt;The original plan was to generate the images using Pillow (&lt;span class="caps"&gt;PIL&lt;/span&gt;) and then simply
 cache them to disk. I decided it would make far more sense to do this using
@@ -1044,11 +1034,11 @@ removed from this website&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I’ve been planning on doing it from a while because I do not like Google Analytics,
 I don’t like being tracked and I actively stopped trying to use Google services
 for my own reasons.&lt;/p&gt;
-&lt;p&gt;The company I work for uses &lt;a class="reference external" href="http://piwik.org/"&gt;Piwik&lt;/a&gt;
+&lt;p&gt;The company I work for uses &lt;a class="reference external" href="https://piwik.org/"&gt;Piwik&lt;/a&gt;
 for some of our clients, I am not a fan
 of Piwik or how it works and does things. I did some research and found some
 service providers but their free options were limited or I felt they weren’t a
-good fit, eventually I stumbled upon &lt;a class="reference external" href="http://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
+good fit, eventually I stumbled upon &lt;a class="reference external" href="https://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
 not only suited my purposes, but it meant servers I control would hold the
 analytical data, rather than some third party.&lt;/p&gt;
 &lt;/div&gt;
@@ -1065,7 +1055,7 @@ I decided it was time for a change, to a smaller &lt;span class="caps"&gt;PS1&lt
 the red @ means a file hasn’t been added to Git, a blue @ means a tracked file
 has been modified but not stage and finally a green @ means a file is staged …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 18 Aug 2013 17:25:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2013-08-18:/2013/08/18/my-ps1-with-git-branch-new-files-staged-files-and-commit-status/</guid><category>coding</category><category>bash</category><category>dash</category><category>ps1</category><category>git</category></item><item><title>Blackhole 1.8.0 development, Mock and Python entry_points</title><link>https://kura.gg/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/</link><description>
 &lt;p&gt;Over the last week I’ve been doing a huge amount of refactoring of
-&lt;a class="reference external" href="http://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
+&lt;a class="reference external" href="https://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
 tests. To make Blackhole more testable I needed to make a big change to
 how the program is launched and controlled.&lt;/p&gt;
 &lt;div class="section" id="setup-py-scripts-vs-entry-points"&gt;
@@ -1083,9 +1073,9 @@ main “binary” which made it pretty much impossible to test. You can also see
 that &lt;a class="reference external" href="https://github.com/kura/blackhole/blob/bb6cccca3a75def324ed5cb64a32fd2e5773a038/blackhole/bin/blackhole"&gt;on GitHub in the main “binary”&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I’ve noticed that most people who write Python packages that have some kind of
 command line entry point use …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 18 Aug 2013 12:00:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2013-08-18:/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/</guid><category>coding</category><category>python</category><category>blackhole</category><category>setup.py</category><category>entry_points</category><category>mock</category><category>tests</category><category>testing</category></item><item><title>Writing a Vimeo and YouTube plugin for Pelican</title><link>https://kura.gg/2013/08/09/writing-a-vimeo-and-youtube-plugin-for-pelican/</link><description>
-&lt;p&gt;&lt;a class="reference external" href="http://getpelican.com/"&gt;Pelican&lt;/a&gt; is a Python-powered static blog generator
-that processes &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReStructuredText&lt;/a&gt;
-and &lt;a class="reference external" href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; articles and
+&lt;p&gt;&lt;a class="reference external" href="https://getpelican.com/"&gt;Pelican&lt;/a&gt; is a Python-powered static blog generator
+that processes &lt;a class="reference external" href="https://docutils.sourceforge.net/rst.html"&gt;ReStructuredText&lt;/a&gt;
+and &lt;a class="reference external" href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; articles and
 pages and converts them to &lt;span class="caps"&gt;HTML&lt;/span&gt;. I use Pelican to power this blog.&lt;/p&gt;
 &lt;p&gt;There is a YouTube &lt;span class="caps"&gt;RST&lt;/span&gt; directive built in to Pelican core but it really
 shouldn’t exist there.&lt;/p&gt;
@@ -1093,7 +1083,7 @@ shouldn’t exist there.&lt;/p&gt;
 but that request was declined because it didn’t belong in the core. So I
 decided I would write it as a plugin instead and while I was doing it, also
 wrote a plugin for YouTube so that it could be removed from the core.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins"&gt;There is a decent amount of detail in the Pelican documentation on how to
+&lt;p&gt;&lt;a class="reference external" href="https://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins"&gt;There is a decent amount of detail in the Pelican documentation on how to
 write plugins&lt;/a&gt;, I’m
 not going to cover the whole process but I thought I would cover a little of
 what I did.&lt;/p&gt;
@@ -1118,12 +1108,12 @@ so that it didn’t actually do the ssl wrapping.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Detect which socket …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 31 Jul 2013 13:36:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2013-07-31:/2013/07/31/writing-the-starttls-command-in-to-blackhole/</guid><category>coding</category><category>python</category><category>tornado</category><category>iostream</category><category>ssl</category><category>starttls</category><category>blackhole</category></item><item><title>Wrapping a Tornado IOStream with SSL</title><link>https://kura.gg/2013/07/29/wrapping-a-tornado-iostream-with-ssl/</link><description>
-&lt;p&gt;As part of my effort to make &lt;a class="reference external" href="http://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
+&lt;p&gt;As part of my effort to make &lt;a class="reference external" href="https://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
 useful and usable as possible, I needed to be able to support &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 enabled connections.&lt;/p&gt;
 &lt;p&gt;Tornado itself has two built-in IOStreams that help us do the job;
-the first is the standard &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream"&gt;IOStream&lt;/a&gt;
-and the second is the &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream"&gt;SSLIOStream&lt;/a&gt;.&lt;/p&gt;
+the first is the standard &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream"&gt;IOStream&lt;/a&gt;
+and the second is the &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream"&gt;SSLIOStream&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;With this in mind we simply need to spawn two sockets, by default these
 listen on port 25 for standard &lt;span class="caps"&gt;SMTP&lt;/span&gt; and port 465 for &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 encrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt;. With these two sockets bound we’re then very
@@ -1164,28 +1154,28 @@ file (&lt;em&gt;/etc/haproxy/haproxy.cfg&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;Be sure to replace &lt;em&gt;admin:admin&lt;/em&gt; with your a proper
 username and password, username first, password
 after the colon.&lt;/p&gt;
-&lt;p&gt;Restart haproxy, and then browse to &lt;a class="reference external" href="http://yoursite.com:8000"&gt;http://yousite.com:8000&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Restart haproxy, and then browse to &lt;a class="reference external" href="https://yoursite.com:8000"&gt;https://yousite.com:8000&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 19 Jul 2013 13:00:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2013-07-19:/2013/07/19/haproxy-stats/</guid><category>tutorials</category><category>haproxy</category><category>stats</category></item><item><title>DJUGL June 2013 talk on blackhole and blackhole.io</title><link>https://kura.gg/2013/07/17/djugl-june-2013-talk-on-blackhole-and-blackhole-io/</link><description>&lt;p&gt;I have been a frequent audience member of &lt;a class="reference external" href="http://www.djugl.org/item/443153"&gt;&lt;span class="caps"&gt;DJUGL&lt;/span&gt;&lt;/a&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 19 Jul 2013 13:00:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2013-07-19:/2013/07/19/haproxy-stats/</guid><category>tutorials</category><category>haproxy</category><category>stats</category></item><item><title>DJUGL June 2013 talk on blackhole and blackhole.io</title><link>https://kura.gg/2013/07/17/djugl-june-2013-talk-on-blackhole-and-blackhole-io/</link><description>&lt;p&gt;I have been a frequent audience member of &lt;a class="reference external" href="https://www.djugl.org/item/443153"&gt;&lt;span class="caps"&gt;DJUGL&lt;/span&gt;&lt;/a&gt;
 for a few years now and spend most of the time asking questions,
 playing devils advocate and generally being my annoying self.&lt;/p&gt;
 &lt;p&gt;I have repeatedly said I would do a talk but never got round to it
 until &lt;a class="reference external" href="https://twitter.com/JonWebJobs"&gt;Jon&lt;/a&gt; basically forced me
 to get round to it.&lt;/p&gt;
-&lt;p&gt;My talk was on &lt;a class="reference external" href="http://blackhole.io"&gt;blackhole/blackhole.io&lt;/a&gt; and
-covered several topics including &lt;a class="reference external" href="http://pypy.org"&gt;PyPy&lt;/a&gt;,
+&lt;p&gt;My talk was on &lt;a class="reference external" href="https://blackhole.io"&gt;blackhole/blackhole.io&lt;/a&gt; and
+covered several topics including &lt;a class="reference external" href="https://pypy.org"&gt;PyPy&lt;/a&gt;,
 &lt;a class="reference external" href="/simplemta/"&gt;SimpleMTA&lt;/a&gt; and moved on to talking
 about spamming and starting work on my honey pot suite called
-&lt;a class="reference external" href="http://nectar.blackhole.io"&gt;Nectar&lt;/a&gt;.&lt;/p&gt;
+&lt;a class="reference external" href="https://nectar.blackhole.io"&gt;Nectar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can find the slides on &lt;a class="reference external" href="https://speakerdeck.com/kura/djugl-june-2013"&gt;Speaker Deck&lt;/a&gt;,
 sadly I ran out of time when creating them and although I was
 promised time to finish them at work, I got busy. So I replaced
 content with “Taylor Replacements(tm)”.&lt;/p&gt;
-&lt;p&gt;The event, attendees and other speakers are listen on the &lt;a class="reference external" href="http://lanyrd.com/2013/djugl-june/"&gt;Lanyrd
+&lt;p&gt;The event, attendees and other speakers are listen on the &lt;a class="reference external" href="https://lanyrd.com/2013/djugl-june/"&gt;Lanyrd
 event page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Several people took photos of the event, I don’t remember …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 17 Jul 2013 21:00:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2013-07-17:/2013/07/17/djugl-june-2013-talk-on-blackhole-and-blackhole-io/</guid><category>talks</category><category>python</category><category>pypy</category><category>blackhole</category><category>blackhole.io</category><category>mta</category><category>email</category><category>honeypot</category></item><item><title>haproxy, nginx and SPDY with SSL termination (Debian 7)</title><link>https://kura.gg/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/</link><description>
 &lt;p&gt;&lt;a class="reference external" href="/2013/07/10/nginx-spdy-and-ngx-pagespeed/"&gt;I wrote an article last week&lt;/a&gt; explaining that I had changed my blog
-and built my own nginx packages with &lt;a class="reference external" href="http://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; built in.&lt;/p&gt;
+and built my own nginx packages with &lt;a class="reference external" href="https://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; built in.&lt;/p&gt;
 &lt;p&gt;I decided I would take things a little further and poke around with
 haproxy some more. The initial plan was to compile the latest dev
 source of haproxy with &lt;span class="caps"&gt;SSL&lt;/span&gt; termination enabled.&lt;/p&gt;
@@ -1201,9 +1191,9 @@ non-&lt;span class="caps"&gt;SPDY&lt;/span&gt; connections were passed on to an 
 &lt;h2&gt;Requirements&lt;/h2&gt;
 &lt;p&gt;I have released my haproxy build as a debian file below …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Mon, 15 Jul 2013 22:30:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2013-07-15:/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/</guid><category>tutorials</category><category>debian</category><category>ubuntu</category><category>haproxy</category><category>nginx</category><category>spdy</category><category>ssl</category><category>ssl termination</category></item><item><title>nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)</title><link>https://kura.gg/2013/07/10/nginx-spdy-and-ngx-pagespeed/</link><description>
 &lt;p&gt;I decided to rebuild syslog.tv as pure &lt;span class="caps"&gt;HTML&lt;/span&gt; using &lt;span class="caps"&gt;RST&lt;/span&gt; and
-&lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and rebrand it as kura.gg.&lt;/p&gt;
-&lt;p&gt;In doing so I decided I would go all out and use &lt;a class="reference external" href="http://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; and
-&lt;a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_spdy_module.html"&gt;ngx_pagespeed&lt;/a&gt; (&lt;a class="reference external" href="https://developers.google.com/speed/"&gt;mod_pagespeed&lt;/a&gt;) for fun to see exactly
+&lt;a class="reference external" href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and rebrand it as kura.gg.&lt;/p&gt;
+&lt;p&gt;In doing so I decided I would go all out and use &lt;a class="reference external" href="https://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; and
+&lt;a class="reference external" href="https://nginx.org/en/docs/http/ngx_http_spdy_module.html"&gt;ngx_pagespeed&lt;/a&gt; (&lt;a class="reference external" href="https://developers.google.com/speed/"&gt;mod_pagespeed&lt;/a&gt;) for fun to see exactly
 what I could do.&lt;/p&gt;
 &lt;p&gt;Sadly no version of nginx has been officially released with &lt;span class="caps"&gt;SPDY&lt;/span&gt;
 or ngx_pagespeed enabled, you can compile nginx from source to
@@ -1306,10 +1296,10 @@ for future.&lt;/p&gt;
 testing send rates and speeds, this project was called SimpleMTA and is
 available &lt;a class="reference external" href="https://syslog.tv/simplemta/"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Recently I have rebuilt this project for an internal project at work
-using the &lt;a class="reference external" href="http://www.tornadoweb.org/"&gt;Tornado framework&lt;/a&gt;. Sadly this project as a whole cannot be
+using the &lt;a class="reference external" href="https://www.tornadoweb.org/"&gt;Tornado framework&lt;/a&gt;. Sadly this project as a whole cannot be
 released but a version of this code will be released in the near future.&lt;/p&gt;
 &lt;p&gt;Until that is released I have launched a new service called
-&lt;a class="reference external" href="http://blackhole.io"&gt;blackhole.io&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://blackhole.io"&gt;blackhole.io&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="what-is-blackhole-io"&gt;
 &lt;h2&gt;What is blackhole.io?&lt;/h2&gt;
 &lt;p&gt;blackhole.io is a completely open mail relay that forgets anything that
@@ -1318,13 +1308,13 @@ email data within the service. Literally anyone can send anything to it
 and have it never get delivered.&lt;/p&gt;
 &lt;p&gt;You can even send commands out of order, meaning you can call the &lt;span class="caps"&gt;DATA&lt;/span&gt;
 command without ever using &lt;span class="caps"&gt;HELO&lt;/span&gt;, &lt;span class="caps"&gt;MAIL&lt;/span&gt; &lt;span class="caps"&gt;FROM&lt;/span&gt; or &lt;span class="caps"&gt;RCPT&lt;/span&gt; &lt;span class="caps"&gt;TO …&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Tue, 26 Jun 2012 23:05:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2012-06-26:/2012/06/26/send-all-email-to-a-blackhole-never-gets-delivered-test-delivery-speed-and-much-more-using-blackhole-io/</guid><category>tutorials</category><category>blackhole</category><category>blackhole.io</category><category>email</category><category>mail</category></item><item><title>Mount Amazon S3 bucket locally on Debian 5 &amp; 6/Ubuntu 10.04</title><link>https://kura.gg/2012/03/03/mount-amazon-s3-bucket-locally/</link><description>
-&lt;p&gt;I’ve recently been toying with my &lt;a class="reference external" href="http://rpi.syslog.tv/"&gt;Raspberry Pi mirror&lt;/a&gt; including
+&lt;p&gt;I’ve recently been toying with my &lt;a class="reference external" href="https://rpi.syslog.tv/"&gt;Raspberry Pi mirror&lt;/a&gt; including
 moving it out on to Amazon’s S3. I’ve written an article on &lt;a class="reference external" href="https://syslog.tv/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/"&gt;how to back
 up to S3&lt;/a&gt;, but that isn’t enough when it comes to serving data
 from S3.&lt;/p&gt;
 &lt;p&gt;I needed the ability to &lt;span class="caps"&gt;RSYNC&lt;/span&gt; data from the official Raspberry Pi
-servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="http://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
-&lt;a class="reference external" href="http://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="https://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
+&lt;a class="reference external" href="https://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;You can actually do this successfully without requiring &lt;span class="caps"&gt;FUSE&lt;/span&gt;, just by
@@ -1357,25 +1347,25 @@ different &lt;span class="caps"&gt;IP&lt;/span&gt; addresses. An attacker is ban
 &lt;div align="center" class="vimeo"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="500" mozallowfullscreen="" src="https://player.vimeo.com/video/37818131" webkitallowfullscreen="" width="800"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="section" id="direct-links"&gt;
 &lt;h2&gt;Direct links&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://vimeo.com/37818131"&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.youtube.com/watch?v=S_p0G2oLuDU"&gt;YouTube&lt;/a&gt; - older version of the video with yellow colouring instead of red.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://vimeo.com/37818131"&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=S_p0G2oLuDU"&gt;YouTube&lt;/a&gt; - older version of the video with yellow colouring instead of red.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 02 Mar 2012 18:36:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2012-03-02:/2012/03/02/visualised-24-hours-of-ssh-attacks-against-a-single-server/</guid><category>misc</category><category>bruteforce</category><category>ssh</category></item><item><title>Backup a Linux server to Amazon S3 on Debian 6/Ubuntu 10.04</title><link>https://kura.gg/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/</link><description>
-&lt;p&gt;I have several servers powering syslog including it’s &lt;a class="reference external" href="http://rpi.syslog.tv/"&gt;Raspberry Pi&lt;/a&gt;
+&lt;p&gt;I have several servers powering syslog including it’s &lt;a class="reference external" href="https://rpi.syslog.tv/"&gt;Raspberry Pi&lt;/a&gt;
 mirror, load balancer and email servers. All of my servers are hosted
-using &lt;a class="reference external" href="http://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622"&gt;Linode&lt;/a&gt; in their London data centre and have Linode’s back-up
+using &lt;a class="reference external" href="https://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622"&gt;Linode&lt;/a&gt; in their London data centre and have Linode’s back-up
 system doing both daily and weekly snapshots.&lt;/p&gt;
 &lt;p&gt;For the app and database servers I do server-side backups storing each
 website and it’s database in it’s own folder within /backup in case I
 require a quick back-up to fix something, rather than the server has died.&lt;/p&gt;
 &lt;p&gt;This is all well and good but I like having an off-site backup too and
-for that I use &lt;a class="reference external" href="http://aws.amazon.com/s3/"&gt;S3&lt;/a&gt;…&lt;/p&gt;
+for that I use &lt;a class="reference external" href="https://aws.amazon.com/s3/"&gt;S3&lt;/a&gt;…&lt;/p&gt;
 &lt;div class="section" id="about-s3"&gt;
 &lt;h2&gt;About S3&lt;/h2&gt;
 &lt;p&gt;Amazon’s S3 is pretty cheap and very easy to use. Because only data is
 going in you don’t pay a transfer fee and the cost of storage is very
-affordable, you can see a &lt;a class="reference external" href="http://aws.amazon.com/s3/#pricing"&gt;pricing list here&lt;/a&gt;.&lt;/p&gt;
+affordable, you can see a &lt;a class="reference external" href="https://aws.amazon.com/s3/#pricing"&gt;pricing list here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To do the backup I use a …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 29 Feb 2012 20:55:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2012-02-29:/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/</guid><category>tutorials</category><category>amazon</category><category>aws</category><category>backup</category><category>debian</category><category>s3</category><category>ubuntu</category></item><item><title>Automatic/Unattended updates on Debian 6 (Squeeze)</title><link>https://kura.gg/2012/01/28/automaticunattended-updates-on-debian-6-squeeze/</link><description>
 &lt;p&gt;The unattended-upgrades package used on Debian is based on the one from
 Ubuntu. It is generally pretty safe in my opinion but I only ever enable
@@ -1492,9 +1482,9 @@ livestatus and run it&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mk-livestatus"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;MK&lt;/span&gt; Livestatus&lt;/h2&gt;
-&lt;p&gt;Grab the mk livestatus source from &lt;a class="reference external" href="http://mathias-kettner.de/check_mk_download.html"&gt;here&lt;/a&gt;, currently it’s version
+&lt;p&gt;Grab the mk livestatus source from &lt;a class="reference external" href="https://mathias-kettner.de/check_mk_download.html"&gt;here&lt;/a&gt;, currently it’s version
 1.1.10p3 but update the commands below to match your version.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
 tar xvzf mk-livestatus-1.1.10p3.tar.gz
 &lt;span class="nb"&gt;cd&lt;/span&gt; mk-livestatus-1.1.10p3
 ./configure
@@ -1760,7 +1750,7 @@ End
 &lt;/pre&gt;
 &lt;p&gt;Once this is done, reload Pound.&lt;/p&gt;
 &lt;p&gt;Next you need nginx compiled with realip module -
-&lt;a class="reference external" href="http://wiki.nginx.org/NginxHttpRealIpModule"&gt;http://wiki.nginx.org/NginxHttpRealIpModule&lt;/a&gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://wiki.nginx.org/NginxHttpRealIpModule"&gt;https://wiki.nginx.org/NginxHttpRealIpModule&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;On Ubuntu/Debian servers this module comes by default, otherwise you may
 have to compile it in yourself using the following option:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--with-http_realip_module
@@ -1929,7 +1919,7 @@ simply write the changes.&lt;/p&gt;
 &lt;p&gt;During a seemingly normal work day a colleague pointed out a problem to
 me and asked if I had any solution.&lt;/p&gt;
 &lt;p&gt;The problem was that they were trying to use InfoBright
-(&lt;a class="reference external" href="http://www.infobright.com/"&gt;http://www.infobright.com/&lt;/a&gt;) for some data crunching, export the data
+(&lt;a class="reference external" href="https://www.infobright.com/"&gt;https://www.infobright.com/&lt;/a&gt;) for some data crunching, export the data
 to &lt;span class="caps"&gt;CSV&lt;/span&gt; and then import in to MySQL. My first idea was to output the data
 from InfoBright as &lt;span class="caps"&gt;SQL&lt;/span&gt; and pipe it directly in to MySQL, this turned out
 to not be possible as the version of &lt;span class="caps"&gt;IB&lt;/span&gt; they were using only supported
@@ -2252,13 +2242,13 @@ openssl rsa -in private.key -out public.key -pubout -outform PEM
 sudo mkdir /etc/mail
 sudo cp …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 12 Feb 2010 19:08:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2010-02-12:/2010/02/12/howto-domainkeys-with-postfix-on-debian-ubuntu/</guid><category>tutorials</category><category>debian</category><category>dkim</category><category>domainkeys</category><category>howto</category><category>mail</category><category>postfix</category><category>ubuntu</category></item><item><title>HOWTO: Using SPF to validate outgoing mail</title><link>https://kura.gg/2010/02/11/howto-using-spf-to-validate-outgoing-mail/</link><description>
 &lt;p&gt;You can get a basic overview on what &lt;span class="caps"&gt;SPF&lt;/span&gt; is, what it’s for and it’s more
-advanced usages here - &lt;a class="reference external" href="http://www.openspf.org/"&gt;http://www.openspf.org/&lt;/a&gt;&lt;/p&gt;
+advanced usages here - &lt;a class="reference external" href="https://www.openspf.org/"&gt;https://www.openspf.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This article is to give only a basic insight in to how you can use an
 &lt;span class="caps"&gt;SPF&lt;/span&gt; record to valid mail from your servers.&lt;/p&gt;
 &lt;div class="section" id="the-dns"&gt;
 &lt;h2&gt;The &lt;span class="caps"&gt;DNS&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span class="caps"&gt;SPF&lt;/span&gt; records work from your &lt;span class="caps"&gt;DNS&lt;/span&gt;, it’s really simple. Technically there is
-a &lt;span class="caps"&gt;DNS&lt;/span&gt; type defined for &lt;span class="caps"&gt;SPF&lt;/span&gt; records as of &lt;a class="reference external" href="http://tools.ietf.org/html/rfc4408"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 4408&lt;/a&gt;, but since not all
+a &lt;span class="caps"&gt;DNS&lt;/span&gt; type defined for &lt;span class="caps"&gt;SPF&lt;/span&gt; records as of &lt;a class="reference external" href="https://tools.ietf.org/html/rfc4408"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 4408&lt;/a&gt;, but since not all
 servers recognise this type it also works in the &lt;span class="caps"&gt;TXT&lt;/span&gt; type.&lt;/p&gt;
 &lt;p&gt;A simple usage of &lt;span class="caps"&gt;SPF&lt;/span&gt; is&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -2304,7 +2294,7 @@ first, the second is the actual rule set that will be loaded to iptables.&lt;/p
 &lt;h2&gt;The beginning&lt;/h2&gt;
 &lt;p&gt;Where to begin? nginx would be a good start I suppose. It’s far easier
 and makes much for sense for you to actually read about nginx from it’s
-own website - &lt;a class="reference external" href="http://nginx.org/en/"&gt;http://nginx.org/en/&lt;/a&gt; - but just to give a simple
+own website - &lt;a class="reference external" href="https://nginx.org/en/"&gt;https://nginx.org/en/&lt;/a&gt; - but just to give a simple
 explanation too; `nginx is king of static content &lt;span class="caps"&gt;HTTP&lt;/span&gt; servers.`&lt;/p&gt;
 &lt;p&gt;Anyone that has dealt with Apache on medium to high traffic websites
 will know that Apache is bit of a `wheezy, old geezer` when it comes
@@ -2456,7 +2446,7 @@ as complicated and “awesome” as it can possibly be, without growing legs
 and running off to stomp a city.&lt;/p&gt;
 &lt;div class="section" id="love"&gt;
 &lt;h2&gt;Love&lt;/h2&gt;
-&lt;p&gt;I’ve fallen in-love with nginx (&lt;a class="reference external" href="http://nginx.org/"&gt;http://nginx.org/&lt;/a&gt;) over the last 6
+&lt;p&gt;I’ve fallen in-love with nginx (&lt;a class="reference external" href="https://nginx.org/"&gt;https://nginx.org/&lt;/a&gt;) over the last 6
 months or so, I’d been an avid user of LighTTPD for a very long time
 before but started to look in to nginx mid year as a replacement. I
 learned that at my new job they used …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Mon, 11 Jan 2010 19:58:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2010-01-11:/2010/01/11/debian-apache-2-nginx-wordpress-mu/</guid><category>tutorials</category><category>apache</category><category>cache</category><category>debian</category><category>nginx</category><category>wordpress</category></item></channel></rss>

@@ -298,7 +298,7 @@ service auth-worker {
 </pre></div> <p>Modify <cite>/etc/dovecot/conf.d/10-ssl.conf</cite> to have the following lines.</p> <div class=highlight><pre><span></span>ssl_cert = &lt;/etc/ssl/certs/mail.crt
 ssl_key = &lt;/etc/ssl/private/mail.key
 ssl = required
-</pre></div> <p>For fulltext searching, you’ll want to enable wheezy-backports and install <cite>dovecot-solr</cite> from there.</p> <div class=highlight><pre><span></span>sudo echo "deb http://ftp.debian.org/debian wheezy-backports main contrib non-free" &gt;&gt; /etc/apt/sources.list
+</pre></div> <p>For fulltext searching, you’ll want to enable wheezy-backports and install <cite>dovecot-solr</cite> from there.</p> <div class=highlight><pre><span></span>sudo echo "deb https://ftp.debian.org/debian wheezy-backports main contrib non-free" &gt;&gt; /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install dovecot-solr solr-tomcat
 </pre></div> <p>There is a bug in <cite>dovecot-solr</cite> where it doesn’t set up the Solr schema for, you’ll have to do it by downloading <cite>orig.tar.gz</cite> from <a class="reference external" href=https://packages.debian.org/wheezy/dovecot-solr>the Debian website</a>.</p> <p>Extract the archive and copy the included schema in to Solr.</p> <div class=highlight><pre><span></span>sudo cp docs/solr-schema.xml /etc/solr/conf/schema.xml
@@ -309,12 +309,12 @@ sudo apt-get install dovecot-solr solr-tomcat
 </pre></div> <p>Modify <cite>/etc/dovecot/conf.d/20-imap.conf</cite> to have the following line.</p> <div class=highlight><pre><span></span>mail_plugins = $mail_plugins fts fts_solr
 </pre></div> <p>Next up, add the following lines to <cite>/etc/dovecot/conf.d/90-plugin.conf</cite></p> <div class=highlight><pre><span></span>plugin {
     fts = solr
-    fts_solr = break-imap-search url=http://localhost:8080/solr/
+    fts_solr = break-imap-search url=https://localhost:8080/solr/
 }
 </pre></div> <p>Create <cite>/etc/cron.daily/solr</cite> with the following contents.</p> <div class=highlight><pre><span></span>#!/bin/sh
-curl http://localhost:8080/solr/update?optimize=true
+curl https://localhost:8080/solr/update?optimize=true
 </pre></div> <p>Create <cite>/etc/cron.hourly/solr</cite> with the following contents.</p> <div class=highlight><pre><span></span>#!/bin/sh
-curl http://localhost:8080/solr/update?commit=true
+curl https://localhost:8080/solr/update?commit=true
 </pre></div> <p>Make both files executable.</p> <div class=highlight><pre><span></span>sudo chmod +x /etc/cron.daily/solr /etc/cron.hourly/solr
 </pre></div> <p>Solr uses soft commits when it indexes new mail, this only commits to memory so a cron task is good for committing every hour and a daily optimize for keeping things fast.</p> <p>That’s all for Dovecot and Solr, so restart them.</p> <div class=highlight><pre><span></span>sudo /etc/init.d/dovecot restart
 sudo /etc/init.d/tomcat6 restart

@@ -3,7 +3,7 @@
 &lt;p&gt;A brief history of a tiny part of the Internet.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://blackhole.io/1"&gt;Blackhole 1 — Blackhole as it was originally
 known&lt;/a&gt; — was written on &lt;a class="reference external" href="https://docs.python.org/2/whatsnew/2.7.html"&gt;Python 2.7&lt;/a&gt;, briefly supporting &lt;a class="reference external" href="https://docs.python.org/2.6/whatsnew/2.6.html"&gt;Python 2.6&lt;/a&gt; for a time and also
-supporting early version of &lt;a class="reference external" href="https://docs.python.org/3.2/whatsnew/3.2.html"&gt;Python 3&lt;/a&gt;, &lt;a class="reference external" href="http://www.pypy.org/features.html"&gt;PyPy 2&lt;/a&gt; and &lt;a class="reference external" href="http://www.pypy.org/features.html"&gt;PyPy 3&lt;/a&gt;. Built on top of &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/"&gt;Tornado&lt;/a&gt;, it was asynchronous in a fashion and
+supporting early version of &lt;a class="reference external" href="https://docs.python.org/3.2/whatsnew/3.2.html"&gt;Python 3&lt;/a&gt;, &lt;a class="reference external" href="https://www.pypy.org/features.html"&gt;PyPy 2&lt;/a&gt; and &lt;a class="reference external" href="https://www.pypy.org/features.html"&gt;PyPy 3&lt;/a&gt;. Built on top of &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/"&gt;Tornado&lt;/a&gt;, it was asynchronous in a fashion and
 — quite simply — worked.&lt;/p&gt;
 &lt;p&gt;The original prototype that became Blackhole was &lt;a class="reference external" href="/simplemta"&gt;SimpleMTA&lt;/a&gt; — a
 prototype that was created quickly, to serve a very simple testing purpose that
@@ -16,7 +16,7 @@ that always irked me.&lt;/p&gt;
 &lt;p&gt;A brief history of a tiny part of the Internet.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://blackhole.io/1"&gt;Blackhole 1 — Blackhole as it was originally
 known&lt;/a&gt; — was written on &lt;a class="reference external" href="https://docs.python.org/2/whatsnew/2.7.html"&gt;Python 2.7&lt;/a&gt;, briefly supporting &lt;a class="reference external" href="https://docs.python.org/2.6/whatsnew/2.6.html"&gt;Python 2.6&lt;/a&gt; for a time and also
-supporting early version of &lt;a class="reference external" href="https://docs.python.org/3.2/whatsnew/3.2.html"&gt;Python 3&lt;/a&gt;, &lt;a class="reference external" href="http://www.pypy.org/features.html"&gt;PyPy 2&lt;/a&gt; and &lt;a class="reference external" href="http://www.pypy.org/features.html"&gt;PyPy 3&lt;/a&gt;. Built on top of &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/"&gt;Tornado&lt;/a&gt;, it was asynchronous in a fashion and
+supporting early version of &lt;a class="reference external" href="https://docs.python.org/3.2/whatsnew/3.2.html"&gt;Python 3&lt;/a&gt;, &lt;a class="reference external" href="https://www.pypy.org/features.html"&gt;PyPy 2&lt;/a&gt; and &lt;a class="reference external" href="https://www.pypy.org/features.html"&gt;PyPy 3&lt;/a&gt;. Built on top of &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/"&gt;Tornado&lt;/a&gt;, it was asynchronous in a fashion and
 — quite simply — worked.&lt;/p&gt;
 &lt;p&gt;The original prototype that became Blackhole was &lt;a class="reference external" href="/simplemta"&gt;SimpleMTA&lt;/a&gt; — a
 prototype that was created quickly, to serve a very simple testing purpose that
@@ -314,7 +314,7 @@ from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
 &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'yarg'&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;
-&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'http://pypi.python.org/pypi/yarg&lt;/span&gt;
+&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'https://pypi.python.org/pypi/yarg&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="updated-packages-interface"&gt;
@@ -328,7 +328,7 @@ from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;
 &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'0.1.2'&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;
-&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'http://pypi.python.org/pypi/yarg/0.1.2&lt;/span&gt;
+&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'https://pypi.python.org/pypi/yarg/0.1.2&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="documentation"&gt;
@@ -448,7 +448,7 @@ shields nodejs code, pypipin itself and even cover off supervisord and Varnish 
 &lt;div class="section" id="nodejs"&gt;
 &lt;h3&gt;nodejs&lt;/h3&gt;
 &lt;p&gt;First of all you’ll need to get the latest source code copy of nodejs from the
-&lt;a class="reference external" href="http://nodejs.org/download/"&gt;nodejs download page&lt;/a&gt;.&lt;/p&gt;
+&lt;a class="reference external" href="https://nodejs.org/download/"&gt;nodejs download page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Extract it.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -xvzf node-&amp;lt;VERSION&amp;gt;.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
@@ -476,7 +476,7 @@ shields nodejs code, pypipin itself and even cover off supervisord and Varnish 
 &lt;div class="section" id="nodejs"&gt;
 &lt;h3&gt;nodejs&lt;/h3&gt;
 &lt;p&gt;First of all you’ll need to get the latest source code copy of nodejs from the
-&lt;a class="reference external" href="http://nodejs.org/download/"&gt;nodejs download page&lt;/a&gt;.&lt;/p&gt;
+&lt;a class="reference external" href="https://nodejs.org/download/"&gt;nodejs download page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Extract it.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -xvzf node-&amp;lt;VERSION&amp;gt;.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
@@ -535,7 +535,7 @@ uncommon the local one.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/path/to/pypipins/clone/shields/shields.py
 
 
-# SHIELD_URL = "http://img.shields.io/badge/%s-%s-%s.%s"
+# SHIELD_URL = "https://img.shields.io/badge/%s-%s-%s.%s"
 SHIELD_URL = "http://localhost:9000/badge/%s-%s-%s.%s"  # pypip.in uses a local version of img.shields.io
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once this is done, you can test the pypipins server.&lt;/p&gt;
@@ -781,7 +781,7 @@ then the icon name.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="license"&gt;
 &lt;h2&gt;License&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://opensource.org/licenses/MIT"&gt;&lt;span class="caps"&gt;MIT&lt;/span&gt;&lt;/a&gt; license.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://opensource.org/licenses/MIT"&gt;&lt;span class="caps"&gt;MIT&lt;/span&gt;&lt;/a&gt; license.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="coding"></category><category term="pelican"></category><category term="fontawesome"></category><category term="icons"></category><category term="python"></category></entry><entry><title>Python platform and version dependent wheel build bot proposal</title><link href="https://kura.gg/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/" rel="alternate"></link><published>2014-05-29T12:30:00+01:00</published><updated>2014-05-29T12:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-29:/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/</id><summary type="html">&lt;div class="section" id="abstract"&gt;
 &lt;h2&gt;Abstract&lt;/h2&gt;
@@ -995,13 +995,13 @@ The license is provided in the &lt;a class="reference external" href="https://gi
 &lt;/div&gt;
 </content><category term="coding"></category><category term="digital ocean"></category><category term="tugboat"></category><category term="bash"></category><category term="completion"></category></entry><entry><title>Ghastly - A theme for Pelican</title><link href="https://kura.gg/2014/05/26/ghastly-a-theme-for-pelican/" rel="alternate"></link><published>2014-05-26T23:00:00+01:00</published><updated>2014-05-26T23:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-26:/2014/05/26/ghastly-a-theme-for-pelican/</id><content type="html">&lt;div class="figure"&gt;
 &lt;img alt="Gastly, the Ghost Pokémon" src="/images/gastly.png"/&gt;
-&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="http://raiba-art.deviantart.com/art/Gastly-294533100"&gt;Raiba-art&lt;/a&gt;)&lt;/p&gt;
+&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="https://raiba-art.deviantart.com/art/Gastly-294533100"&gt;Raiba-art&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I’d like to introduce Ghastly, a clean and minimal, lightweight theme for the
-&lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
+&lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
 &lt;p&gt;Ghastly is based heavily off of Casper, the default theme for
 &lt;a class="reference external" href="https://ghost.org"&gt;Ghost&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It’s name is derived from the D&amp;amp;D monster, the Ghast and Gastly, the Pokémon.&lt;/p&gt;
@@ -1026,7 +1026,7 @@ download counts.&lt;/p&gt;
 &lt;div class="section" id="tech-stack"&gt;
 &lt;h2&gt;Tech stack&lt;/h2&gt;
 &lt;p&gt;From the very start I decided to use
-&lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/"&gt;Tornado framework&lt;/a&gt;, although this may
+&lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/"&gt;Tornado framework&lt;/a&gt;, although this may
 change in the future.&lt;/p&gt;
 &lt;p&gt;The original plan was to generate the images using Pillow (&lt;span class="caps"&gt;PIL&lt;/span&gt;) and then simply
 cache them to disk. I decided it would make far more sense to do this using
@@ -1048,7 +1048,7 @@ download counts.&lt;/p&gt;
 &lt;div class="section" id="tech-stack"&gt;
 &lt;h2&gt;Tech stack&lt;/h2&gt;
 &lt;p&gt;From the very start I decided to use
-&lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/"&gt;Tornado framework&lt;/a&gt;, although this may
+&lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/"&gt;Tornado framework&lt;/a&gt;, although this may
 change in the future.&lt;/p&gt;
 &lt;p&gt;The original plan was to generate the images using Pillow (&lt;span class="caps"&gt;PIL&lt;/span&gt;) and then simply
 cache them to disk. I decided it would make far more sense to do this using
@@ -1065,7 +1065,7 @@ but sadly got no response so the images remained as they were.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="crate-io-shuts-down"&gt;
 &lt;h2&gt;crate.io shuts down&lt;/h2&gt;
-&lt;p&gt;Sadly &lt;a class="reference external" href="http://crate.io"&gt;crate.io&lt;/a&gt; stopped being a custom PyPI mirror in mid
+&lt;p&gt;Sadly &lt;a class="reference external" href="https://crate.io"&gt;crate.io&lt;/a&gt; stopped being a custom PyPI mirror in mid
 December which meant I had to rewrite the codebase to use the official PyPI
 &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;. In doing so I lost the ability to get download counts for all
 versions or a specific version and instead, could only get a count by day,
@@ -1073,7 +1073,7 @@ week or month.&lt;/p&gt;
 &lt;p&gt;It was while changing this functionality that I stumbled upon a &lt;a class="reference external" href="https://github.com/gittip/shields.io/issues/83"&gt;ticket from
 the shields project&lt;/a&gt;
 mentioning my shields and their poor artistic styling. The ticked mentioned an
-&lt;a class="reference external" href="http://shields.io/"&gt;public &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt; for generating these images.&lt;/p&gt;
+&lt;a class="reference external" href="https://shields.io/"&gt;public &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt; for generating these images.&lt;/p&gt;
 &lt;p&gt;After switching to this &lt;span class="caps"&gt;API&lt;/span&gt; I quickly found from PyPI Pin users on Twitter that
 there was an issue in their &lt;span class="caps"&gt;API&lt;/span&gt;, specifically with version number formats.
 Version numbers with a format of &lt;span class="caps"&gt;X.X.&lt;/span&gt;X worked fine but X.&lt;span class="caps"&gt;XX&lt;/span&gt; did not. I can only
@@ -1082,7 +1082,7 @@ assume that many other formats didn’t work either.&lt;/p&gt;
 &lt;div class="section" id="b-repl-ca"&gt;
 &lt;h2&gt;b.repl.ca&lt;/h2&gt;
 &lt;p&gt;While trying to find the source code for shields.io on GitHub I found what they
-consider &lt;a class="reference external" href="http://b.repl.ca/"&gt;a newer, better version&lt;/a&gt;.&lt;/p&gt;
+consider &lt;a class="reference external" href="https://b.repl.ca/"&gt;a newer, better version&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I promptly switched to PyPI Pins to use this and queried the authors on GitHub
 to make sure the &lt;span class="caps"&gt;API&lt;/span&gt; was meant to be public and usable, thankfully it was.&lt;/p&gt;
 &lt;/div&gt;
@@ -1127,7 +1127,7 @@ Gist on GitHub.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="coding"></category><category term="bash"></category><category term="dash"></category><category term="ps1"></category><category term="git"></category></entry><entry><title>Blackhole 1.8.0 development, Mock and Python entry_points</title><link href="https://kura.gg/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/" rel="alternate"></link><published>2013-08-18T12:00:00+01:00</published><updated>2013-08-18T12:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-18:/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/</id><summary type="html">
 &lt;p&gt;Over the last week I’ve been doing a huge amount of refactoring of
-&lt;a class="reference external" href="http://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
+&lt;a class="reference external" href="https://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
 tests. To make Blackhole more testable I needed to make a big change to
 how the program is launched and controlled.&lt;/p&gt;
 &lt;div class="section" id="setup-py-scripts-vs-entry-points"&gt;
@@ -1146,7 +1146,7 @@ that &lt;a class="reference external" href="https://github.com/kura/blackhole/bl
 &lt;p&gt;I’ve noticed that most people who write Python packages that have some kind of
 command line entry point use …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Over the last week I’ve been doing a huge amount of refactoring of
-&lt;a class="reference external" href="http://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
+&lt;a class="reference external" href="https://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
 tests. To make Blackhole more testable I needed to make a big change to
 how the program is launched and controlled.&lt;/p&gt;
 &lt;div class="section" id="setup-py-scripts-vs-entry-points"&gt;
@@ -1225,7 +1225,7 @@ entirely new and testable application.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="fun-with-mock"&gt;
 &lt;h2&gt;Fun with Mock&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://www.voidspace.org.uk/python/mock/"&gt;Mock&lt;/a&gt; is an amazing library that
+&lt;p&gt;&lt;a class="reference external" href="https://www.voidspace.org.uk/python/mock/"&gt;Mock&lt;/a&gt; is an amazing library that
 allows you to mock (fake) method calls and much more.&lt;/p&gt;
 &lt;p&gt;I’ve known about Mock for a while, it’s used quite heavily at work but I’ve
 never really felt like I needed to use it. Then I started writing more and more
@@ -1375,9 +1375,9 @@ call has actually been made.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </content><category term="coding"></category><category term="python"></category><category term="blackhole"></category><category term="setup.py"></category><category term="entry_points"></category><category term="mock"></category><category term="tests"></category><category term="testing"></category></entry><entry><title>Writing a Vimeo and YouTube plugin for Pelican</title><link href="https://kura.gg/2013/08/09/writing-a-vimeo-and-youtube-plugin-for-pelican/" rel="alternate"></link><published>2013-08-09T17:38:00+01:00</published><updated>2013-08-09T17:38:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-09:/2013/08/09/writing-a-vimeo-and-youtube-plugin-for-pelican/</id><summary type="html">
-&lt;p&gt;&lt;a class="reference external" href="http://getpelican.com/"&gt;Pelican&lt;/a&gt; is a Python-powered static blog generator
-that processes &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReStructuredText&lt;/a&gt;
-and &lt;a class="reference external" href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; articles and
+&lt;p&gt;&lt;a class="reference external" href="https://getpelican.com/"&gt;Pelican&lt;/a&gt; is a Python-powered static blog generator
+that processes &lt;a class="reference external" href="https://docutils.sourceforge.net/rst.html"&gt;ReStructuredText&lt;/a&gt;
+and &lt;a class="reference external" href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; articles and
 pages and converts them to &lt;span class="caps"&gt;HTML&lt;/span&gt;. I use Pelican to power this blog.&lt;/p&gt;
 &lt;p&gt;There is a YouTube &lt;span class="caps"&gt;RST&lt;/span&gt; directive built in to Pelican core but it really
 shouldn’t exist there.&lt;/p&gt;
@@ -1385,16 +1385,16 @@ shouldn’t exist there.&lt;/p&gt;
 but that request was declined because it didn’t belong in the core. So I
 decided I would write it as a plugin instead and while I was doing it, also
 wrote a plugin for YouTube so that it could be removed from the core.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins"&gt;There is a decent amount of detail in the Pelican documentation on how to
+&lt;p&gt;&lt;a class="reference external" href="https://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins"&gt;There is a decent amount of detail in the Pelican documentation on how to
 write plugins&lt;/a&gt;, I’m
 not going to cover the whole process but I thought I would cover a little of
 what I did.&lt;/p&gt;
 &lt;div class="section" id="adding-an-rst-directive"&gt;
 &lt;h2&gt;Adding an &lt;span class="caps"&gt;RST&lt;/span&gt; directive&lt;/h2&gt;
 &lt;p&gt;Really all we’re doing …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
-&lt;p&gt;&lt;a class="reference external" href="http://getpelican.com/"&gt;Pelican&lt;/a&gt; is a Python-powered static blog generator
-that processes &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReStructuredText&lt;/a&gt;
-and &lt;a class="reference external" href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; articles and
+&lt;p&gt;&lt;a class="reference external" href="https://getpelican.com/"&gt;Pelican&lt;/a&gt; is a Python-powered static blog generator
+that processes &lt;a class="reference external" href="https://docutils.sourceforge.net/rst.html"&gt;ReStructuredText&lt;/a&gt;
+and &lt;a class="reference external" href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; articles and
 pages and converts them to &lt;span class="caps"&gt;HTML&lt;/span&gt;. I use Pelican to power this blog.&lt;/p&gt;
 &lt;p&gt;There is a YouTube &lt;span class="caps"&gt;RST&lt;/span&gt; directive built in to Pelican core but it really
 shouldn’t exist there.&lt;/p&gt;
@@ -1402,7 +1402,7 @@ shouldn’t exist there.&lt;/p&gt;
 but that request was declined because it didn’t belong in the core. So I
 decided I would write it as a plugin instead and while I was doing it, also
 wrote a plugin for YouTube so that it could be removed from the core.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins"&gt;There is a decent amount of detail in the Pelican documentation on how to
+&lt;p&gt;&lt;a class="reference external" href="https://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins"&gt;There is a decent amount of detail in the Pelican documentation on how to
 write plugins&lt;/a&gt;, I’m
 not going to cover the whole process but I thought I would cover a little of
 what I did.&lt;/p&gt;
@@ -1686,12 +1686,12 @@ and removed the original instance of &lt;cite&gt;IOStream&lt;/cite&gt; from it.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 </content><category term="coding"></category><category term="python"></category><category term="tornado"></category><category term="iostream"></category><category term="ssl"></category><category term="starttls"></category><category term="blackhole"></category></entry><entry><title>Wrapping a Tornado IOStream with SSL</title><link href="https://kura.gg/2013/07/29/wrapping-a-tornado-iostream-with-ssl/" rel="alternate"></link><published>2013-07-29T20:00:00+01:00</published><updated>2013-07-29T20:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-29:/2013/07/29/wrapping-a-tornado-iostream-with-ssl/</id><summary type="html">
-&lt;p&gt;As part of my effort to make &lt;a class="reference external" href="http://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
+&lt;p&gt;As part of my effort to make &lt;a class="reference external" href="https://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
 useful and usable as possible, I needed to be able to support &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 enabled connections.&lt;/p&gt;
 &lt;p&gt;Tornado itself has two built-in IOStreams that help us do the job;
-the first is the standard &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream"&gt;IOStream&lt;/a&gt;
-and the second is the &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream"&gt;SSLIOStream&lt;/a&gt;.&lt;/p&gt;
+the first is the standard &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream"&gt;IOStream&lt;/a&gt;
+and the second is the &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream"&gt;SSLIOStream&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;With this in mind we simply need to spawn two sockets, by default these
 listen on port 25 for standard &lt;span class="caps"&gt;SMTP&lt;/span&gt; and port 465 for &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 encrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt;. With these two sockets bound we’re then very
@@ -1707,12 +1707,12 @@ connection is to the encrypted or unencrypted socket.&lt;/p&gt;
 &lt;span class="sd"&gt;    in SSL if connected over the SSL socket.&lt;/span&gt;
 
 &lt;span class="sd"&gt;    The parameter 'connection' is an …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
-&lt;p&gt;As part of my effort to make &lt;a class="reference external" href="http://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
+&lt;p&gt;As part of my effort to make &lt;a class="reference external" href="https://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
 useful and usable as possible, I needed to be able to support &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 enabled connections.&lt;/p&gt;
 &lt;p&gt;Tornado itself has two built-in IOStreams that help us do the job;
-the first is the standard &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream"&gt;IOStream&lt;/a&gt;
-and the second is the &lt;a class="reference external" href="http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream"&gt;SSLIOStream&lt;/a&gt;.&lt;/p&gt;
+the first is the standard &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream"&gt;IOStream&lt;/a&gt;
+and the second is the &lt;a class="reference external" href="https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream"&gt;SSLIOStream&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;With this in mind we simply need to spawn two sockets, by default these
 listen on port 25 for standard &lt;span class="caps"&gt;SMTP&lt;/span&gt; and port 465 for &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 encrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt;. With these two sockets bound we’re then very

@@ -3,7 +3,7 @@
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
 Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
 released in June 2016.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://schema.org/"&gt;Schema.org&lt;/a&gt; is a collaborative effort, including
@@ -24,7 +24,7 @@ vocabulary, improving the experience for everyone …&lt;/p&gt;&lt;/div&gt;</sum
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
 Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
 released in June 2016.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://schema.org/"&gt;Schema.org&lt;/a&gt; is a collaborative effort, including
@@ -42,7 +42,7 @@ defines or modifies that structure.&lt;/p&gt;
 &lt;p&gt;By using microformat data structures from schema.org you can define what
 elements are more prominent or important through a large set of additional
 vocabulary, improving the experience for everyone that uses your website.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;article&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"http://schema.org/BlogPosting"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;article&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://schema.org/BlogPosting"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullKeyboardControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullMouseControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"bookmarks"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
@@ -73,7 +73,7 @@ vocabulary, improving the experience for everyone that uses your website.&lt;/p
         &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"eevee-comment"&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"article-comments"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'http://schema.org/UserComments'&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'https://schema.org/UserComments'&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
             &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Discuss&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
             Disqus/Muut stuff here.
         &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -82,11 +82,11 @@ vocabulary, improving the experience for everyone that uses your website.&lt;/p
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Above is an example of a blog post with the additional vocabulary, below I’ll
 outline each important section and explain what it does.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;article&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"http://schema.org/BlogPosting"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;article&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://schema.org/BlogPosting"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This simply tells the client which schema is being used for the content within
 it. The client uses that data to determine what elements should be provided
-based on that schema. Here I’m using the &lt;a class="reference external" href="http://schema.org/BlogPosting"&gt;BlogPosting&lt;/a&gt; schema.&lt;/p&gt;
+based on that schema. Here I’m using the &lt;a class="reference external" href="https://schema.org/BlogPosting"&gt;BlogPosting&lt;/a&gt; schema.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullKeyboardControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullMouseControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"bookmarks"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
@@ -132,12 +132,12 @@ more user-friendly format that is displayed to the user.&lt;/p&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This section informs the client that this is the main content of the post.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'http://schema.org/UserComments'&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'https://schema.org/UserComments'&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Discuss&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     Disqus/Muut stuff here.
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Finally we add another schema &lt;a class="reference external" href="http://schema.org/UserComments"&gt;UserComments&lt;/a&gt;
+&lt;p&gt;Finally we add another schema &lt;a class="reference external" href="https://schema.org/UserComments"&gt;UserComments&lt;/a&gt;
 that defines user comment content.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="eevee"></category><category term="pelican"></category></entry><entry><title>Eevee — Updating share buttons and adding Muut</title><link href="https://kura.gg/2016/06/19/eevee-updating-share-buttons-and-adding-muut/" rel="alternate"></link><published>2016-06-19T01:45:00+01:00</published><updated>2016-06-19T01:45:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-06-19:/2016/06/19/eevee-updating-share-buttons-and-adding-muut/</id><summary type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
@@ -191,7 +191,7 @@ will styled similarly to how the Disqus comments section is styled.&lt;/p&gt;
 &lt;p&gt;Please be aware that if &lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; are
 configured, Disqus will be prioritized over Muut and therefore only the Disqus
 template will be loaded.&lt;/p&gt;
-&lt;div class="lightbox-block align-center"&gt;&lt;a href="#c65cca70-ae66-4339-82c7-bde43559e139" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="c65cca70-ae66-4339-82c7-bde43559e139" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="lightbox-block align-center"&gt;&lt;a href="#ba03c3f6-38ed-4036-8a7a-3250b19d4fa6" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="ba03c3f6-38ed-4036-8a7a-3250b19d4fa6" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="back-to-the-top-of-the-page-links"&gt;
 &lt;h2&gt;Back to the top of the page links&lt;/h2&gt;
 &lt;p&gt;A small addition are the &lt;cite&gt;back to the top of the page&lt;/cite&gt; links that will now
@@ -204,12 +204,12 @@ appear under each article on index pages.&lt;/p&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
 Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
 released in June 2016.&lt;/p&gt;
 &lt;p&gt;Eevee allows configuring menu links in the header and footer of a template —
 including social links.&lt;/p&gt;
-&lt;p&gt;Eevee also includes &lt;a class="reference external" href="http://fontawesome.io/"&gt;Font Awesome&lt;/a&gt; by default, at
+&lt;p&gt;Eevee also includes &lt;a class="reference external" href="https://fontawesome.com/"&gt;Font Awesome&lt;/a&gt; by default, at
 time of release and writing of this article it provides Font Awesome version 4.6.3.&lt;/p&gt;
 &lt;p&gt;Because the links are totally customisable, it means you can inject &lt;span class="caps"&gt;HTML&lt;/span&gt;
 directly in to a link name and — because Font Awesome is included by default
@@ -227,12 +227,12 @@ the list below.&lt;/p&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
 Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
 released in June 2016.&lt;/p&gt;
 &lt;p&gt;Eevee allows configuring menu links in the header and footer of a template —
 including social links.&lt;/p&gt;
-&lt;p&gt;Eevee also includes &lt;a class="reference external" href="http://fontawesome.io/"&gt;Font Awesome&lt;/a&gt; by default, at
+&lt;p&gt;Eevee also includes &lt;a class="reference external" href="https://fontawesome.com/"&gt;Font Awesome&lt;/a&gt; by default, at
 time of release and writing of this article it provides Font Awesome version 4.6.3.&lt;/p&gt;
 &lt;p&gt;Because the links are totally customisable, it means you can inject &lt;span class="caps"&gt;HTML&lt;/span&gt;
 directly in to a link name and — because Font Awesome is included by default
@@ -271,9 +271,9 @@ the list below.&lt;/p&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Eevee is a theme for &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt;, based on Google’s
+&lt;p&gt;Eevee is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on Google’s
 &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification. It is named
-after the Pokémon &lt;a class="reference external" href="http://www.pokemon.com/uk/pokedex/eevee"&gt;Eevee&lt;/a&gt; because
+after the Pokémon &lt;a class="reference external" href="https://www.pokemon.com/uk/pokedex/eevee"&gt;Eevee&lt;/a&gt; because
 — like the Pokémon — it can evolve in to many ‘elemental types.’&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="eevee"></category><category term="pelican"></category></entry></feed>

@@ -62,7 +62,7 @@
     <span class=p>}</span>
 
     <span class=kn>client_max_body_size</span> <span class=mi>2m</span><span class=p>;</span> <span class=c1># increase this to increase file upload size</span>
-    <span class=kn>proxy_pass</span> <span class=s>http://localhost:**APACHE_PORT**</span><span class=p>;</span>
+    <span class=kn>proxy_pass</span> <span class=s>https://localhost:**APACHE_PORT**</span><span class=p>;</span>
   <span class=p>}</span>
 
   <span class=c1># handle uploaded files</span>
@@ -75,7 +75,7 @@
     <span class=c1># if the static file doesn't exist, handle it with Apache</span>
     <span class=kn>if</span> <span class=s>(!-f</span> <span class=nv>$request_filename</span><span class=s>)</span> <span class=p>{</span>
     <span class=kn>break</span><span class=p>;</span>
-    <span class=kn>proxy_pass</span> <span class=s>http://localhost:**APACHE_PORT**</span><span class=p>;</span>
+    <span class=kn>proxy_pass</span> <span class=s>https://localhost:**APACHE_PORT**</span><span class=p>;</span>
   <span class=p>}</span>
 
   <span class=p>}</span>

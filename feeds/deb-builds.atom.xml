@@ -181,7 +181,7 @@ or as a manual download, from the link below.&lt;/p&gt;
 &lt;p&gt;I have built and released nginx 1.5.10 with &lt;span class="caps"&gt;SPDY&lt;/span&gt; 3.1. Like the &lt;a class="reference external" href="/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/"&gt;nginx 1.5.9
 release&lt;/a&gt;
 , this release comes with ngx_pagespeed 1.7.30.3-beta and is available
-on &lt;a class="reference external" href="http://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt; or as downloads below.&lt;/p&gt;
+on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt; or as downloads below.&lt;/p&gt;
 &lt;div class="section" id="manual-download"&gt;
 &lt;h2&gt;Manual download&lt;/h2&gt;
 &lt;table class="docutils"&gt;
@@ -223,7 +223,7 @@ c5c1ffa0dd93673ac4a859a11d1b3b50  nginx-full_1.5.10_amd64 …&lt;/pre&gt;&lt;/di
 &lt;p&gt;I have built and released nginx 1.5.10 with &lt;span class="caps"&gt;SPDY&lt;/span&gt; 3.1. Like the &lt;a class="reference external" href="/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/"&gt;nginx 1.5.9
 release&lt;/a&gt;
 , this release comes with ngx_pagespeed 1.7.30.3-beta and is available
-on &lt;a class="reference external" href="http://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt; or as downloads below.&lt;/p&gt;
+on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt; or as downloads below.&lt;/p&gt;
 &lt;div class="section" id="manual-download"&gt;
 &lt;h2&gt;Manual download&lt;/h2&gt;
 &lt;table class="docutils"&gt;
@@ -289,7 +289,7 @@ b334bb1e57d3920f68e2dd37399156281105eefb  nginx-full-dbg_1.5.10_amd64.deb
 &lt;/div&gt;
 </content><category term="deb builds"></category><category term="debian"></category><category term="ubuntu"></category><category term="nginx"></category><category term="spdy"></category><category term="pagespeed"></category><category term="ngx_pagespeed"></category></entry><entry><title>nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta</title><link href="https://kura.gg/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/" rel="alternate"></link><published>2014-02-02T17:54:00+00:00</published><updated>2014-02-02T17:54:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-02:/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/</id><summary type="html">
 &lt;p&gt;I have built and released nginx 1.5.9 with ngx_pagespeed module 1.7.30.3-beta
-and published them on &lt;a class="reference external" href="http://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
+and published them on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="manual-download-install"&gt;
 &lt;h2&gt;Manual download &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; install&lt;/h2&gt;
 &lt;table class="docutils"&gt;
@@ -332,7 +332,7 @@ e54ab6b670cfe7d56502ef08b6e2656f  nginx-extras_1.5.9_amd64.deb
 9bb9b524c523a69f9f263eefbe5f5783  nginx-naxsi_1.5.9_amd64.deb
 7b8e254515d3b6f90b8e55c720d314b8 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I have built and released nginx 1.5.9 with ngx_pagespeed module 1.7.30.3-beta
-and published them on &lt;a class="reference external" href="http://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
+and published them on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="manual-download-install"&gt;
 &lt;h2&gt;Manual download &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; install&lt;/h2&gt;
 &lt;table class="docutils"&gt;
@@ -400,8 +400,8 @@ d5b759c20d63e9e1a004f2eb032728ff23a38ee8  nginx-extras-dbg_1.5.9_amd64.deb
 ngx_pagespeed and &lt;span class="caps"&gt;SPDY&lt;/span&gt; support, I decided it would make sense to actually
 host these in my own apt repository, so I did.&lt;/p&gt;
 &lt;p&gt;You can enable this by adding it to your apt config.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget -qO - http://apt.kura.gg/apt.kura.gg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
-&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb http://apt.kura.gg/ `lsb_release -cs` main"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/apt.kura.gg.list
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget -qO - https://apt.kura.gg/apt.kura.gg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb https://apt.kura.gg/ `lsb_release -cs` main"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/apt.kura.gg.list
 sudo apt-get update
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Simple.&lt;/p&gt;

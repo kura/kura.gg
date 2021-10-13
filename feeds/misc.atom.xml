@@ -437,7 +437,7 @@ highlighters have issues with nginx and Lua in a single file.&lt;/p&gt;
         &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
         &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;https://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="p"&gt;}&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -695,7 +695,7 @@ that have &lt;span class="caps"&gt;HTTP&lt;/span&gt; brute force attempts logged
 things but there are a few. There’s not much you can do, they are automated
 and you should reply to them like you should reply to all abuse complaints but,
 the response will never be read.&lt;/p&gt;
-&lt;p&gt;The majority of complaints I get are related to &lt;a class="reference external" href="http://stopforumspam.com/"&gt;stopforumspam.com&lt;/a&gt;. Again, there’s not really anything you can do
+&lt;p&gt;The majority of complaints I get are related to &lt;a class="reference external" href="https://stopforumspam.com/"&gt;stopforumspam.com&lt;/a&gt;. Again, there’s not really anything you can do
 about this except reply.&lt;/p&gt;
 &lt;p&gt;Generally though, I will receive maybe one complaint per month on each node,
 sometimes two, but that’s about it and it’s always one of the two abuse reports
@@ -719,13 +719,13 @@ too to continue paying for my nodes and put new ones online.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="misc"></category><category term="tor"></category></entry><entry><title>Hauntr - A theme for Pelican</title><link href="https://kura.gg/2014/06/09/hauntr/" rel="alternate"></link><published>2014-06-09T18:00:00+01:00</published><updated>2014-06-09T18:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-06-09:/2014/06/09/hauntr/</id><content type="html">&lt;div class="figure align-center"&gt;
 &lt;img alt="Haunter, the evolved Pokémon form of Gastly" src="/images/haunter.png"/&gt;
-&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="http://kawiku.deviantart.com/art/Haunter-350580512"&gt;Kawiku&lt;/a&gt;)&lt;/p&gt;
+&lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="https://kawiku.deviantart.com/art/Haunter-350580512"&gt;Kawiku&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hauntr is a minimal, lightweight and clean theme for the
-&lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
+&lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt; blogging platform.&lt;/p&gt;
 &lt;p&gt;It is named after the Pokémon ‘Haunter’ because it is a modified version
 (you might say evolved) of my previous theme, &lt;a class="reference external" href="/ghastly/"&gt;Ghastly&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -752,25 +752,25 @@ cached version of the shield, a log line is still written to say it was request
 &lt;div class="section" id="top-20"&gt;
 &lt;h2&gt;Top 20&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;Pillow [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;Theano [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.django-cms.org/en/"&gt;django-cms&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;django-cms [version]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/sivel/speedtest-cli"&gt;speedtest-cli&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;speedtest-cli [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/globocom/thumbor"&gt;thumbor&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;thumbor [version]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://pythonhosted.org/tweepy/html/"&gt;tweepy&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;tweepy [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;pymssql [version]&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The first thing that struck me is that I actually hadn’t heard of or used
@@ -787,25 +787,25 @@ cached version of the shield, a log line is still written to say it was request
 &lt;div class="section" id="top-20"&gt;
 &lt;h2&gt;Top 20&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://docs.python-requests.org/en/latest/index.html"&gt;requests&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pillow.readthedocs.org/en/latest/"&gt;Pillow&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;Pillow [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;Theano [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/joke2k/faker"&gt;fake-factory&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://livestreamer.tanuki.se/en/latest/install.html"&gt;livestreamer&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.django-cms.org/en/"&gt;django-cms&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;django-cms [version]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/sivel/speedtest-cli"&gt;speedtest-cli&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;speedtest-cli [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://boto.readthedocs.org/en/latest/"&gt;boto&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/globocom/thumbor"&gt;thumbor&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;thumbor [version]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.pip-installer.org/en/latest/"&gt;pip&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://pythonhosted.org/tweepy/html/"&gt;tweepy&lt;/a&gt; [version]&lt;/li&gt;
 &lt;li&gt;tweepy [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://django-allauth.readthedocs.org/en/latest/"&gt;django-allauth&lt;/a&gt; [downloads]&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pymssql.org/"&gt;pymssql&lt;/a&gt; [downloads]&lt;/li&gt;
 &lt;li&gt;pymssql [version]&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The first thing that struck me is that I actually hadn’t heard of or used
@@ -823,11 +823,11 @@ removed from this website&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I’ve been planning on doing it from a while because I do not like Google Analytics,
 I don’t like being tracked and I actively stopped trying to use Google services
 for my own reasons.&lt;/p&gt;
-&lt;p&gt;The company I work for uses &lt;a class="reference external" href="http://piwik.org/"&gt;Piwik&lt;/a&gt;
+&lt;p&gt;The company I work for uses &lt;a class="reference external" href="https://piwik.org/"&gt;Piwik&lt;/a&gt;
 for some of our clients, I am not a fan
 of Piwik or how it works and does things. I did some research and found some
 service providers but their free options were limited or I felt they weren’t a
-good fit, eventually I stumbled upon &lt;a class="reference external" href="http://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
+good fit, eventually I stumbled upon &lt;a class="reference external" href="https://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
 not only suited my purposes, but it meant servers I control would hold the
 analytical data, rather than some third party.&lt;/p&gt;
 &lt;/div&gt;
@@ -841,20 +841,20 @@ removed from this website&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I’ve been planning on doing it from a while because I do not like Google Analytics,
 I don’t like being tracked and I actively stopped trying to use Google services
 for my own reasons.&lt;/p&gt;
-&lt;p&gt;The company I work for uses &lt;a class="reference external" href="http://piwik.org/"&gt;Piwik&lt;/a&gt;
+&lt;p&gt;The company I work for uses &lt;a class="reference external" href="https://piwik.org/"&gt;Piwik&lt;/a&gt;
 for some of our clients, I am not a fan
 of Piwik or how it works and does things. I did some research and found some
 service providers but their free options were limited or I felt they weren’t a
-good fit, eventually I stumbled upon &lt;a class="reference external" href="http://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
+good fit, eventually I stumbled upon &lt;a class="reference external" href="https://www.openwebanalytics.com"&gt;Open Web Analytics&lt;/a&gt; and decided that it
 not only suited my purposes, but it meant servers I control would hold the
 analytical data, rather than some third party.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="hello-duckduckgo"&gt;
 &lt;h2&gt;Hello DuckDuckGo&lt;/h2&gt;
 &lt;p&gt;After launching the new version of my site, I got upset at the fact I had lost
-my search functionality. Sadly &lt;a class="reference external" href="http://docs.getpelican.com/"&gt;Pelican&lt;/a&gt;
+my search functionality. Sadly &lt;a class="reference external" href="https://docs.getpelican.com/"&gt;Pelican&lt;/a&gt;
 does not have any working search
-functionality and I undertook the task of building &lt;a class="reference external" href="http://sphinx-doc.org/"&gt;Sphinx&lt;/a&gt;
+functionality and I undertook the task of building &lt;a class="reference external" href="https://sphinx-doc.org/"&gt;Sphinx&lt;/a&gt;
 -style searches
 in to Pelican, making it entirely static.&lt;/p&gt;
 &lt;p&gt;The task of building this functionality is still under way, but I decided that
@@ -878,8 +878,8 @@ different &lt;span class="caps"&gt;IP&lt;/span&gt; addresses. An attacker is ban
 &lt;div align="center" class="vimeo"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="500" mozallowfullscreen="" src="https://player.vimeo.com/video/37818131" webkitallowfullscreen="" width="800"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="section" id="direct-links"&gt;
 &lt;h2&gt;Direct links&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://vimeo.com/37818131"&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.youtube.com/watch?v=S_p0G2oLuDU"&gt;YouTube&lt;/a&gt; - older version of the video with yellow colouring instead of red.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://vimeo.com/37818131"&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=S_p0G2oLuDU"&gt;YouTube&lt;/a&gt; - older version of the video with yellow colouring instead of red.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </content><category term="misc"></category><category term="bruteforce"></category><category term="ssh"></category></entry><entry><title>code_swarm - Apache, Python and PostgreSQL commit visualization</title><link href="https://kura.gg/2010/02/13/code_swarm-apache-python-and-postgresql-commit-visualization/" rel="alternate"></link><published>2010-02-13T23:01:00+00:00</published><updated>2010-02-13T23:01:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2010-02-13:/2010/02/13/code_swarm-apache-python-and-postgresql-commit-visualization/</id><content type="html">

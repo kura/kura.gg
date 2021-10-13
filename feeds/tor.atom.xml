@@ -8,27 +8,17 @@ the relatively small list of mirrors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="access"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Access&lt;/a&gt;&lt;/h2&gt;
-&lt;table class="docutils"&gt;
-&lt;thead&gt;
-&lt;tr&gt;&lt;th class="head"&gt;Website&lt;/th&gt;
-&lt;th class="head"&gt;Dist / Downloads&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://tor-mirror.kura.gg/"&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="http://tor-mirror.kura.gg/dist/"&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="https://tor-mirror.kura.gg/"&gt;&lt;span class="caps"&gt;HTTPS&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="https://tor-mirror.kura.gg/dist/"&gt;&lt;span class="caps"&gt;HTTPS&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="ftp://tor-mirror.kura.gg/"&gt;&lt;span class="caps"&gt;FTP&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="ftp://tor-mirror.kura.gg/dist/"&gt;&lt;span class="caps"&gt;FTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="rsync://tor-mirror.kura.gg/torproject.org/"&gt;&lt;span class="caps"&gt;RSYNC&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="rsync://tor-mirror.kura.gg/torproject.org/dist/"&gt;&lt;span class="caps"&gt;RSYNC&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;+——- —-+—————————+
+| Website | Dist / Downloads |
++=========+==================+
+| &lt;span class="caps"&gt;HTTP&lt;/span&gt;    | &lt;span class="caps"&gt;HTTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;        |
++————-+—————————+
+| &lt;span class="caps"&gt;HTTPS&lt;/span&gt;   | &lt;span class="caps"&gt;HTTPS&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;       |
++————-+—————————+
+| &lt;span class="caps"&gt;FTP&lt;/span&gt;     | &lt;span class="caps"&gt;FTP&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;         |
++————-+—————————+
+| &lt;span class="caps"&gt;RSYNC&lt;/span&gt;   | &lt;span class="caps"&gt;RSYNC&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;       | +————-+—————————+&lt;/p&gt;
+&lt;p&gt;Note: This mirror is now dead and links have been removed.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tor"></category><category term="tor"></category></entry><entry><title>Santa’s tor relay changes</title><link href="https://kura.gg/2014/12/27/santas-tor-relay-changes/" rel="alternate"></link><published>2014-12-27T01:12:00+00:00</published><updated>2014-12-27T01:12:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-12-27:/2014/12/27/santas-tor-relay-changes/</id><content type="html">
 &lt;div class="section" id="exiting-relays"&gt;
