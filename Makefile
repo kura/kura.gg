@@ -76,6 +76,9 @@ pngquant:
 screenshot:
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/
 
+.PHONY: crawl
+	bash scripts/crawl.sh $(OUTPUTDIR)/
+
 .PHONY: perms
 perms:
 	bash scripts/perms.sh $(OUTPUTDIR)/
