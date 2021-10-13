@@ -128,6 +128,7 @@ STATIC_PATHS = [
     "extra/robots.txt",
     "extra/favicon.ico",
     "extra/favicon.png",
+    "extra/.well-known",
 ]
 
 PAGE_EXCLUDES = ["files"]
@@ -139,6 +140,7 @@ EXTRA_PATH_METADATA = {
     "extra/favicon.ico": {"path": "favicon.ico"},
     "extra/favicon.png": {"path": "favicon.png"},
     "extra/robots.txt": {"path": "robots.txt"},
+    "extra/.well-known/dnt-policy.txt": {"path": ".well-known/dnt-policy.txt"},
 }
 
 DIRECT_TEMPLATES = ["404", "500", "archives", "categories", "index", "tags"]
