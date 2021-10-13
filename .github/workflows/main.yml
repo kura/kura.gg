@@ -51,5 +51,3 @@ jobs:
             personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
             publish_branch: gh-pages
             publish_dir: ./output
-      - name: crawl
-        run: make crawl
