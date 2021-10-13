@@ -10,7 +10,7 @@ Blackhole 1.8.0 development, Mock and Python entry_points
     :backlinks: none
 
 Over the last week I've been doing a huge amount of refactoring of
-`Blackhole <http://blackhole.io>`_ as well as writing dozens of additional
+`Blackhole <https://blackhole.io>`_ as well as writing dozens of additional
 tests. To make Blackhole more testable I needed to make a big change to
 how the program is launched and controlled.
 
@@ -110,7 +110,7 @@ For the full set of changes, take a look `on GitHub at blackhole.application
 Fun with Mock
 =============
 
-`Mock <http://www.voidspace.org.uk/python/mock/>`_ is an amazing library that
+`Mock <https://www.voidspace.org.uk/python/mock/>`_ is an amazing library that
 allows you to mock (fake) method calls and much more.
 
 I've known about Mock for a while, it's used quite heavily at work but I've

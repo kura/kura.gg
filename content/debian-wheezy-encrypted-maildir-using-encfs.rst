@@ -124,7 +124,7 @@ run optimize task.
 
 .. code-block:: bash
 
-    curl http://localhost:8080/solr/update?optimize=true
+    curl https://localhost:8080/solr/update?optimize=true
 
 init.d
 ======

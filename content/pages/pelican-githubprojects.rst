@@ -81,4 +81,4 @@ License
 
 `MIT`_ license.
 
-.. _MIT: http://opensource.org/licenses/MIT
+.. _MIT: https://opensource.org/licenses/MIT

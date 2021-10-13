@@ -59,7 +59,7 @@ full copy from `here`_.
         }
 
         client_max_body_size 2m; # increase this to increase file upload size
-        proxy_pass http://localhost:**APACHE_PORT**;
+        proxy_pass https://localhost:**APACHE_PORT**;
       }
 
       # handle uploaded files
@@ -72,7 +72,7 @@ full copy from `here`_.
         # if the static file doesn't exist, handle it with Apache
         if (!-f $request_filename) {
         break;
-        proxy_pass http://localhost:**APACHE_PORT**;
+        proxy_pass https://localhost:**APACHE_PORT**;
       }
 
       }

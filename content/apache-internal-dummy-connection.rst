@@ -30,7 +30,7 @@ servers running 2.2.6 or lower can suffer performance problems due to
 how Apache wakes it's children because it used GET / to wake them, but I
 run 2.2.8 which doesn't actually used that same method.
 
-.. _explanation here: http://wiki.apache.org/httpd/InternalDummyConnection
+.. _explanation here: https://wiki.apache.org/httpd/InternalDummyConnection
 
 I applied the well known "work around" for this to test it and see if it
 made any difference.

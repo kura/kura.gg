@@ -18,23 +18,16 @@ the relatively small list of mirrors.
 Access
 ======
 
-+---------+------------------+
++----- ---+------------------+
 | Website | Dist / Downloads |
 +=========+==================+
-| HTTP_   | `HTTP DIST`_     |
+| HTTP    | HTTP DIST        |
 +---------+------------------+
-| HTTPS_  | `HTTPS DIST`_    |
+| HTTPS   | HTTPS DIST       |
 +---------+------------------+
-| FTP_    | `FTP DIST`_      |
+| FTP     | FTP DIST         |
 +---------+------------------+
-| RSYNC_  | `RSYNC DIST`_    |
+| RSYNC   | RSYNC DIST       |
 +---------+------------------+
 
-.. _HTTP: http://tor-mirror.kura.gg/
-.. _`HTTP DIST`: http://tor-mirror.kura.gg/dist/
-.. _HTTPS: https://tor-mirror.kura.gg/
-.. _`HTTPS DIST`: https://tor-mirror.kura.gg/dist/
-.. _FTP: ftp://tor-mirror.kura.gg/
-.. _`FTP DIST`: ftp://tor-mirror.kura.gg/dist/
-.. _RSYNC: rsync://tor-mirror.kura.gg/torproject.org/
-.. _`RSYNC DIST`: rsync://tor-mirror.kura.gg/torproject.org/dist/
+Note: This mirror is now dead and links have been removed.

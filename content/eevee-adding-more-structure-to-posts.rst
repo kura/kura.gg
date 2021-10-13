@@ -17,7 +17,7 @@ Eevee -- Adding more structure to posts
 Introduction
 ============
 
-`Eevee </eevee/>`__ is a theme for `Pelican <http://getpelican.com>`_, based on
+`Eevee </eevee/>`__ is a theme for `Pelican <https://getpelican.com>`_, based on
 Google's `Material Design <https://material.google.com/>`_ specification that I
 released in June 2016.
 
@@ -41,7 +41,7 @@ vocabulary, improving the experience for everyone that uses your website.
 
 .. code-block:: html
 
-    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <article itemscope itemtype="https://schema.org/BlogPosting">
         <meta itemprop="accessibilityControl" content="fullKeyboardControl" />
         <meta itemprop="accessibilityControl" content="fullMouseControl" />
         <meta itemprop="accessibilityControl" content="bookmarks" />
@@ -72,7 +72,7 @@ vocabulary, improving the experience for everyone that uses your website.
             </section>
         </div>
         <div class="eevee-comment" id="article-comments">
-            <section itemscope itemtype='http://schema.org/UserComments'>
+            <section itemscope itemtype='https://schema.org/UserComments'>
                 <h2>Discuss</h2>
                 Disqus/Muut stuff here.
             </section>
@@ -84,12 +84,12 @@ outline each important section and explain what it does.
 
 .. code-block:: html
 
-    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <article itemscope itemtype="https://schema.org/BlogPosting">
 
 This simply tells the client which schema is being used for the content within
 it. The client uses that data to determine what elements should be provided
 based on that schema. Here I'm using the `BlogPosting
-<http://schema.org/BlogPosting>`__ schema.
+<https://schema.org/BlogPosting>`__ schema.
 
 .. code-block:: html
 
@@ -158,10 +158,10 @@ This section informs the client that this is the main content of the post.
 
 .. code-block:: html
 
-    <section itemscope itemtype='http://schema.org/UserComments'>
+    <section itemscope itemtype='https://schema.org/UserComments'>
         <h2>Discuss</h2>
         Disqus/Muut stuff here.
     </section>
 
-Finally we add another schema `UserComments <http://schema.org/UserComments>`__
+Finally we add another schema `UserComments <https://schema.org/UserComments>`__
 that defines user comment content.

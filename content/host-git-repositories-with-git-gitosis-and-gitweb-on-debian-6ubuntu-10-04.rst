@@ -204,6 +204,6 @@ You will also need to add the Apache user to the git group
 
 By default Debian and Ubuntu will symlink in an Apache2 config to
 **/etc/apache2/conf.d/gitweb** which is accessible from a browser on
-`http://YOUR_SERVER/gitweb`_
+`https://YOUR_SERVER/gitweb`_
 
-.. _`http://YOUR_SERVER/gitweb`: http://YOUR_SERVER/gitweb
+.. _`https://YOUR_SERVER/gitweb`: https://YOUR_SERVER/gitweb

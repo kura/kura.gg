@@ -13,7 +13,7 @@ haproxy, nginx and SPDY with SSL termination (Debian 7)
 and built my own nginx packages with `SPDY`_ built in.
 
 .. _`I wrote an article last week`: /2013/07/10/nginx-spdy-and-ngx-pagespeed/
-.. _`SPDY`: http://www.chromium.org/spdy
+.. _`SPDY`: https://www.chromium.org/spdy
 
 I decided I would take things a little further and poke around with
 haproxy some more. The initial plan was to compile the latest dev
@@ -281,7 +281,7 @@ running on port 81.
 
 We have two lines *port_in_redirect* and *server_name_in_redirect*
 set to *off* because otherwise nginx would try to redirect to
-http://kura.gg:81/ and cause issues with haproxy.
+https://kura.gg:81/ and cause issues with haproxy.
 
 It's a simple as that, you can test this using the `Firefox`_ and
 `Chrome`_ extensions that show you websites with SPDY enabled.

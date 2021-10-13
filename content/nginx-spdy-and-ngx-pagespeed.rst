@@ -12,14 +12,14 @@ nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)
 I decided to rebuild syslog.tv as pure HTML using RST and
 `Pelican`_ and rebrand it as kura.gg.
 
-.. _`Pelican`: http://blog.getpelican.com/
+.. _`Pelican`: https://blog.getpelican.com/
 
 In doing so I decided I would go all out and use `SPDY`_ and
 `ngx_pagespeed`_ (`mod_pagespeed`_) for fun to see exactly
 what I could do.
 
-.. _`SPDY`: http://www.chromium.org/spdy
-.. _`ngx_pagespeed`: http://nginx.org/en/docs/http/ngx_http_spdy_module.html
+.. _`SPDY`: https://www.chromium.org/spdy
+.. _`ngx_pagespeed`: https://nginx.org/en/docs/http/ngx_http_spdy_module.html
 .. _`mod_pagespeed`: https://developers.google.com/speed/
 
 Sadly no version of nginx has been officially released with SPDY

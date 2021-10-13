@@ -10,9 +10,9 @@ HOWTO: Using SPF to validate outgoing mail
     :backlinks: none
 
 You can get a basic overview on what SPF is, what it's for and it's more
-advanced usages here - `http://www.openspf.org/`_
+advanced usages here - `https://www.openspf.org/`_
 
-.. _`http://www.openspf.org/`: http://www.openspf.org/
+.. _`https://www.openspf.org/`: https://www.openspf.org/
 
 This article is to give only a basic insight in to how you can use an
 SPF record to valid mail from your servers.
@@ -24,7 +24,7 @@ SPF records work from your DNS, it's really simple. Technically there is
 a DNS type defined for SPF records as of `RFC 4408`_, but since not all
 servers recognise this type it also works in the TXT type.
 
-.. _RFC 4408: http://tools.ietf.org/html/rfc4408
+.. _RFC 4408: https://tools.ietf.org/html/rfc4408
 
 A simple usage of SPF is
 

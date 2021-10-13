@@ -14,10 +14,10 @@ The beginning
 
 Where to begin? nginx would be a good start I suppose. It's far easier
 and makes much for sense for you to actually read about nginx from it's
-own website - `http://nginx.org/en/`_ - but just to give a simple
+own website - `https://nginx.org/en/`_ - but just to give a simple
 explanation too; \`nginx is king of static content HTTP servers.\`
 
-.. _`http://nginx.org/en/`: http://nginx.org/en/
+.. _`https://nginx.org/en/`: https://nginx.org/en/
 
 Anyone that has dealt with Apache on medium to high traffic websites
 will know that Apache is bit of a \`wheezy, old geezer\` when it comes
@@ -94,7 +94,7 @@ like this
             proxy_cache_key syslog.tv$request_uri;
             proxy_cache_valid 200 302 60m;
             proxy_cache_valid 404 1m;
-            proxy_pass http://apache.syslog.tv;
+            proxy_pass https://apache.syslog.tv;
         }
     }
 

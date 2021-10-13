@@ -24,7 +24,7 @@ Tech stack
 ==========
 
 From the very start I decided to use
-`Tornado framework <http://www.tornadoweb.org/en/stable/>`_, although this may
+`Tornado framework <https://www.tornadoweb.org/en/stable/>`_, although this may
 change in the future.
 
 The original plan was to generate the images using Pillow (PIL) and then simply
@@ -45,7 +45,7 @@ but sadly got no response so the images remained as they were.
 crate.io shuts down
 ===================
 
-Sadly `crate.io <http://crate.io>`_ stopped being a custom PyPI mirror in mid
+Sadly `crate.io <https://crate.io>`_ stopped being a custom PyPI mirror in mid
 December which meant I had to rewrite the codebase to use the official PyPI
 JSON API. In doing so I lost the ability to get download counts for all
 versions or a specific version and instead, could only get a count by day,
@@ -54,7 +54,7 @@ week or month.
 It was while changing this functionality that I stumbled upon a `ticket from
 the shields project <https://github.com/gittip/shields.io/issues/83>`_
 mentioning my shields and their poor artistic styling. The ticked mentioned an
-`public API <http://shields.io/>`_ for generating these images.
+`public API <https://shields.io/>`_ for generating these images.
 
 After switching to this API I quickly found from PyPI Pin users on Twitter that
 there was an issue in their API, specifically with version number formats.
@@ -65,7 +65,7 @@ b.repl.ca
 =========
 
 While trying to find the source code for shields.io on GitHub I found what they
-consider `a newer, better version <http://b.repl.ca/>`_.
+consider `a newer, better version <https://b.repl.ca/>`_.
 
 I promptly switched to PyPI Pins to use this and queried the authors on GitHub
 to make sure the API was meant to be public and usable, thankfully it was.

@@ -13,7 +13,7 @@ Introduction
 ============
 
 With the release of my `Eevee </eevee/>`_ theme for `Pelican
-<http://getpelican.com>`_, I realised displaying a thumbnail image of the
+<https://getpelican.com>`_, I realised displaying a thumbnail image of the
 theme that linked to a larger image wasn't the most appealing design choice.
 I prefer to leave Javascript out of the equation where possible, being one of
 those weird people that have it disabled by default.

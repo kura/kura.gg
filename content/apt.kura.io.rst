@@ -14,8 +14,8 @@ You can enable this by adding it to your apt config.
 
 .. code-block:: bash
 
-    wget -qO - http://apt.kura.gg/apt.kura.gg.key | sudo apt-key add -
-    echo "deb http://apt.kura.gg/ `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/apt.kura.gg.list
+    wget -qO - https://apt.kura.gg/apt.kura.gg.key | sudo apt-key add -
+    echo "deb https://apt.kura.gg/ `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/apt.kura.gg.list
     sudo apt-get update
 
 Simple.

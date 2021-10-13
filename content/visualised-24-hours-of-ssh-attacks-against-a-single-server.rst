@@ -29,5 +29,5 @@ Direct links
 -  `Vimeo`_
 -  `YouTube`_ - older version of the video with yellow colouring instead of red.
 
-.. _Vimeo: http://vimeo.com/37818131
-.. _YouTube: http://www.youtube.com/watch?v=S_p0G2oLuDU
+.. _Vimeo: https://vimeo.com/37818131
+.. _YouTube: https://www.youtube.com/watch?v=S_p0G2oLuDU

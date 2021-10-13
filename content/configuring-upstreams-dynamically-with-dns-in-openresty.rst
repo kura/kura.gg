@@ -458,7 +458,7 @@ highlighters have issues with nginx and Lua in a single file.
             server_name localhost;
 
             location / {
-                proxy_pass http://backend;
+                proxy_pass https://backend;
             }
         }
 

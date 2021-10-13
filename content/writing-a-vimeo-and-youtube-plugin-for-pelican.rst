@@ -9,9 +9,9 @@ Writing a Vimeo and YouTube plugin for Pelican
 .. contents::
     :backlinks: none
 
-`Pelican <http://getpelican.com/>`_ is a Python-powered static blog generator
-that processes `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_
-and `Markdown <http://daringfireball.net/projects/markdown/>`_ articles and
+`Pelican <https://getpelican.com/>`_ is a Python-powered static blog generator
+that processes `ReStructuredText <https://docutils.sourceforge.net/rst.html>`_
+and `Markdown <https://daringfireball.net/projects/markdown/>`_ articles and
 pages and converts them to HTML. I use Pelican to power this blog.
 
 There is a YouTube RST directive built in to Pelican core but it really
@@ -24,7 +24,7 @@ wrote a plugin for YouTube so that it could be removed from the core.
 
 `There is a decent amount of detail in the Pelican documentation on how to
 write plugins
-<http://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins>`_, I'm
+<https://docs.getpelican.com/en/3.2/plugins.html#how-to-create-plugins>`_, I'm
 not going to cover the whole process but I thought I would cover a little of
 what I did.
 

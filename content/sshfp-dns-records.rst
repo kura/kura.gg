@@ -6,7 +6,7 @@ SSHFP DNS records
 :tags: dnssec, dns, sshfp, ssh
 :slug: sshfp-dns-records
 
-`SSHFP <http://tools.ietf.org/html/rfc4255>`_ records are a defense against
+`SSHFP <https://tools.ietf.org/html/rfc4255>`_ records are a defense against
 people blindly typing 'yes' when asked if they want to continue connecting to
 an SSH host who's authenticity is unknown.
 

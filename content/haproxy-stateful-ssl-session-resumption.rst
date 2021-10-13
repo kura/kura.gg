@@ -11,7 +11,7 @@ haproxy stateful SSL session resumption
 
 By default haproxy enables stateless SSL session resumption, but you can enable
 stateful session resumption in accordance with
-`RFC 5077 <http://www.ietf.org/rfc/rfc5077.txt>`__. This functionality, like
+`RFC 5077 <https://www.ietf.org/rfc/rfc5077.txt>`__. This functionality, like
 the SSL handling it relies on is only available from haproxy 1.5.
 
 Configuration

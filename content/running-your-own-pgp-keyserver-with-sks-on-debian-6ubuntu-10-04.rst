@@ -68,8 +68,8 @@ provided that too.
     sudo wget /files/sks-index.html -O /var/lib/sks/www/index.html
 
 Now your PGP server should be accessible from a web browser at
-`http://YOUR_SERVER:11371/`_ and it should look like mine
+`https://YOUR_SERVER:11371/`_ and it should look like mine
 `:11371/`_
 
-.. _`http://YOUR_SERVER:11371/`: http://YOUR_SERVER:11371/
+.. _`https://YOUR_SERVER:11371/`: https://YOUR_SERVER:11371/
 .. _`:11371/`: https://syslog.tv/

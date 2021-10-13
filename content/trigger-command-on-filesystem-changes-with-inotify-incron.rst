@@ -13,13 +13,13 @@ During a seemingly normal work day a colleague pointed out a problem to
 me and asked if I had any solution.
 
 The problem was that they were trying to use InfoBright
-(`http://www.infobright.com/`_) for some data crunching, export the data
+(`https://www.infobright.com/`_) for some data crunching, export the data
 to CSV and then import in to MySQL. My first idea was to output the data
 from InfoBright as SQL and pipe it directly in to MySQL, this turned out
 to not be possible as the version of IB they were using only supported
 output as CSV.
 
-.. _`http://www.infobright.com/`: http://www.infobright.com/
+.. _`https://www.infobright.com/`: https://www.infobright.com/
 
 This in itself wasn't a problem, the problem lay with the fact that IB
 would only output the file with 0660 permissions, and although both IB

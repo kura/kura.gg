@@ -62,11 +62,11 @@ try to install it using APT
     sudo apt-get install dk-filter
 
 If it doesn't work then install it by hand, go to
-`http://ftp.us.debian.org/debian/pool/main/d/dk-milter/`_ and download
+`https://ftp.us.debian.org/debian/pool/main/d/dk-milter/`_ and download
 the .deb file for your architecture. To install it run the command below
 replacing <FILE> with the file you downloaded.
 
-.. _`http://ftp.us.debian.org/debian/pool/main/d/dk-milter/`: http://ftp.us.debian.org/debian/pool/main/d/dk-milter/
+.. _`https://ftp.us.debian.org/debian/pool/main/d/dk-milter/`: https://ftp.us.debian.org/debian/pool/main/d/dk-milter/
 
 .. code-block:: bash
 

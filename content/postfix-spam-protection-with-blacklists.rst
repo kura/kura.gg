@@ -34,7 +34,7 @@ Wikipedia, I have listed the services that I actually use but you can
 find a much larger list on the `page that I took the descriptions
 from`_.
 
-.. _page that I took the descriptions from: http://en.wikipedia.org/wiki/Comparison_of_DNS_blacklists
+.. _page that I took the descriptions from: https://en.wikipedia.org/wiki/Comparison_of_DNS_blacklists
 
 ***Please note that the SORBS lists are generally classed as being
 aggressive and a lot of people advise not to use them due to this. They

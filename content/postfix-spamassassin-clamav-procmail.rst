@@ -87,7 +87,7 @@ add the spam score too, like this ***** SPAM 6.0 *****,
 report_safe will attach the spam email as a plain text attachment to
 the email to filter out any bad stuff. The 3 bayes options enabled the
 Bayesian classifier and enable auto learn functionality. For more info
-on Bayesian cliassifier, go `here <http://en.wikipedia.org/wiki/Bayesian_spam_filtering>`_.
+on Bayesian cliassifier, go `here <https://en.wikipedia.org/wiki/Bayesian_spam_filtering>`_.
 
 SpamAssassin is now configured but Postfix doesn't know how to talk to
 it, we'll configure that later. Now on to...

@@ -227,7 +227,7 @@ Turn off PHP exposure.
 Preventing session fixation. For more information on this please see
 `this paper`_.
 
-.. _this paper: http://www.acros.si/papers/session_fixation.pdf
+.. _this paper: https://www.acros.si/papers/session_fixation.pdf
 
 .. code-block:: ini
 

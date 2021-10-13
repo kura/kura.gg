@@ -8,7 +8,7 @@ go-bash-completion
     :backlinks: none
 
 go-bash-completion is as it sounds - bash completion
-script for the `Go programming language <http://golang.org/>`_.
+script for the `Go programming language <https://golang.org/>`_.
 
 Downloads
 =========
@@ -52,7 +52,7 @@ Or you can do it the lazy way
 OS X
 ----
 
-With `homebrew <http://brew.sh/>`_ you can install the
+With `homebrew <https://brew.sh/>`_ you can install the
  `go-completion` recipe to use this plugin
 
 .. code-block:: bash

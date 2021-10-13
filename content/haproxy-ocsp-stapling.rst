@@ -38,8 +38,8 @@ Inside the output, look for the following section.
 ::
 
     Authority Information Access:
-        CA Issuers - URI:http://secure.globalsign.com/cacert/gsdomainvalsha2g2r1.crt
-        OCSP - URI:http://ocsp2.globalsign.com/gsdomainvalsha2g2
+        CA Issuers - URI:https://secure.globalsign.com/cacert/gsdomainvalsha2g2r1.crt
+        OCSP - URI:https://ocsp2.globalsign.com/gsdomainvalsha2g2
 
 Testing OCSP response
 =====================
@@ -78,7 +78,7 @@ a host header.
 
     -header Host OCSP_URI_DOMAIN
 
-For my certificate the OCSP URI is *http://ocsp2.globalsign.com/gsdomainvalsha2g2*
+For my certificate the OCSP URI is *https://ocsp2.globalsign.com/gsdomainvalsha2g2*
 so the Host header would be like below.
 
 ::

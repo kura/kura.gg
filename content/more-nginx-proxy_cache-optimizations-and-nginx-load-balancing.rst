@@ -103,7 +103,7 @@ changed and why it's changed.
         proxy_cache cache;
         proxy_cache_valid 200 302 60m;
         proxy_cache_valid 404 1m;
-        proxy_pass http://apachesyslogtv;
+        proxy_pass https://apachesyslogtv;
     }
 
 Ok, so that's the first location, definition. Several things have
@@ -126,7 +126,7 @@ to use.
     location ~* .(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
         proxy_cache_valid 200 120m;
         expires 604800;
-        proxy_pass http://apachesyslogtv;
+        proxy_pass https://apachesyslogtv;
         proxy_cache cache;
     }
 
@@ -182,13 +182,13 @@ The full config
             proxy_cache cache;
             proxy_cache_valid 200 302 60m;
             proxy_cache_valid 404 1m;
-            proxy_pass http://apachesyslogtv;
+            proxy_pass https://apachesyslogtv;
         }
 
         location ~* .(jpg|png|gif|jpeg|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
             proxy_cache_valid 200 120m;
             expires 604800;
-            proxy_pass http://apachesyslogtv;
+            proxy_pass https://apachesyslogtv;
             proxy_cache cache;
         }
 

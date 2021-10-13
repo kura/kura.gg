@@ -9,7 +9,7 @@ Ghastly - A theme for Pelican
 .. figure:: /images/gastly.png
     :alt: Gastly, the Ghost Pokémon
 
-    (Image by `Raiba-art <http://raiba-art.deviantart.com/art/Gastly-294533100>`__)
+    (Image by `Raiba-art <https://raiba-art.deviantart.com/art/Gastly-294533100>`__)
 
 .. contents::
     :backlinks: none
@@ -18,7 +18,7 @@ Introduction
 ============
 
 I'd like to introduce Ghastly, a clean and minimal, lightweight theme for the
-`Pelican <http://getpelican.com>`__ blogging platform.
+`Pelican <https://getpelican.com>`__ blogging platform.
 
 Ghastly is based heavily off of Casper, the default theme for
 `Ghost <https://ghost.org>`__.

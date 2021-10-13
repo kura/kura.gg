@@ -58,7 +58,7 @@ and you should reply to them like you should reply to all abuse complaints but,
 the response will never be read.
 
 The majority of complaints I get are related to `stopforumspam.com
-<http://stopforumspam.com/>`_. Again, there's not really anything you can do
+<https://stopforumspam.com/>`_. Again, there's not really anything you can do
 about this except reply.
 
 Generally though, I will receive maybe one complaint per month on each node,

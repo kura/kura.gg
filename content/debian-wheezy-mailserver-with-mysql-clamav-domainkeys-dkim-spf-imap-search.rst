@@ -446,7 +446,7 @@ For fulltext searching, you'll want to enable wheezy-backports and install
 
 .. code-block:: none bash
 
-    sudo echo "deb http://ftp.debian.org/debian wheezy-backports main contrib non-free" >> /etc/apt/sources.list
+    sudo echo "deb https://ftp.debian.org/debian wheezy-backports main contrib non-free" >> /etc/apt/sources.list
     sudo apt-get update
     sudo apt-get install dovecot-solr solr-tomcat
 
@@ -482,7 +482,7 @@ Next up, add the following lines to `/etc/dovecot/conf.d/90-plugin.conf`
 
     plugin {
         fts = solr
-        fts_solr = break-imap-search url=http://localhost:8080/solr/
+        fts_solr = break-imap-search url=https://localhost:8080/solr/
     }
 
 Create `/etc/cron.daily/solr` with the following contents.
@@ -490,14 +490,14 @@ Create `/etc/cron.daily/solr` with the following contents.
 .. code-block:: none bash
 
     #!/bin/sh
-    curl http://localhost:8080/solr/update?optimize=true
+    curl https://localhost:8080/solr/update?optimize=true
 
 Create `/etc/cron.hourly/solr` with the following contents.
 
 .. code-block:: none bash
 
     #!/bin/sh
-    curl http://localhost:8080/solr/update?commit=true
+    curl https://localhost:8080/solr/update?commit=true
 
 Make both files executable.
 

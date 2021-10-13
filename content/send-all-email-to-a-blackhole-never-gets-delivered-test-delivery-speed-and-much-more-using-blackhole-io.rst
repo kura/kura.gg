@@ -19,12 +19,12 @@ Recently I have rebuilt this project for an internal project at work
 using the `Tornado framework`_. Sadly this project as a whole cannot be
 released but a version of this code will be released in the near future.
 
-.. _Tornado framework: http://www.tornadoweb.org/
+.. _Tornado framework: https://www.tornadoweb.org/
 
 Until that is released I have launched a new service called
 `blackhole.io`_
 
-.. _blackhole.io: http://blackhole.io
+.. _blackhole.io: https://blackhole.io
 
 What is blackhole.io?
 ---------------------

@@ -17,9 +17,9 @@ known <https://blackhole.io/1>`_ -- was written on `Python 2.7
 <https://docs.python.org/2.6/whatsnew/2.6.html>`_ for a time and also
 supporting early version of `Python 3
 <https://docs.python.org/3.2/whatsnew/3.2.html>`_, `PyPy 2
-<http://www.pypy.org/features.html>`_ and `PyPy 3
-<http://www.pypy.org/features.html>`_. Built on top of `Tornado
-<http://www.tornadoweb.org/en/stable/>`_, it was asynchronous in a fashion and
+<https://www.pypy.org/features.html>`_ and `PyPy 3
+<https://www.pypy.org/features.html>`_. Built on top of `Tornado
+<https://www.tornadoweb.org/en/stable/>`_, it was asynchronous in a fashion and
 -- quite simply -- worked.
 
 The original prototype that became Blackhole was `SimpleMTA </simplemta>`_ -- a

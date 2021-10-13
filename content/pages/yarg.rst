@@ -33,7 +33,7 @@ Newest packages interface
     >>> packages[0].name
     u'yarg'
     >>> packages.url
-    u'http://pypi.python.org/pypi/yarg
+    u'https://pypi.python.org/pypi/yarg
 
 Updated packages interface
 --------------------------
@@ -49,7 +49,7 @@ Updated packages interface
     >>> packages[0].version
     u'0.1.2'
     >>> packages[0].url
-    u'http://pypi.python.org/pypi/yarg/0.1.2
+    u'https://pypi.python.org/pypi/yarg/0.1.2
 
 Documentation
 -------------

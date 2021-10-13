@@ -14,8 +14,8 @@ mirror, load balancer and email servers. All of my servers are hosted
 using `Linode`_ in their London data centre and have Linode's back-up
 system doing both daily and weekly snapshots.
 
-.. _Raspberry Pi: http://rpi.syslog.tv/
-.. _Linode: http://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622
+.. _Raspberry Pi: https://rpi.syslog.tv/
+.. _Linode: https://www.linode.com/?r=8d58820f89940a1a68832c0cdd53109727cfa622
 
 For the app and database servers I do server-side backups storing each
 website and it's database in it's own folder within /backup in case I
@@ -25,19 +25,19 @@ died.
 This is all well and good but I like having an off-site backup too and
 for that I use `S3`_...
 
-.. _S3: http://aws.amazon.com/s3/
+.. _S3: https://aws.amazon.com/s3/
 
 About S3
 --------
 
 Amazon's S3 is pretty cheap and very easy to use. Because only data is
 going in you don't pay a transfer fee and the cost of storage is very
-affordable, you can see a `pricing list here <http://aws.amazon.com/s3/#pricing>`_.
+affordable, you can see a `pricing list here <https://aws.amazon.com/s3/#pricing>`_.
 
 To do the backup I use a daily cron job which then uploads the data to
 S3 using `s3cmd`_.
 
-.. _s3cmd: http://s3tools.org/s3cmd
+.. _s3cmd: https://s3tools.org/s3cmd
 
 Installation
 ------------
@@ -46,8 +46,8 @@ Download the S3 tools package list in to apt
 
 .. code-block:: bash
 
-    sudo wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
-    sudo wget http://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
+    sudo wget -O- -q https://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
+    sudo wget https://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
 
 Update your package list and install s3cmd
 

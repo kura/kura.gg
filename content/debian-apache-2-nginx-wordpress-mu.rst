@@ -30,13 +30,13 @@ and running off to stomp a city.
 Love
 ----
 
-I've fallen in-love with nginx (`http://nginx.org/`_) over the last 6
+I've fallen in-love with nginx (`https://nginx.org/`_) over the last 6
 months or so, I'd been an avid user of LighTTPD for a very long time
 before but started to look in to nginx mid year as a replacement. I
 learned that at my new job they used nginx for image server and, after
 reading a few articles online decided nginx greatly outweighed "Lighty".
 
-.. _`http://nginx.org/`: http://nginx.org/
+.. _`https://nginx.org/`: https://nginx.org/
 
 First stop was getting Wordpress MU installed, this itself proved rather
 interesting, I've no idea why however. After several failed attempts
@@ -90,7 +90,7 @@ lovely data needed as shown below.
         access_log /var/log/nginx/syslog.tv.access.log;
 
         location / {
-            proxy_pass http://apache.syslog.tv;
+            proxy_pass https://apache.syslog.tv;
             proxy_redirect off;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;

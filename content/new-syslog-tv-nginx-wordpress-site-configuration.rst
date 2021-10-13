@@ -67,7 +67,7 @@ improve performance and clear up some bugs.
             proxy_cache_key $my_cache_key;
             proxy_cache_valid 200 302 60m;
             proxy_cache_valid 404 1m;
-            proxy_pass http://backend;
+            proxy_pass https://backend;
         }
 
         location ~* .(jpg|png|gif|jpeg|js|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$ {
@@ -180,7 +180,7 @@ Proxy time!
     proxy_cache_key $my_cache_key;
     proxy_cache_valid 200 302 60m;
     proxy_cache_valid 404 1m;
-    proxy_pass http://backend;
+    proxy_pass https://backend;
 
 Here I am setting the maximum size of the client body content to 8MB,
 disabling proxy redirects, passing through some basic headers to the

@@ -103,9 +103,9 @@ RedHat (yum)
     sudo yum install libssl-dev
 
 If you don't have yum installed you will either need to find an RPM or
-install openssl from source (`http://www.openssl.org/source/`_)
+install openssl from source (`https://www.openssl.org/source/`_)
 
-.. _`http://www.openssl.org/source/`: http://www.openssl.org/source/
+.. _`https://www.openssl.org/source/`: https://www.openssl.org/source/
 
 Rewrite module
 ~~~~~~~~~~~~~~
@@ -124,9 +124,9 @@ RedHat (yum)
 
     sudo yum install libpcre-dev
 
-Or compile from source (`http://www.pcre.org/`_)
+Or compile from source (`https://www.pcre.org/`_)
 
-.. _`http://www.pcre.org/`: http://www.pcre.org/
+.. _`https://www.pcre.org/`: https://www.pcre.org/
 
 Configuring
 ~~~~~~~~~~~

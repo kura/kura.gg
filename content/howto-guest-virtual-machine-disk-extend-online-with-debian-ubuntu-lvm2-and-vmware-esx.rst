@@ -183,7 +183,7 @@ space has now increased in size.
 
 *Credits*
 
-- `Original guide that I partially followed with a colleague <http://www.randombugs.com/linux/howto-extend-lvm-partition-online.html>`_
-- `Federico Marani, the colleague that helped <`http://marro.wordpress.com/`>_ (Italian)
+- `Original guide that I partially followed with a colleague <https://www.randombugs.com/linux/howto-extend-lvm-partition-online.html>`_
+- `Federico Marani, the colleague that helped <`https://marro.wordpress.com/`>_ (Italian)
 - Thanks to Mike Heald for linking me to reloading SCSI list
 

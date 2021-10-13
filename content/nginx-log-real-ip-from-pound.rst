@@ -25,9 +25,9 @@ Pound
 Once this is done, reload Pound.
 
 Next you need nginx compiled with realip module -
-`http://wiki.nginx.org/NginxHttpRealIpModule`_
+`https://wiki.nginx.org/NginxHttpRealIpModule`_
 
-.. _`http://wiki.nginx.org/NginxHttpRealIpModule`: http://wiki.nginx.org/NginxHttpRealIpModule
+.. _`https://wiki.nginx.org/NginxHttpRealIpModule`: https://wiki.nginx.org/NginxHttpRealIpModule
 
 On Ubuntu/Debian servers this module comes by default, otherwise you may
 have to compile it in yourself using the following option:

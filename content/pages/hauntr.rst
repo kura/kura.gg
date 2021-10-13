@@ -6,7 +6,7 @@ Hauntr - A theme for Pelican
     :alt: Haunter, the evolved Pokemon form of Gastly
     :align: center
 
-    (Image by `Kawiku <http://kawiku.deviantart.com/art/Haunter-350580512>`__)
+    (Image by `Kawiku <https://kawiku.deviantart.com/art/Haunter-350580512>`__)
 
 .. contents::
     :backlinks: none
@@ -15,7 +15,7 @@ Introduction
 ============
 
 Hauntr is a minimal, lightweight and clean theme for the
-`Pelican <http://getpelican.com>`__ blogging platform.
+`Pelican <https://getpelican.com>`__ blogging platform.
 
 It is named after the Pokémon 'Haunter' because it is a modified version
 (you might say evolved) of my previous theme, `Ghastly
@@ -37,9 +37,9 @@ Typography
     :alt: FiraSans map of the World
     :align: center
 
-    (Image by `the guys at Carrois, creators of FiraSans <http://dev.carrois.com/fira-3-1/>`__)
+    (Image by `the guys at Carrois, creators of FiraSans <https://dev.carrois.com/fira-3-1/>`__)
 
-The guys at `Carrois <http://dev.carrois.com/fira-3-1/>`__ created FiraSans for
+The guys at `Carrois <https://dev.carrois.com/fira-3-1/>`__ created FiraSans for
 Mozilla and released it to the world for free.
 
 The Hauntr theme uses both FiraSans for general typography and FiraMono for
@@ -93,7 +93,7 @@ Installation
 
 You can find Hauntr `on GitHub <https://github.com/kura/hauntr>`__ and you
 can find installation instructions for themes in the `pelican documentation
-<http://docs.getpelican.com/en/latest/pelican-themes.html>`__.
+<https://docs.getpelican.com/en/latest/pelican-themes.html>`__.
 
 Configuration
 =============

@@ -25,11 +25,11 @@ MK Livestatus
 Grab the mk livestatus source from `here`_, currently it's version
 1.1.10p3 but update the commands below to match your version.
 
-.. _here: http://mathias-kettner.de/check_mk_download.html
+.. _here: https://mathias-kettner.de/check_mk_download.html
 
 .. code-block:: bash
 
-    wget http://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
+    wget https://mathias-kettner.de/download/mk-livestatus-1.1.10p3.tar.gz
     tar xvzf mk-livestatus-1.1.10p3.tar.gz
     cd mk-livestatus-1.1.10p3
     ./configure
@@ -94,9 +94,9 @@ you should see something like below
 ::
 
     [1318547328] livestatus: Livestatus 1.1.10p3 by Mathias Kettner. Socket: '/var/lib/nagios3/rw/live'
-    [1318547328] livestatus: Please visit us at http://mathias-kettner.de/
+    [1318547328] livestatus: Please visit us at https://mathias-kettner.de/
     [1318547328] livestatus: Hint: please try out OMD - the Open Monitoring Distribution
-    [1318547328] livestatus: Please visit OMD at http://omdistro.org
+    [1318547328] livestatus: Please visit OMD at https://omdistro.org
     [1318547328] Event broker module '/usr/local/lib/mk-livestatus/livestatus.o' initialized successfully.
 
 Also, we can ls the newly created socket

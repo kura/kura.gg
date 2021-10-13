@@ -11,7 +11,7 @@ PyBozo is a Python implementation of `BozoCrack`_ which was originally
 written by `Juuso Salonen`_ in Ruby.
 
 .. _BozoCrack: https://github.com/juuso/BozoCrack
-.. _Juuso Salonen: http://twitter.com/juusosalonen
+.. _Juuso Salonen: https://twitter.com/juusosalonen
 
 How it works
 ------------

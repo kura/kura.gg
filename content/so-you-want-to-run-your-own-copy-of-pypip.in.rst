@@ -28,7 +28,7 @@ nodejs
 ------
 
 First of all you'll need to get the latest source code copy of nodejs from the
-`nodejs download page <http://nodejs.org/download/>`_.
+`nodejs download page <https://nodejs.org/download/>`_.
 
 Extract it.
 
@@ -131,7 +131,7 @@ uncommon the local one.
     /path/to/pypipins/clone/shields/shields.py
 
 
-    # SHIELD_URL = "http://img.shields.io/badge/%s-%s-%s.%s"
+    # SHIELD_URL = "https://img.shields.io/badge/%s-%s-%s.%s"
     SHIELD_URL = "http://localhost:9000/badge/%s-%s-%s.%s"  # pypip.in uses a local version of img.shields.io
 
 Once this is done, you can test the pypipins server.

@@ -63,4 +63,4 @@ Testing
 =======
 
 It may take some time for your DNSSEC information to propagate but you can test
-it using `the debugger from Verisign <http://dnssec-debugger.verisignlabs.com/>`_.
+it using `the debugger from Verisign <https://dnssec-debugger.verisignlabs.com/>`_.

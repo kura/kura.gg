@@ -7,7 +7,7 @@ Ghastly - A theme for Pelican
 .. figure:: /images/gastly.png
     :alt: Gastly, the Ghost Pokémon
 
-    (Image by `Raiba-art <http://raiba-art.deviantart.com/art/Gastly-294533100>`__)
+    (Image by `Raiba-art <https://raiba-art.deviantart.com/art/Gastly-294533100>`__)
 
 .. contents::
     :backlinks: none
@@ -16,7 +16,7 @@ Introduction
 ============
 
 I'd like to introduce Ghastly, a clean and minimal, lightweight theme for the
-`Pelican <http://getpelican.com>`__ blogging platform.
+`Pelican <https://getpelican.com>`__ blogging platform.
 
 Ghastly is based heavily off of Casper, the default theme for
 `Ghost <https://ghost.org>`__.
@@ -58,9 +58,9 @@ Typography
 .. figure:: /images/firasans.png
     :alt: FiraSans map of the World
 
-    (Image by `the guys at Carrois, creators of FiraSans <http://dev.carrois.com/fira-3-1/>`__)
+    (Image by `the guys at Carrois, creators of FiraSans <https://dev.carrois.com/fira-3-1/>`__)
 
-The guys at `Carrois <http://dev.carrois.com/fira-3-1/>`__ created FiraSans for
+The guys at `Carrois <https://dev.carrois.com/fira-3-1/>`__ created FiraSans for
 Mozilla and released it to the world for free.
 
 The Ghastly theme uses both FiraSans for general typography and FiraMono for
@@ -104,7 +104,7 @@ Installation
 
 You can find Ghastly `on GitHub <https://github.com/kura/ghastly>`__ and you
 can find installation instructions for themes in the `pelican documentation
-<http://docs.getpelican.com/en/latest/pelican-themes.html>`__.
+<https://docs.getpelican.com/en/latest/pelican-themes.html>`__.
 
 Configuration
 =============

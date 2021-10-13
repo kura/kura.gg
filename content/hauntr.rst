@@ -9,7 +9,7 @@ Hauntr - A theme for Pelican
     :alt: Haunter, the evolved Pokémon form of Gastly
     :align: center
 
-    (Image by `Kawiku <http://kawiku.deviantart.com/art/Haunter-350580512>`__)
+    (Image by `Kawiku <https://kawiku.deviantart.com/art/Haunter-350580512>`__)
 
 .. contents::
     :backlinks: none
@@ -18,7 +18,7 @@ Introduction
 ============
 
 Hauntr is a minimal, lightweight and clean theme for the
-`Pelican <http://getpelican.com>`__ blogging platform.
+`Pelican <https://getpelican.com>`__ blogging platform.
 
 It is named after the Pokémon 'Haunter' because it is a modified version
 (you might say evolved) of my previous theme, `Ghastly

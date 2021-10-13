@@ -20,12 +20,12 @@ I've been planning on doing it from a while because I do not like Google Analyti
 I don't like being tracked and I actively stopped trying to use Google services
 for my own reasons.
 
-The company I work for uses `Piwik <http://piwik.org/>`_
+The company I work for uses `Piwik <https://piwik.org/>`_
 for some of our clients, I am not a fan
 of Piwik or how it works and does things. I did some research and found some
 service providers but their free options were limited or I felt they weren't a
 good fit, eventually I stumbled upon `Open Web Analytics
-<http://www.openwebanalytics.com>`_ and decided that it
+<https://www.openwebanalytics.com>`_ and decided that it
 not only suited my purposes, but it meant servers I control would hold the
 analytical data, rather than some third party.
 
@@ -33,9 +33,9 @@ Hello DuckDuckGo
 ================
 
 After launching the new version of my site, I got upset at the fact I had lost
-my search functionality. Sadly `Pelican <http://docs.getpelican.com/>`_
+my search functionality. Sadly `Pelican <https://docs.getpelican.com/>`_
 does not have any working search
-functionality and I undertook the task of building `Sphinx <http://sphinx-doc.org/>`_
+functionality and I undertook the task of building `Sphinx <https://sphinx-doc.org/>`_
 -style searches
 in to Pelican, making it entirely static.
 

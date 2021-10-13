@@ -43,6 +43,6 @@ Be sure to replace *admin:admin* with your a proper
 username and password, username first, password
 after the colon.
 
-Restart haproxy, and then browse to `http://yousite.com:8000
-<http://yoursite.com:8000>`_.
+Restart haproxy, and then browse to `https://yousite.com:8000
+<https://yoursite.com:8000>`_.
 

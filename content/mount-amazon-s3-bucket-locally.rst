@@ -14,15 +14,15 @@ moving it out on to Amazon's S3. I've written an article on `how to back
 up to S3`_, but that isn't enough when it comes to serving data
 from S3.
 
-.. _Raspberry Pi mirror: http://rpi.syslog.tv/
+.. _Raspberry Pi mirror: https://rpi.syslog.tv/
 .. _how to back up to S3: https://syslog.tv/2012/02/29/backup-a-linux-server-to-amazon-s3-on-debian-6ubuntu-10-04/
 
 I needed the ability to RSYNC data from the official Raspberry Pi
 servers on to mine and then in to S3 and for that I used `s3fs`_ and
 `FUSE`_.
 
-.. _s3fs: http://code.google.com/p/s3fs/
-.. _FUSE: http://fuse.sourceforge.net/
+.. _s3fs: https://code.google.com/p/s3fs/
+.. _FUSE: https://fuse.sourceforge.net/
 
 FUSE
 ----
@@ -65,7 +65,7 @@ If installing either Debian 5 or Ubuntu 10.04, you'll need to install a
 newer version of fuse than is packaged, I found this info on the `s3fs
 issue tracker`_.
 
-.. _s3fs issue tracker: http://code.google.com/p/s3fs/issues/detail?id=143#c2
+.. _s3fs issue tracker: https://code.google.com/p/s3fs/issues/detail?id=143#c2
 
 First we need to remove the install fuse-utils and libfuse-dev that we
 install above.
@@ -79,9 +79,9 @@ You'll need to export a variable with your arch, i.e
 .. code-block:: bash
 
     export PLATFORM=amd64
-    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse2_2.8.4-1.1_${PLATFORM}.deb
-    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse-dev_2.8.4-1.1_${PLATFORM}.deb
-    wget http://ftp.us.debian.org/debian/pool/main/f/fuse/fuse-utils_2.8.4-1.1_${PLATFORM}.deb
+    wget https://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse2_2.8.4-1.1_${PLATFORM}.deb
+    wget https://ftp.us.debian.org/debian/pool/main/f/fuse/libfuse-dev_2.8.4-1.1_${PLATFORM}.deb
+    wget https://ftp.us.debian.org/debian/pool/main/f/fuse/fuse-utils_2.8.4-1.1_${PLATFORM}.deb
     sudo dpkg -i libfuse2_2.8.4-1.1_${PLATFORM}.deb libfuse-dev_2.8.4-1.1_${PLATFORM}.deb fuse-utils_2.8.4-1.1_${PLATFORM}.deb
 
 Fix missing dependencies
@@ -100,7 +100,7 @@ Now run the command below and confirm the output
 s3fs has to be done manually, first off go download the latest revision
 archive from `Google code`_.
 
-.. _Google code: http://code.google.com/p/s3fs/downloads/list
+.. _Google code: https://code.google.com/p/s3fs/downloads/list
 
 Once download, gunzip and untar it.
 

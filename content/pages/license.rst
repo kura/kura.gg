@@ -4,7 +4,7 @@ License
 :slug: license
 
 This website and all its content are released under the `MIT License
-<http://opensource.org/licenses/MIT>`_ which is outlined below.
+<https://opensource.org/licenses/MIT>`_ which is outlined below.
 
 ::
 

@@ -71,7 +71,7 @@ is not at all viable on these websites due to dynamic user content etc.
 So the next step was to introduce conditional nginx caching.
 
 I was rather unsure of exactly how to achieve this but the nginx forums
-yielded amazingly useful information (`http://forum.nginx.org/`_) which
+yielded amazingly useful information (`https://forum.nginx.org/`_) which
 helped me create a very simple caching mechanism; a user hits the
 website, all content is served by nginx which reverse proxies dynamic
 content to Apache, the page content is cached when a user does not have
@@ -80,7 +80,7 @@ the cached version which dies after 1 hour, when a user does have a
 login session cookie nginx does not serve the cached content but
 continues to reverse proxy to Apache. Simple.
 
-.. _`http://forum.nginx.org/`: http://forum.nginx.org/
+.. _`https://forum.nginx.org/`: https://forum.nginx.org/
 
 This in itself is still untested on the testing environment because I
 only completed it at 2am GMT and was rather tired at the time. I have
@@ -98,9 +98,9 @@ higher traffic sites or to port older, high traffic sites on to.
 
 So what's the plan? **Varnish**. Not the kind you use on wood or on your
 nails but a very powerful HTTP caching engine -
-`http://varnish-cache.org/wiki/Introduction`_
+`https://varnish-cache.org/wiki/Introduction`_
 
-.. _`http://varnish-cache.org/wiki/Introduction`: http://varnish-cache.org/wiki/Introduction
+.. _`https://varnish-cache.org/wiki/Introduction`: https://varnish-cache.org/wiki/Introduction
 
 Varnish is currently used in conjunction with nginx on some very highly
 used sites; WordPress.com, Gravatar and I'm sure many more.

@@ -12,7 +12,7 @@ nginx 1.5.10 with SPDY 3.1
 I have built and released nginx 1.5.10 with SPDY 3.1. Like the `nginx 1.5.9
 release </2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/>`__
 , this release comes with ngx_pagespeed 1.7.30.3-beta and is available
-on `apt.kura.gg <http://apt.kura.gg>`__ or as downloads below.
+on `apt.kura.gg <https://apt.kura.gg>`__ or as downloads below.
 
 Manual download
 ===============

@@ -100,4 +100,4 @@ rejecting incoming email like below.
 
 ::
 
-    Sept 24 22:26:18 heimdall postfix/smtpd[4256]: NOQUEUE: reject: RCPT from example.com[xxx.xxx.xxx.xxx]: 450: Recipient address rejected: Greylisted for 300 seconds (see http://isg.ee.ethz.ch/tools/postgrey/help/spammed.com.html); from=to=proto=ESMTP helo=<example.com>
+    Sept 24 22:26:18 heimdall postfix/smtpd[4256]: NOQUEUE: reject: RCPT from example.com[xxx.xxx.xxx.xxx]: 450: Recipient address rejected: Greylisted for 300 seconds (see https://isg.ee.ethz.ch/tools/postgrey/help/spammed.com.html); from=to=proto=ESMTP helo=<example.com>

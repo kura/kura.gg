@@ -9,13 +9,13 @@ Wrapping a Tornado IOStream with SSL
 .. contents::
     :backlinks: none
 
-As part of my effort to make `Blackhole <http://blackhole.io/>`_ as
+As part of my effort to make `Blackhole <https://blackhole.io/>`_ as
 useful and usable as possible, I needed to be able to support SSL/TLS
 enabled connections.
 
 Tornado itself has two built-in IOStreams that help us do the job;
-the first is the standard `IOStream <http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream>`_
-and the second is the `SSLIOStream <http://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream>`_.
+the first is the standard `IOStream <https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.IOStream>`_
+and the second is the `SSLIOStream <https://www.tornadoweb.org/en/stable/iostream.html#tornado.iostream.SSLIOStream>`_.
 
 With this in mind we simply need to spawn two sockets, by default these
 listen on port 25 for standard SMTP and port 465 for SSL/TLS

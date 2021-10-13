@@ -15,9 +15,9 @@ Eevee -- A Material Design theme for Pelican
 Introduction
 ============
 
-Eevee is a theme for `Pelican <http://getpelican.com>`__, based on Google's
+Eevee is a theme for `Pelican <https://getpelican.com>`__, based on Google's
 `Material Design <https://material.google.com/>`__ specification. It is named
-after the Pokémon `Eevee <http://www.pokemon.com/uk/pokedex/eevee>`__ because
+after the Pokémon `Eevee <https://www.pokemon.com/uk/pokedex/eevee>`__ because
 -- like the Pokémon -- it can evolve in to many 'elemental types.'
 
 Features
@@ -41,7 +41,7 @@ Features
   `Plugin: Minimise CSS and JavaScript`_),
 - analytics from `Google Analytics <https://analytics.google.com>`__,
   `Piwik <https://piwik.org/>`__, `GoSquared <https://www.gosquared.com/>`__
-  and `Open Web Analytics <http://www.openwebanalytics.com/>`__ (see
+  and `Open Web Analytics <https://www.openwebanalytics.com/>`__ (see
   `Google Analytics, Piwik, Open Web Analytics and GoSquared`_),
 - easy customisation, including menus and footer (see `Header and footer
   options`_),
@@ -49,7 +49,7 @@ Features
 - `Microdata <https://en.wikipedia.org/wiki/Microdata_(HTML)>`__,
 - `Aria <https://en.wikipedia.org/wiki/WAI-ARIA>`__ accessibility,
 - includes `Material Icons <https://design.google.com/icons/>`__, `Font Awesome
-  <http://fontawesome.io/>`__ and Google's `Roboto font
+  <https://fontawesome.com/>`__ and Google's `Roboto font
   <https://typecast.com/preview/google/Roboto>`__ and,
 - seamless feature upgrade with Material Design Lite's `Javascript library
   <https://getmdl.io/started/index.html#download>`__.
@@ -94,7 +94,7 @@ Typography
 
 Google's `Roboto <https://material.google.com/style/typography.html>`__ font is
 used for typography, `Material Icons <https://design.google.com/icons/>`__ and
-`Font Awesome <http://fontawesome.io/icons/>`__ are included too.
+`Font Awesome <https://fontawesome.com/icons/>`__ are included too.
 
 Screenshots
 ===========
@@ -642,7 +642,7 @@ their respective options in ``pelicanconf.py``
 
 More information on archive settings can be found in the
 `Pelican documentation
-<http://docs.getpelican.com/en/3.6.3/settings.html#url-settings>`__.
+<https://docs.getpelican.com/en/3.6.3/settings.html#url-settings>`__.
 
 Google Analytics, Piwik, Open Web Analytics and GoSquared
 ---------------------------------------------------------
@@ -874,7 +874,7 @@ pagination without going back to the index page.
 The default Pelican pagination settings are not very pleasing, for more
 information on how to customise them to better and be more intuitive please
 look at the `Pelican documentation
-<http://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>`__.
+<https://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>`__.
 
 DNS prefetch
 ------------

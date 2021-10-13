@@ -8,7 +8,7 @@ vagrant-bash-completion
     :backlinks: none
 
 vagrant-bash-completion is as it sounds - bash completion
-script for `Vagrant <http://www.vagrantup.com/>`_.
+script for `Vagrant <https://www.vagrantup.com/>`_.
 
 They were originally written by `Nikita Fedyashev
 <https://github.com/nfedyashev/>`_, I just modified his
@@ -67,7 +67,7 @@ Or you can do it the lazy way
 OS X
 ----
 
-With `homebrew <http://brew.sh/>`_ you can install the
+With `homebrew <https://brew.sh/>`_ you can install the
  `vagrant-completion` recipe to use this plugin
 
 .. code-block:: bash
