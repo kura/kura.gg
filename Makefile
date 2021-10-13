@@ -77,6 +77,7 @@ screenshot:
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/
 
 .PHONY: crawl
+crawl:
 	bash scripts/crawl.sh $(OUTPUTDIR)/
 
 .PHONY: perms
