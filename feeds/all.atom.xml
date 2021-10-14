@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/all.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2020-08-30T17:30:00+01:00</updated><entry><title>Configuring upstreams dynamically with DNS in OpenResty</title><link href="https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/" rel="alternate"></link><published>2020-08-30T17:30:00+01:00</published><updated>2020-08-30T17:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2020-08-30:/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/all.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2021-10-14T16:50:00+01:00</updated><entry><title>Google Workspace Gmail MX records signed with DNSSEC</title><link href="https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/" rel="alternate"></link><published>2021-10-14T16:50:00+01:00</published><updated>2021-10-14T16:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-14:/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</id><content type="html">&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
+known as G Suite and Google Apps) has unofficial &lt;span class="caps"&gt;DNSSEC&lt;/span&gt;-signed
+&lt;span class="caps"&gt;MX&lt;/span&gt; records available for use. The officially supported ones
+that you’re told to configure do not offer &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; signing.&lt;/p&gt;
+&lt;p&gt;These &lt;span class="caps"&gt;MX&lt;/span&gt; records have both IPv4 and IPv6 addresses, although
+the records are not officially supported or documented and
+may be unreliable or removed at any point. (I’ve been using them
+for a while now and they seem perfectly fine to me but use at
+your own risk.)&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+mx1.smtp.goog
+mx2.smtp.goog
+mx3.smtp.goog
+mx4.smtp.goog
+&lt;/pre&gt;
+</content><category term="email"></category><category term="gmail email smtp dnssec"></category></entry><entry><title>Configuring upstreams dynamically with DNS in OpenResty</title><link href="https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/" rel="alternate"></link><published>2020-08-30T17:30:00+01:00</published><updated>2020-08-30T17:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2020-08-30:/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</id><summary type="html">
 &lt;p&gt;This article is a continuation of &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
 upstreams&lt;/a&gt;
 that gives an example of how you can configure OpenResty to update your
@@ -824,7 +839,7 @@ will styled similarly to how the Disqus comments section is styled.&lt;/p&gt;
 &lt;p&gt;Please be aware that if &lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; are
 configured, Disqus will be prioritized over Muut and therefore only the Disqus
 template will be loaded.&lt;/p&gt;
-&lt;div class="lightbox-block align-center"&gt;&lt;a href="#107dfd22-a509-46b6-8e33-66ee236d8bad" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="107dfd22-a509-46b6-8e33-66ee236d8bad" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="lightbox-block align-center"&gt;&lt;a href="#00282a3d-b300-46e6-a8ba-2022b2880cca" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="00282a3d-b300-46e6-a8ba-2022b2880cca" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="back-to-the-top-of-the-page-links"&gt;
 &lt;h2&gt;Back to the top of the page links&lt;/h2&gt;
 &lt;p&gt;A small addition are the &lt;cite&gt;back to the top of the page&lt;/cite&gt; links that will now

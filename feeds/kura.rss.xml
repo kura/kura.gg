@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>kura.gg - kura</title><link>https://kura.gg/</link><description></description><lastBuildDate>Sun, 30 Aug 2020 17:30:00 +0100</lastBuildDate><item><title>Configuring upstreams dynamically with DNS in OpenResty</title><link>https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</link><description>
+<rss version="2.0"><channel><title>kura.gg - kura</title><link>https://kura.gg/</link><description></description><lastBuildDate>Thu, 14 Oct 2021 16:50:00 +0100</lastBuildDate><item><title>Google Workspace Gmail MX records signed with DNSSEC</title><link>https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</link><description>&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
+known as G Suite and Google Apps) has unofficial &lt;span class="caps"&gt;DNSSEC&lt;/span&gt;-signed
+&lt;span class="caps"&gt;MX&lt;/span&gt; records available for use. The officially supported ones
+that you’re told to configure do not offer &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; signing.&lt;/p&gt;
+&lt;p&gt;These &lt;span class="caps"&gt;MX&lt;/span&gt; records have both IPv4 and IPv6 addresses, although
+the records are not officially supported or documented and
+may be unreliable or removed at any point. (I’ve been using them
+for a while now and they seem perfectly fine to me but use at
+your own risk.)&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+mx1.smtp.goog
+mx2.smtp.goog
+mx3.smtp.goog
+mx4.smtp.goog
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Thu, 14 Oct 2021 16:50:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2021-10-14:/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</guid><category>email</category><category>gmail email smtp dnssec</category></item><item><title>Configuring upstreams dynamically with DNS in OpenResty</title><link>https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</link><description>
 &lt;p&gt;This article is a continuation of &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
 upstreams&lt;/a&gt;
 that gives an example of how you can configure OpenResty to update your
