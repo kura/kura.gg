@@ -27,3 +27,34 @@ your own risk.)
     mx3.smtp.goog
     mx4.smtp.goog
 
+The table below has the MX record and the A and AAAA record values.
+
+.. code::
+
+    mx1.smtp.goog
+        216.239.32.151
+        2001:4860:4802:32::97
+
+    mx2.smtp.goog
+        216.239.34.151
+        2001:4860:4802:34::97
+
+    mx3.smtp.goog
+        216.239.36.151
+        2001:4860:4802:36::97
+        216.239.32.151
+
+    mx4.smtp.goog
+        216.239.38.151
+        2001:4860:4802:38::97
+
+
+I am using them myself but I am also willing to take the risk of
+them possibly vanishing without any warning.
+
+.. code::
+
+    kura.gg.	300	IN	MX	10	mx1.smtp.goog.
+    kura.gg.	300	IN	MX	20	mx2.smtp.goog.
+    kura.gg.	300	IN	MX	30	mx3.smtp.goog.
+    kura.gg.	300	IN	MX	40	mx4.smtp.goog.
