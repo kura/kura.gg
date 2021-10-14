@@ -35,17 +35,23 @@ jobs:
           rm -rf output/curriculum-vitae/ && cp -R cv output/curriculum-vitae/
       - name: cname
         run: make cname
-      - name: pngquant
-        run: make pngquant
+      - name: touch
+        run: make touch
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+            publish_branch: gh-pages
+            publish_dir: ./output
       - name: screenshot
         run: make screenshot
+      - name: pngquant
+        run: make pngquant
       - name: perms
         run: make perms
       - name: hash
         run: make hash
-      - name: touch
-        run: make touch
-      - name: deploy
+      - name: deploy images, screenshots and hashes
         uses: peaceiris/actions-gh-pages@v3
         with:
             personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
