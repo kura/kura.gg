@@ -21,8 +21,8 @@ This website runs on Cloudflare's CDN and as such I have access to `Cloudflare
 Workers <https://workers.cloudflare.com/>`_ allow me to run arbitrary code at
 the edge for incoming requests.
 
-Using setting up a worker that picks a random Pokemon and injects it as a header
-is very simple.
+Setting up a worker that picks a random Pokemon and injects it as a header
+is very simple, add a worker, write the code and add some routing to it.
 
 The code
 ========
