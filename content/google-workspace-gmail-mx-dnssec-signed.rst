@@ -3,7 +3,7 @@ Google Workspace Gmail MX records signed with DNSSEC
 :date: 2021-10-14 16:50
 :author: kura
 :category: email
-:tags: gmail email smtp dnssec
+:tags: gmail, email, smtp, dnssec
 :slug: google-workspace-gmail-mx-dnssec-signed
 
 .. contents::
