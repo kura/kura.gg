@@ -35,6 +35,8 @@ jobs:
           rm -rf output/curriculum-vitae/ && cp -R cv output/curriculum-vitae/
       - name: cname
         run: make cname
+      - name: purge crud
+        run: make remove_crud
       - name: touch
         run: make touch
       - name: deploy

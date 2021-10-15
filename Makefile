@@ -68,6 +68,10 @@ test: clean rsync
 cname:
 	echo "kura.gg" > $(OUTPUTDIR)/CNAME
 
+.PHONY: remove_crud
+remove_crud:
+	bash scripts/remove_crud.sh $(OUTPUTDIR)/
+
 .PHONY: pngquant
 pngquant:
 	bash scripts/pngquant.sh $(OUTPUTDIR)/
@@ -105,6 +109,7 @@ rsync:
 	rm -rf $(OUTPUTDIR)/curriculum-vitae/ && cp -R cv $(OUTPUTDIR)/curriculum-vitae/
 	echo "kura.gg" > $(OUTPUTDIR)/CNAME
 	# bash scripts/headerid.sh $(OUTPUTDIR)/
+	bash scripts/remove_crud.sh $(OUTPUTDIR)/
 	bash scripts/pngquant.sh $(OUTPUTDIR)/
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/
 	# bash scripts/compress.sh $(OUTPUTDIR)/
