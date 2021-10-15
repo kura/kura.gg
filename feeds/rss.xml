@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>kura.gg</title><link>https://kura.gg/</link><description></description><lastBuildDate>Fri, 15 Oct 2021 20:50:00 +0100</lastBuildDate><item><title>Playing with Cloudflare Workers: Adding a random Pokédex to response headers</title><link>https://kura.gg/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</link><description>
+<rss version="2.0"><channel><title>kura.gg</title><link>https://kura.gg/</link><description></description><lastBuildDate>Fri, 15 Oct 2021 20:50:00 +0100</lastBuildDate><item><title>Playing with Cloudflare Workers: Adding a random Pokémon to response headers</title><link>https://kura.gg/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</link><description>
 &lt;p&gt;I was a little bored tonight and had a thought; “can I find a way to add a random
 Pokédex and it’s National Pokédex number as a header to requests on my website?”&lt;/p&gt;
 &lt;p&gt;The answer is - quite simply - “yes”.&lt;/p&gt;
