@@ -8,8 +8,8 @@ Pokédex and it’s National Pokédex number as a header to requests on my webs
 &lt;p&gt;This website runs on Cloudflare’s &lt;span class="caps"&gt;CDN&lt;/span&gt; and as such I have access to &lt;a class="reference external" href="https://workers.cloudflare.com/"&gt;Cloudflare
 Workers&lt;/a&gt; allow me to run arbitrary code at
 the edge for incoming requests.&lt;/p&gt;
-&lt;p&gt;Using setting up a worker that picks a random Pokemon and injects it as a header
-is very simple.&lt;/p&gt;
+&lt;p&gt;Setting up a worker that picks a random Pokemon and injects it as a header
+is very simple, add a worker, write the code and add some routing to it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
@@ -19,8 +19,7 @@ is very simple.&lt;/p&gt;
     &lt;span class="s2"&gt;"Charizard (#6)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Squirtle (#7)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Wartortle (#8)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Blastoise (#9)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Caterpie (#10)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Metapod (#11)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Butterfree (#12)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Weedle (#13)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Kakuna (#14)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Beedrill (#15)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Pidgey (#16)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeotto (#17)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeot (#18)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Rattata (#19)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Raticate (#20)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Spearow (#21)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Fearow (#22)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Ekans (#23)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Arbok (#24)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pikachu (#25)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Raichu (#26)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Sandshrew (#27)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Sandslash (#28)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Nidoran …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+    &lt;span class="s2"&gt;"Spearow (#21)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Fearow (#22)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Ekans (#23 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I was a little bored tonight and had a thought; “can I find a way to add a random
 Pokédex and it’s National Pokédex number as a header to requests on my website?”&lt;/p&gt;
 &lt;p&gt;The answer is - quite simply - “yes”.&lt;/p&gt;
@@ -29,8 +28,8 @@ Pokédex and it’s National Pokédex number as a header to requests on my webs
 &lt;p&gt;This website runs on Cloudflare’s &lt;span class="caps"&gt;CDN&lt;/span&gt; and as such I have access to &lt;a class="reference external" href="https://workers.cloudflare.com/"&gt;Cloudflare
 Workers&lt;/a&gt; allow me to run arbitrary code at
 the edge for incoming requests.&lt;/p&gt;
-&lt;p&gt;Using setting up a worker that picks a random Pokemon and injects it as a header
-is very simple.&lt;/p&gt;
+&lt;p&gt;Setting up a worker that picks a random Pokemon and injects it as a header
+is very simple, add a worker, write the code and add some routing to it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
@@ -1136,7 +1135,7 @@ will styled similarly to how the Disqus comments section is styled.&lt;/p&gt;
 &lt;p&gt;Please be aware that if &lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; are
 configured, Disqus will be prioritized over Muut and therefore only the Disqus
 template will be loaded.&lt;/p&gt;
-&lt;div class="lightbox-block align-center"&gt;&lt;a href="#ce4a84d3-fbd4-4745-8526-674b03d8c975" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="ce4a84d3-fbd4-4745-8526-674b03d8c975" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="lightbox-block align-center"&gt;&lt;a href="#db898044-445a-49d9-928b-ce2c9d877ee5" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="db898044-445a-49d9-928b-ce2c9d877ee5" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="back-to-the-top-of-the-page-links"&gt;
 &lt;h2&gt;Back to the top of the page links&lt;/h2&gt;
 &lt;p&gt;A small addition are the &lt;cite&gt;back to the top of the page&lt;/cite&gt; links that will now

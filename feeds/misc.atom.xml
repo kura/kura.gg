@@ -8,8 +8,8 @@ Pokédex and it’s National Pokédex number as a header to requests on my webs
 &lt;p&gt;This website runs on Cloudflare’s &lt;span class="caps"&gt;CDN&lt;/span&gt; and as such I have access to &lt;a class="reference external" href="https://workers.cloudflare.com/"&gt;Cloudflare
 Workers&lt;/a&gt; allow me to run arbitrary code at
 the edge for incoming requests.&lt;/p&gt;
-&lt;p&gt;Using setting up a worker that picks a random Pokemon and injects it as a header
-is very simple.&lt;/p&gt;
+&lt;p&gt;Setting up a worker that picks a random Pokemon and injects it as a header
+is very simple, add a worker, write the code and add some routing to it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
@@ -19,8 +19,7 @@ is very simple.&lt;/p&gt;
     &lt;span class="s2"&gt;"Charizard (#6)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Squirtle (#7)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Wartortle (#8)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Blastoise (#9)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Caterpie (#10)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Metapod (#11)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Butterfree (#12)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Weedle (#13)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Kakuna (#14)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Beedrill (#15)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Pidgey (#16)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeotto (#17)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeot (#18)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Rattata (#19)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Raticate (#20)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Spearow (#21)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Fearow (#22)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Ekans (#23)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Arbok (#24)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pikachu (#25)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Raichu (#26)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Sandshrew (#27)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Sandslash (#28)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Nidoran …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+    &lt;span class="s2"&gt;"Spearow (#21)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Fearow (#22)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Ekans (#23 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I was a little bored tonight and had a thought; “can I find a way to add a random
 Pokédex and it’s National Pokédex number as a header to requests on my website?”&lt;/p&gt;
 &lt;p&gt;The answer is - quite simply - “yes”.&lt;/p&gt;
@@ -29,8 +28,8 @@ Pokédex and it’s National Pokédex number as a header to requests on my webs
 &lt;p&gt;This website runs on Cloudflare’s &lt;span class="caps"&gt;CDN&lt;/span&gt; and as such I have access to &lt;a class="reference external" href="https://workers.cloudflare.com/"&gt;Cloudflare
 Workers&lt;/a&gt; allow me to run arbitrary code at
 the edge for incoming requests.&lt;/p&gt;
-&lt;p&gt;Using setting up a worker that picks a random Pokemon and injects it as a header
-is very simple.&lt;/p&gt;
+&lt;p&gt;Setting up a worker that picks a random Pokemon and injects it as a header
+is very simple, add a worker, write the code and add some routing to it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
