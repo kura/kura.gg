@@ -68,4 +68,4 @@ kura.gg.    300     IN      MX      20      mx2.smtp.goog.
 kura.gg.    300     IN      MX      30      mx3.smtp.goog.
 kura.gg.    300     IN      MX      40      mx4.smtp.goog.
 &lt;/pre&gt;
-</content><category term="email"></category><category term="gmail email smtp dnssec"></category></entry></feed>
+</content><category term="email"></category><category term="gmail"></category><category term="email"></category><category term="smtp"></category><category term="dnssec"></category></entry></feed>
