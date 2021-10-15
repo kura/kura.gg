@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>kura.gg</title><link>https://kura.gg/</link><description></description><lastBuildDate>Thu, 14 Oct 2021 16:50:00 +0100</lastBuildDate><item><title>Google Workspace Gmail MX records signed with DNSSEC</title><link>https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</link><description>&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
+<rss version="2.0"><channel><title>kura.gg</title><link>https://kura.gg/</link><description></description><lastBuildDate>Fri, 15 Oct 2021 20:50:00 +0100</lastBuildDate><item><title>Playing with Cloudflare Workers: Adding a random Pokédex to response headers</title><link>https://kura.gg/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</link><description>
+&lt;p&gt;I was a little bored tonight and had a thought; “can I find a way to add a random
+Pokédex and it’s National Pokédex number as a header to requests on my website?”&lt;/p&gt;
+&lt;p&gt;The answer is - quite simply - “yes”.&lt;/p&gt;
+&lt;div class="section" id="cloudflare-workers"&gt;
+&lt;h2&gt;Cloudflare Workers&lt;/h2&gt;
+&lt;p&gt;This website runs on Cloudflare’s &lt;span class="caps"&gt;CDN&lt;/span&gt; and as such I have access to &lt;a class="reference external" href="https://workers.cloudflare.com/"&gt;Cloudflare
+Workers&lt;/a&gt; allow me to run arbitrary code at
+the edge for incoming requests.&lt;/p&gt;
+&lt;p&gt;Using setting up a worker that picks a random Pokemon and injects it as a header
+is very simple.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-code"&gt;
+&lt;h2&gt;The code&lt;/h2&gt;
+&lt;pre class="code javascript literal-block"&gt;
+&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;pokemon&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="s1"&gt;'Bulbasaur (#001)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Ivysaur (#002)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Venusaur (#003)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Charmander (#004)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'Charmeleon (#005)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Charizard (#006)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Squirtle (#007)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Wartortle (#008)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'Blastoise (#009)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Caterpie (#010)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Metapod (#011)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Butterfree (#012)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'Weedle (#013)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Kakuna (#014)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Beedrill (#015)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Pidgey (#016)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'Pidgeotto (#017)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Pidgeot (#018)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Rattata (#019)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Raticate (#020)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'Spearow (#021)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Fearow (#022)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Ekans (#023)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Arbok (#024)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'Pikachu (#025)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Raichu (#026)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Sandshrew (#027)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Sandslash (#028)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'Nidoran …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 15 Oct 2021 20:50:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2021-10-15:/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</guid><category>misc</category><category>pokemon cloudflare http</category></item><item><title>Google Workspace Gmail MX records signed with DNSSEC</title><link>https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</link><description>&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
 known as G Suite and Google Apps) has unofficial &lt;span class="caps"&gt;DNSSEC&lt;/span&gt;-signed
 &lt;span class="caps"&gt;MX&lt;/span&gt; records available for use. The officially supported ones
 that you’re told to configure do not offer &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; signing.&lt;/p&gt;
