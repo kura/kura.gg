@@ -6,7 +6,11 @@
 
 import datetime
 import os
+import sys
 
+
+content_dir = None
+output_dir = None
 
 def metadata(path, filename):
     rst_file = os.path.join(path, filename)
@@ -32,20 +36,27 @@ def html_file(date, filename):
 
 
 def touch(filename, timestamp):
-    path = os.path.join('output', filename)
+    global output_dir
+    path = os.path.join(output_dir, filename)
     print('touching ->', path)
     os.utime(path, (timestamp, timestamp))
     print('touching ->', path.replace('index.html', ''))
     os.utime(path.replace('index.html', ''), (timestamp, timestamp))
 
 
-def walk(directory):
-    for rst_file in os.listdir(directory):
+def walk():
+    global content_dir
+    for rst_file in os.listdir(content_dir):
         if not rst_file.endswith('.rst'):
             continue
-        date, timestamp, slug = metadata(directory, rst_file)
+        date, timestamp, slug = metadata(content_dir, rst_file)
         html = html_file(date, slug)
         touch(html, timestamp)
 
 
-walk('content/')
+if __name__ == "__main__":
+    if len(sys.argv) > 2:
+         content_dir, output_dir = sys.argv[1:3]
+         walk()
+    else:
+         print("Usage: python3 touch.py CONTENT_DIR OUTPUT_DIR")

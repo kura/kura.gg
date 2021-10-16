@@ -95,7 +95,7 @@ hash:
 
 .PHONY: touch
 touch:
-	python3 touch.py
+	python3 touch.py $(INPUTDIR)/ $(OUTPUTDIR)/
 
 .PHONE: update_cv
 update_cv:
@@ -116,6 +116,6 @@ rsync:
 	bash scripts/perms.sh $(OUTPUTDIR)/
 	bash scripts/md5.sh $(OUTPUTDIR)/
 	bash scripts/sha1.sh $(OUTPUTDIR)/
-	python3 touch.py
+	python3 touch.py $(INPUTDIR)/ $(OUTPUTDIR)/
 	# rm -rf $(OUTPUTDIR)/*
 
