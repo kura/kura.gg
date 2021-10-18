@@ -24,6 +24,14 @@ run arbitrary code at the edge for incoming requests.
 Setting up a worker that picks a random Pokemon and injects it as a header
 is very simple, add a worker, write the code and add some routing to it.
 
+Try it yourself
+===============
+
+.. code:: bash
+
+    curl -sI https://kura.gg/ | grep "x-pokemon"
+    x-pokemon: Eevee (#133)
+
 The code
 ========
 
@@ -227,13 +235,4 @@ The code
     addEventListener('fetch', event => {
         event.respondWith(handle_request(event.request))
     })
-    
-
-Try it yourself
-===============
-
-.. code:: bash
-
-    curl -sI https://kura.gg/ | grep "x-pokemon"
-    x-pokemon: Eevee (#133)
 
