@@ -11,6 +11,13 @@ run arbitrary code at the edge for incoming requests.&lt;/p&gt;
 &lt;p&gt;Setting up a worker that picks a random Pokemon and injects it as a header
 is very simple, add a worker, write the code and add some routing to it.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="section" id="try-it-yourself"&gt;
+&lt;h2&gt;Try it yourself&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+curl -sI https://kura.gg/ &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;
+x-pokemon: Eevee &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
 &lt;pre class="code javascript literal-block"&gt;
@@ -18,8 +25,7 @@ is very simple, add a worker, write the code and add some routing to it.&lt;/p&
     &lt;span class="s2"&gt;"Bulbasaur (#1)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Ivysaur (#2)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Venusaur (#3)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Charmander (#4)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Charmeleon (#5)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Charizard (#6)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Squirtle (#7)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Wartortle (#8)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Blastoise (#9)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Caterpie (#10)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Metapod (#11)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Butterfree (#12)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Weedle (#13)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Kakuna (#14)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Beedrill (#15)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Pidgey (#16)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeotto (#17)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeot (#18)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Rattata (#19)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Raticate (#20)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Spearow (#21)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Fearow (#22 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 15 Oct 2021 20:50:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2021-10-15:/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</guid><category>misc</category><category>pokemon cloudflare http</category></item><item><title>Google Workspace Gmail MX records signed with DNSSEC</title><link>https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</link><description>&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
+    &lt;span class="s2"&gt;"Pidgey …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 15 Oct 2021 20:50:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2021-10-15:/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</guid><category>misc</category><category>pokemon cloudflare http</category></item><item><title>Google Workspace Gmail MX records signed with DNSSEC</title><link>https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</link><description>&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
 known as G Suite and Google Apps) has unofficial &lt;span class="caps"&gt;DNSSEC&lt;/span&gt;-signed
 &lt;span class="caps"&gt;MX&lt;/span&gt; records available for use. The officially supported ones
 that you’re told to configure do not offer &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; signing.&lt;/p&gt;

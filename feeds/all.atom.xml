@@ -11,6 +11,13 @@ run arbitrary code at the edge for incoming requests.&lt;/p&gt;
 &lt;p&gt;Setting up a worker that picks a random Pokemon and injects it as a header
 is very simple, add a worker, write the code and add some routing to it.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="section" id="try-it-yourself"&gt;
+&lt;h2&gt;Try it yourself&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+curl -sI https://kura.gg/ &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;
+x-pokemon: Eevee &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
 &lt;pre class="code javascript literal-block"&gt;
@@ -18,8 +25,7 @@ is very simple, add a worker, write the code and add some routing to it.&lt;/p&
     &lt;span class="s2"&gt;"Bulbasaur (#1)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Ivysaur (#2)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Venusaur (#3)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Charmander (#4)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Charmeleon (#5)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Charizard (#6)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Squirtle (#7)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Wartortle (#8)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Blastoise (#9)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Caterpie (#10)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s2"&gt;"Metapod (#11)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Butterfree (#12)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Weedle (#13)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Kakuna (#14)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Beedrill (#15)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Pidgey (#16)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeotto (#17)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Pidgeot (#18)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Rattata (#19)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Raticate (#20)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"Spearow (#21)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Fearow (#22 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+    &lt;span class="s2"&gt;"Pidgey …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I was a little bored tonight and had a thought; “can I find a way to add a random
 Pokédex and it’s National Pokédex number as a header to requests on my website?”&lt;/p&gt;
 &lt;p&gt;The answer is - quite simply - “yes”.&lt;/p&gt;
@@ -30,6 +36,13 @@ access to &lt;a class="reference external" href="https://workers.cloudflare.com/
 run arbitrary code at the edge for incoming requests.&lt;/p&gt;
 &lt;p&gt;Setting up a worker that picks a random Pokemon and injects it as a header
 is very simple, add a worker, write the code and add some routing to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="try-it-yourself"&gt;
+&lt;h2&gt;Try it yourself&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+curl -sI https://kura.gg/ &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;
+x-pokemon: Eevee &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
+&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
@@ -232,13 +245,6 @@ is very simple, add a worker, write the code and add some routing to it.&lt;/p&
 &lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'fetch'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;event&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="nx"&gt;event&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;respondWith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;handle_request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;event&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;request&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="p"&gt;})&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="try-it-yourself"&gt;
-&lt;h2&gt;Try it yourself&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-curl -sI https://kura.gg/ &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;
-x-pokemon: Eevee &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 </content><category term="misc"></category><category term="pokemon cloudflare http"></category></entry><entry><title>Google Workspace Gmail MX records signed with DNSSEC</title><link href="https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/" rel="alternate"></link><published>2021-10-14T16:50:00+01:00</published><updated>2021-10-14T16:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-14:/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</id><summary type="html">&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
@@ -1135,7 +1141,7 @@ will styled similarly to how the Disqus comments section is styled.&lt;/p&gt;
 &lt;p&gt;Please be aware that if &lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; are
 configured, Disqus will be prioritized over Muut and therefore only the Disqus
 template will be loaded.&lt;/p&gt;
-&lt;div class="lightbox-block align-center"&gt;&lt;a href="#2d9ad5e3-3c26-4b12-9f6d-d73a1f347557" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="2d9ad5e3-3c26-4b12-9f6d-d73a1f347557" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="lightbox-block align-center"&gt;&lt;a href="#2fcd6a9c-52fe-4b68-9598-bf7934de510a" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="2fcd6a9c-52fe-4b68-9598-bf7934de510a" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="back-to-the-top-of-the-page-links"&gt;
 &lt;h2&gt;Back to the top of the page links&lt;/h2&gt;
 &lt;p&gt;A small addition are the &lt;cite&gt;back to the top of the page&lt;/cite&gt; links that will now
