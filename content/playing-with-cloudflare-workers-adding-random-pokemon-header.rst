@@ -6,6 +6,10 @@ Playing with Cloudflare Workers: Adding a random Pokémon to response headers
 :tags: pokemon cloudflare http
 :slug: playing-with-cloudflare-workers-adding-random-pokemon-header
 
+.. image:: /images/eevee.png
+    :alt: Eevee, the Pokémon
+    :align: center
+
 .. contents::
     :backlinks: none
 
