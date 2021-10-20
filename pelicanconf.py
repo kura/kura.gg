@@ -18,8 +18,8 @@ USE_OPEN_GRAPH = True
 
 TIMEZONE = "Europe/London"
 
-TWITTER_USERNAME = "kuramanga"
-DISQUS_SITENAME = "syslogtv"
+# TWITTER_USERNAME = ""
+# DISQUS_SITENAME = "syslogtv"
 
 DISPLAY_PAGES_ON_MENU = False
 
