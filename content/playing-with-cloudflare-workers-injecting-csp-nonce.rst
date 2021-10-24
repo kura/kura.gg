@@ -39,6 +39,10 @@ is then requested from the origin and the worker modifies the origin response;
 injecting the nonce in to ``<script>`` and ``<link rel="stylesheet>"`` HTML tags
 and adding the CSP headers which also includes the nonce.
 
+.. image:: /images/cloudflare-workers-csp-nonce-grep.png
+    :alt: Grepping nonce out of a httpie request
+    :align: center
+
 The code
 ========
 
