@@ -37,6 +37,7 @@ origin. This isn’t really secure given the method I use to do this is pretty d
 is then requested from the origin and the worker modifies the origin response;
 injecting the nonce in to &lt;tt class="docutils literal"&gt;&amp;lt;script&amp;gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;lt;link &lt;span class="pre"&gt;rel="stylesheet&amp;gt;"&lt;/span&gt;&lt;/tt&gt; &lt;span class="caps"&gt;HTML&lt;/span&gt; tags
 and adding the &lt;span class="caps"&gt;CSP&lt;/span&gt; headers which also includes the nonce.&lt;/p&gt;
+&lt;img alt="Grepping nonce out of a httpie request" class="align-center" src="/images/cloudflare-workers-csp-nonce-grep.png"/&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
@@ -1265,7 +1266,7 @@ will styled similarly to how the Disqus comments section is styled.&lt;/p&gt;
 &lt;p&gt;Please be aware that if &lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; are
 configured, Disqus will be prioritized over Muut and therefore only the Disqus
 template will be loaded.&lt;/p&gt;
-&lt;div class="lightbox-block align-center"&gt;&lt;a href="#796a4db0-9374-4ffb-94dc-5d9fcaff7709" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="796a4db0-9374-4ffb-94dc-5d9fcaff7709" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="lightbox-block align-center"&gt;&lt;a href="#0944d2b0-0d62-4b10-9daa-00b88f15e52b" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="0944d2b0-0d62-4b10-9daa-00b88f15e52b" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="back-to-the-top-of-the-page-links"&gt;
 &lt;h2&gt;Back to the top of the page links&lt;/h2&gt;
 &lt;p&gt;A small addition are the &lt;cite&gt;back to the top of the page&lt;/cite&gt; links that will now

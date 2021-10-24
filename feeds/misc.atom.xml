@@ -37,6 +37,7 @@ origin. This isn’t really secure given the method I use to do this is pretty d
 is then requested from the origin and the worker modifies the origin response;
 injecting the nonce in to &lt;tt class="docutils literal"&gt;&amp;lt;script&amp;gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;lt;link &lt;span class="pre"&gt;rel="stylesheet&amp;gt;"&lt;/span&gt;&lt;/tt&gt; &lt;span class="caps"&gt;HTML&lt;/span&gt; tags
 and adding the &lt;span class="caps"&gt;CSP&lt;/span&gt; headers which also includes the nonce.&lt;/p&gt;
+&lt;img alt="Grepping nonce out of a httpie request" class="align-center" src="/images/cloudflare-workers-csp-nonce-grep.png"/&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The code&lt;/h2&gt;
