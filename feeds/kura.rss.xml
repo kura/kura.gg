@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>kura.gg - kura</title><link>https://kura.gg/</link><description></description><lastBuildDate>Sun, 24 Oct 2021 12:00:00 +0100</lastBuildDate><item><title>Playing with Cloudflare Workers: Injecting CSP Nonces in to responses</title><link>https://kura.gg/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/</link><description>
+<rss version="2.0"><channel><title>kura.gg - kura</title><link>https://kura.gg/</link><description></description><lastBuildDate>Sun, 24 Oct 2021 12:00:00 +0100</lastBuildDate><item><title>Playing with Cloudflare Workers: Injecting CSP nonces in to responses</title><link>https://kura.gg/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/</link><description>
 &lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;Content-Security-Policy&lt;/span&gt;&lt;/tt&gt; (&lt;span class="caps"&gt;CSP&lt;/span&gt;) is an &lt;span class="caps"&gt;HTTP&lt;/span&gt; header returned by servers that
 gives the client some information on where resources can be loaded. For
 example setting &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;script-src&lt;/span&gt; 'self'&lt;/tt&gt; in the &lt;span class="caps"&gt;CSP&lt;/span&gt; tells the client that it should
