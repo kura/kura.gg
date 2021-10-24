@@ -83,8 +83,7 @@
 
   <span class=c1>// Make the request upstream and create a mutable copy of the
 </span>  <span class=c1>// response headers.
-</span>  <span class=c1>// const res = await fetch(req.url)
-</span>  <span class=kd>const</span> <span class=nx>res</span> <span class=o>=</span> <span class=k>await</span> <span class=nx>fetch</span><span class=p>(</span><span class=s2>"https://kura.gg/"</span><span class=p>)</span>
+</span>  <span class=kd>const</span> <span class=nx>res</span> <span class=o>=</span> <span class=k>await</span> <span class=nx>fetch</span><span class=p>(</span><span class=nx>req</span><span class=p>.</span><span class=nx>url</span><span class=p>)</span>
   <span class=kd>let</span> <span class=nx>res_headers</span> <span class=o>=</span> <span class=ow>new</span> <span class=nx>Headers</span><span class=p>(</span><span class=nx>res</span><span class=p>.</span><span class=nx>headers</span><span class=p>)</span>
 
   <span class=c1>// Set up the rewriter, passing the nonce to it for adding to
