@@ -7,6 +7,10 @@ Playing with Cloudflare Workers: Injecting CSP nonces in to responses
 :slug: playing-with-cloudflare-workers-injecting-csp-nonce
 :related_posts: playing-with-cloudflare-workers-adding-random-pokemon-header
 
+.. image:: /images/151_mew.png
+    :alt: Mew, the Pokémon
+    :align: center
+
 .. contents::
     :backlinks: none
 
