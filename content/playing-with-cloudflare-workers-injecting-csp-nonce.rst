@@ -93,8 +93,7 @@ comments within the code that give an idea of what each part does.
      
       // Make the request upstream and create a mutable copy of the
       // response headers.
-      // const res = await fetch(req.url)
-      const res = await fetch("https://kura.gg/")
+      const res = await fetch(req.url)
       let res_headers = new Headers(res.headers)
 
       // Set up the rewriter, passing the nonce to it for adding to
