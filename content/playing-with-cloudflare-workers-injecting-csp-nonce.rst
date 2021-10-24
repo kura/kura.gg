@@ -1,10 +1,11 @@
-Playing with Cloudflare Workers: Injecting CSP Nonces in to responses
+Playing with Cloudflare Workers: Injecting CSP nonces in to responses
 #####################################################################
 :date: 2021-10-24 12:00
 :author: kura
 :category: misc
 :tags: cloudflare http content-security-policy csp
 :slug: playing-with-cloudflare-workers-injecting-csp-nonce
+:related_posts: playing-with-cloudflare-workers-adding-random-pokemon-header
 
 .. contents::
     :backlinks: none

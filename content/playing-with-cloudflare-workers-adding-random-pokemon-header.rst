@@ -5,6 +5,7 @@ Playing with Cloudflare Workers: Adding a random Pokémon to response headers
 :category: misc
 :tags: pokemon cloudflare http
 :slug: playing-with-cloudflare-workers-adding-random-pokemon-header
+:related_posts: playing-with-cloudflare-workers-injecting-csp-nonce
 
 .. image:: /images/eevee.png
     :alt: Eevee, the Pokémon

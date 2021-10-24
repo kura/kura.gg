@@ -5,6 +5,7 @@ pelican
 pelican-fontawesome
 pelican-gist
 pelican-minify
+pelican-related-posts
 pelican-vimeo
 pelican-youtube
 Pillow
