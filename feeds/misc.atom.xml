@@ -1,5 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - misc</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/misc.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2021-10-15T20:50:00+01:00</updated><entry><title>Playing with Cloudflare Workers: Adding a random Pokémon to response headers</title><link href="https://kura.gg/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/" rel="alternate"></link><published>2021-10-15T20:50:00+01:00</published><updated>2021-10-15T20:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-15:/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</id><summary type="html">&lt;img alt="Eevee, the Pokémon" class="align-center" src="/images/eevee.png"/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - misc</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/misc.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2021-10-24T12:00:00+01:00</updated><entry><title>Playing with Cloudflare Workers: Injecting CSP Nonces in to responses</title><link href="https://kura.gg/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/" rel="alternate"></link><published>2021-10-24T12:00:00+01:00</published><updated>2021-10-24T12:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-24:/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/</id><summary type="html">
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;Content-Security-Policy&lt;/span&gt;&lt;/tt&gt; (&lt;span class="caps"&gt;CSP&lt;/span&gt;) is an &lt;span class="caps"&gt;HTTP&lt;/span&gt; header returned by servers that
+gives the client some information on where resources can be loaded. For
+example setting &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;script-src&lt;/span&gt; 'self'&lt;/tt&gt; in the &lt;span class="caps"&gt;CSP&lt;/span&gt; tells the client that it should
+only load script resources from the current origin. &lt;tt class="docutils literal"&gt;'self'&lt;/tt&gt; for this blog post
+would mean &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;https://kura.gg&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;To make loading those resources more secure you can use hashes or nonces within
+the &lt;span class="caps"&gt;CSP&lt;/span&gt; that the client can verify. Below I will show how I inject &lt;span class="caps"&gt;CSP&lt;/span&gt; nonces
+using Cloudflare Workers in to responses from my origin.&lt;/p&gt;
+&lt;div class="section" id="security-considerations"&gt;
+&lt;h2&gt;Security considerations&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Think of this as an academic exercise rather than something you should do.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This article will only explain how I inject the nonces in to responses from the
+origin. This isn’t really secure given the method I use to do this is pretty dumb
+— it just adds a generated nonce to &lt;tt class="docutils literal"&gt;&amp;lt;script&amp;gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;lt;link &lt;span class="pre"&gt;rel …&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;Content-Security-Policy&lt;/span&gt;&lt;/tt&gt; (&lt;span class="caps"&gt;CSP&lt;/span&gt;) is an &lt;span class="caps"&gt;HTTP&lt;/span&gt; header returned by servers that
+gives the client some information on where resources can be loaded. For
+example setting &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;script-src&lt;/span&gt; 'self'&lt;/tt&gt; in the &lt;span class="caps"&gt;CSP&lt;/span&gt; tells the client that it should
+only load script resources from the current origin. &lt;tt class="docutils literal"&gt;'self'&lt;/tt&gt; for this blog post
+would mean &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;https://kura.gg&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;To make loading those resources more secure you can use hashes or nonces within
+the &lt;span class="caps"&gt;CSP&lt;/span&gt; that the client can verify. Below I will show how I inject &lt;span class="caps"&gt;CSP&lt;/span&gt; nonces
+using Cloudflare Workers in to responses from my origin.&lt;/p&gt;
+&lt;div class="section" id="security-considerations"&gt;
+&lt;h2&gt;Security considerations&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Think of this as an academic exercise rather than something you should do.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This article will only explain how I inject the nonces in to responses from the
+origin. This isn’t really secure given the method I use to do this is pretty dumb
+— it just adds a generated nonce to &lt;tt class="docutils literal"&gt;&amp;lt;script&amp;gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;lt;link &lt;span class="pre"&gt;rel="stylesheet&amp;gt;"&lt;/span&gt;&lt;/tt&gt;
+&lt;span class="caps"&gt;HTML&lt;/span&gt; tags, so an attacker could just modify the origin and add a resource to the
+&lt;span class="caps"&gt;HTML&lt;/span&gt; and this worker configuration would blindly add a nonce to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-it-works"&gt;
+&lt;h2&gt;How it works&lt;/h2&gt;
+&lt;p&gt;When a new request comes in, the worker will generate a nonce. The content
+is then requested from the origin and the worker modifies the origin response;
+injecting the nonce in to &lt;tt class="docutils literal"&gt;&amp;lt;script&amp;gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;lt;link &lt;span class="pre"&gt;rel="stylesheet&amp;gt;"&lt;/span&gt;&lt;/tt&gt; &lt;span class="caps"&gt;HTML&lt;/span&gt; tags
+and adding the &lt;span class="caps"&gt;CSP&lt;/span&gt; headers which also includes the nonce.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-code"&gt;
+&lt;h2&gt;The code&lt;/h2&gt;
+&lt;p&gt;This is the full set of worker could to add nonces to responses, there are a few
+comments within the code that give an idea of what each part does.&lt;/p&gt;
+&lt;pre class="code javascript literal-block"&gt;
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nx"&gt;AttributeRewriter&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kr"&gt;constructor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;nonce&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;tag_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nonce&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;nonce&lt;/span&gt;
+    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;tag_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;tag_name&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// There is definitely a cleaner way to do this but JS isn't my
+&lt;/span&gt;  &lt;span class="c1"&gt;// strong suit and I didn't want the nonce applied to every &amp;lt;link&amp;gt;
+&lt;/span&gt;  &lt;span class="c1"&gt;// tag.
+&lt;/span&gt;  &lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;tag_name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;"link"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;attribute&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"rel"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;attribute&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;attribute&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;"stylesheet"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"nonce"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nonce&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"nonce"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nonce&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;async&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;handle_req&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;req&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// Generate the nonce and create a CSP to be added to headers
+&lt;/span&gt;  &lt;span class="c1"&gt;// later.
+&lt;/span&gt;  &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;nonce&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;btoa&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;crypto&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getRandomValues&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt; &lt;span class="nb"&gt;Uint32Array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+  &lt;span class="c1"&gt;// This policy only allows using scripts, styles, images and fonts
+&lt;/span&gt;  &lt;span class="c1"&gt;// resources from the current origin.
+&lt;/span&gt;  &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;content_security_policy&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="s2"&gt;"default-src 'self';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"script-src 'self' 'nonce-"&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;nonce&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;";"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"style-src 'self' 'nonce-"&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;nonce&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;";"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"img-src 'self';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"font-src 'self';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"connect-src 'none';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"media-src 'none';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"object-src 'none';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"child-src 'none';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"frame-ancestors 'none';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"form-action 'none';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"upgrade-insecure-requests;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"manifest-src 'none';"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"require-trusted-types-for 'script';"&lt;/span&gt;
+  &lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="nx"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;" "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// Make the request upstream and create a mutable copy of the
+&lt;/span&gt;  &lt;span class="c1"&gt;// response headers.
+&lt;/span&gt;  &lt;span class="c1"&gt;// const res = await fetch(req.url)
+&lt;/span&gt;  &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;await&lt;/span&gt; &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://kura.gg/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;res_headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ow"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Headers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;headers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// Set up the rewriter, passing the nonce to it for adding to
+&lt;/span&gt;  &lt;span class="c1"&gt;// the configured elements.
+&lt;/span&gt;  &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rewriter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ow"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;HTMLRewriter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;on&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"script"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;AttributeRewriter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;nonce&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"script"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;on&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"link"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;AttributeRewriter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;nonce&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"link"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// Only run the rewriter on HTML content.
+&lt;/span&gt;  &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;content_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;headers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Content-Type"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;new_res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;res&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;content_type&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;startsWith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"text/html"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;new_res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;rewriter&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// Set the CSP header.
+&lt;/span&gt;  &lt;span class="nx"&gt;res_headers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Content-Security-Policy"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;content_security_policy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// Return the (possibly modified) body and modified headers.
+&lt;/span&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="ow"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;new_res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;status&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;statusText&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;statusText&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;headers&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;res_headers&lt;/span&gt;
+  &lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'fetch'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;event&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nx"&gt;event&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;respondWith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;handle_req&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;event&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;request&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+</content><category term="misc"></category><category term="cloudflare http content-security-policy csp"></category></entry><entry><title>Playing with Cloudflare Workers: Adding a random Pokémon to response headers</title><link href="https://kura.gg/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/" rel="alternate"></link><published>2021-10-15T20:50:00+01:00</published><updated>2021-10-15T20:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-15:/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</id><summary type="html">&lt;img alt="Eevee, the Pokémon" class="align-center" src="/images/eevee.png"/&gt;
 
 &lt;p&gt;I was a little bored tonight and had a thought; “can I find a way to add a random
 Pokédex and it’s National Pokédex number as a header to requests on my website?”&lt;/p&gt;

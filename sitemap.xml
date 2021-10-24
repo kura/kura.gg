@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://kura.gg/404.html</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/500.html</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/archives/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/categories/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/tags/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -82,7 +82,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://kura.gg/eevee/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -103,35 +103,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://kura.gg/hauntr/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/license/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/lightbox/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/pelican-fontawesome/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://kura.gg/pelican-githubprojects/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -173,7 +173,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://kura.gg/software/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -194,7 +194,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://kura.gg/yarg/</loc>
-<lastmod>2021-10-22T16:43:36-00:00</lastmod>
+<lastmod>2021-10-24T11:39:09-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://kura.gg/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/</loc>
+<lastmod>2021-10-24T12:00:00+01:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1076,7 +1083,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://kura.gg/category/misc/</loc>
-<lastmod>2021-10-15T20:50:00-00:01</lastmod>
+<lastmod>2021-10-24T12:00:00-00:01</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1098,6 +1105,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://kura.gg/category/tutorials/</loc>
 <lastmod>2015-10-18T03:30:00-00:01</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://kura.gg/tag/cloudflare-http-content-security-policy-csp/</loc>
+<lastmod>2021-10-24T12:00:00-00:01</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -2623,7 +2637,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://kura.gg/authors/kura/</loc>
-<lastmod>2021-10-15T20:50:00-00:01</lastmod>
+<lastmod>2021-10-24T12:00:00-00:01</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

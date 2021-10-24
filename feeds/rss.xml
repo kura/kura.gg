@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>kura.gg</title><link>https://kura.gg/</link><description></description><lastBuildDate>Fri, 15 Oct 2021 20:50:00 +0100</lastBuildDate><item><title>Playing with Cloudflare Workers: Adding a random Pokémon to response headers</title><link>https://kura.gg/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</link><description>&lt;img alt="Eevee, the Pokémon" class="align-center" src="/images/eevee.png"/&gt;
+<rss version="2.0"><channel><title>kura.gg</title><link>https://kura.gg/</link><description></description><lastBuildDate>Sun, 24 Oct 2021 12:00:00 +0100</lastBuildDate><item><title>Playing with Cloudflare Workers: Injecting CSP Nonces in to responses</title><link>https://kura.gg/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/</link><description>
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;Content-Security-Policy&lt;/span&gt;&lt;/tt&gt; (&lt;span class="caps"&gt;CSP&lt;/span&gt;) is an &lt;span class="caps"&gt;HTTP&lt;/span&gt; header returned by servers that
+gives the client some information on where resources can be loaded. For
+example setting &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;script-src&lt;/span&gt; 'self'&lt;/tt&gt; in the &lt;span class="caps"&gt;CSP&lt;/span&gt; tells the client that it should
+only load script resources from the current origin. &lt;tt class="docutils literal"&gt;'self'&lt;/tt&gt; for this blog post
+would mean &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;https://kura.gg&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;To make loading those resources more secure you can use hashes or nonces within
+the &lt;span class="caps"&gt;CSP&lt;/span&gt; that the client can verify. Below I will show how I inject &lt;span class="caps"&gt;CSP&lt;/span&gt; nonces
+using Cloudflare Workers in to responses from my origin.&lt;/p&gt;
+&lt;div class="section" id="security-considerations"&gt;
+&lt;h2&gt;Security considerations&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Think of this as an academic exercise rather than something you should do.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This article will only explain how I inject the nonces in to responses from the
+origin. This isn’t really secure given the method I use to do this is pretty dumb
+— it just adds a generated nonce to &lt;tt class="docutils literal"&gt;&amp;lt;script&amp;gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;lt;link &lt;span class="pre"&gt;rel …&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 24 Oct 2021 12:00:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2021-10-24:/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/</guid><category>misc</category><category>cloudflare http content-security-policy csp</category></item><item><title>Playing with Cloudflare Workers: Adding a random Pokémon to response headers</title><link>https://kura.gg/2021/10/15/playing-with-cloudflare-workers-adding-random-pokemon-header/</link><description>&lt;img alt="Eevee, the Pokémon" class="align-center" src="/images/eevee.png"/&gt;
 
 &lt;p&gt;I was a little bored tonight and had a thought; “can I find a way to add a random
 Pokédex and it’s National Pokédex number as a header to requests on my website?”&lt;/p&gt;
