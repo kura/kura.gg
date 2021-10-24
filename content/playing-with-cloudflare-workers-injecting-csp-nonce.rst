@@ -41,11 +41,22 @@ How it works
 When a new request comes in, the worker will generate a nonce. The content
 is then requested from the origin and the worker modifies the origin response;
 injecting the nonce in to ``<script>`` and ``<link rel="stylesheet>"`` HTML tags
-and adding the CSP headers which also includes the nonce.
+and addingbash
 
-.. image:: /images/cloudflare-workers-csp-nonce-grep.png
-    :alt: Grepping nonce out of a httpie request
-    :align: center
+.. code:: html
+
+    ❯ curl -v https://kura.gg/eevee | grep nonce
+    < content-security-policy: default-src 'self'; 
+      script-src 'self' gist.github.com 'nonce-MTQ1MjM5MDU0MCwzODc3MjkwMzY0';
+      style-src 'self' assets-cdn.github.com 'nonce-MTQ1MjM5MDU0MCwzODc3MjkwMzY0';
+      img-src 'self' img.shields.io;
+      font-src 'self'; connect-src 'none'; media-src 'self';
+      object-src 'self' player.vimeo.com; child-src www.youtube.com player.vimeo.com;
+      frame-ancestors 'none'; form-action 'none';
+      upgrade-insecure-requests; base-uri https://kura.gg; manifest-src 'none';
+      require-trusted-types-for 'script';
+    <link rel=stylesheet href=https://kura.gg/theme/css/eevee.min.css?e96887dc nonce="MTQ1MjM5MDU0MCwzODc3MjkwMzY0">
+    <script async src=https://kura.gg/theme/js/eevee.min.js?1841d254 nonce="MTQ1MjM5MDU0MCwzODc3MjkwMzY0"></script>
 
 The code
 ========
