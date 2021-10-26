@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - tor</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/tor.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2015-01-02T04:48:00+00:00</updated><entry><title>torproject.org mirror</title><link href="https://kura.gg/2015/01/02/torproject.org-mirror/" rel="alternate"></link><published>2015-01-02T04:48:00+00:00</published><updated>2015-01-02T04:48:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-01-02:/2015/01/02/torproject.org-mirror/</id><content type="html">
 &lt;div class="section" id="mirror"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;Mirror&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Mirror&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;With the DDoS attacks on the &lt;a class="reference external" href="https://www.torproject.org"&gt;torproject.org&lt;/a&gt;
 website over the mid to end of December, I decided it would be prudent to join
 the relatively small list of mirrors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="access"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Access&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Access&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;+——- —-+—————————+
 | Website | Dist / Downloads |
 +=========+==================+
@@ -22,7 +22,7 @@ the relatively small list of mirrors.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tor"></category><category term="tor"></category></entry><entry><title>Santa’s tor relay changes</title><link href="https://kura.gg/2014/12/27/santas-tor-relay-changes/" rel="alternate"></link><published>2014-12-27T01:12:00+00:00</published><updated>2014-12-27T01:12:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-12-27:/2014/12/27/santas-tor-relay-changes/</id><content type="html">
 &lt;div class="section" id="exiting-relays"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;Exiting relays&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Exiting relays&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Both &lt;a class="reference external" href="https://globe.torproject.org/#/relay/865A408E2B1EA3E18C9A12E80A8D458F9C985C16"&gt;SpunkWeasel (&lt;span class="caps"&gt;865A408E2B1EA3E18C9A12E80A8D458F9C985C16&lt;/span&gt;)&lt;/a&gt;
 and &lt;a class="reference external" href="https://globe.torproject.org/#/relay/B8E6FFEB6F91FA3D26BC572836FB0ABBD142DC87"&gt;AnorexicSquirrel (&lt;span class="caps"&gt;B8E6FFEB6F91FA3D26BC572836FB0ABBD142DC87&lt;/span&gt;)&lt;/a&gt;
 have been given additional horsepower in terms of &lt;span class="caps"&gt;CPU&lt;/span&gt; and memory and both have
@@ -30,7 +30,7 @@ been allowed to exit. Additionally, both are now capable of IPv6 connectivity
 as guards, relays and exits.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="new-relays"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;New relays&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;New relays&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;A new exit relay has been put online called &lt;a class="reference external" href="https://globe.torproject.org/#/relay/24B1783665A9B0A4BF640A1CD02F685C0CA098ED"&gt;VivaciousAlpaca (&lt;span class="caps"&gt;24B1783665A9B0A4BF640A1CD02F685C0CA098ED&lt;/span&gt;)&lt;/a&gt;.
 It has the same &lt;span class="caps"&gt;CPU&lt;/span&gt; and memory as SpunkWeasel and AnorexicSquirrel and also
 has full IPv6 capabilities.&lt;/p&gt;
@@ -38,13 +38,13 @@ has full IPv6 capabilities.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="tor"></category><category term="tor"></category></entry><entry><title>Tor all the things!</title><link href="https://kura.gg/2014/10/02/tor-all-the-things/" rel="alternate"></link><published>2014-10-02T03:45:00+01:00</published><updated>2014-10-02T03:45:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-10-02:/2014/10/02/tor-all-the-things/</id><summary type="html">
 &lt;div class="section" id="privacy-is-key"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;Privacy is key&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Privacy is key&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I am a big fan of keeping my browsing habits and other personal information
 private. As such, I use a &lt;span class="caps"&gt;VPN&lt;/span&gt; service provided by &lt;a class="reference external" href="https://proxy.sh/panel/aff.php?aff=079"&gt;proxy.sh (affiliate link)&lt;/a&gt;, I also use their proxies, Tor and
 various other proxies, usually from online lists, should I feel the need.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="anonymous-nodes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Anonymous nodes&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Anonymous nodes&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I’ve run some Tor nodes for quite a while now, two Exits and five relays to be
 precise. They are all listed as being part of the same family and have never
 had any reference to me being their operator.&lt;/p&gt;
@@ -53,17 +53,17 @@ inherently comes with running Tor Exit nodes. These issues include some mean
 emails and &lt;span class="caps"&gt;IP&lt;/span&gt; addresses and &lt;span class="caps"&gt;CIDR&lt;/span&gt; blocks being blacklisted by services like Netflix.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="new-nodes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;New nodes!&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;New nodes!&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The good news is, I have recently launched three more nodes! These nodes
 belong to a …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;div class="section" id="privacy-is-key"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;Privacy is key&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Privacy is key&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I am a big fan of keeping my browsing habits and other personal information
 private. As such, I use a &lt;span class="caps"&gt;VPN&lt;/span&gt; service provided by &lt;a class="reference external" href="https://proxy.sh/panel/aff.php?aff=079"&gt;proxy.sh (affiliate link)&lt;/a&gt;, I also use their proxies, Tor and
 various other proxies, usually from online lists, should I feel the need.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="anonymous-nodes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Anonymous nodes&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Anonymous nodes&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I’ve run some Tor nodes for quite a while now, two Exits and five relays to be
 precise. They are all listed as being part of the same family and have never
 had any reference to me being their operator.&lt;/p&gt;
@@ -72,7 +72,7 @@ inherently comes with running Tor Exit nodes. These issues include some mean
 emails and &lt;span class="caps"&gt;IP&lt;/span&gt; addresses and &lt;span class="caps"&gt;CIDR&lt;/span&gt; blocks being blacklisted by services like Netflix.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="new-nodes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;New nodes!&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;New nodes!&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The good news is, I have recently launched three more nodes! These nodes
 belong to a different family and share my &lt;span class="caps"&gt;PGP&lt;/span&gt; identity, an email address I can
 be contacted at with regards to the nodes and my lovely bitcoin address for
@@ -86,7 +86,7 @@ suggest giving it a read since it’s quite interesting.&lt;/p&gt;
 as fast relays and be acceptable is guard relays too.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="bandwidth"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Bandwidth&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;Bandwidth&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Each of the three nodes has a 1Gbps network interface, two of the nodes have
 truly infinite bandwidth while the third only has &lt;span class="caps"&gt;1TB&lt;/span&gt; of outbound transfer but
 infinite inbound.&lt;/p&gt;
@@ -94,14 +94,14 @@ infinite inbound.&lt;/p&gt;
 capacity to the Tor network.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-us"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;The &lt;span class="caps"&gt;US&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-5"&gt;The &lt;span class="caps"&gt;US&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Another piece of good news is one of these servers is actually running in the
 U.S., which is something I tend to stay away from in general. This will be my
 second &lt;span class="caps"&gt;U.S.&lt;/span&gt; Tor node, hopefully it will push me to run more nodes in that
 region in the future.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-nodes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;The nodes&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-6"&gt;The nodes&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;These new nodes having a nickname scheme akin to the Ubuntu convention, but
 slightly more disgusting, as befits my warped personality.&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -114,7 +114,7 @@ questions regarding the nodes or running your own. Bitcoin donations are always
 welcome and will help keep these nodes running and allow more to be onlined.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="relay-relay-relay"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Relay, relay, relay&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-7"&gt;Relay, relay, relay&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;As a final note, running a relay is pretty damn safe. You can do it pretty
 cheaply too on &lt;span class="caps"&gt;AWS&lt;/span&gt;, with DigitalOcean or any other &lt;span class="caps"&gt;VPS&lt;/span&gt; provide. Relays are
 generally allowed to be run on those environments too, although dropping an

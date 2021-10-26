@@ -99,7 +99,7 @@ and &lt;span class="caps"&gt;SSHFP&lt;/span&gt; records and of course, &lt;span 
 &lt;p&gt;I’m writing this up because I found getting &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; from Rage4 to work with
 name.com as my registrar was a pain and the name.com support were not very helpful,
 linking me to a support article that I’d already read and did not help at all.&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
+&lt;div class="section" id="rage4-1"&gt;
 &lt;h2&gt;Rage4&lt;/h2&gt;
 &lt;p&gt;I’m going to assume you’ve already got your records in Rage4, if not, the
 interface is really easy so you’ll figure it out.&lt;/p&gt;
@@ -115,7 +115,7 @@ and &lt;span class="caps"&gt;SSHFP&lt;/span&gt; records and of course, &lt;span 
 &lt;p&gt;I’m writing this up because I found getting &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; from Rage4 to work with
 name.com as my registrar was a pain and the name.com support were not very helpful,
 linking me to a support article that I’d already read and did not help at all.&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
+&lt;div class="section" id="rage4-1"&gt;
 &lt;h2&gt;Rage4&lt;/h2&gt;
 &lt;p&gt;I’m going to assume you’ve already got your records in Rage4, if not, the
 interface is really easy so you’ll figure it out.&lt;/p&gt;
@@ -130,7 +130,7 @@ containing all of the &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; info you need
 fields but you’ll only need the ones shown below.&lt;/p&gt;
 &lt;img alt="DNSSEC info" src="/images/rage4-dnssec-info.png"/&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
+&lt;div class="section" id="name-com-1"&gt;
 &lt;h2&gt;name.com&lt;/h2&gt;
 &lt;p&gt;With the information from Rage4, you now need to go to name.com and configure
 &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; on your registrar.
@@ -189,7 +189,7 @@ and I need to revoke the old key. &lt;cite&gt;max-age&lt;/cite&gt; tells the bro
 the pin-sha256 details, for me that is 182 days and finally &lt;cite&gt;includeSubDomains&lt;/cite&gt;
 tells the browser that these hashes are valid for this domain and all sub domains.&lt;/p&gt;
 &lt;div class="section" id="extracting-the-public-key-information"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;Extracting the public key information&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Extracting the public key information&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;These commands will extract the public key information and encode it in base64.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl rsa -in KEYFILE -outform der -pubout &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
     openssl dgst -sha256 -binary &lt;span class="p"&gt;|&lt;/span&gt; base64
@@ -213,7 +213,7 @@ cYf9T3Il8DaCnaMaM0LatIAru1vqmcu2JSwS7uvyEB0=
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="backup-key-s"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Backup key(s)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Backup key(s)&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The backup key is actually really simple, you make any number of backups and
 store them for future use in case of problems or emergencies with the primary
 key file.&lt;/p&gt;
@@ -223,7 +223,7 @@ key file.&lt;/p&gt;
 public key of this backup key.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-hpkp-header"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;The &lt;span class="caps"&gt;HPKP&lt;/span&gt; header&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;The &lt;span class="caps"&gt;HPKP&lt;/span&gt; header&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class="literal-block"&gt;
 Public-Key-Pins: pin-sha256="PUBLIC_KEY";
                  max-age=EXPIRE_TIME [; includeSubdomains]
@@ -246,7 +246,7 @@ reported to this &lt;span class="caps"&gt;URL&lt;/span&gt;. This won’t be cove
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;div class="section" id="haproxy"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;HAProxy&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;HAProxy&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In HAproxy you simply using the &lt;cite&gt;rspadd&lt;/cite&gt; config option inside the &lt;cite&gt;frontend&lt;/cite&gt;
 declaration.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -260,7 +260,7 @@ only configuration similarity this requires is that mail for all users is
 stored on the filesystem in the same place, rather than to separate locations
 i.e. each user having ~/.Maildir.&lt;/p&gt;
 &lt;div class="section" id="encfs"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;EncFS&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;EncFS&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install encfs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once installed, you’ll need to make a directory for encrypted and decrypted
@@ -283,7 +283,7 @@ only configuration similarity this requires is that mail for all users is
 stored on the filesystem in the same place, rather than to separate locations
 i.e. each user having ~/.Maildir.&lt;/p&gt;
 &lt;div class="section" id="encfs"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;EncFS&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;EncFS&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install encfs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once installed, you’ll need to make a directory for encrypted and decrypted
@@ -315,7 +315,7 @@ command that was used to create the volume.&lt;/p&gt;
 &lt;p&gt;Now you’ll just want to copy over your existing mail in to &lt;cite&gt;/var/mail/decrypted/&lt;/cite&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="dovecot"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Dovecot&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Dovecot&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The final step to getting this to work is to tell Dovecot to use this mail location.&lt;/p&gt;
 &lt;p&gt;With my setup there are two pleces to modify this, the first is
 &lt;cite&gt;/etc/dovecot/conf.d/10-mail.conf&lt;/cite&gt;. It’s really hard to tell you what this
@@ -335,7 +335,7 @@ previous article, it’ll look like below.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="tomcat-solr"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;Tomcat/Solr&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;Tomcat/Solr&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If you use Solr for &lt;span class="caps"&gt;IMAP&lt;/span&gt; &lt;span class="caps"&gt;SEARCH&lt;/span&gt;, you’ll just want to move that index inside of
 the new directory.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo /etc/init.d/tomcat6 stop
@@ -354,7 +354,7 @@ run optimize task.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="init-d"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;init.d&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;init.d&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Something to remember is that encfs will not mount on it’s own, that’s the
 entire point of doing this. This means that Postfix, Dovecot, Solr etc will
 not have any data to read on a server reboot.&lt;/p&gt;
@@ -429,14 +429,14 @@ sudo /etc/init.d/postfix reload
 and Solr, the latter being used for &lt;span class="caps"&gt;IMAP&lt;/span&gt; &lt;span class="caps"&gt;SEARCH&lt;/span&gt;. I personally use 2 &lt;span class="caps"&gt;GB&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I’ll warn you all now, this is a long article.&lt;/p&gt;
 &lt;div class="section" id="ssl"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo openssl genrsa -out /etc/ssl/private/mail.key 4096
 sudo openssl req -new -key /etc/ssl/private/mail.key -out /tmp/mail.csr
 sudo openssl x509 -req -days 365 -in /tmp/mail.csr -signkey /etc/ssl/private/mail.key -out /etc/ssl/certs/mail.crt
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mysql"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;MySQL&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;MySQL&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install mysql-server
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You’ll be prompted several times for a password for MySQL during the installation,
@@ -452,14 +452,14 @@ just come up with something nice and secure.&lt;/p&gt;
 and Solr, the latter being used for &lt;span class="caps"&gt;IMAP&lt;/span&gt; &lt;span class="caps"&gt;SEARCH&lt;/span&gt;. I personally use 2 &lt;span class="caps"&gt;GB&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I’ll warn you all now, this is a long article.&lt;/p&gt;
 &lt;div class="section" id="ssl"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo openssl genrsa -out /etc/ssl/private/mail.key 4096
 sudo openssl req -new -key /etc/ssl/private/mail.key -out /tmp/mail.csr
 sudo openssl x509 -req -days 365 -in /tmp/mail.csr -signkey /etc/ssl/private/mail.key -out /etc/ssl/certs/mail.crt
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mysql"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;MySQL&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;MySQL&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install mysql-server
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You’ll be prompted several times for a password for MySQL during the installation,
@@ -510,7 +510,7 @@ INSERT INTO virtual_aliases (domain_id, source, destination) VALUES (1, 'alias@e
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="postfix"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;Postfix&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;Postfix&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install postfix postfix-mysql postfix-policyd-spf-python
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;When prompted for a Postfix configuration, just select &lt;cite&gt;Internet Site&lt;/cite&gt;. You’ll
@@ -688,7 +688,7 @@ user@example.com
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="dovecot"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Dovecot&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;Dovecot&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install dovecot-core dovecot-imapd dovecot-lmtpd dovecot-mysql
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Backup the default Dovecot config files.&lt;/p&gt;
@@ -834,7 +834,7 @@ sudo /etc/init.d/tomcat6 restart
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="clamav-and-spamassassin-milters"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;ClamAV and SpamAssassin milters&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-5"&gt;ClamAV and SpamAssassin milters&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install clamav-milter clamav-unofficial-sigs spamass-milter
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You’ll likely get an error when installing these, don’t worry.&lt;/p&gt;
@@ -891,7 +891,7 @@ sudo /etc/init.d/spamassassin start
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="dkimproxy"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;DKIMProxy&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-6"&gt;DKIMProxy&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install dkimproxy
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Create a private and public keypair.&lt;/p&gt;
@@ -919,7 +919,7 @@ the init.d file for dkimproxy.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="dns"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;&lt;span class="caps"&gt;DNS&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-7"&gt;&lt;span class="caps"&gt;DNS&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;All that needs to be done now is to create two three records.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;example.com. IN TXT "v=spf1 a mx -all"
 &lt;/pre&gt;&lt;/div&gt;
@@ -1816,7 +1816,7 @@ from S3.&lt;/p&gt;
 &lt;p&gt;I needed the ability to &lt;span class="caps"&gt;RSYNC&lt;/span&gt; data from the official Raspberry Pi
 servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="https://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
 &lt;a class="reference external" href="https://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
+&lt;div class="section" id="fuse-1"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;You can actually do this successfully without requiring &lt;span class="caps"&gt;FUSE&lt;/span&gt;, just by
 installing the s3fs binary on to your system, but this only allows the
@@ -1827,13 +1827,13 @@ thus allowing us to give other users access and auto-mount using /etc/fstab.&lt
 &lt;/div&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
-&lt;div class="section" id="id2"&gt;
+&lt;div class="section" id="fuse-2"&gt;
 &lt;h3&gt;Fuse&lt;/h3&gt;
 &lt;p&gt;Installing &lt;span class="caps"&gt;FUSE&lt;/span&gt; is simple&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install fuse-utils
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
+&lt;div class="section" id="s3fs-1"&gt;
 &lt;h3&gt;s3fs&lt;/h3&gt;
 &lt;p&gt;We …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I’ve recently been toying with my &lt;a class="reference external" href="https://rpi.syslog.tv/"&gt;Raspberry Pi mirror&lt;/a&gt; including
@@ -1843,7 +1843,7 @@ from S3.&lt;/p&gt;
 &lt;p&gt;I needed the ability to &lt;span class="caps"&gt;RSYNC&lt;/span&gt; data from the official Raspberry Pi
 servers on to mine and then in to S3 and for that I used &lt;a class="reference external" href="https://code.google.com/p/s3fs/"&gt;s3fs&lt;/a&gt; and
 &lt;a class="reference external" href="https://fuse.sourceforge.net/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
+&lt;div class="section" id="fuse-1"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;You can actually do this successfully without requiring &lt;span class="caps"&gt;FUSE&lt;/span&gt;, just by
 installing the s3fs binary on to your system, but this only allows the
@@ -1854,13 +1854,13 @@ thus allowing us to give other users access and auto-mount using /etc/fstab.&lt
 &lt;/div&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
-&lt;div class="section" id="id2"&gt;
+&lt;div class="section" id="fuse-2"&gt;
 &lt;h3&gt;Fuse&lt;/h3&gt;
 &lt;p&gt;Installing &lt;span class="caps"&gt;FUSE&lt;/span&gt; is simple&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install fuse-utils
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
+&lt;div class="section" id="s3fs-1"&gt;
 &lt;h3&gt;s3fs&lt;/h3&gt;
 &lt;p&gt;We’ll need to get build-essential, pkg-config, libfuse-dev,
 libcurl4-openssl-dev and libxml2-dev to be able to compile s3fs&lt;/p&gt;
@@ -4117,7 +4117,7 @@ of servers you have as masters, in this example we have 2.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;REPLICATION&lt;/span&gt; &lt;span class="k"&gt;SLAVE&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'replication'&lt;/span&gt;&lt;span class="nv"&gt;@'10.1.1.1'&lt;/span&gt; &lt;span class="k"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id1"&gt;
+&lt;div class="section" id="master-1-1"&gt;
 &lt;h2&gt;Master 1&lt;/h2&gt;
 &lt;p&gt;Open a MySQL prompt and run the following queries&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;START&lt;/span&gt; &lt;span class="k"&gt;SLAVE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -4135,13 +4135,13 @@ the slaves.&lt;/p&gt;
 &lt;li&gt;and Slave 4 a slave of Master 2.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
+&lt;div class="section" id="master-1-2"&gt;
 &lt;h2&gt;Master 1&lt;/h2&gt;
 &lt;p&gt;Open a MySQL prompt and run the following query&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;REPLICATION&lt;/span&gt; &lt;span class="k"&gt;SLAVE&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'replication'&lt;/span&gt;&lt;span class="nv"&gt;@'10.1.1.3'&lt;/span&gt; &lt;span class="k"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
+&lt;div class="section" id="master-2-1"&gt;
 &lt;h2&gt;Master 2&lt;/h2&gt;
 &lt;p&gt;Open a MySQL prompt and run the following query&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;REPLICATION&lt;/span&gt; &lt;span class="k"&gt;SLAVE&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'replication'&lt;/span&gt;&lt;span class="nv"&gt;@'10.1.1.4'&lt;/span&gt; &lt;span class="k"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -4780,12 +4780,12 @@ install openssl from source (&lt;a class="reference external" href="https://www.
 &lt;/div&gt;
 &lt;div class="section" id="rewrite-module"&gt;
 &lt;h3&gt;Rewrite module&lt;/h3&gt;
-&lt;div class="section" id="id1"&gt;
+&lt;div class="section" id="debian-1"&gt;
 &lt;h4&gt;Debian&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install libpcre3 libpcre3-dev
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
+&lt;div class="section" id="redhat-yum-1"&gt;
 &lt;h4&gt;RedHat (yum)&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo yum install libpcre-dev
 &lt;/pre&gt;&lt;/div&gt;
