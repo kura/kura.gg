@@ -496,6 +496,10 @@ a[href^="https://www.battleforthenet.com"]:before {
   background-color: rgb(34, 34, 34) !important;
 }
 
+.eevee-mobile-header, .eevee-nav {
+  background-color: rgb(50, 50, 50) !important;
+}
+
 .eevee-related, table {
   background-color: rgb(32, 32, 32) !important;
 }
