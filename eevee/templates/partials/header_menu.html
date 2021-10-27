@@ -1,3 +1,9 @@
+{% for html, title, url in LINKS %}
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="{{ url }}" itemprop="url" rel="bookmark" title="{{ title }}">
+    {{ html }}
+  </a>
+{% endfor %}
 {% for html, title, url in MENUITEMS %}
   <a class="mdl-color-text--accent mdl-navigation__link"
      href="{{ url }}" itemprop="url" rel="bookmark" title="{{ title }}">

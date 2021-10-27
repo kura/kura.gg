@@ -34,19 +34,9 @@ HEADERID_LINK_CHAR = r"&#x203B;"
 
 MENUITEMS = [
     (
-        """<i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee""",
-        "Eevee",
-        "/eevee/",
-    ),
-    (
         """<i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact""",
         "Contact",
         "/contact/",
-    ),
-    (
-        """<i class="material-icons" aria-hidden="true">&#xE86F;</i> Software""",
-        "Software",
-        "/software/",
     ),
 ]
 
@@ -70,27 +60,27 @@ LINKS = [
     (
         """<i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole""",
         "Blackhole",
-        "https://kura.gg/blackhole",
-    ),
-    (
-        """<i class="material-icons" aria-hidden="true">&#xE86F;</i> Yarg""",
-        "Yarg",
-        "https://kura.gg/yarg",
+        "/blackhole",
     ),
     (
         """<i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee""",
         "Eevee",
-        "https://kura.gg/eevee",
+        "/eevee",
     ),
     (
         """<i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr""",
         "Hauntr",
-        "https://kura.gg/hauntr",
+        "/hauntr",
     ),
     (
         """<i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly""",
         "Ghastly",
-        "https://kura.gg/ghastly",
+        "/ghastly",
+    ),
+    (
+        """<i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins""",
+        "Pelican Plugins",
+        "/pelican-plugins",
     ),
 ]
 
