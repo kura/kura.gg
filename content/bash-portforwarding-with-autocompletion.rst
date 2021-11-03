@@ -17,7 +17,7 @@ that I created in a small competition with `@codeinthehole.`_
 
 .. _@codeinthehole.: https://twitter.com/codeinthehole
 
-[gist:id=5065819]
+Gist removed. Sorry.
 
 Installation
 ------------

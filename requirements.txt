@@ -3,7 +3,6 @@ cssmin
 jsmin
 pelican
 pelican-fontawesome
-pelican-gist
 pelican-minify
 pelican-related-posts
 pelican-vimeo

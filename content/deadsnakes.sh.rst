@@ -15,4 +15,4 @@ frequently, I thought I'd save myself some time and write a simple
 shell script to install the PPA, the versions of Python I frequently use and,
 after messing up a machine -- ignore the existing version of python.
 
-[gist:id=8517802]
+Gist removed. Sorry.

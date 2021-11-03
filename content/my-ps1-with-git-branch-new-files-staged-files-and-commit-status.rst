@@ -33,4 +33,4 @@ superuser privileges.
 You can find the source code used to power this PS1 below which is stored in a
 Gist on GitHub.
 
-[gist:id=6262468]
+Gist removed. Sorry.
