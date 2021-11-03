@@ -1,4 +1,4 @@
 {% assets filters="jsmin", output="js/search.js",
    "js/jquery.js", "js/tipuesearch.js", "js/tipuesearch_set.js" %}
-  <script defer src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+  <script defer src="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}"></script>
 {% endassets %}
