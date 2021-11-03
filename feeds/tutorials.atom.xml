@@ -1595,9 +1595,7 @@ website and seeing all of the &lt;span class="caps"&gt;HTML&lt;/span&gt; compre
 directly to PostgreSQL, RabbitMQ and many other services all via &lt;span class="caps"&gt;SSH&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I have written several helper functions and this is the final version
 that I created in a small competition with &lt;a class="reference external" href="https://twitter.com/codeinthehole"&gt;@codeinthehole.&lt;/a&gt;&lt;/p&gt;
-&lt;div class="gist"&gt;
-    &lt;script src='https://gist.github.com/5065819.js'&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Simply add the contents to &lt;em&gt;~/.bashrc&lt;/em&gt;&lt;/p&gt;

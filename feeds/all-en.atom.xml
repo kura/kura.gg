@@ -1281,7 +1281,7 @@ will styled similarly to how the Disqus comments section is styled.&lt;/p&gt;
 &lt;p&gt;Please be aware that if &lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; are
 configured, Disqus will be prioritized over Muut and therefore only the Disqus
 template will be loaded.&lt;/p&gt;
-&lt;div class="lightbox-block align-center"&gt;&lt;a href="#539d37cf-27fe-43e5-a4f2-ee08de1a80f5" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="539d37cf-27fe-43e5-a4f2-ee08de1a80f5" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="lightbox-block align-center"&gt;&lt;a href="#bc3edc2f-fe07-43cd-aa53-3a741e015936" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="bc3edc2f-fe07-43cd-aa53-3a741e015936" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="back-to-the-top-of-the-page-links"&gt;
 &lt;h2&gt;Back to the top of the page links&lt;/h2&gt;
 &lt;p&gt;A small addition are the &lt;cite&gt;back to the top of the page&lt;/cite&gt; links that will now
@@ -4297,9 +4297,7 @@ probably heard of Felix Krull’s &lt;a class="reference external" href="https:/
 frequently, I thought I’d save myself some time and write a simple
 shell script to install the &lt;span class="caps"&gt;PPA&lt;/span&gt;, the versions of Python I frequently use and,
 after messing up a machine — ignore the existing version of python.&lt;/p&gt;
-&lt;div class="gist"&gt;
-    &lt;script src='https://gist.github.com/8517802.js'&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
 </content><category term="coding"></category><category term="python"></category></entry><entry><title>haproxy1.5-dev21, nginx 1.5.8, SPDY &amp; pagespeed 1.7.30.2</title><link href="https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" rel="alternate"></link><published>2014-01-08T13:00:00+00:00</published><updated>2014-01-08T13:00:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-08:/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/</id><summary type="html">
 &lt;p&gt;I have previously released &lt;a class="reference external" href="/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/"&gt;haproxy1.5-dev19 with &lt;span class="caps"&gt;SSL&lt;/span&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;SPDY&lt;/span&gt; support enabled&lt;/a&gt;
 and &lt;a class="reference external" href="/2013/07/10/nginx-spdy-and-ngx-pagespeed/"&gt;nginx 1.4.1 with &lt;span class="caps"&gt;SPDY&lt;/span&gt; support and pagespeed&lt;/a&gt;, although I do
@@ -4651,9 +4649,7 @@ superuser privileges.&lt;/p&gt;
 &lt;img alt="PS1 when I have scary privileges" src="/images/new-ps1-root.png"/&gt;
 &lt;p&gt;You can find the source code used to power this &lt;span class="caps"&gt;PS1&lt;/span&gt; below which is stored in a
 Gist on GitHub.&lt;/p&gt;
-&lt;div class="gist"&gt;
-    &lt;script src='https://gist.github.com/6262468.js'&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
 </content><category term="coding"></category><category term="bash"></category><category term="dash"></category><category term="ps1"></category><category term="git"></category></entry><entry><title>Blackhole 1.8.0 development, Mock and Python entry_points</title><link href="https://kura.gg/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/" rel="alternate"></link><published>2013-08-18T12:00:00+01:00</published><updated>2013-08-18T12:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-18:/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/</id><summary type="html">
 &lt;p&gt;Over the last week I’ve been doing a huge amount of refactoring of
 &lt;a class="reference external" href="https://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
@@ -5782,9 +5778,7 @@ website and seeing all of the &lt;span class="caps"&gt;HTML&lt;/span&gt; compre
 directly to PostgreSQL, RabbitMQ and many other services all via &lt;span class="caps"&gt;SSH&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I have written several helper functions and this is the final version
 that I created in a small competition with &lt;a class="reference external" href="https://twitter.com/codeinthehole"&gt;@codeinthehole.&lt;/a&gt;&lt;/p&gt;
-&lt;div class="gist"&gt;
-    &lt;script src='https://gist.github.com/5065819.js'&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Simply add the contents to &lt;em&gt;~/.bashrc&lt;/em&gt;&lt;/p&gt;

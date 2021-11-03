@@ -1012,9 +1012,7 @@ probably heard of Felix Krull’s &lt;a class="reference external" href="https:/
 frequently, I thought I’d save myself some time and write a simple
 shell script to install the &lt;span class="caps"&gt;PPA&lt;/span&gt;, the versions of Python I frequently use and,
 after messing up a machine — ignore the existing version of python.&lt;/p&gt;
-&lt;div class="gist"&gt;
-    &lt;script src='https://gist.github.com/8517802.js'&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
 </content><category term="coding"></category><category term="python"></category></entry><entry><title>Shields for PyPI packages</title><link href="https://kura.gg/2013/12/24/shields-for-pypi-packages/" rel="alternate"></link><published>2013-12-24T14:07:00+00:00</published><updated>2013-12-24T14:07:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-12-24:/2013/12/24/shields-for-pypi-packages/</id><summary type="html">
 &lt;p&gt;Some time back in April 2013 I was bored and looking for a new project to keep
 my attention, if only for a short period of time.&lt;/p&gt;
@@ -1122,9 +1120,7 @@ superuser privileges.&lt;/p&gt;
 &lt;img alt="PS1 when I have scary privileges" src="/images/new-ps1-root.png"/&gt;
 &lt;p&gt;You can find the source code used to power this &lt;span class="caps"&gt;PS1&lt;/span&gt; below which is stored in a
 Gist on GitHub.&lt;/p&gt;
-&lt;div class="gist"&gt;
-    &lt;script src='https://gist.github.com/6262468.js'&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
 </content><category term="coding"></category><category term="bash"></category><category term="dash"></category><category term="ps1"></category><category term="git"></category></entry><entry><title>Blackhole 1.8.0 development, Mock and Python entry_points</title><link href="https://kura.gg/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/" rel="alternate"></link><published>2013-08-18T12:00:00+01:00</published><updated>2013-08-18T12:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-18:/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/</id><summary type="html">
 &lt;p&gt;Over the last week I’ve been doing a huge amount of refactoring of
 &lt;a class="reference external" href="https://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
