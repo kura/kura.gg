@@ -131,6 +131,7 @@ EXTRA_PATH_METADATA = {
     "extra/favicon.png": {"path": "favicon.png"},
     "extra/robots.txt": {"path": "robots.txt"},
     "extra/.well-known/dnt-policy.txt": {"path": ".well-known/dnt-policy.txt"},
+    "extra/.well-known/security.txt": {"path": ".well-known/security.txt"},
 }
 
 DIRECT_TEMPLATES = ["404", "500", "archives", "categories", "index", "tags"]
