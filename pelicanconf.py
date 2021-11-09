@@ -147,7 +147,7 @@ SITEMAP = {
     "format": "xml",
     "priorities": {"articles": 0.5, "indexes": 0.5, "pages": 0.5},
     "changefreqs": {"articles": "daily", "indexes": "daily", "pages": "daily"},
-    # 'exclude': ['tag/', 'category/'],
+    'exclude': ['404.html', '500.html'],
 }
 
 FEED_ATOM = "feeds/atom.xml"
