@@ -210,3 +210,8 @@ AUTHOR_CARD_DESCRIPTION = (
     "Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. "
     "Ex-(semi-)pro gamer. They/Them."
 )
+
+# ERT
+ERT_WPM = 200
+ERT_FORMAT = "{time} read"
+ERT_INT = False
