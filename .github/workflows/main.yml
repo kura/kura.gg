@@ -1,8 +1,10 @@
 name: Build and deploy
 on: push
+env:
+  FORCE_COLOR: "1"
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -33,7 +35,7 @@ jobs:
         run: make remove_crud
       - name: touch
         run: make touch
-      - name: Purge cache
+      - name: purge cache
         uses: jakejarvis/cloudflare-purge-action@master
         env:
           CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
@@ -58,7 +60,7 @@ jobs:
             personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
             publish_branch: gh-pages
             publish_dir: ./output
-      - name: Purge cache again
+      - name: purge cache again
         uses: jakejarvis/cloudflare-purge-action@master
         env:
           CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
