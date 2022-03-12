@@ -44,12 +44,12 @@
     <span class=s2>"10.0.0.4:443"</span><span class=p>,</span>
 <span class=p>}</span>
 </pre> </div> <div class=section id=introduction-to-balancer-by-lua> <h2>Introduction to <cite>balancer_by_lua</cite></h2> <p>In nginx you’d normally specify multiple backends in an upstream block.</p> <pre class="code nginx literal-block">
-<span class=k>upstream</span> <span class=s>backend</span> <span class=p>{</span>
-    <span class=kn>server</span> <span class=n>10.0.0.1</span><span class=p>:</span><span class=mi>443</span> <span class=s>max_fails=3</span> <span class=s>fail_timeout=3</span><span class=p>;</span>
-    <span class=kn>server</span> <span class=n>10.0.0.2</span><span class=p>:</span><span class=mi>443</span> <span class=s>max_fails=3</span> <span class=s>fail_timeout=3</span><span class=p>;</span>
-    <span class=kn>server</span> <span class=n>10.0.0.3</span><span class=p>:</span><span class=mi>443</span> <span class=s>max_fails=3</span> <span class=s>fail_timeout=3</span><span class=p>;</span>
-    <span class=kn>server</span> <span class=n>10.0.0.4</span><span class=p>:</span><span class=mi>443</span> <span class=s>max_fails=3</span> <span class=s>fail_timeout=3</span><span class=p>;</span>
-<span class=p>}</span>
+<span class=k>upstream</span><span class=w> </span><span class=s>backend</span><span class=w> </span><span class=p>{</span><span class=w>
+    </span><span class=kn>server</span><span class=w> </span><span class=n>10.0.0.1</span><span class=p>:</span><span class=mi>443</span><span class=w> </span><span class=s>max_fails=3</span><span class=w> </span><span class=s>fail_timeout=3</span><span class=p>;</span><span class=w>
+    </span><span class=kn>server</span><span class=w> </span><span class=n>10.0.0.2</span><span class=p>:</span><span class=mi>443</span><span class=w> </span><span class=s>max_fails=3</span><span class=w> </span><span class=s>fail_timeout=3</span><span class=p>;</span><span class=w>
+    </span><span class=kn>server</span><span class=w> </span><span class=n>10.0.0.3</span><span class=p>:</span><span class=mi>443</span><span class=w> </span><span class=s>max_fails=3</span><span class=w> </span><span class=s>fail_timeout=3</span><span class=p>;</span><span class=w>
+    </span><span class=kn>server</span><span class=w> </span><span class=n>10.0.0.4</span><span class=p>:</span><span class=mi>443</span><span class=w> </span><span class=s>max_fails=3</span><span class=w> </span><span class=s>fail_timeout=3</span><span class=p>;</span><span class=w>
+</span><span class=p>}</span>
 </pre> <p>Doing this in OpenResty with a dynamic set of backends is slightly different and requires using <cite>balancer_by_lua_block</cite> or <cite>balancer_by_lua_file</cite>.</p> <pre class="code lua literal-block">
 <span class=n>upstream</span> <span class=n>backend</span> <span class=p>{</span>
     <span class=n>server</span> <span class=mf>127.0.0.1</span> <span class=n>fail_timeout</span><span class=o>=</span><span class=mi>3</span><span class=p>;</span>

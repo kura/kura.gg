@@ -43,58 +43,58 @@ sudo /usr/sbin/make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/apache2/ssl/apa
 </pre></div> </div> <div class=section id=provider-signed> <h3>Provider signed</h3> <p>Please note, this type of certificate has to be paid for, prices at time of writing range from £15/year to £2,000/year.</p> <p>There are actually some more options when it comes to generating a key for this <span class=caps>CRT</span>, the first way creates a key that does not require a passphrase, the second way requires a passphrase and, unless you make a special change to your Apache config along with a small bash script (will go through later) will ask you for the passphrase for each key every time you restart Apache.</p> <div class=section id=without-a-passphrase> <h4>Without a passphrase</h4> <div class=highlight><pre><span></span>openssl genrsa -out DOMAINNAME.key <span class=m>4096</span>
 </pre></div> </div> <div class=section id=with-a-passphrase> <h4>With a passphrase</h4> <div class=highlight><pre><span></span>openssl genrsa -des3 -out DOMAINNAME.key <span class=m>4096</span>
 </pre></div> <p>Replace <span class=caps>DOMAINNAME</span> with your domain name, I find this makes it much easier if all of my certs and keys are named accordingly, but that’s just me. I also generally use at least a 4096bit modulus, feel free to change this to whatever you wish, some signers will only take a key of a specific size.</p> <p>Next up is actually generating the <span class=caps>CSR</span> from the key.</p> <div class=highlight><pre><span></span>openssl req -new -key DOMAINNAME.key &gt; DOMAINNAME.csr
-</pre></div> <p>As a note, it’s very badly wordly but <span class=caps>COMMON</span> <span class=caps>NAME</span> is the actual fully qualified domain name that you want to use <span class=caps>SSL</span> on, if your domain name is example.com and you want this to work on www.example.com but did not buy a wildcard certificate then put www.example.com as your Common Name.</p> <p>Once generated, send this off to your signer and they will send you a <span class=caps>CRT</span> in return.</p> <p>Once you have your <span class=caps>CRT</span> it’s time to put them on the server, move your key file to Debian’s <span class=caps>SSL</span> directory.</p> <p>Put your <span class=caps>CRT</span> on the server and move it to Debian’s <span class=caps>SSL</span> directory too.</p> </div> </div> </div> <div class=section id=apache-configuration> <h2>Apache configuration</h2> <p>First thing we need to do is check your Apache ports.conf file to make sure <span class=caps>SSL</span> is enabled.</p> <p>It should have the following at the bottom.</p> <div class=highlight><pre><span></span><span class=nt>&lt;IfModule</span> <span class=s>mod_ssl.c</span><span class=nt>&gt;</span>
-    <span class=c># SSL name based virtual hosts are not yet supported, therefore no</span>
-    <span class=c># NameVirtualHost statement here</span>
-    <span class=nb>Listen</span> <span class=m>443</span>
-<span class=nt>&lt;/IfModule&gt;</span>
+</pre></div> <p>As a note, it’s very badly wordly but <span class=caps>COMMON</span> <span class=caps>NAME</span> is the actual fully qualified domain name that you want to use <span class=caps>SSL</span> on, if your domain name is example.com and you want this to work on www.example.com but did not buy a wildcard certificate then put www.example.com as your Common Name.</p> <p>Once generated, send this off to your signer and they will send you a <span class=caps>CRT</span> in return.</p> <p>Once you have your <span class=caps>CRT</span> it’s time to put them on the server, move your key file to Debian’s <span class=caps>SSL</span> directory.</p> <p>Put your <span class=caps>CRT</span> on the server and move it to Debian’s <span class=caps>SSL</span> directory too.</p> </div> </div> </div> <div class=section id=apache-configuration> <h2>Apache configuration</h2> <p>First thing we need to do is check your Apache ports.conf file to make sure <span class=caps>SSL</span> is enabled.</p> <p>It should have the following at the bottom.</p> <div class=highlight><pre><span></span><span class=nt>&lt;IfModule</span><span class=w> </span><span class=s>mod_ssl.c</span><span class=nt>&gt;</span><span class=w></span>
+<span class=w>    </span><span class=c># SSL name based virtual hosts are not yet supported, therefore no</span><span class=w></span>
+<span class=w>    </span><span class=c># NameVirtualHost statement here</span><span class=w></span>
+<span class=w>    </span><span class=nb>Listen</span><span class=w> </span><span class=m>443</span><span class=w></span>
+<span class=nt>&lt;/IfModule&gt;</span><span class=w></span>
 </pre></div> <p>Now that’s sorted we’ll move on to your actual virtualhost.</p> <div class=highlight><pre><span></span>sudo nano /etc/apache2/sites-available/DOMAINNAME.conf
-</pre></div> <p>We’ll use a config template I’ve always used, feel free to edit it at need.</p> <div class=highlight><pre><span></span><span class=nt>&lt;VirtualHost</span> <span class=s>*</span><span class=nt>&gt;</span>
-    <span class=nb>ServerAdmin</span> webmaster@DOMAINNAME
-    <span class=nb>ServerName</span> DOMAINNAME
-    <span class=nb>DocumentRoot</span> <span class=sx>/var/www/DOMAINNAME</span>
+</pre></div> <p>We’ll use a config template I’ve always used, feel free to edit it at need.</p> <div class=highlight><pre><span></span><span class=nt>&lt;VirtualHost</span><span class=w> </span><span class=s>*</span><span class=nt>&gt;</span><span class=w></span>
+<span class=w>    </span><span class=nb>ServerAdmin</span><span class=w> </span>webmaster@DOMAINNAME<span class=w></span>
+<span class=w>    </span><span class=nb>ServerName</span><span class=w> </span>DOMAINNAME<span class=w></span>
+<span class=w>    </span><span class=nb>DocumentRoot</span><span class=w> </span><span class=sx>/var/www/DOMAINNAME</span><span class=w></span>
 
-    <span class=nt>&lt;Directory</span> <span class=s>/</span><span class=nt>&gt;</span>
-        <span class=nb>Options</span> FollowSymLinks
-        <span class=nb>AllowOverride</span> <span class=k>None</span>
-    <span class=nt>&lt;/Directory&gt;</span>
+<span class=w>    </span><span class=nt>&lt;Directory</span><span class=w> </span><span class=s>/</span><span class=nt>&gt;</span><span class=w></span>
+<span class=w>        </span><span class=nb>Options</span><span class=w> </span>FollowSymLinks<span class=w></span>
+<span class=w>        </span><span class=nb>AllowOverride</span><span class=w> </span><span class=k>None</span><span class=w></span>
+<span class=w>    </span><span class=nt>&lt;/Directory&gt;</span><span class=w></span>
 
-    <span class=nt>&lt;Directory</span> <span class=s>/var/www/DOMAINNAME</span><span class=nt>&gt;</span>
-        <span class=nb>Options</span> -Indexes FollowSymLinks MultiViews
-        <span class=nb>AllowOverride</span> <span class=k>All</span>
-        <span class=nb>Order</span> allow,deny
-        <span class=nb>allow</span> from <span class=k>all</span>
-    <span class=nt>&lt;/Directory&gt;</span>
-<span class=nt>&lt;/VirtualHost&gt;</span>
+<span class=w>    </span><span class=nt>&lt;Directory</span><span class=w> </span><span class=s>/var/www/DOMAINNAME</span><span class=nt>&gt;</span><span class=w></span>
+<span class=w>        </span><span class=nb>Options</span><span class=w> </span>-Indexes<span class=w> </span>FollowSymLinks<span class=w> </span>MultiViews<span class=w></span>
+<span class=w>        </span><span class=nb>AllowOverride</span><span class=w> </span><span class=k>All</span><span class=w></span>
+<span class=w>        </span><span class=nb>Order</span><span class=w> </span>allow,deny<span class=w></span>
+<span class=w>        </span><span class=nb>allow</span><span class=w> </span>from<span class=w> </span><span class=k>all</span><span class=w></span>
+<span class=w>    </span><span class=nt>&lt;/Directory&gt;</span><span class=w></span>
+<span class=nt>&lt;/VirtualHost&gt;</span><span class=w></span>
 
-<span class=nt>&lt;VirtualHost</span> <span class=s>*:443</span><span class=nt>&gt;</span>
-    <span class=nb>ServerAdmin</span> webmaster@DOMAINNAME
-    <span class=nb>ServerName</span> DOMAINNAME
-    <span class=nb>DocumentRoot</span> <span class=sx>/var/www/DOMAINNAME</span>
+<span class=nt>&lt;VirtualHost</span><span class=w> </span><span class=s>*:443</span><span class=nt>&gt;</span><span class=w></span>
+<span class=w>    </span><span class=nb>ServerAdmin</span><span class=w> </span>webmaster@DOMAINNAME<span class=w></span>
+<span class=w>    </span><span class=nb>ServerName</span><span class=w> </span>DOMAINNAME<span class=w></span>
+<span class=w>    </span><span class=nb>DocumentRoot</span><span class=w> </span><span class=sx>/var/www/DOMAINNAME</span><span class=w></span>
 
-    <span class=nt>&lt;Directory</span> <span class=s>/</span><span class=nt>&gt;</span>
-        <span class=nb>Options</span> FollowSymLinks
-        <span class=nb>AllowOverride</span> <span class=k>None</span>
-    <span class=nt>&lt;/Directory&gt;</span>
+<span class=w>    </span><span class=nt>&lt;Directory</span><span class=w> </span><span class=s>/</span><span class=nt>&gt;</span><span class=w></span>
+<span class=w>        </span><span class=nb>Options</span><span class=w> </span>FollowSymLinks<span class=w></span>
+<span class=w>        </span><span class=nb>AllowOverride</span><span class=w> </span><span class=k>None</span><span class=w></span>
+<span class=w>    </span><span class=nt>&lt;/Directory&gt;</span><span class=w></span>
 
-    <span class=nt>&lt;Directory</span> <span class=s>/var/www/DOMAINNAME</span><span class=nt>&gt;</span>
-        <span class=nb>Options</span> -Indexes FollowSymLinks MultiViews
-        <span class=nb>AllowOverride</span> <span class=k>All</span>
-        <span class=nb>Order</span> allow,deny
-        <span class=nb>allow</span> from <span class=k>all</span>
-    <span class=nt>&lt;/Directory&gt;</span>
+<span class=w>    </span><span class=nt>&lt;Directory</span><span class=w> </span><span class=s>/var/www/DOMAINNAME</span><span class=nt>&gt;</span><span class=w></span>
+<span class=w>        </span><span class=nb>Options</span><span class=w> </span>-Indexes<span class=w> </span>FollowSymLinks<span class=w> </span>MultiViews<span class=w></span>
+<span class=w>        </span><span class=nb>AllowOverride</span><span class=w> </span><span class=k>All</span><span class=w></span>
+<span class=w>        </span><span class=nb>Order</span><span class=w> </span>allow,deny<span class=w></span>
+<span class=w>        </span><span class=nb>allow</span><span class=w> </span>from<span class=w> </span><span class=k>all</span><span class=w></span>
+<span class=w>    </span><span class=nt>&lt;/Directory&gt;</span><span class=w></span>
 
-     <span class=nb>SSLEngine</span> <span class=k>On</span>
-     <span class=nb>SSLCertificateFile</span> <span class=sx>/etc/apache2/ssl/apache.pem</span>
-<span class=nt>&lt;/VirtualHost&gt;</span>
-</pre></div> <p>If you used the self signed approach then the above <strong>SSLCertificateFile</strong> will be correct, if not replace it with what is shown below.</p> <div class=highlight><pre><span></span><span class=nb>SSLCertificateFile</span> <span class=sx>/etc/ssl/certs/DOMAINANE.crt</span>
-<span class=nb>SSLCertificateKeyFile</span> <span class=sx>/etc/ssl/private/DOMAINNAME.key</span>
-</pre></div> <p>If you received a bundle file as well as your domains <span class=caps>CRT</span> then copy it to /etc/ssl/certs/ on your server and add the following line after <strong>SSLCertificateKeyFile</strong>.</p> <div class=highlight><pre><span></span><span class=nb>SSLCertificateChainFile</span> <span class=sx>/etc/ssl/certs/DOMAINNAME.bundle.crt</span>
+<span class=w>     </span><span class=nb>SSLEngine</span><span class=w> </span><span class=k>On</span><span class=w></span>
+<span class=w>     </span><span class=nb>SSLCertificateFile</span><span class=w> </span><span class=sx>/etc/apache2/ssl/apache.pem</span><span class=w></span>
+<span class=nt>&lt;/VirtualHost&gt;</span><span class=w></span>
+</pre></div> <p>If you used the self signed approach then the above <strong>SSLCertificateFile</strong> will be correct, if not replace it with what is shown below.</p> <div class=highlight><pre><span></span><span class=nb>SSLCertificateFile</span><span class=w> </span><span class=sx>/etc/ssl/certs/DOMAINANE.crt</span><span class=w></span>
+<span class=nb>SSLCertificateKeyFile</span><span class=w> </span><span class=sx>/etc/ssl/private/DOMAINNAME.key</span><span class=w></span>
+</pre></div> <p>If you received a bundle file as well as your domains <span class=caps>CRT</span> then copy it to /etc/ssl/certs/ on your server and add the following line after <strong>SSLCertificateKeyFile</strong>.</p> <div class=highlight><pre><span></span><span class=nb>SSLCertificateChainFile</span><span class=w> </span><span class=sx>/etc/ssl/certs/DOMAINNAME.bundle.crt</span><span class=w></span>
 </pre></div> <p>Save and exit, with that done we need to enable the site.</p> <div class=highlight><pre><span></span>sudo a2ensite DOMAINNAME.conf
 </pre></div> <p>If you used a self signed certificate or passphrase-free key, this should be all you need to do, feel free to test your config and restart Apache and test your site.</p> <div class=highlight><pre><span></span>sudo apache2ctrl configtest
 sudo /etc/init.d/apache2 restart
 </pre></div> <p>If you used a key with a passphrase you will either have to type your passphrase in each time you restart Apache or, use this wonderful Apache supported “hack” below…</p> </div> <div class=section id=the-nasty-ssl-passphrase-hack> <h2>The nasty <span class=caps>SSL</span> passphrase hack…</h2> <div class=highlight><pre><span></span>sudo nano /etc/apache2/apache2.conf
-</pre></div> <p>Place the following at the end of the file</p> <div class=highlight><pre><span></span><span class=nb>SSLPassPhraseDialog</span> exec:/etc/apache2/ssl.sh
+</pre></div> <p>Place the following at the end of the file</p> <div class=highlight><pre><span></span><span class=nb>SSLPassPhraseDialog</span><span class=w> </span>exec:/etc/apache2/ssl.sh<span class=w></span>
 </pre></div> <p>Now we need to create this bash file, so…</p> <div class=highlight><pre><span></span>sudo nano /etc/apache2/ssl.sh
 </pre></div> <p>Place the following in it</p> <div class=highlight><pre><span></span><span class=ch>#!/bin/bash</span>
 <span class=k>if</span> <span class=o>[</span> <span class=nv>$1</span> <span class=o>=</span> <span class=s1>'DOMAINNAME:443'</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>

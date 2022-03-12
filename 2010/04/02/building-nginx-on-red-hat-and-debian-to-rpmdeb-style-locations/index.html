@@ -64,49 +64,49 @@ www-data:x:@@:@@:www-data:/var/www:/bin/sh
 </pre></div> <p>The above command will configure nginx, setting the path to it’s binary to /usr/bin/nginx, config file path to /etc/nginx/nginx.conf, pid to /var/run/nginx.pid, lock file to /var/lock/nginx.lock, error and access logs to /var/log/nginx, tell nginx to run as www-data with group www-data, set it’s temp paths to /var/lib/nginx and enable the following modules; ssl, realip, addition (used for adding content to the start and end of pages), debug, flash video and status modules.</p> <p>If you didn’t want to install openssl or pcre then you will have to compile without ssl and pcre. Remove —with-http_ssl_module from above and disable the rewrite module.</p> <div class=highlight><pre><span></span>--without-http_rewrite_module
 </pre></div> </div> <div class=section id=compiling> <h3>Compiling</h3> <p>Once done, if you have no errors you can actually compile nginx.</p> <div class=highlight><pre><span></span>make
 sudo make install
-</pre></div> </div> </div> <div class=section id=nginx-configuration> <h2>nginx configuration</h2> <p>Next we need to configure nginx to give it some nice configuration options. First open up nginx’s main configuration file</p> <blockquote> /etc/nginx/nginx.conf</blockquote> <p>Modify it to look like the one below.</p> <div class=highlight><pre><span></span><span class=k>user</span> <span class=s>www-data</span> <span class=s>www-data</span><span class=p>;</span>
-<span class=k>worker_processes</span> <span class=mi>2</span><span class=p>;</span>
+</pre></div> </div> </div> <div class=section id=nginx-configuration> <h2>nginx configuration</h2> <p>Next we need to configure nginx to give it some nice configuration options. First open up nginx’s main configuration file</p> <blockquote> /etc/nginx/nginx.conf</blockquote> <p>Modify it to look like the one below.</p> <div class=highlight><pre><span></span><span class=k>user</span><span class=w> </span><span class=s>www-data</span><span class=w> </span><span class=s>www-data</span><span class=p>;</span><span class=w></span>
+<span class=k>worker_processes</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w></span>
 
-<span class=k>error_log</span> <span class=s>/var/log/nginx/error.log</span><span class=p>;</span>
-<span class=k>pid</span> <span class=s>/var/run/nginx.pid</span><span class=p>;</span>
+<span class=k>error_log</span><span class=w> </span><span class=s>/var/log/nginx/error.log</span><span class=p>;</span><span class=w></span>
+<span class=k>pid</span><span class=w> </span><span class=s>/var/run/nginx.pid</span><span class=p>;</span><span class=w></span>
 
-<span class=k>events</span> <span class=p>{</span>
-    <span class=kn>worker_connections</span> <span class=mi>1024</span><span class=p>;</span>
-<span class=p>}</span>
+<span class=k>events</span><span class=w> </span><span class=p>{</span><span class=w></span>
+<span class=w>    </span><span class=kn>worker_connections</span><span class=w> </span><span class=mi>1024</span><span class=p>;</span><span class=w></span>
+<span class=p>}</span><span class=w></span>
 
-<span class=k>http</span> <span class=p>{</span>
-    <span class=kn>include</span> <span class=s>/etc/nginx/mime.types</span><span class=p>;</span>
-    <span class=kn>access_log</span> <span class=s>/var/log/nginx/access.log</span><span class=p>;</span>
-    <span class=kn>sendfile</span> <span class=no>on</span><span class=p>;</span>
-    <span class=kn>tcp_nopush</span> <span class=no>on</span><span class=p>;</span>
-    <span class=kn>keepalive_timeout</span> <span class=mi>5</span><span class=p>;</span>
-    <span class=kn>tcp_nodelay</span> <span class=no>on</span><span class=p>;</span>
-    <span class=kn>gzip</span> <span class=no>on</span><span class=p>;</span>
+<span class=k>http</span><span class=w> </span><span class=p>{</span><span class=w></span>
+<span class=w>    </span><span class=kn>include</span><span class=w> </span><span class=s>/etc/nginx/mime.types</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>access_log</span><span class=w> </span><span class=s>/var/log/nginx/access.log</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>sendfile</span><span class=w> </span><span class=no>on</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>tcp_nopush</span><span class=w> </span><span class=no>on</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>keepalive_timeout</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>tcp_nodelay</span><span class=w> </span><span class=no>on</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>gzip</span><span class=w> </span><span class=no>on</span><span class=p>;</span><span class=w></span>
 
-    <span class=kn>include</span> <span class=s>/etc/nginx/conf.d/*.conf</span><span class=p>;</span>
-    <span class=kn>include</span> <span class=s>/etc/nginx/sites-enabled/*</span><span class=p>;</span>
-<span class=p>}</span>
+<span class=w>    </span><span class=kn>include</span><span class=w> </span><span class=s>/etc/nginx/conf.d/*.conf</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>include</span><span class=w> </span><span class=s>/etc/nginx/sites-enabled/*</span><span class=p>;</span><span class=w></span>
+<span class=p>}</span><span class=w></span>
 </pre></div> <p>Next we’ll create the sub directories for holding site and module configuation.</p> <div class=highlight><pre><span></span>sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
 sudo mkdir /etc/nginx/conf.d
-</pre></div> <p>Next we’ll create the default server definition.</p> <blockquote> /etc/nginx/sites-available/default</blockquote> <p>And put the following in it.</p> <div class=highlight><pre><span></span><span class=k>server</span> <span class=p>{</span>
-    <span class=kn>listen</span> <span class=mi>80</span><span class=p>;</span>
-    <span class=kn>server_name</span> <span class=s>localhost</span><span class=p>;</span>
-    <span class=kn>access_log</span> <span class=s>/var/log/nginx/localhost.access.log</span><span class=p>;</span>
+</pre></div> <p>Next we’ll create the default server definition.</p> <blockquote> /etc/nginx/sites-available/default</blockquote> <p>And put the following in it.</p> <div class=highlight><pre><span></span><span class=k>server</span><span class=w> </span><span class=p>{</span><span class=w></span>
+<span class=w>    </span><span class=kn>listen</span><span class=w> </span><span class=mi>80</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>server_name</span><span class=w> </span><span class=s>localhost</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=kn>access_log</span><span class=w> </span><span class=s>/var/log/nginx/localhost.access.log</span><span class=p>;</span><span class=w></span>
 
-    <span class=kn>location</span> <span class=s>/</span> <span class=p>{</span>
-        <span class=kn>root</span> <span class=s>/var/www/</span><span class=p>;</span>
-        <span class=kn>index</span> <span class=s>index.html</span> <span class=s>index.htm</span><span class=p>;</span>
-    <span class=p>}</span>
+<span class=w>    </span><span class=kn>location</span><span class=w> </span><span class=s>/</span><span class=w> </span><span class=p>{</span><span class=w></span>
+<span class=w>        </span><span class=kn>root</span><span class=w> </span><span class=s>/var/www/</span><span class=p>;</span><span class=w></span>
+<span class=w>        </span><span class=kn>index</span><span class=w> </span><span class=s>index.html</span><span class=w> </span><span class=s>index.htm</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=p>}</span><span class=w></span>
 
-    <span class=kn>location</span> <span class=s>/nginx_status</span> <span class=p>{</span>
-        <span class=kn>stub_status</span> <span class=no>on</span><span class=p>;</span>
-        <span class=kn>access_log</span> <span class=no>off</span><span class=p>;</span>
-        <span class=kn>allow</span> <span class=mi>127</span><span class=s>.0.0.1</span><span class=p>;</span>
-        <span class=kn>deny</span> <span class=s>all</span><span class=p>;</span>
-    <span class=p>}</span>
+<span class=w>    </span><span class=kn>location</span><span class=w> </span><span class=s>/nginx_status</span><span class=w> </span><span class=p>{</span><span class=w></span>
+<span class=w>        </span><span class=kn>stub_status</span><span class=w> </span><span class=no>on</span><span class=p>;</span><span class=w></span>
+<span class=w>        </span><span class=kn>access_log</span><span class=w> </span><span class=no>off</span><span class=p>;</span><span class=w></span>
+<span class=w>        </span><span class=kn>allow</span><span class=w> </span><span class=mi>127</span><span class=s>.0.0.1</span><span class=p>;</span><span class=w></span>
+<span class=w>        </span><span class=kn>deny</span><span class=w> </span><span class=s>all</span><span class=p>;</span><span class=w></span>
+<span class=w>    </span><span class=p>}</span><span class=w></span>
 
-<span class=p>}</span>
+<span class=p>}</span><span class=w></span>
 </pre></div> <p>Now we symlink it in to the sites-enabled directory.</p> <div class=highlight><pre><span></span>sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 </pre></div> </div> <div class=section id=start-stop-scripts> <h2>Start/stop scripts</h2> <p>Once installation is complete we need to install a start/stop script, to simply make life easier.</p> <p>You can get the <a class="reference external" href=/files/nginx-debian>Debian version from here</a> or the <a class="reference external" href=/files/nginx-redhat>RedHat version from here</a>.</p> </div> <div class=section id=starting-nginx> <h2>Starting nginx</h2> <div class=highlight><pre><span></span>/etc/init.d/nginx start
 </pre></div> <p>Starting the service on boot</p> <p>Edit the following file:</p> <div class=highlight><pre><span></span>/etc/rc.local

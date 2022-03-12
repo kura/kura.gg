@@ -50,16 +50,16 @@ characters
 </pre> <p>This is because Gitosis expects your key to have a username and host at the end of the base64 string like below</p> <pre class=literal-block>
 ssh-rsa AAAAB3NzaC1yc2EA ... NOHgpPwEBzpnw== kura@odin
 </pre> </div> </div> <div class=section id=configuring-and-controlling-gitosis> <h2>Configuring and controlling gitosis</h2> <p>Now that git and gitosis are working on your server, from your local machine you now need to clone your gitosis admin and do all your changes locally, pushing them back to the git server where gitosis will automatically pick them up.</p> <p>So you need to run</p> <div class=highlight><pre><span></span>git clone git@YOUR_SERVER:gitosis-admin.git
-</pre></div> <p>If everything worked correctly you should have a copy on your local machine now, if you run <strong>ls</strong> you’ll see 1 file and a directory.</p> <ol class="arabic simple"> <li>gitosis.conf</li> <li>keydir</li> </ol> <p>Unsurprisingly gitosis.conf is where gitosis is configured and keydir contains public keys for your users. Each user needs their own public key and it must end in <em>.pub</em>.</p> <p>So open up <strong>gitosis.conf</strong> in your favourite editor and add the following</p> <div class=highlight><pre><span></span><span class=k>[gitosis]</span>
-<span class=na>gitweb</span> <span class=o>=</span> <span class=s>yes</span>
+</pre></div> <p>If everything worked correctly you should have a copy on your local machine now, if you run <strong>ls</strong> you’ll see 1 file and a directory.</p> <ol class="arabic simple"> <li>gitosis.conf</li> <li>keydir</li> </ol> <p>Unsurprisingly gitosis.conf is where gitosis is configured and keydir contains public keys for your users. Each user needs their own public key and it must end in <em>.pub</em>.</p> <p>So open up <strong>gitosis.conf</strong> in your favourite editor and add the following</p> <div class=highlight><pre><span></span><span class=k>[gitosis]</span><span class=w></span>
+<span class=na>gitweb</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>yes</span><span class=w></span>
 
-<span class=k>[group admins]</span>
-<span class=na>writable</span> <span class=o>=</span> <span class=s>gitosis-admin test1</span>
-<span class=na>members</span> <span class=o>=</span> <span class=s>kura</span>
+<span class=k>[group admins]</span><span class=w></span>
+<span class=na>writable</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>gitosis-admin test1</span><span class=w></span>
+<span class=na>members</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>kura</span><span class=w></span>
 
-<span class=k>[repo gitosis-admin]</span>
-<span class=na>description</span> <span class=o>=</span> <span class=s>Gitosis admin repository</span>
-<span class=na>gitweb</span> <span class=o>=</span> <span class=s>yes</span>
+<span class=k>[repo gitosis-admin]</span><span class=w></span>
+<span class=na>description</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>Gitosis admin repository</span><span class=w></span>
+<span class=na>gitweb</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>yes</span><span class=w></span>
 </pre></div> <p>So lets separate that in to parts.</p> <p><strong>Part 1</strong> - we simply tell gitosis to enable gitweb support.</p> <p><strong>Part 2</strong> - we configure a group called <strong>*admins*</strong>, the admins group has write permissions to 2 repositories; <strong>*gitosis-admin*</strong> and <strong>*test*</strong>. The test repository will automatically become available once we push this configuration back to gitosis later. We also define a user called <strong>kura</strong> which you should replace with your own username, <strong>each user must have a public key in the keydir with the same name as the user with .pub suffix. E.g. the kura user has a key called kura.pub</strong></p> <p><strong>Part 3</strong> - We create a repository section which is only really used for gitweb to tell it to display that repository publicly via a browser.</p> <p><strong>If you do not want your repositories to be public then I advice you skip the parts with gitweb = yes above and also uninstall gitweb and skip the gitweb section below. Or you could lock your gitweb via <span class=caps>HTAUTH</span>.</strong></p> <p>Now the changes have been made you need to commit them to git.</p> <div class=highlight><pre><span></span>git add *
 git commit -m <span class=s2>"Initial configuration"</span>
 </pre></div> <p>And push them back to the server</p> <div class=highlight><pre><span></span>git push origin master

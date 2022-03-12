@@ -226,124 +226,124 @@
 <span class=kr>end</span>
 </pre> <p>This final block is where nginx is told which backend to send the client to.</p> </div> </div> <div class=section id=putting-it-all-together> <h2>Putting it all together</h2> <p>Below is the full example written as a single <cite>nginx.conf</cite>. Sadly syntax highlighters have issues with nginx and Lua in a single file.</p> <pre class="code nginx literal-block">
 <span class=c1># set 2 worker processes to show the timer spawning on each one
-</span><span class=k>worker_processes</span> <span class=mi>2</span><span class=p>;</span>
+</span><span class=k>worker_processes</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
 
-<span class=k>events</span> <span class=p>{</span>
-    <span class=kn>worker_connections</span> <span class=mi>1024</span><span class=p>;</span>
-<span class=p>}</span>
+</span><span class=k>events</span><span class=w> </span><span class=p>{</span><span class=w>
+    </span><span class=kn>worker_connections</span><span class=w> </span><span class=mi>1024</span><span class=p>;</span><span class=w>
+</span><span class=p>}</span><span class=w>
 
-<span class=k>http</span> <span class=p>{</span>
+</span><span class=k>http</span><span class=w> </span><span class=p>{</span><span class=w>
 
-    <span class=c1># Do this for each worker so each worker has it's own copy of the DNS
-</span>    <span class=c1># records.
-</span>    <span class=kn>init_worker_by_lua_block</span> <span class=p>{</span>
-        <span class=kn>_backend_servers</span> <span class=p>=</span> <span class=p>{}</span>
+    </span><span class=c1># Do this for each worker so each worker has it's own copy of the DNS
+</span><span class=w>    </span><span class=c1># records.
+</span><span class=w>    </span><span class=kn>init_worker_by_lua_block</span><span class=w> </span><span class=p>{</span><span class=w>
+        </span><span class=kn>_backend_servers</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=p>{}</span><span class=w>
 
-        <span class=kn>local</span> <span class=s>function</span> <span class=s>update_dns()</span>
-            <span class=s>--</span> <span class=s>Set</span> <span class=s>up</span> <span class=s>the</span> <span class=s>resolver</span>
-            <span class=s>local</span> <span class=s>resolver</span> <span class=p>=</span> <span class=s>require</span> <span class=s>"resty.dns.resolver"</span>
-            <span class=s>local</span> <span class=s>r,</span> <span class=s>err</span> <span class=p>=</span> <span class=s>resolver:new</span><span class=p>{</span>
-                <span class=kn>nameservers</span> <span class=p>=</span> <span class=p>{</span><span class=kn>"1.1.1.1",</span> <span class=p>{</span><span class=kn>"1.0.0.1",</span> <span class=mi>53</span><span class=err>}</span> <span class=err>}</span><span class=s>,</span>  <span class=s>--</span> <span class=s>Cloudflare</span>
-                <span class=s>retrans</span> <span class=p>=</span> <span class=mi>5</span><span class=s>,</span>  <span class=s>--</span> <span class=mi>5</span> <span class=s>retransmissions</span> <span class=no>on</span> <span class=s>receive</span> <span class=s>timeout</span>
-                <span class=s>timeout</span> <span class=p>=</span> <span class=mi>1000</span><span class=s>,</span>  <span class=s>--</span> <span class=mi>1</span> <span class=s>sec</span>
-            <span class=err>}</span>
-            <span class=s>if</span> <span class=s>not</span> <span class=s>r</span> <span class=s>then</span>
-                <span class=s>ngx.log(ngx.ERR,</span> <span class=s>"failed</span> <span class=s>to</span> <span class=s>instantiate</span> <span class=s>resolver:</span> <span class=s>",</span> <span class=s>err)</span>
-                <span class=s>return</span>
-            <span class=s>end</span>
+        </span><span class=kn>local</span><span class=w> </span><span class=s>function</span><span class=w> </span><span class=s>update_dns()</span><span class=w>
+            </span><span class=s>--</span><span class=w> </span><span class=s>Set</span><span class=w> </span><span class=s>up</span><span class=w> </span><span class=s>the</span><span class=w> </span><span class=s>resolver</span><span class=w>
+            </span><span class=s>local</span><span class=w> </span><span class=s>resolver</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>require</span><span class=w> </span><span class=s>"resty.dns.resolver"</span><span class=w>
+            </span><span class=s>local</span><span class=w> </span><span class=s>r,</span><span class=w> </span><span class=s>err</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>resolver:new</span><span class=p>{</span><span class=w>
+                </span><span class=kn>nameservers</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=p>{</span><span class=kn>"1.1.1.1",</span><span class=w> </span><span class=p>{</span><span class=kn>"1.0.0.1",</span><span class=w> </span><span class=mi>53</span><span class=err>}</span><span class=w> </span><span class=err>}</span><span class=s>,</span><span class=w>  </span><span class=s>--</span><span class=w> </span><span class=s>Cloudflare</span><span class=w>
+                </span><span class=s>retrans</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=mi>5</span><span class=s>,</span><span class=w>  </span><span class=s>--</span><span class=w> </span><span class=mi>5</span><span class=w> </span><span class=s>retransmissions</span><span class=w> </span><span class=no>on</span><span class=w> </span><span class=s>receive</span><span class=w> </span><span class=s>timeout</span><span class=w>
+                </span><span class=s>timeout</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=mi>1000</span><span class=s>,</span><span class=w>  </span><span class=s>--</span><span class=w> </span><span class=mi>1</span><span class=w> </span><span class=s>sec</span><span class=w>
+            </span><span class=err>}</span><span class=w>
+            </span><span class=s>if</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>r</span><span class=w> </span><span class=s>then</span><span class=w>
+                </span><span class=s>ngx.log(ngx.ERR,</span><span class=w> </span><span class=s>"failed</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>instantiate</span><span class=w> </span><span class=s>resolver:</span><span class=w> </span><span class=s>",</span><span class=w> </span><span class=s>err)</span><span class=w>
+                </span><span class=s>return</span><span class=w>
+            </span><span class=s>end</span><span class=w>
 
-            <span class=s>--</span> <span class=s>Pull</span> <span class=s>DNS</span> <span class=s>records</span>
-            <span class=s>--</span> <span class=s>Use</span> <span class=s>a</span> <span class=s>hardcoded</span> <span class=s>domain</span> <span class=s>to</span> <span class=s>make</span> <span class=s>this</span> <span class=s>example</span> <span class=s>easier</span>
-            <span class=s>local</span> <span class=s>answers,</span> <span class=s>err,</span> <span class=s>tries</span> <span class=p>=</span> <span class=s>r:query("kura.gg",</span> <span class=s>nil,</span> <span class=p>{}</span><span class=kn>)</span>
-            <span class=s>if</span> <span class=s>not</span> <span class=s>answers</span> <span class=s>then</span>
-                <span class=s>ngx.log(ngx.ERR,</span> <span class=s>"failed</span> <span class=s>to</span> <span class=s>query</span> <span class=s>resolved:</span> <span class=s>",</span> <span class=s>err)</span>
-                <span class=s>return</span>
-            <span class=s>end</span>
-            <span class=s>if</span> <span class=s>answers.errcode</span> <span class=s>then</span>
-                <span class=s>ngx.log(ngx.ERR,</span> <span class=s>"server</span> <span class=s>returned</span> <span class=s>error</span> <span class=s>code:</span> <span class=s>",</span> <span class=s>answers.errcode,</span>
-                        <span class=s>":</span> <span class=s>",</span> <span class=s>answers.errstr)</span>
-                <span class=s>--</span> <span class=s>Have</span> <span class=s>a</span> <span class=s>return</span> <span class=s>here</span> <span class=s>so</span> <span class=s>that</span> <span class=s>the</span> <span class=s>old</span> <span class=s>servers</span> <span class=s>remain</span> <span class=s>even</span> <span class=s>if</span>
-                <span class=s>--</span> <span class=s>this</span> <span class=s>lookup</span> <span class=s>fails.</span>
-                <span class=s>return</span>
-            <span class=s>end</span>
+            </span><span class=s>--</span><span class=w> </span><span class=s>Pull</span><span class=w> </span><span class=s>DNS</span><span class=w> </span><span class=s>records</span><span class=w>
+            </span><span class=s>--</span><span class=w> </span><span class=s>Use</span><span class=w> </span><span class=s>a</span><span class=w> </span><span class=s>hardcoded</span><span class=w> </span><span class=s>domain</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>make</span><span class=w> </span><span class=s>this</span><span class=w> </span><span class=s>example</span><span class=w> </span><span class=s>easier</span><span class=w>
+            </span><span class=s>local</span><span class=w> </span><span class=s>answers,</span><span class=w> </span><span class=s>err,</span><span class=w> </span><span class=s>tries</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>r:query("kura.gg",</span><span class=w> </span><span class=s>nil,</span><span class=w> </span><span class=p>{}</span><span class=kn>)</span><span class=w>
+            </span><span class=s>if</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>answers</span><span class=w> </span><span class=s>then</span><span class=w>
+                </span><span class=s>ngx.log(ngx.ERR,</span><span class=w> </span><span class=s>"failed</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>query</span><span class=w> </span><span class=s>resolved:</span><span class=w> </span><span class=s>",</span><span class=w> </span><span class=s>err)</span><span class=w>
+                </span><span class=s>return</span><span class=w>
+            </span><span class=s>end</span><span class=w>
+            </span><span class=s>if</span><span class=w> </span><span class=s>answers.errcode</span><span class=w> </span><span class=s>then</span><span class=w>
+                </span><span class=s>ngx.log(ngx.ERR,</span><span class=w> </span><span class=s>"server</span><span class=w> </span><span class=s>returned</span><span class=w> </span><span class=s>error</span><span class=w> </span><span class=s>code:</span><span class=w> </span><span class=s>",</span><span class=w> </span><span class=s>answers.errcode,</span><span class=w>
+                        </span><span class=s>":</span><span class=w> </span><span class=s>",</span><span class=w> </span><span class=s>answers.errstr)</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>Have</span><span class=w> </span><span class=s>a</span><span class=w> </span><span class=s>return</span><span class=w> </span><span class=s>here</span><span class=w> </span><span class=s>so</span><span class=w> </span><span class=s>that</span><span class=w> </span><span class=s>the</span><span class=w> </span><span class=s>old</span><span class=w> </span><span class=s>servers</span><span class=w> </span><span class=s>remain</span><span class=w> </span><span class=s>even</span><span class=w> </span><span class=s>if</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>this</span><span class=w> </span><span class=s>lookup</span><span class=w> </span><span class=s>fails.</span><span class=w>
+                </span><span class=s>return</span><span class=w>
+            </span><span class=s>end</span><span class=w>
 
-            <span class=s>--</span> <span class=s>Dump</span> <span class=s>records</span> <span class=s>in</span> <span class=s>a</span> <span class=s>global</span> <span class=s>variable</span>
-            <span class=s>--</span> <span class=s>Note</span> <span class=s>I</span> <span class=s>am</span> <span class=no>on</span><span class=s>ly</span> <span class=s>pulling</span> <span class=s>out</span> <span class=s>addresses</span> <span class=s>not</span> <span class=s>CNAMEs</span>
-            <span class=s>_new_backend_servers</span> <span class=p>=</span> <span class=p>{}</span>
-            <span class=kn>for</span> <span class=s>i,</span> <span class=s>ans</span> <span class=s>in</span> <span class=s>ipairs(answers)</span> <span class=s>do</span>
-                <span class=s>table.insert(_new_backend_servers,</span> <span class=s>ans.address)</span>
-            <span class=s>end</span>
-            <span class=s>_backend_servers</span> <span class=p>=</span> <span class=s>_new_backend_servers</span>
-        <span class=s>end</span>
+            </span><span class=s>--</span><span class=w> </span><span class=s>Dump</span><span class=w> </span><span class=s>records</span><span class=w> </span><span class=s>in</span><span class=w> </span><span class=s>a</span><span class=w> </span><span class=s>global</span><span class=w> </span><span class=s>variable</span><span class=w>
+            </span><span class=s>--</span><span class=w> </span><span class=s>Note</span><span class=w> </span><span class=s>I</span><span class=w> </span><span class=s>am</span><span class=w> </span><span class=no>on</span><span class=s>ly</span><span class=w> </span><span class=s>pulling</span><span class=w> </span><span class=s>out</span><span class=w> </span><span class=s>addresses</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>CNAMEs</span><span class=w>
+            </span><span class=s>_new_backend_servers</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=p>{}</span><span class=w>
+            </span><span class=kn>for</span><span class=w> </span><span class=s>i,</span><span class=w> </span><span class=s>ans</span><span class=w> </span><span class=s>in</span><span class=w> </span><span class=s>ipairs(answers)</span><span class=w> </span><span class=s>do</span><span class=w>
+                </span><span class=s>table.insert(_new_backend_servers,</span><span class=w> </span><span class=s>ans.address)</span><span class=w>
+            </span><span class=s>end</span><span class=w>
+            </span><span class=s>_backend_servers</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>_new_backend_servers</span><span class=w>
+        </span><span class=s>end</span><span class=w>
 
-        <span class=s>--</span> <span class=s>Run</span> <span class=s>an</span> <span class=s>at</span> <span class=s>timer</span> <span class=s>to</span> <span class=s>force</span> <span class=s>update_dns</span> <span class=s>to</span> <span class=s>trigger</span> <span class=no>on</span> <span class=s>worker</span> <span class=s>init</span>
-        <span class=s>ngx.timer.at(0,</span> <span class=s>update_dns)</span>
-        <span class=s>--</span> <span class=s>Set</span> <span class=s>a</span> <span class=s>timer</span> <span class=s>to</span> <span class=s>run</span> <span class=s>every</span> <span class=mi>10</span> <span class=s>seconds</span>
-        <span class=s>ngx.timer.every(10,</span> <span class=s>update_dns)</span>
-    <span class=err>}</span>
+        </span><span class=s>--</span><span class=w> </span><span class=s>Run</span><span class=w> </span><span class=s>an</span><span class=w> </span><span class=s>at</span><span class=w> </span><span class=s>timer</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>force</span><span class=w> </span><span class=s>update_dns</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>trigger</span><span class=w> </span><span class=no>on</span><span class=w> </span><span class=s>worker</span><span class=w> </span><span class=s>init</span><span class=w>
+        </span><span class=s>ngx.timer.at(0,</span><span class=w> </span><span class=s>update_dns)</span><span class=w>
+        </span><span class=s>--</span><span class=w> </span><span class=s>Set</span><span class=w> </span><span class=s>a</span><span class=w> </span><span class=s>timer</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>run</span><span class=w> </span><span class=s>every</span><span class=w> </span><span class=mi>10</span><span class=w> </span><span class=s>seconds</span><span class=w>
+        </span><span class=s>ngx.timer.every(10,</span><span class=w> </span><span class=s>update_dns)</span><span class=w>
+    </span><span class=err>}</span><span class=w>
 
-    <span class=s>upstream</span> <span class=s>backend</span> <span class=p>{</span>
-        <span class=kn>server</span> <span class=mi>127</span><span class=s>.0.0.1</span><span class=p>;</span>
+    </span><span class=s>upstream</span><span class=w> </span><span class=s>backend</span><span class=w> </span><span class=p>{</span><span class=w>
+        </span><span class=kn>server</span><span class=w> </span><span class=mi>127</span><span class=s>.0.0.1</span><span class=p>;</span><span class=w>
 
-        <span class=kn>balancer_by_lua_block</span> <span class=p>{</span>
-            <span class=kn>local</span> <span class=s>balancer</span> <span class=p>=</span> <span class=s>require("ngx.balancer")</span>
+        </span><span class=kn>balancer_by_lua_block</span><span class=w> </span><span class=p>{</span><span class=w>
+            </span><span class=kn>local</span><span class=w> </span><span class=s>balancer</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>require("ngx.balancer")</span><span class=w>
 
-            <span class=s>if</span> <span class=c1>#_backend_servers == 0 then
-</span>                <span class=s>ngx.log(ngx.ERR,</span> <span class=s>"no</span> <span class=s>backend</span> <span class=s>servers</span> <span class=s>available")</span>
-                <span class=s>return</span> <span class=s>ngx.exit(500)</span>
-            <span class=s>end</span>
+            </span><span class=s>if</span><span class=w> </span><span class=c1>#_backend_servers == 0 then
+</span><span class=w>                </span><span class=s>ngx.log(ngx.ERR,</span><span class=w> </span><span class=s>"no</span><span class=w> </span><span class=s>backend</span><span class=w> </span><span class=s>servers</span><span class=w> </span><span class=s>available")</span><span class=w>
+                </span><span class=s>return</span><span class=w> </span><span class=s>ngx.exit(500)</span><span class=w>
+            </span><span class=s>end</span><span class=w>
 
-            <span class=s>--</span> <span class=s>This</span> <span class=s>block</span> <span class=s>will</span> <span class=no>on</span><span class=s>ly</span> <span class=s>trigger</span> <span class=s>if</span> <span class=s>ngx.ctx.retry</span> <span class=s>is</span> <span class=s>not</span> <span class=s>true</span> <span class=s>or</span> <span class=s>is</span>
-            <span class=s>--</span> <span class=s>unset.</span>
-            <span class=s>--</span> <span class=s>We</span> <span class=s>set</span> <span class=s>this</span> <span class=s>to</span> <span class=s>true</span> <span class=s>during</span> <span class=s>the</span> <span class=s>initial</span> <span class=s>request</span> <span class=s>so</span> <span class=s>future</span>
-            <span class=s>--</span> <span class=s>requests</span> <span class=s>within</span> <span class=s>this</span> <span class=s>context</span> <span class=s>will</span> <span class=s>not</span> <span class=s>go</span> <span class=s>down</span> <span class=s>this</span> <span class=s>path.</span>
-            <span class=s>if</span> <span class=s>not</span> <span class=s>ngx.ctx.retry</span> <span class=s>then</span>
-                <span class=s>ngx.ctx.retry</span> <span class=p>=</span> <span class=s>true</span>
-                <span class=s>--</span> <span class=s>Pick</span> <span class=s>a</span> <span class=s>random</span> <span class=s>backend</span> <span class=s>to</span> <span class=s>start</span> <span class=s>with</span>
-                <span class=s>server</span> <span class=p>=</span> <span class=s>_backend_servers[math.random(</span><span class=c1>#_backend_servers)]
-</span>
-                <span class=s>--</span> <span class=s>Kinda</span> <span class=s>messy</span> <span class=s>but,</span> <span class=s>create</span> <span class=s>a</span> <span class=s>context</span> <span class=s>table</span> <span class=s>we</span> <span class=s>dump</span> <span class=s>tried</span>
-                <span class=s>--</span> <span class=s>backends</span> <span class=s>to.</span>
-                <span class=s>ngx.ctx.tried</span> <span class=p>=</span> <span class=p>{}</span>
-                <span class=kn>ngx.ctx.tried[server]</span> <span class=p>=</span> <span class=s>true</span>
+            </span><span class=s>--</span><span class=w> </span><span class=s>This</span><span class=w> </span><span class=s>block</span><span class=w> </span><span class=s>will</span><span class=w> </span><span class=no>on</span><span class=s>ly</span><span class=w> </span><span class=s>trigger</span><span class=w> </span><span class=s>if</span><span class=w> </span><span class=s>ngx.ctx.retry</span><span class=w> </span><span class=s>is</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>true</span><span class=w> </span><span class=s>or</span><span class=w> </span><span class=s>is</span><span class=w>
+            </span><span class=s>--</span><span class=w> </span><span class=s>unset.</span><span class=w>
+            </span><span class=s>--</span><span class=w> </span><span class=s>We</span><span class=w> </span><span class=s>set</span><span class=w> </span><span class=s>this</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>true</span><span class=w> </span><span class=s>during</span><span class=w> </span><span class=s>the</span><span class=w> </span><span class=s>initial</span><span class=w> </span><span class=s>request</span><span class=w> </span><span class=s>so</span><span class=w> </span><span class=s>future</span><span class=w>
+            </span><span class=s>--</span><span class=w> </span><span class=s>requests</span><span class=w> </span><span class=s>within</span><span class=w> </span><span class=s>this</span><span class=w> </span><span class=s>context</span><span class=w> </span><span class=s>will</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>go</span><span class=w> </span><span class=s>down</span><span class=w> </span><span class=s>this</span><span class=w> </span><span class=s>path.</span><span class=w>
+            </span><span class=s>if</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>ngx.ctx.retry</span><span class=w> </span><span class=s>then</span><span class=w>
+                </span><span class=s>ngx.ctx.retry</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>true</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>Pick</span><span class=w> </span><span class=s>a</span><span class=w> </span><span class=s>random</span><span class=w> </span><span class=s>backend</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>start</span><span class=w> </span><span class=s>with</span><span class=w>
+                </span><span class=s>server</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>_backend_servers[math.random(</span><span class=c1>#_backend_servers)]
+</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>Kinda</span><span class=w> </span><span class=s>messy</span><span class=w> </span><span class=s>but,</span><span class=w> </span><span class=s>create</span><span class=w> </span><span class=s>a</span><span class=w> </span><span class=s>context</span><span class=w> </span><span class=s>table</span><span class=w> </span><span class=s>we</span><span class=w> </span><span class=s>dump</span><span class=w> </span><span class=s>tried</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>backends</span><span class=w> </span><span class=s>to.</span><span class=w>
+                </span><span class=s>ngx.ctx.tried</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=p>{}</span><span class=w>
+                </span><span class=kn>ngx.ctx.tried[server]</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>true</span><span class=w>
 
-                <span class=s>--</span> <span class=s>set</span> <span class=s>up</span> <span class=s>more</span> <span class=s>tries</span> <span class=s>using</span> <span class=s>the</span> <span class=s>length</span> <span class=s>of</span> <span class=s>the</span> <span class=s>server</span> <span class=s>list</span> <span class=s>minus</span> <span class=mi>1</span><span class=s>.</span>
-                <span class=s>ok,</span> <span class=s>err</span> <span class=p>=</span> <span class=s>balancer.set_more_tries(</span><span class=c1>#_backend_servers - 1)
-</span>                <span class=s>if</span> <span class=s>not</span> <span class=s>ok</span> <span class=s>then</span>
-                    <span class=s>ngx.log(ngx.ERR,</span> <span class=s>"set_more_tries</span> <span class=s>failed:</span> <span class=s>",</span> <span class=s>err)</span>
-                <span class=s>end</span>
+                </span><span class=s>--</span><span class=w> </span><span class=s>set</span><span class=w> </span><span class=s>up</span><span class=w> </span><span class=s>more</span><span class=w> </span><span class=s>tries</span><span class=w> </span><span class=s>using</span><span class=w> </span><span class=s>the</span><span class=w> </span><span class=s>length</span><span class=w> </span><span class=s>of</span><span class=w> </span><span class=s>the</span><span class=w> </span><span class=s>server</span><span class=w> </span><span class=s>list</span><span class=w> </span><span class=s>minus</span><span class=w> </span><span class=mi>1</span><span class=s>.</span><span class=w>
+                </span><span class=s>ok,</span><span class=w> </span><span class=s>err</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>balancer.set_more_tries(</span><span class=c1>#_backend_servers - 1)
+</span><span class=w>                </span><span class=s>if</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>ok</span><span class=w> </span><span class=s>then</span><span class=w>
+                    </span><span class=s>ngx.log(ngx.ERR,</span><span class=w> </span><span class=s>"set_more_tries</span><span class=w> </span><span class=s>failed:</span><span class=w> </span><span class=s>",</span><span class=w> </span><span class=s>err)</span><span class=w>
+                </span><span class=s>end</span><span class=w>
 
-            <span class=s>else</span>
-                <span class=s>--</span> <span class=s>This</span> <span class=s>block</span> <span class=s>will</span> <span class=s>trigger</span> <span class=no>on</span> <span class=s>a</span> <span class=s>retry</span>
-                <span class=s>--</span> <span class=s>Here</span> <span class=s>we'll</span> <span class=s>run</span> <span class=s>through</span> <span class=s>the</span> <span class=s>backends</span> <span class=s>and</span> <span class=s>pick</span> <span class=no>on</span><span class=s>e</span> <span class=s>we</span> <span class=s>haven't</span>
-                <span class=s>--</span> <span class=s>tried</span> <span class=s>yet.</span>
-                <span class=s>for</span> <span class=s>i,</span> <span class=s>ip</span> <span class=s>in</span> <span class=s>ipairs(_backend_servers)</span> <span class=s>do</span>
-                    <span class=s>in_ctx</span> <span class=p>=</span> <span class=s>ngx.ctx.tried[ip]</span> <span class=p>~</span><span class=sr>=</span> <span class=s>nil</span>
-                    <span class=s>if</span> <span class=s>in_ctx</span> <span class=p>==</span> <span class=s>false</span> <span class=s>then</span>
-                        <span class=s>ngx.ctx.tried[ip]</span> <span class=p>=</span> <span class=s>true</span>
-                        <span class=s>server</span> <span class=p>=</span> <span class=s>ip</span>
-                        <span class=s>break</span>
-                    <span class=s>end</span>
-                <span class=s>end</span>
-            <span class=s>end</span>
+            </span><span class=s>else</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>This</span><span class=w> </span><span class=s>block</span><span class=w> </span><span class=s>will</span><span class=w> </span><span class=s>trigger</span><span class=w> </span><span class=no>on</span><span class=w> </span><span class=s>a</span><span class=w> </span><span class=s>retry</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>Here</span><span class=w> </span><span class=s>we'll</span><span class=w> </span><span class=s>run</span><span class=w> </span><span class=s>through</span><span class=w> </span><span class=s>the</span><span class=w> </span><span class=s>backends</span><span class=w> </span><span class=s>and</span><span class=w> </span><span class=s>pick</span><span class=w> </span><span class=no>on</span><span class=s>e</span><span class=w> </span><span class=s>we</span><span class=w> </span><span class=s>haven't</span><span class=w>
+                </span><span class=s>--</span><span class=w> </span><span class=s>tried</span><span class=w> </span><span class=s>yet.</span><span class=w>
+                </span><span class=s>for</span><span class=w> </span><span class=s>i,</span><span class=w> </span><span class=s>ip</span><span class=w> </span><span class=s>in</span><span class=w> </span><span class=s>ipairs(_backend_servers)</span><span class=w> </span><span class=s>do</span><span class=w>
+                    </span><span class=s>in_ctx</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>ngx.ctx.tried[ip]</span><span class=w> </span><span class=p>~</span><span class=sr>=</span><span class=w> </span><span class=s>nil</span><span class=w>
+                    </span><span class=s>if</span><span class=w> </span><span class=s>in_ctx</span><span class=w> </span><span class=p>==</span><span class=w> </span><span class=s>false</span><span class=w> </span><span class=s>then</span><span class=w>
+                        </span><span class=s>ngx.ctx.tried[ip]</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>true</span><span class=w>
+                        </span><span class=s>server</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>ip</span><span class=w>
+                        </span><span class=s>break</span><span class=w>
+                    </span><span class=s>end</span><span class=w>
+                </span><span class=s>end</span><span class=w>
+            </span><span class=s>end</span><span class=w>
 
-            <span class=s>--</span> <span class=s>Hardcoded</span> <span class=s>port</span> <span class=s>again</span> <span class=s>to</span> <span class=s>make</span> <span class=s>example</span> <span class=s>easier</span>
-            <span class=s>ok,</span> <span class=s>err</span> <span class=p>=</span> <span class=s>balancer.set_current_peer(server,</span> <span class=mi>443</span><span class=s>)</span>
-            <span class=s>if</span> <span class=s>not</span> <span class=s>ok</span> <span class=s>then</span>
-                <span class=s>ngx.log(ngx.ERR,</span> <span class=s>"set_current_peer</span> <span class=s>failed:</span> <span class=s>",</span> <span class=s>err)</span>
-                <span class=s>return</span> <span class=s>ngx.exit(500)</span>
-            <span class=s>end</span>
-        <span class=err>}</span>
-    <span class=err>}</span>
+            </span><span class=s>--</span><span class=w> </span><span class=s>Hardcoded</span><span class=w> </span><span class=s>port</span><span class=w> </span><span class=s>again</span><span class=w> </span><span class=s>to</span><span class=w> </span><span class=s>make</span><span class=w> </span><span class=s>example</span><span class=w> </span><span class=s>easier</span><span class=w>
+            </span><span class=s>ok,</span><span class=w> </span><span class=s>err</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=s>balancer.set_current_peer(server,</span><span class=w> </span><span class=mi>443</span><span class=s>)</span><span class=w>
+            </span><span class=s>if</span><span class=w> </span><span class=s>not</span><span class=w> </span><span class=s>ok</span><span class=w> </span><span class=s>then</span><span class=w>
+                </span><span class=s>ngx.log(ngx.ERR,</span><span class=w> </span><span class=s>"set_current_peer</span><span class=w> </span><span class=s>failed:</span><span class=w> </span><span class=s>",</span><span class=w> </span><span class=s>err)</span><span class=w>
+                </span><span class=s>return</span><span class=w> </span><span class=s>ngx.exit(500)</span><span class=w>
+            </span><span class=s>end</span><span class=w>
+        </span><span class=err>}</span><span class=w>
+    </span><span class=err>}</span><span class=w>
 
-    <span class=s>server</span> <span class=p>{</span>
-        <span class=kn>listen</span> <span class=mi>80</span><span class=p>;</span>
-        <span class=kn>server_name</span> <span class=s>localhost</span><span class=p>;</span>
+    </span><span class=s>server</span><span class=w> </span><span class=p>{</span><span class=w>
+        </span><span class=kn>listen</span><span class=w> </span><span class=mi>80</span><span class=p>;</span><span class=w>
+        </span><span class=kn>server_name</span><span class=w> </span><span class=s>localhost</span><span class=p>;</span><span class=w>
 
-        <span class=kn>location</span> <span class=s>/</span> <span class=p>{</span>
-            <span class=kn>proxy_pass</span> <span class=s>https://backend</span><span class=p>;</span>
-        <span class=p>}</span>
-    <span class=p>}</span>
+        </span><span class=kn>location</span><span class=w> </span><span class=s>/</span><span class=w> </span><span class=p>{</span><span class=w>
+            </span><span class=kn>proxy_pass</span><span class=w> </span><span class=s>https://backend</span><span class=p>;</span><span class=w>
+        </span><span class=p>}</span><span class=w>
+    </span><span class=p>}</span><span class=w>
 
-<span class=p>}</span>
+</span><span class=p>}</span>
 </pre> </div> <div class=section id=full-example-on-github> <h2>Full example on GitHub</h2> <p>The full example nginx config is <a class="reference external" href=https://github.com/kura/openresty-upstream-dns-example/blob/master/nginx.conf>available on GitHub</a> so you can quickly spin it up yourself and try it out.</p> </div> </section> </div> <div class=eevee-related> <section> <h2>Related articles</h2> <ul> <li> <a href=https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/ rel=bookmark title="Permalink to 'Retrying dynamically configured upstreams with OpenResty'" itemprop=url> Retrying dynamically configured upstreams with&nbsp;OpenResty </a> </li> <li> <a href=https://kura.gg/2014/02/06/nnginx-1.5.10-with-spdy3.1/ rel=bookmark title="Permalink to 'nginx 1.5.10 with SPDY 3.1'" itemprop=url> nginx 1.5.10 with <span class=caps>SPDY</span>&nbsp;3.1 </a> </li> <li> <a href=https://kura.gg/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/ rel=bookmark title="Permalink to 'nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta'" itemprop=url> nginx 1.5.9 and ngx_pagespeed&nbsp;1.7.30.3-beta </a> </li> <li> <a href=https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/ rel=bookmark title="Permalink to 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2'" itemprop=url> haproxy1.5-dev21, nginx 1.5.8, <span class=caps>SPDY</span> <span class=amp>&amp;</span> pagespeed&nbsp;1.7.30.2 </a> </li> <li> <a href=https://kura.gg/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/ rel=bookmark title="Permalink to 'haproxy, nginx and SPDY with SSL termination (Debian 7)'" itemprop=url> haproxy, nginx and <span class=caps>SPDY</span> with <span class=caps>SSL</span> termination (Debian&nbsp;7) </a> </li> </ul> </section> </div> <div class=eevee-ac> <header class=eevee-ac__header> <div class=eevee-ac-author__text> <h2>Kura</h2> <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p> <p> <a href=https://kura.gg/authors/kura/ itemprop=url title="Read more articles by Kura"> Read more articles by Kura </a> </p> <nav> <ul class=eevee-ac-author__social> <li class=eevee-ac-author-social__link> <a class="mdl-color-text--accent mdl-navigation__link" href=https://github.com/kura itemprop=url rel=bookmark title="kura on GitHub"> <i class=fa aria-hidden=true>&#xF09B;</i> </a> </li> </ul> </nav> </div> <img src=/images/avatar.png class=eevee-ac-author__avatar alt=Kura> </header> </div> </article> <a href=https://github.com/kura/kura.gg/blob/main/content/configuring-upstreams-dynamically-with-dns-in-openresty.rst id=view-source title="View 'Configuring upstreams dynamically with DNS in OpenResty' on GitHub" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white"> <i class=material-icons>&#xE86F;</i> View Source </a> </div> </div> </main> <div class="eevee-pagination__container eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"> <nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label=Pagination> <a href=https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/ class=eevee-nav__button itemprop=url rel=bookmark title=Newer> <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900" role=presentation> <i class=material-icons>&#xE5C4;</i> </button> Newer </a> <div class=eevee-spacer></div> <a href=https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/ class=eevee-nav__button itemprop=url rel=bookmark title=Older> Older <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900" role=presentation> <i class=material-icons>&#xE5C8;</i> </button> </a> </nav> </div> </div> <footer class=mdl-mega-footer itemscope itemtype=http://schema.org/SiteNavigationElement> <div class=mdl-mega-footer--top-section> <div class=mdl-mega-footer--drop-down-section> <ul class=mdl-mega-footer--link-list> <li> <a href=#top itemprop=url title="Back to the top of the page"> Back to the top of the page </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--middle-section itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Footer navigation"> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Menu</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> </li> <li> <a href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> </li> <li> <a href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Social</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=https://github.com/kura itemprop=url rel=bookmark title=GitHub> <i class=fa aria-hidden=true>&#xF09B;</i> Github </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Links</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> </li> <li> <a href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> </li> <li> <a href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> </li> <li> <a href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> </li> <li> <a href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--bottom-section> <div class=mdl-logo> <a href=https://kura.gg rel=bookmark itemprop=url title=kura.gg> kura.gg </a> </div> <ul class="eevee-footer mdl-mega-footer--link-list"> <li>Powered by love &amp; rainbow sparkles.</li> <li>Source code and content released under the <a href=/license/ title="MIT license">MIT license</a>.</li> </ul> </div> </footer> </div> <link rel=stylesheet href=https://kura.gg/theme/css/eevee.min.css?1c9d8344> <script async src=https://kura.gg/theme/js/eevee.min.js?1841d254></script> </body> </html>

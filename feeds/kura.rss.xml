@@ -1592,22 +1592,22 @@ to keep the server running nice and smoothly.&lt;/p&gt;
 &lt;p&gt;simply replace the &lt;strong&gt;&lt;span class="caps"&gt;VARIABLES&lt;/span&gt;&lt;/strong&gt; below and everything should be good to
 go, if copy-pasting from below isn’t working properly you can download a
 full copy from &lt;a class="reference external" href="/files/2011/09/server.txt"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;**DOMAIN_HERE**&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;access_log&lt;/span&gt; &lt;span class="s"&gt;/var/log/nginx/access.**DOMAIN_HERE**.log&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;listen&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;server_name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;**DOMAIN_HERE**&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;access_log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/var/log/nginx/access.**DOMAIN_HERE**.log&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-  &lt;span class="kn"&gt;gzip&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;gzip_disable&lt;/span&gt; &lt;span class="s"&gt;msie6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# disable gzip for IE6&lt;/span&gt;
-  &lt;span class="kn"&gt;gzip_static&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;gzip_comp_level&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# highest level of compression&lt;/span&gt;
-  &lt;span class="kn"&gt;gzip_proxied&lt;/span&gt; &lt;span class="s"&gt;any&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;gzip_types&lt;/span&gt; &lt;span class="s"&gt;text/plain&lt;/span&gt; &lt;span class="s"&gt;text/css&lt;/span&gt; &lt;span class="s"&gt;application/x-javascript&lt;/span&gt; &lt;span class="s"&gt;text/xml&lt;/span&gt; &lt;span class="s"&gt;application/xml&lt;/span&gt; &lt;span class="s"&gt;application/xml+rss&lt;/span&gt; &lt;span class="s"&gt;text/javascript&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;gzip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;gzip_disable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;msie6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# disable gzip for IE6&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;gzip_static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;gzip_comp_level&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# highest level of compression&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;gzip_proxied&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;any&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;gzip_types&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/plain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/css&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;application/x-javascript&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/xml&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;application/xml&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;application/xml+rss&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/javascript&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-  &lt;span class="kn"&gt;proxy_redirect&lt;/span&gt; &lt;span class="no"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;Host&lt;/span&gt; &lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Real-IP&lt;/span&gt; &lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt; &lt;span class="nv"&gt;$proxy_add_x …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 30 Sep 2011 23:21:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2011-09-30:/2011/09/30/nginx-config-for-reverse-proxying-wordpress-wp-super-cache-and-keeping-the-load-off-apache2/</guid><category>tutorials</category><category>apache2</category><category>nginx</category><category>wordpress</category><category>wp-super-cache</category></item><item><title>Load balancing HTTP/HTTPS with Pound on Debian 6/Ubuntu</title><link>https://kura.gg/2011/09/29/load-balancing-httphttps-with-pound-on-debian-6ubuntu/</link><description>
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_redirect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Real-IP&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add_x …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 30 Sep 2011 23:21:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2011-09-30:/2011/09/30/nginx-config-for-reverse-proxying-wordpress-wp-super-cache-and-keeping-the-load-off-apache2/</guid><category>tutorials</category><category>apache2</category><category>nginx</category><category>wordpress</category><category>wp-super-cache</category></item><item><title>Load balancing HTTP/HTTPS with Pound on Debian 6/Ubuntu</title><link>https://kura.gg/2011/09/29/load-balancing-httphttps-with-pound-on-debian-6ubuntu/</link><description>
 &lt;p&gt;Pound is a great little load balancer, it’s fast, opensource and
 supports &lt;span class="caps"&gt;SSL&lt;/span&gt; termination, which is great!&lt;/p&gt;
 &lt;div class="section" id="install"&gt;
@@ -1821,8 +1821,8 @@ have to compile it in yourself using the following option:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--with-http_realip_module
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once this is all done modify your nginx vhosts and add the following 2 lines&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set_real_ip_from&lt;/span&gt; &lt;span class="s"&gt;[IP]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;real_ip_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set_real_ip_from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;[IP]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;real_ip_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Where [&lt;span class="caps"&gt;IP&lt;/span&gt;] is the &lt;span class="caps"&gt;IP&lt;/span&gt; address of your load balancer.&lt;/p&gt;
 &lt;p&gt;To configure this to work with Apache you need the …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 10 Aug 2011 12:34:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2011-08-10:/2011/08/10/nginx-log-real-ip-from-pound/</guid><category>tutorials</category><category>apache</category><category>load balancer</category><category>nginx</category><category>pound</category><category>reaip</category><category>x-forwarded-for</category></item><item><title>Shared VMDKs on ESX vSphere</title><link>https://kura.gg/2011/07/09/shared-vmdks-on-esx-vsphere/</link><description>&lt;p&gt;I’d first like to point out that although the VMDKs are shared between
@@ -1852,7 +1852,7 @@ format like below&lt;/p&gt;
 log_format g-a '$remote_addr - $remote_user [$time_local] ' '"$request" $status $body_bytes_sent ' '"$http_referer" "$http_user_agent" ' '"__utma=$cookie___utma;__utmb=$cookie___utmb;__utmc=$cookie___utmc;__utmv=$cookie___utmv;__utmz=$cookie_umtz"';
 &lt;/pre&gt;
 &lt;p&gt;This log format can then be added to your access log like below:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;access_log&lt;/span&gt; &lt;span class="s"&gt;/var/log/nginx/access.example.com.log&lt;/span&gt; &lt;span class="s"&gt;g-a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;access_log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/var/log/nginx/access.example.com.log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;g-a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Reload nginx&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo /etc/init.d/nginx reload
@@ -1920,8 +1920,8 @@ following file in your favourite editor.&lt;/p&gt;
 &lt;blockquote&gt;
 /etc/apache2/ports.conf&lt;/blockquote&gt;
 &lt;p&gt;Change the Listen and NameVirtualHost lines to:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;Listen&lt;/span&gt; &lt;span class="m"&gt;81&lt;/span&gt;
-&lt;span class="nb"&gt;NameVirtualHost&lt;/span&gt; *:81
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;Listen&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;81&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;NameVirtualHost&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;*:81&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This will mean you need to go and change all …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 26 Sep 2010 19:41:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2010-09-26:/2010/09/26/nginx-varnish-apache2/</guid><category>tutorials</category><category>apache</category><category>nginx</category><category>varnish</category><category>wordpress</category></item><item><title>Mounting a remote filesystem using sshfs</title><link>https://kura.gg/2010/09/26/mounting-a-remote-filesystem-using-sshfs/</link><description>&lt;p&gt;First we need to install sshfs.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install sshfs fuse-utils
@@ -2031,44 +2031,44 @@ selected packages&lt;/p&gt;
 &lt;h2&gt;Configuration changes&lt;/h2&gt;
 &lt;p&gt;I made some modifications to my nginx configuration this weekend to
 improve performance and clear up some bugs.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;upstream&lt;/span&gt; &lt;span class="s"&gt;backend&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;81&lt;/span&gt; &lt;span class="s"&gt;fail_timeout=120s&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;upstream&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;backend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;81&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;fail_timeout=120s&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;listen&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;server_name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="kn"&gt;access_log&lt;/span&gt; &lt;span class="s"&gt;/var/log/nginx/access.syslog.tv.log&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;access_log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/var/log/nginx/access.syslog.tv.log&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="kn"&gt;gzip&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;gzip_disable&lt;/span&gt; &lt;span class="s"&gt;msie6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;gzip_static&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;gzip_comp_level&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;gzip_proxied&lt;/span&gt; &lt;span class="s"&gt;any&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;gzip_types&lt;/span&gt; &lt;span class="s"&gt;text/plain&lt;/span&gt; &lt;span class="s"&gt;text/css&lt;/span&gt; &lt;span class="s"&gt;application/x-javascript&lt;/span&gt; &lt;span class="s"&gt;text/xml&lt;/span&gt;
-    &lt;span class="s"&gt;application/xml&lt;/span&gt; &lt;span class="s"&gt;application/xml+rss&lt;/span&gt; &lt;span class="s"&gt;text/javascript&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;gzip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;gzip_disable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;msie6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;gzip_static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;gzip_comp_level&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;gzip_proxied&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;any&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;gzip_types&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/plain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/css&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;application/x-javascript&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/xml&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;application/xml&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;application/xml+rss&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/javascript&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-   &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="kn"&gt;root&lt;/span&gt; &lt;span class="s"&gt;/var/www/syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;root&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/var/www/syslog.tv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-        &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$wordpress_logged_in&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$comment_author_email&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$comment_author&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$wordpress_logged_in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$comment_author_email&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$comment_author&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-        &lt;span class="kn"&gt;if&lt;/span&gt; &lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$http_cookie&lt;/span&gt; &lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt; &lt;span class="s"&gt;"wordpress_logged_in_[^=]*=([^%]+)%7C")&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-             &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$wordpress_logged_in&lt;/span&gt; &lt;span class="s"&gt;wordpress_logged_in_&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$http_cookie&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"wordpress_logged_in_[^=]*=([^%]+)%7C")&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$wordpress_logged_in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;wordpress_logged_in_&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-        &lt;span class="kn"&gt;if&lt;/span&gt; &lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$http_cookie&lt;/span&gt; &lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt; &lt;span class="s"&gt;"comment_author_email_[^=]*=([^&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;]+)(&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;|$)")&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$comment_author_email&lt;/span&gt; &lt;span class="s"&gt;comment_author_email_&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$http_cookie&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"comment_author_email_[^=]*=([^&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;]+)(&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;|$)")&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$comment_author_email&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;comment_author_email_&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-        &lt;span class="kn"&gt;if&lt;/span&gt; &lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$http_cookie&lt;/span&gt; &lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt; &lt;span class="s"&gt;"comment_author_[^=]*=([^&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;]+)(&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;|$)")&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$comment_author&lt;/span&gt; &lt;span class="s"&gt;comment_author_&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$http_cookie&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"comment_author_[^=]*=([^&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;]+)(&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;|$)")&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$comment_author&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;comment_author_&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-        &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$my_cache_key&lt;/span&gt; &lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$scheme://$host$uri$is_args$args$wordpress_logged_in$comment …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 18 Apr 2010 12:51:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2010-04-18:/2010/04/18/new-syslog-tv-nginx-wordpress-site-configuration/</guid><category>tutorials</category><category>apache</category><category>cache</category><category>nginx</category><category>proxy</category><category>proxy_cache</category><category>wordpress</category></item><item><title>Convert PEM &amp; Key to a single PKCS#12 file</title><link>https://kura.gg/2010/04/13/convert-pem-key-to-a-single-pkcs12-file/</link><description>&lt;p&gt;Sometimes keeping multiple copies of keys, certificates and root
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$my_cache_key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$scheme://$host$uri$is_args$args$wordpress_logged_in$comment …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 18 Apr 2010 12:51:00 +0100</pubDate><guid isPermaLink="false">tag:kura.gg,2010-04-18:/2010/04/18/new-syslog-tv-nginx-wordpress-site-configuration/</guid><category>tutorials</category><category>apache</category><category>cache</category><category>nginx</category><category>proxy</category><category>proxy_cache</category><category>wordpress</category></item><item><title>Convert PEM &amp; Key to a single PKCS#12 file</title><link>https://kura.gg/2010/04/13/convert-pem-key-to-a-single-pkcs12-file/</link><description>&lt;p&gt;Sometimes keeping multiple copies of keys, certificates and root
 certificates can be a real annoyance, thankfully it’s quite simple to
 convert them in to a single &lt;span class="caps"&gt;PKCS&lt;/span&gt;#12 file with the following command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl pkcs12 -export -out certificate.pkcs -in certificate.crt -inkey private.key -certfile rootcert.crt -name &lt;span class="s2"&gt;"PKCS#12 Certificate Bundle"&lt;/span&gt;
@@ -2142,14 +2142,14 @@ sudo /etc/init.d/apache2 restart
 &lt;p&gt;Once installed you simple need to be sure to pass the correct headers
 through, so open up one of your nginx site configuration files and add
 the following within the server definition.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt; &lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;So you should have something that looks like this, but without the “… snip …”&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
-    &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt; &lt;span class="nv"&gt;$proxy_add …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sat, 20 Mar 2010 19:24:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2010-03-20:/2010/03/20/show-ip-in-apache-logs-from-nginx-reverse-proxy/</guid><category>tutorials</category><category>apache</category><category>log</category><category>nginx</category><category>proxy</category></item><item><title>nginx - increase increase server_names_hash_bucket_size</title><link>https://kura.gg/2010/03/18/nginx-increase-increase-server_names_hash_bucket_size/</link><description>&lt;p&gt;Today I ran in to something I’d never seen before when configuring nginx.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sat, 20 Mar 2010 19:24:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2010-03-20:/2010/03/20/show-ip-in-apache-logs-from-nginx-reverse-proxy/</guid><category>tutorials</category><category>apache</category><category>log</category><category>nginx</category><category>proxy</category></item><item><title>nginx - increase increase server_names_hash_bucket_size</title><link>https://kura.gg/2010/03/18/nginx-increase-increase-server_names_hash_bucket_size/</link><description>&lt;p&gt;Today I ran in to something I’d never seen before when configuring nginx.&lt;/p&gt;
 &lt;p&gt;I ran the nginx config test, as I usually do before I restart it.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nginx -t
 &lt;/pre&gt;&lt;/div&gt;
@@ -2161,11 +2161,11 @@ the following within the server definition.&lt;/p&gt;
 &lt;p&gt;I found that one of the domain names I was using was over 32 characters
 in length, nginx’s default max length.&lt;/p&gt;
 &lt;p&gt;Thankfully the fix was simple.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
-    &lt;span class="kn"&gt;server_names_hash_bucket_size&lt;/span&gt; &lt;span class="mi"&gt;64&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;server_names_hash_bucket_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;64&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Thu, 18 Mar 2010 21:54:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2010-03-18:/2010/03/18/nginx-increase-increase-server_names_hash_bucket_size/</guid><category>tutorials</category><category>nginx</category></item><item><title>Finding files over a set size with find &amp; awk</title><link>https://kura.gg/2010/03/17/finding-files-over-a-set-size-with-find-and-awk/</link><description>&lt;p&gt;This is a really great simple way to find files on the filesystem that
 are over 200k in size.&lt;/p&gt;
@@ -2265,9 +2265,9 @@ improve the caching capabilities and also implement load balancing.&lt;/p&gt;
 &lt;blockquote&gt;
 /etc/nginx/nginx.conf&lt;/blockquote&gt;
 &lt;p&gt;These changes basically just change the proxy_cache key&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;proxy_cache_path&lt;/span&gt; &lt;span class="s"&gt;/var/www/nginx_cache&lt;/span&gt; &lt;span class="s"&gt;levels=1:2&lt;/span&gt; &lt;span class="s"&gt;keys_zone=cache:8m&lt;/span&gt; &lt;span class="s"&gt;max_size=1000m&lt;/span&gt; &lt;span class="s"&gt;inactive=600m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;proxy_temp_path&lt;/span&gt; &lt;span class="s"&gt;/tmp/nginx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;proxy_cache_key&lt;/span&gt; &lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$scheme://$host$request_uri"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;proxy_cache_path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/var/www/nginx_cache&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;levels=1:2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;keys_zone=cache:8m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;max_size=1000m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;inactive=600m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;proxy_temp_path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/tmp/nginx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;proxy_cache_key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$scheme://$host$request_uri"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I’ve decided to put the temporary caches file in to …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 14 Feb 2010 14:27:00 +0000</pubDate><guid isPermaLink="false">tag:kura.gg,2010-02-14:/2010/02/14/more-nginx-proxy_cache-optimizations-and-nginx-load-balancing/</guid><category>tutorials</category><category>apache</category><category>cache</category><category>debian</category><category>howto</category><category>load balancing</category><category>nginx</category><category>ubuntu</category><category>wordpress</category></item><item><title>code_swarm - Apache, Python and PostgreSQL commit visualization</title><link>https://kura.gg/2010/02/13/code_swarm-apache-python-and-postgresql-commit-visualization/</link><description>
 &lt;p&gt;These videos are pretty old now and I had forgotten about them until a
