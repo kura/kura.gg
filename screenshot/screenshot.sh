@@ -14,6 +14,7 @@ screenshot() {
     convert $output-orig.png -resize 100% $output-orig.png
     pngquant $output-orig.png -o $output
     rm $output-orig.png
+    shot-scraper $url -o $output-shot-scraper.png --width 1920 --height 1080
 }
 
 for page in `find $1 -name "*.html" | grep -v '/tor/' | grep -v '/donate/' | grep -v '/apt.kura.io/' | grep -v '/curriculum-vitae/' | grep -v '/category/' | grep -v '/categories/' | grep -v '/tag/' | grep -v '/tags/' | grep -v '/authors/' | grep -v '/archives/' | grep -v '/500.html' | grep -v '/404.html'`

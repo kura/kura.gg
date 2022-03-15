@@ -56,7 +56,7 @@ publish:
 
 .PHONY: install
 install:
-	pip install -U -r requirements.txt
+	pip3 install -U -r requirements.txt
 	sudo mkdir -p /usr/share/fonts/truetype/kura.gg/
 	sudo cp eevee/static/fonts/*.ttf /usr/share/fonts/truetype/kura.gg/
 	sudo fc-cache -v
