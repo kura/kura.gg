@@ -46,12 +46,6 @@ jobs:
             personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
             publish_branch: gh-pages
             publish_dir: ./output
-      - name: install and setup shot-scraper
-        run: pip3 install shot-scraper==0.9
-      - name: install shot-scraper
-        run: shot-scraper install
-      - name: install playwright deps
-        run: playwright install-deps
       - name: screenshot
         run: make screenshot
       - name: pngquant
