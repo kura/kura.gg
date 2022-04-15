@@ -10,6 +10,8 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 SSH_TARGET_DIR=/var/www/kura.gg
 
+RANDOM_STRING:=$(shell echo $RANDOM | md5sum | head -c 12)
+
 help:
 	@echo 'Makefile for a pelican Web site'
 	@echo ''
@@ -97,9 +99,13 @@ hash:
 touch:
 	python3 touch.py $(INPUTDIR)/ $(OUTPUTDIR)/
 
-.PHONE: update_cv
+.PHONY: update_cv
 update_cv:
 	scripts/update_cv.sh
+
+.PHONY: strip
+strip:
+	grep -rl "kura \[atpersand\]" output | xargs sed -i 's/kura \[atpersand\]/${RANDOM_STRING} \[atpersand\]/g'
 
 .PHONY: rsync
 rsync:
