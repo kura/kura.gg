@@ -82,6 +82,10 @@ pngquant:
 screenshot:
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/
 
+.PHONY: screenshot-shot-scraper
+screenshot-shot-scraper:
+	bash screenshot/screenshot-shot-scraper.sh $(OUTPUTDIR)/
+
 .PHONY: crawl
 crawl:
 	bash scripts/crawl.sh $(OUTPUTDIR)/

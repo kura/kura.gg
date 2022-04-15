@@ -49,7 +49,12 @@ jobs:
             publish_branch: gh-pages
             publish_dir: ./output
       - name: screenshot
-        run: make screenshot
+        run: |
+          sudo pip install shot-scraper
+          sudo shot-scraper install
+          sudo playwright install-deps
+          sudo playwright install
+          make screenshot-shot-scraper
       - name: pngquant
         run: make pngquant
       - name: perms
