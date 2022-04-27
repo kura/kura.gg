@@ -17,6 +17,12 @@
     <meta property="twitter:image"
           content="{{ SITEURL }}/{{ obj.url }}index.png" />
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:label1" content="Written by" />
+    <meta property="twitter:data1" content="{{ obj.author|title }}" />
+    {% if article and article.ert %}
+      <meta property="twitter:label2" content="Estimated reading time" />
+      <meta property="twitter:data2" content="{{ article.ert }}" />
+    {% endif %}
   {% else %}
     <meta property="twitter:title"
           content="{{ SITENAME|striptags|escape }}" />
