@@ -50,6 +50,41 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <link rel="alternate" href="{{ SITEURL }}" hreflang="{{ DEFAULT_LANG }}" />
   {% include 'partials/prefetch.html' %}
+  {% if 'assets' in PLUGINS %}
+    {% include 'partials/_minify_css.html' with context %}
+    {% include 'partials/_minify_js.html' with context %}
+  {% else %}
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/fonts.css" />
+    <link rel="preload" as="style"
+          href="{{ SITEURL }}/theme/css/fonts.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/font-awesome.css" />
+    <link rel="preload" as="style"
+          href="{{ SITEURL }}/theme/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/material-icons.css" />
+    <link rel="preload" as="style"
+          href="{{ SITEURL }}/theme/css/material-icons.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/pygments.css" />
+    <link rel="preload" as="style"
+          href="{{ SITEURL }}/theme/css/pygments.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/eevee.css" />
+    <link rel="preload" as="style"
+          href="{{ SITEURL }}/theme/css/eevee.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/custom.css" />
+    <link rel="preload" as="style"
+          href="{{ SITEURL }}/theme/css/custom.css" />
+    <script async src="{{ SITEURL }}/theme/js/material.js"></script>
+    <link rel="preload" as="script"
+          href="{{ SITEURL }}/theme/js/material.js" />
+    <script async src="{{ SITEURL }}/theme/js/disqus.js"></script>
+    <link rel="preload" as="script"
+          href="{{ SITEURL }}/theme/js/disqus.js" />
+  {% endif %}
   {% include 'partials/feeds.html' %}
   {% include 'partials/facebook.html' %}
   {% include 'partials/twitter.html' %}
@@ -164,25 +199,6 @@
       </div>
     </footer>
   </div>
-  {% if 'assets' in PLUGINS %}
-    {% include 'partials/_minify_css.html' with context %}
-    {% include 'partials/_minify_js.html' with context %}
-  {% else %}
-    <link rel="stylesheet" type="text/css"
-          href="{{ SITEURL }}/theme/css/fonts.css" />
-    <link rel="stylesheet" type="text/css"
-          href="{{ SITEURL }}/theme/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css"
-          href="{{ SITEURL }}/theme/css/material-icons.css" />
-    <link rel="stylesheet" type="text/css"
-          href="{{ SITEURL }}/theme/css/pygments.css" />
-    <link rel="stylesheet" type="text/css"
-          href="{{ SITEURL }}/theme/css/eevee.css" />
-    <link rel="stylesheet" type="text/css"
-          href="{{ SITEURL }}/theme/css/custom.css" />
-    <script async src="{{ SITEURL }}/theme/js/material.js"></script>
-    <script async src="{{ SITEURL }}/theme/js/disqus.js"></script>
-  {% endif %}
   {% include 'partials/analytics.html' %}
 </body>
 </html>
