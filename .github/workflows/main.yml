@@ -16,7 +16,7 @@ jobs:
         with:
           path: ~/.cache/pip
           key: cache_file
-      - name: apt install  
+      - name: apt install
         run: |
           sudo apt update
           sudo apt install -y pngquant imagemagick phantomjs
@@ -57,6 +57,7 @@ jobs:
           sudo playwright install
           make screenshot-shot-scraper
           make dev-stop
+          find output -type f -not -name "*.png" -delete
       - name: pngquant
         run: make pngquant
       - name: perms
