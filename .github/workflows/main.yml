@@ -19,7 +19,7 @@ jobs:
       - name: apt install
         run: |
           sudo apt update
-          sudo apt install -y pngquant imagemagick phantomjs
+          sudo apt install -y pngquant
       - name: pip install
         run: make install
       - name: clean
@@ -34,11 +34,13 @@ jobs:
           make screenshot-shot-scraper
           make dev-stop
           find output -type f -not -name "*.png" -delete
+          mv output output_screenshots
       - name: publish
         run: |
           make publish
           rm -rf output/theme/fonts/roboto*
           rm -rf output/curriculum-vitae/ && cp -R cv output/curriculum-vitae/
+          rsync -av output_screenshots output
       - name: cname
         run: make cname
       - name: strip
@@ -53,13 +55,13 @@ jobs:
         run: make perms
       - name: hash
         run: make hash
-      - name: deploy images, screenshots and hashes
+      - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
             personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
             publish_branch: gh-pages
             publish_dir: ./output
-      - name: purge cache again
+      - name: purge cache
         uses: jakejarvis/cloudflare-purge-action@master
         env:
           CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
