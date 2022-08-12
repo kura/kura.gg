@@ -1,4 +1,5 @@
-<!DOCTYPE html><!--
+<!DOCTYPE html>
+<!--
 
                                       |
                                      /|
@@ -36,21 +37,456 @@
                                    |   ,'
                                     `\"\"
 
-//--><html lang=en> <head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><link rel=alternate href=https://kura.gg hreflang=en><link rel=dns-prefetch href=https://kura.gg><link rel=stylesheet href=https://kura.gg/theme/css/eevee.min.css?1c9d8344><script async src=https://kura.gg/theme/js/eevee.min.js?1841d254></script><link href=https://kura.gg/feeds/rss.xml type=application/rss+xml rel=alternate title=kura.gg><link href=https://kura.gg/feeds/atom.xml type=application/atom+xml rel=alternate title=kura.gg><meta property=og:site_name content=kura.gg><meta property=og:type content=article><meta property=og:title content=Pelican Vimeo><meta content=https://kura.gg/pelican-vimeo/ property=og:url><meta property=og:description content='Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages and articles. Installation To install pelican-vimeo, simply install it from PyPI: $ pip install pelican-vimeo Then enabled it in your pelicanconf.py PLUGINS = [ # ... &#39;pelican_vimeo&#39;, # ... ] Usage In your article or page, you simply need to add a line to embed you video. .. vimeo:: VIDEO_ID Which will result in: <div class="vimeo" align="left"> <iframe width="420" height="315" src="https://player.vimeo.com/video/VIDEO_ID" frameborder="0"></iframe> </div> Additional arguments You can also specify a width, height and alignment .. vimeo:: 37818131 :width: 800 :height: 500 :align: center Which will result in: <div class="vimeo" align="center"> <iframe width="800" height="500" src="https://player.vimeo.com/video/37818131" frameborder="0"></iframe> </div> License MIT license.'><meta property=og:image content=https://kura.gg/pelican-vimeo/index.png><meta property=og:image:width content=1920><meta property=og:image:height content=1080><meta property=twitter:title content=Pelican Vimeo><meta content=https://kura.gg/pelican-vimeo/ property=twitter:url><meta property=twitter:description content='Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages and articles. Installation To install pelican-vimeo, simply install it from PyPI: $ pip install pelican-vimeo Then enabled it in your pelicanconf.py PLUGINS = [ # ... &#39;pelican_vimeo&#39;, # ... ] Usage In your article or page, you simply need to add a line to embed you video. .. vimeo:: VIDEO_ID Which will result in: <div class="vimeo" align="left"> <iframe width="420" height="315" src="https://player.vimeo.com/video/VIDEO_ID" frameborder="0"></iframe> </div> Additional arguments You can also specify a width, height and alignment .. vimeo:: 37818131 :width: 800 :height: 500 :align: center Which will result in: <div class="vimeo" align="center"> <iframe width="800" height="500" src="https://player.vimeo.com/video/37818131" frameborder="0"></iframe> </div> License MIT license.'><meta property=twitter:image content=https://kura.gg/pelican-vimeo/index.png><meta property=twitter:card content=summary_large_image><meta property=twitter:label1 content="Written by"><meta property=twitter:data1 content=Kura><meta property=twitter:image:width content=1920><meta property=twitter:image:height content=1080><link rel=icon href=/favicon.png type=image/png sizes="16x16 32x32 48x48 64x64 128x128 256x256"><link rel=icon href=/favicon.ico type=image/vnd.microsoft.icon sizes="16x16 32x32 48x48 64x64 128x128 256x256"><title>Pelican Vimeo</title></head> <body> <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50"> <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800" itemscope itemtype=http://schema.org/WPHeader> <div class=mdl-layout__header-row> <div aria-expanded=false role=button tabindex=0 class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only"> <i class=material-icons>&#xE5D2;</i> </div> <span class="eevee-logo mdl-color-text--accent mdl-layout-title"> <h2 id=top> <a href=https://kura.gg rel=bookmark title=kura.gg> kura.gg </a> </h2> </span> <div class=mdl-layout-spacer role=presentation></div> <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </header> <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden=true> <span class=mdl-layout-title> <h2 class="eevee-mobile-logo mdl-color-text--accent"> kura.gg </h2> </span> <div class="mdl-navigation mdl-color--white"> <nav class="eevee-nav mdl-navigation" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg itemprop=url rel=bookmark> <i class=material-icons aria-hidden=true> &#xE88A; </i> Home </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </div> <div class="eevee-ribbon mdl-color--primary-dark" role=presentation> </div> <main class="eevee-main mdl-layout__content"> <div class="eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col" aria-label="Main content"> <div class=eevee-share> <ul class="social-share mdl-navigation"> <li class="social-share__link social-share__link--twitter"> <a href="https://twitter.com/intent/tweet?text=Pelican%20Vimeo&url=https%3A//kura.gg/pelican-vimeo/" title="Share 'Pelican Vimeo' on Twitter" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;"> <i class=fa aria-hidden=true>&#xF099;</i> </a> </li> <li class="social-share__link social-share__link--facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//kura.gg/pelican-vimeo/" title="Share 'Pelican Vimeo' on Facebook" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;"> <i class=fa aria-hidden=true>&#xF09A;</i> </a> </li> <li class="social-share__link social-share__link--email"> <a href="mailto:?subject=Pelican%20Vimeo&body=I%20thought%20you%20might%20like%20'Pelican%20Vimeo'%20--%20https%3A//kura.gg/pelican-vimeo/" title="Share 'Pelican Vimeo' via email"> <i class=material-icons aria-hidden=true> &#xE0E1; </i> </a> </li> </ul> </div> <article itemscope itemtype=http://schema.org/WebPage> <meta itemprop=accessibilityControl content=fullKeyboardControl> <meta itemprop=accessibilityControl content=fullMouseControl> <meta itemprop=accessibilityControl content=bookmarks> <meta itemprop=accessibilityControl content=captions> <meta itemprop=accessibilityControl content=alternativeText> <meta itemprop=accessibilityControl content=index> <meta itemprop=accessibilityControl content=readingOrder> <meta itemprop=accessibilityControl content=structuralNavigation> <meta itemprop=accessibilityControl content=tableOfContents> <meta itemprop=accessibilityHazard content=noFlashingHazard> <meta itemprop=accessibilityHazard content=noMotionSimulationHazard> <meta itemprop=accessibilityHazard content=noSoundHazard> <meta itemprop=accessibilityAPI content=ARIA> <div itemprop=author itemscope itemtype=https://schema.org/Person role=presentation /> <a href=https://kura.gg/authors/kura/ class=hidden itemprop=url role=presentation> <span class=hidden itemprop=name role=presentation> kura </span> </a> </div> <meta itemprop=keywords content=pages> <div class=eevee-page-spacer role=presentation></div> <div class=eevee-page> <h1 itemprop=name> <a href=https://kura.gg/pelican-vimeo/ rel=bookmark title="Permalink to 'Pelican Vimeo'" itemprop=url> Pelican&nbsp;Vimeo </a> </h1> <section class=eevee-toc> <h2 id=toc> Contents </h2> <nav class=eevee-toc-ribbon> <div class=toc id> <p class=topic-title>Contents</p> <ul class=simple> <li><a class="reference internal" href=#installation id=toc-entry-1>Installation</a></li> <li><a class="reference internal" href=#usage id=toc-entry-2>Usage</a><ul> <li><a class="reference internal" href=#additional-arguments id=toc-entry-3>Additional arguments</a></li> </ul> </li> <li><a class="reference internal" href=#license id=toc-entry-4>License</a></li> </ul> </div> </nav> </section> <section itemprop=mainContentOfPage class=page-content> <p>Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages and articles.</p> <div class=section id=installation> <h2>Installation</h2> <p>To install pelican-vimeo, simply install it from PyPI:</p> <div class=highlight><pre><span></span>$ pip install pelican-vimeo
-</pre></div> <p>Then enabled it in your pelicanconf.py</p> <div class=highlight><pre><span></span><span class=n>PLUGINS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s1>'pelican_vimeo'</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-</pre></div> </div> <div class=section id=usage> <h2>Usage</h2> <p>In your article or page, you simply need to add a line to embed you video.</p> <div class=highlight><pre><span></span><span class=p>..</span> <span class=ow>vimeo</span><span class=p>::</span> VIDEO_ID
-</pre></div> <p>Which will result in:</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>"vimeo"</span> <span class=na>align</span><span class=o>=</span><span class=s>"left"</span><span class=p>&gt;</span>
-    <span class=p>&lt;</span><span class=nt>iframe</span> <span class=na>width</span><span class=o>=</span><span class=s>"420"</span> <span class=na>height</span><span class=o>=</span><span class=s>"315"</span> <span class=na>src</span><span class=o>=</span><span class=s>"https://player.vimeo.com/video/VIDEO_ID"</span> <span class=na>frameborder</span><span class=o>=</span><span class=s>"0"</span><span class=p>&gt;&lt;/</span><span class=nt>iframe</span><span class=p>&gt;</span>
-<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
-</pre></div> <div class=section id=additional-arguments> <h3>Additional arguments</h3> <p>You can also specify a <cite>width</cite>, <cite>height</cite> and <cite>alignment</cite></p> <div class=highlight><pre><span></span><span class=p>..</span> <span class=ow>vimeo</span><span class=p>::</span> 37818131
-<span class=nc>:width:</span> 800
-<span class=nc>:height:</span> 500
-<span class=nc>:align:</span> center
-</pre></div> <p>Which will result in:</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>"vimeo"</span> <span class=na>align</span><span class=o>=</span><span class=s>"center"</span><span class=p>&gt;</span>
-    <span class=p>&lt;</span><span class=nt>iframe</span> <span class=na>width</span><span class=o>=</span><span class=s>"800"</span> <span class=na>height</span><span class=o>=</span><span class=s>"500"</span> <span class=na>src</span><span class=o>=</span><span class=s>"https://player.vimeo.com/video/37818131"</span> <span class=na>frameborder</span><span class=o>=</span><span class=s>"0"</span><span class=p>&gt;&lt;/</span><span class=nt>iframe</span><span class=p>&gt;</span>
-<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
-</pre></div> </div> </div> <div class=section id=license> <h2>License</h2> <p><a class="reference external" href=https://opensource.org/licenses/MIT><span class=caps>MIT</span></a> license.</p> </div> </section> </div> <div class=eevee-ac> <header class=eevee-ac__header> <div class=eevee-ac-author__text> <h2>Kura</h2> <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p> <p> <a href=https://kura.gg/authors/kura/ itemprop=url title="Read more articles by Kura"> Read more articles by Kura </a> </p> <nav> <ul class=eevee-ac-author__social> <li class=eevee-ac-author-social__link> <a class="mdl-color-text--accent mdl-navigation__link" href=https://github.com/kura itemprop=url rel=bookmark title="kura on GitHub"> <i class=fa aria-hidden=true>&#xF09B;</i> </a> </li> </ul> </nav> </div> <img src=/images/avatar.png class=eevee-ac-author__avatar alt=Kura> </header> </div> </article> <a href=https://github.com/kura/kura.gg/blob/main/content/pages/pelican-vimeo.rst id=view-source title="View 'Pelican Vimeo' on GitHub" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white"> <i class=material-icons>&#xE86F;</i> View Source </a> </div> </div> </main> <div class="eevee-pagination__container eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"> <nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label=Pagination> <div class=eevee-spacer></div> </nav> </div> </div> <footer class=mdl-mega-footer itemscope itemtype=http://schema.org/SiteNavigationElement> <div class=mdl-mega-footer--top-section> <div class=mdl-mega-footer--drop-down-section> <ul class=mdl-mega-footer--link-list> <li> <a href=#top itemprop=url title="Back to the top of the page"> Back to the top of the page </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--middle-section itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Footer navigation"> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Menu</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> </li> <li> <a href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> </li> <li> <a href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Social</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=https://github.com/kura itemprop=url rel=bookmark title=GitHub> <i class=fa aria-hidden=true>&#xF09B;</i> Github </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Links</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> </li> <li> <a href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> </li> <li> <a href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> </li> <li> <a href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> </li> <li> <a href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--bottom-section> <div class=mdl-logo> <a href=https://kura.gg rel=bookmark itemprop=url title=kura.gg> kura.gg </a> </div> <ul class="eevee-footer mdl-mega-footer--link-list"> <li>Powered by love &amp; rainbow sparkles.</li> <li>Source code and content released under the <a href=/license/ title="MIT license">MIT license</a>.</li> </ul> </div> </footer> </div> </body> </html>
+//-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="alternate" href=".." hreflang="en" />
+<link rel="dns-prefetch" href=".." />
+  <link rel="stylesheet" href="../theme/webassets-external/63377f06b1648775b11ff8e169b4a710_material.yellow-amber.min.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/c335929e0083dac14c3a8f107c05dde3_font-awesome.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/14c05c94e27da637bc780ad514251b18_material-icons.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/a28e8d0a2ff230dae7c257a9f828e3b1_pygments.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/0eddd53a34a33f68e0c593881131a436_eevee.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/2f21b66ec2ab0b874a1f30d00028e286_custom.css" />
+  <script async src="../theme/webassets-external/a7fbc4b6cecaeb63ed7b7d6e2f75e649_material.js"></script>
+  <link href="../feeds/rss.xml" type="application/rss+xml"
+        rel="alternate" title="kura.gg" />
+  <link href="../feeds/atom.xml" type="application/atom+xml"
+        rel="alternate" title="kura.gg" />
+  <meta property="og:site_name" content="kura.gg" />
+  <meta property="og:type" content="article" />
+    <meta property="og:title"
+          content="Pelican Vimeo" />
+    <meta property="og:url"
+          content="../pelican-vimeo/" />
+    <meta property="og:description"
+          content="Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages and articles. Installation To install pelican-vimeo, simply install it from PyPI: $ pip install pelican-vimeo Then enabled it in your pelicanconf.py PLUGINS = [ # ... &#39;pelican_vimeo&#39;, # ... ] Usage In your article or page, you simply need to add a line to embed you video. .. vimeo:: VIDEO_ID Which will result in: &lt;div class=&#34;vimeo&#34; align=&#34;left&#34;&gt; &lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://player.vimeo.com/video/VIDEO_ID&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt; &lt;/div&gt; Additional arguments You can also specify a width, height and alignment .. vimeo:: 37818131 :width: 800 :height: 500 :align: center Which will result in: &lt;div class=&#34;vimeo&#34; align=&#34;center&#34;&gt; &lt;iframe width=&#34;800&#34; height=&#34;500&#34; src=&#34;https://player.vimeo.com/video/37818131&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt; &lt;/div&gt; License MIT license." />
+    <meta property="og:image"
+          content="../pelican-vimeo/index.png" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+    <meta property="twitter:title"
+          content="Pelican Vimeo" />
+    <meta property="twitter:url"
+          content="../pelican-vimeo/" />
+    <meta property="twitter:description"
+          content="Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages and articles. Installation To install pelican-vimeo, simply install it from PyPI: $ pip install pelican-vimeo Then enabled it in your pelicanconf.py PLUGINS = [ # ... &#39;pelican_vimeo&#39;, # ... ] Usage In your article or page, you simply need to add a line to embed you video. .. vimeo:: VIDEO_ID Which will result in: &lt;div class=&#34;vimeo&#34; align=&#34;left&#34;&gt; &lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://player.vimeo.com/video/VIDEO_ID&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt; &lt;/div&gt; Additional arguments You can also specify a width, height and alignment .. vimeo:: 37818131 :width: 800 :height: 500 :align: center Which will result in: &lt;div class=&#34;vimeo&#34; align=&#34;center&#34;&gt; &lt;iframe width=&#34;800&#34; height=&#34;500&#34; src=&#34;https://player.vimeo.com/video/37818131&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt; &lt;/div&gt; License MIT license." />
+    <meta property="twitter:image"
+          content="../pelican-vimeo/index.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:label1" content="Written by" />
+    <meta property="twitter:data1" content="Kura" />
+  <meta property="twitter:image:width" content="1920" />
+  <meta property="twitter:image:height" content="1080" />
+  <link rel="icon" href="/favicon.png" type="image/png"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <title>Pelican Vimeo</title>
+</head>
+<body>
+  <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+    <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+            itemscope itemtype="http://schema.org/WPHeader">
+      <div class="mdl-layout__header-row">
+        <div aria-expanded="false" role="button" tabindex="0"
+             class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+          <i class="material-icons">&#xE5D2;</i>
+        </div>
+        <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+          <h2 id="top">
+            <a href=".." rel="bookmark" title="kura.gg">
+              kura.gg
+            </a>
+          </h2>
+        </span>
+        <div class="mdl-layout-spacer" role="presentation"></div>
+        <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+             itemscope itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </header>
+    <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+         aria-hidden="true">
+      <span class="mdl-layout-title">
+        <h2 class="eevee-mobile-logo mdl-color-text--accent">
+          kura.gg
+        </h2>
+      </span>
+      <div class="mdl-navigation mdl-color--white">
+        <nav class="eevee-nav mdl-navigation" itemscope
+             itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+          <a class="mdl-color-text--accent mdl-navigation__link"
+             href=".." itemprop="url" rel="bookmark">
+            <i class="material-icons" aria-hidden="true">
+              &#xE88A;
+            </i> Home
+          </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </div>
+    <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+    </div>
+    <main class="eevee-main mdl-layout__content">
+      <div class="eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+             aria-label="Main content">
+  <div class="eevee-share">
+    <ul class="social-share mdl-navigation">
+      <li class="social-share__link social-share__link--twitter">
+        <a href="https://twitter.com/intent/tweet?text=Pelican%20Vimeo&amp;url=../pelican-vimeo/"
+           title="Share 'Pelican Vimeo' on Twitter"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
+          <i class="fa" aria-hidden="true">&#xF099;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=../pelican-vimeo/"
+           title="Share 'Pelican Vimeo' on Facebook"
+           onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
+          <i class="fa" aria-hidden="true">&#xF09A;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--email">
+        <a href="mailto:?subject=Pelican%20Vimeo&amp;body=I%20thought%20you%20might%20like%20'Pelican%20Vimeo'%20--%20../pelican-vimeo/"
+           title="Share 'Pelican Vimeo' via email">
+          <i class="material-icons" aria-hidden="true">
+            &#xE0E1;
+          </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <article itemscope itemtype="http://schema.org/WebPage">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl" />
+<meta itemprop="accessibilityControl" content="fullMouseControl" />
+<meta itemprop="accessibilityControl" content="bookmarks" />
+<meta itemprop="accessibilityControl" content="captions" />
+<meta itemprop="accessibilityControl" content="alternativeText" />
+<meta itemprop="accessibilityControl" content="index" />
+<meta itemprop="accessibilityControl" content="readingOrder" />
+<meta itemprop="accessibilityControl" content="structuralNavigation" />
+<meta itemprop="accessibilityControl" content="tableOfContents" />
+<meta itemprop="accessibilityHazard" content="noFlashingHazard" />
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard" />
+<meta itemprop="accessibilityHazard" content="noSoundHazard" />
+<meta itemprop="accessibilityAPI" content="ARIA" />
+  <div itemprop="author" itemscope
+       itemtype="https://schema.org/Person" role="presentation" />
+    <a href="../authors/kura/" class="hidden"
+       itemprop="url" role="presentation">
+      <span class="hidden" itemprop="name" role="presentation">
+        kura
+      </span>
+    </a>
+  </div>
+    <meta itemprop="keywords" content="pages" />
+
+    <div class="eevee-page-spacer" role="presentation"></div>
+    <div class="eevee-page">
+      <h1 itemprop="name">
+        <a href="../pelican-vimeo/" rel="bookmark"
+           title="Permalink to 'Pelican Vimeo'" itemprop="url">
+          Pelican&nbsp;Vimeo
+        </a>
+      </h1>
+  <section class="eevee-toc">
+    <h2 id="toc">
+        Contents
+    </h2>
+    <nav class="eevee-toc-ribbon">
+      <div class="toc" id="">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#installation" id="toc-entry-1">Installation</a></li>
+<li><a class="reference internal" href="#usage" id="toc-entry-2">Usage</a><ul>
+<li><a class="reference internal" href="#additional-arguments" id="toc-entry-3">Additional arguments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#license" id="toc-entry-4">License</a></li>
+</ul>
+</div>
+    </nav>
+  </section>
+      <section itemprop="mainContentOfPage" class="page-content">
+        
+<p>Pelican Vimeo is a plugin to enabled you to embed Vimeo videos in your pages
+and articles.</p>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>To install pelican-vimeo, simply install it from PyPI:</p>
+<div class="highlight"><pre><span></span>$ pip install pelican-vimeo
+</pre></div>
+<p>Then enabled it in your pelicanconf.py</p>
+<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s1">'pelican_vimeo'</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="usage">
+<h2>Usage</h2>
+<p>In your article or page, you simply need to add a line to embed you video.</p>
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">vimeo</span><span class="p">::</span> VIDEO_ID
+</pre></div>
+<p>Which will result in:</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"vimeo"</span> <span class="na">align</span><span class="o">=</span><span class="s">"left"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">"420"</span> <span class="na">height</span><span class="o">=</span><span class="s">"315"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://player.vimeo.com/video/VIDEO_ID"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"0"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+<div class="section" id="additional-arguments">
+<h3>Additional arguments</h3>
+<p>You can also specify a <cite>width</cite>, <cite>height</cite> and <cite>alignment</cite></p>
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">vimeo</span><span class="p">::</span> 37818131
+<span class="nc">:width:</span> 800
+<span class="nc">:height:</span> 500
+<span class="nc">:align:</span> center
+</pre></div>
+<p>Which will result in:</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"vimeo"</span> <span class="na">align</span><span class="o">=</span><span class="s">"center"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">"800"</span> <span class="na">height</span><span class="o">=</span><span class="s">"500"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://player.vimeo.com/video/37818131"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"0"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="license">
+<h2>License</h2>
+<p><a class="reference external" href="https://opensource.org/licenses/MIT"><span class="caps">MIT</span></a> license.</p>
+</div>
+
+      </section>
+    </div>
+  <div class="eevee-ac">
+    <header class="eevee-ac__header">
+      <div class="eevee-ac-author__text">
+        <h2>Kura</h2>
+          <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p>
+          <p>
+            <a href="../authors/kura/"
+               itemprop="url"
+               title="Read more articles by Kura">
+              Read more articles by Kura
+            </a>
+          </p>
+        <nav>
+          <ul class="eevee-ac-author__social">
+              <li class="eevee-ac-author-social__link">
+                <a class="mdl-color-text--accent mdl-navigation__link"
+                   href="https://github.com/kura" itemprop="url" rel="bookmark"
+                   title="kura on GitHub">
+                  <i class="fa" aria-hidden="true">&#xF09B;</i>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+      <img src="/images/avatar.png" class="eevee-ac-author__avatar"
+           alt="Kura" />
+    </header>
+  </div>
+  </article>
+  <a href="https://github.com/kura/kura.gg/blob/main/content/pages/pelican-vimeo.rst"
+     id="view-source" title="View 'Pelican Vimeo' on GitHub"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
+    <i class="material-icons">&#xE86F;</i> View Source
+  </a>
+        </div>
+      </div>
+    </main>
+      <div class="eevee-pagination__container eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+<nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Pagination">
+  <div class="eevee-spacer"></div>
+</nav>        </div>
+      </div>
+    <footer class="mdl-mega-footer" itemscope
+            itemtype="http://schema.org/SiteNavigationElement">
+      <div class="mdl-mega-footer--top-section">
+        <div class="mdl-mega-footer--drop-down-section">
+          <ul class="mdl-mega-footer--link-list">
+            <li>
+              <a href="#top" itemprop="url"
+                 title="Back to the top of the page">
+                Back to the top of the page
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+<div class="mdl-mega-footer--middle-section" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Footer navigation">
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Menu</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/contact/" itemprop="url" rel="bookmark"
+             title="Contact">
+            <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+          </a>
+        </li>
+        <li>
+          <a href="../archives/"
+             itemprop="url" rel="bookmark" title="Archives">
+            <i class="material-icons">&#xE02F;</i>
+            Archives
+          </a>
+        </li>
+        <li>
+          <a href="../feeds/rss.xml"
+             title="RSS"
+             itemprop="url">
+            <i class="material-icons">&#xE0E5;</i>
+              RSS
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Social</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="https://github.com/kura" itemprop="url" rel="bookmark"
+             title="GitHub">
+            <i class="fa" aria-hidden="true">&#xF09B;</i> Github
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Links</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/blackhole" itemprop="url" rel="bookmark"
+             title="Blackhole">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+          </a>
+        </li>
+        <li>
+          <a href="/eevee" itemprop="url" rel="bookmark"
+             title="Eevee">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+          </a>
+        </li>
+        <li>
+          <a href="/hauntr" itemprop="url" rel="bookmark"
+             title="Hauntr">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+          </a>
+        </li>
+        <li>
+          <a href="/ghastly" itemprop="url" rel="bookmark"
+             title="Ghastly">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+          </a>
+        </li>
+        <li>
+          <a href="/pelican-plugins" itemprop="url" rel="bookmark"
+             title="Pelican Plugins">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+          </a>
+        </li>
+      </ul>
+  </div>
+</div>      <div class="mdl-mega-footer--bottom-section">
+        <div class="mdl-logo">
+          <a href=".." rel="bookmark" itemprop="url"
+             title="kura.gg">
+            kura.gg
+          </a>
+        </div>
+          <ul class="eevee-footer mdl-mega-footer--link-list">
+              <li>Powered by love &amp; rainbow sparkles.</li>
+              <li>Source code and content released under the <a href="/license/" title="MIT license">MIT license</a>.</li>
+          </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

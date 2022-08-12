@@ -1,4 +1,5 @@
-<!DOCTYPE html><!--
+<!DOCTYPE html>
+<!--
 
                                       |
                                      /|
@@ -36,177 +37,1415 @@
                                    |   ,'
                                     `\"\"
 
-//--><html lang=en> <head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><link rel=alternate href=https://kura.gg hreflang=en><link rel=dns-prefetch href=https://kura.gg><link rel=stylesheet href=https://kura.gg/theme/css/eevee.min.css?1c9d8344><script async src=https://kura.gg/theme/js/eevee.min.js?1841d254></script><link href=https://kura.gg/feeds/rss.xml type=application/rss+xml rel=alternate title=kura.gg><link href=https://kura.gg/feeds/atom.xml type=application/atom+xml rel=alternate title=kura.gg><meta property=og:site_name content=kura.gg><meta property=og:type content=article><meta property=og:title content="Eevee — A Material Design theme for Pelican"><meta content=https://kura.gg/eevee/ property=og:url><meta property=og:description content="Introduction Eevee is a theme for Pelican, based on Google’s Material Design specification. It is named after the Pokémon Eevee because — like the Pokémon — it can evolve in to many ‘elemental types.’ Features Built around Google’s Material Design specification on top of Goole’s Material Design Lite library, configurable colour scheme (see Primary and accent colours), responsive layout with mobile friendly header and navigation scheme, inclusion of a custom.css file allowing easy overwriting of the theme without breaking the base CSS (see Custom CSS), DNS prefetch (see DNS prefetch), comments via Disqus or Muut (see Disqus or Muut for comments), share buttons for Twitter, Facebook, email and comments (see Sharing options), Twitter and Open Graph meta tags (see Sharing options), CSS and JS minifying via webassets, cssmin and jsmin (see Plugin: Minimise CSS and JavaScript), analytics from Google Analytics, Piwik, GoSquared and Open Web Analytics (see Google …"><meta property=og:image content=https://kura.gg/eevee/index.png><meta property=og:image:width content=1920><meta property=og:image:height content=1080><meta property=twitter:title content="Eevee — A Material Design theme for Pelican"><meta content=https://kura.gg/eevee/ property=twitter:url><meta property=twitter:description content="Introduction Eevee is a theme for Pelican, based on Google’s Material Design specification. It is named after the Pokémon Eevee because — like the Pokémon — it can evolve in to many ‘elemental types.’ Features Built around Google’s Material Design specification on top of Goole’s Material Design Lite library, configurable colour scheme (see Primary and accent colours), responsive layout with mobile friendly header and navigation scheme, inclusion of a custom.css file allowing easy overwriting of the theme without breaking the base CSS (see Custom CSS), DNS prefetch (see DNS prefetch), comments via Disqus or Muut (see Disqus or Muut for comments), share buttons for Twitter, Facebook, email and comments (see Sharing options), Twitter and Open Graph meta tags (see Sharing options), CSS and JS minifying via webassets, cssmin and jsmin (see Plugin: Minimise CSS and JavaScript), analytics from Google Analytics, Piwik, GoSquared and Open Web Analytics (see Google …"><meta property=twitter:image content=https://kura.gg/eevee/index.png><meta property=twitter:card content=summary_large_image><meta property=twitter:label1 content="Written by"><meta property=twitter:data1 content=Kura><meta property=twitter:image:width content=1920><meta property=twitter:image:height content=1080><link rel=icon href=/favicon.png type=image/png sizes="16x16 32x32 48x48 64x64 128x128 256x256"><link rel=icon href=/favicon.ico type=image/vnd.microsoft.icon sizes="16x16 32x32 48x48 64x64 128x128 256x256"><title>Eevee — A Material Design theme for Pelican</title></head> <body> <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50"> <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800" itemscope itemtype=http://schema.org/WPHeader> <div class=mdl-layout__header-row> <div aria-expanded=false role=button tabindex=0 class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only"> <i class=material-icons>&#xE5D2;</i> </div> <span class="eevee-logo mdl-color-text--accent mdl-layout-title"> <h2 id=top> <a href=https://kura.gg rel=bookmark title=kura.gg> kura.gg </a> </h2> </span> <div class=mdl-layout-spacer role=presentation></div> <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </header> <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden=true> <span class=mdl-layout-title> <h2 class="eevee-mobile-logo mdl-color-text--accent"> kura.gg </h2> </span> <div class="mdl-navigation mdl-color--white"> <nav class="eevee-nav mdl-navigation" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg itemprop=url rel=bookmark> <i class=material-icons aria-hidden=true> &#xE88A; </i> Home </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </div> <div class="eevee-ribbon mdl-color--primary-dark" role=presentation> </div> <main class="eevee-main mdl-layout__content"> <div class="eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col" aria-label="Main content"> <div class=eevee-share> <ul class="social-share mdl-navigation"> <li class="social-share__link social-share__link--twitter"> <a href="https://twitter.com/intent/tweet?text=Eevee%20%E2%80%94%20A%20Material%20Design%20theme%20for%20Pelican&url=https%3A//kura.gg/eevee/" title="Share 'Eevee — A Material Design theme for Pelican' on Twitter" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;"> <i class=fa aria-hidden=true>&#xF099;</i> </a> </li> <li class="social-share__link social-share__link--facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//kura.gg/eevee/" title="Share 'Eevee — A Material Design theme for Pelican' on Facebook" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;"> <i class=fa aria-hidden=true>&#xF09A;</i> </a> </li> <li class="social-share__link social-share__link--email"> <a href="mailto:?subject=Eevee%20%E2%80%94%20A%20Material%20Design%20theme%20for%20Pelican&body=I%20thought%20you%20might%20like%20'Eevee%20%E2%80%94%20A%20Material%20Design%20theme%20for%20Pelican'%20--%20https%3A//kura.gg/eevee/" title="Share 'Eevee — A Material Design theme for Pelican' via email"> <i class=material-icons aria-hidden=true> &#xE0E1; </i> </a> </li> </ul> </div> <article itemscope itemtype=http://schema.org/WebPage> <meta itemprop=accessibilityControl content=fullKeyboardControl> <meta itemprop=accessibilityControl content=fullMouseControl> <meta itemprop=accessibilityControl content=bookmarks> <meta itemprop=accessibilityControl content=captions> <meta itemprop=accessibilityControl content=alternativeText> <meta itemprop=accessibilityControl content=index> <meta itemprop=accessibilityControl content=readingOrder> <meta itemprop=accessibilityControl content=structuralNavigation> <meta itemprop=accessibilityControl content=tableOfContents> <meta itemprop=accessibilityHazard content=noFlashingHazard> <meta itemprop=accessibilityHazard content=noMotionSimulationHazard> <meta itemprop=accessibilityHazard content=noSoundHazard> <meta itemprop=accessibilityAPI content=ARIA> <div itemprop=author itemscope itemtype=https://schema.org/Person role=presentation /> <a href=https://kura.gg/authors/kura/ class=hidden itemprop=url role=presentation> <span class=hidden itemprop=name role=presentation> Kura </span> </a> </div> <meta itemprop=keywords content=pages> <div class=eevee-page-spacer role=presentation></div> <div class=eevee-page> <h1 itemprop=name> <a href=https://kura.gg/eevee/ rel=bookmark title="Permalink to 'Eevee — A Material Design theme for Pelican'" itemprop=url> Eevee &#8212; A Material Design theme for&nbsp;Pelican </a> </h1> <section class=eevee-toc> <h2 id=toc> Contents </h2> <nav class=eevee-toc-ribbon> <div class=toc id> <p class=topic-title>Contents</p> <ul class=simple> <li><a class="reference internal" href=#introduction id=toc-entry-1>Introduction</a></li> <li><a class="reference internal" href=#features id=toc-entry-2>Features</a></li> <li><a class="reference internal" href=#plugins-supported-out-of-the-box id=toc-entry-3>Plugins supported out-of-the-box</a></li> <li><a class="reference internal" href=#typography id=toc-entry-4>Typography</a></li> <li><a class="reference internal" href=#screenshots id=toc-entry-5>Screenshots</a></li> <li><a class="reference internal" href=#installation id=toc-entry-6>Installation</a></li> <li><a class="reference internal" href=#customising-eevee id=toc-entry-7>Customising Eevee</a><ul> <li><a class="reference internal" href=#primary-and-accent-colours id=toc-entry-8>Primary and accent colours</a></li> <li><a class="reference internal" href=#custom-css id=toc-entry-9>Custom <span class=caps>CSS</span></a></li> <li><a class="reference internal" href=#header-and-footer-options id=toc-entry-10>Header and footer options</a><ul> <li><a class="reference internal" href=#header id=toc-entry-11>Header</a></li> <li><a class="reference internal" href=#footer id=toc-entry-12>Footer</a></li> </ul> </li> <li><a class="reference internal" href=#setting-your-own-copyright-notice-and-disclaimer id=toc-entry-13>Setting your own copyright notice and disclaimer</a></li> <li><a class="reference internal" href=#table-of-contents-for-articles-and-pages id=toc-entry-14>Table of contents for articles and pages</a></li> <li><a class="reference internal" href=#author-card id=toc-entry-15>Author card</a><ul> <li><a class="reference internal" href=#enabling-the-author-card id=toc-entry-16>Enabling the author card</a></li> <li><a class="reference internal" href=#using-your-own-avatar id=toc-entry-17>Using your own avatar</a></li> <li><a class="reference internal" href=#setting-a-description id=toc-entry-18>Setting a description</a></li> <li><a class="reference internal" href=#social-buttons id=toc-entry-19>Social buttons</a></li> <li><a class="reference internal" href=#dynamically-disabling-author-card-on-an-article-or-page id=toc-entry-20>Dynamically disabling author card on an article or page</a></li> </ul> </li> <li><a class="reference internal" href=#disqus-or-muut-for-comments id=toc-entry-21>Disqus or Muut for comments</a><ul> <li><a class="reference internal" href=#disqus id=toc-entry-22>Disqus</a></li> <li><a class="reference internal" href=#muut id=toc-entry-23>Muut</a></li> <li><a class="reference internal" href=#comments-on-pages id=toc-entry-24>Comments on pages</a></li> <li><a class="reference internal" href=#dynamically-disabling-comments-on-an-article-or-page id=toc-entry-25>Dynamically disabling comments on an article or page</a></li> </ul> </li> <li><a class="reference internal" href=#sharing-options id=toc-entry-26>Sharing options</a><ul> <li><a class="reference internal" href=#share-buttons id=toc-entry-27>Share buttons</a></li> <li><a class="reference internal" href=#options id=toc-entry-28>Options</a></li> <li><a class="reference internal" href=#adding-an-image-to-open-graph-and-twitter-meta-tags id=toc-entry-29>Adding an image to Open Graph and Twitter meta tags</a></li> </ul> </li> <li><a class="reference internal" href=#archives id=toc-entry-30>Archives</a></li> <li><a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared id=toc-entry-31>Google Analytics, Piwik, Open Web Analytics and GoSquared</a><ul> <li><a class="reference internal" href=#google-analytics id=toc-entry-32>Google Analytics</a></li> <li><a class="reference internal" href=#piwik id=toc-entry-33>Piwik</a></li> <li><a class="reference internal" href=#open-web-analytics id=toc-entry-34>Open Web Analytics</a></li> <li><a class="reference internal" href=#gosquared id=toc-entry-35>GoSquared</a></li> </ul> </li> <li><a class="reference internal" href=#feeds id=toc-entry-36>Feeds</a><ul> <li><a class="reference internal" href=#feed-menu-item id=toc-entry-37>Feed menu item</a></li> </ul> </li> <li><a class="reference internal" href=#category-and-tag-pages id=toc-entry-38>Category and tag pages</a></li> <li><a class="reference internal" href=#plugin-search-functionality id=toc-entry-39>Plugin: Search functionality</a></li> <li><a class="reference internal" href=#plugin-permalinks-in-headlines id=toc-entry-40>Plugin: Permalinks in headlines</a></li> <li><a class="reference internal" href=#plugin-related-articles id=toc-entry-41>Plugin: Related articles</a></li> <li><a class="reference internal" href=#plugin-articles-in-a-series id=toc-entry-42>Plugin: Articles in a series</a></li> <li><a class="reference internal" href=#plugin-minimise-css-and-javascript id=toc-entry-43>Plugin: Minimise <span class=caps>CSS</span> and JavaScript</a></li> <li><a class="reference internal" href=#advanced-pagination id=toc-entry-44>Advanced pagination</a></li> <li><a class="reference internal" href=#dns-prefetch id=toc-entry-45><span class=caps>DNS</span> prefetch</a></li> </ul> </li> <li><a class="reference internal" href=#all-configuration-settings id=toc-entry-46>All configuration settings</a></li> <li><a class="reference internal" href=#additional-tweaks-and-modifications id=toc-entry-47>Additional tweaks and modifications</a></li> <li><a class="reference internal" href=#changelog id=toc-entry-48>Changelog</a><ul> <li><a class="reference internal" href=#section-1 id=toc-entry-49>0.0.14</a></li> <li><a class="reference internal" href=#section-2 id=toc-entry-50>0.0.13</a></li> <li><a class="reference internal" href=#section-3 id=toc-entry-51>0.0.12</a></li> <li><a class="reference internal" href=#section-4 id=toc-entry-52>0.0.11</a></li> <li><a class="reference internal" href=#section-5 id=toc-entry-53>0.0.10</a></li> <li><a class="reference internal" href=#section-6 id=toc-entry-54>0.0.9</a></li> <li><a class="reference internal" href=#section-7 id=toc-entry-55>0.0.8</a></li> <li><a class="reference internal" href=#section-8 id=toc-entry-56>0.0.7</a></li> <li><a class="reference internal" href=#section-9 id=toc-entry-57>0.0.6</a></li> <li><a class="reference internal" href=#section-10 id=toc-entry-58>0.0.5</a></li> <li><a class="reference internal" href=#section-11 id=toc-entry-59>0.0.4</a></li> <li><a class="reference internal" href=#section-12 id=toc-entry-60>0.0.3</a></li> <li><a class="reference internal" href=#section-13 id=toc-entry-61>0.0.2</a></li> <li><a class="reference internal" href=#section-14 id=toc-entry-62>0.0.1</a></li> </ul> </li> <li><a class="reference internal" href=#license id=toc-entry-63>License</a></li> </ul> </div> </nav> </section> <section itemprop=mainContentOfPage class=page-content> <img alt=Eeveelutions class=align-center src=/images/eeveelutions.png> <div class=section id=introduction> <h2>Introduction</h2> <p>Eevee is a theme for <a class="reference external" href=https://getpelican.com>Pelican</a>, based on Google’s <a href=https://material.google.com/ class="reference external">Material Design</a> specification. It is named after the Pokémon <a class="reference external" href=https://www.pokemon.com/uk/pokedex/eevee>Eevee</a> because — like the Pokémon — it can evolve in to many ‘elemental types.’</p> </div> <div class=section id=features> <h2>Features</h2> <ul class=simple> <li>Built around <a href=https://material.google.com/ class="reference external">Google’s Material Design</a> specification on top of Goole’s <a class="reference external" href=https://github.com/google/material-design-lite>Material Design Lite library</a>,</li> <li>configurable colour scheme (see <a class="reference internal" href=#primary-and-accent-colours>Primary and accent colours</a>),</li> <li>responsive layout with mobile friendly header and navigation scheme,</li> <li>inclusion of a <tt class="docutils literal">custom.css</tt> file allowing easy overwriting of the theme without breaking the base <span class=caps>CSS</span> (see <a class="reference internal" href=#custom-css>Custom <span class=caps>CSS</span></a>),</li> <li><a class="reference internal" href=#dns-prefetch><span class=caps>DNS</span> prefetch</a> (see <a class="reference internal" href=#dns-prefetch><span class=caps>DNS</span> prefetch</a>),</li> <li>comments via <a href=https://disqus.com/ class="reference external">Disqus</a> or <a href=https://muut.com/ class="reference external">Muut</a> (see <a class="reference internal" href=#disqus-or-muut-for-comments>Disqus or Muut for comments</a>),</li> <li>share buttons for Twitter, Facebook, email and comments (see <a class="reference internal" href=#sharing-options>Sharing options</a>),</li> <li>Twitter and Open Graph meta tags (see <a class="reference internal" href=#sharing-options>Sharing options</a>),</li> <li><span class=caps>CSS</span> and <span class=caps>JS</span> minifying via <a href=https://webassets.readthedocs.io/en/latest/ class="reference external">webassets</a>, cssmin and jsmin (see <a class="reference internal" href=#plugin-minimise-css-and-javascript>Plugin: Minimise <span class=caps>CSS</span> and JavaScript</a>),</li> <li>analytics from <a class="reference external" href=https://analytics.google.com>Google Analytics</a>, <a href=https://piwik.org/ class="reference external">Piwik</a>, <a href=https://www.gosquared.com/ class="reference external">GoSquared</a> and <a href=https://www.openwebanalytics.com/ class="reference external">Open Web Analytics</a> (see <a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared>Google Analytics, Piwik, Open Web Analytics and GoSquared</a>),</li> <li>easy customisation, including menus and footer (see <a class="reference internal" href=#header-and-footer-options>Header and footer options</a>),</li> <li>custom 404 error page,</li> <li><a class="reference external" href=https://en.wikipedia.org/wiki/Microdata_(HTML)>Microdata</a>,</li> <li><a class="reference external" href=https://en.wikipedia.org/wiki/WAI-ARIA>Aria</a> accessibility,</li> <li>includes <a href=https://design.google.com/icons/ class="reference external">Material Icons</a>, <a href=https://fontawesome.com/ class="reference external">Font Awesome</a> and Google’s <a class="reference external" href=https://typecast.com/preview/google/Roboto>Roboto font</a> and,</li> <li>seamless feature upgrade with Material Design Lite’s <a class="reference external" href=https://getmdl.io/started/index.html#download>Javascript library</a>.</li> </ul> </div> <div class=section id=plugins-supported-out-of-the-box> <h2>Plugins supported out-of-the-box</h2> <p>Eevee ships with all the <span class=caps>HTML</span>, <span class=caps>CSS</span> and JavaScript required for the following plugins but does not need any of them to function correctly. If a plugin is supported but not used, the <span class=caps>HTML</span>, <span class=caps>CSS</span> and JavaScript simply won’t be included.</p> <ul class=simple> <li><a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/assets>assets</a> (see <a class="reference internal" href=#plugin-minimise-css-and-javascript>Plugin: Minimise <span class=caps>CSS</span> and JavaScript</a> section for more information),</li> <li><a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>extract_toc</a> ( see <a class="reference internal" href=#table-of-contents-for-articles-and-pages>Table of contents for articles and pages</a> section for more information),</li> <li><a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/headerid>headerid</a> (see <a class="reference internal" href=#plugin-permalinks-in-headlines>Plugin: Permalinks in headlines</a> section for more information),</li> <li><a class="reference external" href=https://github.com/kura/lightbox>lightbox</a>,</li> <li><a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/neighbors>neighbors</a>,</li> <li><a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/related_posts>related_posts</a> (see <a class="reference internal" href=#plugin-related-articles>Plugin: Related articles</a> section for more information),</li> <li><a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/series>series</a> (see <a class="reference internal" href=#plugin-articles-in-a-series>Plugin: Articles in a series</a> section for more information) and,</li> <li><a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>tipue_search</a> ( see <a class="reference internal" href=#plugin-search-functionality>Plugin: Search functionality</a> section for more information.)</li> </ul> </div> <div class=section id=typography> <h2>Typography</h2> <img alt="Eevee Typography" class=align-center src=/images/eevee-typography.png> <p>Google’s <a class="reference external" href=https://material.google.com/style/typography.html>Roboto</a> font is used for typography, <a href=https://design.google.com/icons/ class="reference external">Material Icons</a> and <a href=https://fontawesome.com/icons/ class="reference external">Font Awesome</a> are included too.</p> </div> <div class=section id=screenshots> <h2>Screenshots</h2> <div class="eevee-card-container mdl-grid"> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#d8ddcc2a-7b46-44dd-b407-eef0a1dd99f1 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/archives.png> </a> </div></div> <a class=lightbox href=#_ id=d8ddcc2a-7b46-44dd-b407-eef0a1dd99f1 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/archives.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#2d904093-84e2-4123-b51b-e9a408269368 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/article-header.png> </a> </div></div> <a class=lightbox href=#_ id=2d904093-84e2-4123-b51b-e9a408269368 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/article-header.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#09fa14d8-5b1c-4d2c-b9a1-72a4cc602e6c title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/disqus.png> </a> </div></div> <a class=lightbox href=#_ id=09fa14d8-5b1c-4d2c-b9a1-72a4cc602e6c title="Click to close"> <img alt="Click to close" src=/images/eevee_page/disqus.png> </a> </div> <div class="eevee-card-container mdl-grid"> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#fec21fca-7a83-40e3-a83b-b26a5f5ce7b8 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/eevee-mega-footer.png> </a> </div></div> <a class=lightbox href=#_ id=fec21fca-7a83-40e3-a83b-b26a5f5ce7b8 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/eevee-mega-footer.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#e4d0e412-35c6-48f0-8f10-81e9f593932d title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/headerid.png> </a> </div></div> <a class=lightbox href=#_ id=e4d0e412-35c6-48f0-8f10-81e9f593932d title="Click to close"> <img alt="Click to close" src=/images/eevee_page/headerid.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#fe313292-1039-4747-a1a2-6531b919a839 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/homepage-separator.png> </a> </div></div> <a class=lightbox href=#_ id=fe313292-1039-4747-a1a2-6531b919a839 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/homepage-separator.png> </a> </div> <div class="eevee-card-container mdl-grid"> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#e84e48ce-b4d2-4442-bc37-9d54c5dfe4c3 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/homepage.png> </a> </div></div> <a class=lightbox href=#_ id=e84e48ce-b4d2-4442-bc37-9d54c5dfe4c3 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/homepage.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#dc0728bc-1362-4fb2-9dbb-4db40ac4092b title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/mobile-homepage.png> </a> </div></div> <a class=lightbox href=#_ id=dc0728bc-1362-4fb2-9dbb-4db40ac4092b title="Click to close"> <img alt="Click to close" src=/images/eevee_page/mobile-homepage.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#7c4c197d-3447-44da-b608-6490770e4668 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/mobile-menu.png> </a> </div></div> <a class=lightbox href=#_ id=7c4c197d-3447-44da-b608-6490770e4668 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/mobile-menu.png> </a> </div> <div class="eevee-card-container mdl-grid"> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#74f14099-1139-4f88-b97c-7897bf8a83e6 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/pygments.png> </a> </div></div> <a class=lightbox href=#_ id=74f14099-1139-4f88-b97c-7897bf8a83e6 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/pygments.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#1b142279-5047-43c4-8659-012a281a897e title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/related-author-card.png> </a> </div></div> <a class=lightbox href=#_ id=1b142279-5047-43c4-8659-012a281a897e title="Click to close"> <img alt="Click to close" src=/images/eevee_page/related-author-card.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#509db3d3-7ced-4076-97c7-0d87153b5e00 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/search.png> </a> </div></div> <a class=lightbox href=#_ id=509db3d3-7ced-4076-97c7-0d87153b5e00 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/search.png> </a> </div> <div class="eevee-card-container mdl-grid"> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#6e9ea9e0-755a-4c4b-9d2e-51c3f538d0d5 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/series.png> </a> </div></div> <a class=lightbox href=#_ id=6e9ea9e0-755a-4c4b-9d2e-51c3f538d0d5 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/series.png> </a> <div class="eevee-cell eevee-cell--3-col mdl-card"> <div class=mdl-card__media> <a href=#0de9dba2-a3de-4e66-8c61-0da647695741 title="Click to view large image"> <img alt="Click to view large image" src=/images/eevee_page/small-footer.png> </a> </div></div> <a class=lightbox href=#_ id=0de9dba2-a3de-4e66-8c61-0da647695741 title="Click to close"> <img alt="Click to close" src=/images/eevee_page/small-footer.png> </a> </div> <div class=section id=installation> <h2>Installation</h2> <p>Download the latest Eevee release <a class="reference external" href=https://github.com/kura/eevee/releases>from GitHub</a> and extract it in to your Pelican website directory and rename the directory to <tt class="docutils literal">eevee</tt>.</p> <p>Install the theme using <tt class="docutils literal"><span class=pre>pelican-themes</span></tt>.</p> <div class=highlight><pre><span></span>pelican-themes -i eevee
-</pre></div> <p>All you need to do after that is set the <tt class="docutils literal"><span class=caps>THEME</span></tt> variable to <tt class="docutils literal">eevee</tt> in your <tt class="docutils literal">pelicanconf.py</tt>.</p> <div class=highlight><pre><span></span><span class=n>THEME</span> <span class=o>=</span> <span class=s2>"eevee"</span>
-</pre></div> </div> <div class=section id=customising-eevee> <h2>Customising Eevee</h2> <div class=section id=primary-and-accent-colours> <span id=colours></span><h3>Primary and accent colours</h3> <p>The primary and accent colours are configured using the <tt class="docutils literal">THEME_PRIMARY</tt> and <tt class="docutils literal">THEME_ACCENT</tt> options respectively.</p> <p>You can find available primary and accent colours on <a class="reference external" href=https://getmdl.io/customize/index.html>Material Design Lite</a>. This website also shows you accents that won’t work well with the primary colour you choose.</p> <div class=highlight><pre><span></span><span class=n>THEME_PRIMARY</span> <span class=o>=</span> <span class=s2>"blue"</span>
-</pre></div> <div class=highlight><pre><span></span><span class=n>THEME_ACCENT</span> <span class=o>=</span> <span class=s2>"amber"</span>
-</pre></div> <p>By default the colour scheme is <span class=blue-grey>blue grey</span> for the primary and <span class=pink>pink</span> for the accent.</p> <div class=highlight><pre><span></span><span class=n>THEME_PRIMARY</span> <span class=o>=</span> <span class=s2>"blue_grey"</span>
-<span class=n>THEME_ACCENT</span> <span class=o>=</span> <span class=s2>"pink"</span>
-</pre></div> </div> <div class=section id=custom-css> <h3>Custom <span class=caps>CSS</span></h3> <p><a class="reference external" href=https://github.com/kura/eevee/tree/master/static/css>Inside the Eevee static folder is a custom.css file</a>. Anything added to this file will overwrite any of the core <span class=caps>CSS</span>. You can use this file to modify any part of the interface you wish, including changing the Pygments <span class=caps>CSS</span>.</p> <p>This allows you to tinker with the design as much as you like without breaking the core theme.</p> </div> <div class=section id=header-and-footer-options> <h3>Header and footer options</h3> <div class=section id=header> <h4>Header</h4> <div class="lightbox-block align-center"><a href=#1f3b45f6-a434-436c-a1cd-ca5eb0fccf54 title="Header menu (click to view large image)"><img alt="Header menu (click to view large image)" class=align-center src=/images/eevee-menu.png></a><a class=lightbox href=#_ id=1f3b45f6-a434-436c-a1cd-ca5eb0fccf54 title="Click to close"><img alt="Click to close" src=/images/eevee-menu.png></a><p class=align-center>Header menu (click to view large image)</p></div><div class=lightbox-divider></div><p>To configure links in the header, use the <tt class="docutils literal"><span class=caps>MENUITEMS</span></tt> option.</p> <div class=highlight><pre><span></span><span class=n>MENUITEMS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=p>(</span><span class=s2>"Contact"</span><span class=p>,</span> <span class=s2>"/contact/"</span><span class=p>),</span>
-    <span class=p>(</span><span class=s2>"Eevee"</span><span class=p>,</span> <span class=s2>"/eevee/"</span><span class=p>),</span>
-    <span class=p>(</span><span class=s2>"Software"</span><span class=p>,</span> <span class=s2>"/software/"</span><span class=p>),</span>
-<span class=p>]</span>
-</pre></div> <p>Using <tt class="docutils literal">DISPLAY_PAGES_ON_MENU</tt> will automatically add pages to the menu.</p> <div class=highlight><pre><span></span><span class=n>DISPLAY_PAGES_ON_MENU</span> <span class=o>=</span> <span class=kc>True</span>
-</pre></div> </div> <div class=section id=footer> <h4>Footer</h4> <div class="lightbox-block align-center"><a href=#876ca9af-5325-4bb9-b7dc-14e2661efd2a title="Footer menu (click to view large image)"><img alt="Footer menu (click to view large image)" class=align-center src=/images/eevee-footer-menu-thumb.png></a><a class=lightbox href=#_ id=876ca9af-5325-4bb9-b7dc-14e2661efd2a title="Click to close"><img alt="Click to close" src=/images/eevee-footer-menu.png></a><p class=align-center>Footer menu (click to view large image)</p></div><div class=lightbox-divider></div><p>You can display links in the footer, by default this option is enabled but can be turned off using the <tt class="docutils literal">MEGA_FOOTER</tt> option. See the <a class="reference internal" href=#screenshots>Screenshots</a> section for an example of the mega footer.</p> <div class=highlight><pre><span></span><span class=n>MEGA_FOOTER</span> <span class=o>=</span> <span class=kc>True</span>  <span class=c1># default</span>
-<span class=n>MEGA_FOOTER</span> <span class=o>=</span> <span class=kc>False</span>  <span class=c1># disable the footer</span>
-</pre></div> <p>Up to four columns can be displayed in the footer.</p> <p>The first column displays the links from <tt class="docutils literal"><span class=caps>MENUITEMS</span></tt>.</p> <div class=highlight><pre><span></span><span class=n>MENUITEMS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=p>(</span><span class=s2>"Contact"</span><span class=p>,</span> <span class=s2>"/contact/"</span><span class=p>),</span>
-    <span class=p>(</span><span class=s2>"Eevee"</span><span class=p>,</span> <span class=s2>"/eevee/"</span><span class=p>),</span>
-    <span class=p>(</span><span class=s2>"Software"</span><span class=p>,</span> <span class=s2>"/software/"</span><span class=p>),</span>
-<span class=p>]</span>
-</pre></div> <p>Using <tt class="docutils literal">DISPLAY_PAGES_ON_MENU</tt> will automatically add pages to the menu.</p> <div class=highlight><pre><span></span><span class=n>DISPLAY_PAGES_ON_MENU</span> <span class=o>=</span> <span class=kc>True</span>
-</pre></div> <p>The second column displays categories, this is enabled using <tt class="docutils literal">DISPLAY_CATEGORIES_ON_MENU</tt>.</p> <div class=highlight><pre><span></span><span class=n>DISPLAY_CATEGORIES_ON_MENU</span> <span class=o>=</span> <span class=kc>True</span>
-</pre></div> <p>The third column displays social links from <tt class="docutils literal"><span class=caps>SOCIAL</span></tt>.</p> <div class=highlight><pre><span></span><span class=n>SOCIAL</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=p>(</span><span class=s2>"Github"</span><span class=p>,</span> <span class=s2>"https://github.com/kura"</span><span class=p>),</span>
-    <span class=p>(</span><span class=s2>"Twitter"</span><span class=p>,</span> <span class=s2>"https://twitter.com/kuramanga"</span><span class=p>),</span>
-<span class=p>]</span>
-</pre></div> <p>And finally, the fourth column displays links from <tt class="docutils literal"><span class=caps>LINKS</span></tt>.</p> <div class=highlight><pre><span></span><span class=n>LINKS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=p>(</span><span class=s2>"Eevee"</span><span class=p>,</span> <span class=s2>"https://kura.gg/eevee/"</span><span class=p>),</span>
-    <span class=p>(</span><span class=s2>"Blackhole"</span><span class=p>,</span> <span class=s2>"https://kura.gg/blackhole/"</span><span class=p>),</span>
-<span class=p>]</span>
-</pre></div> <p>The footer will scale based on options you configure, so if you set <tt class="docutils literal"><span class=caps>MENUITEMS</span></tt> and <tt class="docutils literal"><span class=caps>LINKS</span></tt> but not <tt class="docutils literal"><span class=caps>SOCIAL</span></tt>, there will be no gap.</p> </div> </div> <div class=section id=setting-your-own-copyright-notice-and-disclaimer> <h3>Setting your own copyright notice and disclaimer</h3> <div class="lightbox-block align-center"><a href=#8fefd8ef-6a97-4d47-87b8-d1fa2d33325b title="Copyright and disclaimer (click to view large image)"><img alt="Copyright and disclaimer (click to view large image)" class=align-center src=/images/eevee-copyright-disclaimer-thumb.png></a><a class=lightbox href=#_ id=8fefd8ef-6a97-4d47-87b8-d1fa2d33325b title="Click to close"><img alt="Click to close" src=/images/eevee-copyright-disclaimer.png></a><p class=align-center>Copyright and disclaimer (click to view large image)</p></div><div class=lightbox-divider></div><p>You can change the disclaimer and copyright notice displayed in the footer with the following variables.</p> <div class=highlight><pre><span></span><span class=n>DISCLAIMER</span> <span class=o>=</span> <span class=s2>"Powered by love &amp;amp; rainbow sparkles."</span>
-<span class=n>COPYRIGHT</span> <span class=o>=</span> <span class=s2>"""Source code and content are released under the &lt;a href="/license/"&gt;MIT license&lt;/a&gt;."""</span>
-</pre></div> <p>You can see either or both to <tt class="docutils literal">False</tt> to disable these notices being displayed.</p> <div class=highlight><pre><span></span><span class=n>DISCLAIMER</span> <span class=o>=</span> <span class=kc>False</span>
-<span class=n>COPYRIGHT</span> <span class=o>=</span> <span class=kc>False</span>
-</pre></div> <p>The default values for these are as below, although you are under no obligation to keep either of them.</p> <div class=highlight><pre><span></span><span class=n>DISCLAIMER</span> <span class=o>=</span> <span class=s2>"Powered by love &amp;amp; rainbow sparkles."</span>
-<span class=n>COPYRIGHT</span> <span class=o>=</span> <span class=s2>"""&lt;a href="https://kura.gg/eevee/" title="Eevee"&gt;Eevee&lt;/a&gt; theme by &lt;a href="https://kura.gg/" title="kura.gg"&gt;kura.gg&lt;/a&gt;"""</span>
-</pre></div> </div> <div class=section id=table-of-contents-for-articles-and-pages> <h3>Table of contents for articles and pages</h3> <div class="lightbox-block align-center"><a href=#427bb29f-6367-4d81-9d3b-1d891173d54c title="Table of contents (click to view large image)"><img alt="Table of contents (click to view large image)" class=align-center src=/images/eevee-toc.png></a><a class=lightbox href=#_ id=427bb29f-6367-4d81-9d3b-1d891173d54c title="Click to close"><img alt="Click to close" src=/images/eevee-toc.png></a><p class=align-center>Table of contents (click to view large image)</p></div><div class=lightbox-divider></div><p>A table of contents section is added to an article or page if it exists as a variable called <tt class="docutils literal">toc</tt> in the article or page object.</p> <p>The <a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>extract_toc</a> adds a <tt class="docutils literal">toc</tt> option for <span class=caps>RST</span> and Markdown content.</p> <p>The extract_toc plugin adds an ugly header element by default, I have a modified version <a class="reference external" href=https://github.com/kura/kura.gg/tree/master/plugins/extract_toc>on GitHub</a> that returns nicer <span class=caps>HTML</span>.</p> </div> <div class=section id=author-card> <h3>Author card</h3> <div class="lightbox-block align-center"><a href=#28a7aeaa-561b-4581-a44d-6923bbd08b0a title="Author card (click to view large image)"><img alt="Author card (click to view large image)" class=align-center src=/images/eevee-author-card.png></a><a class=lightbox href=#_ id=28a7aeaa-561b-4581-a44d-6923bbd08b0a title="Click to close"><img alt="Click to close" src=/images/eevee-author-card.png></a><p class=align-center>Author card (click to view large image)</p></div><div class=lightbox-divider></div><p>The author card is disabled by default, below are instructions on enabling it and customising it.</p> <div class=section id=enabling-the-author-card> <h4>Enabling the author card</h4> <p>Enabling the author card is as simple as setting an option in <tt class="docutils literal">pelicanconf.py</tt>.</p> <div class=highlight><pre><span></span><span class=n>USE_AUTHOR_CARD</span> <span class=o>=</span> <span class=kc>True</span>
-</pre></div> <p>You can disable it by setting to <tt class="docutils literal">False</tt> or removing the setting entirely.</p> <div class=highlight><pre><span></span><span class=n>USE_AUTHOR_CARD</span> <span class=o>=</span> <span class=kc>False</span>
-</pre></div> </div> <div class=section id=using-your-own-avatar> <h4>Using your own avatar</h4> <p>A default avatar placeholder is provided with the theme, you can easily use your own avatar by setting an option in <tt class="docutils literal">pelicanconf.py</tt>.</p> <div class=highlight><pre><span></span><span class=n>AUTHOR_CARD_AVATAR</span> <span class=o>=</span> <span class=s2>"/images/kura.png"</span>
-</pre></div> <p>The maximum size that you should use are 250x250 pixels.</p> </div> <div class=section id=setting-a-description> <h4>Setting a description</h4> <p>Like all the other options above, setting a description for your author card requires a single config option.</p> <div class=highlight><pre><span></span><span class=n>AUTHOR_CARD_DESCRIPTION</span> <span class=o>=</span> <span class=s2>"My name is Kura and I break things."</span>
-</pre></div> <p>You can add <span class=caps>HTML</span> and other various things to this description.</p> </div> <div class=section id=social-buttons> <h4>Social buttons</h4> <p>By default, the author card section will display links from your <tt class="docutils literal"><span class=caps>SOCIAL</span></tt> list.</p> <p>This isn’t always what you want though.</p> <p>The <tt class="docutils literal"><span class=caps>SOCIAL</span></tt> list is used in other parts of the theme and the format may not look good added to your author card.</p> <p>To make things more flexible, the author card section can have it’s own social links.</p> <div class=highlight><pre><span></span><span class=n>AUTHOR_CARD_SOCIAL</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=p>(</span><span class=s2>"""&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt;"""</span><span class=p>,</span> <span class=s2>"https://github.com/kura"</span><span class=p>),</span>
-    <span class=p>(</span><span class=s2>"""&lt;i class="fa fa-twitter" aria-hidden="true"&gt;&lt;/i&gt;"""</span><span class=p>,</span> <span class=s2>"https://twitter.com/kuramanga"</span><span class=p>),</span>
-<span class=p>]</span>
-</pre></div> <p>Some default styling rules are included with Eevee, they are as follow:</p> <table class=docutils> <thead> <tr><th class=head>Site</th> <th class=head>Link colour</th> <th class=head>Hover colour</th> </tr> </thead> <tbody> <tr><td>Twitter</td> <td><span class=ac-twitter>#<span class=caps>039BE5</span></span></td> <td><span class=ac-twitter-hover>#<span class=caps>0277BD</span></span></td> </tr> <tr><td>Facebook</td> <td><span class=ac-facebook>#1565C0</span></td> <td><span class=ac-facebook-hover>#<span class=caps>0D47A1</span></span></td> </tr> <tr><td>Google+</td> <td><span class=ac-google-plus>#F44336</span></td> <td><span class=ac-google-plus-hover>#<span class=caps>D32F2F</span></span></td> </tr> <tr><td>GitHub</td> <td><span class=ac-github>#212121</span></td> <td><span class=ac-github-hover>#616161</span></td> </tr> <tr><td>Instagram</td> <td><span class=ac-instagram>#<span class=caps>8BC34A</span></span></td> <td><span class=ac-instagram-hover>#689F38</span></td> </tr> </tbody> </table> <p>You can add your own new styles or overwrite an existing style using the <tt class="docutils literal">href</tt> selector.</p> <p>For example, adding a selector style for <tt class="docutils literal"><span class=pre>https://kura.gg</span></tt> would be done like the example below.</p> <div class=highlight><pre><span></span><span class=nt>nav</span><span class=p>.</span><span class=nc>eevee-ac-author__social</span><span class=w> </span><span class=nt>a</span><span class=o>[</span><span class=nt>href</span><span class=o>^=</span><span class=s2>"https://kura.gg"</span><span class=o>]</span><span class=w> </span><span class=p>{</span><span class=w></span>
-<span class=w>  </span><span class=k>color</span><span class=p>:</span><span class=w> </span><span class=mh>#039BE5</span><span class=w> </span><span class=cp>!important</span><span class=p>;</span><span class=w></span>
-<span class=p>}</span><span class=w></span>
+//-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="alternate" href=".." hreflang="en" />
+<link rel="dns-prefetch" href=".." />
+  <link rel="stylesheet" href="../theme/webassets-external/63377f06b1648775b11ff8e169b4a710_material.yellow-amber.min.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/c335929e0083dac14c3a8f107c05dde3_font-awesome.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/14c05c94e27da637bc780ad514251b18_material-icons.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/a28e8d0a2ff230dae7c257a9f828e3b1_pygments.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/0eddd53a34a33f68e0c593881131a436_eevee.css" />
+  <link rel="stylesheet" href="../theme/webassets-external/2f21b66ec2ab0b874a1f30d00028e286_custom.css" />
+  <script async src="../theme/webassets-external/a7fbc4b6cecaeb63ed7b7d6e2f75e649_material.js"></script>
+  <link href="../feeds/rss.xml" type="application/rss+xml"
+        rel="alternate" title="kura.gg" />
+  <link href="../feeds/atom.xml" type="application/atom+xml"
+        rel="alternate" title="kura.gg" />
+  <meta property="og:site_name" content="kura.gg" />
+  <meta property="og:type" content="article" />
+    <meta property="og:title"
+          content="Eevee — A Material Design theme for Pelican" />
+    <meta property="og:url"
+          content="../eevee/" />
+    <meta property="og:description"
+          content="Introduction Eevee is a theme for Pelican, based on Google’s Material Design specification. It is named after the Pokémon Eevee because — like the Pokémon — it can evolve in to many ‘elemental types.’ Features Built around Google’s Material Design specification on top of Goole’s Material Design Lite library, configurable colour scheme (see Primary and accent colours), responsive layout with mobile friendly header and navigation scheme, inclusion of a custom.css file allowing easy overwriting of the theme without breaking the base CSS (see Custom CSS), DNS prefetch (see DNS prefetch), comments via Disqus or Muut (see Disqus or Muut for comments), share buttons for Twitter, Facebook, email and comments (see Sharing options), Twitter and Open Graph meta tags (see Sharing options), CSS and JS minifying via webassets, cssmin and jsmin (see Plugin: Minimise CSS and JavaScript), analytics from Google Analytics, Piwik, GoSquared and Open Web Analytics (see Google …" />
+    <meta property="og:image"
+          content="../eevee/index.png" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+    <meta property="twitter:title"
+          content="Eevee — A Material Design theme for Pelican" />
+    <meta property="twitter:url"
+          content="../eevee/" />
+    <meta property="twitter:description"
+          content="Introduction Eevee is a theme for Pelican, based on Google’s Material Design specification. It is named after the Pokémon Eevee because — like the Pokémon — it can evolve in to many ‘elemental types.’ Features Built around Google’s Material Design specification on top of Goole’s Material Design Lite library, configurable colour scheme (see Primary and accent colours), responsive layout with mobile friendly header and navigation scheme, inclusion of a custom.css file allowing easy overwriting of the theme without breaking the base CSS (see Custom CSS), DNS prefetch (see DNS prefetch), comments via Disqus or Muut (see Disqus or Muut for comments), share buttons for Twitter, Facebook, email and comments (see Sharing options), Twitter and Open Graph meta tags (see Sharing options), CSS and JS minifying via webassets, cssmin and jsmin (see Plugin: Minimise CSS and JavaScript), analytics from Google Analytics, Piwik, GoSquared and Open Web Analytics (see Google …" />
+    <meta property="twitter:image"
+          content="../eevee/index.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:label1" content="Written by" />
+    <meta property="twitter:data1" content="Kura" />
+  <meta property="twitter:image:width" content="1920" />
+  <meta property="twitter:image:height" content="1080" />
+  <link rel="icon" href="/favicon.png" type="image/png"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <title>Eevee — A Material Design theme for Pelican</title>
+</head>
+<body>
+  <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+    <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+            itemscope itemtype="http://schema.org/WPHeader">
+      <div class="mdl-layout__header-row">
+        <div aria-expanded="false" role="button" tabindex="0"
+             class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+          <i class="material-icons">&#xE5D2;</i>
+        </div>
+        <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+          <h2 id="top">
+            <a href=".." rel="bookmark" title="kura.gg">
+              kura.gg
+            </a>
+          </h2>
+        </span>
+        <div class="mdl-layout-spacer" role="presentation"></div>
+        <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+             itemscope itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </header>
+    <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+         aria-hidden="true">
+      <span class="mdl-layout-title">
+        <h2 class="eevee-mobile-logo mdl-color-text--accent">
+          kura.gg
+        </h2>
+      </span>
+      <div class="mdl-navigation mdl-color--white">
+        <nav class="eevee-nav mdl-navigation" itemscope
+             itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+          <a class="mdl-color-text--accent mdl-navigation__link"
+             href=".." itemprop="url" rel="bookmark">
+            <i class="material-icons" aria-hidden="true">
+              &#xE88A;
+            </i> Home
+          </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </div>
+    <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+    </div>
+    <main class="eevee-main mdl-layout__content">
+      <div class="eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+             aria-label="Main content">
+  <div class="eevee-share">
+    <ul class="social-share mdl-navigation">
+      <li class="social-share__link social-share__link--twitter">
+        <a href="https://twitter.com/intent/tweet?text=Eevee%20%E2%80%94%20A%20Material%20Design%20theme%20for%20Pelican&amp;url=../eevee/"
+           title="Share 'Eevee — A Material Design theme for Pelican' on Twitter"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
+          <i class="fa" aria-hidden="true">&#xF099;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=../eevee/"
+           title="Share 'Eevee — A Material Design theme for Pelican' on Facebook"
+           onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
+          <i class="fa" aria-hidden="true">&#xF09A;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--email">
+        <a href="mailto:?subject=Eevee%20%E2%80%94%20A%20Material%20Design%20theme%20for%20Pelican&amp;body=I%20thought%20you%20might%20like%20'Eevee%20%E2%80%94%20A%20Material%20Design%20theme%20for%20Pelican'%20--%20../eevee/"
+           title="Share 'Eevee — A Material Design theme for Pelican' via email">
+          <i class="material-icons" aria-hidden="true">
+            &#xE0E1;
+          </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <article itemscope itemtype="http://schema.org/WebPage">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl" />
+<meta itemprop="accessibilityControl" content="fullMouseControl" />
+<meta itemprop="accessibilityControl" content="bookmarks" />
+<meta itemprop="accessibilityControl" content="captions" />
+<meta itemprop="accessibilityControl" content="alternativeText" />
+<meta itemprop="accessibilityControl" content="index" />
+<meta itemprop="accessibilityControl" content="readingOrder" />
+<meta itemprop="accessibilityControl" content="structuralNavigation" />
+<meta itemprop="accessibilityControl" content="tableOfContents" />
+<meta itemprop="accessibilityHazard" content="noFlashingHazard" />
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard" />
+<meta itemprop="accessibilityHazard" content="noSoundHazard" />
+<meta itemprop="accessibilityAPI" content="ARIA" />
+  <div itemprop="author" itemscope
+       itemtype="https://schema.org/Person" role="presentation" />
+    <a href="../authors/kura/" class="hidden"
+       itemprop="url" role="presentation">
+      <span class="hidden" itemprop="name" role="presentation">
+        Kura
+      </span>
+    </a>
+  </div>
+    <meta itemprop="keywords" content="pages" />
 
-<span class=nt>nav</span><span class=p>.</span><span class=nc>eevee-ac-author__social</span><span class=w> </span><span class=nt>a</span><span class=o>[</span><span class=nt>href</span><span class=o>^=</span><span class=s2>"https://kura.gg"</span><span class=o>]</span><span class=p>:</span><span class=nd>hover</span><span class=w> </span><span class=p>{</span><span class=w></span>
-<span class=w>  </span><span class=k>color</span><span class=p>:</span><span class=w> </span><span class=mh>#0277BD</span><span class=w> </span><span class=cp>!important</span><span class=p>;</span><span class=w></span>
-<span class=p>}</span><span class=w></span>
-</pre></div> </div> <div class=section id=dynamically-disabling-author-card-on-an-article-or-page> <h4>Dynamically disabling author card on an article or page</h4> <p>As of Eevee version 0.0.12, it is now possible to disable the author card feature on a per-article or per-page basis using metadata.</p> <p>Using reStructuredText:</p> <div class=highlight><pre><span></span><span class=gh>Example title</span>
-<span class=gh>#############</span>
-<span class=nc>:slug:</span> example
-<span class=nc>:author_card:</span> False
-</pre></div> <p>Using Markdown:</p> <div class=highlight><pre><span></span>Title: Example title
+    <div class="eevee-page-spacer" role="presentation"></div>
+    <div class="eevee-page">
+      <h1 itemprop="name">
+        <a href="../eevee/" rel="bookmark"
+           title="Permalink to 'Eevee — A Material Design theme for Pelican'" itemprop="url">
+          Eevee &#8212; A Material Design theme for&nbsp;Pelican
+        </a>
+      </h1>
+  <section class="eevee-toc">
+    <h2 id="toc">
+        Contents
+    </h2>
+    <nav class="eevee-toc-ribbon">
+      <div class="toc" id="">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="toc-entry-1">Introduction</a></li>
+<li><a class="reference internal" href="#features" id="toc-entry-2">Features</a></li>
+<li><a class="reference internal" href="#plugins-supported-out-of-the-box" id="toc-entry-3">Plugins supported out-of-the-box</a></li>
+<li><a class="reference internal" href="#typography" id="toc-entry-4">Typography</a></li>
+<li><a class="reference internal" href="#screenshots" id="toc-entry-5">Screenshots</a></li>
+<li><a class="reference internal" href="#installation" id="toc-entry-6">Installation</a></li>
+<li><a class="reference internal" href="#customising-eevee" id="toc-entry-7">Customising Eevee</a><ul>
+<li><a class="reference internal" href="#primary-and-accent-colours" id="toc-entry-8">Primary and accent colours</a></li>
+<li><a class="reference internal" href="#custom-css" id="toc-entry-9">Custom <span class="caps">CSS</span></a></li>
+<li><a class="reference internal" href="#header-and-footer-options" id="toc-entry-10">Header and footer options</a><ul>
+<li><a class="reference internal" href="#header" id="toc-entry-11">Header</a></li>
+<li><a class="reference internal" href="#footer" id="toc-entry-12">Footer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-your-own-copyright-notice-and-disclaimer" id="toc-entry-13">Setting your own copyright notice and disclaimer</a></li>
+<li><a class="reference internal" href="#table-of-contents-for-articles-and-pages" id="toc-entry-14">Table of contents for articles and pages</a></li>
+<li><a class="reference internal" href="#author-card" id="toc-entry-15">Author card</a><ul>
+<li><a class="reference internal" href="#enabling-the-author-card" id="toc-entry-16">Enabling the author card</a></li>
+<li><a class="reference internal" href="#using-your-own-avatar" id="toc-entry-17">Using your own avatar</a></li>
+<li><a class="reference internal" href="#setting-a-description" id="toc-entry-18">Setting a description</a></li>
+<li><a class="reference internal" href="#social-buttons" id="toc-entry-19">Social buttons</a></li>
+<li><a class="reference internal" href="#dynamically-disabling-author-card-on-an-article-or-page" id="toc-entry-20">Dynamically disabling author card on an article or page</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#disqus-or-muut-for-comments" id="toc-entry-21">Disqus or Muut for comments</a><ul>
+<li><a class="reference internal" href="#disqus" id="toc-entry-22">Disqus</a></li>
+<li><a class="reference internal" href="#muut" id="toc-entry-23">Muut</a></li>
+<li><a class="reference internal" href="#comments-on-pages" id="toc-entry-24">Comments on pages</a></li>
+<li><a class="reference internal" href="#dynamically-disabling-comments-on-an-article-or-page" id="toc-entry-25">Dynamically disabling comments on an article or page</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sharing-options" id="toc-entry-26">Sharing options</a><ul>
+<li><a class="reference internal" href="#share-buttons" id="toc-entry-27">Share buttons</a></li>
+<li><a class="reference internal" href="#options" id="toc-entry-28">Options</a></li>
+<li><a class="reference internal" href="#adding-an-image-to-open-graph-and-twitter-meta-tags" id="toc-entry-29">Adding an image to Open Graph and Twitter meta tags</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archives" id="toc-entry-30">Archives</a></li>
+<li><a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared" id="toc-entry-31">Google Analytics, Piwik, Open Web Analytics and GoSquared</a><ul>
+<li><a class="reference internal" href="#google-analytics" id="toc-entry-32">Google Analytics</a></li>
+<li><a class="reference internal" href="#piwik" id="toc-entry-33">Piwik</a></li>
+<li><a class="reference internal" href="#open-web-analytics" id="toc-entry-34">Open Web Analytics</a></li>
+<li><a class="reference internal" href="#gosquared" id="toc-entry-35">GoSquared</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#feeds" id="toc-entry-36">Feeds</a><ul>
+<li><a class="reference internal" href="#feed-menu-item" id="toc-entry-37">Feed menu item</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#category-and-tag-pages" id="toc-entry-38">Category and tag pages</a></li>
+<li><a class="reference internal" href="#plugin-search-functionality" id="toc-entry-39">Plugin: Search functionality</a></li>
+<li><a class="reference internal" href="#plugin-permalinks-in-headlines" id="toc-entry-40">Plugin: Permalinks in headlines</a></li>
+<li><a class="reference internal" href="#plugin-related-articles" id="toc-entry-41">Plugin: Related articles</a></li>
+<li><a class="reference internal" href="#plugin-articles-in-a-series" id="toc-entry-42">Plugin: Articles in a series</a></li>
+<li><a class="reference internal" href="#plugin-minimise-css-and-javascript" id="toc-entry-43">Plugin: Minimise <span class="caps">CSS</span> and JavaScript</a></li>
+<li><a class="reference internal" href="#advanced-pagination" id="toc-entry-44">Advanced pagination</a></li>
+<li><a class="reference internal" href="#dns-prefetch" id="toc-entry-45"><span class="caps">DNS</span> prefetch</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#all-configuration-settings" id="toc-entry-46">All configuration settings</a></li>
+<li><a class="reference internal" href="#additional-tweaks-and-modifications" id="toc-entry-47">Additional tweaks and modifications</a></li>
+<li><a class="reference internal" href="#changelog" id="toc-entry-48">Changelog</a><ul>
+<li><a class="reference internal" href="#section-1" id="toc-entry-49">0.0.14</a></li>
+<li><a class="reference internal" href="#section-2" id="toc-entry-50">0.0.13</a></li>
+<li><a class="reference internal" href="#section-3" id="toc-entry-51">0.0.12</a></li>
+<li><a class="reference internal" href="#section-4" id="toc-entry-52">0.0.11</a></li>
+<li><a class="reference internal" href="#section-5" id="toc-entry-53">0.0.10</a></li>
+<li><a class="reference internal" href="#section-6" id="toc-entry-54">0.0.9</a></li>
+<li><a class="reference internal" href="#section-7" id="toc-entry-55">0.0.8</a></li>
+<li><a class="reference internal" href="#section-8" id="toc-entry-56">0.0.7</a></li>
+<li><a class="reference internal" href="#section-9" id="toc-entry-57">0.0.6</a></li>
+<li><a class="reference internal" href="#section-10" id="toc-entry-58">0.0.5</a></li>
+<li><a class="reference internal" href="#section-11" id="toc-entry-59">0.0.4</a></li>
+<li><a class="reference internal" href="#section-12" id="toc-entry-60">0.0.3</a></li>
+<li><a class="reference internal" href="#section-13" id="toc-entry-61">0.0.2</a></li>
+<li><a class="reference internal" href="#section-14" id="toc-entry-62">0.0.1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#license" id="toc-entry-63">License</a></li>
+</ul>
+</div>
+    </nav>
+  </section>
+      <section itemprop="mainContentOfPage" class="page-content">
+        <img alt="Eeveelutions" class="align-center" src="/images/eeveelutions.png"/>
+
+<div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>Eevee is a theme for <a class="reference external" href="https://getpelican.com">Pelican</a>, based on Google’s
+<a class="reference external" href="https://material.google.com/">Material Design</a> specification. It is named
+after the Pokémon <a class="reference external" href="https://www.pokemon.com/uk/pokedex/eevee">Eevee</a> because
+— like the Pokémon — it can evolve in to many ‘elemental types.’</p>
+</div>
+<div class="section" id="features">
+<h2>Features</h2>
+<ul class="simple">
+<li>Built around <a class="reference external" href="https://material.google.com/">Google’s Material Design</a>
+specification on top of Goole’s <a class="reference external" href="https://github.com/google/material-design-lite">Material Design Lite library</a>,</li>
+<li>configurable colour scheme (see <a class="reference internal" href="#primary-and-accent-colours">Primary and accent colours</a>),</li>
+<li>responsive layout with mobile friendly header and navigation scheme,</li>
+<li>inclusion of a <tt class="docutils literal">custom.css</tt> file allowing easy overwriting of the theme
+without breaking the base <span class="caps">CSS</span> (see <a class="reference internal" href="#custom-css">Custom <span class="caps">CSS</span></a>),</li>
+<li><a class="reference internal" href="#dns-prefetch"><span class="caps">DNS</span> prefetch</a> (see <a class="reference internal" href="#dns-prefetch"><span class="caps">DNS</span> prefetch</a>),</li>
+<li>comments via <a class="reference external" href="https://disqus.com/">Disqus</a> or <a class="reference external" href="https://muut.com/">Muut</a> (see <a class="reference internal" href="#disqus-or-muut-for-comments">Disqus or Muut for comments</a>),</li>
+<li>share buttons for Twitter, Facebook, email and comments (see
+<a class="reference internal" href="#sharing-options">Sharing options</a>),</li>
+<li>Twitter and Open Graph meta tags (see <a class="reference internal" href="#sharing-options">Sharing options</a>),</li>
+<li><span class="caps">CSS</span> and <span class="caps">JS</span> minifying via <a class="reference external" href="https://webassets.readthedocs.io/en/latest/">webassets</a>, cssmin and jsmin (see
+<a class="reference internal" href="#plugin-minimise-css-and-javascript">Plugin: Minimise <span class="caps">CSS</span> and JavaScript</a>),</li>
+<li>analytics from <a class="reference external" href="https://analytics.google.com">Google Analytics</a>,
+<a class="reference external" href="https://piwik.org/">Piwik</a>, <a class="reference external" href="https://www.gosquared.com/">GoSquared</a>
+and <a class="reference external" href="https://www.openwebanalytics.com/">Open Web Analytics</a> (see
+<a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared">Google Analytics, Piwik, Open Web Analytics and GoSquared</a>),</li>
+<li>easy customisation, including menus and footer (see <a class="reference internal" href="#header-and-footer-options">Header and footer
+options</a>),</li>
+<li>custom 404 error page,</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a>,</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/WAI-ARIA">Aria</a> accessibility,</li>
+<li>includes <a class="reference external" href="https://design.google.com/icons/">Material Icons</a>, <a class="reference external" href="https://fontawesome.com/">Font Awesome</a> and Google’s <a class="reference external" href="https://typecast.com/preview/google/Roboto">Roboto font</a> and,</li>
+<li>seamless feature upgrade with Material Design Lite’s <a class="reference external" href="https://getmdl.io/started/index.html#download">Javascript library</a>.</li>
+</ul>
+</div>
+<div class="section" id="plugins-supported-out-of-the-box">
+<h2>Plugins supported out-of-the-box</h2>
+<p>Eevee ships with all the <span class="caps">HTML</span>, <span class="caps">CSS</span> and JavaScript required for the following
+plugins but does not need any of them to function correctly. If a plugin is
+supported but not used, the <span class="caps">HTML</span>, <span class="caps">CSS</span> and JavaScript simply won’t be included.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/assets">assets</a> (see
+<a class="reference internal" href="#plugin-minimise-css-and-javascript">Plugin: Minimise <span class="caps">CSS</span> and JavaScript</a> section for more information),</li>
+<li><a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/extract_toc">extract_toc</a> (
+see <a class="reference internal" href="#table-of-contents-for-articles-and-pages">Table of contents for articles and pages</a> section for more information),</li>
+<li><a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/headerid">headerid</a> (see
+<a class="reference internal" href="#plugin-permalinks-in-headlines">Plugin: Permalinks in headlines</a> section for more information),</li>
+<li><a class="reference external" href="https://github.com/kura/lightbox">lightbox</a>,</li>
+<li><a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/neighbors">neighbors</a>,</li>
+<li><a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/related_posts">related_posts</a>
+(see <a class="reference internal" href="#plugin-related-articles">Plugin: Related articles</a> section for more information),</li>
+<li><a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/series">series</a> (see
+<a class="reference internal" href="#plugin-articles-in-a-series">Plugin: Articles in a series</a> section for more information) and,</li>
+<li><a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search">tipue_search</a> (
+see <a class="reference internal" href="#plugin-search-functionality">Plugin: Search functionality</a> section for more information.)</li>
+</ul>
+</div>
+<div class="section" id="typography">
+<h2>Typography</h2>
+<img alt="Eevee Typography" class="align-center" src="/images/eevee-typography.png"/>
+<p>Google’s <a class="reference external" href="https://material.google.com/style/typography.html">Roboto</a> font is
+used for typography, <a class="reference external" href="https://design.google.com/icons/">Material Icons</a> and
+<a class="reference external" href="https://fontawesome.com/icons/">Font Awesome</a> are included too.</p>
+</div>
+<div class="section" id="screenshots">
+<h2>Screenshots</h2>
+<div class="eevee-card-container mdl-grid">
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#2345edb9-2dbc-46b6-a604-0b9de7176cf3" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/archives.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="2345edb9-2dbc-46b6-a604-0b9de7176cf3" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/archives.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#075bb1fe-8e0a-4c6e-8d21-ea1af0ff2da4" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/article-header.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="075bb1fe-8e0a-4c6e-8d21-ea1af0ff2da4" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/article-header.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#c700a384-274e-444a-a9dd-f9a852769f7a" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/disqus.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="c700a384-274e-444a-a9dd-f9a852769f7a" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/disqus.png"/>
+</a>
+</div>
+<div class="eevee-card-container mdl-grid">
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#ab969d64-ca31-4571-8711-86bf1f1cd521" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/eevee-mega-footer.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="ab969d64-ca31-4571-8711-86bf1f1cd521" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/eevee-mega-footer.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#174c458f-bcdf-47d2-9bc8-f36eead6de0e" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/headerid.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="174c458f-bcdf-47d2-9bc8-f36eead6de0e" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/headerid.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#0014bc31-f619-48be-9f55-978f414ffe7e" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/homepage-separator.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="0014bc31-f619-48be-9f55-978f414ffe7e" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/homepage-separator.png"/>
+</a>
+</div>
+<div class="eevee-card-container mdl-grid">
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#994bee7a-6adc-4f58-8f69-b4984666f2b5" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/homepage.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="994bee7a-6adc-4f58-8f69-b4984666f2b5" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/homepage.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#7438eecc-a47d-4d24-bb25-051e365e4c4e" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/mobile-homepage.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="7438eecc-a47d-4d24-bb25-051e365e4c4e" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/mobile-homepage.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#28014549-ff23-43f4-904f-f9248b9ee616" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/mobile-menu.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="28014549-ff23-43f4-904f-f9248b9ee616" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/mobile-menu.png"/>
+</a>
+</div>
+<div class="eevee-card-container mdl-grid">
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#b1d6bdc1-1fb3-4326-9b19-623469b6f486" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/pygments.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="b1d6bdc1-1fb3-4326-9b19-623469b6f486" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/pygments.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#bb8e3e26-7518-4aa6-800a-ed631a2b3546" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/related-author-card.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="bb8e3e26-7518-4aa6-800a-ed631a2b3546" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/related-author-card.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#cb40d31f-4f94-458a-9787-a05eea01fd09" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/search.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="cb40d31f-4f94-458a-9787-a05eea01fd09" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/search.png"/>
+</a>
+</div>
+<div class="eevee-card-container mdl-grid">
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#7c8ce33d-14f3-473c-9343-b530f839d923" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/series.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="7c8ce33d-14f3-473c-9343-b530f839d923" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/series.png"/>
+</a>
+<div class="eevee-cell eevee-cell--3-col mdl-card">
+<div class="mdl-card__media">
+<a href="#306a4904-b759-4374-836c-3dfd7a92bc51" title="Click to view large image">
+<img alt="Click to view large image" src="/images/eevee_page/small-footer.png"/>
+</a>
+</div></div>
+<a class="lightbox" href="#_" id="306a4904-b759-4374-836c-3dfd7a92bc51" title="Click to close">
+<img alt="Click to close" src="/images/eevee_page/small-footer.png"/>
+</a>
+</div>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>Download the latest Eevee release
+<a class="reference external" href="https://github.com/kura/eevee/releases">from GitHub</a> and extract it in to
+your Pelican website directory and rename the directory to <tt class="docutils literal">eevee</tt>.</p>
+<p>Install the theme using <tt class="docutils literal"><span class="pre">pelican-themes</span></tt>.</p>
+<div class="highlight"><pre><span></span>pelican-themes -i eevee
+</pre></div>
+<p>All you need to do after that is set the <tt class="docutils literal"><span class="caps">THEME</span></tt> variable to <tt class="docutils literal">eevee</tt> in
+your <tt class="docutils literal">pelicanconf.py</tt>.</p>
+<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s2">"eevee"</span>
+</pre></div>
+</div>
+<div class="section" id="customising-eevee">
+<h2>Customising Eevee</h2>
+<div class="section" id="primary-and-accent-colours">
+<span id="colours"></span><h3>Primary and accent colours</h3>
+<p>The primary and accent colours are configured using the <tt class="docutils literal">THEME_PRIMARY</tt> and
+<tt class="docutils literal">THEME_ACCENT</tt> options respectively.</p>
+<p>You can find available primary and accent colours on <a class="reference external" href="https://getmdl.io/customize/index.html">Material Design Lite</a>. This website also shows you
+accents that won’t work well with the primary colour you choose.</p>
+<div class="highlight"><pre><span></span><span class="n">THEME_PRIMARY</span> <span class="o">=</span> <span class="s2">"blue"</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">THEME_ACCENT</span> <span class="o">=</span> <span class="s2">"amber"</span>
+</pre></div>
+<p>By default the colour scheme is <span class="blue-grey">blue grey</span> for the primary and
+<span class="pink">pink</span> for the accent.</p>
+<div class="highlight"><pre><span></span><span class="n">THEME_PRIMARY</span> <span class="o">=</span> <span class="s2">"blue_grey"</span>
+<span class="n">THEME_ACCENT</span> <span class="o">=</span> <span class="s2">"pink"</span>
+</pre></div>
+</div>
+<div class="section" id="custom-css">
+<h3>Custom <span class="caps">CSS</span></h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/tree/master/static/css">Inside the Eevee static folder is a custom.css file</a>. Anything added to
+this file will overwrite any of the core <span class="caps">CSS</span>. You can use this file to
+modify any part of the interface you wish, including changing the Pygments
+<span class="caps">CSS</span>.</p>
+<p>This allows you to tinker with the design as much as you like without breaking
+the core theme.</p>
+</div>
+<div class="section" id="header-and-footer-options">
+<h3>Header and footer options</h3>
+<div class="section" id="header">
+<h4>Header</h4>
+<div class="lightbox-block align-center"><a href="#6c245d02-fa38-4123-80a3-4593e1f43f8e" title="Header menu (click to view large image)"><img alt="Header menu (click to view large image)" class="align-center" src="/images/eevee-menu.png"/></a><a class="lightbox" href="#_" id="6c245d02-fa38-4123-80a3-4593e1f43f8e" title="Click to close"><img alt="Click to close" src="/images/eevee-menu.png"/></a><p class="align-center">Header menu (click to view large image)</p></div><div class="lightbox-divider"></div><p>To configure links in the header, use the <tt class="docutils literal"><span class="caps">MENUITEMS</span></tt> option.</p>
+<div class="highlight"><pre><span></span><span class="n">MENUITEMS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Contact"</span><span class="p">,</span> <span class="s2">"/contact/"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Eevee"</span><span class="p">,</span> <span class="s2">"/eevee/"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Software"</span><span class="p">,</span> <span class="s2">"/software/"</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+<p>Using <tt class="docutils literal">DISPLAY_PAGES_ON_MENU</tt> will automatically add pages to the menu.</p>
+<div class="highlight"><pre><span></span><span class="n">DISPLAY_PAGES_ON_MENU</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<div class="section" id="footer">
+<h4>Footer</h4>
+<div class="lightbox-block align-center"><a href="#086837ca-5494-47d3-bb09-69934f7ca4ee" title="Footer menu (click to view large image)"><img alt="Footer menu (click to view large image)" class="align-center" src="/images/eevee-footer-menu-thumb.png"/></a><a class="lightbox" href="#_" id="086837ca-5494-47d3-bb09-69934f7ca4ee" title="Click to close"><img alt="Click to close" src="/images/eevee-footer-menu.png"/></a><p class="align-center">Footer menu (click to view large image)</p></div><div class="lightbox-divider"></div><p>You can display links in the footer, by default this option is enabled but
+can be turned off using the <tt class="docutils literal">MEGA_FOOTER</tt> option. See the <a class="reference internal" href="#screenshots">Screenshots</a>
+section for an example of the mega footer.</p>
+<div class="highlight"><pre><span></span><span class="n">MEGA_FOOTER</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># default</span>
+<span class="n">MEGA_FOOTER</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># disable the footer</span>
+</pre></div>
+<p>Up to four columns can be displayed in the footer.</p>
+<p>The first column displays the links from <tt class="docutils literal"><span class="caps">MENUITEMS</span></tt>.</p>
+<div class="highlight"><pre><span></span><span class="n">MENUITEMS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Contact"</span><span class="p">,</span> <span class="s2">"/contact/"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Eevee"</span><span class="p">,</span> <span class="s2">"/eevee/"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Software"</span><span class="p">,</span> <span class="s2">"/software/"</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+<p>Using <tt class="docutils literal">DISPLAY_PAGES_ON_MENU</tt> will automatically add pages to the menu.</p>
+<div class="highlight"><pre><span></span><span class="n">DISPLAY_PAGES_ON_MENU</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+<p>The second column displays categories, this is enabled using
+<tt class="docutils literal">DISPLAY_CATEGORIES_ON_MENU</tt>.</p>
+<div class="highlight"><pre><span></span><span class="n">DISPLAY_CATEGORIES_ON_MENU</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+<p>The third column displays social links from <tt class="docutils literal"><span class="caps">SOCIAL</span></tt>.</p>
+<div class="highlight"><pre><span></span><span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Github"</span><span class="p">,</span> <span class="s2">"https://github.com/kura"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Twitter"</span><span class="p">,</span> <span class="s2">"https://twitter.com/kuramanga"</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+<p>And finally, the fourth column displays links from <tt class="docutils literal"><span class="caps">LINKS</span></tt>.</p>
+<div class="highlight"><pre><span></span><span class="n">LINKS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Eevee"</span><span class="p">,</span> <span class="s2">"https://kura.gg/eevee/"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Blackhole"</span><span class="p">,</span> <span class="s2">"https://kura.gg/blackhole/"</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+<p>The footer will scale based on options you configure, so if you set
+<tt class="docutils literal"><span class="caps">MENUITEMS</span></tt> and <tt class="docutils literal"><span class="caps">LINKS</span></tt> but not <tt class="docutils literal"><span class="caps">SOCIAL</span></tt>, there will be no gap.</p>
+</div>
+</div>
+<div class="section" id="setting-your-own-copyright-notice-and-disclaimer">
+<h3>Setting your own copyright notice and disclaimer</h3>
+<div class="lightbox-block align-center"><a href="#b9b4e9b7-75a9-4c43-9019-d679ff3a0bbc" title="Copyright and disclaimer (click to view large image)"><img alt="Copyright and disclaimer (click to view large image)" class="align-center" src="/images/eevee-copyright-disclaimer-thumb.png"/></a><a class="lightbox" href="#_" id="b9b4e9b7-75a9-4c43-9019-d679ff3a0bbc" title="Click to close"><img alt="Click to close" src="/images/eevee-copyright-disclaimer.png"/></a><p class="align-center">Copyright and disclaimer (click to view large image)</p></div><div class="lightbox-divider"></div><p>You can change the disclaimer and copyright notice displayed in the footer with
+the following variables.</p>
+<div class="highlight"><pre><span></span><span class="n">DISCLAIMER</span> <span class="o">=</span> <span class="s2">"Powered by love &amp;amp; rainbow sparkles."</span>
+<span class="n">COPYRIGHT</span> <span class="o">=</span> <span class="s2">"""Source code and content are released under the &lt;a href="/license/"&gt;MIT license&lt;/a&gt;."""</span>
+</pre></div>
+<p>You can see either or both to <tt class="docutils literal">False</tt> to disable these notices being displayed.</p>
+<div class="highlight"><pre><span></span><span class="n">DISCLAIMER</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">COPYRIGHT</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+<p>The default values for these are as below, although you are under no
+obligation to keep either of them.</p>
+<div class="highlight"><pre><span></span><span class="n">DISCLAIMER</span> <span class="o">=</span> <span class="s2">"Powered by love &amp;amp; rainbow sparkles."</span>
+<span class="n">COPYRIGHT</span> <span class="o">=</span> <span class="s2">"""&lt;a href="https://kura.gg/eevee/" title="Eevee"&gt;Eevee&lt;/a&gt; theme by &lt;a href="https://kura.gg/" title="kura.gg"&gt;kura.gg&lt;/a&gt;"""</span>
+</pre></div>
+</div>
+<div class="section" id="table-of-contents-for-articles-and-pages">
+<h3>Table of contents for articles and pages</h3>
+<div class="lightbox-block align-center"><a href="#b49dc451-d0ce-4e3e-ab86-14aad9649a04" title="Table of contents (click to view large image)"><img alt="Table of contents (click to view large image)" class="align-center" src="/images/eevee-toc.png"/></a><a class="lightbox" href="#_" id="b49dc451-d0ce-4e3e-ab86-14aad9649a04" title="Click to close"><img alt="Click to close" src="/images/eevee-toc.png"/></a><p class="align-center">Table of contents (click to view large image)</p></div><div class="lightbox-divider"></div><p>A table of contents section is added to an article or page if it exists
+as a variable called <tt class="docutils literal">toc</tt> in the article or page object.</p>
+<p>The <a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/extract_toc">extract_toc</a>
+adds a <tt class="docutils literal">toc</tt> option for <span class="caps">RST</span> and Markdown content.</p>
+<p>The extract_toc plugin adds an ugly header element by default, I have a
+modified version <a class="reference external" href="https://github.com/kura/kura.gg/tree/master/plugins/extract_toc">on GitHub</a> that
+returns nicer <span class="caps">HTML</span>.</p>
+</div>
+<div class="section" id="author-card">
+<h3>Author card</h3>
+<div class="lightbox-block align-center"><a href="#19f66a92-d1a5-4bcd-8b4b-b72df2a424b0" title="Author card (click to view large image)"><img alt="Author card (click to view large image)" class="align-center" src="/images/eevee-author-card.png"/></a><a class="lightbox" href="#_" id="19f66a92-d1a5-4bcd-8b4b-b72df2a424b0" title="Click to close"><img alt="Click to close" src="/images/eevee-author-card.png"/></a><p class="align-center">Author card (click to view large image)</p></div><div class="lightbox-divider"></div><p>The author card is disabled by default, below are instructions on enabling it
+and customising it.</p>
+<div class="section" id="enabling-the-author-card">
+<h4>Enabling the author card</h4>
+<p>Enabling the author card is as simple as setting an option in
+<tt class="docutils literal">pelicanconf.py</tt>.</p>
+<div class="highlight"><pre><span></span><span class="n">USE_AUTHOR_CARD</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+<p>You can disable it by setting to <tt class="docutils literal">False</tt> or removing the setting entirely.</p>
+<div class="highlight"><pre><span></span><span class="n">USE_AUTHOR_CARD</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<div class="section" id="using-your-own-avatar">
+<h4>Using your own avatar</h4>
+<p>A default avatar placeholder is provided with the theme, you can easily use
+your own avatar by setting an option in <tt class="docutils literal">pelicanconf.py</tt>.</p>
+<div class="highlight"><pre><span></span><span class="n">AUTHOR_CARD_AVATAR</span> <span class="o">=</span> <span class="s2">"/images/kura.png"</span>
+</pre></div>
+<p>The maximum size that you should use are 250x250 pixels.</p>
+</div>
+<div class="section" id="setting-a-description">
+<h4>Setting a description</h4>
+<p>Like all the other options above, setting a description for your author card
+requires a single config option.</p>
+<div class="highlight"><pre><span></span><span class="n">AUTHOR_CARD_DESCRIPTION</span> <span class="o">=</span> <span class="s2">"My name is Kura and I break things."</span>
+</pre></div>
+<p>You can add <span class="caps">HTML</span> and other various things to this description.</p>
+</div>
+<div class="section" id="social-buttons">
+<h4>Social buttons</h4>
+<p>By default, the author card section will display links from your <tt class="docutils literal"><span class="caps">SOCIAL</span></tt>
+list.</p>
+<p>This isn’t always what you want though.</p>
+<p>The <tt class="docutils literal"><span class="caps">SOCIAL</span></tt> list is used in other parts of the theme and the format may not
+look good added to your author card.</p>
+<p>To make things more flexible, the author card section can have it’s own social links.</p>
+<div class="highlight"><pre><span></span><span class="n">AUTHOR_CARD_SOCIAL</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"""&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt;"""</span><span class="p">,</span> <span class="s2">"https://github.com/kura"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"""&lt;i class="fa fa-twitter" aria-hidden="true"&gt;&lt;/i&gt;"""</span><span class="p">,</span> <span class="s2">"https://twitter.com/kuramanga"</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+<p>Some default styling rules are included with Eevee, they are as follow:</p>
+<table class="docutils">
+<thead>
+<tr><th class="head">Site</th>
+<th class="head">Link colour</th>
+<th class="head">Hover colour</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Twitter</td>
+<td><span class="ac-twitter">#<span class="caps">039BE5</span></span></td>
+<td><span class="ac-twitter-hover">#<span class="caps">0277BD</span></span></td>
+</tr>
+<tr><td>Facebook</td>
+<td><span class="ac-facebook">#1565C0</span></td>
+<td><span class="ac-facebook-hover">#<span class="caps">0D47A1</span></span></td>
+</tr>
+<tr><td>Google+</td>
+<td><span class="ac-google-plus">#F44336</span></td>
+<td><span class="ac-google-plus-hover">#<span class="caps">D32F2F</span></span></td>
+</tr>
+<tr><td>GitHub</td>
+<td><span class="ac-github">#212121</span></td>
+<td><span class="ac-github-hover">#616161</span></td>
+</tr>
+<tr><td>Instagram</td>
+<td><span class="ac-instagram">#<span class="caps">8BC34A</span></span></td>
+<td><span class="ac-instagram-hover">#689F38</span></td>
+</tr>
+</tbody>
+</table>
+<p>You can add your own new styles or overwrite an existing style using the
+<tt class="docutils literal">href</tt> selector.</p>
+<p>For example, adding a selector style for <tt class="docutils literal"><span class="pre">https://kura.gg</span></tt> would be done
+like the example below.</p>
+<div class="highlight"><pre><span></span><span class="nt">nav</span><span class="p">.</span><span class="nc">eevee-ac-author__social</span><span class="w"> </span><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s2">"https://kura.gg"</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#039BE5</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="nt">nav</span><span class="p">.</span><span class="nc">eevee-ac-author__social</span><span class="w"> </span><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s2">"https://kura.gg"</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0277BD</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="section" id="dynamically-disabling-author-card-on-an-article-or-page">
+<h4>Dynamically disabling author card on an article or page</h4>
+<p>As of Eevee version 0.0.12, it is now possible to disable the author card
+feature on a per-article or per-page basis using metadata.</p>
+<p>Using reStructuredText:</p>
+<div class="highlight"><pre><span></span><span class="gh">Example title</span>
+<span class="gh">#############</span>
+<span class="nc">:slug:</span> example
+<span class="nc">:author_card:</span> False
+</pre></div>
+<p>Using Markdown:</p>
+<div class="highlight"><pre><span></span>Title: Example title
 Slug: example
 Author_card: False
-</pre></div> </div> </div> <div class=section id=disqus-or-muut-for-comments> <h3>Disqus or Muut for comments</h3> <p>You can only enable <a href=https://disqus.com/home/ class="reference external">Disqus</a> or <a href=https://muut.com/ class="reference external">Muut</a>, not both. Disqus takes priority over Muut in terms of how the configuration variables are handled.</p> <div class=section id=disqus> <h4>Disqus</h4> <div class=highlight><pre><span></span><span class=n>DISQUS_SITENAME</span> <span class=o>=</span> <span class=s2>"somethinghere"</span>
-</pre></div> <p>Setting this option will enable Disqus for articles.</p> </div> <div class=section id=muut> <h4>Muut</h4> <div class=highlight><pre><span></span><span class=n>MUUT_SITENAME</span> <span class=o>=</span> <span class=s2>"somethinghere"</span>
-</pre></div> <p>Setting this option will enable Muut for articles.</p> </div> <div class=section id=comments-on-pages> <h4>Comments on pages</h4> <p>You can display comments on pages as well as articles with the following option. By default this is disabled.</p> <div class=highlight><pre><span></span><span class=n>COMMENTS_ON_PAGES</span> <span class=o>=</span> <span class=kc>True</span>
-</pre></div> </div> <div class=section id=dynamically-disabling-comments-on-an-article-or-page> <h4>Dynamically disabling comments on an article or page</h4> <p>As of Eevee version 0.0.12, it is now possible to disable comments on a per-article or per-page basis using metadata.</p> <p>Using reStructuredText:</p> <div class=highlight><pre><span></span><span class=gh>Example title</span>
-<span class=gh>#############</span>
-<span class=nc>:slug:</span> example
-<span class=nc>:comments:</span> False
+</pre></div>
+</div>
+</div>
+<div class="section" id="disqus-or-muut-for-comments">
+<h3>Disqus or Muut for comments</h3>
+<p>You can only enable <a class="reference external" href="https://disqus.com/home/">Disqus</a> or <a class="reference external" href="https://muut.com/">Muut</a>, not both. Disqus takes priority over Muut
+in terms of how the configuration variables are handled.</p>
+<div class="section" id="disqus">
+<h4>Disqus</h4>
+<div class="highlight"><pre><span></span><span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s2">"somethinghere"</span>
+</pre></div>
+<p>Setting this option will enable Disqus for articles.</p>
+</div>
+<div class="section" id="muut">
+<h4>Muut</h4>
+<div class="highlight"><pre><span></span><span class="n">MUUT_SITENAME</span> <span class="o">=</span> <span class="s2">"somethinghere"</span>
+</pre></div>
+<p>Setting this option will enable Muut for articles.</p>
+</div>
+<div class="section" id="comments-on-pages">
+<h4>Comments on pages</h4>
+<p>You can display comments on pages as well as articles with the following
+option. By default this is disabled.</p>
+<div class="highlight"><pre><span></span><span class="n">COMMENTS_ON_PAGES</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<div class="section" id="dynamically-disabling-comments-on-an-article-or-page">
+<h4>Dynamically disabling comments on an article or page</h4>
+<p>As of Eevee version 0.0.12, it is now possible to disable comments on a
+per-article or per-page basis using metadata.</p>
+<p>Using reStructuredText:</p>
+<div class="highlight"><pre><span></span><span class="gh">Example title</span>
+<span class="gh">#############</span>
+<span class="nc">:slug:</span> example
+<span class="nc">:comments:</span> False
 
 Example content
-</pre></div> <p>Using Markdown:</p> <div class=highlight><pre><span></span>Title: Example title
+</pre></div>
+<p>Using Markdown:</p>
+<div class="highlight"><pre><span></span>Title: Example title
 Slug: example
 Comments: False
 
 Example content
-</pre></div> </div> </div> <div class=section id=sharing-options> <h3>Sharing options</h3> <div class="lightbox-block align-center"><a href=#d4a8511d-c321-49be-a11c-33b3a8972b1b title="Share buttons (click to view large image)"><img alt="Share buttons (click to view large image)" class=align-center src=/images/eevee-share-buttons.png></a><a class=lightbox href=#_ id=d4a8511d-c321-49be-a11c-33b3a8972b1b title="Click to close"><img alt="Click to close" src=/images/eevee-share-buttons.png></a><p class=align-center>Share buttons (click to view large image)</p></div><div class=lightbox-divider></div><div class=section id=share-buttons> <h4>Share buttons</h4> <p>By default four share buttons are configured;</p> <ul class=simple> <li>Twitter,</li> <li>Facebook,</li> <li>Google+,</li> <li>and Email.</li> </ul> <p>These buttons will appear on all articles and pages.</p> <p>If you have comments enabled either using Disqus or Muut, on articles a fifth button will be shown which shows the user comments for the current article.</p> </div> <div class=section id=options> <h4>Options</h4> <div class=highlight><pre><span></span><span class=n>USE_OPEN_GRAPH</span> <span class=o>=</span> <span class=kc>True</span>
-</pre></div> <p>If set, Open Graph meta tags will be added.</p> <div class=highlight><pre><span></span><span class=n>USE_TWITTER_CARDS</span> <span class=o>=</span> <span class=kc>True</span>
-</pre></div> <p>If set, Twitter meta tags will be added.</p> <div class=highlight><pre><span></span><span class=n>TWITTER_USERNAME</span> <span class=o>=</span> <span class=s2>"kuramanga"</span>
-</pre></div> <p>Used in conjunction with <tt class="docutils literal">USE_TWITTER_CARDS</tt>, adds the “via” meta tag.</p> </div> <div class=section id=adding-an-image-to-open-graph-and-twitter-meta-tags> <h4>Adding an image to Open Graph and Twitter meta tags</h4> <p>There are two ways of adding an image to Twitter and Open Graph so that when someone shares your content, an image will be added too.</p> <p>You can add <tt class="docutils literal">og_image</tt> to the file metadata of an article or page, allowing you to configure and image to use per item.</p> <p>Using reStructuredText:</p> <div class=highlight><pre><span></span><span class=gh>Example title</span>
-<span class=gh>#############</span>
-<span class=nc>:slug:</span> example
-<span class=nc>:og_image:</span> /images/example.png
+</pre></div>
+</div>
+</div>
+<div class="section" id="sharing-options">
+<h3>Sharing options</h3>
+<div class="lightbox-block align-center"><a href="#031458fd-131f-47d4-b219-f8ff64ead11c" title="Share buttons (click to view large image)"><img alt="Share buttons (click to view large image)" class="align-center" src="/images/eevee-share-buttons.png"/></a><a class="lightbox" href="#_" id="031458fd-131f-47d4-b219-f8ff64ead11c" title="Click to close"><img alt="Click to close" src="/images/eevee-share-buttons.png"/></a><p class="align-center">Share buttons (click to view large image)</p></div><div class="lightbox-divider"></div><div class="section" id="share-buttons">
+<h4>Share buttons</h4>
+<p>By default four share buttons are configured;</p>
+<ul class="simple">
+<li>Twitter,</li>
+<li>Facebook,</li>
+<li>Google+,</li>
+<li>and Email.</li>
+</ul>
+<p>These buttons will appear on all articles and pages.</p>
+<p>If you have comments enabled either using Disqus or Muut, on articles a fifth
+button will be shown which shows the user comments for the current article.</p>
+</div>
+<div class="section" id="options">
+<h4>Options</h4>
+<div class="highlight"><pre><span></span><span class="n">USE_OPEN_GRAPH</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+<p>If set, Open Graph meta tags will be added.</p>
+<div class="highlight"><pre><span></span><span class="n">USE_TWITTER_CARDS</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+<p>If set, Twitter meta tags will be added.</p>
+<div class="highlight"><pre><span></span><span class="n">TWITTER_USERNAME</span> <span class="o">=</span> <span class="s2">"kuramanga"</span>
+</pre></div>
+<p>Used in conjunction with <tt class="docutils literal">USE_TWITTER_CARDS</tt>, adds the “via” meta tag.</p>
+</div>
+<div class="section" id="adding-an-image-to-open-graph-and-twitter-meta-tags">
+<h4>Adding an image to Open Graph and Twitter meta tags</h4>
+<p>There are two ways of adding an image to Twitter and Open Graph so that when
+someone shares your content, an image will be added too.</p>
+<p>You can add <tt class="docutils literal">og_image</tt> to the file metadata of an article or page, allowing
+you to configure and image to use per item.</p>
+<p>Using reStructuredText:</p>
+<div class="highlight"><pre><span></span><span class="gh">Example title</span>
+<span class="gh">#############</span>
+<span class="nc">:slug:</span> example
+<span class="nc">:og_image:</span> /images/example.png
 
 Example content
-</pre></div> <p>Using Markdown:</p> <div class=highlight><pre><span></span>Title: Example title
+</pre></div>
+<p>Using Markdown:</p>
+<div class="highlight"><pre><span></span>Title: Example title
 Slug: example
 Og_image: /images/example.png
 
 Example content
-</pre></div> <p>Or you can set <tt class="docutils literal">OPEN_GRAPH_IMAGE</tt> to an image location in the <tt class="docutils literal">pelicanconf.py</tt> settings file and adding the relevant directory to the <tt class="docutils literal">STATIC_PATHS</tt> and <tt class="docutils literal">EXTRA_PATH_METADATA</tt> settings.</p> <div class=highlight><pre><span></span><span class=n>OPEN_GRAPH_IMAGE</span> <span class=o>=</span> <span class=s2>"/images/example.png"</span>
-<span class=n>STATIC_PATHS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"images"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-<span class=n>EXTRA_PATH_METADATA</span> <span class=o>=</span> <span class=p>{</span>
-    <span class=c1># ...</span>
-    <span class=s2>"images"</span><span class=p>:</span> <span class=p>{</span><span class=s2>"path"</span><span class=p>:</span> <span class=s2>"images"</span><span class=p>},</span>
-    <span class=c1># ...</span>
-<span class=p>}</span>
-</pre></div> </div> </div> <div class=section id=archives> <h3>Archives</h3> <div class="lightbox-block align-center"><a href=#a81105a2-7b20-4c02-a9bc-46734529c1ce title="Header menu (click to view large image)"><img alt="Header menu (click to view large image)" class=align-center src=/images/eevee-menu.png></a><a class=lightbox href=#_ id=a81105a2-7b20-4c02-a9bc-46734529c1ce title="Click to close"><img alt="Click to close" src=/images/eevee-menu.png></a><p class=align-center>Header menu (click to view large image)</p></div><div class=lightbox-divider></div><p>Eevee supports full archives and archives broken down by year and month.</p> <p>To enable the full archive section, you need to enable the relevant setting in your <tt class="docutils literal">pelicanconf.py</tt> file.</p> <div class=highlight><pre><span></span><span class=n>ARCHIVES_URL</span> <span class=o>=</span> <span class=s2>"archives.html"</span>
-<span class=n>ARCHIVES_SAVE_AS</span> <span class=o>=</span> <span class=s2>"archives.html"</span>
-</pre></div> <p>Enabling the periodic archives for year and/or month is as simple as enabling their respective options in <tt class="docutils literal">pelicanconf.py</tt></p> <div class=highlight><pre><span></span><span class=n>YEAR_ARCHIVE_SAVE_AS</span> <span class=o>=</span> <span class=s2>"{date:%Y}/index.html"</span>
-<span class=n>MONTH_ARCHIVE_SAVE_AS</span> <span class=o>=</span> <span class=s2>"{date:%Y}/{date:%m}/index.html"</span>
-</pre></div> <p>More information on archive settings can be found in the <a class="reference external" href=https://docs.getpelican.com/en/3.6.3/settings.html#url-settings>Pelican documentation</a>.</p> </div> <div class=section id=google-analytics-piwik-open-web-analytics-and-gosquared> <h3>Google Analytics, Piwik, Open Web Analytics and GoSquared</h3> <p>All four of these options can be enabled at the same time, should you wish to do so.</p> <div class=section id=google-analytics> <h4>Google Analytics</h4> <div class=highlight><pre><span></span><span class=n>GOOGLE_ANALYTICS</span> <span class=o>=</span> <span class=s2>"abc1234"</span>
-</pre></div> </div> <div class=section id=piwik> <h4>Piwik</h4> <div class=highlight><pre><span></span><span class=n>PIWIK_SITE_ID</span> <span class=o>=</span> <span class=s2>"123456"</span>
-<span class=n>PIWIK_URL</span> <span class=o>=</span> <span class=s2>"example.com"</span>
-<span class=c1># PIWIK_SSL_URL = ""  # Defaults to https://PIWIK_URL</span>
-</pre></div> </div> <div class=section id=open-web-analytics> <h4>Open Web Analytics</h4> <div class=highlight><pre><span></span><span class=n>OWA_SITE_ID</span> <span class=o>=</span> <span class=s2>"123456"</span>
-<span class=n>OWA_URL</span> <span class=o>=</span> <span class=s2>"https://example.com/owa/"</span>
-</pre></div> </div> <div class=section id=gosquared> <h4>GoSquared</h4> <div class=highlight><pre><span></span><span class=n>GOSQUARED_SITENAME</span> <span class=o>=</span> <span class=s2>"123456"</span>
-</pre></div> </div> </div> <div class=section id=feeds> <h3>Feeds</h3> <p>You can use the <tt class="docutils literal">FEED_RSS</tt> and <tt class="docutils literal">FEED_ATOM</tt> options to enable <span class=caps>RSS</span> and Atom feeds respectively.</p> <div class=highlight><pre><span></span><span class=n>FEED_RSS</span> <span class=o>=</span> <span class=s2>"feeds/rss.xml"</span>
-</pre></div> <div class=highlight><pre><span></span><span class=n>FEED_ATOM</span> <span class=o>=</span> <span class=s2>"feeds/atom.xml"</span>
-</pre></div> <div class=section id=feed-menu-item> <h4>Feed menu item</h4> <div class="lightbox-block align-center"><a href=#54169c5b-25a5-415f-bfc9-16c70e89e7c6 title="Feed menu item (click to view large image)"><img alt="Feed menu item (click to view large image)" class=align-center src=/images/eevee-menu.png></a><a class=lightbox href=#_ id=54169c5b-25a5-415f-bfc9-16c70e89e7c6 title="Click to close"><img alt="Click to close" src=/images/eevee-menu.png></a><p class=align-center>Feed menu item (click to view large image)</p></div><div class=lightbox-divider></div><p>Enabling either <tt class="docutils literal">FEED_RSS</tt> or <tt class="docutils literal">FEED_ATOM</tt> will automatically add a menu item for that feed. If <tt class="docutils literal">MEGA_FOOTER</tt> is also enabled a link to the feed will be added there too.</p> <p>Eevee prefers <span class=caps>RSS</span> over <span class=caps>ATOM</span>, if you enable both feed types a menu item will only be created for <span class=caps>RSS</span>, although both feeds will be added as alternate link tags.</p> </div> </div> <div class=section id=category-and-tag-pages> <h3>Category and tag pages</h3> <p>To display all articles in specific categories or tags, you need to add the relevant settings.</p> <p>An example for categories is below.</p> <div class=highlight><pre><span></span><span class=n>CATEGORY_URL</span> <span class=o>=</span> <span class=s2>"category/</span><span class=si>{slug}</span><span class=s2>/"</span>
-<span class=n>CATEGORY_SAVE_AS</span> <span class=o>=</span> <span class=s2>"category/</span><span class=si>{slug}</span><span class=s2>/index.html"</span>
-<span class=n>CATEGORIES_URL</span> <span class=o>=</span> <span class=s2>"categories/"</span>
-<span class=n>CATEGORIES_SAVE_AS</span> <span class=o>=</span> <span class=s2>"categories/index.html"</span>
-<span class=n>DIRECT_TEMPLATES</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"categories"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-</pre></div> <p>And below is an example for tags.</p> <div class=highlight><pre><span></span><span class=n>TAG_URL</span> <span class=o>=</span> <span class=s2>"tag/</span><span class=si>{slug}</span><span class=s2>/"</span>
-<span class=n>TAG_SAVE_AS</span> <span class=o>=</span> <span class=s2>"tag/</span><span class=si>{slug}</span><span class=s2>/index.html"</span>
-<span class=n>TAGS_URL</span> <span class=o>=</span> <span class=s2>"tags/"</span>
-<span class=n>TAGS_SAVE_AS</span> <span class=o>=</span> <span class=s2>"tags/index.html"</span>
-<span class=n>DIRECT_TEMPLATES</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"tags"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-</pre></div> </div> <div class=section id=plugin-search-functionality> <span id=search></span><h3>Plugin: Search functionality</h3> <div class="lightbox-block align-center"><a href=#9c241922-b178-40a7-8ef3-e731454e5e9f title="Search menu item (click to view large image)"><img alt="Search menu item (click to view large image)" class=align-center src=/images/eevee-search-menu-item.png></a><a class=lightbox href=#_ id=9c241922-b178-40a7-8ef3-e731454e5e9f title="Click to close"><img alt="Click to close" src=/images/eevee-search-menu-item.png></a><p class=align-center>Search menu item (click to view large image)</p></div><div class=lightbox-divider></div><p>Eevee is configured to work with <a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>tipue_search</a> out-of-the-box, all you need to do is enable the plugin and add the search template setting.</p> <div class=highlight><pre><span></span><span class=n>PLUGINS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"tipue_search"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
+</pre></div>
+<p>Or you can set <tt class="docutils literal">OPEN_GRAPH_IMAGE</tt> to an image location in the
+<tt class="docutils literal">pelicanconf.py</tt> settings file and adding the relevant directory to the
+<tt class="docutils literal">STATIC_PATHS</tt> and <tt class="docutils literal">EXTRA_PATH_METADATA</tt> settings.</p>
+<div class="highlight"><pre><span></span><span class="n">OPEN_GRAPH_IMAGE</span> <span class="o">=</span> <span class="s2">"/images/example.png"</span>
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"images"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"images"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"path"</span><span class="p">:</span> <span class="s2">"images"</span><span class="p">},</span>
+    <span class="c1"># ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="archives">
+<h3>Archives</h3>
+<div class="lightbox-block align-center"><a href="#b6575d39-00d3-4774-b3c7-6f7cbb52fe58" title="Header menu (click to view large image)"><img alt="Header menu (click to view large image)" class="align-center" src="/images/eevee-menu.png"/></a><a class="lightbox" href="#_" id="b6575d39-00d3-4774-b3c7-6f7cbb52fe58" title="Click to close"><img alt="Click to close" src="/images/eevee-menu.png"/></a><p class="align-center">Header menu (click to view large image)</p></div><div class="lightbox-divider"></div><p>Eevee supports full archives and archives broken down by year and month.</p>
+<p>To enable the full archive section, you need to enable the relevant setting in
+your <tt class="docutils literal">pelicanconf.py</tt> file.</p>
+<div class="highlight"><pre><span></span><span class="n">ARCHIVES_URL</span> <span class="o">=</span> <span class="s2">"archives.html"</span>
+<span class="n">ARCHIVES_SAVE_AS</span> <span class="o">=</span> <span class="s2">"archives.html"</span>
+</pre></div>
+<p>Enabling the periodic archives for year and/or month is as simple as enabling
+their respective options in <tt class="docutils literal">pelicanconf.py</tt></p>
+<div class="highlight"><pre><span></span><span class="n">YEAR_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s2">"{date:%Y}/index.html"</span>
+<span class="n">MONTH_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s2">"{date:%Y}/{date:%m}/index.html"</span>
+</pre></div>
+<p>More information on archive settings can be found in the
+<a class="reference external" href="https://docs.getpelican.com/en/3.6.3/settings.html#url-settings">Pelican documentation</a>.</p>
+</div>
+<div class="section" id="google-analytics-piwik-open-web-analytics-and-gosquared">
+<h3>Google Analytics, Piwik, Open Web Analytics and GoSquared</h3>
+<p>All four of these options can be enabled at the same time, should you wish to
+do so.</p>
+<div class="section" id="google-analytics">
+<h4>Google Analytics</h4>
+<div class="highlight"><pre><span></span><span class="n">GOOGLE_ANALYTICS</span> <span class="o">=</span> <span class="s2">"abc1234"</span>
+</pre></div>
+</div>
+<div class="section" id="piwik">
+<h4>Piwik</h4>
+<div class="highlight"><pre><span></span><span class="n">PIWIK_SITE_ID</span> <span class="o">=</span> <span class="s2">"123456"</span>
+<span class="n">PIWIK_URL</span> <span class="o">=</span> <span class="s2">"example.com"</span>
+<span class="c1"># PIWIK_SSL_URL = ""  # Defaults to https://PIWIK_URL</span>
+</pre></div>
+</div>
+<div class="section" id="open-web-analytics">
+<h4>Open Web Analytics</h4>
+<div class="highlight"><pre><span></span><span class="n">OWA_SITE_ID</span> <span class="o">=</span> <span class="s2">"123456"</span>
+<span class="n">OWA_URL</span> <span class="o">=</span> <span class="s2">"https://example.com/owa/"</span>
+</pre></div>
+</div>
+<div class="section" id="gosquared">
+<h4>GoSquared</h4>
+<div class="highlight"><pre><span></span><span class="n">GOSQUARED_SITENAME</span> <span class="o">=</span> <span class="s2">"123456"</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="feeds">
+<h3>Feeds</h3>
+<p>You can use the <tt class="docutils literal">FEED_RSS</tt> and <tt class="docutils literal">FEED_ATOM</tt> options to enable <span class="caps">RSS</span> and Atom
+feeds respectively.</p>
+<div class="highlight"><pre><span></span><span class="n">FEED_RSS</span> <span class="o">=</span> <span class="s2">"feeds/rss.xml"</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">FEED_ATOM</span> <span class="o">=</span> <span class="s2">"feeds/atom.xml"</span>
+</pre></div>
+<div class="section" id="feed-menu-item">
+<h4>Feed menu item</h4>
+<div class="lightbox-block align-center"><a href="#306888dd-d6c5-4ec3-8e2c-8fd651081e89" title="Feed menu item (click to view large image)"><img alt="Feed menu item (click to view large image)" class="align-center" src="/images/eevee-menu.png"/></a><a class="lightbox" href="#_" id="306888dd-d6c5-4ec3-8e2c-8fd651081e89" title="Click to close"><img alt="Click to close" src="/images/eevee-menu.png"/></a><p class="align-center">Feed menu item (click to view large image)</p></div><div class="lightbox-divider"></div><p>Enabling either <tt class="docutils literal">FEED_RSS</tt> or <tt class="docutils literal">FEED_ATOM</tt> will automatically add a menu
+item for that feed. If <tt class="docutils literal">MEGA_FOOTER</tt> is also enabled a link to the feed will
+be added there too.</p>
+<p>Eevee prefers <span class="caps">RSS</span> over <span class="caps">ATOM</span>, if you enable both feed types a menu item will
+only be created for <span class="caps">RSS</span>, although both feeds will be added as alternate link tags.</p>
+</div>
+</div>
+<div class="section" id="category-and-tag-pages">
+<h3>Category and tag pages</h3>
+<p>To display all articles in specific categories or tags, you need to add the
+relevant settings.</p>
+<p>An example for categories is below.</p>
+<div class="highlight"><pre><span></span><span class="n">CATEGORY_URL</span> <span class="o">=</span> <span class="s2">"category/</span><span class="si">{slug}</span><span class="s2">/"</span>
+<span class="n">CATEGORY_SAVE_AS</span> <span class="o">=</span> <span class="s2">"category/</span><span class="si">{slug}</span><span class="s2">/index.html"</span>
+<span class="n">CATEGORIES_URL</span> <span class="o">=</span> <span class="s2">"categories/"</span>
+<span class="n">CATEGORIES_SAVE_AS</span> <span class="o">=</span> <span class="s2">"categories/index.html"</span>
+<span class="n">DIRECT_TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"categories"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+<p>And below is an example for tags.</p>
+<div class="highlight"><pre><span></span><span class="n">TAG_URL</span> <span class="o">=</span> <span class="s2">"tag/</span><span class="si">{slug}</span><span class="s2">/"</span>
+<span class="n">TAG_SAVE_AS</span> <span class="o">=</span> <span class="s2">"tag/</span><span class="si">{slug}</span><span class="s2">/index.html"</span>
+<span class="n">TAGS_URL</span> <span class="o">=</span> <span class="s2">"tags/"</span>
+<span class="n">TAGS_SAVE_AS</span> <span class="o">=</span> <span class="s2">"tags/index.html"</span>
+<span class="n">DIRECT_TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"tags"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="plugin-search-functionality">
+<span id="search"></span><h3>Plugin: Search functionality</h3>
+<div class="lightbox-block align-center"><a href="#e0e3c3ee-dcc0-4c03-a453-104cc8d856e0" title="Search menu item (click to view large image)"><img alt="Search menu item (click to view large image)" class="align-center" src="/images/eevee-search-menu-item.png"/></a><a class="lightbox" href="#_" id="e0e3c3ee-dcc0-4c03-a453-104cc8d856e0" title="Click to close"><img alt="Click to close" src="/images/eevee-search-menu-item.png"/></a><p class="align-center">Search menu item (click to view large image)</p></div><div class="lightbox-divider"></div><p>Eevee is configured to work with <a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search">tipue_search</a>
+out-of-the-box, all you need to do is enable the plugin and add the search
+template setting.</p>
+<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"tipue_search"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
 
-<span class=n>DIRECT_TEMPLATES</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"search"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-</pre></div> </div> <div class=section id=plugin-permalinks-in-headlines> <h3>Plugin: Permalinks in headlines</h3> <div class="lightbox-block align-center"><a href=#f166ca34-1e49-423c-b267-bfd7a0c8f5fd title="Header permalink (click to view large image)"><img alt="Header permalink (click to view large image)" class=align-center src=/images/eevee-headerid.png></a><a class=lightbox href=#_ id=f166ca34-1e49-423c-b267-bfd7a0c8f5fd title="Click to close"><img alt="Click to close" src=/images/eevee-headerid.png></a><p class=align-center>Header permalink (click to view large image)</p></div><div class=lightbox-divider></div><p>reStructuredText does not add anchors to headings by default, adding reference links on headings means you can send the link to someone and have the browser automatically display the relevant section.</p> <p>Eevee is configured out-of-the-box to support adding these references using the <a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/headerid>headerid</a> plugin.</p> </div> <div class=section id=plugin-related-articles> <h3>Plugin: Related articles</h3> <div class="lightbox-block align-center"><a href=#777b288f-28c6-4da3-9d25-288756cc17f9 title="Related articles (click to view large image)"><img alt="Related articles (click to view large image)" class=align-center src=/images/eevee-related.png></a><a class=lightbox href=#_ id=777b288f-28c6-4da3-9d25-288756cc17f9 title="Click to close"><img alt="Click to close" src=/images/eevee-related.png></a><p class=align-center>Related articles (click to view large image)</p></div><div class=lightbox-divider></div><p>Related articles functionality is provided by the <a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/related_posts>related_posts</a> plugin.</p> <p>Installing it will automatically enabled the functionality within Eevee.</p> <div class=highlight><pre><span></span><span class=n>PLUGINS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"related_posts"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-</pre></div> </div> <div class=section id=plugin-articles-in-a-series> <h3>Plugin: Articles in a series</h3> <div class="lightbox-block align-center"><a href=#280b50f8-985b-481a-a2be-a9bd4b182feb title="Articles in a series (click to view large image)"><img alt="Articles in a series (click to view large image)" class=align-center src=/images/eevee-series.png></a><a class=lightbox href=#_ id=280b50f8-985b-481a-a2be-a9bd4b182feb title="Click to close"><img alt="Click to close" src=/images/eevee-series.png></a><p class=align-center>Articles in a series (click to view large image)</p></div><div class=lightbox-divider></div><p>Series article functionality is provided by the <a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/series>series</a> plugin.</p> <p>Installing it will automatically enabled the functionality within Eevee.</p> <div class=highlight><pre><span></span><span class=n>PLUGINS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"series"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-</pre></div> </div> <div class=section id=plugin-minimise-css-and-javascript> <h3>Plugin: Minimise <span class=caps>CSS</span> and JavaScript</h3> <p>To minimise/compress all <span class=caps>CSS</span> or JavaScript, simply install the <a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/assets>assets</a> plugin.</p> <p>Eevee is configured to automatically compress all <span class=caps>CSS</span> and JavaScript files it uses if the assets plugin is enabled, including files related to the <a class="reference internal" href=#search>search</a> functionality.</p> <div class=highlight><pre><span></span><span class=n>PLUGINS</span> <span class=o>=</span> <span class=p>[</span>
-    <span class=c1># ...</span>
-    <span class=s2>"assets"</span><span class=p>,</span>
-    <span class=c1># ...</span>
-<span class=p>]</span>
-</pre></div> </div> <div class=section id=advanced-pagination> <h3>Advanced pagination</h3> <p>By default, Eevee will display pagination links on the index page of articles. Enabling the <a class="reference external" href=https://github.com/getpelican/pelican-plugins/tree/master/neighbors>neighbors</a> will automatically add a previous and next button to the article page, allowing pagination without going back to the index page.</p> <p>The default Pelican pagination settings are not very pleasing, for more information on how to customise them to better and be more intuitive please look at the <a class="reference external" href=https://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns>Pelican documentation</a>.</p> </div> <div class=section id=dns-prefetch> <h3><span class=caps>DNS</span> prefetch</h3> <p><a class="reference external" href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching><span class=caps>DNS</span> prefetching</a> is enabled by default and managed automatically.</p> <p>The following features will have respective <span class=caps>DNS</span> prefetch settings that will be applied if the feature is enabled;</p> <ul class=simple> <li>Disqus,</li> <li>Piwik,</li> <li>GoSquared,</li> <li>Google Analytics and,</li> <li>Open Web Analytics.</li> </ul> <p>For example, the following would be applied if you had Disqus and Google Analytics enabled.</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"EXAMPLE.COM"</span><span class=p>&gt;</span>
-<span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"//code.getmdl.io"</span><span class=p>&gt;</span>
-<span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"//disqus.com"</span><span class=p>&gt;</span>
-<span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"//a.disquscdn.com"</span><span class=p>&gt;</span>
-<span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"//EXAMPLE.disqus.com"</span><span class=p>&gt;</span>
-<span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"//glitter-services.disqus.com"</span><span class=p>&gt;</span>
-<span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"//google-analytics.com"</span><span class=p>&gt;</span>
-<span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>"dns-prefetch"</span> <span class=na>href</span><span class=o>=</span><span class=s>"//www.google-analytics.com"</span><span class=p>&gt;</span>
-</pre></div> </div> </div> <div class=section id=all-configuration-settings> <h2>All configuration settings</h2> <table class=docutils> <thead> <tr><th class=head>Setting name</th> <th class=head>Default</th> <th class=head>Description</th> </tr> </thead> <tbody> <tr><td><tt class="docutils literal"><span class=caps>SITENAME</span></tt></td> <td> </td> <td>The title of your website</td> </tr> <tr><td><tt class="docutils literal"><span class=caps>AUTHOR</span></tt></td> <td> </td> <td>Your name</td> </tr> <tr><td><tt class="docutils literal">THEME_PRIMARY</tt></td> <td><span class=blue-grey>blue_grey</span></td> <td><p class=first>Primary colour scheme</p> <p class=last><a class="reference internal" href=#primary-and-accent-colours>Primary and accent colours</a></p> </td> </tr> <tr><td><tt class="docutils literal">THEME_ACCENT</tt></td> <td><span class=pink>pink</span></td> <td><p class=first>Accent colour scheme</p> <p class=last><a class="reference internal" href=#primary-and-accent-colours>Primary and accent colours</a></p> </td> </tr> <tr><td><tt class="docutils literal">MEGA_FOOTER</tt></td> <td><tt class="docutils literal">True</tt></td> <td><p class=first>Display the mega footer</p> <p class=last><a class="reference internal" href=#header-and-footer-options>Header and footer options</a></p> </td> </tr> <tr><td><tt class="docutils literal"><span class=caps>DISCLAIMER</span></tt></td> <td> </td> <td><p class=first>Disclaimer displayed on the footer</p> <p class=last><a class="reference internal" href=#primary-and-accent-colours>Primary and accent colours</a></p> </td> </tr> <tr><td><tt class="docutils literal"><span class=caps>COPYRIGHT</span></tt></td> <td> </td> <td><p class=first>Copyright notice displayed on the footer</p> <p class=last><a class="reference internal" href=#primary-and-accent-colours>Primary and accent colours</a></p> </td> </tr> <tr><td><tt class="docutils literal">USE_AUTHOR_CARD</tt></td> <td><tt class="docutils literal">False</tt></td> <td><p class=first>Display about author card on articles</p> <p class=last><a class="reference internal" href=#author-card>Author card</a></p> </td> </tr> <tr><td><tt class="docutils literal">AUTHOR_CARD_ON_PAGES</tt></td> <td><tt class="docutils literal">False</tt></td> <td><p class=first>Display about author card on pages</p> <p class=last><a class="reference internal" href=#author-card>Author card</a></p> </td> </tr> <tr><td><tt class="docutils literal">AUTHOR_CARD_AVATAR</tt></td> <td><tt class="docutils literal">/theme/images/default_avatar.png</tt></td> <td><p class=first>Avatar to display on the author card</p> <p class=last><a class="reference internal" href=#author-card>Author card</a></p> </td> </tr> <tr><td><tt class="docutils literal">AUTHOR_CARD_DESCRIPTION</tt></td> <td> </td> <td><p class=first>Description to display on the author card</p> <p class=last><a class="reference internal" href=#author-card>Author card</a></p> </td> </tr> <tr><td><tt class="docutils literal">AUTHOR_CARD_SOCIAL</tt></td> <td><tt class="docutils literal"><span class=caps>SOCIAL</span></tt></td> <td><p class=first>Social media links to display on the author card</p> <p class=last><a class="reference internal" href=#author-card>Author card</a></p> </td> </tr> <tr><td><tt class="docutils literal"><span class=caps>MENUITEMS</span></tt></td> <td><tt class="docutils literal">[]</tt></td> <td><p class=first>Displayed on header and mega footer</p> <p class=last><a class="reference internal" href=#header-and-footer-options>Header and footer options</a></p> </td> </tr> <tr><td><tt class="docutils literal"><span class=caps>LINKS</span></tt></td> <td><tt class="docutils literal">[]</tt></td> <td><p class=first>Blogroll to display on the mega footer</p> <p class=last><a class="reference internal" href=#header-and-footer-options>Header and footer options</a></p> </td> </tr> <tr><td><tt class="docutils literal"><span class=caps>SOCIAL</span></tt></td> <td><tt class="docutils literal">[]</tt></td> <td><p class=first>Social links to display on the menu and mega footer</p> <p class=last><a class="reference internal" href=#header-and-footer-options>Header and footer options</a></p> </td> </tr> <tr><td><tt class="docutils literal">DISPLAY_PAGES_ON_MENU</tt></td> <td><tt class="docutils literal">False</tt></td> <td><p class=first>Display pages on the menu and mega footer</p> <p class=last><a class="reference internal" href=#header-and-footer-options>Header and footer options</a></p> </td> </tr> <tr><td><tt class="docutils literal">DISPLAY_CATEGORIES_ON_MENU</tt></td> <td><tt class="docutils literal">False</tt></td> <td><p class=first>Display categories on the menu and mega footer</p> <p class=last><a class="reference internal" href=#header-and-footer-options>Header and footer options</a></p> </td> </tr> <tr><td><tt class="docutils literal">COMMENTS_ON_PAGES</tt></td> <td><tt class="docutils literal">False</tt></td> <td><p class=first>Add Diqus or Muut comments on pages</p> <p class=last><a class="reference internal" href=#disqus-or-muut-for-comments>Disqus or Muut for comments</a></p> </td> </tr> <tr><td><tt class="docutils literal">MUUT_SITENAME</tt></td> <td> </td> <td><p class=first>Muut unique identifier for the website</p> <p class=last><a class="reference internal" href=#disqus-or-muut-for-comments>Disqus or Muut for comments</a></p> </td> </tr> <tr><td><tt class="docutils literal">DISQUS_SITENAME</tt></td> <td> </td> <td><p class=first>Disqus unique identifier for the website</p> <p class=last><a class="reference internal" href=#disqus-or-muut-for-comments>Disqus or Muut for comments</a></p> </td> </tr> <tr><td><tt class="docutils literal">USE_OPEN_GRAPH</tt></td> <td><tt class="docutils literal">False</tt></td> <td><p class=first>Add Open Graph meta tags</p> <p class=last><a class="reference internal" href=#sharing-options>Sharing options</a></p> </td> </tr> <tr><td><tt class="docutils literal">USE_TWITTER_CARDS</tt></td> <td><tt class="docutils literal">False</tt></td> <td><p class=first>Add Twitter meta tags</p> <p class=last><a class="reference internal" href=#sharing-options>Sharing options</a></p> </td> </tr> <tr><td><tt class="docutils literal">TWITTER_USERNAME</tt></td> <td> </td> <td><p class=first>Add your Twitter username to mega tags</p> <p class=last><a class="reference internal" href=#sharing-options>Sharing options</a></p> </td> </tr> <tr><td><tt class="docutils literal">OPEN_GRAPH_IMAGE</tt></td> <td> </td> <td><p class=first>Add an image to Twitter and Open Graph</p> <p class=last><a class="reference internal" href=#sharing-options>Sharing options</a></p> </td> </tr> <tr><td><tt class="docutils literal">OWA_SITE_ID</tt></td> <td> </td> <td><p class=first><span class=caps>OWA</span> unique identifier for the website</p> <p class=last><a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared>Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p> </td> </tr> <tr><td><tt class="docutils literal">OWA_URL</tt></td> <td> </td> <td><p class=first><span class=caps>URL</span> to the <span class=caps>OWA</span> installation</p> <p class=last><a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared>Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p> </td> </tr> <tr><td><tt class="docutils literal">PIWIK_SITE_ID</tt></td> <td> </td> <td><p class=first>Piwik unique identifier for the website</p> <p class=last><a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared>Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p> </td> </tr> <tr><td><tt class="docutils literal">PIWIK_URL</tt></td> <td> </td> <td><p class=first><span class=caps>URL</span> to the Piwik installation</p> <p class=last><a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared>Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p> </td> </tr> <tr><td><tt class="docutils literal">PIWIK_SSL_URL</tt></td> <td><tt class="docutils literal">PIWIK_URL</tt></td> <td><p class=first>Secure <span class=caps>URL</span> to the Piwik installation</p> <p class=last><a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared>Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p> </td> </tr> <tr><td><tt class="docutils literal">GOOGLE_ANALYTICS</tt></td> <td> </td> <td><p class=first>Google Analytics unique identifier for the website</p> <p class=last><a class="reference internal" href=#google-analytics-piwik-open-web-analytics-and-gosquared>Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p> </td> </tr> <tr><td><tt class="docutils literal">ARCHIVES_URL</tt></td> <td> </td> <td><p class=first><span class=caps>URL</span> for archives and add a menu item for it</p> <p class=last><a class="reference internal" href=#archives>Archives</a></p> </td> </tr> <tr><td><tt class="docutils literal">ARCHIVES_SAVE_AS</tt></td> <td> </td> <td><p class=first>Location to save archives</p> <p class=last><a class="reference internal" href=#archives>Archives</a></p> </td> </tr> <tr><td><tt class="docutils literal">MONTH_ARCHIVE_SAVE_AS</tt></td> <td> </td> <td><p class=first>Location to save monthly archives</p> <p class=last><a class="reference internal" href=#archives>Archives</a></p> </td> </tr> <tr><td><tt class="docutils literal">YEAR_ARCHIVE_SAVE_AS</tt></td> <td> </td> <td><p class=first>Location to save yearly archives</p> <p class=last><a class="reference internal" href=#archives>Archives</a></p> </td> </tr> <tr><td><tt class="docutils literal">FEED_RSS</tt></td> <td> </td> <td><p class=first>Enable the <span class=caps>RSS</span> feed and add a menu item for it</p> <p class=last><a class="reference internal" href=#feeds>Feeds</a></p> </td> </tr> <tr><td><tt class="docutils literal">FEED_ATOM</tt></td> <td> </td> <td><p class=first>Enable the Atom feed and add a menu item for it</p> <p class=last><a class="reference internal" href=#feeds>Feeds</a></p> </td> </tr> </tbody> </table> </div> <div class=section id=additional-tweaks-and-modifications> <h2>Additional tweaks and modifications</h2> <p>Additional things you can tweak and modify are available on <a href=/category/eevee/ class="reference external">kura.gg</a>.</p> </div> <div class=section id=changelog> <h2>Changelog</h2> <div class=section id=section-1> <h3>0.0.14</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.13...0.0.14>Compare changes</a></p> <ul class=simple> <li>Remove references to kura.io</li> </ul> </div> <div class=section id=section-2> <h3>0.0.13</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.12...0.0.13>Compare changes</a></p> <ul class=simple> <li>Removed Google Plugs from share template.</li> </ul> </div> <div class=section id=section-3> <h3>0.0.12</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.11...0.0.12>Compare changes</a></p> <ul> <li><p class=first>Updated share colours to be from the Material Design palette.</p> </li> <li><p class=first>Added some automatic colouring of links/icons for AUTHOR_CARD</p> </li> <li><p class=first>Added ability to disable comments and author_card for a specific page or article using metadata.</p> <p>Using reStructuredText:</p> <div class=highlight><pre><span></span><span class=gh>Example title</span>
-<span class=gh>#############</span>
-<span class=nc>:slug:</span> example
-<span class=nc>:author_card:</span> False
-<span class=nc>:comments:</span> False
-</pre></div> <p>Using Markdown:</p> <div class=highlight><pre><span></span>Title: Example title
+<span class="n">DIRECT_TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"search"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="plugin-permalinks-in-headlines">
+<h3>Plugin: Permalinks in headlines</h3>
+<div class="lightbox-block align-center"><a href="#ddb550c8-5e51-4e17-b46f-58aa2016b5ca" title="Header permalink (click to view large image)"><img alt="Header permalink (click to view large image)" class="align-center" src="/images/eevee-headerid.png"/></a><a class="lightbox" href="#_" id="ddb550c8-5e51-4e17-b46f-58aa2016b5ca" title="Click to close"><img alt="Click to close" src="/images/eevee-headerid.png"/></a><p class="align-center">Header permalink (click to view large image)</p></div><div class="lightbox-divider"></div><p>reStructuredText does not add anchors to headings by default, adding reference
+links on headings means you can send the link to someone and have the browser
+automatically display the relevant section.</p>
+<p>Eevee is configured out-of-the-box to support adding these references using the
+<a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/headerid">headerid</a> plugin.</p>
+</div>
+<div class="section" id="plugin-related-articles">
+<h3>Plugin: Related articles</h3>
+<div class="lightbox-block align-center"><a href="#743790bd-62d0-49c4-8783-83ee6838b393" title="Related articles (click to view large image)"><img alt="Related articles (click to view large image)" class="align-center" src="/images/eevee-related.png"/></a><a class="lightbox" href="#_" id="743790bd-62d0-49c4-8783-83ee6838b393" title="Click to close"><img alt="Click to close" src="/images/eevee-related.png"/></a><p class="align-center">Related articles (click to view large image)</p></div><div class="lightbox-divider"></div><p>Related articles functionality is provided by the <a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/related_posts">related_posts</a> plugin.</p>
+<p>Installing it will automatically enabled the functionality within Eevee.</p>
+<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"related_posts"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="plugin-articles-in-a-series">
+<h3>Plugin: Articles in a series</h3>
+<div class="lightbox-block align-center"><a href="#b59cd985-e385-4343-ae7c-4dbb18db0afa" title="Articles in a series (click to view large image)"><img alt="Articles in a series (click to view large image)" class="align-center" src="/images/eevee-series.png"/></a><a class="lightbox" href="#_" id="b59cd985-e385-4343-ae7c-4dbb18db0afa" title="Click to close"><img alt="Click to close" src="/images/eevee-series.png"/></a><p class="align-center">Articles in a series (click to view large image)</p></div><div class="lightbox-divider"></div><p>Series article functionality is provided by the <a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/series">series</a> plugin.</p>
+<p>Installing it will automatically enabled the functionality within Eevee.</p>
+<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"series"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="plugin-minimise-css-and-javascript">
+<h3>Plugin: Minimise <span class="caps">CSS</span> and JavaScript</h3>
+<p>To minimise/compress all <span class="caps">CSS</span> or JavaScript, simply install the <a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/assets">assets</a> plugin.</p>
+<p>Eevee is configured to automatically compress all <span class="caps">CSS</span> and JavaScript files it
+uses if the assets plugin is enabled, including files related to the <a class="reference internal" href="#search">search</a> functionality.</p>
+<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s2">"assets"</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="advanced-pagination">
+<h3>Advanced pagination</h3>
+<p>By default, Eevee will display pagination links on the index page of articles.
+Enabling the <a class="reference external" href="https://github.com/getpelican/pelican-plugins/tree/master/neighbors">neighbors</a> will
+automatically add a previous and next button to the article page, allowing
+pagination without going back to the index page.</p>
+<p>The default Pelican pagination settings are not very pleasing, for more
+information on how to customise them to better and be more intuitive please
+look at the <a class="reference external" href="https://docs.getpelican.com/en/3.6.3/settings.html#using-pagination-patterns">Pelican documentation</a>.</p>
+</div>
+<div class="section" id="dns-prefetch">
+<h3><span class="caps">DNS</span> prefetch</h3>
+<p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching"><span class="caps">DNS</span> prefetching</a>
+is enabled by default and managed automatically.</p>
+<p>The following features will have respective <span class="caps">DNS</span> prefetch settings that will
+be applied if the feature is enabled;</p>
+<ul class="simple">
+<li>Disqus,</li>
+<li>Piwik,</li>
+<li>GoSquared,</li>
+<li>Google Analytics and,</li>
+<li>Open Web Analytics.</li>
+</ul>
+<p>For example, the following would be applied if you had Disqus and Google
+Analytics enabled.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"EXAMPLE.COM"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"//code.getmdl.io"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"//disqus.com"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"//a.disquscdn.com"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"//EXAMPLE.disqus.com"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"//glitter-services.disqus.com"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"//google-analytics.com"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"dns-prefetch"</span> <span class="na">href</span><span class="o">=</span><span class="s">"//www.google-analytics.com"</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="all-configuration-settings">
+<h2>All configuration settings</h2>
+<table class="docutils">
+<thead>
+<tr><th class="head">Setting name</th>
+<th class="head">Default</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><tt class="docutils literal"><span class="caps">SITENAME</span></tt></td>
+<td> </td>
+<td>The title of your website</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="caps">AUTHOR</span></tt></td>
+<td> </td>
+<td>Your name</td>
+</tr>
+<tr><td><tt class="docutils literal">THEME_PRIMARY</tt></td>
+<td><span class="blue-grey">blue_grey</span></td>
+<td><p class="first">Primary colour scheme</p>
+<p class="last"><a class="reference internal" href="#primary-and-accent-colours">Primary and accent colours</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">THEME_ACCENT</tt></td>
+<td><span class="pink">pink</span></td>
+<td><p class="first">Accent colour scheme</p>
+<p class="last"><a class="reference internal" href="#primary-and-accent-colours">Primary and accent colours</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">MEGA_FOOTER</tt></td>
+<td><tt class="docutils literal">True</tt></td>
+<td><p class="first">Display the mega footer</p>
+<p class="last"><a class="reference internal" href="#header-and-footer-options">Header and footer options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="caps">DISCLAIMER</span></tt></td>
+<td> </td>
+<td><p class="first">Disclaimer displayed on the footer</p>
+<p class="last"><a class="reference internal" href="#primary-and-accent-colours">Primary and accent colours</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="caps">COPYRIGHT</span></tt></td>
+<td> </td>
+<td><p class="first">Copyright notice displayed on the footer</p>
+<p class="last"><a class="reference internal" href="#primary-and-accent-colours">Primary and accent colours</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">USE_AUTHOR_CARD</tt></td>
+<td><tt class="docutils literal">False</tt></td>
+<td><p class="first">Display about author card on articles</p>
+<p class="last"><a class="reference internal" href="#author-card">Author card</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">AUTHOR_CARD_ON_PAGES</tt></td>
+<td><tt class="docutils literal">False</tt></td>
+<td><p class="first">Display about author card on pages</p>
+<p class="last"><a class="reference internal" href="#author-card">Author card</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">AUTHOR_CARD_AVATAR</tt></td>
+<td><tt class="docutils literal">/theme/images/default_avatar.png</tt></td>
+<td><p class="first">Avatar to display on the author card</p>
+<p class="last"><a class="reference internal" href="#author-card">Author card</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">AUTHOR_CARD_DESCRIPTION</tt></td>
+<td> </td>
+<td><p class="first">Description to display on the author card</p>
+<p class="last"><a class="reference internal" href="#author-card">Author card</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">AUTHOR_CARD_SOCIAL</tt></td>
+<td><tt class="docutils literal"><span class="caps">SOCIAL</span></tt></td>
+<td><p class="first">Social media links to display on the author card</p>
+<p class="last"><a class="reference internal" href="#author-card">Author card</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="caps">MENUITEMS</span></tt></td>
+<td><tt class="docutils literal">[]</tt></td>
+<td><p class="first">Displayed on header and mega footer</p>
+<p class="last"><a class="reference internal" href="#header-and-footer-options">Header and footer options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="caps">LINKS</span></tt></td>
+<td><tt class="docutils literal">[]</tt></td>
+<td><p class="first">Blogroll to display on the mega footer</p>
+<p class="last"><a class="reference internal" href="#header-and-footer-options">Header and footer options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="caps">SOCIAL</span></tt></td>
+<td><tt class="docutils literal">[]</tt></td>
+<td><p class="first">Social links to display on the menu and mega footer</p>
+<p class="last"><a class="reference internal" href="#header-and-footer-options">Header and footer options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">DISPLAY_PAGES_ON_MENU</tt></td>
+<td><tt class="docutils literal">False</tt></td>
+<td><p class="first">Display pages on the menu and mega footer</p>
+<p class="last"><a class="reference internal" href="#header-and-footer-options">Header and footer options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">DISPLAY_CATEGORIES_ON_MENU</tt></td>
+<td><tt class="docutils literal">False</tt></td>
+<td><p class="first">Display categories on the menu and mega footer</p>
+<p class="last"><a class="reference internal" href="#header-and-footer-options">Header and footer options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">COMMENTS_ON_PAGES</tt></td>
+<td><tt class="docutils literal">False</tt></td>
+<td><p class="first">Add Diqus or Muut comments on pages</p>
+<p class="last"><a class="reference internal" href="#disqus-or-muut-for-comments">Disqus or Muut for comments</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">MUUT_SITENAME</tt></td>
+<td> </td>
+<td><p class="first">Muut unique identifier for the website</p>
+<p class="last"><a class="reference internal" href="#disqus-or-muut-for-comments">Disqus or Muut for comments</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">DISQUS_SITENAME</tt></td>
+<td> </td>
+<td><p class="first">Disqus unique identifier for the website</p>
+<p class="last"><a class="reference internal" href="#disqus-or-muut-for-comments">Disqus or Muut for comments</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">USE_OPEN_GRAPH</tt></td>
+<td><tt class="docutils literal">False</tt></td>
+<td><p class="first">Add Open Graph meta tags</p>
+<p class="last"><a class="reference internal" href="#sharing-options">Sharing options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">USE_TWITTER_CARDS</tt></td>
+<td><tt class="docutils literal">False</tt></td>
+<td><p class="first">Add Twitter meta tags</p>
+<p class="last"><a class="reference internal" href="#sharing-options">Sharing options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">TWITTER_USERNAME</tt></td>
+<td> </td>
+<td><p class="first">Add your Twitter username to mega tags</p>
+<p class="last"><a class="reference internal" href="#sharing-options">Sharing options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">OPEN_GRAPH_IMAGE</tt></td>
+<td> </td>
+<td><p class="first">Add an image to Twitter and Open Graph</p>
+<p class="last"><a class="reference internal" href="#sharing-options">Sharing options</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">OWA_SITE_ID</tt></td>
+<td> </td>
+<td><p class="first"><span class="caps">OWA</span> unique identifier for the website</p>
+<p class="last"><a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared">Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">OWA_URL</tt></td>
+<td> </td>
+<td><p class="first"><span class="caps">URL</span> to the <span class="caps">OWA</span> installation</p>
+<p class="last"><a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared">Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">PIWIK_SITE_ID</tt></td>
+<td> </td>
+<td><p class="first">Piwik unique identifier for the website</p>
+<p class="last"><a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared">Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">PIWIK_URL</tt></td>
+<td> </td>
+<td><p class="first"><span class="caps">URL</span> to the Piwik installation</p>
+<p class="last"><a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared">Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">PIWIK_SSL_URL</tt></td>
+<td><tt class="docutils literal">PIWIK_URL</tt></td>
+<td><p class="first">Secure <span class="caps">URL</span> to the Piwik installation</p>
+<p class="last"><a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared">Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">GOOGLE_ANALYTICS</tt></td>
+<td> </td>
+<td><p class="first">Google Analytics unique identifier for the website</p>
+<p class="last"><a class="reference internal" href="#google-analytics-piwik-open-web-analytics-and-gosquared">Google Analytics, Piwik, Open Web Analytics and GoSquared</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">ARCHIVES_URL</tt></td>
+<td> </td>
+<td><p class="first"><span class="caps">URL</span> for archives and add a menu item for it</p>
+<p class="last"><a class="reference internal" href="#archives">Archives</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">ARCHIVES_SAVE_AS</tt></td>
+<td> </td>
+<td><p class="first">Location to save archives</p>
+<p class="last"><a class="reference internal" href="#archives">Archives</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">MONTH_ARCHIVE_SAVE_AS</tt></td>
+<td> </td>
+<td><p class="first">Location to save monthly archives</p>
+<p class="last"><a class="reference internal" href="#archives">Archives</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">YEAR_ARCHIVE_SAVE_AS</tt></td>
+<td> </td>
+<td><p class="first">Location to save yearly archives</p>
+<p class="last"><a class="reference internal" href="#archives">Archives</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">FEED_RSS</tt></td>
+<td> </td>
+<td><p class="first">Enable the <span class="caps">RSS</span> feed and add a menu item for it</p>
+<p class="last"><a class="reference internal" href="#feeds">Feeds</a></p>
+</td>
+</tr>
+<tr><td><tt class="docutils literal">FEED_ATOM</tt></td>
+<td> </td>
+<td><p class="first">Enable the Atom feed and add a menu item for it</p>
+<p class="last"><a class="reference internal" href="#feeds">Feeds</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="additional-tweaks-and-modifications">
+<h2>Additional tweaks and modifications</h2>
+<p>Additional things you can tweak and modify are available on <a class="reference external" href="/category/eevee/">kura.gg</a>.</p>
+</div>
+<div class="section" id="changelog">
+<h2>Changelog</h2>
+<div class="section" id="section-1">
+<h3>0.0.14</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.13...0.0.14">Compare changes</a></p>
+<ul class="simple">
+<li>Remove references to kura.io</li>
+</ul>
+</div>
+<div class="section" id="section-2">
+<h3>0.0.13</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.12...0.0.13">Compare changes</a></p>
+<ul class="simple">
+<li>Removed Google Plugs from share template.</li>
+</ul>
+</div>
+<div class="section" id="section-3">
+<h3>0.0.12</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.11...0.0.12">Compare changes</a></p>
+<ul>
+<li><p class="first">Updated share colours to be from the Material Design palette.</p>
+</li>
+<li><p class="first">Added some automatic colouring of links/icons for AUTHOR_CARD</p>
+</li>
+<li><p class="first">Added ability to disable comments and author_card for a specific page or
+article using metadata.</p>
+<p>Using reStructuredText:</p>
+<div class="highlight"><pre><span></span><span class="gh">Example title</span>
+<span class="gh">#############</span>
+<span class="nc">:slug:</span> example
+<span class="nc">:author_card:</span> False
+<span class="nc">:comments:</span> False
+</pre></div>
+<p>Using Markdown:</p>
+<div class="highlight"><pre><span></span>Title: Example title
 Slug: example
 Author_card: False
 Comments: False
-</pre></div> </li> </ul> </div> <div class=section id=section-4> <h3>0.0.11</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.10...0.0.11>Compare changes</a></p> <ul class=simple> <li>Stop using base64 fonts, dumb idea to begin with.</li> <li>Tidy up font sizes in headers.</li> </ul> </div> <div class=section id=section-5> <h3>0.0.10</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.9...0.0.10>Compare changes</a></p> <ul class=simple> <li>Bug fixes in template styles.</li> </ul> </div> <div class=section id=section-6> <h3>0.0.9</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.8...0.0.9>Compare changes</a></p> <ul class=simple> <li>Huge overhaul of theme… Too much to list, check out the documentation.</li> </ul> </div> <div class=section id=section-7> <h3>0.0.8</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.7...0.0.8>Compare changes</a></p> <ul class=simple> <li>Added better templates for <cite>tags</cite> and <cite>categories</cite>.</li> </ul> </div> <div class=section id=section-8> <h3>0.0.7</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.6...0.0.7>Compare changes</a></p> <ul class=simple> <li>Fixed <span class=caps>RSS</span> and Atom having the wrong types.</li> </ul> </div> <div class=section id=section-9> <h3>0.0.6</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.5...0.0.6>Compare changes</a></p> <ul class=simple> <li>Updated archive templates so they aren’t terrible.</li> <li>archive will automatically links to year and month archives if <tt class="docutils literal">YEAR_ARCHIVE_SAVE_AS</tt> or <tt class="docutils literal">MONTH_ARCHIVE_SAVE_AS</tt> are set.</li> <li>partial_archives template now works as expected instead of showing every article.</li> <li>Added archive to header and footer menus.</li> </ul> </div> <div class=section id=section-10> <h3>0.0.5</h3> <p><a class="reference external" href=https://github.com/kura/eevee/compare/0.0.4...0.0.5>Compare changes</a></p> <ul class=simple> <li>Template clean up, mostly making the <span class=caps>HTML</span> itself look prettier to edit.</li> <li>Added aria labels to elements to improve accessibility.</li> <li>Added structures to articles and pages, using <a href=https://schema.org/ class="reference external">schema.org</a> additional markup.</li> </ul> </div> <div class=section id=section-11> <h3>0.0.4</h3> <ul class=simple> <li>Accidentally messed up Disqus and variable names where not used, so comments didn’t actually work properly…</li> <li>Load fonts from base64 in the <span class=caps>CSS</span> file.</li> </ul> </div> <div class=section id=section-12> <h3>0.0.3</h3> <ul class=simple> <li>Add ability to use muut instead of Disqus using <tt class="docutils literal">MUUT_SITENAME</tt> variable.</li> <li>Make the share buttons nicer.</li> <li>Added “back to top” links.</li> </ul> </div> <div class=section id=section-13> <h3>0.0.2</h3> <ul class=simple> <li>Replace <tt class="docutils literal">vh</tt> definitions with <tt class="docutils literal">em</tt> for ribbon.</li> <li>Replace truetype fonts with woff2 and woff.</li> </ul> </div> <div class=section id=section-14> <h3>0.0.1</h3> <ul class=simple> <li>Eevee released</li> </ul> </div> </div> <div class=section id=license> <h2>License</h2> <p>Eevee is released under the <a class="reference external" href=https://github.com/kura/eevee/blob/master/LICENSE><span class=caps>MIT</span> license</a> which is also outlined below.</p> <pre class=literal-block>
+</pre></div>
+</li>
+</ul>
+</div>
+<div class="section" id="section-4">
+<h3>0.0.11</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.10...0.0.11">Compare changes</a></p>
+<ul class="simple">
+<li>Stop using base64 fonts, dumb idea to begin with.</li>
+<li>Tidy up font sizes in headers.</li>
+</ul>
+</div>
+<div class="section" id="section-5">
+<h3>0.0.10</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.9...0.0.10">Compare changes</a></p>
+<ul class="simple">
+<li>Bug fixes in template styles.</li>
+</ul>
+</div>
+<div class="section" id="section-6">
+<h3>0.0.9</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.8...0.0.9">Compare changes</a></p>
+<ul class="simple">
+<li>Huge overhaul of theme… Too much to list, check out the documentation.</li>
+</ul>
+</div>
+<div class="section" id="section-7">
+<h3>0.0.8</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.7...0.0.8">Compare changes</a></p>
+<ul class="simple">
+<li>Added better templates for <cite>tags</cite> and <cite>categories</cite>.</li>
+</ul>
+</div>
+<div class="section" id="section-8">
+<h3>0.0.7</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.6...0.0.7">Compare changes</a></p>
+<ul class="simple">
+<li>Fixed <span class="caps">RSS</span> and Atom having the wrong types.</li>
+</ul>
+</div>
+<div class="section" id="section-9">
+<h3>0.0.6</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.5...0.0.6">Compare changes</a></p>
+<ul class="simple">
+<li>Updated archive templates so they aren’t terrible.</li>
+<li>archive will automatically links to year and month archives if
+<tt class="docutils literal">YEAR_ARCHIVE_SAVE_AS</tt> or <tt class="docutils literal">MONTH_ARCHIVE_SAVE_AS</tt> are set.</li>
+<li>partial_archives template now works as expected instead of showing every article.</li>
+<li>Added archive to header and footer menus.</li>
+</ul>
+</div>
+<div class="section" id="section-10">
+<h3>0.0.5</h3>
+<p><a class="reference external" href="https://github.com/kura/eevee/compare/0.0.4...0.0.5">Compare changes</a></p>
+<ul class="simple">
+<li>Template clean up, mostly making the <span class="caps">HTML</span> itself look prettier to edit.</li>
+<li>Added aria labels to elements to improve accessibility.</li>
+<li>Added structures to articles and pages, using <a class="reference external" href="https://schema.org/">schema.org</a> additional markup.</li>
+</ul>
+</div>
+<div class="section" id="section-11">
+<h3>0.0.4</h3>
+<ul class="simple">
+<li>Accidentally messed up Disqus and variable names where not used, so comments
+didn’t actually work properly…</li>
+<li>Load fonts from base64 in the <span class="caps">CSS</span> file.</li>
+</ul>
+</div>
+<div class="section" id="section-12">
+<h3>0.0.3</h3>
+<ul class="simple">
+<li>Add ability to use muut instead of Disqus using <tt class="docutils literal">MUUT_SITENAME</tt> variable.</li>
+<li>Make the share buttons nicer.</li>
+<li>Added “back to top” links.</li>
+</ul>
+</div>
+<div class="section" id="section-13">
+<h3>0.0.2</h3>
+<ul class="simple">
+<li>Replace <tt class="docutils literal">vh</tt> definitions with <tt class="docutils literal">em</tt> for ribbon.</li>
+<li>Replace truetype fonts with woff2 and woff.</li>
+</ul>
+</div>
+<div class="section" id="section-14">
+<h3>0.0.1</h3>
+<ul class="simple">
+<li>Eevee released</li>
+</ul>
+</div>
+</div>
+<div class="section" id="license">
+<h2>License</h2>
+<p>Eevee is released under the <a class="reference external" href="https://github.com/kura/eevee/blob/master/LICENSE"><span class="caps">MIT</span> license</a> which is also outlined below.</p>
+<pre class="literal-block">
 (The MIT License)
 
 Copyright (c) 2016 Kura
@@ -228,4 +1467,161 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-</pre> </div> </div> </section> </div> <div class=eevee-ac> <header class=eevee-ac__header> <div class=eevee-ac-author__text> <h2>Kura</h2> <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p> <p> <a href=https://kura.gg/authors/kura/ itemprop=url title="Read more articles by Kura"> Read more articles by Kura </a> </p> <nav> <ul class=eevee-ac-author__social> <li class=eevee-ac-author-social__link> <a class="mdl-color-text--accent mdl-navigation__link" href=https://github.com/kura itemprop=url rel=bookmark title="Kura on GitHub"> <i class=fa aria-hidden=true>&#xF09B;</i> </a> </li> </ul> </nav> </div> <img src=/images/avatar.png class=eevee-ac-author__avatar alt=Kura> </header> </div> </article> <a href=https://github.com/kura/kura.gg/blob/main/content/pages/eevee.rst id=view-source title="View 'Eevee — A Material Design theme for Pelican' on GitHub" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white"> <i class=material-icons>&#xE86F;</i> View Source </a> </div> </div> </main> <div class="eevee-pagination__container eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"> <nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label=Pagination> <div class=eevee-spacer></div> </nav> </div> </div> <footer class=mdl-mega-footer itemscope itemtype=http://schema.org/SiteNavigationElement> <div class=mdl-mega-footer--top-section> <div class=mdl-mega-footer--drop-down-section> <ul class=mdl-mega-footer--link-list> <li> <a href=#top itemprop=url title="Back to the top of the page"> Back to the top of the page </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--middle-section itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Footer navigation"> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Menu</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> </li> <li> <a href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> </li> <li> <a href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Social</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=https://github.com/kura itemprop=url rel=bookmark title=GitHub> <i class=fa aria-hidden=true>&#xF09B;</i> Github </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Links</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> </li> <li> <a href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> </li> <li> <a href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> </li> <li> <a href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> </li> <li> <a href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--bottom-section> <div class=mdl-logo> <a href=https://kura.gg rel=bookmark itemprop=url title=kura.gg> kura.gg </a> </div> <ul class="eevee-footer mdl-mega-footer--link-list"> <li>Powered by love &amp; rainbow sparkles.</li> <li>Source code and content released under the <a href=/license/ title="MIT license">MIT license</a>.</li> </ul> </div> </footer> </div> </body> </html>
+</pre>
+</div>
+</div>
+      </section>
+    </div>
+  <div class="eevee-ac">
+    <header class="eevee-ac__header">
+      <div class="eevee-ac-author__text">
+        <h2>Kura</h2>
+          <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p>
+          <p>
+            <a href="../authors/kura/"
+               itemprop="url"
+               title="Read more articles by Kura">
+              Read more articles by Kura
+            </a>
+          </p>
+        <nav>
+          <ul class="eevee-ac-author__social">
+              <li class="eevee-ac-author-social__link">
+                <a class="mdl-color-text--accent mdl-navigation__link"
+                   href="https://github.com/kura" itemprop="url" rel="bookmark"
+                   title="Kura on GitHub">
+                  <i class="fa" aria-hidden="true">&#xF09B;</i>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+      <img src="/images/avatar.png" class="eevee-ac-author__avatar"
+           alt="Kura" />
+    </header>
+  </div>
+  </article>
+  <a href="https://github.com/kura/kura.gg/blob/main/content/pages/eevee.rst"
+     id="view-source" title="View 'Eevee — A Material Design theme for Pelican' on GitHub"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
+    <i class="material-icons">&#xE86F;</i> View Source
+  </a>
+        </div>
+      </div>
+    </main>
+      <div class="eevee-pagination__container eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+<nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Pagination">
+  <div class="eevee-spacer"></div>
+</nav>        </div>
+      </div>
+    <footer class="mdl-mega-footer" itemscope
+            itemtype="http://schema.org/SiteNavigationElement">
+      <div class="mdl-mega-footer--top-section">
+        <div class="mdl-mega-footer--drop-down-section">
+          <ul class="mdl-mega-footer--link-list">
+            <li>
+              <a href="#top" itemprop="url"
+                 title="Back to the top of the page">
+                Back to the top of the page
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+<div class="mdl-mega-footer--middle-section" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Footer navigation">
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Menu</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/contact/" itemprop="url" rel="bookmark"
+             title="Contact">
+            <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+          </a>
+        </li>
+        <li>
+          <a href="../archives/"
+             itemprop="url" rel="bookmark" title="Archives">
+            <i class="material-icons">&#xE02F;</i>
+            Archives
+          </a>
+        </li>
+        <li>
+          <a href="../feeds/rss.xml"
+             title="RSS"
+             itemprop="url">
+            <i class="material-icons">&#xE0E5;</i>
+              RSS
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Social</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="https://github.com/kura" itemprop="url" rel="bookmark"
+             title="GitHub">
+            <i class="fa" aria-hidden="true">&#xF09B;</i> Github
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Links</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/blackhole" itemprop="url" rel="bookmark"
+             title="Blackhole">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+          </a>
+        </li>
+        <li>
+          <a href="/eevee" itemprop="url" rel="bookmark"
+             title="Eevee">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+          </a>
+        </li>
+        <li>
+          <a href="/hauntr" itemprop="url" rel="bookmark"
+             title="Hauntr">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+          </a>
+        </li>
+        <li>
+          <a href="/ghastly" itemprop="url" rel="bookmark"
+             title="Ghastly">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+          </a>
+        </li>
+        <li>
+          <a href="/pelican-plugins" itemprop="url" rel="bookmark"
+             title="Pelican Plugins">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+          </a>
+        </li>
+      </ul>
+  </div>
+</div>      <div class="mdl-mega-footer--bottom-section">
+        <div class="mdl-logo">
+          <a href=".." rel="bookmark" itemprop="url"
+             title="kura.gg">
+            kura.gg
+          </a>
+        </div>
+          <ul class="eevee-footer mdl-mega-footer--link-list">
+              <li>Powered by love &amp; rainbow sparkles.</li>
+              <li>Source code and content released under the <a href="/license/" title="MIT license">MIT license</a>.</li>
+          </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

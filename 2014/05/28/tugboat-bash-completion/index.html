@@ -1,4 +1,5 @@
-<!DOCTYPE html><!--
+<!DOCTYPE html>
+<!--
 
                                       |
                                      /|
@@ -36,9 +37,547 @@
                                    |   ,'
                                     `\"\"
 
-//--><html lang=en> <head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><link rel=alternate href=https://kura.gg hreflang=en><link rel=dns-prefetch href=https://kura.gg><link rel=stylesheet href=https://kura.gg/theme/css/eevee.min.css?1c9d8344><script async src=https://kura.gg/theme/js/eevee.min.js?1841d254></script><link href=https://kura.gg/feeds/rss.xml type=application/rss+xml rel=alternate title=kura.gg><link href=https://kura.gg/feeds/atom.xml type=application/atom+xml rel=alternate title=kura.gg><meta property=og:site_name content=kura.gg><meta property=og:type content=article><meta property=og:title content=tugboat-bash-completion><meta content=https://kura.gg/2014/05/28/tugboat-bash-completion/ property=og:url><meta property=og:description content="tugboat-bash-completion is a bash completion script the tugboat CLI interface for the Digital Ocean API. Downloads .tar.gz .zip Installation Debian/Ubuntu Install manually Download the source file from above and run the commands below. sudo make install . ~/bashrc Or you can do it the lazy way sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat \ -O /etc/bash_completion.d/tugboat . ~/bashrc Notes It’s worth noting that any command that supports a FUZZY_MATCH will take a small amount of time to respond, due to querying the API for a list of either droplets or images. Commands that do a droplet lookup; destroy halt info password-reset rebuild resize restart snapshot ssh start wait An image lookup; destroy_image info_image rebuild Source The source can be found on GitHub. Issues Issues can be tracked using GitHub Issues. License This software is licensed using the MIT License. The license is provided in …"><meta property=og:image content=https://kura.gg/2014/05/28/tugboat-bash-completion/index.png><meta property=og:image:width content=1920><meta property=og:image:height content=1080><meta property=twitter:title content=tugboat-bash-completion><meta content=https://kura.gg/2014/05/28/tugboat-bash-completion/ property=twitter:url><meta property=twitter:description content="tugboat-bash-completion is a bash completion script the tugboat CLI interface for the Digital Ocean API. Downloads .tar.gz .zip Installation Debian/Ubuntu Install manually Download the source file from above and run the commands below. sudo make install . ~/bashrc Or you can do it the lazy way sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat \ -O /etc/bash_completion.d/tugboat . ~/bashrc Notes It’s worth noting that any command that supports a FUZZY_MATCH will take a small amount of time to respond, due to querying the API for a list of either droplets or images. Commands that do a droplet lookup; destroy halt info password-reset rebuild resize restart snapshot ssh start wait An image lookup; destroy_image info_image rebuild Source The source can be found on GitHub. Issues Issues can be tracked using GitHub Issues. License This software is licensed using the MIT License. The license is provided in …"><meta property=twitter:image content=https://kura.gg/2014/05/28/tugboat-bash-completion/index.png><meta property=twitter:card content=summary_large_image><meta property=twitter:label1 content="Written by"><meta property=twitter:data1 content=Kura><meta property=twitter:label2 content="Estimated reading time"><meta property=twitter:data2 content="< 1 min read"><meta property=twitter:image:width content=1920><meta property=twitter:image:height content=1080><link rel=icon href=/favicon.png type=image/png sizes="16x16 32x32 48x48 64x64 128x128 256x256"><link rel=icon href=/favicon.ico type=image/vnd.microsoft.icon sizes="16x16 32x32 48x48 64x64 128x128 256x256"><title>tugboat-bash-completion</title></head> <body> <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50"> <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800" itemscope itemtype=http://schema.org/WPHeader> <div class=mdl-layout__header-row> <div aria-expanded=false role=button tabindex=0 class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only"> <i class=material-icons>&#xE5D2;</i> </div> <span class="eevee-logo mdl-color-text--accent mdl-layout-title"> <h2 id=top> <a href=https://kura.gg rel=bookmark title=kura.gg> kura.gg </a> </h2> </span> <div class=mdl-layout-spacer role=presentation></div> <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </header> <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden=true> <span class=mdl-layout-title> <h2 class="eevee-mobile-logo mdl-color-text--accent"> kura.gg </h2> </span> <div class="mdl-navigation mdl-color--white"> <nav class="eevee-nav mdl-navigation" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg itemprop=url rel=bookmark> <i class=material-icons aria-hidden=true> &#xE88A; </i> Home </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </div> <div class="eevee-ribbon mdl-color--primary-dark" role=presentation> </div> <main class="eevee-main mdl-layout__content"> <div class="eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col" aria-label="Main content"> <article itemscope itemtype=http://schema.org/BlogPosting> <meta itemprop=accessibilityControl content=fullKeyboardControl> <meta itemprop=accessibilityControl content=fullMouseControl> <meta itemprop=accessibilityControl content=bookmarks> <meta itemprop=accessibilityControl content=captions> <meta itemprop=accessibilityControl content=alternativeText> <meta itemprop=accessibilityControl content=index> <meta itemprop=accessibilityControl content=readingOrder> <meta itemprop=accessibilityControl content=structuralNavigation> <meta itemprop=accessibilityControl content=tableOfContents> <meta itemprop=accessibilityHazard content=noFlashingHazard> <meta itemprop=accessibilityHazard content=noMotionSimulationHazard> <meta itemprop=accessibilityHazard content=noSoundHazard> <meta itemprop=accessibilityAPI content=ARIA> <div itemprop=author itemscope itemtype=https://schema.org/Person role=presentation /> <a href=https://kura.gg/authors/kura/ class=hidden itemprop=url role=presentation> <span class=hidden itemprop=name role=presentation> kura </span> </a> </div> <meta itemprop=keywords content="digital ocean,tugboat,bash,completion"> <meta itemprop=keywords content=coding> <div class=eevee-share> <ul class="social-share mdl-navigation"> <li class="social-share__link social-share__link--twitter"> <a href="https://twitter.com/intent/tweet?text=tugboat-bash-completion&url=https%3A//kura.gg/2014/05/28/tugboat-bash-completion/" title="Share 'tugboat-bash-completion' on Twitter" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;"> <i class=fa aria-hidden=true>&#xF099;</i> </a> </li> <li class="social-share__link social-share__link--facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//kura.gg/2014/05/28/tugboat-bash-completion/" title="Share 'tugboat-bash-completion' on Facebook" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;"> <i class=fa aria-hidden=true>&#xF09A;</i> </a> </li> <li class="social-share__link social-share__link--email"> <a href="mailto:?subject=tugboat-bash-completion&body=I%20thought%20you%20might%20like%20'tugboat-bash-completion'%20--%20https%3A//kura.gg/2014/05/28/tugboat-bash-completion/" title="Share 'tugboat-bash-completion' via email"> <i class=material-icons aria-hidden=true> &#xE0E1; </i> </a> </li> </ul> </div> <div class=eevee-article> <div class="eevee-meta mdl-color-text--grey-500"> <time datetime=2014-05-28T09:00:00+01:00 itemprop=datePublished> 28 May 2014 </time>&nbsp;-- < 1 min read </div> <h1 itemprop=name> <a href=https://kura.gg/2014/05/28/tugboat-bash-completion/ rel=bookmark title="Permalink to 'tugboat-bash-completion'" itemprop=url> tugboat-bash-completion </a> </h1> <section class=eevee-toc> <h2 id=toc> Contents </h2> <nav class=eevee-toc-ribbon> <div class=toc id> <p class=topic-title>Contents</p> <ul class=simple> <li><a class="reference internal" href=#downloads id=toc-entry-1>Downloads</a></li> <li><a class="reference internal" href=#installation id=toc-entry-2>Installation</a><ul> <li><a class="reference internal" href=#debian-ubuntu id=toc-entry-3>Debian/Ubuntu</a><ul> <li><a class="reference internal" href=#install-manually id=toc-entry-4>Install manually</a></li> </ul> </li> </ul> </li> <li><a class="reference internal" href=#notes id=toc-entry-5>Notes</a></li> <li><a class="reference internal" href=#source id=toc-entry-6>Source</a></li> <li><a class="reference internal" href=#issues id=toc-entry-7>Issues</a></li> <li><a class="reference internal" href=#license id=toc-entry-8>License</a></li> </ul> </div> </nav> </section> <section itemprop=articleBody class=article-content> <p>tugboat-bash-completion is a bash completion script the <a class="reference external" href=https://github.com/pearkes/tugboat>tugboat</a> <span class=caps>CLI</span> interface for the <a href=https://www.digitalocean.com/ class="reference external">Digital Ocean</a> <span class=caps>API</span>.</p> <div class=section id=downloads> <h2>Downloads</h2> <ul class=simple> <li><a class="reference external" href=https://github.com/kura/tugboat-bash-completion/tarball/master>.tar.gz</a></li> <li><a class="reference external" href=https://github.com/kura/tugboat-bash-completion/zipball/master>.zip</a></li> </ul> </div> <div class=section id=installation> <h2>Installation</h2> <div class=section id=debian-ubuntu> <h3>Debian/Ubuntu</h3> <div class=section id=install-manually> <h4>Install manually</h4> <p>Download the source file from above and run the commands below.</p> <div class=highlight><pre><span></span>sudo make install
+//-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="alternate" href="../../../.." hreflang="en" />
+<link rel="dns-prefetch" href="../../../.." />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/63377f06b1648775b11ff8e169b4a710_material.yellow-amber.min.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/c335929e0083dac14c3a8f107c05dde3_font-awesome.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/14c05c94e27da637bc780ad514251b18_material-icons.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/a28e8d0a2ff230dae7c257a9f828e3b1_pygments.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/0eddd53a34a33f68e0c593881131a436_eevee.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/2f21b66ec2ab0b874a1f30d00028e286_custom.css" />
+  <script async src="../../../../theme/webassets-external/a7fbc4b6cecaeb63ed7b7d6e2f75e649_material.js"></script>
+  <link href="../../../../feeds/rss.xml" type="application/rss+xml"
+        rel="alternate" title="kura.gg" />
+  <link href="../../../../feeds/atom.xml" type="application/atom+xml"
+        rel="alternate" title="kura.gg" />
+  <meta property="og:site_name" content="kura.gg" />
+  <meta property="og:type" content="article" />
+    <meta property="og:title"
+          content="tugboat-bash-completion" />
+    <meta property="og:url"
+          content="../../../../2014/05/28/tugboat-bash-completion/" />
+    <meta property="og:description"
+          content="tugboat-bash-completion is a bash completion script the tugboat CLI interface for the Digital Ocean API. Downloads .tar.gz .zip Installation Debian/Ubuntu Install manually Download the source file from above and run the commands below. sudo make install . ~/bashrc Or you can do it the lazy way sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat \ -O /etc/bash_completion.d/tugboat . ~/bashrc Notes It’s worth noting that any command that supports a FUZZY_MATCH will take a small amount of time to respond, due to querying the API for a list of either droplets or images. Commands that do a droplet lookup; destroy halt info password-reset rebuild resize restart snapshot ssh start wait An image lookup; destroy_image info_image rebuild Source The source can be found on GitHub. Issues Issues can be tracked using GitHub Issues. License This software is licensed using the MIT License. The license is provided in …" />
+    <meta property="og:image"
+          content="../../../../2014/05/28/tugboat-bash-completion/index.png" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+    <meta property="twitter:title"
+          content="tugboat-bash-completion" />
+    <meta property="twitter:url"
+          content="../../../../2014/05/28/tugboat-bash-completion/" />
+    <meta property="twitter:description"
+          content="tugboat-bash-completion is a bash completion script the tugboat CLI interface for the Digital Ocean API. Downloads .tar.gz .zip Installation Debian/Ubuntu Install manually Download the source file from above and run the commands below. sudo make install . ~/bashrc Or you can do it the lazy way sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat \ -O /etc/bash_completion.d/tugboat . ~/bashrc Notes It’s worth noting that any command that supports a FUZZY_MATCH will take a small amount of time to respond, due to querying the API for a list of either droplets or images. Commands that do a droplet lookup; destroy halt info password-reset rebuild resize restart snapshot ssh start wait An image lookup; destroy_image info_image rebuild Source The source can be found on GitHub. Issues Issues can be tracked using GitHub Issues. License This software is licensed using the MIT License. The license is provided in …" />
+    <meta property="twitter:image"
+          content="../../../../2014/05/28/tugboat-bash-completion/index.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:label1" content="Written by" />
+    <meta property="twitter:data1" content="Kura" />
+      <meta property="twitter:label2" content="Estimated reading time" />
+      <meta property="twitter:data2" content="< 1 min read" />
+  <meta property="twitter:image:width" content="1920" />
+  <meta property="twitter:image:height" content="1080" />
+  <link rel="icon" href="/favicon.png" type="image/png"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <title>tugboat-bash-completion</title>
+</head>
+<body>
+  <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+    <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+            itemscope itemtype="http://schema.org/WPHeader">
+      <div class="mdl-layout__header-row">
+        <div aria-expanded="false" role="button" tabindex="0"
+             class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+          <i class="material-icons">&#xE5D2;</i>
+        </div>
+        <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+          <h2 id="top">
+            <a href="../../../.." rel="bookmark" title="kura.gg">
+              kura.gg
+            </a>
+          </h2>
+        </span>
+        <div class="mdl-layout-spacer" role="presentation"></div>
+        <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+             itemscope itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </header>
+    <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+         aria-hidden="true">
+      <span class="mdl-layout-title">
+        <h2 class="eevee-mobile-logo mdl-color-text--accent">
+          kura.gg
+        </h2>
+      </span>
+      <div class="mdl-navigation mdl-color--white">
+        <nav class="eevee-nav mdl-navigation" itemscope
+             itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+          <a class="mdl-color-text--accent mdl-navigation__link"
+             href="../../../.." itemprop="url" rel="bookmark">
+            <i class="material-icons" aria-hidden="true">
+              &#xE88A;
+            </i> Home
+          </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </div>
+    <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+    </div>
+    <main class="eevee-main mdl-layout__content">
+      <div class="eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+             aria-label="Main content">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl" />
+<meta itemprop="accessibilityControl" content="fullMouseControl" />
+<meta itemprop="accessibilityControl" content="bookmarks" />
+<meta itemprop="accessibilityControl" content="captions" />
+<meta itemprop="accessibilityControl" content="alternativeText" />
+<meta itemprop="accessibilityControl" content="index" />
+<meta itemprop="accessibilityControl" content="readingOrder" />
+<meta itemprop="accessibilityControl" content="structuralNavigation" />
+<meta itemprop="accessibilityControl" content="tableOfContents" />
+<meta itemprop="accessibilityHazard" content="noFlashingHazard" />
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard" />
+<meta itemprop="accessibilityHazard" content="noSoundHazard" />
+<meta itemprop="accessibilityAPI" content="ARIA" />
+  <div itemprop="author" itemscope
+       itemtype="https://schema.org/Person" role="presentation" />
+    <a href="../../../../authors/kura/" class="hidden"
+       itemprop="url" role="presentation">
+      <span class="hidden" itemprop="name" role="presentation">
+        kura
+      </span>
+    </a>
+  </div>
+    <meta itemprop="keywords"
+          content="digital ocean,tugboat,bash,completion" />
+    <meta itemprop="keywords" content="coding" />
+  <div class="eevee-share">
+    <ul class="social-share mdl-navigation">
+      <li class="social-share__link social-share__link--twitter">
+        <a href="https://twitter.com/intent/tweet?text=tugboat-bash-completion&amp;url=../../../../2014/05/28/tugboat-bash-completion/"
+           title="Share 'tugboat-bash-completion' on Twitter"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
+          <i class="fa" aria-hidden="true">&#xF099;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=../../../../2014/05/28/tugboat-bash-completion/"
+           title="Share 'tugboat-bash-completion' on Facebook"
+           onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
+          <i class="fa" aria-hidden="true">&#xF09A;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--email">
+        <a href="mailto:?subject=tugboat-bash-completion&amp;body=I%20thought%20you%20might%20like%20'tugboat-bash-completion'%20--%20../../../../2014/05/28/tugboat-bash-completion/"
+           title="Share 'tugboat-bash-completion' via email">
+          <i class="material-icons" aria-hidden="true">
+            &#xE0E1;
+          </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+    <div class="eevee-article">
+      <div class="eevee-meta mdl-color-text--grey-500">
+        <time datetime="2014-05-28T09:00:00+01:00"
+              itemprop="datePublished">
+          28 May 2014
+        </time>&nbsp;-- < 1 min read      </div>
+      <h1 itemprop="name">
+        <a href="../../../../2014/05/28/tugboat-bash-completion/" rel="bookmark"
+           title="Permalink to 'tugboat-bash-completion'" itemprop="url">
+          tugboat-bash-completion
+        </a>
+      </h1>
+  <section class="eevee-toc">
+    <h2 id="toc">
+        Contents
+    </h2>
+    <nav class="eevee-toc-ribbon">
+      <div class="toc" id="">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#downloads" id="toc-entry-1">Downloads</a></li>
+<li><a class="reference internal" href="#installation" id="toc-entry-2">Installation</a><ul>
+<li><a class="reference internal" href="#debian-ubuntu" id="toc-entry-3">Debian/Ubuntu</a><ul>
+<li><a class="reference internal" href="#install-manually" id="toc-entry-4">Install manually</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notes" id="toc-entry-5">Notes</a></li>
+<li><a class="reference internal" href="#source" id="toc-entry-6">Source</a></li>
+<li><a class="reference internal" href="#issues" id="toc-entry-7">Issues</a></li>
+<li><a class="reference internal" href="#license" id="toc-entry-8">License</a></li>
+</ul>
+</div>
+    </nav>
+  </section>
+      <section itemprop="articleBody" class="article-content">
+        
+<p>tugboat-bash-completion is a bash completion script the <a class="reference external" href="https://github.com/pearkes/tugboat">tugboat</a> <span class="caps">CLI</span> interface for the <a class="reference external" href="https://www.digitalocean.com/">Digital Ocean</a> <span class="caps">API</span>.</p>
+<div class="section" id="downloads">
+<h2>Downloads</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/kura/tugboat-bash-completion/tarball/master">.tar.gz</a></li>
+<li><a class="reference external" href="https://github.com/kura/tugboat-bash-completion/zipball/master">.zip</a></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<div class="section" id="debian-ubuntu">
+<h3>Debian/Ubuntu</h3>
+<div class="section" id="install-manually">
+<h4>Install manually</h4>
+<p>Download the source file from above and run the commands below.</p>
+<div class="highlight"><pre><span></span>sudo make install
 . ~/bashrc
-</pre></div> <p>Or you can do it the lazy way</p> <div class=highlight><pre><span></span>sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat <span class=se>\</span>
+</pre></div>
+<p>Or you can do it the lazy way</p>
+<div class="highlight"><pre><span></span>sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat <span class="se">\</span>
     -O /etc/bash_completion.d/tugboat
 . ~/bashrc
-</pre></div> </div> </div> </div> <div class=section id=notes> <h2>Notes</h2> <p>It’s worth noting that any command that supports a FUZZY_MATCH will take a small amount of time to respond, due to querying the <span class=caps>API</span> for a list of either droplets or images.</p> <p>Commands that do a droplet lookup;</p> <ul class=simple> <li>destroy</li> <li>halt</li> <li>info</li> <li>password-reset</li> <li>rebuild</li> <li>resize</li> <li>restart</li> <li>snapshot</li> <li>ssh</li> <li>start</li> <li>wait</li> </ul> <p>An image lookup;</p> <ul class=simple> <li>destroy_image</li> <li>info_image</li> <li>rebuild</li> </ul> </div> <div class=section id=source> <h2>Source</h2> <p>The source can be found on <a class="reference external" href=https://github.com/kura/tugboat-bash-completion>GitHub</a>.</p> </div> <div class=section id=issues> <h2>Issues</h2> <p>Issues can be tracked using <a class="reference external" href=https://github.com/kura/tugboat-bash-completion/issues>GitHub Issues</a>.</p> </div> <div class=section id=license> <h2>License</h2> <p>This software is licensed using the <span class=caps>MIT</span> License. The license is provided in the <a class="reference external" href=https://github.com/kura/tugboat-bash-completion/blob/master/LICENSE>source code repository</a>.</p> </div> </section> </div> <div class=eevee-related> <section> <h2>Related articles</h2> <ul> <li> <a href=https://kura.gg/2014/02/27/vagrant-bash-completion-and-go-bash-completion-on-apt.kura.gg/ rel=bookmark title="Permalink to 'vagrant-bash-completion & go-bash-completion on apt.kura.gg'" itemprop=url> vagrant-bash-completion <span class=amp>&amp;</span> go-bash-completion on&nbsp;apt.kura.gg </a> </li> <li> <a href=https://kura.gg/2014/09/15/batfish-writing-a-digital-ocean-v2-api-wrapper/ rel=bookmark title="Permalink to 'batfish(1) - writing a Digital Ocean V2 API wrapper'" itemprop=url> batfish(1) - writing a Digital Ocean V2 <span class=caps>API</span>&nbsp;wrapper </a> </li> <li> <a href=https://kura.gg/2013/08/18/my-ps1-with-git-branch-new-files-staged-files-and-commit-status/ rel=bookmark title="Permalink to 'My $PS1 with git branch, new files, staged files and commit status'" itemprop=url> My $<span class=caps>PS1</span> with git branch, new files, staged files and commit&nbsp;status </a> </li> <li> <a href=https://kura.gg/2013/03/12/bash-portforwarding-with-autocompletion/ rel=bookmark title="Permalink to 'Bash portforwarding with autocompletion'" itemprop=url> Bash portforwarding with&nbsp;autocompletion </a> </li> </ul> </section> </div> <div class=eevee-ac> <header class=eevee-ac__header> <div class=eevee-ac-author__text> <h2>Kura</h2> <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p> <p> <a href=https://kura.gg/authors/kura/ itemprop=url title="Read more articles by Kura"> Read more articles by Kura </a> </p> <nav> <ul class=eevee-ac-author__social> <li class=eevee-ac-author-social__link> <a class="mdl-color-text--accent mdl-navigation__link" href=https://github.com/kura itemprop=url rel=bookmark title="kura on GitHub"> <i class=fa aria-hidden=true>&#xF09B;</i> </a> </li> </ul> </nav> </div> <img src=/images/avatar.png class=eevee-ac-author__avatar alt=Kura> </header> </div> </article> <a href=https://github.com/kura/kura.gg/blob/main/content/tugboat-bash-completion.rst id=view-source title="View 'tugboat-bash-completion' on GitHub" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white"> <i class=material-icons>&#xE86F;</i> View Source </a> </div> </div> </main> <div class="eevee-pagination__container eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"> <nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label=Pagination> <a href=https://kura.gg/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/ class=eevee-nav__button itemprop=url rel=bookmark title=Newer> <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900" role=presentation> <i class=material-icons>&#xE5C4;</i> </button> Newer </a> <div class=eevee-spacer></div> <a href=https://kura.gg/2014/05/26/ghastly-a-theme-for-pelican/ class=eevee-nav__button itemprop=url rel=bookmark title=Older> Older <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900" role=presentation> <i class=material-icons>&#xE5C8;</i> </button> </a> </nav> </div> </div> <footer class=mdl-mega-footer itemscope itemtype=http://schema.org/SiteNavigationElement> <div class=mdl-mega-footer--top-section> <div class=mdl-mega-footer--drop-down-section> <ul class=mdl-mega-footer--link-list> <li> <a href=#top itemprop=url title="Back to the top of the page"> Back to the top of the page </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--middle-section itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Footer navigation"> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Menu</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> </li> <li> <a href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> </li> <li> <a href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Social</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=https://github.com/kura itemprop=url rel=bookmark title=GitHub> <i class=fa aria-hidden=true>&#xF09B;</i> Github </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Links</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> </li> <li> <a href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> </li> <li> <a href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> </li> <li> <a href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> </li> <li> <a href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--bottom-section> <div class=mdl-logo> <a href=https://kura.gg rel=bookmark itemprop=url title=kura.gg> kura.gg </a> </div> <ul class="eevee-footer mdl-mega-footer--link-list"> <li>Powered by love &amp; rainbow sparkles.</li> <li>Source code and content released under the <a href=/license/ title="MIT license">MIT license</a>.</li> </ul> </div> </footer> </div> </body> </html>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="notes">
+<h2>Notes</h2>
+<p>It’s worth noting that any command that supports a FUZZY_MATCH will take a
+small amount of time to respond, due to querying the <span class="caps">API</span> for a list of either
+droplets or images.</p>
+<p>Commands that do a droplet lookup;</p>
+<ul class="simple">
+<li>destroy</li>
+<li>halt</li>
+<li>info</li>
+<li>password-reset</li>
+<li>rebuild</li>
+<li>resize</li>
+<li>restart</li>
+<li>snapshot</li>
+<li>ssh</li>
+<li>start</li>
+<li>wait</li>
+</ul>
+<p>An image lookup;</p>
+<ul class="simple">
+<li>destroy_image</li>
+<li>info_image</li>
+<li>rebuild</li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source</h2>
+<p>The source can be found on <a class="reference external" href="https://github.com/kura/tugboat-bash-completion">GitHub</a>.</p>
+</div>
+<div class="section" id="issues">
+<h2>Issues</h2>
+<p>Issues can be tracked using <a class="reference external" href="https://github.com/kura/tugboat-bash-completion/issues">GitHub Issues</a>.</p>
+</div>
+<div class="section" id="license">
+<h2>License</h2>
+<p>This software is licensed using the <span class="caps">MIT</span> License.
+The license is provided in the <a class="reference external" href="https://github.com/kura/tugboat-bash-completion/blob/master/LICENSE">source code repository</a>.</p>
+</div>
+
+      </section>
+    </div>
+  <div class="eevee-related">
+    <section>
+      <h2>Related articles</h2>
+      <ul>
+          <li>
+            <a href="../../../../2014/02/27/vagrant-bash-completion-and-go-bash-completion-on-apt.kura.gg/"
+               rel="bookmark"
+               title="Permalink to 'vagrant-bash-completion & go-bash-completion on apt.kura.gg'"
+               itemprop="url">
+              vagrant-bash-completion <span class="amp">&amp;</span> go-bash-completion on&nbsp;apt.kura.gg
+            </a>
+          </li>
+          <li>
+            <a href="../../../../2014/09/15/batfish-writing-a-digital-ocean-v2-api-wrapper/"
+               rel="bookmark"
+               title="Permalink to 'batfish(1) - writing a Digital Ocean V2 API wrapper'"
+               itemprop="url">
+              batfish(1) - writing a Digital Ocean V2 <span class="caps">API</span>&nbsp;wrapper
+            </a>
+          </li>
+          <li>
+            <a href="../../../../2013/08/18/my-ps1-with-git-branch-new-files-staged-files-and-commit-status/"
+               rel="bookmark"
+               title="Permalink to 'My $PS1 with git branch, new files, staged files and commit status'"
+               itemprop="url">
+              My $<span class="caps">PS1</span> with git branch, new files, staged files and commit&nbsp;status
+            </a>
+          </li>
+          <li>
+            <a href="../../../../2013/03/12/bash-portforwarding-with-autocompletion/"
+               rel="bookmark"
+               title="Permalink to 'Bash portforwarding with autocompletion'"
+               itemprop="url">
+              Bash portforwarding with&nbsp;autocompletion
+            </a>
+          </li>
+      </ul>
+    </section>
+  </div>
+  <div class="eevee-ac">
+    <header class="eevee-ac__header">
+      <div class="eevee-ac-author__text">
+        <h2>Kura</h2>
+          <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p>
+          <p>
+            <a href="../../../../authors/kura/"
+               itemprop="url"
+               title="Read more articles by Kura">
+              Read more articles by Kura
+            </a>
+          </p>
+        <nav>
+          <ul class="eevee-ac-author__social">
+              <li class="eevee-ac-author-social__link">
+                <a class="mdl-color-text--accent mdl-navigation__link"
+                   href="https://github.com/kura" itemprop="url" rel="bookmark"
+                   title="kura on GitHub">
+                  <i class="fa" aria-hidden="true">&#xF09B;</i>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+      <img src="/images/avatar.png" class="eevee-ac-author__avatar"
+           alt="Kura" />
+    </header>
+  </div>
+  </article>
+  <a href="https://github.com/kura/kura.gg/blob/main/content/tugboat-bash-completion.rst"
+     id="view-source" title="View 'tugboat-bash-completion' on GitHub"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
+    <i class="material-icons">&#xE86F;</i> View Source
+  </a>
+        </div>
+      </div>
+    </main>
+      <div class="eevee-pagination__container eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+<nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Pagination">
+    <a href="../../../../2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/"
+       class="eevee-nav__button" itemprop="url" rel="bookmark"
+       title="Newer">
+      <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900"
+              role="presentation">
+        <i class="material-icons">&#xE5C4;</i>
+      </button>
+      Newer
+    </a>
+  <div class="eevee-spacer"></div>
+    <a href="../../../../2014/05/26/ghastly-a-theme-for-pelican/"
+       class="eevee-nav__button" itemprop="url" rel="bookmark"
+       title="Older">
+      Older
+      <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900"
+              role="presentation">
+        <i class="material-icons">&#xE5C8;</i>
+      </button>
+    </a>
+</nav>        </div>
+      </div>
+    <footer class="mdl-mega-footer" itemscope
+            itemtype="http://schema.org/SiteNavigationElement">
+      <div class="mdl-mega-footer--top-section">
+        <div class="mdl-mega-footer--drop-down-section">
+          <ul class="mdl-mega-footer--link-list">
+            <li>
+              <a href="#top" itemprop="url"
+                 title="Back to the top of the page">
+                Back to the top of the page
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+<div class="mdl-mega-footer--middle-section" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Footer navigation">
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Menu</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/contact/" itemprop="url" rel="bookmark"
+             title="Contact">
+            <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+          </a>
+        </li>
+        <li>
+          <a href="../../../../archives/"
+             itemprop="url" rel="bookmark" title="Archives">
+            <i class="material-icons">&#xE02F;</i>
+            Archives
+          </a>
+        </li>
+        <li>
+          <a href="../../../../feeds/rss.xml"
+             title="RSS"
+             itemprop="url">
+            <i class="material-icons">&#xE0E5;</i>
+              RSS
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Social</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="https://github.com/kura" itemprop="url" rel="bookmark"
+             title="GitHub">
+            <i class="fa" aria-hidden="true">&#xF09B;</i> Github
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Links</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/blackhole" itemprop="url" rel="bookmark"
+             title="Blackhole">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+          </a>
+        </li>
+        <li>
+          <a href="/eevee" itemprop="url" rel="bookmark"
+             title="Eevee">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+          </a>
+        </li>
+        <li>
+          <a href="/hauntr" itemprop="url" rel="bookmark"
+             title="Hauntr">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+          </a>
+        </li>
+        <li>
+          <a href="/ghastly" itemprop="url" rel="bookmark"
+             title="Ghastly">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+          </a>
+        </li>
+        <li>
+          <a href="/pelican-plugins" itemprop="url" rel="bookmark"
+             title="Pelican Plugins">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+          </a>
+        </li>
+      </ul>
+  </div>
+</div>      <div class="mdl-mega-footer--bottom-section">
+        <div class="mdl-logo">
+          <a href="../../../.." rel="bookmark" itemprop="url"
+             title="kura.gg">
+            kura.gg
+          </a>
+        </div>
+          <ul class="eevee-footer mdl-mega-footer--link-list">
+              <li>Powered by love &amp; rainbow sparkles.</li>
+              <li>Source code and content released under the <a href="/license/" title="MIT license">MIT license</a>.</li>
+          </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

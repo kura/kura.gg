@@ -1,0 +1,492 @@
+/* Custom CSS goes here. */
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('FiraSans Light'),
+       local('FiraSans-Light'),
+       url('/theme/fonts/firasans-light.woff2') format('woff2'),
+       url('/theme/fonts/firasans-light.woff') format('woff'),
+       url('/theme/fonts/firasans-light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('FiraSans'),
+       local('FiraSans-Regular'),
+       url('/theme/fonts/firasans-regular.woff2') format('woff2'),
+       url('/theme/fonts/firasans-regular.woff') format('woff'),
+       url('/theme/fonts/firasans-regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('FiraSans SemiBold'),
+       local('FiraSans-SemiBold'),
+       url('/theme/fonts/firasans-semibold.woff2') format('woff2'),
+       url('/theme/fonts/firasans-semibold.woff') format('woff'),
+       url('/theme/fonts/firasans-semibold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('FiraSans Bold'),
+       local('FiraSans-Bold'),
+       url('/theme/fonts/firasans-bold.woff2') format('woff2'),
+       url('/theme/fonts/firasans-bold.woff') format('woff'),
+       url('/theme/fonts/firasans-bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'FiraMono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('FiraMono'),
+       local('FiraMono-Regular'),
+       url('/theme/fonts/firamono-regular.woff2') format('woff2'),
+       url('/theme/fonts/firamono-regular.woff') format('woff'),
+       url('/theme/fonts/firasans-regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+  src: local('Font Awesome'),
+       local('Font-Awesome'),
+       url('/theme/fonts/fontawesome.woff2') format('woff2'),
+       url('/theme/fonts/fontawesome.woff') format('woff'),
+       url('/theme/fonts/fontawesome.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('/theme/fonts/materialicons-regular.woff2') format('woff2'),
+       url('/theme/fonts/materialicons-regular.woff') format('woff'),
+       url('/theme/fonts/materialicons-regular.ttf') format('ttf');
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'FiraSans', 'sans-serif' !important;
+  letter-spacing: -3px;
+}
+
+h2 {
+  letter-spacing: -2px;
+}
+
+.article-content h2 a, .article-content h3 a, .article-content h4 a,
+.article-content h5 a, .article-content h6 a, .page-content h2 a,
+.page-content h3 a, .page-content h4 a, .page-content h5 a, .page-content h6 a,
+.eevee-toc h2 a {
+  margin-left: -36px !important;
+}
+
+.eevee-archive .eevee-toc {
+  margin-left: 0 !important;
+}
+
+blockquote, code, kbd, pre, samp, tt {
+  font-family: 'FiraMono', 'monospace', 'serif' !important;
+  font-feature-settings: 'liga' !important;
+}
+
+dt, dl, tt {
+  letter-spacing: 0;
+}
+
+pre, code, blockquote {
+  border-left: rgb(230, 74, 25) 0.6em solid;
+  letter-spacing: 0px;
+}
+
+td {
+  letter-spacing: 0;
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+th {
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.mdl-logo a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.mdl-mega-footer--heading {
+  font-size: 14px;
+}
+
+.eevee-nav a {
+  opacity: 1.0;
+}
+
+.eevee-nav, .eevee-logo, .eevee-logo a {
+  opacity: 0.95;
+}
+
+.eevee-main {
+  margin-top: -30em;
+}
+
+.eevee-container {
+  max-width: 1800px;
+}
+
+.eevee-toc-ribbon {
+  border-left: rgb(230, 74, 25) 0.6em solid;
+}
+
+.eevee-meta {
+  letter-spacing: -1px;
+}
+
+.eevee-divider-to-top {
+  letter-spacing: -1px !important;
+}
+
+.eevee-pagination, .eevee-pagination a {
+  letter-spacing: -1px !important;
+}
+
+.mdl-mega-footer--link-list a:hover, .mdl-mega-footer__link-list a:hover {
+  color: rgb(255, 255, 255) !important;
+}
+
+.eevee-article {
+    padding: 56px 56px 0 56px;
+}
+
+.eevee-page {
+    padding: 0 56px;
+    margin-top: -30px;
+}
+
+.eevee-page h1 {
+    margin-left: -5px;
+}
+
+div.eevee-page-spacer {
+  margin-left: -5px
+  height: 6px;
+}
+
+.eevee-share {
+  position: fixed;
+  display: block;
+  z-index: 900;
+  font-family: 'FiraSans', 'sans-serif' !important;
+  vertical-align: middle;
+  padding: 2px 16px 0 12px !important;
+  width: 45px;
+  margin: 0 0 0 -100px;
+}
+
+li.social-share__link {
+    border-width: 1px 1px 0 1px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+
+li.social-share__link:last-child {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+
+ul.social-share {
+  list-style: none;
+  padding: 0;
+  display: block !important;
+}
+
+.social-share__link {
+  float: none;
+}
+
+.social-share__link > a {
+  font-size: 1.8rem;
+}
+
+nav.eevee-ac-author__social > a > i {
+  font-size: 2rem !important;
+  padding: 0 2px 0;
+}
+
+.social-share__link > a > i {
+  font-size: 1.8rem;
+  margin-top: 15px;
+  margin-right: 5px;
+  text-align: right;
+  float: right;
+}
+
+div.eevee-article h2, div.eevee-page h2 {
+  border-bottom: solid #EEEEEE 1px;
+}
+
+h2 a.headerlink,
+h3 a.headerlink,
+h4 a.headerlink,
+h5 a.headerlink,
+h6 a.headerlink {
+  padding: 0 4px;
+  color: rgb(189, 189, 189);
+  vertical-align: top;
+  visibility: hidden;
+}
+
+h2 a.headerlink:hover,
+h3 a.headerlink:hover,
+h4 a.headerlink:hover,
+h5 a.headerlink:hover,
+h6 a.headerlink:hover {
+  color: rgb(66, 66, 66) !important;
+  visibility: visible;
+  vertical-align: top;
+  padding: 0 4px;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease 0s !important;
+  transition: color 0.3s ease 0s !important;
+}
+
+h2:hover a.headerlink,
+h3:hover a.headerlink,
+h4:hover a.headerlink,
+h5:hover a.headerlink,
+h6:hover a.headerlink {
+  padding: 0 4px;
+  visibility: visible;
+  vertical-align: top;
+  color: rgb(189, 189, 189);
+}
+
+h2 a.headerlink:hover,
+h2 a.headerlink,
+h2:hover a.headerlink {
+  font-size: 38px;
+  line-height: 48px
+}
+
+h3 a.headerlink:hover,
+h3 a.headerlink,
+h3:hover a.headerlink {
+  font-size: 34px;
+  line-height: 40px
+}
+
+h4 a.headerlink:hover,
+h4 a.headerlink,
+h4:hover a.headerlink {
+  font-size: 30px;
+  line-height: 32px;
+}
+
+h5 a.headerlink:hover,
+h5 a.headerlink,
+h5:hover a.headerlink {
+  font-size: 28px;
+  line-height: 1;
+}
+
+h6 a.headerlink:hover,
+h6 a.headerlink,
+h6:hover a.headerlink {
+  line-height: 26px
+}
+
+#view-source {
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 40px;
+  margin-bottom: 30px;
+  z-index: 900;
+  font-family: 'FiraSans', 'sans-serif' !important;
+  vertical-align: middle;
+  padding: 2px 16px 0 12px !important;
+}
+
+#view-source > i {
+  margin: -2px 0 0 0;
+  vertical-align: middle;
+}
+
+a {
+  -webkit-transition: color 0.3s ease 0s !important;
+  transition: color 0.3s ease 0s !important;
+}
+
+a:hover {
+  color: rgb(66, 66, 66) !important;
+}
+
+.blue-grey {
+  font-weight: bold;
+  background: rgb(96, 125, 139);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+.pink {
+  font-weight: bold;
+  background: rgb(233, 30, 99);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+/*
+div.eevee-article p:first-of-type::first-letter,
+div.eevee-article span.dropcap {
+  float: left;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 64px;
+  padding-right: 8px;
+}*/
+
+.mdl-logo > a:hover, .eevee-footer > a:hover {
+  color: rgb(158, 158, 158) !important;
+}
+
+.mdl-logo a {
+  letter-spacing: 0 !important;
+}
+
+.mdl-logo > a:hover, .eevee-footer a:hover {
+  color: rgb(158, 158, 158) !important;
+}
+
+.mdl-mega-footer--heading, .mdl-mega-footer__heading {
+  letter-spacing: -1px !important;
+}
+
+#view-source:hover {
+  color: rgb(255, 255, 255) !important;
+}
+
+.eevee-content a[href^="http://"]:before,
+.eevee-content a[href^="https://"]:before {
+  content: "\E89E";
+  font-size: 14px;
+  vertical-align: bottom;
+  font-family: 'Material Icons';
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 2px 0 0;
+}
+
+
+a[href^="https://kura.github.io"]:before, a[href^="/"]:before,
+ol.series-parts a:before, li.social-share__link a:before,
+.eevee-related a:before, .eevee-ac a:before, #view-source:before {
+  content: "" !important;
+  display: none !important;
+}
+
+::selection {
+  background: rgb(255, 112, 67) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.gist .gist-meta {
+  letter-spacing: 0 !important;
+}
+
+.ac-twitter {
+  background-color: rgb(3, 155, 229) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-twitter-hover {
+  background-color: rgb(2, 119, 189) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-facebook {
+  background-color: rgb(21, 101, 192) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-facebook-hover {
+  background-color: rgb(13, 71, 161) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-google-plus {
+  background-color: rgb(244, 67, 54) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-google-plus-hover {
+  background-color: rgb(211, 47, 47) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-github {
+  background-color: rgb(33, 33, 33) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-github-hover {
+  background-color: rgb(97, 97, 97) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-instagram {
+  background-color: rgb(139, 195, 74) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.ac-instagram-hover {
+  background-color: rgb(104, 159, 56) !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.netneutrality {
+  display: block;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+a[href^="https://www.battleforthenet.com"]:before {
+  content: "" !important;
+  display: none !important;
+}

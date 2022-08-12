@@ -1,4 +1,5 @@
-<!DOCTYPE html><!--
+<!DOCTYPE html>
+<!--
 
                                       |
                                      /|
@@ -36,7 +37,662 @@
                                    |   ,'
                                     `\"\"
 
-//--><html lang=en> <head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><link rel=alternate href=https://kura.gg hreflang=en><link rel=dns-prefetch href=https://kura.gg><link rel=stylesheet href=https://kura.gg/theme/css/eevee.min.css?1c9d8344><script async src=https://kura.gg/theme/js/eevee.min.js?1841d254></script><link href=https://kura.gg/feeds/rss.xml type=application/rss+xml rel=alternate title=kura.gg><link href=https://kura.gg/feeds/atom.xml type=application/atom+xml rel=alternate title=kura.gg><meta property=og:site_name content=kura.gg><meta property=og:type content=article><meta property=og:title content="haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2"><meta content=https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/ property=og:url><meta property=og:description content="I have previously released haproxy1.5-dev19 with SSL & SPDY support enabled and nginx 1.4.1 with SPDY support and pagespeed, although I do not remember which version of pagespeed. I have received a few messages asking me for the latest version of haproxy, nginx and pagespeed so I decided to finally build and release them. Requirements haproxy requires openssl-1.0.1d or higher. On a standard Debian 7 install you should have openssl-1.0.1e-2, you can find which version you have by running dpkg -l openssl This should return something similar to ii openssl 1.0.1e-2 amd64 Secure Socket Layer (SSL) binary and related cryptographic tools Build notes Builds were done on Debian 7 AMD64, I will not be providing 32bit versions as this is mainly for my own usage and amusement. haproxy This haproxy build is compiled against openssl, providing the npn module, allowing for haproxy …"><meta property=og:image content=https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/index.png><meta property=og:image:width content=1920><meta property=og:image:height content=1080><meta property=twitter:title content="haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2"><meta content=https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/ property=twitter:url><meta property=twitter:description content="I have previously released haproxy1.5-dev19 with SSL & SPDY support enabled and nginx 1.4.1 with SPDY support and pagespeed, although I do not remember which version of pagespeed. I have received a few messages asking me for the latest version of haproxy, nginx and pagespeed so I decided to finally build and release them. Requirements haproxy requires openssl-1.0.1d or higher. On a standard Debian 7 install you should have openssl-1.0.1e-2, you can find which version you have by running dpkg -l openssl This should return something similar to ii openssl 1.0.1e-2 amd64 Secure Socket Layer (SSL) binary and related cryptographic tools Build notes Builds were done on Debian 7 AMD64, I will not be providing 32bit versions as this is mainly for my own usage and amusement. haproxy This haproxy build is compiled against openssl, providing the npn module, allowing for haproxy …"><meta property=twitter:image content=https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/index.png><meta property=twitter:card content=summary_large_image><meta property=twitter:label1 content="Written by"><meta property=twitter:data1 content=Kura><meta property=twitter:label2 content="Estimated reading time"><meta property=twitter:data2 content="1 min read"><meta property=twitter:image:width content=1920><meta property=twitter:image:height content=1080><link rel=icon href=/favicon.png type=image/png sizes="16x16 32x32 48x48 64x64 128x128 256x256"><link rel=icon href=/favicon.ico type=image/vnd.microsoft.icon sizes="16x16 32x32 48x48 64x64 128x128 256x256"><title>haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2</title></head> <body> <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50"> <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800" itemscope itemtype=http://schema.org/WPHeader> <div class=mdl-layout__header-row> <div aria-expanded=false role=button tabindex=0 class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only"> <i class=material-icons>&#xE5D2;</i> </div> <span class="eevee-logo mdl-color-text--accent mdl-layout-title"> <h2 id=top> <a href=https://kura.gg rel=bookmark title=kura.gg> kura.gg </a> </h2> </span> <div class=mdl-layout-spacer role=presentation></div> <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </header> <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden=true> <span class=mdl-layout-title> <h2 class="eevee-mobile-logo mdl-color-text--accent"> kura.gg </h2> </span> <div class="mdl-navigation mdl-color--white"> <nav class="eevee-nav mdl-navigation" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Header navigation"> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg itemprop=url rel=bookmark> <i class=material-icons aria-hidden=true> &#xE88A; </i> Home </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> <a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> <a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </nav> </div> </div> <div class="eevee-ribbon mdl-color--primary-dark" role=presentation> </div> <main class="eevee-main mdl-layout__content"> <div class="eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col" aria-label="Main content"> <article itemscope itemtype=http://schema.org/BlogPosting> <meta itemprop=accessibilityControl content=fullKeyboardControl> <meta itemprop=accessibilityControl content=fullMouseControl> <meta itemprop=accessibilityControl content=bookmarks> <meta itemprop=accessibilityControl content=captions> <meta itemprop=accessibilityControl content=alternativeText> <meta itemprop=accessibilityControl content=index> <meta itemprop=accessibilityControl content=readingOrder> <meta itemprop=accessibilityControl content=structuralNavigation> <meta itemprop=accessibilityControl content=tableOfContents> <meta itemprop=accessibilityHazard content=noFlashingHazard> <meta itemprop=accessibilityHazard content=noMotionSimulationHazard> <meta itemprop=accessibilityHazard content=noSoundHazard> <meta itemprop=accessibilityAPI content=ARIA> <div itemprop=author itemscope itemtype=https://schema.org/Person role=presentation /> <a href=https://kura.gg/authors/kura/ class=hidden itemprop=url role=presentation> <span class=hidden itemprop=name role=presentation> kura </span> </a> </div> <meta itemprop=keywords content=debian,ubuntu,haproxy,nginx,spdy,pagespeed,ngx_pagespeed> <meta itemprop=keywords content="deb builds"> <div class=eevee-share> <ul class="social-share mdl-navigation"> <li class="social-share__link social-share__link--twitter"> <a href="https://twitter.com/intent/tweet?text=haproxy1.5-dev21%2C%20nginx%201.5.8%2C%20SPDY%20%26%20pagespeed%201.7.30.2&url=https%3A//kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" title="Share 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' on Twitter" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;"> <i class=fa aria-hidden=true>&#xF099;</i> </a> </li> <li class="social-share__link social-share__link--facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" title="Share 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' on Facebook" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;"> <i class=fa aria-hidden=true>&#xF09A;</i> </a> </li> <li class="social-share__link social-share__link--email"> <a href="mailto:?subject=haproxy1.5-dev21%2C%20nginx%201.5.8%2C%20SPDY%20%26%20pagespeed%201.7.30.2&body=I%20thought%20you%20might%20like%20'haproxy1.5-dev21%2C%20nginx%201.5.8%2C%20SPDY%20%26%20pagespeed%201.7.30.2'%20--%20https%3A//kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" title="Share 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' via email"> <i class=material-icons aria-hidden=true> &#xE0E1; </i> </a> </li> </ul> </div> <div class=eevee-article> <div class="eevee-meta mdl-color-text--grey-500"> <time datetime=2014-01-08T13:00:00+00:00 itemprop=datePublished> 08 Jan 2014 </time>&nbsp;-- 1 min read </div> <h1 itemprop=name> <a href=https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/ rel=bookmark title="Permalink to 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2'" itemprop=url> haproxy1.5-dev21, nginx 1.5.8, <span class=caps>SPDY</span> <span class=amp>&amp;</span> pagespeed&nbsp;1.7.30.2 </a> </h1> <section class=eevee-toc> <h2 id=toc> Contents </h2> <nav class=eevee-toc-ribbon> <div class=toc id> <p class=topic-title>Contents</p> <ul class=simple> <li><a class="reference internal" href=#requirements id=toc-entry-1>Requirements</a></li> <li><a class="reference internal" href=#build-notes id=toc-entry-2>Build notes</a></li> <li><a class="reference internal" href=#haproxy id=toc-entry-3>haproxy</a><ul> <li><a class="reference internal" href=#source id=toc-entry-4>Source</a></li> </ul> </li> <li><a class="reference internal" href=#nginx id=toc-entry-5>nginx</a><ul> <li><a class="reference internal" href=#light-full id=toc-entry-6>Light/Full</a></li> <li><a class="reference internal" href=#meta-common-doc id=toc-entry-7>Meta/Common/Doc</a></li> <li><a class="reference internal" href=#extras id=toc-entry-8>Extras</a></li> <li><a class="reference internal" href=#naxsi id=toc-entry-9>Naxsi</a></li> <li><a class="reference internal" href=#debug-symbols id=toc-entry-10>Debug symbols</a><ul> <li><a class="reference internal" href=#source-1 id=toc-entry-11>Source</a></li> </ul> </li> </ul> </li> </ul> </div> </nav> </section> <section itemprop=articleBody class=article-content> <p>I have previously released <a href=/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/ class="reference external">haproxy1.5-dev19 with <span class=caps>SSL</span> <span class=amp>&amp;</span> <span class=caps>SPDY</span> support enabled</a> and <a href=/2013/07/10/nginx-spdy-and-ngx-pagespeed/ class="reference external">nginx 1.4.1 with <span class=caps>SPDY</span> support and pagespeed</a>, although I do not remember which version of pagespeed.</p> <p>I have received a few messages asking me for the latest version of haproxy, nginx and pagespeed so I decided to finally build and release them.</p> <div class=section id=requirements> <h2>Requirements</h2> <p>haproxy requires openssl-1.0.1d or higher.</p> <p>On a standard Debian 7 install you should have openssl-1.0.1e-2, you can find which version you have by running</p> <div class=highlight><pre><span></span>dpkg -l openssl
-</pre></div> <p>This should return something similar to</p> <pre class=literal-block>
+//-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="alternate" href="../../../.." hreflang="en" />
+<link rel="dns-prefetch" href="../../../.." />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/63377f06b1648775b11ff8e169b4a710_material.yellow-amber.min.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/c335929e0083dac14c3a8f107c05dde3_font-awesome.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/14c05c94e27da637bc780ad514251b18_material-icons.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/a28e8d0a2ff230dae7c257a9f828e3b1_pygments.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/0eddd53a34a33f68e0c593881131a436_eevee.css" />
+  <link rel="stylesheet" href="../../../../theme/webassets-external/2f21b66ec2ab0b874a1f30d00028e286_custom.css" />
+  <script async src="../../../../theme/webassets-external/a7fbc4b6cecaeb63ed7b7d6e2f75e649_material.js"></script>
+  <link href="../../../../feeds/rss.xml" type="application/rss+xml"
+        rel="alternate" title="kura.gg" />
+  <link href="../../../../feeds/atom.xml" type="application/atom+xml"
+        rel="alternate" title="kura.gg" />
+  <meta property="og:site_name" content="kura.gg" />
+  <meta property="og:type" content="article" />
+    <meta property="og:title"
+          content="haproxy1.5-dev21, nginx 1.5.8, SPDY &amp; pagespeed 1.7.30.2" />
+    <meta property="og:url"
+          content="../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" />
+    <meta property="og:description"
+          content="I have previously released haproxy1.5-dev19 with SSL &amp; SPDY support enabled and nginx 1.4.1 with SPDY support and pagespeed, although I do not remember which version of pagespeed. I have received a few messages asking me for the latest version of haproxy, nginx and pagespeed so I decided to finally build and release them. Requirements haproxy requires openssl-1.0.1d or higher. On a standard Debian 7 install you should have openssl-1.0.1e-2, you can find which version you have by running dpkg -l openssl This should return something similar to ii openssl 1.0.1e-2 amd64 Secure Socket Layer (SSL) binary and related cryptographic tools Build notes Builds were done on Debian 7 AMD64, I will not be providing 32bit versions as this is mainly for my own usage and amusement. haproxy This haproxy build is compiled against openssl, providing the npn module, allowing for haproxy …" />
+    <meta property="og:image"
+          content="../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/index.png" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+    <meta property="twitter:title"
+          content="haproxy1.5-dev21, nginx 1.5.8, SPDY &amp; pagespeed 1.7.30.2" />
+    <meta property="twitter:url"
+          content="../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" />
+    <meta property="twitter:description"
+          content="I have previously released haproxy1.5-dev19 with SSL &amp; SPDY support enabled and nginx 1.4.1 with SPDY support and pagespeed, although I do not remember which version of pagespeed. I have received a few messages asking me for the latest version of haproxy, nginx and pagespeed so I decided to finally build and release them. Requirements haproxy requires openssl-1.0.1d or higher. On a standard Debian 7 install you should have openssl-1.0.1e-2, you can find which version you have by running dpkg -l openssl This should return something similar to ii openssl 1.0.1e-2 amd64 Secure Socket Layer (SSL) binary and related cryptographic tools Build notes Builds were done on Debian 7 AMD64, I will not be providing 32bit versions as this is mainly for my own usage and amusement. haproxy This haproxy build is compiled against openssl, providing the npn module, allowing for haproxy …" />
+    <meta property="twitter:image"
+          content="../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/index.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:label1" content="Written by" />
+    <meta property="twitter:data1" content="Kura" />
+      <meta property="twitter:label2" content="Estimated reading time" />
+      <meta property="twitter:data2" content="1 min read" />
+  <meta property="twitter:image:width" content="1920" />
+  <meta property="twitter:image:height" content="1080" />
+  <link rel="icon" href="/favicon.png" type="image/png"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon"
+        sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <title>haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2</title>
+</head>
+<body>
+  <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+    <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+            itemscope itemtype="http://schema.org/WPHeader">
+      <div class="mdl-layout__header-row">
+        <div aria-expanded="false" role="button" tabindex="0"
+             class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+          <i class="material-icons">&#xE5D2;</i>
+        </div>
+        <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+          <h2 id="top">
+            <a href="../../../.." rel="bookmark" title="kura.gg">
+              kura.gg
+            </a>
+          </h2>
+        </span>
+        <div class="mdl-layout-spacer" role="presentation"></div>
+        <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+             itemscope itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </header>
+    <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+         aria-hidden="true">
+      <span class="mdl-layout-title">
+        <h2 class="eevee-mobile-logo mdl-color-text--accent">
+          kura.gg
+        </h2>
+      </span>
+      <div class="mdl-navigation mdl-color--white">
+        <nav class="eevee-nav mdl-navigation" itemscope
+             itemtype="http://schema.org/SiteNavigationElement"
+             aria-label="Header navigation">
+          <a class="mdl-color-text--accent mdl-navigation__link"
+             href="../../../.." itemprop="url" rel="bookmark">
+            <i class="material-icons" aria-hidden="true">
+              &#xE88A;
+            </i> Home
+          </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/blackhole" itemprop="url" rel="bookmark" title="Blackhole">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/eevee" itemprop="url" rel="bookmark" title="Eevee">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/hauntr" itemprop="url" rel="bookmark" title="Hauntr">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/ghastly" itemprop="url" rel="bookmark" title="Ghastly">
+    <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/pelican-plugins" itemprop="url" rel="bookmark" title="Pelican Plugins">
+    <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="/contact/" itemprop="url" rel="bookmark" title="Contact">
+    <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../archives/"
+     itemprop="url" rel="bookmark" title="Archives">
+    <i class="material-icons">&#xE02F;</i>
+    Archives
+  </a>
+  <a class="mdl-color-text--accent mdl-navigation__link"
+     href="../../../../feeds/rss.xml"
+     title="RSS" itemprop="url">
+    <i class="material-icons">&#xE0E5;</i>
+    RSS
+  </a>
+        </nav>
+      </div>
+    </div>
+    <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+    </div>
+    <main class="eevee-main mdl-layout__content">
+      <div class="eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+             aria-label="Main content">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl" />
+<meta itemprop="accessibilityControl" content="fullMouseControl" />
+<meta itemprop="accessibilityControl" content="bookmarks" />
+<meta itemprop="accessibilityControl" content="captions" />
+<meta itemprop="accessibilityControl" content="alternativeText" />
+<meta itemprop="accessibilityControl" content="index" />
+<meta itemprop="accessibilityControl" content="readingOrder" />
+<meta itemprop="accessibilityControl" content="structuralNavigation" />
+<meta itemprop="accessibilityControl" content="tableOfContents" />
+<meta itemprop="accessibilityHazard" content="noFlashingHazard" />
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard" />
+<meta itemprop="accessibilityHazard" content="noSoundHazard" />
+<meta itemprop="accessibilityAPI" content="ARIA" />
+  <div itemprop="author" itemscope
+       itemtype="https://schema.org/Person" role="presentation" />
+    <a href="../../../../authors/kura/" class="hidden"
+       itemprop="url" role="presentation">
+      <span class="hidden" itemprop="name" role="presentation">
+        kura
+      </span>
+    </a>
+  </div>
+    <meta itemprop="keywords"
+          content="debian,ubuntu,haproxy,nginx,spdy,pagespeed,ngx_pagespeed" />
+    <meta itemprop="keywords" content="deb builds" />
+  <div class="eevee-share">
+    <ul class="social-share mdl-navigation">
+      <li class="social-share__link social-share__link--twitter">
+        <a href="https://twitter.com/intent/tweet?text=haproxy1.5-dev21%2C%20nginx%201.5.8%2C%20SPDY%20%26%20pagespeed%201.7.30.2&amp;url=../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/"
+           title="Share 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' on Twitter"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
+          <i class="fa" aria-hidden="true">&#xF099;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/"
+           title="Share 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' on Facebook"
+           onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
+          <i class="fa" aria-hidden="true">&#xF09A;</i>
+        </a>
+      </li>
+      <li class="social-share__link social-share__link--email">
+        <a href="mailto:?subject=haproxy1.5-dev21%2C%20nginx%201.5.8%2C%20SPDY%20%26%20pagespeed%201.7.30.2&amp;body=I%20thought%20you%20might%20like%20'haproxy1.5-dev21%2C%20nginx%201.5.8%2C%20SPDY%20%26%20pagespeed%201.7.30.2'%20--%20../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/"
+           title="Share 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' via email">
+          <i class="material-icons" aria-hidden="true">
+            &#xE0E1;
+          </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+    <div class="eevee-article">
+      <div class="eevee-meta mdl-color-text--grey-500">
+        <time datetime="2014-01-08T13:00:00+00:00"
+              itemprop="datePublished">
+          08 Jan 2014
+        </time>&nbsp;-- 1 min read      </div>
+      <h1 itemprop="name">
+        <a href="../../../../2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" rel="bookmark"
+           title="Permalink to 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2'" itemprop="url">
+          haproxy1.5-dev21, nginx 1.5.8, <span class="caps">SPDY</span> <span class="amp">&amp;</span> pagespeed&nbsp;1.7.30.2
+        </a>
+      </h1>
+  <section class="eevee-toc">
+    <h2 id="toc">
+        Contents
+    </h2>
+    <nav class="eevee-toc-ribbon">
+      <div class="toc" id="">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#requirements" id="toc-entry-1">Requirements</a></li>
+<li><a class="reference internal" href="#build-notes" id="toc-entry-2">Build notes</a></li>
+<li><a class="reference internal" href="#haproxy" id="toc-entry-3">haproxy</a><ul>
+<li><a class="reference internal" href="#source" id="toc-entry-4">Source</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nginx" id="toc-entry-5">nginx</a><ul>
+<li><a class="reference internal" href="#light-full" id="toc-entry-6">Light/Full</a></li>
+<li><a class="reference internal" href="#meta-common-doc" id="toc-entry-7">Meta/Common/Doc</a></li>
+<li><a class="reference internal" href="#extras" id="toc-entry-8">Extras</a></li>
+<li><a class="reference internal" href="#naxsi" id="toc-entry-9">Naxsi</a></li>
+<li><a class="reference internal" href="#debug-symbols" id="toc-entry-10">Debug symbols</a><ul>
+<li><a class="reference internal" href="#source-1" id="toc-entry-11">Source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+    </nav>
+  </section>
+      <section itemprop="articleBody" class="article-content">
+        
+<p>I have previously released <a class="reference external" href="/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/">haproxy1.5-dev19 with <span class="caps">SSL</span> <span class="amp">&amp;</span> <span class="caps">SPDY</span> support enabled</a>
+and <a class="reference external" href="/2013/07/10/nginx-spdy-and-ngx-pagespeed/">nginx 1.4.1 with <span class="caps">SPDY</span> support and pagespeed</a>, although I do
+not remember which version of pagespeed.</p>
+<p>I have received a few messages asking me for the latest version of haproxy,
+nginx and pagespeed so I decided to finally build and release them.</p>
+<div class="section" id="requirements">
+<h2>Requirements</h2>
+<p>haproxy requires openssl-1.0.1d or higher.</p>
+<p>On a standard Debian 7 install you should have openssl-1.0.1e-2, you
+can find which version you have by running</p>
+<div class="highlight"><pre><span></span>dpkg -l openssl
+</pre></div>
+<p>This should return something similar to</p>
+<pre class="literal-block">
 ii  openssl        1.0.1e-2        amd64        Secure Socket Layer (SSL) binary and related cryptographic tools
-</pre> </div> <div class=section id=build-notes> <h2>Build notes</h2> <p>Builds were done on Debian 7 <span class=caps>AMD64</span>, I will not be providing 32bit versions as this is mainly for my own usage and amusement.</p> </div> <div class=section id=haproxy> <h2>haproxy</h2> <p>This haproxy build is compiled against openssl, providing the npn module, allowing for haproxy to work under <span class=caps>SSL</span>/<span class=caps>TLS</span> and allowing the use of <span class=caps>SPDY</span>/2 and <span class=caps>SPDY</span>/3.</p> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/haproxy_1.5-dev21_amd64.deb>haproxy_1.5-dev21_amd64.deb</a></td> <td><a class="reference external" href=/files/haproxy_1.5-dev21_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/haproxy_1.5-dev21_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/haproxy_1.5-dev21_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> <div class=section id=source> <h3>Source</h3> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/haproxy-1.5-dev21.tar.gz>haproxy-1.5-dev21.tar.gz</a></td> <td><a class="reference external" href=/files/haproxy-1.5-dev21.tar.gz.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/haproxy-1.5-dev21.tar.gz.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/haproxy-1.5-dev21.tar.gz.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> </div> </div> <div class=section id=nginx> <h2>nginx</h2> <p>All of these builds are compiled with the <span class=caps>SPDY</span> module and ngx_pagespeed modules enabled. The version of pagespeed used is 1.7.30.2.</p> <p>Sadly nginx 1.5.8 currently only supports <span class=caps>SPDY</span>/2, <span class=caps>SPDY</span>/3 support is still unfinished.</p> <div class=section id=light-full> <h3>Light/Full</h3> <p>You will need to choose one of the two below, if in doubt, just use full.</p> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/nginx-full_1.5.8_amd64.deb>nginx-full_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-full_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-full_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-full_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> <tr><td><a class="reference external" href=/files/nginx-light_1.5.8_amd64.deb>nginx-light_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-light_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-light_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-light_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> </div> <div class=section id=meta-common-doc> <h3>Meta/Common/Doc</h3> <p>All three of these are required.</p> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/nginx_1.5.8_all.deb>nginx_1.5.8_all.deb</a></td> <td><a class="reference external" href=/files/nginx_1.5.8_all.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx_1.5.8_all.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx_1.5.8_all.deb.sha1><span class=caps>SHA1</span></a></td> </tr> <tr><td><a class="reference external" href=/files/nginx-common_1.5.8_all.deb>nginx-common_1.5.8_all.deb</a></td> <td><a class="reference external" href=/files/nginx-common_1.5.8_all.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-common_1.5.8_all.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-common_1.5.8_all.deb.sha1><span class=caps>SHA1</span></a></td> </tr> <tr><td><a class="reference external" href=/files/nginx-doc_1.5.8_all.deb>nginx-doc_1.5.8_all.deb</a></td> <td><a class="reference external" href=/files/nginx-doc_1.5.8_all.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-doc_1.5.8_all.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-doc_1.5.8_all.deb.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> </div> <div class=section id=extras> <h3>Extras</h3> <p>I’d only recommend installing this if you know what optional extras are installed with this package.</p> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/nginx-extras_1.5.8_amd64.deb>nginx-extras_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-extras_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-extras_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-extras_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> </div> <div class=section id=naxsi> <h3>Naxsi</h3> <p>The Naxsi <span class=caps>WAF</span>.</p> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/nginx-naxsi_1.5.8_amd64.deb>nginx-naxsi_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-naxsi_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-naxsi_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-naxsi_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> <tr><td><a class="reference external" href=/files/nginx-naxsi-ui_1.5.8_all.deb>nginx-naxsi-ui_1.5.8_all.deb</a></td> <td><a class="reference external" href=/files/nginx-naxsi-ui_1.5.8_all.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-naxsi-ui_1.5.8_all.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-naxsi-ui_1.5.8_all.deb.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> </div> <div class=section id=debug-symbols> <h3>Debug symbols</h3> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/nginx-full-dbg_1.5.8_amd64.deb>nginx-full-dbg_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-full-dbg_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-full-dbg_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-full-dbg_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> <tr><td><a class="reference external" href=/files/nginx-light-dbg_1.5.8_amd64.deb>nginx-light-dbg_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-light-dbg_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-light-dbg_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-light-dbg_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> <tr><td><a class="reference external" href=/files/nginx-extras-dbg_1.5.8_amd64.deb>nginx-extras-dbg_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-extras-dbg_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-extras-dbg_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-extras-dbg_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> <tr><td><a class="reference external" href=/files/nginx-naxsi-dbg_1.5.8_amd64.deb>nginx-naxsi-dbg_1.5.8_amd64.deb</a></td> <td><a class="reference external" href=/files/nginx-naxsi-dbg_1.5.8_amd64.deb.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-naxsi-dbg_1.5.8_amd64.deb.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-naxsi-dbg_1.5.8_amd64.deb.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> <div class=section id=source-1> <h4>Source</h4> <table class=docutils> <tbody> <tr><td><a class="reference external" href=/files/nginx-1.5.8.tar.gz>nginx-1.5.8.tar.gz</a></td> <td><a class="reference external" href=/files/nginx-1.5.8.tar.gz.asc><span class=caps>GPG</span></a></td> <td><a class="reference external" href=/files/nginx-1.5.8.tar.gz.md5><span class=caps>MD5</span></a></td> <td><a class="reference external" href=/files/nginx-1.5.8.tar.gz.sha1><span class=caps>SHA1</span></a></td> </tr> </tbody> </table> </div> </div> </div> </section> </div> <div class=eevee-related> <section> <h2>Related articles</h2> <ul> <li> <a href=https://kura.gg/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/ rel=bookmark title="Permalink to 'nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta'" itemprop=url> nginx 1.5.9 and ngx_pagespeed&nbsp;1.7.30.3-beta </a> </li> <li> <a href=https://kura.gg/2014/02/06/nnginx-1.5.10-with-spdy3.1/ rel=bookmark title="Permalink to 'nginx 1.5.10 with SPDY 3.1'" itemprop=url> nginx 1.5.10 with <span class=caps>SPDY</span>&nbsp;3.1 </a> </li> <li> <a href=https://kura.gg/2013/07/10/nginx-spdy-and-ngx-pagespeed/ rel=bookmark title="Permalink to 'nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)'" itemprop=url> nginx, <span class=caps>SPDY</span> and ngx_pagespeed&nbsp;(Debian/Ubuntu) </a> </li> <li> <a href=https://kura.gg/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/ rel=bookmark title="Permalink to 'haproxy, nginx and SPDY with SSL termination (Debian 7)'" itemprop=url> haproxy, nginx and <span class=caps>SPDY</span> with <span class=caps>SSL</span> termination (Debian&nbsp;7) </a> </li> <li> <a href=https://kura.gg/2014/03/06/haproxy1.5-dev22kura1/ rel=bookmark title="Permalink to 'haproxy1.5-dev22kura1'" itemprop=url> haproxy1.5-dev22kura1 </a> </li> </ul> </section> </div> <div class=eevee-ac> <header class=eevee-ac__header> <div class=eevee-ac-author__text> <h2>Kura</h2> <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p> <p> <a href=https://kura.gg/authors/kura/ itemprop=url title="Read more articles by Kura"> Read more articles by Kura </a> </p> <nav> <ul class=eevee-ac-author__social> <li class=eevee-ac-author-social__link> <a class="mdl-color-text--accent mdl-navigation__link" href=https://github.com/kura itemprop=url rel=bookmark title="kura on GitHub"> <i class=fa aria-hidden=true>&#xF09B;</i> </a> </li> </ul> </nav> </div> <img src=/images/avatar.png class=eevee-ac-author__avatar alt=Kura> </header> </div> </article> <a href=https://github.com/kura/kura.gg/blob/main/content/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2.rst id=view-source title="View 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' on GitHub" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white"> <i class=material-icons>&#xE86F;</i> View Source </a> </div> </div> </main> <div class="eevee-pagination__container eevee-container mdl-grid"> <div role=presentation class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"> </div> <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"> <nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope itemtype=http://schema.org/SiteNavigationElement aria-label=Pagination> <a href=https://kura.gg/2014/01/26/deadsnakes.sh/ class=eevee-nav__button itemprop=url rel=bookmark title=Newer> <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900" role=presentation> <i class=material-icons>&#xE5C4;</i> </button> Newer </a> <div class=eevee-spacer></div> <a href=https://kura.gg/2013/12/24/shields-for-pypi-packages/ class=eevee-nav__button itemprop=url rel=bookmark title=Older> Older <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900" role=presentation> <i class=material-icons>&#xE5C8;</i> </button> </a> </nav> </div> </div> <footer class=mdl-mega-footer itemscope itemtype=http://schema.org/SiteNavigationElement> <div class=mdl-mega-footer--top-section> <div class=mdl-mega-footer--drop-down-section> <ul class=mdl-mega-footer--link-list> <li> <a href=#top itemprop=url title="Back to the top of the page"> Back to the top of the page </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--middle-section itemscope itemtype=http://schema.org/SiteNavigationElement aria-label="Footer navigation"> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Menu</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/contact/ itemprop=url rel=bookmark title=Contact> <i class=material-icons aria-hidden=true>&#xE0B7;</i> Contact </a> </li> <li> <a href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons>&#xE02F;</i> Archives </a> </li> <li> <a href=https://kura.gg/feeds/rss.xml title=RSS itemprop=url> <i class=material-icons>&#xE0E5;</i> RSS </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Social</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=https://github.com/kura itemprop=url rel=bookmark title=GitHub> <i class=fa aria-hidden=true>&#xF09B;</i> Github </a> </li> </ul> </div> <div class=mdl-mega-footer--drop-down-section> <h1 class=mdl-mega-footer--heading>Links</h1> <ul class=mdl-mega-footer--link-list> <li> <a href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i class=material-icons aria-hidden=true>&#xE86F;</i> Blackhole </a> </li> <li> <a href=/eevee itemprop=url rel=bookmark title=Eevee> <i class=material-icons aria-hidden=true>&#xE871;</i> Eevee </a> </li> <li> <a href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i class=material-icons aria-hidden=true>&#xE871;</i> Hauntr </a> </li> <li> <a href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i class=material-icons aria-hidden=true>&#xE871;</i> Ghastly </a> </li> <li> <a href=/pelican-plugins itemprop=url rel=bookmark title="Pelican Plugins"> <i class=material-icons aria-hidden=true>&#xE86F;</i> Pelican Plugins </a> </li> </ul> </div> </div> <div class=mdl-mega-footer--bottom-section> <div class=mdl-logo> <a href=https://kura.gg rel=bookmark itemprop=url title=kura.gg> kura.gg </a> </div> <ul class="eevee-footer mdl-mega-footer--link-list"> <li>Powered by love &amp; rainbow sparkles.</li> <li>Source code and content released under the <a href=/license/ title="MIT license">MIT license</a>.</li> </ul> </div> </footer> </div> </body> </html>
+</pre>
+</div>
+<div class="section" id="build-notes">
+<h2>Build notes</h2>
+<p>Builds were done on Debian 7 <span class="caps">AMD64</span>, I will not be providing 32bit versions as
+this is mainly for my own usage and amusement.</p>
+</div>
+<div class="section" id="haproxy">
+<h2>haproxy</h2>
+<p>This haproxy build is compiled against openssl, providing the npn module,
+allowing for haproxy to work under <span class="caps">SSL</span>/<span class="caps">TLS</span> and allowing the use of <span class="caps">SPDY</span>/2 and
+<span class="caps">SPDY</span>/3.</p>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/haproxy_1.5-dev21_amd64.deb">haproxy_1.5-dev21_amd64.deb</a></td>
+<td><a class="reference external" href="/files/haproxy_1.5-dev21_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/haproxy_1.5-dev21_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/haproxy_1.5-dev21_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="source">
+<h3>Source</h3>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/haproxy-1.5-dev21.tar.gz">haproxy-1.5-dev21.tar.gz</a></td>
+<td><a class="reference external" href="/files/haproxy-1.5-dev21.tar.gz.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/haproxy-1.5-dev21.tar.gz.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/haproxy-1.5-dev21.tar.gz.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="nginx">
+<h2>nginx</h2>
+<p>All of these builds are compiled with the <span class="caps">SPDY</span> module and ngx_pagespeed modules
+enabled. The version of pagespeed used is 1.7.30.2.</p>
+<p>Sadly nginx 1.5.8 currently only supports <span class="caps">SPDY</span>/2, <span class="caps">SPDY</span>/3 support is still unfinished.</p>
+<div class="section" id="light-full">
+<h3>Light/Full</h3>
+<p>You will need to choose one of the two below, if in doubt, just use full.</p>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/nginx-full_1.5.8_amd64.deb">nginx-full_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-full_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-full_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-full_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+<tr><td><a class="reference external" href="/files/nginx-light_1.5.8_amd64.deb">nginx-light_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-light_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-light_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-light_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="meta-common-doc">
+<h3>Meta/Common/Doc</h3>
+<p>All three of these are required.</p>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/nginx_1.5.8_all.deb">nginx_1.5.8_all.deb</a></td>
+<td><a class="reference external" href="/files/nginx_1.5.8_all.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx_1.5.8_all.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx_1.5.8_all.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+<tr><td><a class="reference external" href="/files/nginx-common_1.5.8_all.deb">nginx-common_1.5.8_all.deb</a></td>
+<td><a class="reference external" href="/files/nginx-common_1.5.8_all.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-common_1.5.8_all.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-common_1.5.8_all.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+<tr><td><a class="reference external" href="/files/nginx-doc_1.5.8_all.deb">nginx-doc_1.5.8_all.deb</a></td>
+<td><a class="reference external" href="/files/nginx-doc_1.5.8_all.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-doc_1.5.8_all.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-doc_1.5.8_all.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="extras">
+<h3>Extras</h3>
+<p>I’d only recommend installing this if you know what optional extras are
+installed with this package.</p>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/nginx-extras_1.5.8_amd64.deb">nginx-extras_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-extras_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-extras_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-extras_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="naxsi">
+<h3>Naxsi</h3>
+<p>The Naxsi <span class="caps">WAF</span>.</p>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/nginx-naxsi_1.5.8_amd64.deb">nginx-naxsi_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-naxsi_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-naxsi_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-naxsi_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+<tr><td><a class="reference external" href="/files/nginx-naxsi-ui_1.5.8_all.deb">nginx-naxsi-ui_1.5.8_all.deb</a></td>
+<td><a class="reference external" href="/files/nginx-naxsi-ui_1.5.8_all.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-naxsi-ui_1.5.8_all.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-naxsi-ui_1.5.8_all.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="debug-symbols">
+<h3>Debug symbols</h3>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/nginx-full-dbg_1.5.8_amd64.deb">nginx-full-dbg_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-full-dbg_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-full-dbg_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-full-dbg_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+<tr><td><a class="reference external" href="/files/nginx-light-dbg_1.5.8_amd64.deb">nginx-light-dbg_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-light-dbg_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-light-dbg_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-light-dbg_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+<tr><td><a class="reference external" href="/files/nginx-extras-dbg_1.5.8_amd64.deb">nginx-extras-dbg_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-extras-dbg_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-extras-dbg_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-extras-dbg_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+<tr><td><a class="reference external" href="/files/nginx-naxsi-dbg_1.5.8_amd64.deb">nginx-naxsi-dbg_1.5.8_amd64.deb</a></td>
+<td><a class="reference external" href="/files/nginx-naxsi-dbg_1.5.8_amd64.deb.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-naxsi-dbg_1.5.8_amd64.deb.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-naxsi-dbg_1.5.8_amd64.deb.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="source-1">
+<h4>Source</h4>
+<table class="docutils">
+<tbody>
+<tr><td><a class="reference external" href="/files/nginx-1.5.8.tar.gz">nginx-1.5.8.tar.gz</a></td>
+<td><a class="reference external" href="/files/nginx-1.5.8.tar.gz.asc"><span class="caps">GPG</span></a></td>
+<td><a class="reference external" href="/files/nginx-1.5.8.tar.gz.md5"><span class="caps">MD5</span></a></td>
+<td><a class="reference external" href="/files/nginx-1.5.8.tar.gz.sha1"><span class="caps">SHA1</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+      </section>
+    </div>
+  <div class="eevee-related">
+    <section>
+      <h2>Related articles</h2>
+      <ul>
+          <li>
+            <a href="../../../../2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/"
+               rel="bookmark"
+               title="Permalink to 'nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta'"
+               itemprop="url">
+              nginx 1.5.9 and ngx_pagespeed&nbsp;1.7.30.3-beta
+            </a>
+          </li>
+          <li>
+            <a href="../../../../2014/02/06/nnginx-1.5.10-with-spdy3.1/"
+               rel="bookmark"
+               title="Permalink to 'nginx 1.5.10 with SPDY 3.1'"
+               itemprop="url">
+              nginx 1.5.10 with <span class="caps">SPDY</span>&nbsp;3.1
+            </a>
+          </li>
+          <li>
+            <a href="../../../../2013/07/10/nginx-spdy-and-ngx-pagespeed/"
+               rel="bookmark"
+               title="Permalink to 'nginx, SPDY and ngx_pagespeed (Debian/Ubuntu)'"
+               itemprop="url">
+              nginx, <span class="caps">SPDY</span> and ngx_pagespeed&nbsp;(Debian/Ubuntu)
+            </a>
+          </li>
+          <li>
+            <a href="../../../../2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/"
+               rel="bookmark"
+               title="Permalink to 'haproxy, nginx and SPDY with SSL termination (Debian 7)'"
+               itemprop="url">
+              haproxy, nginx and <span class="caps">SPDY</span> with <span class="caps">SSL</span> termination (Debian&nbsp;7)
+            </a>
+          </li>
+          <li>
+            <a href="../../../../2014/03/06/haproxy1.5-dev22kura1/"
+               rel="bookmark"
+               title="Permalink to 'haproxy1.5-dev22kura1'"
+               itemprop="url">
+              haproxy1.5-dev22kura1
+            </a>
+          </li>
+      </ul>
+    </section>
+  </div>
+  <div class="eevee-ac">
+    <header class="eevee-ac__header">
+      <div class="eevee-ac-author__text">
+        <h2>Kura</h2>
+          <p>Anarchist. Pessimist. Bipolar. Hacker. Hyperpolyglot. Musician. Ex-(semi-)pro gamer. They/Them.</p>
+          <p>
+            <a href="../../../../authors/kura/"
+               itemprop="url"
+               title="Read more articles by Kura">
+              Read more articles by Kura
+            </a>
+          </p>
+        <nav>
+          <ul class="eevee-ac-author__social">
+              <li class="eevee-ac-author-social__link">
+                <a class="mdl-color-text--accent mdl-navigation__link"
+                   href="https://github.com/kura" itemprop="url" rel="bookmark"
+                   title="kura on GitHub">
+                  <i class="fa" aria-hidden="true">&#xF09B;</i>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+      <img src="/images/avatar.png" class="eevee-ac-author__avatar"
+           alt="Kura" />
+    </header>
+  </div>
+  </article>
+  <a href="https://github.com/kura/kura.gg/blob/main/content/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2.rst"
+     id="view-source" title="View 'haproxy1.5-dev21, nginx 1.5.8, SPDY & pagespeed 1.7.30.2' on GitHub"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-color--accent mdl-color-text--white">
+    <i class="material-icons">&#xE86F;</i> View Source
+  </a>
+        </div>
+      </div>
+    </main>
+      <div class="eevee-pagination__container eevee-container mdl-grid">
+        <div role="presentation"
+             class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        </div>
+        <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+<nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Pagination">
+    <a href="../../../../2014/01/26/deadsnakes.sh/"
+       class="eevee-nav__button" itemprop="url" rel="bookmark"
+       title="Newer">
+      <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900"
+              role="presentation">
+        <i class="material-icons">&#xE5C4;</i>
+      </button>
+      Newer
+    </a>
+  <div class="eevee-spacer"></div>
+    <a href="../../../../2013/12/24/shields-for-pypi-packages/"
+       class="eevee-nav__button" itemprop="url" rel="bookmark"
+       title="Older">
+      Older
+      <button class="mdl-button mdl-button--icon mdl-color--white mdl-color-text--grey-900"
+              role="presentation">
+        <i class="material-icons">&#xE5C8;</i>
+      </button>
+    </a>
+</nav>        </div>
+      </div>
+    <footer class="mdl-mega-footer" itemscope
+            itemtype="http://schema.org/SiteNavigationElement">
+      <div class="mdl-mega-footer--top-section">
+        <div class="mdl-mega-footer--drop-down-section">
+          <ul class="mdl-mega-footer--link-list">
+            <li>
+              <a href="#top" itemprop="url"
+                 title="Back to the top of the page">
+                Back to the top of the page
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+<div class="mdl-mega-footer--middle-section" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Footer navigation">
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Menu</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/contact/" itemprop="url" rel="bookmark"
+             title="Contact">
+            <i class="material-icons" aria-hidden="true">&#xE0B7;</i> Contact
+          </a>
+        </li>
+        <li>
+          <a href="../../../../archives/"
+             itemprop="url" rel="bookmark" title="Archives">
+            <i class="material-icons">&#xE02F;</i>
+            Archives
+          </a>
+        </li>
+        <li>
+          <a href="../../../../feeds/rss.xml"
+             title="RSS"
+             itemprop="url">
+            <i class="material-icons">&#xE0E5;</i>
+              RSS
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Social</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="https://github.com/kura" itemprop="url" rel="bookmark"
+             title="GitHub">
+            <i class="fa" aria-hidden="true">&#xF09B;</i> Github
+          </a>
+        </li>
+    </ul>
+  </div>
+  <div class="mdl-mega-footer--drop-down-section">
+    <h1 class="mdl-mega-footer--heading">Links</h1>
+    <ul class="mdl-mega-footer--link-list">
+        <li>
+          <a href="/blackhole" itemprop="url" rel="bookmark"
+             title="Blackhole">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Blackhole
+          </a>
+        </li>
+        <li>
+          <a href="/eevee" itemprop="url" rel="bookmark"
+             title="Eevee">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Eevee
+          </a>
+        </li>
+        <li>
+          <a href="/hauntr" itemprop="url" rel="bookmark"
+             title="Hauntr">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Hauntr
+          </a>
+        </li>
+        <li>
+          <a href="/ghastly" itemprop="url" rel="bookmark"
+             title="Ghastly">
+            <i class="material-icons" aria-hidden="true">&#xE871;</i> Ghastly
+          </a>
+        </li>
+        <li>
+          <a href="/pelican-plugins" itemprop="url" rel="bookmark"
+             title="Pelican Plugins">
+            <i class="material-icons" aria-hidden="true">&#xE86F;</i> Pelican Plugins
+          </a>
+        </li>
+      </ul>
+  </div>
+</div>      <div class="mdl-mega-footer--bottom-section">
+        <div class="mdl-logo">
+          <a href="../../../.." rel="bookmark" itemprop="url"
+             title="kura.gg">
+            kura.gg
+          </a>
+        </div>
+          <ul class="eevee-footer mdl-mega-footer--link-list">
+              <li>Powered by love &amp; rainbow sparkles.</li>
+              <li>Source code and content released under the <a href="/license/" title="MIT license">MIT license</a>.</li>
+          </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
