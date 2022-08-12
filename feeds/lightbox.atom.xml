@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - lightbox</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/lightbox.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2016-06-13T20:50:00+01:00</updated><entry><title>Lightbox — A pure CSS lightbox for Pelican</title><link href="https://kura.gg/2016/06/13/lightbox--a-pure-css-lightbox-for-pelican/" rel="alternate"></link><published>2016-06-13T20:50:00+01:00</published><updated>2016-06-13T20:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-06-13:/2016/06/13/lightbox--a-pure-css-lightbox-for-pelican/</id><content type="html">&lt;img alt="Lightbox" class="align-center" src="/images/lightbox.png"/&gt;
+
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;With the release of my &lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; theme for Pelican, I realised
+displaying a thumbnail image of the theme that linked to a larger image wasn’t
+the most appealing design choice. I prefer to leave Javascript out of the
+equation where possible, being one of those weird people that have it disabled
+by default.&lt;/p&gt;
+&lt;p&gt;As such I sought out a way to create a pure &lt;span class="caps"&gt;CSS&lt;/span&gt; equivalent of a Lightbox and
+turn it in to an &lt;span class="caps"&gt;RST&lt;/span&gt; directive to plug directly in to Pelican.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="lightbox"></category><category term="pelican"></category><category term="lightbox"></category><category term="eevee"></category></entry></feed>

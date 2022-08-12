@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - eevee</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/eevee.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2016-06-25T21:00:00+01:00</updated><entry><title>Eevee — Adding more structure to posts</title><link href="https://kura.gg/2016/06/25/eevee-adding-more-structure-to-posts/" rel="alternate"></link><published>2016-06-25T21:00:00+01:00</published><updated>2016-06-25T21:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-06-25:/2016/06/25/eevee-adding-more-structure-to-posts/</id><summary type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
+released in June 2016.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://schema.org/"&gt;Schema.org&lt;/a&gt; is a collaborative effort, including
+private companies like Google and the open source community to promoter adding
+additional structure to data that indentifies what parts of &lt;span class="caps"&gt;HTML&lt;/span&gt; are being used
+for, for example it can help a search engine understand what content is more
+important to index or, it can help a user with a screen reader get to the
+important content more easily. These structures are more commonly known as
+microformats or microdata.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="structure-is-a-beautiful-thing"&gt;
+&lt;h2&gt;Structure is a beautiful thing&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;HTML&lt;/span&gt; — by it’s very design is structured — the difference is that the content
+defines or modifies that structure.&lt;/p&gt;
+&lt;p&gt;By using microformat data structures from schema.org you can define what
+elements are more prominent or important through a large set of additional
+vocabulary, improving the experience for everyone …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
+released in June 2016.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://schema.org/"&gt;Schema.org&lt;/a&gt; is a collaborative effort, including
+private companies like Google and the open source community to promoter adding
+additional structure to data that indentifies what parts of &lt;span class="caps"&gt;HTML&lt;/span&gt; are being used
+for, for example it can help a search engine understand what content is more
+important to index or, it can help a user with a screen reader get to the
+important content more easily. These structures are more commonly known as
+microformats or microdata.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="structure-is-a-beautiful-thing"&gt;
+&lt;h2&gt;Structure is a beautiful thing&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;HTML&lt;/span&gt; — by it’s very design is structured — the difference is that the content
+defines or modifies that structure.&lt;/p&gt;
+&lt;p&gt;By using microformat data structures from schema.org you can define what
+elements are more prominent or important through a large set of additional
+vocabulary, improving the experience for everyone that uses your website.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;article&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://schema.org/BlogPosting"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullKeyboardControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullMouseControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"bookmarks"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityAPI"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"ARIA"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"author"&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt;
+         &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://schema.org/Person"&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"presentation"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"name"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Kura"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"name"&lt;/span&gt;
+              &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://kura.gg/authors/kura/"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"keywords"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"eevee,html,pelican"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"eevee-article eevee-article-padding"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"eevee-meta mdl-color-text--grey-500"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;time&lt;/span&gt; &lt;span class="na"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"2016-06-25T21:00:00+01:00"&lt;/span&gt;
+                  &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"datePublished"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                 25 Jun 2016
+            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;time&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"name"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://kura.gg/eevee"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"bookmark"&lt;/span&gt;
+               &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Permalink to 'Eevee -- A Material Design theme for Pelican'"&lt;/span&gt;
+               &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"url"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                Eevee -- A Material Design theme for Pelican
+            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"articleBody"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            Some random content here
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"eevee-comment"&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"article-comments"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'https://schema.org/UserComments'&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Discuss&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            Disqus/Muut stuff here.
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;article&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Above is an example of a blog post with the additional vocabulary, below I’ll
+outline each important section and explain what it does.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;article&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://schema.org/BlogPosting"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This simply tells the client which schema is being used for the content within
+it. The client uses that data to determine what elements should be provided
+based on that schema. Here I’m using the &lt;a class="reference external" href="https://schema.org/BlogPosting"&gt;BlogPosting&lt;/a&gt; schema.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullKeyboardControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fullMouseControl"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityControl"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"bookmarks"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accessibilityAPI"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"ARIA"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;These elements — as you may have guess from their names — are used to improve
+accessibility. More information on available options is provided on the
+&lt;a class="reference external" href="https://www.w3.org/wiki/WebSchemas/Accessibility"&gt;&lt;span class="caps"&gt;W3C&lt;/span&gt; wiki&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"author"&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt;
+     &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://schema.org/Person"&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"presentation"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"name"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Kura"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"name"&lt;/span&gt;
+          &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://kura.gg/authors/kura/"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This set of markup simply defines who the author is and where more of their
+content is located. Note that it uses a different schema named &lt;a class="reference external" href="https://schema.org/Person"&gt;Person&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Because the div element has no style and consists of only meta data, a role
+is defined that tells screen readers this data is only for presentation
+purposes and can be ignored.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"keywords"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"eevee,html,pelican"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This a pretty simple element, it is generated from the blog articles category
+and any tags it may have.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;time&lt;/span&gt; &lt;span class="na"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"2016-06-25T21:00:00+01:00"&lt;/span&gt;
+      &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"datePublished"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+     25 Jun 2016
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;time&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This element is a date provided as a universally understood value and in a
+more user-friendly format that is displayed to the user.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"name"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://kura.gg/eevee"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"bookmark"&lt;/span&gt;
+       &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Permalink to 'Eevee -- A Material Design theme for Pelican'"&lt;/span&gt;
+       &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"url"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        Eevee -- A Material Design theme for Pelican
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here the name of the article is defined, as is the &lt;span class="caps"&gt;URL&lt;/span&gt; to that article.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemprop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"articleBody"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    Some random content here
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This section informs the client that this is the main content of the post.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;itemscope&lt;/span&gt; &lt;span class="na"&gt;itemtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'https://schema.org/UserComments'&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Discuss&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    Disqus/Muut stuff here.
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Finally we add another schema &lt;a class="reference external" href="https://schema.org/UserComments"&gt;UserComments&lt;/a&gt;
+that defines user comment content.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="eevee"></category><category term="pelican"></category></entry><entry><title>Eevee — Updating share buttons and adding Muut</title><link href="https://kura.gg/2016/06/19/eevee-updating-share-buttons-and-adding-muut/" rel="alternate"></link><published>2016-06-19T01:45:00+01:00</published><updated>2016-06-19T01:45:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-06-19:/2016/06/19/eevee-updating-share-buttons-and-adding-muut/</id><summary type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+
+&lt;p&gt;This week I pushed the &lt;a class="reference external" href="https://github.com/kura/eevee/tree/0.0.3"&gt;0.0.3 update&lt;/a&gt; for my Pelican theme &lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; containing new and improved styling for share buttons and adding
+the ability to use &lt;a class="reference external" href="https://muut.com/"&gt;Muut&lt;/a&gt; instead of Disqus for comments.&lt;/p&gt;
+&lt;div class="section" id="share-button-changes"&gt;
+&lt;h2&gt;Share button changes&lt;/h2&gt;
+&lt;p&gt;The original styling of the share buttons wasn’t particularly pretty.&lt;/p&gt;
+&lt;img alt="Eevee's original share button styling" class="align-center" src="/images/eevee-original-share-buttons.png"/&gt;
+&lt;p&gt;They badly needed a make over, and so they were restyled to be more prominent,
+look less out of place and randomly pasted in to the page and to have a colour
+scheme that matches the social media site they share to.&lt;/p&gt;
+&lt;img alt="Eevee's new 0.0.3 share button styling" class="align-center" src="/images/eevee-0.0.3-share-buttons.png"/&gt;
+&lt;p&gt;These buttons appear on articles and pages, but when viewing an article with
+&lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; enabled a fourth button is shown that
+links to the comments section of the current article.&lt;/p&gt;
+&lt;img alt="Eevee's new 0.0.3 article share button styling" class="align-center" src="/images/eevee-0.0.3-article-share-buttons.png"/&gt;
+&lt;/div&gt;
+&lt;div class="section" id="comments-powered-by-muut"&gt;
+&lt;h2&gt;Comments powered by Muut&lt;/h2&gt;
+&lt;p&gt;To enable commenting with Muut, simply modify &lt;tt class="docutils literal"&gt;pelicanconf.py&lt;/tt&gt; and set the
+Muut site name.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MUUT_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'somethinghere'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will automatically cause Eevee to enable …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+
+&lt;p&gt;This week I pushed the &lt;a class="reference external" href="https://github.com/kura/eevee/tree/0.0.3"&gt;0.0.3 update&lt;/a&gt; for my Pelican theme &lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; containing new and improved styling for share buttons and adding
+the ability to use &lt;a class="reference external" href="https://muut.com/"&gt;Muut&lt;/a&gt; instead of Disqus for comments.&lt;/p&gt;
+&lt;div class="section" id="share-button-changes"&gt;
+&lt;h2&gt;Share button changes&lt;/h2&gt;
+&lt;p&gt;The original styling of the share buttons wasn’t particularly pretty.&lt;/p&gt;
+&lt;img alt="Eevee's original share button styling" class="align-center" src="/images/eevee-original-share-buttons.png"/&gt;
+&lt;p&gt;They badly needed a make over, and so they were restyled to be more prominent,
+look less out of place and randomly pasted in to the page and to have a colour
+scheme that matches the social media site they share to.&lt;/p&gt;
+&lt;img alt="Eevee's new 0.0.3 share button styling" class="align-center" src="/images/eevee-0.0.3-share-buttons.png"/&gt;
+&lt;p&gt;These buttons appear on articles and pages, but when viewing an article with
+&lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; enabled a fourth button is shown that
+links to the comments section of the current article.&lt;/p&gt;
+&lt;img alt="Eevee's new 0.0.3 article share button styling" class="align-center" src="/images/eevee-0.0.3-article-share-buttons.png"/&gt;
+&lt;/div&gt;
+&lt;div class="section" id="comments-powered-by-muut"&gt;
+&lt;h2&gt;Comments powered by Muut&lt;/h2&gt;
+&lt;p&gt;To enable commenting with Muut, simply modify &lt;tt class="docutils literal"&gt;pelicanconf.py&lt;/tt&gt; and set the
+Muut site name.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MUUT_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'somethinghere'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will automatically cause Eevee to enable the Muut comment template which
+will styled similarly to how the Disqus comments section is styled.&lt;/p&gt;
+&lt;p&gt;Please be aware that if &lt;tt class="docutils literal"&gt;DISQUS_SITENAME&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;MUUT_SITENAME&lt;/tt&gt; are
+configured, Disqus will be prioritized over Muut and therefore only the Disqus
+template will be loaded.&lt;/p&gt;
+&lt;div class="lightbox-block align-center"&gt;&lt;a href="#67a629fc-c344-42e3-ab02-e14801222aa4" title="Eevee using Muut for comments (click to view large image)"&gt;&lt;img alt="Eevee using Muut for comments (click to view large image)" class="align-center" src="/images/eevee-0.0.3-muut-thumb.png"/&gt;&lt;/a&gt;&lt;a class="lightbox" href="#_" id="67a629fc-c344-42e3-ab02-e14801222aa4" title="Click to close"&gt;&lt;img alt="Click to close" src="/images/eevee-0.0.3-muut.png"/&gt;&lt;/a&gt;&lt;p class="align-center"&gt;Eevee using Muut for comments (click to view large image)&lt;/p&gt;&lt;/div&gt;&lt;div class="lightbox-divider"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="back-to-the-top-of-the-page-links"&gt;
+&lt;h2&gt;Back to the top of the page links&lt;/h2&gt;
+&lt;p&gt;A small addition are the &lt;cite&gt;back to the top of the page&lt;/cite&gt; links that will now
+appear under each article on index pages.&lt;/p&gt;
+&lt;img alt="Eevee's new 0.0.3 back to top of the page links" class="align-center" src="/images/eevee-0.0.3-back-to-top-links.png"/&gt;
+&lt;p&gt;A link has also been added to the footer to take users back to the top of the page.&lt;/p&gt;
+&lt;img alt="Eevee's new 0.0.3 back to top of the page footer link" class="align-center" src="/images/eevee-0.0.3-back-to-top-footer.png"/&gt;
+&lt;/div&gt;
+</content><category term="eevee"></category><category term="pelican"></category><category term="eevee"></category><category term="muut"></category></entry><entry><title>Eevee — Using Font Awesome icons in menus</title><link href="https://kura.gg/2016/06/12/eevee-using-font-awesome-icons-in-menus/" rel="alternate"></link><published>2016-06-12T23:40:00+01:00</published><updated>2016-06-12T23:40:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-06-12:/2016/06/12/eevee-using-font-awesome-icons-in-menus/</id><summary type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
+released in June 2016.&lt;/p&gt;
+&lt;p&gt;Eevee allows configuring menu links in the header and footer of a template —
+including social links.&lt;/p&gt;
+&lt;p&gt;Eevee also includes &lt;a class="reference external" href="https://fontawesome.com/"&gt;Font Awesome&lt;/a&gt; by default, at
+time of release and writing of this article it provides Font Awesome version 4.6.3.&lt;/p&gt;
+&lt;p&gt;Because the links are totally customisable, it means you can inject &lt;span class="caps"&gt;HTML&lt;/span&gt;
+directly in to a link name and — because Font Awesome is included by default
+— you can inject Font Awesome icons in to link names using &lt;span class="caps"&gt;HTML&lt;/span&gt;.&lt;/p&gt;
+&lt;img alt="Social icons in Eevee menu" src="/images/eevee-social-icons.png"/&gt;
+&lt;/div&gt;
+&lt;div class="section" id="using-icons-in-links"&gt;
+&lt;h2&gt;Using icons in links&lt;/h2&gt;
+&lt;p&gt;Menu’s in Eevee are controlled by Pelican’s configuration, for information on
+how to modify menu’s please see &lt;a class="reference external" href="/eevee/#header-and-footer-options"&gt;the Eevee documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Imagine you have a list of links to social websites in your menu, similar to
+the list below.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;'Github'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://github.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="/eevee/"&gt;Eevee&lt;/a&gt; is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on
+Google’s &lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification that I
+released in June 2016.&lt;/p&gt;
+&lt;p&gt;Eevee allows configuring menu links in the header and footer of a template —
+including social links.&lt;/p&gt;
+&lt;p&gt;Eevee also includes &lt;a class="reference external" href="https://fontawesome.com/"&gt;Font Awesome&lt;/a&gt; by default, at
+time of release and writing of this article it provides Font Awesome version 4.6.3.&lt;/p&gt;
+&lt;p&gt;Because the links are totally customisable, it means you can inject &lt;span class="caps"&gt;HTML&lt;/span&gt;
+directly in to a link name and — because Font Awesome is included by default
+— you can inject Font Awesome icons in to link names using &lt;span class="caps"&gt;HTML&lt;/span&gt;.&lt;/p&gt;
+&lt;img alt="Social icons in Eevee menu" src="/images/eevee-social-icons.png"/&gt;
+&lt;/div&gt;
+&lt;div class="section" id="using-icons-in-links"&gt;
+&lt;h2&gt;Using icons in links&lt;/h2&gt;
+&lt;p&gt;Menu’s in Eevee are controlled by Pelican’s configuration, for information on
+how to modify menu’s please see &lt;a class="reference external" href="/eevee/#header-and-footer-options"&gt;the Eevee documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Imagine you have a list of links to social websites in your menu, similar to
+the list below.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;'Github'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://github.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://twitter.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Facebook'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://facebook.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Instagram'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://instagram.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'LinkedIn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://linkedin.com/'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Adding the relevant icons to these links is very simple.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;i class="fa fa-github aria-hidden="true"&amp;gt;&amp;lt;/i&amp;gt; Github'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;'https://github.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;i class="fa fa-twitter aria-hidden="true"&amp;gt;&amp;lt;/i&amp;gt; Twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;'https://twitter.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;i class="fa fa-facebook aria-hidden="true"&amp;gt;&amp;lt;/i&amp;gt; Facebook'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;'https://facebook.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;i class="fa fa-instagram aria-hidden="true"&amp;gt;&amp;lt;/i&amp;gt; Instagram'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;'https://instagram.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;i class="fa fa-linkedin aria-hidden="true"&amp;gt;&amp;lt;/i&amp;gt; LinkedIn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;'https://linkedin.com/'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Turning a rather dull menu, in to a more pleasing menu.&lt;/p&gt;
+&lt;img alt="Eevee menu with no icons" src="/images/eevee-social-icons--no-icons.png"/&gt;
+&lt;img alt="Social icons in Eevee menu" src="/images/eevee-social-icons.png"/&gt;
+&lt;/div&gt;
+</content><category term="eevee"></category><category term="pelican"></category></entry><entry><title>Eevee — A Material Design theme for Pelican</title><link href="https://kura.gg/2016/06/12/eevee-a-material-design-theme-for-pelican/" rel="alternate"></link><published>2016-06-12T10:25:00+01:00</published><updated>2016-06-12T10:25:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-06-12:/2016/06/12/eevee-a-material-design-theme-for-pelican/</id><content type="html">&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Eevee is a theme for &lt;a class="reference external" href="https://getpelican.com"&gt;Pelican&lt;/a&gt;, based on Google’s
+&lt;a class="reference external" href="https://material.google.com/"&gt;Material Design&lt;/a&gt; specification. It is named
+after the Pokémon &lt;a class="reference external" href="https://www.pokemon.com/uk/pokedex/eevee"&gt;Eevee&lt;/a&gt; because
+— like the Pokémon — it can evolve in to many ‘elemental types.’&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="eevee"></category><category term="pelican"></category></entry></feed>

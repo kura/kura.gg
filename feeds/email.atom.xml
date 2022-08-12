@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - email</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/email.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2021-10-14T16:50:00+01:00</updated><entry><title>Google Workspace Gmail MX records signed with DNSSEC</title><link href="https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/" rel="alternate"></link><published>2021-10-14T16:50:00+01:00</published><updated>2021-10-14T16:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-14:/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</id><summary type="html">&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
+known as G Suite and Google Apps) has unofficial &lt;span class="caps"&gt;DNSSEC&lt;/span&gt;-signed
+&lt;span class="caps"&gt;MX&lt;/span&gt; records available for use. The officially supported ones
+that you’re told to configure do not offer &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; signing.&lt;/p&gt;
+&lt;p&gt;These &lt;span class="caps"&gt;MX&lt;/span&gt; records have both IPv4 and IPv6 addresses, although
+the records are not officially supported or documented and
+may be unreliable or removed at any point. (I’ve been using them
+for a while now and they seem perfectly fine to me but use at
+your own risk.)&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+mx1.smtp.goog
+mx2.smtp.goog
+mx3.smtp.goog
+mx4.smtp.goog
+&lt;/pre&gt;
+&lt;p&gt;The table below has the &lt;span class="caps"&gt;MX&lt;/span&gt; record and the A and &lt;span class="caps"&gt;AAAA&lt;/span&gt; record values.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+mx1.smtp.goog
+    216.239.32.151
+    2001:4860:4802:32::97
+
+mx2.smtp.goog
+    216.239.34.151
+    2001:4860:4802:34::97
+
+mx3.smtp.goog
+    216.239.36.151
+    2001:4860:4802:36 …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
+known as G Suite and Google Apps) has unofficial &lt;span class="caps"&gt;DNSSEC&lt;/span&gt;-signed
+&lt;span class="caps"&gt;MX&lt;/span&gt; records available for use. The officially supported ones
+that you’re told to configure do not offer &lt;span class="caps"&gt;DNSSEC&lt;/span&gt; signing.&lt;/p&gt;
+&lt;p&gt;These &lt;span class="caps"&gt;MX&lt;/span&gt; records have both IPv4 and IPv6 addresses, although
+the records are not officially supported or documented and
+may be unreliable or removed at any point. (I’ve been using them
+for a while now and they seem perfectly fine to me but use at
+your own risk.)&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+mx1.smtp.goog
+mx2.smtp.goog
+mx3.smtp.goog
+mx4.smtp.goog
+&lt;/pre&gt;
+&lt;p&gt;The table below has the &lt;span class="caps"&gt;MX&lt;/span&gt; record and the A and &lt;span class="caps"&gt;AAAA&lt;/span&gt; record values.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+mx1.smtp.goog
+    216.239.32.151
+    2001:4860:4802:32::97
+
+mx2.smtp.goog
+    216.239.34.151
+    2001:4860:4802:34::97
+
+mx3.smtp.goog
+    216.239.36.151
+    2001:4860:4802:36::97
+    216.239.32.151
+
+mx4.smtp.goog
+    216.239.38.151
+    2001:4860:4802:38::97
+&lt;/pre&gt;
+&lt;p&gt;I am using them myself but I am also willing to take the risk of
+them possibly vanishing without any warning.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+kura.gg.    300     IN      MX      10      mx1.smtp.goog.
+kura.gg.    300     IN      MX      20      mx2.smtp.goog.
+kura.gg.    300     IN      MX      30      mx3.smtp.goog.
+kura.gg.    300     IN      MX      40      mx4.smtp.goog.
+&lt;/pre&gt;
+</content><category term="email"></category><category term="gmail"></category><category term="email"></category><category term="smtp"></category><category term="dnssec"></category></entry></feed>
