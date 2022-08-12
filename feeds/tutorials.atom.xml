@@ -400,7 +400,7 @@ wish to block, the word &lt;cite&gt;&lt;span class="caps"&gt;REJECT&lt;/span&gt;
 &lt;p&gt;For every address you wish to block yourself from emailing, simply add them on
 a new line.&lt;/p&gt;
 &lt;p&gt;You can see the email is blocked from being sent in &lt;cite&gt;/var/log/mail.log&lt;/cite&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;NOQUEUE: reject …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I think most of us have been in a position where we really shouldn’t continue
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;NOQUEUE: reject: RCPT from 123.123.123.123: 554 5 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I think most of us have been in a position where we really shouldn’t continue
 communicating with someone or contact that person when drunk… You know what I
 mean, ex relationships etc (it happens.)&lt;/p&gt;
 &lt;p&gt;With Postfix you can block yourself from emailing that person again, which is
@@ -447,7 +447,7 @@ just come up with something nice and secure.&lt;/p&gt;
 &lt;p&gt;Next up, create the database.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CREATE DATABASE mailserver CHARACTER SET utf8 COLLATE utf8_general_ci;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And grant some privileges, you …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;And grant some privileges, you’ll need …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;This mail platform does use a fair amount of memory, the memory usage is ClamAV
 and Solr, the latter being used for &lt;span class="caps"&gt;IMAP&lt;/span&gt; &lt;span class="caps"&gt;SEARCH&lt;/span&gt;. I personally use 2 &lt;span class="caps"&gt;GB&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I’ll warn you all now, this is a long article.&lt;/p&gt;
@@ -1493,7 +1493,14 @@ they are only available for amd64);&lt;/p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/files/nginx-common_1.4.1_all.deb"&gt;nginx-common_1.4.1_all.deb&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a class="reference external" href="/files/nginx-common_1.4.1_all.deb.asc"&gt;owGMt1NwJU…&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a class="reference external" href="/files/nginx-common_1.4.1_all.deb.md5"&gt;ca4ec5688d…&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a class="reference external" href="/files/nginx-common_1.4.1_all.deb.sha1"&gt;633bfc2eaa …&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</summary><content type="html">
+&lt;td&gt;&lt;a class="reference external" href="/files/nginx-common_1.4.1_all.deb.sha1"&gt;633bfc2eaa…&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/files/nginx-full_1.4.1_amd64.deb"&gt;nginx-full_1.4.1_amd64.deb&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="reference external" href="/files/nginx-full_1.4.1_amd64.deb.asc"&gt;owG09ndUk1…&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="reference external" href="/files/nginx-full_1.4.1_amd64.deb.md5"&gt;4776dc6c7f…&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="reference external" href="/files/nginx-full_1.4.1_amd64.deb.sha1"&gt;0e4e124acc…&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/files/nginx-doc_1.4.1_all.deb"&gt;nginx-doc_1 …&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I decided to rebuild syslog.tv as pure &lt;span class="caps"&gt;HTML&lt;/span&gt; using &lt;span class="caps"&gt;RST&lt;/span&gt; and
 &lt;a class="reference external" href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and rebrand it as kura.gg.&lt;/p&gt;
 &lt;p&gt;In doing so I decided I would go all out and use &lt;a class="reference external" href="https://www.chromium.org/spdy"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; and
@@ -1674,7 +1681,7 @@ for future.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java -version
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You’ll get something like this&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java version &lt;span class="s2"&gt;"1.6.0_20"&lt;/span&gt; OpenJDK Runtime Environment &lt;span class="o"&gt;(&lt;/span&gt;IcedTea6 &lt;span class="m"&gt;1 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java version &lt;span class="s2"&gt;"1.6.0_20"&lt;/span&gt; OpenJDK Runtime Environment &lt;span class="o"&gt;(&lt;/span&gt;IcedTea6 &lt;span class="m"&gt;1&lt;/span&gt;.9 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;If like me you run in to issue when using OpenJDK, my issues come from
 it’s memory problems when you’re allocating and using large amounts of
 memory - mostly for Solr where we’re concerned but obviously I’d switch
@@ -2078,7 +2085,8 @@ Unattended-Upgrade::Allowed-Origins {
  Unattended-Upgrade::Automatic-Reboot "false";
 &lt;/pre&gt;
 &lt;p&gt;So lets explain the above. As you can see we enable periodic updates,
-enable update package lists (triggers …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+enable update package lists (triggers an apt-get update), enable
+autoclean …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;The unattended-upgrades package used on Debian is based on the one from
 Ubuntu. It is generally pretty safe in my opinion but I only ever enable
 it for security upgrades.&lt;/p&gt;
@@ -2392,7 +2400,8 @@ sudo sysctl kernel.panic&lt;span class="o"&gt;=&lt;/span&gt;X &lt;span class="c1
 &lt;p&gt;&lt;strong&gt;*&lt;span class="caps"&gt;DO&lt;/span&gt; &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;FORGET&lt;/span&gt; &lt;span class="caps"&gt;TO&lt;/span&gt; &lt;span class="caps"&gt;CHANGE&lt;/span&gt; X*&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This will inject the changes in to a system that is currently running
 but will be forgotten on reboot so use the lines below to save permanently.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"vm.panic_on_oom=1"&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"vm.panic_on_oom=1"&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
+sudo &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"kernel.panic …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;&lt;strong&gt;*I would generally not advise using this unless you have skill at
 debugging why &lt;span class="caps"&gt;OOM&lt;/span&gt; has spawned and also debugging kernel panics after
 they happen, from logs.*&lt;/strong&gt;&lt;/p&gt;
@@ -2491,7 +2500,7 @@ service livestatus {
     user = nagios
     server = /usr/bin/unixcat
     server_args = /var/lib/nagios3/rw/live
-    only_from = 127.0.0 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+    only_from = 127.0.0.1 # modify this to …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;div class="section" id="preparation"&gt;
 &lt;h2&gt;Preparation&lt;/h2&gt;
 &lt;p&gt;First we need to make sure we have all the stuff we need to compile mk
@@ -2604,7 +2613,12 @@ full copy from &lt;a class="reference external" href="/files/2011/09/server.txt"
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_redirect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Real-IP&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add_x …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;proxy_pass_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;Set-Cookie&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="kn"&gt;root&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;**/PATH/TO/WORDPRESS**&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# default location, used for the basic proxying&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kn"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# if we're requesting a file and …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;div class="section" id="the-point"&gt;
 &lt;h2&gt;The point&lt;/h2&gt;
 &lt;p&gt;The whole point of this is to get as much load off of Apache as possible
@@ -2949,7 +2963,7 @@ with &lt;strong&gt;reject_rbl_client&lt;/strong&gt; and &lt;strong&gt;reject_rhs
 +———————————+———————————————————————————————————————————————————+
 | b1.spamcop.net       | &lt;span class="caps"&gt;IP&lt;/span&gt; addresses which have been used to transmit reported email to SpamCop users                        |
 +———————————+———————————————————————————————————————————————————+
-| rhsbl.ahbl.org       | Domains sending spam, domains owned by spammers, comment …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This really should be quite a quick and simple post.&lt;/p&gt;
+| rhsbl.ahbl.org       | Domains sending spam, domains owned by spammers, comment spam domains, spammed URLs …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This really should be quite a quick and simple post.&lt;/p&gt;
 &lt;p&gt;I use several tools to protect my mail servers from spam, the most
 effective of these I’ve found is using external lists in conjunction
 with &lt;strong&gt;reject_rbl_client&lt;/strong&gt; and &lt;strong&gt;reject_rhsbl_client&lt;/strong&gt;.&lt;/p&gt;
@@ -3093,7 +3107,7 @@ key for later.&lt;/p&gt;
 &lt;p&gt;Once installed we need to configure it, open up
 &lt;strong&gt;/etc/default/dkim-filter&lt;/strong&gt;, modify the file to look like below
 replacing &amp;lt;&lt;span class="caps"&gt;DOMAIN&lt;/span&gt;&amp;gt; with the domain you want to sign email from.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;DAEMON_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-l -o …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;DAEMON_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-l -o X-DomainKeys …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;This is part 3 of my guide to getting a mail server configured with all
 the sexy bits to improve deliverability, spam and virus protection.&lt;/p&gt;
 &lt;p&gt;You can view &lt;a class="reference external" href="/2011/09/15/postfix-dovecot-imapimaps-sasl-maildir/"&gt;part 1 here&lt;/a&gt; and &lt;a class="reference external" href="/2011/09/16/postfix-spamassassin-clamav-procmail/"&gt;part 2 here&lt;/a&gt;.&lt;/p&gt;
@@ -3415,7 +3429,12 @@ smtpd_sender_restrictions = permit_sasl_authenticated,
     permit_mynetworks,
 
 smtpd_recipient_restrictions = permit_mynetworks,
-    permit …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+    permit_sasl_authenticated,
+    reject_unauth_destination,
+    reject_unknown_sender_domain,
+&lt;/pre&gt;
+&lt;p&gt;Here we basically tell Postfix to store all email in maildir format in
+the user’s home directory. We …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;This guide is part 1 of what I plan will be a couple of guides that take
 you through installing a base mail system, SpamAssassin, &lt;span class="caps"&gt;DKIM&lt;/span&gt; and much
 more. Stay tuned.&lt;/p&gt;
@@ -3545,30 +3564,7 @@ that don’t know about it, so here we go.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install linux-headers-&lt;span class="k"&gt;$(&lt;/span&gt;uname -r&lt;span class="k"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This will install kernel headers for your current active kernel on Debian/Ubuntu.&lt;/p&gt;
-</content><category term="tutorials"></category><category term="apt"></category><category term="apt-get"></category><category term="debian"></category><category term="headers"></category><category term="kernel"></category><category term="ubuntu"></category></entry><entry><title>nginx log real IP from Pound</title><link href="https://kura.gg/2011/08/10/nginx-log-real-ip-from-pound/" rel="alternate"></link><published>2011-08-10T12:34:00+01:00</published><updated>2011-08-10T12:34:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2011-08-10:/2011/08/10/nginx-log-real-ip-from-pound/</id><summary type="html">&lt;p&gt;Recently I started using Pound as a load balancer to a cluster of nginx
-servers and found my access logs were filled with the &lt;span class="caps"&gt;IP&lt;/span&gt; address of the
-load balancer. I did some digging and found the correct way to “fix” this.&lt;/p&gt;
-&lt;p&gt;First thing you need to do is make sure you remove X-Forwarded-For from Pound&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-ListenHTTP
-    # ... snip ...
-    # ... snip ...
-    HeadRemove "X-Forwarded-For"
-End
-&lt;/pre&gt;
-&lt;p&gt;Once this is done, reload Pound.&lt;/p&gt;
-&lt;p&gt;Next you need nginx compiled with realip module -
-&lt;a class="reference external" href="https://wiki.nginx.org/NginxHttpRealIpModule"&gt;https://wiki.nginx.org/NginxHttpRealIpModule&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;On Ubuntu/Debian servers this module comes by default, otherwise you may
-have to compile it in yourself using the following option:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--with-http_realip_module
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Once this is all done modify your nginx vhosts and add the following 2 lines&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set_real_ip_from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;[IP]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;real_ip_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Where [&lt;span class="caps"&gt;IP&lt;/span&gt;] is the &lt;span class="caps"&gt;IP&lt;/span&gt; address of your load balancer.&lt;/p&gt;
-&lt;p&gt;To configure this to work with Apache you need the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I started using Pound as a load balancer to a cluster of nginx
+</content><category term="tutorials"></category><category term="apt"></category><category term="apt-get"></category><category term="debian"></category><category term="headers"></category><category term="kernel"></category><category term="ubuntu"></category></entry><entry><title>nginx log real IP from Pound</title><link href="https://kura.gg/2011/08/10/nginx-log-real-ip-from-pound/" rel="alternate"></link><published>2011-08-10T12:34:00+01:00</published><updated>2011-08-10T12:34:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2011-08-10:/2011/08/10/nginx-log-real-ip-from-pound/</id><content type="html">&lt;p&gt;Recently I started using Pound as a load balancer to a cluster of nginx
 servers and found my access logs were filled with the &lt;span class="caps"&gt;IP&lt;/span&gt; address of the
 load balancer. I did some digging and found the correct way to “fix” this.&lt;/p&gt;
 &lt;p&gt;First thing you need to do is make sure you remove X-Forwarded-For from Pound&lt;/p&gt;
@@ -3654,7 +3650,9 @@ log_format g-a '$remote_addr - $remote_user [$time_local] ' '"$request" $status 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo /etc/init.d/nginx reload
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If all goes well, you should see Google Analytics appearing in your
-access logs …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I was recently tasked with adding Google tracking cookies to our nginx
+access logs like below&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+1.1.1.1 - - [05/Jun/2011:20:35:50 +0100] "GET / HTTP …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;I was recently tasked with adding Google tracking cookies to our nginx
 logging for a couple of sites. It was so it could be pushed through a
 log processor.&lt;/p&gt;
 &lt;p&gt;It turned out too be a little trickier than it would have been with
@@ -4208,7 +4206,7 @@ simply write the changes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="adding-swap"&gt;
 &lt;h2&gt;Adding swap&lt;/h2&gt;
-&lt;p&gt;Next we simply …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;Next we simply add …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Recently I had to install Oracle on a virtual machine but didn’t find
 out until after I’d spun up of the machine that Oracle required at least
 &lt;span class="caps"&gt;2GB&lt;/span&gt; of swap space, my machine did not have enough.&lt;/p&gt;
@@ -4495,7 +4493,23 @@ improve performance and clear up some bugs.&lt;/p&gt;
 &lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$comment_author&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;comment_author_&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$my_cache_key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$scheme://$host$uri$is_args$args$wordpress_logged_in$comment …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$my_cache_key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$scheme://$host$uri$is_args$args$wordpress_logged_in$comment_author_email$comment_author"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;client_max_body_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;8m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_redirect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Real-IP&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_pass_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;Set-Cookie&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_cache&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_cache_key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$my_cache_key&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;302&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;60m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_cache_valid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_pass&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;https://backend&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;.(jpg|png|gif|jpeg|js|css …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;div class="section" id="configuration-changes"&gt;
 &lt;h2&gt;Configuration changes&lt;/h2&gt;
 &lt;p&gt;I made some modifications to my nginx configuration this weekend to
@@ -4975,7 +4989,10 @@ command[check_load]=/usr/lib/nagios/plugins/check_load -w 15,10,5 -c 30,25,20
 command[check_all_disks]=/usr/lib/nagios/plugins/check_disk -w 20 -c 10
 command[check_zombie_procs]=/usr/lib/nagios/plugins/check_procs -w 5 -c 10 -s Z
 command[check_total_procs]=/usr/lib/nagios/plugins/check_procs -w 150 -c 200
-command[check_swap]=/usr/lib/nagios/plugins …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+command[check_swap]=/usr/lib/nagios/plugins/check_swap -w 20 -c 10
+&lt;/pre&gt;
+&lt;p&gt;Save and exit.&lt;/p&gt;
+&lt;p&gt;Commands need to explicitly be enabled on the …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I’ll assume you already have Nagios installed and configured and have an
 understanding of actually configuring and using Nagios.&lt;/p&gt;
 &lt;div class="section" id="remote-server-the-server-to-be-monitored"&gt;
@@ -5040,33 +5057,7 @@ define service {
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo /etc/init.d/nagios2 restart
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="tutorials"></category><category term="debian"></category><category term="monitoring"></category><category term="nagios"></category><category term="nrpe"></category><category term="ubuntu"></category></entry><entry><title>Show IP in Apache logs from nginx reverse proxy</title><link href="https://kura.gg/2010/03/20/show-ip-in-apache-logs-from-nginx-reverse-proxy/" rel="alternate"></link><published>2010-03-20T19:24:00+00:00</published><updated>2010-03-20T19:24:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2010-03-20:/2010/03/20/show-ip-in-apache-logs-from-nginx-reverse-proxy/</id><summary type="html">&lt;p&gt;This is a very quick blog to show you how to show a users &lt;span class="caps"&gt;IP&lt;/span&gt; address in
-your Apache access logs when the site in question is being reverse
-proxied to Apache through nginx.&lt;/p&gt;
-&lt;p&gt;You need the rpaf module for Apache, on Debian and Ubuntu this is simple
-to install&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install libapache2-mod-rpaf
-sudo a2enmod rpaf
-sudo /etc/init.d/apache2 restart
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This set of commands will do the following;&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Update apt package list&lt;/li&gt;
-&lt;li&gt;Install libapache2-mod-rpaf&lt;/li&gt;
-&lt;li&gt;Enable mod-rpaf&lt;/li&gt;
-&lt;li&gt;Gracefully restart Apache (doesn’t kill connections)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Once installed you simple need to be sure to pass the correct headers
-through, so open up one of your nginx site configuration files and add
-the following within the server definition.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;So you should have something that looks like this, but without the “… snip …”&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;# ...snip...&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kn"&gt;proxy_set_header&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$proxy_add …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;This is a very quick blog to show you how to show a users &lt;span class="caps"&gt;IP&lt;/span&gt; address in
+</content><category term="tutorials"></category><category term="debian"></category><category term="monitoring"></category><category term="nagios"></category><category term="nrpe"></category><category term="ubuntu"></category></entry><entry><title>Show IP in Apache logs from nginx reverse proxy</title><link href="https://kura.gg/2010/03/20/show-ip-in-apache-logs-from-nginx-reverse-proxy/" rel="alternate"></link><published>2010-03-20T19:24:00+00:00</published><updated>2010-03-20T19:24:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2010-03-20:/2010/03/20/show-ip-in-apache-logs-from-nginx-reverse-proxy/</id><content type="html">&lt;p&gt;This is a very quick blog to show you how to show a users &lt;span class="caps"&gt;IP&lt;/span&gt; address in
 your Apache access logs when the site in question is being reverse
 proxied to Apache through nginx.&lt;/p&gt;
 &lt;p&gt;You need the rpaf module for Apache, on Debian and Ubuntu this is simple
@@ -5256,7 +5247,7 @@ available options, below I will outline several that I use and find very useful
 &lt;pre class="literal-block"&gt;
 Host host.domain.com
 &lt;/pre&gt;
-&lt;p&gt;Each host you add to your config will need to have …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;Each host you add to your config will need to have a host …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Today I &lt;em&gt;finally&lt;/em&gt; got round to setting up my local user ssh config on my
 new work laptop and figured I’d do a quick write up on it and it’s uses.&lt;/p&gt;
 &lt;p&gt;You can create a configuration file in your home directory that will
@@ -5534,7 +5525,8 @@ improve the caching capabilities and also implement load balancing.&lt;/p&gt;
 &lt;span class="k"&gt;proxy_temp_path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/tmp/nginx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;proxy_cache_key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$scheme://$host$request_uri"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;I’ve decided to put the temporary caches file in to …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;I’ve decided to put the temporary caches file in to an nginx specific
+directory, just to separate them from other cache files …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;This is yet another follow up to post to several previous posts about
 using nginx as a reverse proxy with caching. It is actually a direct
 addition to my post from a week or so ago which outlined how to actually
@@ -5710,7 +5702,7 @@ just use your already existing key.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl genrsa -out private.key &lt;span class="m"&gt;1024&lt;/span&gt;
 openssl rsa -in private.key -out public.key -pubout -outform PEM
 sudo mkdir /etc/mail
-sudo cp …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;I have written a much newer, clearer and better article on DomainKeys
+sudo …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;I have written a much newer, clearer and better article on DomainKeys
 signing email `here`_.&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="section" id="about"&gt;
 &lt;h2&gt;About&lt;/h2&gt;
@@ -6798,7 +6790,7 @@ sudo /usr/sbin/make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/apache2/ssl/apa
 &lt;h3&gt;Provider signed&lt;/h3&gt;
 &lt;p&gt;Please note, this type of certificate has to be paid for, prices at time
 of writing range from £15/year to £2,000/year.&lt;/p&gt;
-&lt;p&gt;There are actually some more …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+&lt;p&gt;There are actually some more options …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;This is gonna be quite a simple tutorial that should be the same
 (excluding pathing and apt) across other Linux distros.&lt;/p&gt;
 &lt;div class="section" id="installation"&gt;
@@ -7036,7 +7028,7 @@ figured I’d give it a shot.&lt;/p&gt;
 &lt;p&gt;At work our servers are Debian based but are the evil that is Ubuntu,
 strangely though I was able to find an Ubuntu specific article that
 wasn’t absolute rubbish, which surprised me no end. I was able to get
-dkim-milter working with Postfix and signing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;There is a much newer article on this subject `here`_ and covers
+dkim-milter working with Postfix and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;There is a much newer article on this subject `here`_ and covers
 DomainKeys and &lt;span class="caps"&gt;DKIM&lt;/span&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Mail and mail servers have always been my forté if I’m to be honest, my
 home mail server has been spam free for years now, nothing really gets
@@ -7169,7 +7161,7 @@ and running off to stomp a city.&lt;/p&gt;
 &lt;p&gt;I’ve fallen in-love with nginx (&lt;a class="reference external" href="https://nginx.org/"&gt;https://nginx.org/&lt;/a&gt;) over the last 6
 months or so, I’d been an avid user of LighTTPD for a very long time
 before but started to look in to nginx mid year as a replacement. I
-learned that at my new job they used …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+learned that at my new job they used nginx for …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;&lt;em&gt;This is a rather old article, for more up-to-date information please see;&lt;/em&gt;&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/"&gt;/2010/02/07/nginx-proxy_cache-and-explained-benchmarked/&lt;/a&gt;&lt;/li&gt;

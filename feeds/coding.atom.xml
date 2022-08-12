@@ -249,7 +249,8 @@ much coverage as possible and eaked out all of the bugs. You can find the
 &lt;h2&gt;&lt;span class="caps"&gt;CLI&lt;/span&gt; interface&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ batfish authorize
 abcde12345
-$ batfish droplets …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+$ batfish droplets
+ego …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Batfish is a Python client and &lt;span class="caps"&gt;API&lt;/span&gt; wrapper for the &lt;a class="reference external" href="https://developers.digitalocean.com/"&gt;Digital Ocean V2 &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;. It can be used as a library module in
 your own Python code but also provides a &lt;span class="caps"&gt;CLI&lt;/span&gt; interface and a shell-like command interpreter.&lt;/p&gt;
 &lt;p&gt;Batfish is still under development and is considered in the Alpha stage. It is
@@ -927,7 +928,7 @@ droplets or images.&lt;/p&gt;
 &lt;div class="section" id="license"&gt;
 &lt;h2&gt;License&lt;/h2&gt;
 &lt;p&gt;This software is licensed using the &lt;span class="caps"&gt;MIT&lt;/span&gt; License.
-The …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+The license is provided in …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;tugboat-bash-completion is a bash completion script the &lt;a class="reference external" href="https://github.com/pearkes/tugboat"&gt;tugboat&lt;/a&gt; &lt;span class="caps"&gt;CLI&lt;/span&gt; interface for the &lt;a class="reference external" href="https://www.digitalocean.com/"&gt;Digital Ocean&lt;/a&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
 &lt;div class="section" id="downloads"&gt;
 &lt;h2&gt;Downloads&lt;/h2&gt;
@@ -1140,7 +1141,7 @@ or in the three line example below.&lt;/p&gt;
 main “binary” which made it pretty much impossible to test. You can also see
 that &lt;a class="reference external" href="https://github.com/kura/blackhole/blob/bb6cccca3a75def324ed5cb64a32fd2e5773a038/blackhole/bin/blackhole"&gt;on GitHub in the main “binary”&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I’ve noticed that most people who write Python packages that have some kind of
-command line entry point use …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
+command line entry point use distutils …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Over the last week I’ve been doing a huge amount of refactoring of
 &lt;a class="reference external" href="https://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
 tests. To make Blackhole more testable I needed to make a big change to
@@ -1505,7 +1506,7 @@ instance of &lt;cite&gt;tornado.iostream.IOStream&lt;/cite&gt; and &lt;cite&gt;t
 so that it didn’t actually do the ssl wrapping.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;"""&lt;/span&gt;
-&lt;span class="sd"&gt;    Detect which socket …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+&lt;span class="sd"&gt;    Detect which socket the connection …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Blackhole has always been able to handle unencrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt; and
 for a long time it’s been able to handle encrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt; via TLSv1.&lt;/p&gt;
 &lt;p&gt;One thing Blackhole hasn’t been able to do until the 1.7.0 release
@@ -1702,7 +1703,7 @@ connection is to the encrypted or unencrypted socket.&lt;/p&gt;
 &lt;span class="sd"&gt;    create and iostream for the connection, wrapping it&lt;/span&gt;
 &lt;span class="sd"&gt;    in SSL if connected over the SSL socket.&lt;/span&gt;
 
-&lt;span class="sd"&gt;    The parameter 'connection' is an …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+&lt;span class="sd"&gt;    The parameter 'connection' is an instance …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;As part of my effort to make &lt;a class="reference external" href="https://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
 useful and usable as possible, I needed to be able to support &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 enabled connections.&lt;/p&gt;

@@ -53,7 +53,10 @@ allowing for haproxy to work under &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt
 or as a manual download, from the link below.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="manual-download"&gt;
-&lt;h2&gt;Manual download …&lt;/h2&gt;&lt;/div&gt;</summary><content type="html">
+&lt;h2&gt;Manual download&lt;/h2&gt;
+&lt;table class="docutils"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/files/haproxy_1.5-dev22kura1_amd64.deb"&gt;haproxy_1 …&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</summary><content type="html">
 &lt;div class="section" id="changes"&gt;
 &lt;h2&gt;Changes&lt;/h2&gt;
 &lt;p&gt;This patched version is built using the &lt;cite&gt;USE_ZLIB&lt;/cite&gt; option, allowing for usage
@@ -219,7 +222,14 @@ on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt
 edc55aa4866036eade02cd49957a9126  nginx-common_1.5.10_all.deb
 0361cdb3d00ac6e65c5e9d6167ba0d36  nginx-doc_1.5.10_all.deb
 833264c08fc6212f55ae37c26bd5cbc5  nginx-light_1.5.10_amd64.deb
-c5c1ffa0dd93673ac4a859a11d1b3b50  nginx-full_1.5.10_amd64 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+c5c1ffa0dd93673ac4a859a11d1b3b50  nginx-full_1.5.10_amd64.deb
+245d7628f143a6116ceb30c707264737  nginx-extras_1.5.10_amd64.deb
+dc404a346db86006672b5a6f8b016402  nginx-naxsi_1.5.10_amd64.deb
+ad3b7cf166752c2a8017bba8f6810496  nginx-naxsi-ui_1.5.10_all.deb
+cdb47100b4fef09bb8a8e414cd48554e  nginx-light-dbg_1.5.10_amd64.deb
+1ee2067aef2e1fcbc559dfdf9b8269ad  nginx-full-dbg_1.5.10_amd64.deb
+9f528d80802dd6a78d85b8558e65f650  nginx-extras-dbg_1.5.10_amd64.deb
+324dbf6afdff615d7c2bbe367f73bd1f  nginx-naxsi-dbg_1.5.10_amd64 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I have built and released nginx 1.5.10 with &lt;span class="caps"&gt;SPDY&lt;/span&gt; 3.1. Like the &lt;a class="reference external" href="/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/"&gt;nginx 1.5.9
 release&lt;/a&gt;
 , this release comes with ngx_pagespeed 1.7.30.3-beta and is available
@@ -330,7 +340,18 @@ b2f3e4dcded2ce419175be8f4329b81e  nginx-common_1.5.9_all.deb
 0a28a4965f00a5e739187aa81a16af3f  nginx-full_1.5.9_amd64.deb
 e54ab6b670cfe7d56502ef08b6e2656f  nginx-extras_1.5.9_amd64.deb
 9bb9b524c523a69f9f263eefbe5f5783  nginx-naxsi_1.5.9_amd64.deb
-7b8e254515d3b6f90b8e55c720d314b8 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
+7b8e254515d3b6f90b8e55c720d314b8  nginx-naxsi-ui_1.5.9_all.deb
+389b8b53360695d5fbbff183a3e94c4a  nginx-light-dbg_1.5.9_amd64.deb
+b8b44d1519cb59761984bc06159aee85  nginx-full-dbg_1.5.9_amd64.deb
+c8139d0abb8a04b22507342a80e6f5ea  nginx-naxsi-dbg_1.5.9_amd64.deb
+76466c2c427e7263b3629b413ebd49a6  nginx-extras-dbg_1.5.9_amd64.deb
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sha1"&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;SHA1&lt;/span&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cc1e71b89c30de80083e55acb4b4cebc0f5f1fd7  nginx_1.5.9_all.deb
+07d2bb7bdb038f5491b8707a56dafbf0a10a1b74  nginx-common_1.5.9_all.deb
+ba0921fc31ae539fba175ab4392b3bc691593047  nginx-doc_1.5.9_all …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;I have built and released nginx 1.5.9 with ngx_pagespeed module 1.7.30.3-beta
 and published them on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="manual-download-install"&gt;

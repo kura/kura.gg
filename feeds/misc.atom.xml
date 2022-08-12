@@ -415,7 +415,9 @@ stuff. In this instance we’re going to use it in conjunction with
             &lt;span class="kr"&gt;return&lt;/span&gt;
         &lt;span class="kr"&gt;end&lt;/span&gt;
 
-        &lt;span class="c1"&gt;-- Pull DNS …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+        &lt;span class="c1"&gt;-- Pull DNS records&lt;/span&gt;
+        &lt;span class="c1"&gt;-- Use a hardcoded domain to make this example easier&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tries&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kura.gg …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;This article is a continuation of &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
 upstreams&lt;/a&gt;
 that gives an example of how you can configure OpenResty to update your
@@ -854,7 +856,7 @@ this post, so let’s just say we have a table of upstream servers.&lt;/p&gt;
 &lt;pre class="code lua literal-block"&gt;
 &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"10.0.0.2 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+    &lt;span class="s2"&gt;"10.0.0.2:443 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
 &lt;div class="section" id="preamble"&gt;
 &lt;h2&gt;Preamble&lt;/h2&gt;
 &lt;p&gt;OpenResty is a modified version of nginx with LuaJIT compiled in and many
