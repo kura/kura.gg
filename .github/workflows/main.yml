@@ -40,7 +40,7 @@ jobs:
           make publish
           rm -rf output/theme/fonts/roboto*
           rm -rf output/curriculum-vitae/ && cp -R cv output/curriculum-vitae/
-          rsync -av output_screenshots output
+          rsync -av output_screenshots/ output/
       - name: cname
         run: make cname
       - name: strip
