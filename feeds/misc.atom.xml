@@ -153,8 +153,8 @@ is very simple, add a worker, write the code and add some routing to it.&lt;/p&
 &lt;div class="section" id="try-it-yourself"&gt;
 &lt;h2&gt;Try it yourself&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
-curl -sI https://kura.gg/ &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;
-x-pokemon: Eevee &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
+curl&lt;span class="w"&gt; &lt;/span&gt;-sI&lt;span class="w"&gt; &lt;/span&gt;https://kura.gg/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;x-pokemon:&lt;span class="w"&gt; &lt;/span&gt;Eevee&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
@@ -180,8 +180,8 @@ is very simple, add a worker, write the code and add some routing to it.&lt;/p&
 &lt;div class="section" id="try-it-yourself"&gt;
 &lt;h2&gt;Try it yourself&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
-curl -sI https://kura.gg/ &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;
-x-pokemon: Eevee &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
+curl&lt;span class="w"&gt; &lt;/span&gt;-sI&lt;span class="w"&gt; &lt;/span&gt;https://kura.gg/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"x-pokemon"&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;x-pokemon:&lt;span class="w"&gt; &lt;/span&gt;Eevee&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="c1"&gt;#133)&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;

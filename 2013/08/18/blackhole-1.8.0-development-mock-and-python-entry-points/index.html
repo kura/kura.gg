@@ -51,7 +51,7 @@
       <span class=c1># ...</span>
       <span class=p>)</span>
 </pre></div> <p>I’m not going to go in to any real detal on how <cite>entry_points</cite> works, there are plenty of articles elsewhere on the internet that detail this.</p> <p>That being said, <cite>entry_points</cite> is a dictionary, in it I set a <cite>console_scripts</cite> key that has a list of scripts that should be usable from the command line.</p> <p>Each list item is made up of two parts; the command name (what will be typed on the command line to trigger the command) and the module(s) and method to run.</p> </div> <div class=section id=blackhole-application-run> <h3>blackhole.application:run</h3> <p>With the <cite>entry_points</cite> changes outlined above, this allowed me to write an entirely new and testable application.</p> <p>Now the method that launches Blackhole is much smaller and split in to testable parts.</p> <p>For example the <cite>run</cite> method is below.</p> <div class=highlight><pre><span></span><span class=k>def</span> <span class=nf>run</span><span class=p>():</span>
-    <span class=sd>"""</span>
+<span class=w>    </span><span class=sd>"""</span>
 <span class=sd>    The run method is what actually spawns and manages blackhole.</span>
 <span class=sd>    """</span>
     <span class=n>signal</span><span class=o>.</span><span class=n>signal</span><span class=p>(</span><span class=n>signal</span><span class=o>.</span><span class=n>SIGTERM</span><span class=p>,</span> <span class=n>terminate</span><span class=p>)</span>
@@ -109,7 +109,7 @@
     <span class=nd>@patch</span><span class=p>(</span><span class=s1>'sys.stdout'</span><span class=p>,</span> <span class=n>new_callable</span><span class=o>=</span><span class=n>StringIO</span><span class=p>)</span>
     <span class=k>def</span> <span class=nf>test_set_options_debug</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>stdout_mock</span><span class=p>):</span>
         <span class=n>val</span> <span class=o>=</span> <span class=s2>"""WARNING: Using the debug flag!</span><span class=se>\n</span><span class=s2>This will generate a lots"""</span>\
-              <span class=sd>""" of disk I/O and large log files\n\n"""</span>
+<span class=w>              </span><span class=sd>""" of disk I/O and large log files\n\n"""</span>
         <span class=n>set_options</span><span class=p>()</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>assertEquals</span><span class=p>(</span><span class=n>stdout_mock</span><span class=o>.</span><span class=n>getvalue</span><span class=p>(),</span> <span class=n>val</span><span class=p>)</span>
 
@@ -124,8 +124,8 @@
     <span class=nd>@patch</span><span class=p>(</span><span class=s1>'sys.stdout'</span><span class=p>,</span> <span class=n>new_callable</span><span class=o>=</span><span class=n>StringIO</span><span class=p>)</span>
     <span class=k>def</span> <span class=nf>test_set_options_delay</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>stdout_mock</span><span class=p>):</span>
         <span class=n>val</span> <span class=o>=</span> <span class=s2>"""WARNING: Using the delay flag!</span><span class=se>\n</span><span class=s2>"""</span>\
-              <span class=sd>"""The delay flag is a blocking action """</span>\
-              <span class=sd>"""and will cause connections to block.\n\n"""</span>
+<span class=w>              </span><span class=sd>"""The delay flag is a blocking action """</span>\
+<span class=w>              </span><span class=sd>"""and will cause connections to block.\n\n"""</span>
         <span class=n>set_options</span><span class=p>()</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>assertEquals</span><span class=p>(</span><span class=n>stdout_mock</span><span class=o>.</span><span class=n>getvalue</span><span class=p>(),</span> <span class=n>val</span><span class=p>)</span>
 </pre></div> </div> <div class=section id=mocking-daemon-actions> <h3>Mocking daemon actions</h3> <p>Another thing that is nice to test is that the daemon is working correctly. I decided it would be a good idea to mock start, stop and status commands as well as mocking unknown commands too, to be sure how Blackhole would respond to a user’s actions.</p> <p>Thankfully Mock allows you to mock calls and confirm that they have indeed been called, for example the stop method calls <cite>sys.exit</cite>, so I can confirm that this call has actually been made.</p> <div class=highlight><pre><span></span><span class=k>class</span> <span class=nc>TestDaemonStop</span><span class=p>(</span><span class=n>unittest</span><span class=o>.</span><span class=n>TestCase</span><span class=p>):</span>

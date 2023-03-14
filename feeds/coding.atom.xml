@@ -74,7 +74,7 @@ have sometimes forgotten when passing callbacks all over the place.&lt;/p&gt;
 on top of asyncio in Python 3.5.&lt;/p&gt;
 &lt;p&gt;First up I’ll show the method that waits for data to be received on the socket.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;wait&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Wait for data from the client.&lt;/span&gt;
 &lt;span class="sd"&gt;    :returns: A line of received data.&lt;/span&gt;
 &lt;span class="sd"&gt;    :rtype: :any:`str`&lt;/span&gt;
@@ -144,7 +144,7 @@ timeout exception is raised, part of the code that handles that in the
 a timeout and terminating a connection, setting &lt;tt class="docutils literal"&gt;connection_closed&lt;/tt&gt; to exit
 all possibly running &lt;tt class="docutils literal"&gt;while&lt;/tt&gt; loops.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Timeout a client connection.&lt;/span&gt;
 &lt;span class="sd"&gt;    Sends the 421 timeout message to the client and closes the connection.&lt;/span&gt;
 &lt;span class="sd"&gt;    https://blackhole.io/configuration-options.html#timeout&lt;/span&gt;
@@ -153,7 +153,7 @@ all possibly running &lt;tt class="docutils literal"&gt;while&lt;/tt&gt; loops.&
     &lt;span class="k"&gt;await&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
 &lt;span class="k"&gt;async&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;close&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""Close the connection from the client."""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""Close the connection from the client."""&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_writer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clients&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_writer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -177,7 +177,7 @@ expecting it to.&lt;/p&gt;
 &lt;p&gt;The original piece of code iterated over each socket object and created an
 asyncio server object for that socket as below.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_start&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""Create an asyncio 'server' for each socket."""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""Create an asyncio 'server' for each socket."""&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sock&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;await&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_server&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Smtp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clients&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
                                                &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;sock&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -186,7 +186,7 @@ asyncio server object for that socket as below.&lt;/p&gt;
 &lt;p&gt;I wanted to change this code to pass in a set of flags that also belonged to
 that specific socket, as below.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_start&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""Create an asyncio 'server' for each socket."""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""Create an asyncio 'server' for each socket."""&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sock&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;flags&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sock&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'flags'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
         &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;await&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_server&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Smtp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clients&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -203,7 +203,7 @@ jumbled up instead of being used as expected.&lt;/p&gt;
 why either. I knew the way to fix it was to use &lt;tt class="docutils literal"&gt;functools.partial&lt;/tt&gt; and it’s
 also a nice, cleaner way to do it so I did.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_start&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""Create an asyncio 'server' for each socket."""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""Create an asyncio 'server' for each socket."""&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sock&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;flags&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sock&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'flags'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
         &lt;span class="n"&gt;factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;functools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Smtp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clients&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -247,9 +247,9 @@ much coverage as possible and eaked out all of the bugs. You can find the
 &lt;/div&gt;
 &lt;div class="section" id="cli-interface"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;CLI&lt;/span&gt; interface&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ batfish authorize
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;batfish&lt;span class="w"&gt; &lt;/span&gt;authorize
 abcde12345
-$ batfish droplets
+$&lt;span class="w"&gt; &lt;/span&gt;batfish&lt;span class="w"&gt; &lt;/span&gt;droplets
 ego …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Batfish is a Python client and &lt;span class="caps"&gt;API&lt;/span&gt; wrapper for the &lt;a class="reference external" href="https://developers.digitalocean.com/"&gt;Digital Ocean V2 &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;. It can be used as a library module in
 your own Python code but also provides a &lt;span class="caps"&gt;CLI&lt;/span&gt; interface and a shell-like command interpreter.&lt;/p&gt;
@@ -271,26 +271,26 @@ much coverage as possible and eaked out all of the bugs. You can find the
 &lt;/div&gt;
 &lt;div class="section" id="cli-interface"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;CLI&lt;/span&gt; interface&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ batfish authorize
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;batfish&lt;span class="w"&gt; &lt;/span&gt;authorize
 abcde12345
-$ batfish droplets
-ego.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12345&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-fax.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12346&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-jet.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12347&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-ski.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12348&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-$ batfish droplet_reboot &lt;span class="m"&gt;12345&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;batfish&lt;span class="w"&gt; &lt;/span&gt;droplets
+ego.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12345&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+fax.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12346&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+jet.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12347&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+ski.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12348&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;batfish&lt;span class="w"&gt; &lt;/span&gt;droplet_reboot&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12345&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="console-interface"&gt;
 &lt;h2&gt;Console interface&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;batfish&amp;gt; authorize
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;batfish&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;authorize
 abcde12345
-batfish&amp;gt; droplets
-ego.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12345&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-fax.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12346&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-jet.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12347&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-ski.kura.gg &lt;span class="o"&gt;[&lt;/span&gt;id: &lt;span class="m"&gt;12348&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt;, mem: 512MB, disk: 20GB, ip: &lt;span class="m"&gt;123&lt;/span&gt;.123.123.123 status: active, region: Amsterdam &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-batfish&amp;gt; droplet_reboot &lt;span class="m"&gt;12345&lt;/span&gt;
+batfish&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;droplets
+ego.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12345&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+fax.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12346&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+jet.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12347&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+ski.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;id:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12348&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cpu&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;mem:&lt;span class="w"&gt; &lt;/span&gt;512MB,&lt;span class="w"&gt; &lt;/span&gt;disk:&lt;span class="w"&gt; &lt;/span&gt;20GB,&lt;span class="w"&gt; &lt;/span&gt;ip:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;123&lt;/span&gt;.123.123.123&lt;span class="w"&gt; &lt;/span&gt;status:&lt;span class="w"&gt; &lt;/span&gt;active,&lt;span class="w"&gt; &lt;/span&gt;region:&lt;span class="w"&gt; &lt;/span&gt;Amsterdam&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+batfish&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;droplet_reboot&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12345&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 </content><category term="coding"></category><category term="python"></category><category term="digital ocean"></category></entry><entry><title>yarg(1) — A semi hard Cornish cheese, also queries PyPI</title><link href="https://kura.gg/2014/08/09/yarg/" rel="alternate"></link><published>2014-08-09T13:30:00+01:00</published><updated>2014-08-09T13:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-08-09:/2014/08/09/yarg/</id><content type="html">
@@ -752,7 +752,7 @@ rather than &lt;span class="caps"&gt;PNG&lt;/span&gt;. You can of course get the
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;To install pelican-fontawesome, simply install it from PyPI:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install pelican-fontawesome
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-fontawesome
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then enable it in your pelicanconf.py&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
@@ -880,13 +880,13 @@ something going.&lt;/p&gt;
 &lt;div class="section" id="install-manually"&gt;
 &lt;h4&gt;Install manually&lt;/h4&gt;
 &lt;p&gt;Download the source file from above and run the commands below.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo make install
-. ~/bashrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;install
+.&lt;span class="w"&gt; &lt;/span&gt;~/bashrc
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or you can do it the lazy way&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat &lt;span class="se"&gt;\&lt;/span&gt;
-    -O /etc/bash_completion.d/tugboat
-. ~/bashrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;wget&lt;span class="w"&gt; &lt;/span&gt;https://github.com/kura/tugboat-bash-completion/blob/master/tugboat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-O&lt;span class="w"&gt; &lt;/span&gt;/etc/bash_completion.d/tugboat
+.&lt;span class="w"&gt; &lt;/span&gt;~/bashrc
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -944,13 +944,13 @@ The license is provided in …&lt;/p&gt;&lt;/div&gt;</summary><content type="htm
 &lt;div class="section" id="install-manually"&gt;
 &lt;h4&gt;Install manually&lt;/h4&gt;
 &lt;p&gt;Download the source file from above and run the commands below.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo make install
-. ~/bashrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;install
+.&lt;span class="w"&gt; &lt;/span&gt;~/bashrc
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or you can do it the lazy way&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo wget https://github.com/kura/tugboat-bash-completion/blob/master/tugboat &lt;span class="se"&gt;\&lt;/span&gt;
-    -O /etc/bash_completion.d/tugboat
-. ~/bashrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;wget&lt;span class="w"&gt; &lt;/span&gt;https://github.com/kura/tugboat-bash-completion/blob/master/tugboat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-O&lt;span class="w"&gt; &lt;/span&gt;/etc/bash_completion.d/tugboat
+.&lt;span class="w"&gt; &lt;/span&gt;~/bashrc
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1191,7 +1191,7 @@ entirely new and testable application.&lt;/p&gt;
 &lt;p&gt;Now the method that launches Blackhole is much smaller and split in to testable parts.&lt;/p&gt;
 &lt;p&gt;For example the &lt;cite&gt;run&lt;/cite&gt; method is below.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    The run method is what actually spawns and manages blackhole.&lt;/span&gt;
 &lt;span class="sd"&gt;    """&lt;/span&gt;
     &lt;span class="n"&gt;signal&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SIGTERM&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;terminate&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1294,7 +1294,7 @@ match what I expect them to be.&lt;/p&gt;
     &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'sys.stdout'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_callable&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_set_options_debug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stdout_mock&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;val&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"""WARNING: Using the debug flag!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;This will generate a lots"""&lt;/span&gt;\
-              &lt;span class="sd"&gt;""" of disk I/O and large log files\n\n"""&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="sd"&gt;""" of disk I/O and large log files\n\n"""&lt;/span&gt;
         &lt;span class="n"&gt;set_options&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stdout_mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getvalue&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -1309,8 +1309,8 @@ match what I expect them to be.&lt;/p&gt;
     &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'sys.stdout'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_callable&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_set_options_delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stdout_mock&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;val&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"""WARNING: Using the delay flag!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;"""&lt;/span&gt;\
-              &lt;span class="sd"&gt;"""The delay flag is a blocking action """&lt;/span&gt;\
-              &lt;span class="sd"&gt;"""and will cause connections to block.\n\n"""&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="sd"&gt;"""The delay flag is a blocking action """&lt;/span&gt;\
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="sd"&gt;"""and will cause connections to block.\n\n"""&lt;/span&gt;
         &lt;span class="n"&gt;set_options&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stdout_mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getvalue&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1505,7 +1505,7 @@ deciding to go to my local coding spot - the pub and hash it out.&lt;/p&gt;
 instance of &lt;cite&gt;tornado.iostream.IOStream&lt;/cite&gt; and &lt;cite&gt;tornado.iostream.SSLIOStream&lt;/cite&gt;
 so that it didn’t actually do the ssl wrapping.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Detect which socket the connection …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">
 &lt;p&gt;Blackhole has always been able to handle unencrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt; and
 for a long time it’s been able to handle encrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt; via TLSv1.&lt;/p&gt;
@@ -1523,7 +1523,7 @@ deciding to go to my local coding spot - the pub and hash it out.&lt;/p&gt;
 instance of &lt;cite&gt;tornado.iostream.IOStream&lt;/cite&gt; and &lt;cite&gt;tornado.iostream.SSLIOStream&lt;/cite&gt;
 so that it didn’t actually do the ssl wrapping.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Detect which socket the connection is being made on,&lt;/span&gt;
 &lt;span class="sd"&gt;    create and iostream for the connection, wrapping it&lt;/span&gt;
 &lt;span class="sd"&gt;    in SSL if connected over the SSL socket.&lt;/span&gt;
@@ -1613,7 +1613,7 @@ and removed the original instance of &lt;cite&gt;IOStream&lt;/cite&gt; from it.
 &lt;h2&gt;connection_ready&lt;/h2&gt;
 &lt;p&gt;You can see this at work in the final version of the connect_ready method.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_ready&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sock&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;events&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Accepts the socket connections and passes them off&lt;/span&gt;
 &lt;span class="sd"&gt;    to be handled.&lt;/span&gt;
 
@@ -1642,7 +1642,7 @@ and removed the original instance of &lt;cite&gt;IOStream&lt;/cite&gt; from it.
         &lt;span class="c1"&gt;# Sadly there is nothing I can do about the handle and loop&lt;/span&gt;
         &lt;span class="c1"&gt;# fuctions. They have to exist within connection_ready&lt;/span&gt;
         &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;handle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-            &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;            Handle a line of socket data, figure out if&lt;/span&gt;
 &lt;span class="sd"&gt;            it's a valid SMTP keyword and handle it&lt;/span&gt;
 &lt;span class="sd"&gt;            accordingly.&lt;/span&gt;
@@ -1669,7 +1669,7 @@ and removed the original instance of &lt;cite&gt;IOStream&lt;/cite&gt; from it.
                 &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
         &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-            &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;            Loop over the socket data until we receive&lt;/span&gt;
 &lt;span class="sd"&gt;            a newline character (\n)&lt;/span&gt;
 &lt;span class="sd"&gt;            """&lt;/span&gt;
@@ -1698,7 +1698,7 @@ connection is to the encrypted or unencrypted socket.&lt;/p&gt;
 &lt;div class="section" id="code"&gt;
 &lt;h2&gt;Code&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Detect which socket the connection is being made on,&lt;/span&gt;
 &lt;span class="sd"&gt;    create and iostream for the connection, wrapping it&lt;/span&gt;
 &lt;span class="sd"&gt;    in SSL if connected over the SSL socket.&lt;/span&gt;
@@ -1719,7 +1719,7 @@ connection is to the encrypted or unencrypted socket.&lt;/p&gt;
 &lt;div class="section" id="code"&gt;
 &lt;h2&gt;Code&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Detect which socket the connection is being made on,&lt;/span&gt;
 &lt;span class="sd"&gt;    create and iostream for the connection, wrapping it&lt;/span&gt;
 &lt;span class="sd"&gt;    in SSL if connected over the SSL socket.&lt;/span&gt;
