@@ -58,7 +58,7 @@ publish:
 
 .PHONY: install
 install:
-	pip3 install -U -r requirements.txt
+	python3 -m pip install -U -r requirements.txt
 	sudo mkdir -p /usr/share/fonts/truetype/kura.gg/
 	sudo cp eevee/static/fonts/*.ttf /usr/share/fonts/truetype/kura.gg/
 	sudo fc-cache -v
@@ -109,7 +109,7 @@ update_cv:
 
 .PHONY: strip
 strip:
-	grep -rl "email \[atpersand\]" output | xargs sed -i 's/kura \[atpersand\]/${RANDOM_STRING} \[atpersand\]/g'
+	grep -rl "email \[atpersand\]" output | xargs sed -i 's/email \[atpersand\]/${RANDOM_STRING} \[atpersand\]/g'
 
 .PHONY: rsync
 rsync:
