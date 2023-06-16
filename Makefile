@@ -109,7 +109,7 @@ update_cv:
 
 .PHONY: strip
 strip:
-	grep -rl "kura \[atpersand\]" output | xargs sed -i 's/kura \[atpersand\]/${RANDOM_STRING} \[atpersand\]/g'
+	grep -rl "email \[atpersand\]" output | xargs sed -i 's/kura \[atpersand\]/${RANDOM_STRING} \[atpersand\]/g'
 
 .PHONY: rsync
 rsync:

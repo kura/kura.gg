@@ -9,7 +9,7 @@ Email
 
 ::
 
-    kura [atpersand] kura [period] gg
+    email [atpersand] kura [period] gg
 
 GitHub
 ======
