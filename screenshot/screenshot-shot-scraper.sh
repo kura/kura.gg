@@ -16,10 +16,10 @@ screenshot() {
     rm $output-orig.png
 }
 
-for page in `find $1 -name "*.html" | grep -v '/tor/' | grep -v '/donate/' | grep -v '/apt.kura.io/' | grep -v '/curriculum-vitae/' | grep -v '/category/' | grep -v '/categories/' | grep -v '/tag/' | grep -v '/tags/' | grep -v '/authors/' | grep -v '/archives/' | grep -v '/500.html' | grep -v '/404.html'`
+find $1 -name "*.html" | grep -v '/tor/' | grep -v '/donate/' | grep -v '/apt.kura.io/' | grep -v '/curriculum-vitae/' | grep -v '/category/' | grep -v '/categories/' | grep -v '/tag/' | grep -v '/tags/' | grep -v '/authors/' | grep -v '/archives/' | grep -v '/500.html' | grep -v '/404.html' | while read page
 do
-    output=`echo $page | sed -e 's/\.html/\.png/g'`
-    url=`echo "http://localhost:8000/${page}" | sed -e "s|$1||g"`
+    output=$(echo $page | sed -e 's/\.html/\.png/g')
+    url=$(echo "http://localhost:8000/${page}" | sed -e "s|$1||g")
     screenshot $url $output
 done
 
