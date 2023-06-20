@@ -13,19 +13,19 @@
           img { max-width: 100%; }
           body { --gap: 5vw; margin: 0; font-family: system-ui; line-height: 1.7; }
           h1,h2,h3 { margin-block-start: 0; margin-block-end: 0; }
-          .pb-5 { padding-bottom: calc(var(--gap) / 2); }
+          .pb-5 { padding-bottom: calc(var(--gap) / 8); }
           .meta { color: #676767; }
           .container {
             display: grid;
-            gap: var(--gap);
-            max-width: 46rem;
+            gap: calc(var(--gap) / 2);
+            // max-width: 46rem;
             width: 95%;
             margin: auto;
           }
           .intro {
             background-color: rgb(251,192,45);
-            margin-block-end: var(--gap);
-            padding-block: calc(var(--gap) / 2);
+            margin-block-end: calc(var(--gap) / 2);
+            padding-block: calc(var(--gap) / 4);
           }
           .intro .container {
             gap: 1rem;
@@ -41,6 +41,10 @@
           .recent {
             padding-block-end: var(--gap);
           }
+          img {
+            height: auto;
+            width: 10rem;
+          }
         </style>
       </head>
       <body>
@@ -49,7 +53,7 @@
             <div>
               <p><strong>You found me!</strong> This is my RSS feed. You can <strong>Subscribe</strong> by copy-pasting the URL into your RSS feed reader.</p>
             </div>
-            <!--<img src="/images/avatar.png" />--><img src="/theme/images/error.png" />
+            <img src="/theme/images/error.png" />
           </div>
         </nav>
         <div class="container">
