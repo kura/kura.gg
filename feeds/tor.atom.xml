@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - tor</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/tor.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2015-01-02T04:48:00+00:00</updated><entry><title>torproject.org mirror</title><link href="https://kura.gg/2015/01/02/torproject.org-mirror/" rel="alternate"></link><published>2015-01-02T04:48:00+00:00</published><updated>2015-01-02T04:48:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-01-02:/2015/01/02/torproject.org-mirror/</id><content type="html">
 &lt;div class="section" id="mirror"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Mirror&lt;/a&gt;&lt;/h2&gt;

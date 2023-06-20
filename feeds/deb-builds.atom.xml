@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - deb builds</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/deb-builds.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2014-07-09T13:30:00+01:00</updated><entry><title>nginx 1.7.3 released with pagespeed/psol 1.8.31.4 and naxsi 0.53-2</title><link href="https://kura.gg/2014/07/09/nginx-1.7.3-released-with-pagespeed-psol-1.8.31.4-and-naxsi-0.53-2/" rel="alternate"></link><published>2014-07-09T13:30:00+01:00</published><updated>2014-07-09T13:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-07-09:/2014/07/09/nginx-1.7.3-released-with-pagespeed-psol-1.8.31.4-and-naxsi-0.53-2/</id><content type="html">&lt;p&gt;nginx 1.7.3 is now available on &lt;a class="reference external" href="/apt.kura.gg/"&gt;apt.kura.gg&lt;/a&gt; with updated
 versions of both pagespeed and naxsi.&lt;/p&gt;
 &lt;p&gt;Pagespeed is now version 1.8.31.4 and Naxsi is 0.53-2, both are the latest

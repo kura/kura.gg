@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - lightbox</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/lightbox.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2016-06-13T20:50:00+01:00</updated><entry><title>Lightbox — A pure CSS lightbox for Pelican</title><link href="https://kura.gg/2016/06/13/lightbox--a-pure-css-lightbox-for-pelican/" rel="alternate"></link><published>2016-06-13T20:50:00+01:00</published><updated>2016-06-13T20:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-06-13:/2016/06/13/lightbox--a-pure-css-lightbox-for-pelican/</id><content type="html">&lt;img alt="Lightbox" class="align-center" src="/images/lightbox.png"/&gt;
 
 &lt;div class="section" id="introduction"&gt;

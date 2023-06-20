@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - email</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/email.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2021-10-14T16:50:00+01:00</updated><entry><title>Google Workspace Gmail MX records signed with DNSSEC</title><link href="https://kura.gg/2021/10/14/google-workspace-gmail-mx-dnssec-signed/" rel="alternate"></link><published>2021-10-14T16:50:00+01:00</published><updated>2021-10-14T16:50:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-14:/2021/10/14/google-workspace-gmail-mx-dnssec-signed/</id><summary type="html">&lt;p&gt;Gmail provided by the paid Google Workspace service (formerly
 known as G Suite and Google Apps) has unofficial &lt;span class="caps"&gt;DNSSEC&lt;/span&gt;-signed
 &lt;span class="caps"&gt;MX&lt;/span&gt; records available for use. The officially supported ones

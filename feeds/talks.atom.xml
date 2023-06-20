@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - talks</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/talks.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2013-07-17T21:00:00+01:00</updated><entry><title>DJUGL June 2013 talk on blackhole and blackhole.io</title><link href="https://kura.gg/2013/07/17/djugl-june-2013-talk-on-blackhole-and-blackhole-io/" rel="alternate"></link><published>2013-07-17T21:00:00+01:00</published><updated>2013-07-17T21:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-17:/2013/07/17/djugl-june-2013-talk-on-blackhole-and-blackhole-io/</id><summary type="html">&lt;p&gt;I have been a frequent audience member of &lt;a class="reference external" href="https://www.djugl.org/item/443153"&gt;&lt;span class="caps"&gt;DJUGL&lt;/span&gt;&lt;/a&gt;
 for a few years now and spend most of the time asking questions,
 playing devils advocate and generally being my annoying self.&lt;/p&gt;

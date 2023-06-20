@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - tutorials</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/tutorials.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2015-10-18T03:30:00+01:00</updated><entry><title>SSHFP DNS records</title><link href="https://kura.gg/2015/10/18/sshfp-dns-records/" rel="alternate"></link><published>2015-10-18T03:30:00+01:00</published><updated>2015-10-18T03:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-10-18:/2015/10/18/sshfp-dns-records/</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://tools.ietf.org/html/rfc4255"&gt;&lt;span class="caps"&gt;SSHFP&lt;/span&gt;&lt;/a&gt; records are a defense against
 people blindly typing ‘yes’ when asked if they want to continue connecting to
 an &lt;span class="caps"&gt;SSH&lt;/span&gt; host who’s authenticity is unknown.&lt;/p&gt;

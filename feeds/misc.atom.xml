@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - misc</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/misc.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2021-10-24T12:00:00+01:00</updated><entry><title>Playing with Cloudflare Workers: Injecting CSP nonces in to responses</title><link href="https://kura.gg/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/" rel="alternate"></link><published>2021-10-24T12:00:00+01:00</published><updated>2021-10-24T12:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2021-10-24:/2021/10/24/playing-with-cloudflare-workers-injecting-csp-nonce/</id><summary type="html">&lt;img alt="Mew, the Pokémon" class="align-center" src="/images/151_mew.png"/&gt;
 
 &lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;Content-Security-Policy&lt;/span&gt;&lt;/tt&gt; (&lt;span class="caps"&gt;CSP&lt;/span&gt;) is an &lt;span class="caps"&gt;HTTP&lt;/span&gt; header returned by servers that

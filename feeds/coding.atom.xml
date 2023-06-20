@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - coding</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/coding.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2016-05-21T00:20:00+01:00</updated><entry><title>Blackhole 2.0: or, How I Learned to Love Asyncio</title><link href="https://kura.gg/2016/05/21/blackhole-2.0-or-how-i-learned-to-love-asyncio/" rel="alternate"></link><published>2016-05-21T00:20:00+01:00</published><updated>2016-05-21T00:20:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-05-21:/2016/05/21/blackhole-2.0-or-how-i-learned-to-love-asyncio/</id><summary type="html">
 &lt;p&gt;A brief history of a tiny part of the Internet.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://blackhole.io/1"&gt;Blackhole 1 — Blackhole as it was originally
