@@ -47,6 +47,8 @@ jobs:
         run: make strip
       - name: purge crud
         run: make remove_crud
+      - name: insert RSS/ATOM styling
+        run: make feed-style
       - name: touch
         run: make touch
       - name: pngquant

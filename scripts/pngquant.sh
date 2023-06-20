@@ -6,7 +6,7 @@ then
     exit 1
 fi
 
-for f in `find $1 -type f -iname "*.png"`
+find $1 -type f -iname "*.png" | while read f
 do
   mv $f $f.orig
   pngquant $f.orig -o $f

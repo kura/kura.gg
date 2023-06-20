@@ -107,6 +107,10 @@ touch:
 update_cv:
 	scripts/update_cv.sh
 
+.PHONY: feed-style
+feed-style:
+	scripts/feed-style.sh $(OUTPUTDIR)/
+
 .PHONY: strip
 strip:
 	grep -rl "email \[atpersand\]" output | xargs sed -i 's/email \[atpersand\]/${RANDOM_STRING} \[atpersand\]/g'
