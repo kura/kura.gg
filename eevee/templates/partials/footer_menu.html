@@ -30,13 +30,23 @@
           </a>
         </li>
       {% endif %}
-      {% if FEED_RSS or FEED_ATOM %}
+      {% if FEED_RSS %}
         <li>
-          <a href="{{ SITEURL }}/{{ FEED_RSS if FEED_RSS else FEED_ATOM }}"
-             title="{{ 'RSS' if FEED_RSS else 'Atom' }}"
+          <a href="{{ SITEURL }}/{{ FEED_RSS }}"
+             title="RSS"
              itemprop="url">
             <i class="material-icons">&#xE0E5;</i>
-              {{ 'RSS' if FEED_RSS else 'Atom' }}
+              RSS
+          </a>
+        </li>
+      {% endif %}
+      {% if FEED_ATOM %}
+        <li>
+          <a href="{{ SITEURL }}/{{ FEED_ATOM }}"
+             title="Atom"
+             itemprop="url">
+            <i class="material-icons">&#xE0E5;</i>
+              Atom
           </a>
         </li>
       {% endif %}
