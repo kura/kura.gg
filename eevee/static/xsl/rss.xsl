@@ -14,8 +14,8 @@
           body { --gap: 5vw; margin: 0; font-family: system-ui; line-height: 1.7; }
           h1,h2,h3 { margin-block-start: 0; margin-block-end: 0; }
           .pb-5 { padding-bottom: calc(var(--gap) / 8); }
-          .meta { color: #676767; }
-          .container {
+          .intro-container { color: #676767; }
+          .container, .intro-container {
             display: grid;
             gap: calc(var(--gap) / 2);
             // max-width: 46rem;
@@ -27,7 +27,7 @@
             margin-block-end: calc(var(--gap) / 2);
             padding-block: calc(var(--gap) / 4);
           }
-          .intro .container {
+          .intro .intro-container {
             gap: 1rem;
             grid-template-columns:  4fr 2fr;
             align-items: top;
@@ -45,11 +45,44 @@
             height: auto;
             width: 10rem;
           }
+          body {
+            background-color: #222222;
+          }
+          .container {
+            color: #eeeeee;
+          }
+          small {
+            font-size: 0.8em;
+            letter-spacing: 0;
+            margin: 0 0 16px;
+            color: #eeeeee;
+          }
+          a:hover {
+            color: #424242;
+          }
+          h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+            text-decoration: none;
+          }
+          a {
+            -webkit-transition: color .3s ease 0s;
+            transition: color .3s ease 0s;
+            color: #ffd740;
+            font-weight: 500;
+            color: #ffd740;
+          }
+          h2 {
+            font-size: 2em;
+            line-height: 48px;
+          }
+          h3 {
+            font-size: 1.6em;
+            line-height: 40px
+          }
         </style>
       </head>
       <body>
         <nav class="intro">
-          <div class="container">
+          <div class="intro-container">
             <div>
               <p><strong>You found me!</strong> This is my RSS feed. You can <strong>Subscribe</strong> by copy-pasting the URL into your RSS feed reader.</p>
             </div>
