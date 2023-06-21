@@ -52,7 +52,7 @@
             color: #eeeeee;
           }
           small {
-            font-size: 12px;
+            font-size: 0.8em;
             letter-spacing: 0;
             margin: 0 0 16px;
             color: #eeeeee;
@@ -71,11 +71,11 @@
             color: #ffd740;
           }
           h2 {
-            font-size: 36px;
+            font-size: 2em;
             line-height: 48px;
           }
           h3 {
-            font-size: 30px;
+            font-size: 1.6em;
             line-height: 40px
           }
         </style>
