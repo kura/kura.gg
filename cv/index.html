@@ -39,7 +39,7 @@
 
         <!-- Contact buttons don't work in print, configure in the _config.yml file, remove "print-only" to display always. -->
         <div class="header-contact-info print-only">
-          <p>London, United Kingdom | email [atpersand] kura [dot] gg</p>
+          <p>London, United Kingdom | hire@kura.gg</p>
         </div>
 
         <div class="title-bar no-print">
@@ -51,6 +51,23 @@
           <!-- and guess where these are defined? Yup, you guessed it: the _config.yml file -->
 
 <ul class="icon-links">
+  
+  <li class="icon-link-item"><a href="./kura.pdf" class="icon-link" itemprop="sameAs"><svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve" width="28">
+<path id="PDF" fill="#D1CECC" d="M12.28,15.27c0.46-0.94,0.81-1.83,1.05-2.66c0.52,1.29,0.97,2.09,1.35,2.41
+  c0.38,0.32,0.74,0.53,1.09,0.62c-0.75,0.11-1.45,0.24-2.1,0.38c-0.65,0.14-1.35,0.38-2.1,0.71L12.28,15.27z M28,14
+  c0,7.73-6.27,14-14,14S0,21.73,0,14S6.27,0,14,0S28,6.27,28,14z M20.94,9.37L17.47,5.9H7.06v16.2h13.89V9.37z M19.35,17.4
+  c-0.39-0.02-0.86-0.11-1.42-0.27s-1.1-0.36-1.62-0.61c-0.57,0.06-1.14,0.14-1.71,0.25c-0.57,0.11-1.13,0.23-1.67,0.36
+  c-0.07,0.02-0.24,0.08-0.5,0.17s-0.57,0.21-0.93,0.35c-0.84,1.41-1.52,2.32-2.03,2.74c-0.51,0.42-0.92,0.6-1.22,0.55h11.54v-3.58
+  c-0.07,0-0.14,0.01-0.21,0.02C19.51,17.39,19.44,17.4,19.35,17.4z M10.17,16.84c0.12-0.22,0.47-0.93,1.05-2.14
+  c0.58-1.21,1.01-2.24,1.28-3.08c-0.2-0.72-0.33-1.42-0.39-2.09s-0.02-1.23,0.1-1.69c0.07-0.25,0.17-0.44,0.28-0.55
+  s0.23-0.19,0.35-0.23H8.21v10.85c0.4-0.33,0.78-0.58,1.16-0.75C9.74,16.98,10.01,16.87,10.17,16.84z M13.39,7.06
+  c0.27,0,0.5,0.1,0.7,0.31c0.2,0.2,0.28,0.54,0.24,1.01c0.01,0.01,0.01,0.3,0,0.87c-0.01,0.57-0.09,1.33-0.24,2.28
+  c0.52,1.37,1.02,2.27,1.52,2.69c0.49,0.42,0.87,0.67,1.14,0.74c0.52-0.06,0.99-0.09,1.43-0.09c0.31,0,0.61,0.04,0.88,0.13
+  c0.27,0.08,0.52,0.19,0.73,0.33V9.95l-2.89-2.89H13.39z"/>
+</svg>
+</a></li>
+  
 
   <!-- GitHub link -->
   
@@ -137,7 +154,7 @@
         </div>
 
         
-        <a href="mailto:email [atpersand] kura [dot] gg" class="contact-button no-print" itemprop="email">Contact me</a>
+        <a href="mailto:hire@kura.gg" class="contact-button no-print" itemprop="email">Contact me</a>
         
 
       </header>
@@ -154,18 +171,18 @@
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
           <h3 class="resume-item-title" itemprop="name">BBC</h3>
           <h4 class="resume-item-details" itemprop="description">Engineer &bull; Aug. '19 &mdash;</h4>
-          <p class="resume-item-copy">Building and maintaining the <a href="https://www.bbc.co.uk/blogs/internet/entries/8c6c2414-df7a-4ad7-bd2e-dbe481da3633" title="BIDI CDN for iPlayer">BIDI CDN for iPlayer</a>.<p>Some features I designed and/or implemented include;<ul><li>Built version 1 and 2 of our feedback loop system which is used by the platform to balance traffic between sites and remove failing servers automatically.</li><li>Intelligent sharding of content - this feature directs clients to caching servers more likely to already have a cached copy of the content being requested.</li><li>Cache tiering - this feature is an extension of sharding that allows the caching server to request content being requested from a nearby server rather than origin if it is not in the local cache.</li><li>Origin retrying - this feature allows for retrying of origins based on various failure scenarios. Retrying based on a configured value or based on the number of origin servers in the pool for that content type.</li><li>Origin switching - this feature allowed our caching servers to swap their origins during client requests if an error occurs without interrupting the client. This feature is similar in spirit to <em>Origin retrying</em> but is actually wildly different and overrides the retry behaviour for the origins it is enabled on.</li><li>Path-based origin switching - like <em>Origin switching</em> but transparently swapping origin based on the request path rather than when encountering an error.</li><li>mVIP - this feature expanded our caching unit design from having <em>n</em> servers behind a switch with a single VIP to each server broadcasting it's own VIP and it's neighbours using BGP. Allowing individual servers to act independently but also act as a failover for their neighbours. I worked on the initial prototyping and testing the resiliency methodology, as well as some of the implementation.</li><li>mBIDI performance tuning - tweaking various parts of the OS and hardware to improve the throughput of mBIDI nodes.</li><li>Moved our entire test and build process from Jenkins over to AWS CodeBuild for all of our projects.</li><li>Prototype ISP Portal - allow ISPs to view machines embedded within their network and perform some admin actions, i.e. scheduled withdrawal from service.</li><li>Prototype ARM machine - worked with R&D to build, tune and loadtest an ARM prototype for our next generation of server hardware.</li><li>Prototype measurements integration using InfluxDB - replaced our old Collectd + Statsd + Graphite measurements system with Telegraf + InfluxDB (querying with Flux), including dual running both solutions until proven good. As part of this I also had to redesign our measurement names and data, recreate all of our graphs, and redo our alerting system.</li></ul></p><p>Some of the additional things I have done while in this role include;<ul><li>Mentoring members of my own team as well as members of other teams.</li><li>Helped apprentices with their coursework - this ended up being a multi-hour, multi-day investment.</li><li>Being part of a team of engineers from multiple teams helping provide experience and expertise to another team while they worked on hiring and training new members.</li><li>Took on many operational responsibilities on top of my day-to-day work.</li><li>Became someone that members from other teams approach with questions about BIDI &amp; Radix, or for the go-ahead on performing work.</li></ul></p></p>
+          <p class="resume-item-copy">Building and maintaining the <a href="https://www.bbc.co.uk/blogs/internet/entries/8c6c2414-df7a-4ad7-bd2e-dbe481da3633" title="BIDI CDN for iPlayer">BIDI CDN for iPlayer</a>.<p>Some features I designed and/or implemented include;<ul><li><strong>Feedback loop system</strong> &mdash; Built version 1 and 2 of our feedback loop system which is used by the platform to balance traffic between sites and remove failing servers automatically.</li><li><strong>Intelligent sharding of content</strong> &mdash; this feature directs clients to caching servers more likely to already have a cached copy of the content being requested.</li><li><strong>Cache tiering</strong> &mdash; this feature is an extension of sharding that allows the caching server to request content being requested from a nearby server rather than origin if it is not in the local cache.</li><li><strong>Origin retrying</strong> &mdash; this feature allows for retrying of origins based on various failure scenarios. Retrying based on a configured value or based on the number of origin servers in the pool for that content type.</li><li><strong>Origin switching</strong> &mdash; this feature allowed our caching servers to swap their origins during client requests if an error occurs without interrupting the client. This feature is similar in spirit to <em>Origin retrying</em> but is actually wildly different and overrides the retry behaviour for the origins it is enabled on.</li><li><strong>Path-based origin switching</strong> &mdash; like <em>Origin switching</em> but transparently swapping origin based on the request path rather than when encountering an error.</li><li><strong>mVIP</strong> &mdash; this feature expanded our caching unit design from having <em>n</em> servers behind a switch with a single VIP to each server broadcasting it's own VIP and it's neighbours using BGP. Allowing individual servers to act independently but also act as a failover for their neighbours. I worked on the initial prototyping and testing the resiliency methodology, as well as some of the implementation.</li><li><strong>mBIDI performance tuning</strong> &mdash; tweaking various parts of the OS and hardware to improve the throughput of mBIDI nodes.</li><li>Moved our entire test and build process from Jenkins over to AWS CodeBuild for all of our projects.</li><li><strong>Prototype ISP Portal</strong> &mdash; allow ISPs to view machines embedded within their network and perform some admin actions, i.e. scheduled withdrawal from service.</li><li><strong>Prototype ARM machine</strong> &mdash; worked with R&D to build, tune and loadtest an ARM prototype for our next generation of server hardware.</li><li><strong>Prototype measurements integration using InfluxDB</strong> &mdash; replaced our old Collectd + Statsd + Graphite measurements system with Telegraf + InfluxDB (querying with Flux), including dual running both solutions until proven good. As part of this I also had to redesign our measurement names and data, recreate all of our graphs, and redo our alerting system.</li></ul></p><p>Some of the additional things I have done while in this role include;<ul><li>Mentoring members of my own team as well as members of other teams.</li><li>Helped apprentices with their coursework - this ended up being a multi-hour, multi-day investment.</li><li>Being part of a team of engineers from multiple teams helping provide experience and expertise to another team while they worked on hiring and training new members.</li><li>Took on many operational responsibilities on top of my day-to-day work.</li><li>Became someone that members from other teams approach with questions about BIDI &amp; Radix, or for the go-ahead on performing work.</li></ul></p></p>
         </div><!-- end of resume-item -->
         
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name">Freelance</h3>
+          <h3 class="resume-item-title" itemprop="name">Contactor/Consultant</h3>
           <h4 class="resume-item-details" itemprop="description">Various roles/positions &bull; Jan. '15 &mdash; Aug. '19</h4>
           <p class="resume-item-copy">During and between the periods of being employed I have worked contracts of varying lengths, nothing of note. These contracts can involve system admin, systems engineering, python or security work, it varies.</p>
         </div><!-- end of resume-item -->
         
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
           <h3 class="resume-item-title" itemprop="name">DreamHost</h3>
-          <h4 class="resume-item-details" itemprop="description">Cloud Architect &bull; Oct. '14 &mdash; Jan. '15</h4>
+          <h4 class="resume-item-details" itemprop="description">Cloud Architect Contractor &bull; Oct. '14 &mdash; Jan. '15</h4>
           <p class="resume-item-copy">Contracted to work on OpenStack at DreamHost for their DreamCompute offering. This role involved both developing OpenStack itself within the company and helping to run and debug the infrastructure.</p>
         </div><!-- end of resume-item -->
         
@@ -206,6 +223,13 @@
         
         <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
           <meta itemprop="creator" content="Kura" itemtype="http://schema.org/Person" />
+          <h3 class="resume-item-title" itemprop="name"><a href="https://github.com/Linbreux/wikmd" itemprop="url">wikmd</a></h3>
+          <h4 class="resume-item-details" itemprop="description">Contributor  &bull; </h4>
+          <p class="resume-item-copy"><strong>wikmd</strong> is an opensource file-based markdown wiki. I have contributed multiple features to the project including a caching layer and the full-text search feature using the Whoosh pure Python search engine library.</p>
+        </div>
+        
+        <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
+          <meta itemprop="creator" content="Kura" itemtype="http://schema.org/Person" />
           <h3 class="resume-item-title" itemprop="name">MAP</h3>
           <h4 class="resume-item-details" itemprop="description">Architect, Lead Engineer &amp; Lead Developer  &bull; '12 &mdash; '14</h4>
           <p class="resume-item-copy"><p>MAP is a marketing platform that allows clients to create marketing campaigns comprising of print, direct mail, email and SMS.</p>
@@ -217,7 +241,7 @@
         <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
           <meta itemprop="creator" content="Kura" itemtype="http://schema.org/Person" />
           <h3 class="resume-item-title" itemprop="name"><a href="https://github.com/kura/blackhole" itemprop="url">Blackhole</a></h3>
-          <h4 class="resume-item-details" itemprop="description">Lead Developer  &bull; '11 &mdash</h4>
+          <h4 class="resume-item-details" itemprop="description">Lead Developer  &bull; </h4>
           <p class="resume-item-copy"><p>Blackhole is a fake MTA (mail transfer agent) that is designed blindly accept, bounce or reject all inbound and outbound email without actually processing or storing any of the data. This makes it safe for handling large volumes of email messages.</p>
 <p>Written to work with Python 3.5 utilising the asyncio standard library modules and using the <tt>async def</tt> and <tt>await</tt> statements. Originally written for Python 2.7 and earlier version of Python 3 and PyPy using the Tornado library.</p>
 <p>Blackhole and it's precursor were written to help prototype the MAP project outlined above.</p>
@@ -234,8 +258,8 @@
         <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
           <meta itemprop="creator" content="Kura" itemtype="http://schema.org/Person" />
           <h3 class="resume-item-title" itemprop="name"><a href="https://github.com/getpelican/pelican" itemprop="url">Pelican</a></h3>
-          <h4 class="resume-item-details" itemprop="description">Developer  &bull; </h4>
-          <p class="resume-item-copy">I am one of the developers of the Pelican static blogging platform. I have also authored many plugins and themes for this platform.</p>
+          <h4 class="resume-item-details" itemprop="description">Contributor  &bull; </h4>
+          <p class="resume-item-copy">I am one of the developers of the Pelican static blogging platform. I have also authored many <a href="https://kura.gg/pelican-plugins" itemprop="url">plugins and themes</a> for this platform.</p>
         </div>
         
         <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
@@ -284,8 +308,18 @@
         </div>
         
         <div class="resume-item">
-          <h4 class="resume-item-details">Virtualisation/Containerisation</h4>
+          <h4 class="resume-item-details">Virtualisation/containerisation</h4>
           <p class="resume-item-copy">AWS, OpenStack, Podman, Docker, VMWare, Xen</p>
+        </div>
+        
+        <div class="resume-item">
+          <h4 class="resume-item-details">Mentiong/teaching</h4>
+          <p class="resume-item-copy">I enjoy mentoring and teaching immensely and relish the chance to impart knowledge.</p>
+        </div>
+        
+        <div class="resume-item">
+          <h4 class="resume-item-details">Computer hardware</h4>
+          <p class="resume-item-copy">I am very interested in computer hardware, especially server hardware and try to be knowledgeable on the subject. I have a small 15U rack in my office filled with rackmount routers, switches, servers, PDUs, and UPS.</p>
         </div>
         
 
@@ -297,6 +331,32 @@
 
       
 
+      
+      <!-- begin Interests -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Outside Interests</h2>
+        </header>
+
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            
+            <li>Programming/engineering</li>
+            
+            <li>Linux</li>
+            
+            <li>Computer/server hardware</li>
+            
+            <li>Video encoding</li>
+            
+            <li>Video streaming</li>
+            
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Interests -->
       
 
       
