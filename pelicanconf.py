@@ -44,8 +44,11 @@ SOCIAL = [
     (
         """<i class="fa" aria-hidden="true">&#xF09B;</i> Github""",
         "GitHub",
-        "https://github.com/kura",
-    )
+        "https://github.com/kura", "bookmark"
+    ),
+    (
+        "@kura@noc.social", "@kura@noc.social", "https://noc.social/@kura", "me"
+    ),
 ]
 
 AUTHOR_CARD_SOCIAL = [

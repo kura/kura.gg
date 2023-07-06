@@ -2,9 +2,9 @@
   <div class="mdl-mega-footer--drop-down-section">
     <h1 class="mdl-mega-footer--heading">Social</h1>
     <ul class="mdl-mega-footer--link-list">
-      {% for html, title, url in SOCIAL %}
+      {% for html, title, url, rel in SOCIAL %}
         <li>
-          <a href="{{ url }}" itemprop="url" rel="bookmark"
+          <a href="{{ url }}" itemprop="url" rel="{{ rel }}"
              title="{{ title }}">
             {{ html }}
           </a>
