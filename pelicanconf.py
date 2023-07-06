@@ -44,10 +44,14 @@ SOCIAL = [
     (
         """<i class="fa" aria-hidden="true">&#xF09B;</i> Github""",
         "GitHub",
-        "https://github.com/kura", "bookmark"
+        "https://github.com/kura",
+        "bookmark"
     ),
     (
-        "@kura@noc.social", "@kura@noc.social", "https://noc.social/@kura", "me"
+        """<i class="fa" aria-hidden="true">&#xF079;</i> @kura@noc.social""",
+        "@kura@noc.social",
+        "https://noc.social/@kura",
+        "me"
     ),
 ]
 
