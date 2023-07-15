@@ -48,7 +48,7 @@ SOCIAL = [
         "bookmark"
     ),
     (
-        """<i class="fa" aria-hidden="true">&#xF079;</i> @kura@noc.social""",
+        """<i class="fa" aria-hidden="true">&#129443</i> @kura@noc.social""",
         "@kura@noc.social",
         "https://noc.social/@kura",
         "me"
@@ -60,7 +60,12 @@ AUTHOR_CARD_SOCIAL = [
         """<i class="fa" aria-hidden="true">&#xF09B;</i>""",
         "GitHub",
         "https://github.com/kura",
-    )
+    ),
+    (
+        """<i class="fa" aria-hidden="true">&#129443</i>""",
+        "@kura@noc.social",
+        "https://noc.social/@kura",
+    ),
 ]
 
 LINKS = [
