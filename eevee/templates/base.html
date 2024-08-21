@@ -72,6 +72,9 @@
   {% include 'partials/feeds.html' %}
   {% include 'partials/facebook.html' %}
   {% include 'partials/twitter.html' %}
+  {% if article %}
+    {% include 'partials/ld_json.html' %}
+  {% endif %}
   <link rel="icon" href="/favicon.png" type="image/png"
         sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
   <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon"
