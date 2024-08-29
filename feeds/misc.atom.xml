@@ -389,7 +389,7 @@ curl&lt;span class="w"&gt; &lt;/span&gt;-sI&lt;span class="w"&gt; &lt;/span&gt;h
 &lt;/pre&gt;
 &lt;/div&gt;
 </content><category term="misc"></category><category term="pokemon cloudflare http"></category></entry><entry><title>Configuring upstreams dynamically with DNS in OpenResty</title><link href="https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/" rel="alternate"></link><published>2020-08-30T17:30:00+01:00</published><updated>2020-08-30T17:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2020-08-30:/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</id><summary type="html">
-&lt;p&gt;This article is a continuation of &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
+&lt;p&gt;This article is a continuation of &lt;a class="reference external" href="{filename}/retrying-dynamically-configured-upstreams-with-openresty.rst"&gt;retrying dynamically configured
 upstreams&lt;/a&gt;
 that gives an example of how you can configure OpenResty to update your
 upstream backend servers dynamically with &lt;span class="caps"&gt;DNS&lt;/span&gt;.&lt;/p&gt;
@@ -419,7 +419,7 @@ stuff. In this instance we’re going to use it in conjunction with
         &lt;span class="c1"&gt;-- Pull DNS records&lt;/span&gt;
         &lt;span class="c1"&gt;-- Use a hardcoded domain to make this example easier&lt;/span&gt;
         &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tries&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kura.gg …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
-&lt;p&gt;This article is a continuation of &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
+&lt;p&gt;This article is a continuation of &lt;a class="reference external" href="{filename}/retrying-dynamically-configured-upstreams-with-openresty.rst"&gt;retrying dynamically configured
 upstreams&lt;/a&gt;
 that gives an example of how you can configure OpenResty to update your
 upstream backend servers dynamically with &lt;span class="caps"&gt;DNS&lt;/span&gt;.&lt;/p&gt;
@@ -572,7 +572,7 @@ on worker init.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="breaking-down-balancer-by-lua-block"&gt;
 &lt;h2&gt;Breaking down &lt;cite&gt;balancer_by_lua_block&lt;/cite&gt;&lt;/h2&gt;
-&lt;p&gt;Just like in the  &lt;a class="reference external" href="https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/"&gt;retrying dynamically configured
+&lt;p&gt;Just like in the  &lt;a class="reference external" href="{filename}/retrying-dynamically-configured-upstreams-with-openresty.rst"&gt;retrying dynamically configured
 upstreams&lt;/a&gt;
 article we’ll use OpenResty’s &lt;cite&gt;balancer_by_lua_block&lt;/cite&gt; to allow the balancer
 to use these records.&lt;/p&gt;
