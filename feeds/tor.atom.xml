@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - tor</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/tor.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2015-01-02T04:48:00+00:00</updated><entry><title>torproject.org mirror</title><link href="https://kura.gg/2015/01/02/torproject.org-mirror/" rel="alternate"></link><published>2015-01-02T04:48:00+00:00</published><updated>2015-01-02T04:48:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-01-02:/2015/01/02/torproject.org-mirror/</id><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - tor</title><link href="https://kura.gg/" rel="alternate"/><link href="https://kura.gg/feeds/tor.atom.xml" rel="self"/><id>https://kura.gg/</id><updated>2015-01-02T04:48:00+00:00</updated><entry><title>torproject.org mirror</title><link href="https://kura.gg/2015/01/02/torproject.org-mirror/" rel="alternate"/><published>2015-01-02T04:48:00+00:00</published><updated>2015-01-02T04:48:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2015-01-02:/2015/01/02/torproject.org-mirror/</id><content type="html">
 &lt;div class="section" id="mirror"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Mirror&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;With the DDoS attacks on the &lt;a class="reference external" href="https://www.torproject.org"&gt;torproject.org&lt;/a&gt;
@@ -21,7 +21,7 @@ the relatively small list of mirrors.&lt;/p&gt;
 | &lt;span class="caps"&gt;RSYNC&lt;/span&gt;   | &lt;span class="caps"&gt;RSYNC&lt;/span&gt; &lt;span class="caps"&gt;DIST&lt;/span&gt;       | +————-+—————————+&lt;/p&gt;
 &lt;p&gt;Note: This mirror is now dead and links have been removed.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="tor"></category><category term="tor"></category></entry><entry><title>Santa’s tor relay changes</title><link href="https://kura.gg/2014/12/27/santas-tor-relay-changes/" rel="alternate"></link><published>2014-12-27T01:12:00+00:00</published><updated>2014-12-27T01:12:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-12-27:/2014/12/27/santas-tor-relay-changes/</id><content type="html">
+</content><category term="tor"/><category term="tor"/></entry><entry><title>Santa’s tor relay changes</title><link href="https://kura.gg/2014/12/27/santas-tor-relay-changes/" rel="alternate"/><published>2014-12-27T01:12:00+00:00</published><updated>2014-12-27T01:12:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-12-27:/2014/12/27/santas-tor-relay-changes/</id><content type="html">
 &lt;div class="section" id="exiting-relays"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Exiting relays&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Both &lt;a class="reference external" href="https://globe.torproject.org/#/relay/865A408E2B1EA3E18C9A12E80A8D458F9C985C16"&gt;SpunkWeasel (&lt;span class="caps"&gt;865A408E2B1EA3E18C9A12E80A8D458F9C985C16&lt;/span&gt;)&lt;/a&gt;
@@ -37,7 +37,7 @@ It has the same &lt;span class="caps"&gt;CPU&lt;/span&gt; and memory as SpunkWea
 has full IPv6 capabilities.&lt;/p&gt;
 &lt;p&gt;A full list of my public Tor relays can be found on the &lt;a class="reference external" href="/tor/"&gt;tor page&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="tor"></category><category term="tor"></category></entry><entry><title>Tor all the things!</title><link href="https://kura.gg/2014/10/02/tor-all-the-things/" rel="alternate"></link><published>2014-10-02T03:45:00+01:00</published><updated>2014-10-02T03:45:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-10-02:/2014/10/02/tor-all-the-things/</id><summary type="html">
+</content><category term="tor"/><category term="tor"/></entry><entry><title>Tor all the things!</title><link href="https://kura.gg/2014/10/02/tor-all-the-things/" rel="alternate"/><published>2014-10-02T03:45:00+01:00</published><updated>2014-10-02T03:45:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-10-02:/2014/10/02/tor-all-the-things/</id><summary type="html">
 &lt;div class="section" id="privacy-is-key"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Privacy is key&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I am a big fan of keeping my browsing habits and other personal information
@@ -125,4 +125,4 @@ difficult thing for most people to run but relays and Guards are easy. A Guard
 relay is simply just a standard relay that has currently been chosen to have
 the Guard flag, which is in a time period-based rotation, so it really is simple.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="tor"></category><category term="tor"></category></entry></feed>
+</content><category term="tor"/><category term="tor"/></entry></feed>

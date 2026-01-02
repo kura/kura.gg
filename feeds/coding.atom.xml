@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - coding</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/coding.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2016-05-21T00:20:00+01:00</updated><entry><title>Blackhole 2.0: or, How I Learned to Love Asyncio</title><link href="https://kura.gg/2016/05/21/blackhole-2.0-or-how-i-learned-to-love-asyncio/" rel="alternate"></link><published>2016-05-21T00:20:00+01:00</published><updated>2016-05-21T00:20:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-05-21:/2016/05/21/blackhole-2.0-or-how-i-learned-to-love-asyncio/</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - coding</title><link href="https://kura.gg/" rel="alternate"/><link href="https://kura.gg/feeds/coding.atom.xml" rel="self"/><id>https://kura.gg/</id><updated>2016-05-21T00:20:00+01:00</updated><entry><title>Blackhole 2.0: or, How I Learned to Love Asyncio</title><link href="https://kura.gg/2016/05/21/blackhole-2.0-or-how-i-learned-to-love-asyncio/" rel="alternate"/><published>2016-05-21T00:20:00+01:00</published><updated>2016-05-21T00:20:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2016-05-21:/2016/05/21/blackhole-2.0-or-how-i-learned-to-love-asyncio/</id><summary type="html">
 &lt;p&gt;A brief history of a tiny part of the Internet.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://blackhole.io/1"&gt;Blackhole 1 — Blackhole as it was originally
 known&lt;/a&gt; — was written on &lt;a class="reference external" href="https://docs.python.org/2/whatsnew/2.7.html"&gt;Python 2.7&lt;/a&gt;, briefly supporting &lt;a class="reference external" href="https://docs.python.org/2.6/whatsnew/2.6.html"&gt;Python 2.6&lt;/a&gt; for a time and also
@@ -227,7 +227,7 @@ support to libraries I’ve written, to someone that only uses Python 3.5 now.&
 &lt;p&gt;My only gripe is that currently &lt;span class="caps"&gt;STARTTLS&lt;/span&gt; is not supported. Hopefully that will
 arrive in the not-so-distant future and I understand why it’s currently not supported.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="python3.5"></category><category term="3.5"></category><category term="asyncio"></category><category term="email"></category><category term="smtp"></category><category term="mta"></category></entry><entry><title>batfish(1) - writing a Digital Ocean V2 API wrapper</title><link href="https://kura.gg/2014/09/15/batfish-writing-a-digital-ocean-v2-api-wrapper/" rel="alternate"></link><published>2014-09-15T22:20:00+01:00</published><updated>2014-09-15T22:20:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-09-15:/2014/09/15/batfish-writing-a-digital-ocean-v2-api-wrapper/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="python3.5"/><category term="3.5"/><category term="asyncio"/><category term="email"/><category term="smtp"/><category term="mta"/></entry><entry><title>batfish(1) - writing a Digital Ocean V2 API wrapper</title><link href="https://kura.gg/2014/09/15/batfish-writing-a-digital-ocean-v2-api-wrapper/" rel="alternate"/><published>2014-09-15T22:20:00+01:00</published><updated>2014-09-15T22:20:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-09-15:/2014/09/15/batfish-writing-a-digital-ocean-v2-api-wrapper/</id><summary type="html">
 &lt;p&gt;Batfish is a Python client and &lt;span class="caps"&gt;API&lt;/span&gt; wrapper for the &lt;a class="reference external" href="https://developers.digitalocean.com/"&gt;Digital Ocean V2 &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;. It can be used as a library module in
 your own Python code but also provides a &lt;span class="caps"&gt;CLI&lt;/span&gt; interface and a shell-like command interpreter.&lt;/p&gt;
 &lt;p&gt;Batfish is still under development and is considered in the Alpha stage. It is
@@ -294,7 +294,7 @@ ski.kura.gg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&
 batfish&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;droplet_reboot&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;12345&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="digital ocean"></category></entry><entry><title>yarg(1) — A semi hard Cornish cheese, also queries PyPI</title><link href="https://kura.gg/2014/08/09/yarg/" rel="alternate"></link><published>2014-08-09T13:30:00+01:00</published><updated>2014-08-09T13:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-08-09:/2014/08/09/yarg/</id><content type="html">
+</content><category term="coding"/><category term="python"/><category term="digital ocean"/></entry><entry><title>yarg(1) — A semi hard Cornish cheese, also queries PyPI</title><link href="https://kura.gg/2014/08/09/yarg/" rel="alternate"/><published>2014-08-09T13:30:00+01:00</published><updated>2014-08-09T13:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-08-09:/2014/08/09/yarg/</id><content type="html">
 &lt;p&gt;Yarg is a PyPI client, it was written for &lt;a class="reference external" href="https://pypip.in"&gt;pypip.in&lt;/a&gt; and can search packages as well as read the &lt;span class="caps"&gt;RSS&lt;/span&gt; feeds
 from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;div class="section" id="search-interface"&gt;
@@ -337,7 +337,7 @@ from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;h2&gt;Documentation&lt;/h2&gt;
 &lt;p&gt;Full documentation is at &amp;lt;&lt;a class="reference external" href="https://yarg.readthedocs.org"&gt;https://yarg.readthedocs.org&lt;/a&gt;&amp;gt;.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="pypi"></category></entry><entry><title>Speeding up pypip.in and reducing load on PyPI</title><link href="https://kura.gg/2014/08/07/speeding-up-pypip.in-and-reducing-load-on-pypi/" rel="alternate"></link><published>2014-08-07T08:42:00+01:00</published><updated>2014-08-07T08:42:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-08-07:/2014/08/07/speeding-up-pypip.in-and-reducing-load-on-pypi/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="pypi"/></entry><entry><title>Speeding up pypip.in and reducing load on PyPI</title><link href="https://kura.gg/2014/08/07/speeding-up-pypip.in-and-reducing-load-on-pypi/" rel="alternate"/><published>2014-08-07T08:42:00+01:00</published><updated>2014-08-07T08:42:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-08-07:/2014/08/07/speeding-up-pypip.in-and-reducing-load-on-pypi/</id><summary type="html">
 &lt;p&gt;As you might expect, &lt;a class="reference external" href="https://pypip.in"&gt;pypip.in&lt;/a&gt; employes a fair amount of
 caching in the backend to control load on the imaging &lt;span class="caps"&gt;API&lt;/span&gt; and servers.&lt;/p&gt;
 &lt;p&gt;For a long time, this cache was entirely managed by Varnish and was doing a
@@ -438,7 +438,7 @@ Redis or PyPI before a look up can be made to the generic disk cache (we need
 to know the text data and shield colour from PyPI data,) it is still a very
 good performance improvement on the whole.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="pypipins"></category><category term="pypip.in"></category><category term="shields"></category></entry><entry><title>So you want to run your own copy of pypip.in?</title><link href="https://kura.gg/2014/07/26/so-you-want-to-run-your-own-copy-of-pypip.in/" rel="alternate"></link><published>2014-07-26T23:40:00+01:00</published><updated>2014-07-26T23:40:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-07-26:/2014/07/26/so-you-want-to-run-your-own-copy-of-pypip.in/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="pypipins"/><category term="pypip.in"/><category term="shields"/></entry><entry><title>So you want to run your own copy of pypip.in?</title><link href="https://kura.gg/2014/07/26/so-you-want-to-run-your-own-copy-of-pypip.in/" rel="alternate"/><published>2014-07-26T23:40:00+01:00</published><updated>2014-07-26T23:40:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-07-26:/2014/07/26/so-you-want-to-run-your-own-copy-of-pypip.in/</id><summary type="html">
 &lt;p&gt;While pypip.in is available under the &lt;span class="caps"&gt;MIT&lt;/span&gt; license on &lt;a class="reference external" href="https://github.com/badges/pypipins"&gt;GitHub&lt;/a&gt;, it’s not explained how to really use it properly.&lt;/p&gt;
 &lt;p&gt;You can gather how to set-up the Python source of the project and get the
 &lt;a class="reference external" href="https://twistedmatrix.com"&gt;Twisted&lt;/a&gt; process running, this is totally reliant
@@ -699,7 +699,7 @@ of Varnish.&lt;/p&gt;
 port, install and use nginx as you would for any other website and simply proxy
 all requests back to Varnish.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="pypipins"></category><category term="pypip.in"></category><category term="shields"></category></entry><entry><title>New pypip.in shields and styling</title><link href="https://kura.gg/2014/07/25/new-pypip.in-shields-and-styling/" rel="alternate"></link><published>2014-07-25T01:00:00+01:00</published><updated>2014-07-25T01:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-07-25:/2014/07/25/new-pypip.in-shields-and-styling/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="pypipins"/><category term="pypip.in"/><category term="shields"/></entry><entry><title>New pypip.in shields and styling</title><link href="https://kura.gg/2014/07/25/new-pypip.in-shields-and-styling/" rel="alternate"/><published>2014-07-25T01:00:00+01:00</published><updated>2014-07-25T01:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-07-25:/2014/07/25/new-pypip.in-shields-and-styling/</id><summary type="html">
 &lt;div class="section" id="supported-python-versions"&gt;
 &lt;h2&gt;Supported Python versions&lt;/h2&gt;
 &lt;p&gt;This one is generated from the list of classifiers you provide to PyPI.&lt;/p&gt;
@@ -748,7 +748,7 @@ rather than &lt;span class="caps"&gt;PNG&lt;/span&gt;. You can of course get the
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://pypip.in/download/&amp;lt;PACKAGE&amp;gt;/badge.&amp;lt;MIMETYPE&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="pypi"></category><category term="shields"></category></entry><entry><title>Pelican FontAwesome</title><link href="https://kura.gg/2014/06/08/pelican-fontawesome/" rel="alternate"></link><published>2014-06-08T11:30:00+01:00</published><updated>2014-06-08T11:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-06-08:/2014/06/08/pelican-fontawesome/</id><content type="html">
+</content><category term="coding"/><category term="python"/><category term="pypi"/><category term="shields"/></entry><entry><title>Pelican FontAwesome</title><link href="https://kura.gg/2014/06/08/pelican-fontawesome/" rel="alternate"/><published>2014-06-08T11:30:00+01:00</published><updated>2014-06-08T11:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-06-08:/2014/06/08/pelican-fontawesome/</id><content type="html">
 &lt;p&gt;Pelican FontAwesome allows you to embed &lt;a class="reference external" href="https://fortawesome.github.io/Font-Awesome/"&gt;FontAwesome&lt;/a&gt; icons in your &lt;span class="caps"&gt;RST&lt;/span&gt; posts and pages.&lt;/p&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
@@ -785,7 +785,7 @@ then the icon name.&lt;/p&gt;
 &lt;h2&gt;License&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://opensource.org/licenses/MIT"&gt;&lt;span class="caps"&gt;MIT&lt;/span&gt;&lt;/a&gt; license.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="pelican"></category><category term="fontawesome"></category><category term="icons"></category><category term="python"></category></entry><entry><title>Python platform and version dependent wheel build bot proposal</title><link href="https://kura.gg/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/" rel="alternate"></link><published>2014-05-29T12:30:00+01:00</published><updated>2014-05-29T12:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-29:/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/</id><summary type="html">&lt;div class="section" id="abstract"&gt;
+</content><category term="coding"/><category term="pelican"/><category term="fontawesome"/><category term="icons"/><category term="python"/></entry><entry><title>Python platform and version dependent wheel build bot proposal</title><link href="https://kura.gg/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/" rel="alternate"/><published>2014-05-29T12:30:00+01:00</published><updated>2014-05-29T12:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-29:/2014/05/29/python-platform-and-version-dependent-wheel-build-bot-proposal/</id><summary type="html">&lt;div class="section" id="abstract"&gt;
 &lt;h2&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;This proposal describes a build system for generating “wheel” archives and is
 very, very informal. This plan was drawn up after a random discussion with
@@ -865,7 +865,7 @@ fully discussed and implemented.&lt;/p&gt;
 really like to get any feedback about this so we can action it and get
 something going.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="wheel"></category></entry><entry><title>tugboat-bash-completion</title><link href="https://kura.gg/2014/05/28/tugboat-bash-completion/" rel="alternate"></link><published>2014-05-28T09:00:00+01:00</published><updated>2014-05-28T09:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-28:/2014/05/28/tugboat-bash-completion/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="wheel"/></entry><entry><title>tugboat-bash-completion</title><link href="https://kura.gg/2014/05/28/tugboat-bash-completion/" rel="alternate"/><published>2014-05-28T09:00:00+01:00</published><updated>2014-05-28T09:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-28:/2014/05/28/tugboat-bash-completion/</id><summary type="html">
 &lt;p&gt;tugboat-bash-completion is a bash completion script the &lt;a class="reference external" href="https://github.com/pearkes/tugboat"&gt;tugboat&lt;/a&gt; &lt;span class="caps"&gt;CLI&lt;/span&gt; interface for the &lt;a class="reference external" href="https://www.digitalocean.com/"&gt;Digital Ocean&lt;/a&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
 &lt;div class="section" id="downloads"&gt;
 &lt;h2&gt;Downloads&lt;/h2&gt;
@@ -995,7 +995,7 @@ droplets or images.&lt;/p&gt;
 &lt;p&gt;This software is licensed using the &lt;span class="caps"&gt;MIT&lt;/span&gt; License.
 The license is provided in the &lt;a class="reference external" href="https://github.com/kura/tugboat-bash-completion/blob/master/LICENSE"&gt;source code repository&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="digital ocean"></category><category term="tugboat"></category><category term="bash"></category><category term="completion"></category></entry><entry><title>Ghastly - A theme for Pelican</title><link href="https://kura.gg/2014/05/26/ghastly-a-theme-for-pelican/" rel="alternate"></link><published>2014-05-26T23:00:00+01:00</published><updated>2014-05-26T23:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-26:/2014/05/26/ghastly-a-theme-for-pelican/</id><content type="html">&lt;div class="figure"&gt;
+</content><category term="coding"/><category term="digital ocean"/><category term="tugboat"/><category term="bash"/><category term="completion"/></entry><entry><title>Ghastly - A theme for Pelican</title><link href="https://kura.gg/2014/05/26/ghastly-a-theme-for-pelican/" rel="alternate"/><published>2014-05-26T23:00:00+01:00</published><updated>2014-05-26T23:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-05-26:/2014/05/26/ghastly-a-theme-for-pelican/</id><content type="html">&lt;div class="figure"&gt;
 &lt;img alt="Gastly, the Ghost Pokémon" src="/images/gastly.png"/&gt;
 &lt;p class="caption"&gt;(Image by &lt;a class="reference external" href="https://raiba-art.deviantart.com/art/Gastly-294533100"&gt;Raiba-art&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
@@ -1008,14 +1008,14 @@ The license is provided in the &lt;a class="reference external" href="https://gi
 &lt;a class="reference external" href="https://ghost.org"&gt;Ghost&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It’s name is derived from the D&amp;amp;D monster, the Ghast and Gastly, the Pokémon.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="pelican"></category><category term="ghost"></category></entry><entry><title>deadsnakes.sh</title><link href="https://kura.gg/2014/01/26/deadsnakes.sh/" rel="alternate"></link><published>2014-01-26T01:50:00+00:00</published><updated>2014-01-26T01:50:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-26:/2014/01/26/deadsnakes.sh/</id><content type="html">&lt;p&gt;If you’re an Python developer that uses Ubuntu or even Debian, you have
+</content><category term="coding"/><category term="pelican"/><category term="ghost"/></entry><entry><title>deadsnakes.sh</title><link href="https://kura.gg/2014/01/26/deadsnakes.sh/" rel="alternate"/><published>2014-01-26T01:50:00+00:00</published><updated>2014-01-26T01:50:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-26:/2014/01/26/deadsnakes.sh/</id><content type="html">&lt;p&gt;If you’re an Python developer that uses Ubuntu or even Debian, you have
 probably heard of Felix Krull’s &lt;a class="reference external" href="https://launchpad.net/~fkrull/+archive/deadsnakes"&gt;deadsnakes&lt;/a&gt; &lt;span class="caps"&gt;PPA&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I find myself using it a lot and since I tend to destroy my environments quite
 frequently, I thought I’d save myself some time and write a simple
 shell script to install the &lt;span class="caps"&gt;PPA&lt;/span&gt;, the versions of Python I frequently use and,
 after messing up a machine — ignore the existing version of python.&lt;/p&gt;
 &lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
-</content><category term="coding"></category><category term="python"></category></entry><entry><title>Shields for PyPI packages</title><link href="https://kura.gg/2013/12/24/shields-for-pypi-packages/" rel="alternate"></link><published>2013-12-24T14:07:00+00:00</published><updated>2013-12-24T14:07:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-12-24:/2013/12/24/shields-for-pypi-packages/</id><summary type="html">
+</content><category term="coding"/><category term="python"/></entry><entry><title>Shields for PyPI packages</title><link href="https://kura.gg/2013/12/24/shields-for-pypi-packages/" rel="alternate"/><published>2013-12-24T14:07:00+00:00</published><updated>2013-12-24T14:07:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-12-24:/2013/12/24/shields-for-pypi-packages/</id><summary type="html">
 &lt;p&gt;Some time back in April 2013 I was bored and looking for a new project to keep
 my attention, if only for a short period of time.&lt;/p&gt;
 &lt;p&gt;My colleague &lt;a class="reference external" href="https://twitter.com/codeinthehole"&gt;@codeinthehole&lt;/a&gt; had an idea
@@ -1096,7 +1096,7 @@ using Varnish to limit the impact on my Tornado servers and on the shields.io
 service. I look forward to adding more shields and functionality in the future.&lt;/p&gt;
 &lt;p&gt;You can access this set of services &lt;a class="reference external" href="https://pypip.in"&gt;on PyPI Pins&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="pypi"></category><category term="shields"></category></entry><entry><title>My $PS1 with git branch, new files, staged files and commit status</title><link href="https://kura.gg/2013/08/18/my-ps1-with-git-branch-new-files-staged-files-and-commit-status/" rel="alternate"></link><published>2013-08-18T17:25:00+01:00</published><updated>2013-08-18T17:25:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-18:/2013/08/18/my-ps1-with-git-branch-new-files-staged-files-and-commit-status/</id><summary type="html">&lt;p&gt;I love my prompt, always have and always will. I spend so much of my life
+</content><category term="coding"/><category term="python"/><category term="pypi"/><category term="shields"/></entry><entry><title>My $PS1 with git branch, new files, staged files and commit status</title><link href="https://kura.gg/2013/08/18/my-ps1-with-git-branch-new-files-staged-files-and-commit-status/" rel="alternate"/><published>2013-08-18T17:25:00+01:00</published><updated>2013-08-18T17:25:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-18:/2013/08/18/my-ps1-with-git-branch-new-files-staged-files-and-commit-status/</id><summary type="html">&lt;p&gt;I love my prompt, always have and always will. I spend so much of my life
 in a terminal, usually with half a dozen mini terminals open in each tab.
 As such I like to tweak it and get it as perfect as possible for my life, needs
 and even mood.&lt;/p&gt;
@@ -1123,7 +1123,7 @@ superuser privileges.&lt;/p&gt;
 &lt;p&gt;You can find the source code used to power this &lt;span class="caps"&gt;PS1&lt;/span&gt; below which is stored in a
 Gist on GitHub.&lt;/p&gt;
 &lt;p&gt;Gist removed. Sorry.&lt;/p&gt;
-</content><category term="coding"></category><category term="bash"></category><category term="dash"></category><category term="ps1"></category><category term="git"></category></entry><entry><title>Blackhole 1.8.0 development, Mock and Python entry_points</title><link href="https://kura.gg/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/" rel="alternate"></link><published>2013-08-18T12:00:00+01:00</published><updated>2013-08-18T12:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-18:/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/</id><summary type="html">
+</content><category term="coding"/><category term="bash"/><category term="dash"/><category term="ps1"/><category term="git"/></entry><entry><title>Blackhole 1.8.0 development, Mock and Python entry_points</title><link href="https://kura.gg/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/" rel="alternate"/><published>2013-08-18T12:00:00+01:00</published><updated>2013-08-18T12:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-18:/2013/08/18/blackhole-1.8.0-development-mock-and-python-entry-points/</id><summary type="html">
 &lt;p&gt;Over the last week I’ve been doing a huge amount of refactoring of
 &lt;a class="reference external" href="https://blackhole.io"&gt;Blackhole&lt;/a&gt; as well as writing dozens of additional
 tests. To make Blackhole more testable I needed to make a big change to
@@ -1372,7 +1372,7 @@ call has actually been made.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="blackhole"></category><category term="setup.py"></category><category term="entry_points"></category><category term="mock"></category><category term="tests"></category><category term="testing"></category></entry><entry><title>Writing a Vimeo and YouTube plugin for Pelican</title><link href="https://kura.gg/2013/08/09/writing-a-vimeo-and-youtube-plugin-for-pelican/" rel="alternate"></link><published>2013-08-09T17:38:00+01:00</published><updated>2013-08-09T17:38:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-09:/2013/08/09/writing-a-vimeo-and-youtube-plugin-for-pelican/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="blackhole"/><category term="setup.py"/><category term="entry_points"/><category term="mock"/><category term="tests"/><category term="testing"/></entry><entry><title>Writing a Vimeo and YouTube plugin for Pelican</title><link href="https://kura.gg/2013/08/09/writing-a-vimeo-and-youtube-plugin-for-pelican/" rel="alternate"/><published>2013-08-09T17:38:00+01:00</published><updated>2013-08-09T17:38:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-08-09:/2013/08/09/writing-a-vimeo-and-youtube-plugin-for-pelican/</id><summary type="html">
 &lt;p&gt;&lt;a class="reference external" href="https://getpelican.com/"&gt;Pelican&lt;/a&gt; is a Python-powered static blog generator
 that processes &lt;a class="reference external" href="https://docutils.sourceforge.net/rst.html"&gt;ReStructuredText&lt;/a&gt;
 and &lt;a class="reference external" href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; articles and
@@ -1489,7 +1489,7 @@ GitHub&lt;/a&gt; and also &lt;a class="reference external" href="/pelican-vimeo"
 pelican-vimeo on it’s software page on this website&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="pelican"></category><category term="youtube"></category><category term="vimeo"></category></entry><entry><title>Writing the STARTTLS command in to Blackhole</title><link href="https://kura.gg/2013/07/31/writing-the-starttls-command-in-to-blackhole/" rel="alternate"></link><published>2013-07-31T13:36:00+01:00</published><updated>2013-07-31T13:36:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-31:/2013/07/31/writing-the-starttls-command-in-to-blackhole/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="pelican"/><category term="youtube"/><category term="vimeo"/></entry><entry><title>Writing the STARTTLS command in to Blackhole</title><link href="https://kura.gg/2013/07/31/writing-the-starttls-command-in-to-blackhole/" rel="alternate"/><published>2013-07-31T13:36:00+01:00</published><updated>2013-07-31T13:36:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-31:/2013/07/31/writing-the-starttls-command-in-to-blackhole/</id><summary type="html">
 &lt;p&gt;Blackhole has always been able to handle unencrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt; and
 for a long time it’s been able to handle encrypted &lt;span class="caps"&gt;SMTP&lt;/span&gt; via TLSv1.&lt;/p&gt;
 &lt;p&gt;One thing Blackhole hasn’t been able to do until the 1.7.0 release
@@ -1683,7 +1683,7 @@ and removed the original instance of &lt;cite&gt;IOStream&lt;/cite&gt; from it.
         &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="tornado"></category><category term="iostream"></category><category term="ssl"></category><category term="starttls"></category><category term="blackhole"></category></entry><entry><title>Wrapping a Tornado IOStream with SSL</title><link href="https://kura.gg/2013/07/29/wrapping-a-tornado-iostream-with-ssl/" rel="alternate"></link><published>2013-07-29T20:00:00+01:00</published><updated>2013-07-29T20:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-29:/2013/07/29/wrapping-a-tornado-iostream-with-ssl/</id><summary type="html">
+</content><category term="coding"/><category term="python"/><category term="tornado"/><category term="iostream"/><category term="ssl"/><category term="starttls"/><category term="blackhole"/></entry><entry><title>Wrapping a Tornado IOStream with SSL</title><link href="https://kura.gg/2013/07/29/wrapping-a-tornado-iostream-with-ssl/" rel="alternate"/><published>2013-07-29T20:00:00+01:00</published><updated>2013-07-29T20:00:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2013-07-29:/2013/07/29/wrapping-a-tornado-iostream-with-ssl/</id><summary type="html">
 &lt;p&gt;As part of my effort to make &lt;a class="reference external" href="https://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
 useful and usable as possible, I needed to be able to support &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt;
 enabled connections.&lt;/p&gt;
@@ -1801,4 +1801,4 @@ raised, logged and the connection will be close.&lt;/p&gt;
 &lt;cite&gt;iostream.IOStream&lt;/cite&gt; if &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt; is disabled or if the connection
 was made to the non &lt;span class="caps"&gt;SSL&lt;/span&gt;/&lt;span class="caps"&gt;TLS&lt;/span&gt; port.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="coding"></category><category term="python"></category><category term="tornado"></category><category term="iostream"></category><category term="ssl"></category><category term="blackhole"></category></entry></feed>
+</content><category term="coding"/><category term="python"/><category term="tornado"/><category term="iostream"/><category term="ssl"/><category term="blackhole"/></entry></feed>

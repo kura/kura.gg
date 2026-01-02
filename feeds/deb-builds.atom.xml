@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/theme/xsl/atom.xsl" type="text/xsl"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - deb builds</title><link href="https://kura.gg/" rel="alternate"></link><link href="https://kura.gg/feeds/deb-builds.atom.xml" rel="self"></link><id>https://kura.gg/</id><updated>2014-07-09T13:30:00+01:00</updated><entry><title>nginx 1.7.3 released with pagespeed/psol 1.8.31.4 and naxsi 0.53-2</title><link href="https://kura.gg/2014/07/09/nginx-1.7.3-released-with-pagespeed-psol-1.8.31.4-and-naxsi-0.53-2/" rel="alternate"></link><published>2014-07-09T13:30:00+01:00</published><updated>2014-07-09T13:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-07-09:/2014/07/09/nginx-1.7.3-released-with-pagespeed-psol-1.8.31.4-and-naxsi-0.53-2/</id><content type="html">&lt;p&gt;nginx 1.7.3 is now available on &lt;a class="reference external" href="/apt.kura.gg/"&gt;apt.kura.gg&lt;/a&gt; with updated
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kura.gg - deb builds</title><link href="https://kura.gg/" rel="alternate"/><link href="https://kura.gg/feeds/deb-builds.atom.xml" rel="self"/><id>https://kura.gg/</id><updated>2014-07-09T13:30:00+01:00</updated><entry><title>nginx 1.7.3 released with pagespeed/psol 1.8.31.4 and naxsi 0.53-2</title><link href="https://kura.gg/2014/07/09/nginx-1.7.3-released-with-pagespeed-psol-1.8.31.4-and-naxsi-0.53-2/" rel="alternate"/><published>2014-07-09T13:30:00+01:00</published><updated>2014-07-09T13:30:00+01:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-07-09:/2014/07/09/nginx-1.7.3-released-with-pagespeed-psol-1.8.31.4-and-naxsi-0.53-2/</id><content type="html">&lt;p&gt;nginx 1.7.3 is now available on &lt;a class="reference external" href="/apt.kura.gg/"&gt;apt.kura.gg&lt;/a&gt; with updated
 versions of both pagespeed and naxsi.&lt;/p&gt;
 &lt;p&gt;Pagespeed is now version 1.8.31.4 and Naxsi is 0.53-2, both are the latest
 versions available and will be used for each nginx release until newer
 versions are available.&lt;/p&gt;
-</content><category term="deb builds"></category><category term="apt"></category></entry><entry><title>Moved debian and ubuntu to separate repositories on apt.kura.gg</title><link href="https://kura.gg/2014/03/24/moved-debian-and-ubuntu-to-separate-repositories-on-apt.kura.gg/" rel="alternate"></link><published>2014-03-24T19:19:00+00:00</published><updated>2014-03-24T19:19:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-03-24:/2014/03/24/moved-debian-and-ubuntu-to-separate-repositories-on-apt.kura.gg/</id><content type="html">
+</content><category term="deb builds"/><category term="apt"/></entry><entry><title>Moved debian and ubuntu to separate repositories on apt.kura.gg</title><link href="https://kura.gg/2014/03/24/moved-debian-and-ubuntu-to-separate-repositories-on-apt.kura.gg/" rel="alternate"/><published>2014-03-24T19:19:00+00:00</published><updated>2014-03-24T19:19:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-03-24:/2014/03/24/moved-debian-and-ubuntu-to-separate-repositories-on-apt.kura.gg/</id><content type="html">
 &lt;p&gt;I have made a breaking change to the &lt;a class="reference external" href="/apt.kura.gg/"&gt;apt.kura.gg&lt;/a&gt; repositories.&lt;/p&gt;
 &lt;p&gt;Ubuntu is now properly supported, but to do this properly it meant separating
 Ubuntu and Debian in to totally separate sections to fix the dependency issues.&lt;/p&gt;
@@ -24,8 +24,8 @@ reconfigure their &lt;span class="caps"&gt;APT&lt;/span&gt; settings.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="deb builds"></category><category term="apt"></category></entry><entry><title>apt.kura.gg now supports i386</title><link href="https://kura.gg/2014/03/08/apt.kura.gg-now-supports-i386/" rel="alternate"></link><published>2014-03-08T15:20:00+00:00</published><updated>2014-03-08T15:20:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-03-08:/2014/03/08/apt.kura.gg-now-supports-i386/</id><content type="html">&lt;p&gt;I have decided to support the i386 architecture on &lt;a class="reference external" href="/apt.kura.gg/"&gt;apt.kura.gg&lt;/a&gt; as well as amd64.&lt;/p&gt;
-</content><category term="deb builds"></category><category term="apt"></category></entry><entry><title>haproxy1.5-dev22kura1</title><link href="https://kura.gg/2014/03/06/haproxy1.5-dev22kura1/" rel="alternate"></link><published>2014-03-06T03:32:00+00:00</published><updated>2014-03-06T03:32:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-03-06:/2014/03/06/haproxy1.5-dev22kura1/</id><summary type="html">
+</content><category term="deb builds"/><category term="apt"/></entry><entry><title>apt.kura.gg now supports i386</title><link href="https://kura.gg/2014/03/08/apt.kura.gg-now-supports-i386/" rel="alternate"/><published>2014-03-08T15:20:00+00:00</published><updated>2014-03-08T15:20:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-03-08:/2014/03/08/apt.kura.gg-now-supports-i386/</id><content type="html">&lt;p&gt;I have decided to support the i386 architecture on &lt;a class="reference external" href="/apt.kura.gg/"&gt;apt.kura.gg&lt;/a&gt; as well as amd64.&lt;/p&gt;
+</content><category term="deb builds"/><category term="apt"/></entry><entry><title>haproxy1.5-dev22kura1</title><link href="https://kura.gg/2014/03/06/haproxy1.5-dev22kura1/" rel="alternate"/><published>2014-03-06T03:32:00+00:00</published><updated>2014-03-06T03:32:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-03-06:/2014/03/06/haproxy1.5-dev22kura1/</id><summary type="html">
 &lt;div class="section" id="changes"&gt;
 &lt;h2&gt;Changes&lt;/h2&gt;
 &lt;p&gt;This patched version is built using the &lt;cite&gt;USE_ZLIB&lt;/cite&gt; option, allowing for usage
@@ -104,7 +104,7 @@ or as a manual download, from the link below.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;9d87ddacde26b75f8c9d723093cf2ef51615ec6e  haproxy_1.5-dev22kura1_amd64.deb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="deb builds"></category><category term="debian"></category><category term="ubuntu"></category><category term="haproxy"></category><category term="spdy"></category><category term="ssl"></category></entry><entry><title>vagrant-bash-completion &amp; go-bash-completion on apt.kura.gg</title><link href="https://kura.gg/2014/02/27/vagrant-bash-completion-and-go-bash-completion-on-apt.kura.gg/" rel="alternate"></link><published>2014-02-27T23:14:00+00:00</published><updated>2014-02-27T23:14:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-27:/2014/02/27/vagrant-bash-completion-and-go-bash-completion-on-apt.kura.gg/</id><content type="html">
+</content><category term="deb builds"/><category term="debian"/><category term="ubuntu"/><category term="haproxy"/><category term="spdy"/><category term="ssl"/></entry><entry><title>vagrant-bash-completion &amp; go-bash-completion on apt.kura.gg</title><link href="https://kura.gg/2014/02/27/vagrant-bash-completion-and-go-bash-completion-on-apt.kura.gg/" rel="alternate"/><published>2014-02-27T23:14:00+00:00</published><updated>2014-02-27T23:14:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-27:/2014/02/27/vagrant-bash-completion-and-go-bash-completion-on-apt.kura.gg/</id><content type="html">
 &lt;div class="section" id="requirements"&gt;
 &lt;h2&gt;Requirements&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -139,7 +139,7 @@ db494d0bf1b3dcdbcce5b0111ad377a0  go-bash-completion-0.0.1.deb
 fd92cd53f2d6ff98077cb10d3578381025d002e7  go-bash-completion-0.0.1.deb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="deb builds"></category><category term="debian"></category><category term="ubuntu"></category><category term="vagrant"></category><category term="go"></category><category term="bash"></category><category term="completion"></category></entry><entry><title>haproxy1.5-dev22</title><link href="https://kura.gg/2014/02/22/haproxy1.5-dev22/" rel="alternate"></link><published>2014-02-22T05:32:00+00:00</published><updated>2014-02-22T05:32:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-22:/2014/02/22/haproxy1.5-dev22/</id><content type="html">
+</content><category term="deb builds"/><category term="debian"/><category term="ubuntu"/><category term="vagrant"/><category term="go"/><category term="bash"/><category term="completion"/></entry><entry><title>haproxy1.5-dev22</title><link href="https://kura.gg/2014/02/22/haproxy1.5-dev22/" rel="alternate"/><published>2014-02-22T05:32:00+00:00</published><updated>2014-02-22T05:32:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-22:/2014/02/22/haproxy1.5-dev22/</id><content type="html">
 &lt;div class="section" id="requirements"&gt;
 &lt;h2&gt;Requirements&lt;/h2&gt;
 &lt;p&gt;haproxy requires openssl-1.0.1d or higher.&lt;/p&gt;
@@ -181,7 +181,7 @@ or as a manual download, from the link below.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;f17cb661d2ceb1686a0a4b8566168503a0d372d9  haproxy_1.5-dev22_amd64.deb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="deb builds"></category><category term="debian"></category><category term="ubuntu"></category><category term="haproxy"></category><category term="spdy"></category><category term="ssl"></category></entry><entry><title>nginx 1.5.10 with SPDY 3.1</title><link href="https://kura.gg/2014/02/06/nnginx-1.5.10-with-spdy3.1/" rel="alternate"></link><published>2014-02-06T03:30:00+00:00</published><updated>2014-02-06T03:30:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-06:/2014/02/06/nnginx-1.5.10-with-spdy3.1/</id><summary type="html">
+</content><category term="deb builds"/><category term="debian"/><category term="ubuntu"/><category term="haproxy"/><category term="spdy"/><category term="ssl"/></entry><entry><title>nginx 1.5.10 with SPDY 3.1</title><link href="https://kura.gg/2014/02/06/nnginx-1.5.10-with-spdy3.1/" rel="alternate"/><published>2014-02-06T03:30:00+00:00</published><updated>2014-02-06T03:30:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-06:/2014/02/06/nnginx-1.5.10-with-spdy3.1/</id><summary type="html">
 &lt;p&gt;I have built and released nginx 1.5.10 with &lt;span class="caps"&gt;SPDY&lt;/span&gt; 3.1. Like the &lt;a class="reference external" href="/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/"&gt;nginx 1.5.9
 release&lt;/a&gt;
 , this release comes with ngx_pagespeed 1.7.30.3-beta and is available
@@ -298,7 +298,7 @@ b334bb1e57d3920f68e2dd37399156281105eefb  nginx-full-dbg_1.5.10_amd64.deb
 97b51fc8e05be3ba00e8daf11050d4bde67d5824  nginx-naxsi-dbg_1.5.10_amd64.deb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="deb builds"></category><category term="debian"></category><category term="ubuntu"></category><category term="nginx"></category><category term="spdy"></category><category term="pagespeed"></category><category term="ngx_pagespeed"></category></entry><entry><title>nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta</title><link href="https://kura.gg/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/" rel="alternate"></link><published>2014-02-02T17:54:00+00:00</published><updated>2014-02-02T17:54:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-02:/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/</id><summary type="html">
+</content><category term="deb builds"/><category term="debian"/><category term="ubuntu"/><category term="nginx"/><category term="spdy"/><category term="pagespeed"/><category term="ngx_pagespeed"/></entry><entry><title>nginx 1.5.9 and ngx_pagespeed 1.7.30.3-beta</title><link href="https://kura.gg/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/" rel="alternate"/><published>2014-02-02T17:54:00+00:00</published><updated>2014-02-02T17:54:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-02-02:/2014/02/02/nginx-1.5.9-and-ngx_pagespeed-1.7.30.3-beta/</id><summary type="html">
 &lt;p&gt;I have built and released nginx 1.5.9 with ngx_pagespeed module 1.7.30.3-beta
 and published them on &lt;a class="reference external" href="https://apt.kura.gg"&gt;apt.kura.gg&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="manual-download-install"&gt;
@@ -418,7 +418,7 @@ d5b759c20d63e9e1a004f2eb032728ff23a38ee8  nginx-extras-dbg_1.5.9_amd64.deb
 9ada12946cd24f948ea193d3d4b2db780cc40adf  nginx-naxsi-dbg_1.5.9_amd64.deb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="deb builds"></category><category term="debian"></category><category term="ubuntu"></category><category term="haproxy"></category><category term="nginx"></category><category term="spdy"></category><category term="pagespeed"></category><category term="ngx_pagespeed"></category></entry><entry><title>apt.kura.gg</title><link href="https://kura.gg/2014/01/26/apt.kura.gg/" rel="alternate"></link><published>2014-01-26T02:05:00+00:00</published><updated>2014-01-26T02:05:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-26:/2014/01/26/apt.kura.gg/</id><content type="html">&lt;p&gt;After releasing my own versions of haproxy with &lt;span class="caps"&gt;SPDY&lt;/span&gt; support and nginx with
+</content><category term="deb builds"/><category term="debian"/><category term="ubuntu"/><category term="haproxy"/><category term="nginx"/><category term="spdy"/><category term="pagespeed"/><category term="ngx_pagespeed"/></entry><entry><title>apt.kura.gg</title><link href="https://kura.gg/2014/01/26/apt.kura.gg/" rel="alternate"/><published>2014-01-26T02:05:00+00:00</published><updated>2014-01-26T02:05:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-26:/2014/01/26/apt.kura.gg/</id><content type="html">&lt;p&gt;After releasing my own versions of haproxy with &lt;span class="caps"&gt;SPDY&lt;/span&gt; support and nginx with
 ngx_pagespeed and &lt;span class="caps"&gt;SPDY&lt;/span&gt; support, I decided it would make sense to actually
 host these in my own apt repository, so I did.&lt;/p&gt;
 &lt;p&gt;You can enable this by adding it to your apt config.&lt;/p&gt;
@@ -427,7 +427,7 @@ host these in my own apt repository, so I did.&lt;/p&gt;
 sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;update
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Simple.&lt;/p&gt;
-</content><category term="deb builds"></category><category term="apt"></category></entry><entry><title>haproxy1.5-dev21, nginx 1.5.8, SPDY &amp; pagespeed 1.7.30.2</title><link href="https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" rel="alternate"></link><published>2014-01-08T13:00:00+00:00</published><updated>2014-01-08T13:00:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-08:/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/</id><summary type="html">
+</content><category term="deb builds"/><category term="apt"/></entry><entry><title>haproxy1.5-dev21, nginx 1.5.8, SPDY &amp; pagespeed 1.7.30.2</title><link href="https://kura.gg/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/" rel="alternate"/><published>2014-01-08T13:00:00+00:00</published><updated>2014-01-08T13:00:00+00:00</updated><author><name>kura</name></author><id>tag:kura.gg,2014-01-08:/2014/01/08/haproxy1.5-dev21-nginx-1.5.8-spdy-pagespeed-1.7.30.2/</id><summary type="html">
 &lt;p&gt;I have previously released &lt;a class="reference external" href="/2013/07/15/haproxy-nginx-and-spdy-with-ssl-termination-debian-7/"&gt;haproxy1.5-dev19 with &lt;span class="caps"&gt;SSL&lt;/span&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;SPDY&lt;/span&gt; support enabled&lt;/a&gt;
 and &lt;a class="reference external" href="/2013/07/10/nginx-spdy-and-ngx-pagespeed/"&gt;nginx 1.4.1 with &lt;span class="caps"&gt;SPDY&lt;/span&gt; support and pagespeed&lt;/a&gt;, although I do
 not remember which version of pagespeed.&lt;/p&gt;
@@ -621,4 +621,4 @@ installed with this package.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="deb builds"></category><category term="debian"></category><category term="ubuntu"></category><category term="haproxy"></category><category term="nginx"></category><category term="spdy"></category><category term="pagespeed"></category><category term="ngx_pagespeed"></category></entry></feed>
+</content><category term="deb builds"/><category term="debian"/><category term="ubuntu"/><category term="haproxy"/><category term="nginx"/><category term="spdy"/><category term="pagespeed"/><category term="ngx_pagespeed"/></entry></feed>
