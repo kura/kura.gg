@@ -30,6 +30,7 @@ html: clean $(OUTPUTDIR)/index.html
 
 $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	python scripts/replace_tokens.py $(OUTPUTDIR)
 
 .PHONY: clean
 clean:
@@ -55,6 +56,7 @@ dev-stop:
 .PHONY: publish
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	python3 scripts/replace_tokens.py $(OUTPUTDIR)
 
 .PHONY: install
 install:
