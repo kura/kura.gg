@@ -19,7 +19,7 @@ jobs:
       - name: apt install
         run: |
           sudo apt update
-          sudo apt install -y pngquant
+          sudo apt install -y pngquant imagemagick
       - name: pip install
         run: make install
       - name: clean
