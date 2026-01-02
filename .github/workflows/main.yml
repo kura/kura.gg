@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.11
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: cache_file
