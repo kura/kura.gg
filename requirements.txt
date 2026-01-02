@@ -9,5 +9,6 @@ pelican-vimeo
 pelican-youtube
 Pillow
 Pygments
+pytz
 typogrify
 webassets
