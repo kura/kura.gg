@@ -57,6 +57,8 @@ jobs:
         run: make perms
       - name: hash
         run: make hash
+      - name: seal
+        run: cp seal.html output/seal.html
       - name: deploy
         uses: peaceiris/actions-gh-pages@v4
         with:

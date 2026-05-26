@@ -131,10 +131,11 @@ STATIC_PATHS = [
     "extra/favicon.ico",
     "extra/favicon.png",
     "extra/.well-known",
+    "extra/seal.html",
 ]
 
-PAGE_EXCLUDES = ["files"]
-ARTICLE_EXCLUDES = ["files"]
+PAGE_EXCLUDES = ["files", "extra"]
+ARTICLE_EXCLUDES = ["files", "extra"]
 
 EXTRA_PATH_METADATA = {
     # "files": {"path": "files"},
@@ -144,6 +145,7 @@ EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
     "extra/.well-known/dnt-policy.txt": {"path": ".well-known/dnt-policy.txt"},
     "extra/.well-known/security.txt": {"path": ".well-known/security.txt"},
+    "extra/seal.html": {"path": "seal.html"},
 }
 
 DIRECT_TEMPLATES = ["404", "500", "archives", "categories", "index", "tags"]
