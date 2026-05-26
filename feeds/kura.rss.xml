@@ -81,25 +81,25 @@ stuff. In this instance we’re going to use it in conjunction with
 &lt;cite&gt;ngx.timer.every&lt;/cite&gt; and the &lt;cite&gt;resty.dns.resolver&lt;/cite&gt;.&lt;/p&gt;
 &lt;p&gt;Here is the full example of my &lt;cite&gt;init_worker_by_lua_block&lt;/cite&gt;.&lt;/p&gt;
 &lt;pre class="code lua literal-block"&gt;
-&lt;span class="n"&gt;init_worker_by_lua_block&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="n"&gt;_backend_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="nv"&gt;init_worker_by_lua_block&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+    &lt;/span&gt;&lt;span class="nv"&gt;_backend_servers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;
 
-    &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="kr"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-        &lt;span class="c1"&gt;-- Set up the resolver&lt;/span&gt;
-        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s2"&gt;"resty.dns.resolver"&lt;/span&gt;
-        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;resolver&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="n"&gt;nameservers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.1.1.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.0.0.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;53&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;  &lt;span class="c1"&gt;-- Cloudflare&lt;/span&gt;
-            &lt;span class="n"&gt;retrans&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 5 retransmissions on receive timeout&lt;/span&gt;
-            &lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;-- 1 sec&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-        &lt;span class="kr"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="kr"&gt;then&lt;/span&gt;
-            &lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"failed to instantiate resolver: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="kr"&gt;return&lt;/span&gt;
-        &lt;span class="kr"&gt;end&lt;/span&gt;
+    &lt;/span&gt;&lt;span class="kd"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;update_dns&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="c1"&gt;-- Set up the resolver&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="kd"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;resolver&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"resty.dns.resolver"&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="kd"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;err&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;resolver&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="py"&gt;new&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+            &lt;/span&gt;&lt;span class="nv"&gt;nameservers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.1.1.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"1.0.0.1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;53&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;-- Cloudflare&lt;/span&gt;&lt;span class="w"&gt;
+            &lt;/span&gt;&lt;span class="nv"&gt;retrans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;-- 5 retransmissions on receive timeout&lt;/span&gt;&lt;span class="w"&gt;
+            &lt;/span&gt;&lt;span class="nv"&gt;timeout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;-- 1 sec&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="kr"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;r&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kr"&gt;then&lt;/span&gt;&lt;span class="w"&gt;
+            &lt;/span&gt;&lt;span class="nv"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;ngx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;ERR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"failed to instantiate resolver: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+            &lt;/span&gt;&lt;span class="kr"&gt;return&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="kr"&gt;end&lt;/span&gt;&lt;span class="w"&gt;
 
-        &lt;span class="c1"&gt;-- Pull DNS records&lt;/span&gt;
-        &lt;span class="c1"&gt;-- Use a hardcoded domain to make this example easier&lt;/span&gt;
-        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tries&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kura.gg …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 30 Aug 2020 17:30:00 +0100</pubDate><guid>tag:kura.gg,2020-08-30:/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</guid><category>misc</category><category>nginx</category><category>openresty</category><category>lua</category></item><item><title>Retrying dynamically configured upstreams with OpenResty</title><link>https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/</link><description>
+        &lt;/span&gt;&lt;span class="c1"&gt;-- Pull DNS records&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="c1"&gt;-- Use a hardcoded domain to make this example easier&lt;/span&gt;&lt;span class="w"&gt;
+        &lt;/span&gt;&lt;span class="kd"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;answers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;err&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tries&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nf"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kura.gg …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 30 Aug 2020 17:30:00 +0100</pubDate><guid>tag:kura.gg,2020-08-30:/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/</guid><category>misc</category><category>nginx</category><category>openresty</category><category>lua</category></item><item><title>Retrying dynamically configured upstreams with OpenResty</title><link>https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/</link><description>
 &lt;div class="section" id="preamble"&gt;
 &lt;h2&gt;Preamble&lt;/h2&gt;
 &lt;p&gt;OpenResty is a modified version of nginx with LuaJIT compiled in and many
@@ -114,9 +114,9 @@ configs out to hundreds of servers and reload daemons.&lt;/p&gt;
 &lt;p&gt;The logic behind how we update the upstream backends is beyond the scope of
 this post, so let’s just say we have a table of upstream servers.&lt;/p&gt;
 &lt;pre class="code lua literal-block"&gt;
-&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;upstream_servers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;"10.0.0.2:443 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 09 Aug 2020 17:00:00 +0100</pubDate><guid>tag:kura.gg,2020-08-09:/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/</guid><category>misc</category><category>nginx</category><category>openresty</category><category>lua</category></item><item><title>Eevee — Adding more structure to posts</title><link>https://kura.gg/2016/06/25/eevee-adding-more-structure-to-posts/</link><description>&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
+&lt;span class="kd"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;upstream_servers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+    &lt;/span&gt;&lt;span class="s2"&gt;"10.0.0.1:443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+    &lt;/span&gt;&lt;span class="s2"&gt;"10.0.0.2:443 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sun, 09 Aug 2020 17:00:00 +0100</pubDate><guid>tag:kura.gg,2020-08-09:/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/</guid><category>misc</category><category>nginx</category><category>openresty</category><category>lua</category></item><item><title>Eevee — Adding more structure to posts</title><link>https://kura.gg/2016/06/25/eevee-adding-more-structure-to-posts/</link><description>&lt;img alt="Eevee the Pokémon" class="align-center" src="/images/eeveelutions.png"/&gt;
 
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
@@ -297,7 +297,7 @@ only configuration similarity this requires is that mail for all users is
 stored on the filesystem in the same place, rather than to separate locations
 i.e. each user having ~/.Maildir.&lt;/p&gt;
 &lt;div class="section" id="encfs"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;EncFS&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;EncFS&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;encfs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once installed, you’ll need to make a directory for encrypted and decrypted
@@ -335,14 +335,14 @@ a new line.&lt;/p&gt;
 and Solr, the latter being used for &lt;span class="caps"&gt;IMAP&lt;/span&gt; &lt;span class="caps"&gt;SEARCH&lt;/span&gt;. I personally use 2 &lt;span class="caps"&gt;GB&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I’ll warn you all now, this is a long article.&lt;/p&gt;
 &lt;div class="section" id="ssl"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo openssl genrsa -out /etc/ssl/private/mail.key 4096
 sudo openssl req -new -key /etc/ssl/private/mail.key -out /tmp/mail.csr
 sudo openssl x509 -req -days 365 -in /tmp/mail.csr -signkey /etc/ssl/private/mail.key -out /etc/ssl/certs/mail.crt
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mysql"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;MySQL&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;MySQL&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install mysql-server
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You’ll be prompted several times for a password for MySQL during the installation,
@@ -355,13 +355,13 @@ just come up with something nice and secure.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And grant some privileges, you’ll need …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sat, 03 Jan 2015 19:48:00 +0000</pubDate><guid>tag:kura.gg,2015-01-03:/2015/01/03/debian-wheezy-tls-mailserver-with-mysql-clamav-domainkeys-dkim-spf-solr-imap-search/</guid><category>tutorials</category><category>debian</category><category>wheezy</category><category>postfix</category><category>dovecot</category><category>clamav</category><category>domainkeys</category><category>dkim</category><category>spf</category><category>imap</category></item><item><title>torproject.org mirror</title><link>https://kura.gg/2015/01/02/torproject.org-mirror/</link><description>
 &lt;div class="section" id="mirror"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Mirror&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Mirror&lt;/h2&gt;
 &lt;p&gt;With the DDoS attacks on the &lt;a class="reference external" href="https://www.torproject.org"&gt;torproject.org&lt;/a&gt;
 website over the mid to end of December, I decided it would be prudent to join
 the relatively small list of mirrors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="access"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Access&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Access&lt;/h2&gt;
 &lt;p&gt;+——- —-+—————————+
 | Website | Dist / Downloads |
 +=========+==================+
@@ -376,7 +376,7 @@ the relatively small list of mirrors.&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Fri, 02 Jan 2015 04:48:00 +0000</pubDate><guid>tag:kura.gg,2015-01-02:/2015/01/02/torproject.org-mirror/</guid><category>tor</category><category>tor</category></item><item><title>Santa’s tor relay changes</title><link>https://kura.gg/2014/12/27/santas-tor-relay-changes/</link><description>
 &lt;div class="section" id="exiting-relays"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Exiting relays&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Exiting relays&lt;/h2&gt;
 &lt;p&gt;Both &lt;a class="reference external" href="https://globe.torproject.org/#/relay/865A408E2B1EA3E18C9A12E80A8D458F9C985C16"&gt;SpunkWeasel (&lt;span class="caps"&gt;865A408E2B1EA3E18C9A12E80A8D458F9C985C16&lt;/span&gt;)&lt;/a&gt;
 and &lt;a class="reference external" href="https://globe.torproject.org/#/relay/B8E6FFEB6F91FA3D26BC572836FB0ABBD142DC87"&gt;AnorexicSquirrel (&lt;span class="caps"&gt;B8E6FFEB6F91FA3D26BC572836FB0ABBD142DC87&lt;/span&gt;)&lt;/a&gt;
 have been given additional horsepower in terms of &lt;span class="caps"&gt;CPU&lt;/span&gt; and memory and both have
@@ -384,7 +384,7 @@ been allowed to exit. Additionally, both are now capable of IPv6 connectivity
 as guards, relays and exits.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="new-relays"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;New relays&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;New relays&lt;/h2&gt;
 &lt;p&gt;A new exit relay has been put online called &lt;a class="reference external" href="https://globe.torproject.org/#/relay/24B1783665A9B0A4BF640A1CD02F685C0CA098ED"&gt;VivaciousAlpaca (&lt;span class="caps"&gt;24B1783665A9B0A4BF640A1CD02F685C0CA098ED&lt;/span&gt;)&lt;/a&gt;.
 It has the same &lt;span class="caps"&gt;CPU&lt;/span&gt; and memory as SpunkWeasel and AnorexicSquirrel and also
 has full IPv6 capabilities.&lt;/p&gt;
@@ -392,13 +392,13 @@ has full IPv6 capabilities.&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Sat, 27 Dec 2014 01:12:00 +0000</pubDate><guid>tag:kura.gg,2014-12-27:/2014/12/27/santas-tor-relay-changes/</guid><category>tor</category><category>tor</category></item><item><title>Tor all the things!</title><link>https://kura.gg/2014/10/02/tor-all-the-things/</link><description>
 &lt;div class="section" id="privacy-is-key"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Privacy is key&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Privacy is key&lt;/h2&gt;
 &lt;p&gt;I am a big fan of keeping my browsing habits and other personal information
 private. As such, I use a &lt;span class="caps"&gt;VPN&lt;/span&gt; service provided by &lt;a class="reference external" href="https://proxy.sh/panel/aff.php?aff=079"&gt;proxy.sh (affiliate link)&lt;/a&gt;, I also use their proxies, Tor and
 various other proxies, usually from online lists, should I feel the need.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="anonymous-nodes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Anonymous nodes&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Anonymous nodes&lt;/h2&gt;
 &lt;p&gt;I’ve run some Tor nodes for quite a while now, two Exits and five relays to be
 precise. They are all listed as being part of the same family and have never
 had any reference to me being their operator.&lt;/p&gt;
@@ -407,7 +407,7 @@ inherently comes with running Tor Exit nodes. These issues include some mean
 emails and &lt;span class="caps"&gt;IP&lt;/span&gt; addresses and &lt;span class="caps"&gt;CIDR&lt;/span&gt; blocks being blacklisted by services like Netflix.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="new-nodes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;New nodes!&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;New nodes!&lt;/h2&gt;
 &lt;p&gt;The good news is, I have recently launched three more nodes! These nodes
 belong to a …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Thu, 02 Oct 2014 03:45:00 +0100</pubDate><guid>tag:kura.gg,2014-10-02:/2014/10/02/tor-all-the-things/</guid><category>tor</category><category>tor</category></item><item><title>batfish(1) - writing a Digital Ocean V2 API wrapper</title><link>https://kura.gg/2014/09/15/batfish-writing-a-digital-ocean-v2-api-wrapper/</link><description>
 &lt;p&gt;Batfish is a Python client and &lt;span class="caps"&gt;API&lt;/span&gt; wrapper for the &lt;a class="reference external" href="https://developers.digitalocean.com/"&gt;Digital Ocean V2 &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;. It can be used as a library module in
@@ -420,7 +420,7 @@ much coverage as possible and eaked out all of the bugs. You can find the
 &lt;a class="reference external" href="https://travis-ci.org/kura/batfish"&gt;latest test status on Travis &lt;span class="caps"&gt;CI&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="module-interface"&gt;
 &lt;h2&gt;Module interface&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;batfish&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;batfish&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;authorize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"abcde12345"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;droplets&lt;/span&gt;
@@ -438,7 +438,7 @@ ego …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="h
 from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;div class="section" id="search-interface"&gt;
 &lt;h2&gt;Search interface&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;yarg&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;yarg&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;package&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yarg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"yarg"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
 &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'yarg'&lt;/span&gt;
@@ -448,7 +448,7 @@ from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="newest-packages-interface"&gt;
 &lt;h2&gt;Newest packages interface&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;yarg&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;yarg&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yarg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newest_packages&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Package&lt;/span&gt; &lt;span class="n"&gt;yarg&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Package&lt;/span&gt; &lt;span class="n"&gt;gray&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Package&lt;/span&gt; &lt;span class="n"&gt;ragy&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -460,7 +460,7 @@ from PyPI for new packages and new package version releases.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="updated-packages-interface"&gt;
 &lt;h2&gt;Updated packages interface&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;yarg&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;yarg&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yarg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;latest_updated_packages&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Package&lt;/span&gt; &lt;span class="n"&gt;yarg&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Package&lt;/span&gt; &lt;span class="n"&gt;gray&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Package&lt;/span&gt; &lt;span class="n"&gt;ragy&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -1197,7 +1197,7 @@ deciding to go to my local coding spot - the pub and hash it out.&lt;/p&gt;
 &lt;p&gt;The first thing I had to do was refactor the code that created the
 instance of &lt;cite&gt;tornado.iostream.IOStream&lt;/cite&gt; and &lt;cite&gt;tornado.iostream.SSLIOStream&lt;/cite&gt;
 so that it didn’t actually do the ssl wrapping.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Detect which socket the connection …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">kura</dc:creator><pubDate>Wed, 31 Jul 2013 13:36:00 +0100</pubDate><guid>tag:kura.gg,2013-07-31:/2013/07/31/writing-the-starttls-command-in-to-blackhole/</guid><category>coding</category><category>python</category><category>tornado</category><category>iostream</category><category>ssl</category><category>starttls</category><category>blackhole</category></item><item><title>Wrapping a Tornado IOStream with SSL</title><link>https://kura.gg/2013/07/29/wrapping-a-tornado-iostream-with-ssl/</link><description>
 &lt;p&gt;As part of my effort to make &lt;a class="reference external" href="https://blackhole.io/"&gt;Blackhole&lt;/a&gt; as
@@ -1214,7 +1214,7 @@ and use &lt;cite&gt;socket.socket.getsockname()&lt;/cite&gt; to figure out if th
 connection is to the encrypted or unencrypted socket.&lt;/p&gt;
 &lt;div class="section" id="code"&gt;
 &lt;h2&gt;Code&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;connection_stream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
 &lt;span class="sd"&gt;    Detect which socket the connection is being made on,&lt;/span&gt;
 &lt;span class="sd"&gt;    create and iostream for the connection, wrapping it&lt;/span&gt;

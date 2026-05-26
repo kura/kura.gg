@@ -24,193 +24,193 @@
     "datePublished": "2020-08-30T17:30:00+01:00"
 }
 </script><link sizes="16x16 32x32 48x48 64x64 128x128 256x256" href=/favicon.png rel=icon type=image/png><link sizes="16x16 32x32 48x48 64x64 128x128 256x256" href=/favicon.ico rel=icon type=image/vnd.microsoft.icon><title>Configuring upstreams dynamically with DNS in OpenResty</title><body><div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50"><header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800" itemscope itemtype=http://schema.org/WPHeader><div class=mdl-layout__header-row><div class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only" aria-expanded=false role=button tabindex=0><i class=material-icons></i></div><span class="eevee-logo mdl-color-text--accent mdl-layout-title"> <h2 id=top><a href=https://kura.gg rel=bookmark title=kura.gg> kura.gg </a></h2> </span><div class=mdl-layout-spacer role=presentation></div><nav aria-label="Header navigation" class="eevee-nav mdl-navigation mdl-layout--large-screen-only" itemscope itemtype=http://schema.org/SiteNavigationElement><a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i aria-hidden=true class=material-icons></i> Blackhole </a><a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i aria-hidden=true class=material-icons></i> Eevee </a><a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i aria-hidden=true class=material-icons></i> Hauntr </a><a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i aria-hidden=true class=material-icons></i> Ghastly </a><a class="mdl-color-text--accent mdl-navigation__link" title="Pelican Plugins" href=/pelican-plugins itemprop=url rel=bookmark> <i aria-hidden=true class=material-icons></i> Pelican Plugins </a><a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i aria-hidden=true class=material-icons></i> Contact </a><a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons></i> Archives </a><a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml itemprop=url title=RSS> <i class=material-icons></i> RSS </a><a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/atom.xml itemprop=url title=Atom> <i class=material-icons></i> Atom </a></nav></div></header><div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden=true><span class=mdl-layout-title> <h2 class="eevee-mobile-logo mdl-color-text--accent">kura.gg</h2> </span><div class="mdl-navigation mdl-color--white"><nav aria-label="Header navigation" class="eevee-nav mdl-navigation" itemscope itemtype=http://schema.org/SiteNavigationElement><a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg itemprop=url rel=bookmark> <i aria-hidden=true class=material-icons>  </i> Home </a><a class="mdl-color-text--accent mdl-navigation__link" href=/blackhole itemprop=url rel=bookmark title=Blackhole> <i aria-hidden=true class=material-icons></i> Blackhole </a><a class="mdl-color-text--accent mdl-navigation__link" href=/eevee itemprop=url rel=bookmark title=Eevee> <i aria-hidden=true class=material-icons></i> Eevee </a><a class="mdl-color-text--accent mdl-navigation__link" href=/hauntr itemprop=url rel=bookmark title=Hauntr> <i aria-hidden=true class=material-icons></i> Hauntr </a><a class="mdl-color-text--accent mdl-navigation__link" href=/ghastly itemprop=url rel=bookmark title=Ghastly> <i aria-hidden=true class=material-icons></i> Ghastly </a><a class="mdl-color-text--accent mdl-navigation__link" title="Pelican Plugins" href=/pelican-plugins itemprop=url rel=bookmark> <i aria-hidden=true class=material-icons></i> Pelican Plugins </a><a class="mdl-color-text--accent mdl-navigation__link" href=/contact/ itemprop=url rel=bookmark title=Contact> <i aria-hidden=true class=material-icons></i> Contact </a><a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/archives/ itemprop=url rel=bookmark title=Archives> <i class=material-icons></i> Archives </a><a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/rss.xml itemprop=url title=RSS> <i class=material-icons></i> RSS </a><a class="mdl-color-text--accent mdl-navigation__link" href=https://kura.gg/feeds/atom.xml itemprop=url title=Atom> <i class=material-icons></i> Atom </a></nav></div></div><div class="eevee-ribbon mdl-color--primary-dark" role=presentation></div><main class="eevee-main mdl-layout__content"><div class="eevee-container mdl-grid"><div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone" role=presentation></div><div aria-label="Main content" class="eevee-content mdl-color--white mdl-shadow--2dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"><article itemscope itemtype=http://schema.org/BlogPosting><meta content=fullKeyboardControl itemprop=accessibilityControl><meta content=fullMouseControl itemprop=accessibilityControl><meta content=bookmarks itemprop=accessibilityControl><meta content=captions itemprop=accessibilityControl><meta content=alternativeText itemprop=accessibilityControl><meta content=index itemprop=accessibilityControl><meta content=readingOrder itemprop=accessibilityControl><meta content=structuralNavigation itemprop=accessibilityControl><meta content=tableOfContents itemprop=accessibilityControl><meta content=noFlashingHazard itemprop=accessibilityHazard><meta content=noMotionSimulationHazard itemprop=accessibilityHazard><meta content=noSoundHazard itemprop=accessibilityHazard><meta content=ARIA itemprop=accessibilityAPI><div itemprop=author itemscope itemtype=https://schema.org/Person role=presentation><a class=hidden href=https://kura.gg/authors/kura/ itemprop=url role=presentation> <span class=hidden itemprop=name role=presentation> kura </span> </a></div><meta content=nginx,openresty,lua itemprop=keywords><meta content=misc itemprop=keywords><div class=eevee-article><div class="eevee-meta mdl-color-text--grey-500"><time datetime=2020-08-30T17:30:00+01:00 itemprop=datePublished> 30 Aug 2020 </time> — 10 min read</div><h1 itemprop=name><a title="Permalink to 'Configuring upstreams dynamically with DNS in OpenResty'" href=https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/ itemprop=url rel=bookmark> Configuring upstreams dynamically with <span class=caps>DNS</span> in OpenResty </a></h1><section><p>This article is part of the <span class=bold>OpenResty upstreams</span> series.<ol class=series-parts><li><a title="Retrying dynamically configured upstreams with OpenResty" href=https://kura.gg/2020/08/09/retrying-dynamically-configured-upstreams-with-openresty/ itemprop=url> Retrying dynamically configured upstreams with OpenResty </a><li class=series-active><a title="Configuring upstreams dynamically with DNS in OpenResty" href=https://kura.gg/2020/08/30/configuring-upstreams-dynamically-with-dns-in-openresty/ itemprop=url> Configuring upstreams dynamically with DNS in OpenResty </a></ol></section><section class=eevee-toc><h2 id=toc>Contents</h2><nav class=eevee-toc-ribbon><div class=toc><p class=topic-title><a class="reference internal" href=#top>Contents</a><ul class=simple><li><a class="reference internal" href=#breaking-down-init-worker-by-lua-block id=toc-entry-1>Breaking down <cite>init_worker_by_lua_block</cite></a><ul><li><a class="reference internal" href=#configuring-the-dns-resolver id=toc-entry-2>Configuring the <span class=caps>DNS</span> resolver</a><li><a class="reference internal" href=#querying-the-dns-resolver id=toc-entry-3>Querying the <span class=caps>DNS</span> resolver</a><li><a class="reference internal" href=#using-the-returned-dns-records-to-configure-the-backend id=toc-entry-4>Using the returned <span class=caps>DNS</span> records to configure the backend</a><li><a class="reference internal" href=#set-up-a-timer-to-update-the-backend-servers-periodically id=toc-entry-5>Set up a timer to update the backend servers periodically</a></ul><li><a class="reference internal" href=#breaking-down-balancer-by-lua-block id=toc-entry-6>Breaking down <cite>balancer_by_lua_block</cite></a><ul><li><a class="reference internal" href=#setting-up-balancer-by-lua id=toc-entry-7>Setting up balancer_by_lua</a><li><a class="reference internal" href=#handling-an-initial-request id=toc-entry-8>Handling an initial request</a><li><a class="reference internal" href=#handling-a-retry-request id=toc-entry-9>Handling a retry request</a><li><a class="reference internal" href=#passing-the-request-back-to-nginx id=toc-entry-10>Passing the request back to nginx</a></ul><li><a class="reference internal" href=#putting-it-all-together id=toc-entry-11>Putting it all together</a><li><a class="reference internal" href=#full-example-on-github id=toc-entry-12>Full example on GitHub</a></ul></div></nav></section><section class=article-content itemprop=articleBody><p>This article is a continuation of <a class="reference external" href={filename}/retrying-dynamically-configured-upstreams-with-openresty.rst>retrying dynamically configured upstreams</a> that gives an example of how you can configure OpenResty to update your upstream backend servers dynamically with <span class=caps>DNS</span>.<div class=section id=breaking-down-init-worker-by-lua-block><h2>Breaking down <cite>init_worker_by_lua_block</cite></h2><p><cite>init_worker_by_lua_block</cite> can be used to make an nginx worker do some fun stuff. In this instance we’re going to use it in conjunction with <cite>ngx.timer.every</cite> and the <cite>resty.dns.resolver</cite>.<p>Here is the full example of my <cite>init_worker_by_lua_block</cite>.<pre class="code lua literal-block">
-<span class=n>init_worker_by_lua_block</span> <span class=p>{</span>
-    <span class=n>_backend_servers</span> <span class=o>=</span> <span class=p>{}</span>
+<span class=nv>init_worker_by_lua_block</span><span class=w> </span><span class=p>{</span><span class=w>
+    </span><span class=nv>_backend_servers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{}</span><span class=w>
 
-    <span class=kd>local</span> <span class=kr>function</span> <span class=nf>update_dns</span><span class=p>()</span>
-        <span class=c1>-- Set up the resolver</span>
-        <span class=kd>local</span> <span class=n>resolver</span> <span class=o>=</span> <span class=nb>require</span> <span class=s2>"resty.dns.resolver"</span>
-        <span class=kd>local</span> <span class=n>r</span><span class=p>,</span> <span class=n>err</span> <span class=o>=</span> <span class=n>resolver</span><span class=p>:</span><span class=n>new</span><span class=p>{</span>
-            <span class=n>nameservers</span> <span class=o>=</span> <span class=p>{</span><span class=s2>"1.1.1.1"</span><span class=p>,</span> <span class=p>{</span><span class=s2>"1.0.0.1"</span><span class=p>,</span> <span class=mi>53</span><span class=p>}</span> <span class=p>},</span>  <span class=c1>-- Cloudflare</span>
-            <span class=n>retrans</span> <span class=o>=</span> <span class=mi>5</span><span class=p>,</span>  <span class=c1>-- 5 retransmissions on receive timeout</span>
-            <span class=n>timeout</span> <span class=o>=</span> <span class=mi>1000</span><span class=p>,</span>  <span class=c1>-- 1 sec</span>
-        <span class=p>}</span>
-        <span class=kr>if</span> <span class=ow>not</span> <span class=n>r</span> <span class=kr>then</span>
-            <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"failed to instantiate resolver: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-            <span class=kr>return</span>
-        <span class=kr>end</span>
+    </span><span class=kd>local</span><span class=w> </span><span class=kr>function</span><span class=w> </span><span class=nf>update_dns</span><span class=p>()</span><span class=w>
+        </span><span class=c1>-- Set up the resolver</span><span class=w>
+        </span><span class=kd>local</span><span class=w> </span><span class=nv>resolver</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>require</span><span class=w> </span><span class=s2>"resty.dns.resolver"</span><span class=w>
+        </span><span class=kd>local</span><span class=w> </span><span class=nv>r</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>resolver</span><span class=p>:</span><span class=py>new</span><span class=p>{</span><span class=w>
+            </span><span class=nv>nameservers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{</span><span class=s2>"1.1.1.1"</span><span class=p>,</span><span class=w> </span><span class=p>{</span><span class=s2>"1.0.0.1"</span><span class=p>,</span><span class=w> </span><span class=mi>53</span><span class=p>}</span><span class=w> </span><span class=p>},</span><span class=w>  </span><span class=c1>-- Cloudflare</span><span class=w>
+            </span><span class=nv>retrans</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w>  </span><span class=c1>-- 5 retransmissions on receive timeout</span><span class=w>
+            </span><span class=nv>timeout</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>1000</span><span class=p>,</span><span class=w>  </span><span class=c1>-- 1 sec</span><span class=w>
+        </span><span class=p>}</span><span class=w>
+        </span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>r</span><span class=w> </span><span class=kr>then</span><span class=w>
+            </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"failed to instantiate resolver: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+            </span><span class=kr>return</span><span class=w>
+        </span><span class=kr>end</span><span class=w>
 
-        <span class=c1>-- Pull DNS records</span>
-        <span class=c1>-- Use a hardcoded domain to make this example easier</span>
-        <span class=kd>local</span> <span class=n>answers</span><span class=p>,</span> <span class=n>err</span><span class=p>,</span> <span class=n>tries</span> <span class=o>=</span> <span class=n>r</span><span class=p>:</span><span class=n>query</span><span class=p>(</span><span class=s2>"kura.gg"</span><span class=p>,</span> <span class=kc>nil</span><span class=p>,</span> <span class=p>{})</span>
-        <span class=kr>if</span> <span class=ow>not</span> <span class=n>answers</span> <span class=kr>then</span>
-            <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"failed to query resolved: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-            <span class=kr>return</span>
-        <span class=kr>end</span>
-        <span class=kr>if</span> <span class=n>answers</span><span class=p>.</span><span class=n>errcode</span> <span class=kr>then</span>
-            <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"server returned error code: "</span><span class=p>,</span> <span class=n>answers</span><span class=p>.</span><span class=n>errcode</span><span class=p>,</span>
-                    <span class=s2>": "</span><span class=p>,</span> <span class=n>answers</span><span class=p>.</span><span class=n>errstr</span><span class=p>)</span>
-            <span class=c1>-- Have a return here so that the old servers remain even if</span>
-            <span class=c1>-- this lookup fails.</span>
-            <span class=kr>return</span>
-        <span class=kr>end</span>
+        </span><span class=c1>-- Pull DNS records</span><span class=w>
+        </span><span class=c1>-- Use a hardcoded domain to make this example easier</span><span class=w>
+        </span><span class=kd>local</span><span class=w> </span><span class=nv>answers</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>,</span><span class=w> </span><span class=nv>tries</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>r</span><span class=p>:</span><span class=nf>query</span><span class=p>(</span><span class=s2>"kura.gg"</span><span class=p>,</span><span class=w> </span><span class=kc>nil</span><span class=p>,</span><span class=w> </span><span class=p>{})</span><span class=w>
+        </span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>answers</span><span class=w> </span><span class=kr>then</span><span class=w>
+            </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"failed to query resolved: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+            </span><span class=kr>return</span><span class=w>
+        </span><span class=kr>end</span><span class=w>
+        </span><span class=kr>if</span><span class=w> </span><span class=nv>answers</span><span class=p>.</span><span class=py>errcode</span><span class=w> </span><span class=kr>then</span><span class=w>
+            </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"server returned error code: "</span><span class=p>,</span><span class=w> </span><span class=nv>answers</span><span class=p>.</span><span class=py>errcode</span><span class=p>,</span><span class=w>
+                    </span><span class=s2>": "</span><span class=p>,</span><span class=w> </span><span class=nv>answers</span><span class=p>.</span><span class=py>errstr</span><span class=p>)</span><span class=w>
+            </span><span class=c1>-- Have a return here so that the old servers remain even if</span><span class=w>
+            </span><span class=c1>-- this lookup fails.</span><span class=w>
+            </span><span class=kr>return</span><span class=w>
+        </span><span class=kr>end</span><span class=w>
 
-        <span class=c1>-- Dump records in a global variable</span>
-        <span class=c1>-- Note I am only pulling out addresses not CNAMEs</span>
-        <span class=n>_new_backend_servers</span> <span class=o>=</span> <span class=p>{}</span>
-        <span class=kr>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>ans</span> <span class=kr>in</span> <span class=nb>ipairs</span><span class=p>(</span><span class=n>answers</span><span class=p>)</span> <span class=kr>do</span>
-            <span class=nb>table.insert</span><span class=p>(</span><span class=n>_new_backend_servers</span><span class=p>,</span> <span class=n>ans</span><span class=p>.</span><span class=n>address</span><span class=p>)</span>
-        <span class=kr>end</span>
-        <span class=n>_backend_servers</span> <span class=o>=</span> <span class=n>_new_backend_servers</span>
-    <span class=kr>end</span>
+        </span><span class=c1>-- Dump records in a global variable</span><span class=w>
+        </span><span class=c1>-- Note I am only pulling out addresses not CNAMEs</span><span class=w>
+        </span><span class=nv>_new_backend_servers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{}</span><span class=w>
+        </span><span class=kr>for</span><span class=w> </span><span class=nv>i</span><span class=p>,</span><span class=w> </span><span class=nv>ans</span><span class=w> </span><span class=kr>in</span><span class=w> </span><span class=nb>ipairs</span><span class=p>(</span><span class=nv>answers</span><span class=p>)</span><span class=w> </span><span class=kr>do</span><span class=w>
+            </span><span class=nb>table.insert</span><span class=p>(</span><span class=nv>_new_backend_servers</span><span class=p>,</span><span class=w> </span><span class=nv>ans</span><span class=p>.</span><span class=py>address</span><span class=p>)</span><span class=w>
+        </span><span class=kr>end</span><span class=w>
+        </span><span class=nv>_backend_servers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>_new_backend_servers</span><span class=w>
+    </span><span class=kr>end</span><span class=w>
 
-    <span class=c1>-- Run an at timer to force update_dns to trigger on worker init</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>timer</span><span class=p>.</span><span class=n>at</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=n>update_dns</span><span class=p>)</span>
-    <span class=c1>-- Set a timer to run every 10 seconds</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>timer</span><span class=p>.</span><span class=n>every</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=n>update_dns</span><span class=p>)</span>
-<span class=p>}</span>
+    </span><span class=c1>-- Run an at timer to force update_dns to trigger on worker init</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=py>timer</span><span class=p>.</span><span class=nf>at</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=w> </span><span class=nv>update_dns</span><span class=p>)</span><span class=w>
+    </span><span class=c1>-- Set a timer to run every 10 seconds</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=py>timer</span><span class=p>.</span><span class=nf>every</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span><span class=w> </span><span class=nv>update_dns</span><span class=p>)</span><span class=w>
+</span><span class=p>}</span>
 </pre><div class=section id=configuring-the-dns-resolver><h3>Configuring the <span class=caps>DNS</span> resolver</h3><p>Let’s break this block down in to easier to understand blocks.<pre class="code lua literal-block">
-<span class=n>_backend_servers</span> <span class=o>=</span> <span class=p>{}</span>
+<span class=nv>_backend_servers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{}</span>
 </pre><p>Here we define an empty backend servers table that’ll be modified by modified by <span class=caps>DNS</span> resolver and is used by the balancer module for direction clients.<pre class="code lua literal-block">
-<span class=kd>local</span> <span class=kr>function</span> <span class=nf>update_dns</span><span class=p>()</span>
-    <span class=c1>-- Set up the resolver</span>
-    <span class=kd>local</span> <span class=n>resolver</span> <span class=o>=</span> <span class=nb>require</span> <span class=s2>"resty.dns.resolver"</span>
-    <span class=kd>local</span> <span class=n>r</span><span class=p>,</span> <span class=n>err</span> <span class=o>=</span> <span class=n>resolver</span><span class=p>:</span><span class=n>new</span><span class=p>{</span>
-        <span class=n>nameservers</span> <span class=o>=</span> <span class=p>{</span><span class=s2>"1.1.1.1"</span><span class=p>,</span> <span class=p>{</span><span class=s2>"1.0.0.1"</span><span class=p>,</span> <span class=mi>53</span><span class=p>}</span> <span class=p>},</span>  <span class=c1>-- Cloudflare</span>
-        <span class=n>retrans</span> <span class=o>=</span> <span class=mi>5</span><span class=p>,</span>  <span class=c1>-- 5 retransmissions on receive timeout</span>
-        <span class=n>timeout</span> <span class=o>=</span> <span class=mi>1000</span><span class=p>,</span>  <span class=c1>-- 1 sec</span>
-    <span class=p>}</span>
+<span class=kd>local</span><span class=w> </span><span class=kr>function</span><span class=w> </span><span class=nf>update_dns</span><span class=p>()</span><span class=w>
+    </span><span class=c1>-- Set up the resolver</span><span class=w>
+    </span><span class=kd>local</span><span class=w> </span><span class=nv>resolver</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>require</span><span class=w> </span><span class=s2>"resty.dns.resolver"</span><span class=w>
+    </span><span class=kd>local</span><span class=w> </span><span class=nv>r</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>resolver</span><span class=p>:</span><span class=py>new</span><span class=p>{</span><span class=w>
+        </span><span class=nv>nameservers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{</span><span class=s2>"1.1.1.1"</span><span class=p>,</span><span class=w> </span><span class=p>{</span><span class=s2>"1.0.0.1"</span><span class=p>,</span><span class=w> </span><span class=mi>53</span><span class=p>}</span><span class=w> </span><span class=p>},</span><span class=w>  </span><span class=c1>-- Cloudflare</span><span class=w>
+        </span><span class=nv>retrans</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w>  </span><span class=c1>-- 5 retransmissions on receive timeout</span><span class=w>
+        </span><span class=nv>timeout</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>1000</span><span class=p>,</span><span class=w>  </span><span class=c1>-- 1 sec</span><span class=w>
+    </span><span class=p>}</span>
 </pre><p>Here we’re defining the <cite>update_dns</cite> function and within that setting up a <span class=caps>DNS</span> resolver using the <cite>resty.dns.resolver</cite> module. I’m using Cloudflare’s <span class=caps>DNS</span> servers in this example with 5 retransmissions and a timeout of 1 second.<pre class="code lua literal-block">
-<span class=kr>if</span> <span class=ow>not</span> <span class=n>r</span> <span class=kr>then</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"failed to instantiate resolver: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-    <span class=kr>return</span>
-<span class=kr>end</span>
+<span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>r</span><span class=w> </span><span class=kr>then</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"failed to instantiate resolver: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+    </span><span class=kr>return</span><span class=w>
+</span><span class=kr>end</span>
 </pre><p>If instantiating the resolver fails, the function will return, leaving the backend server table unmodified. If this happens randomly during operation then the old server table will remain in use. If it fails during start up, the backend server table will be empty and cause <cite><span class=caps>HTTP</span> 500</cite> errors to be thrown (this is set up later.)</div><div class=section id=querying-the-dns-resolver><h3>Querying the <span class=caps>DNS</span> resolver</h3><pre class="code lua literal-block">
-<span class=c1>-- Pull DNS records</span>
-<span class=c1>-- Use a hardcoded domain to make this example easier</span>
-<span class=kd>local</span> <span class=n>answers</span><span class=p>,</span> <span class=n>err</span><span class=p>,</span> <span class=n>tries</span> <span class=o>=</span> <span class=n>r</span><span class=p>:</span><span class=n>query</span><span class=p>(</span><span class=s2>"kura.gg"</span><span class=p>,</span> <span class=kc>nil</span><span class=p>,</span> <span class=p>{})</span>
-<span class=kr>if</span> <span class=ow>not</span> <span class=n>answers</span> <span class=kr>then</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"failed to query resolved: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-    <span class=kr>return</span>
-<span class=kr>end</span>
+<span class=c1>-- Pull DNS records</span><span class=w>
+</span><span class=c1>-- Use a hardcoded domain to make this example easier</span><span class=w>
+</span><span class=kd>local</span><span class=w> </span><span class=nv>answers</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>,</span><span class=w> </span><span class=nv>tries</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>r</span><span class=p>:</span><span class=nf>query</span><span class=p>(</span><span class=s2>"kura.gg"</span><span class=p>,</span><span class=w> </span><span class=kc>nil</span><span class=p>,</span><span class=w> </span><span class=p>{})</span><span class=w>
+</span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>answers</span><span class=w> </span><span class=kr>then</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"failed to query resolved: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+    </span><span class=kr>return</span><span class=w>
+</span><span class=kr>end</span>
 </pre><p>Here we query the <span class=caps>DNS</span> server for records, I’m using my own domain <cite>kura.gg</cite> in this example.<pre class="code lua literal-block">
-<span class=kr>if</span> <span class=n>answers</span><span class=p>.</span><span class=n>errcode</span> <span class=kr>then</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"server returned error code: "</span><span class=p>,</span> <span class=n>answers</span><span class=p>.</span><span class=n>errcode</span><span class=p>,</span>
-            <span class=s2>": "</span><span class=p>,</span> <span class=n>answers</span><span class=p>.</span><span class=n>errstr</span><span class=p>)</span>
-    <span class=c1>-- Have a return here so that the old servers remain even if</span>
-    <span class=c1>-- this lookup fails.</span>
-    <span class=kr>return</span>
-<span class=kr>end</span>
+<span class=kr>if</span><span class=w> </span><span class=nv>answers</span><span class=p>.</span><span class=py>errcode</span><span class=w> </span><span class=kr>then</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"server returned error code: "</span><span class=p>,</span><span class=w> </span><span class=nv>answers</span><span class=p>.</span><span class=py>errcode</span><span class=p>,</span><span class=w>
+            </span><span class=s2>": "</span><span class=p>,</span><span class=w> </span><span class=nv>answers</span><span class=p>.</span><span class=py>errstr</span><span class=p>)</span><span class=w>
+    </span><span class=c1>-- Have a return here so that the old servers remain even if</span><span class=w>
+    </span><span class=c1>-- this lookup fails.</span><span class=w>
+    </span><span class=kr>return</span><span class=w>
+</span><span class=kr>end</span>
 </pre><p>If querying the records fails or if no records are found the function will return and leave the backend server table unmodified, allowing clients to attempt to use the old servers if they’re still alive.</div><div class=section id=using-the-returned-dns-records-to-configure-the-backend><h3>Using the returned <span class=caps>DNS</span> records to configure the backend</h3><pre class="code lua literal-block">
-    <span class=c1>-- Dump records in a global variable</span>
-    <span class=c1>-- Note I am only pulling out addresses not CNAMEs</span>
-    <span class=n>_new_backend_servers</span> <span class=o>=</span> <span class=p>{}</span>
-    <span class=kr>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>ans</span> <span class=kr>in</span> <span class=nb>ipairs</span><span class=p>(</span><span class=n>answers</span><span class=p>)</span> <span class=kr>do</span>
-        <span class=nb>table.insert</span><span class=p>(</span><span class=n>_new_backend_servers</span><span class=p>,</span> <span class=n>ans</span><span class=p>.</span><span class=n>address</span><span class=p>)</span>
-    <span class=kr>end</span>
-    <span class=n>_backend_servers</span> <span class=o>=</span> <span class=n>_new_backend_servers</span>
-<span class=kr>end</span>
+<span class=w>    </span><span class=c1>-- Dump records in a global variable</span><span class=w>
+    </span><span class=c1>-- Note I am only pulling out addresses not CNAMEs</span><span class=w>
+    </span><span class=nv>_new_backend_servers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{}</span><span class=w>
+    </span><span class=kr>for</span><span class=w> </span><span class=nv>i</span><span class=p>,</span><span class=w> </span><span class=nv>ans</span><span class=w> </span><span class=kr>in</span><span class=w> </span><span class=nb>ipairs</span><span class=p>(</span><span class=nv>answers</span><span class=p>)</span><span class=w> </span><span class=kr>do</span><span class=w>
+        </span><span class=nb>table.insert</span><span class=p>(</span><span class=nv>_new_backend_servers</span><span class=p>,</span><span class=w> </span><span class=nv>ans</span><span class=p>.</span><span class=py>address</span><span class=p>)</span><span class=w>
+    </span><span class=kr>end</span><span class=w>
+    </span><span class=nv>_backend_servers</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>_new_backend_servers</span><span class=w>
+</span><span class=kr>end</span>
 </pre><p>Finally we reach this block if no errors have occured. This will create a new table of backend servers from the <span class=caps>DNS</span> records queried and replace the old table with the new one.<p>It’s worth noting that this code will only store records that have an <cite>A</cite> or <cite><span class=caps>AAAA</span></cite> record, not <cite><span class=caps>CNAMES</span></cite> etc. Although it’s easy enough to modify it to change this behaviour.</div><div class=section id=set-up-a-timer-to-update-the-backend-servers-periodically><h3>Set up a timer to update the backend servers periodically</h3><pre class="code lua literal-block">
-<span class=c1>-- Run an at timer to force update_dns to trigger on worker init</span>
-<span class=n>ngx</span><span class=p>.</span><span class=n>timer</span><span class=p>.</span><span class=n>at</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=n>update_dns</span><span class=p>)</span>
-<span class=c1>-- Set a timer to run every 10 seconds</span>
-<span class=n>ngx</span><span class=p>.</span><span class=n>timer</span><span class=p>.</span><span class=n>every</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=n>update_dns</span><span class=p>)</span>
+<span class=c1>-- Run an at timer to force update_dns to trigger on worker init</span><span class=w>
+</span><span class=nv>ngx</span><span class=p>.</span><span class=py>timer</span><span class=p>.</span><span class=nf>at</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=w> </span><span class=nv>update_dns</span><span class=p>)</span><span class=w>
+</span><span class=c1>-- Set a timer to run every 10 seconds</span><span class=w>
+</span><span class=nv>ngx</span><span class=p>.</span><span class=py>timer</span><span class=p>.</span><span class=nf>every</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span><span class=w> </span><span class=nv>update_dns</span><span class=p>)</span>
 </pre><p>Here we’re setting up 2 timers. The first is an <cite>ngx.timer.at</cite> timer that tiggers when a worker is started to attempt to set up the backend server table on worker init.<p>The second is an <cite>ngx.timer.every</cite> timer that runs in the worker every 10 seconds.<p>Each worker will do this and have it’s own copy of the backend servers table.</div></div><div class=section id=breaking-down-balancer-by-lua-block><h2>Breaking down <cite>balancer_by_lua_block</cite></h2><p>Just like in the <a class="reference external" href={filename}/retrying-dynamically-configured-upstreams-with-openresty.rst>retrying dynamically configured upstreams</a> article we’ll use OpenResty’s <cite>balancer_by_lua_block</cite> to allow the balancer to use these records.<pre class="code lua literal-block">
-<span class=n>balancer_by_lua_block</span> <span class=p>{</span>
-    <span class=kd>local</span> <span class=n>balancer</span> <span class=o>=</span> <span class=nb>require</span><span class=p>(</span><span class=s2>"ngx.balancer"</span><span class=p>)</span>
+<span class=nv>balancer_by_lua_block</span><span class=w> </span><span class=p>{</span><span class=w>
+    </span><span class=kd>local</span><span class=w> </span><span class=nv>balancer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>require</span><span class=p>(</span><span class=s2>"ngx.balancer"</span><span class=p>)</span><span class=w>
 
-    <span class=kr>if</span> <span class=o>#</span><span class=n>_backend_servers</span> <span class=o>==</span> <span class=mi>0</span> <span class=kr>then</span>
-        <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"no backend servers available"</span><span class=p>)</span>
-        <span class=kr>return</span> <span class=n>ngx</span><span class=p>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span>
+    </span><span class=kr>if</span><span class=w> </span><span class=o>#</span><span class=nv>_backend_servers</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mi>0</span><span class=w> </span><span class=kr>then</span><span class=w>
+        </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"no backend servers available"</span><span class=p>)</span><span class=w>
+        </span><span class=kr>return</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span><span class=w>
 
-    <span class=c1>-- This block will only trigger if ngx.ctx.retry is not true.</span>
-    <span class=c1>-- We set this to true during the initial request so future</span>
-    <span class=c1>-- requests within this context will not go down this path.</span>
-    <span class=kr>if</span> <span class=ow>not</span> <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>retry</span> <span class=kr>then</span>
-        <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>retry</span> <span class=o>=</span> <span class=kc>true</span>
-        <span class=c1>-- Pick a random backend to start with</span>
-        <span class=n>server</span> <span class=o>=</span> <span class=n>_backend_servers</span><span class=p>[</span><span class=nb>math.random</span><span class=p>(</span><span class=o>#</span><span class=n>_backend_servers</span><span class=p>)]</span>
+    </span><span class=c1>-- This block will only trigger if ngx.ctx.retry is not true.</span><span class=w>
+    </span><span class=c1>-- We set this to true during the initial request so future</span><span class=w>
+    </span><span class=c1>-- requests within this context will not go down this path.</span><span class=w>
+    </span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>retry</span><span class=w> </span><span class=kr>then</span><span class=w>
+        </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>retry</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>true</span><span class=w>
+        </span><span class=c1>-- Pick a random backend to start with</span><span class=w>
+        </span><span class=nv>server</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>_backend_servers</span><span class=p>[</span><span class=nb>math.random</span><span class=p>(</span><span class=o>#</span><span class=nv>_backend_servers</span><span class=p>)]</span><span class=w>
 
-        <span class=c1>-- Kinda messy but, create a context table we dump tried</span>
-        <span class=c1>-- backends to.</span>
-        <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span> <span class=o>=</span> <span class=p>{}</span>
-        <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span><span class=p>[</span><span class=n>server</span><span class=p>]</span> <span class=o>=</span> <span class=kc>true</span>
+        </span><span class=c1>-- Kinda messy but, create a context table we dump tried</span><span class=w>
+        </span><span class=c1>-- backends to.</span><span class=w>
+        </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{}</span><span class=w>
+        </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=p>[</span><span class=nv>server</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>true</span><span class=w>
 
-        <span class=c1>-- set up more tries using the length of the server list minus 1.</span>
-        <span class=n>ok</span><span class=p>,</span> <span class=n>err</span> <span class=o>=</span> <span class=n>balancer</span><span class=p>.</span><span class=n>set_more_tries</span><span class=p>(</span><span class=o>#</span><span class=n>_backend_servers</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span>
-        <span class=kr>if</span> <span class=ow>not</span> <span class=n>ok</span> <span class=kr>then</span>
-            <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"set_more_tries failed: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-        <span class=kr>end</span>
+        </span><span class=c1>-- set up more tries using the length of the server list minus 1.</span><span class=w>
+        </span><span class=nv>ok</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>balancer</span><span class=p>.</span><span class=nf>set_more_tries</span><span class=p>(</span><span class=o>#</span><span class=nv>_backend_servers</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=mi>1</span><span class=p>)</span><span class=w>
+        </span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>ok</span><span class=w> </span><span class=kr>then</span><span class=w>
+            </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"set_more_tries failed: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+        </span><span class=kr>end</span><span class=w>
 
-    <span class=kr>else</span>
-        <span class=c1>-- This block will trigger on a retry</span>
-        <span class=c1>-- Here we'll run through the backends and pick one we haven't</span>
-        <span class=c1>-- tried yet.</span>
-        <span class=kr>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>ip</span> <span class=kr>in</span> <span class=nb>ipairs</span><span class=p>(</span><span class=n>_backend_servers</span><span class=p>)</span> <span class=kr>do</span>
-            <span class=n>in_ctx</span> <span class=o>=</span> <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span><span class=p>[</span><span class=n>ip</span><span class=p>]</span> <span class=o>~=</span> <span class=kc>nil</span>
-            <span class=kr>if</span> <span class=n>in_ctx</span> <span class=o>==</span> <span class=kc>false</span> <span class=kr>then</span>
-                <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span><span class=p>[</span><span class=n>ip</span><span class=p>]</span> <span class=o>=</span> <span class=kc>true</span>
-                <span class=n>server</span> <span class=o>=</span> <span class=n>ip</span>
-                <span class=kr>break</span>
-            <span class=kr>end</span>
-        <span class=kr>end</span>
-    <span class=kr>end</span>
+    </span><span class=kr>else</span><span class=w>
+        </span><span class=c1>-- This block will trigger on a retry</span><span class=w>
+        </span><span class=c1>-- Here we'll run through the backends and pick one we haven't</span><span class=w>
+        </span><span class=c1>-- tried yet.</span><span class=w>
+        </span><span class=kr>for</span><span class=w> </span><span class=nv>i</span><span class=p>,</span><span class=w> </span><span class=nv>ip</span><span class=w> </span><span class=kr>in</span><span class=w> </span><span class=nb>ipairs</span><span class=p>(</span><span class=nv>_backend_servers</span><span class=p>)</span><span class=w> </span><span class=kr>do</span><span class=w>
+            </span><span class=nv>in_ctx</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=p>[</span><span class=nv>ip</span><span class=p>]</span><span class=w> </span><span class=o>~=</span><span class=w> </span><span class=kc>nil</span><span class=w>
+            </span><span class=kr>if</span><span class=w> </span><span class=nv>in_ctx</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>false</span><span class=w> </span><span class=kr>then</span><span class=w>
+                </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=p>[</span><span class=nv>ip</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>true</span><span class=w>
+                </span><span class=nv>server</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>ip</span><span class=w>
+                </span><span class=kr>break</span><span class=w>
+            </span><span class=kr>end</span><span class=w>
+        </span><span class=kr>end</span><span class=w>
+    </span><span class=kr>end</span><span class=w>
 
-    <span class=c1>-- Hardcoded port again to make example easier</span>
-    <span class=n>ok</span><span class=p>,</span> <span class=n>err</span> <span class=o>=</span> <span class=n>balancer</span><span class=p>.</span><span class=n>set_current_peer</span><span class=p>(</span><span class=n>server</span><span class=p>,</span> <span class=mi>443</span><span class=p>)</span>
-    <span class=kr>if</span> <span class=ow>not</span> <span class=n>ok</span> <span class=kr>then</span>
-        <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"set_current_peer failed: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-        <span class=kr>return</span> <span class=n>ngx</span><span class=p>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span>
-    <span class=kr>end</span>
-<span class=p>}</span>
+    </span><span class=c1>-- Hardcoded port again to make example easier</span><span class=w>
+    </span><span class=nv>ok</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>balancer</span><span class=p>.</span><span class=nf>set_current_peer</span><span class=p>(</span><span class=nv>server</span><span class=p>,</span><span class=w> </span><span class=mi>443</span><span class=p>)</span><span class=w>
+    </span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>ok</span><span class=w> </span><span class=kr>then</span><span class=w>
+        </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"set_current_peer failed: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+        </span><span class=kr>return</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span><span class=w>
+    </span><span class=kr>end</span><span class=w>
+</span><span class=p>}</span>
 </pre><p>As with the <cite>init_worker_by_lua_block</cite> I’ll break the <cite>balancer_by_lua_block</cite> block down in more manageable chunks.<div class=section id=setting-up-balancer-by-lua><h3>Setting up balancer_by_lua</h3><pre class="code lua literal-block">
-<span class=kd>local</span> <span class=n>balancer</span> <span class=o>=</span> <span class=nb>require</span><span class=p>(</span><span class=s2>"ngx.balancer"</span><span class=p>)</span>
+<span class=kd>local</span><span class=w> </span><span class=nv>balancer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>require</span><span class=p>(</span><span class=s2>"ngx.balancer"</span><span class=p>)</span><span class=w>
 
-<span class=kr>if</span> <span class=o>#</span><span class=n>_backend_servers</span> <span class=o>==</span> <span class=mi>0</span> <span class=kr>then</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"no backend servers available"</span><span class=p>)</span>
-    <span class=kr>return</span> <span class=n>ngx</span><span class=p>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span>
-<span class=kr>end</span>
+</span><span class=kr>if</span><span class=w> </span><span class=o>#</span><span class=nv>_backend_servers</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mi>0</span><span class=w> </span><span class=kr>then</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"no backend servers available"</span><span class=p>)</span><span class=w>
+    </span><span class=kr>return</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span><span class=w>
+</span><span class=kr>end</span>
 </pre><p>First thing we do is include the <cite>ngx.balancer</cite> module, then we check to see if the backend servers table has any records. If not all we can do is write an error message to log and send the client an <cite><span class=caps>HTTP</span> 500</cite> because we have no backends available.</div><div class=section id=handling-an-initial-request><h3>Handling an initial request</h3><pre class="code lua literal-block">
-<span class=c1>-- This block will only trigger if ngx.ctx.retry is not true or is</span>
-<span class=c1>-- unset.</span>
-<span class=c1>-- We set this to true during the initial request so future</span>
-<span class=c1>-- requests within this context will not go down this path.</span>
-<span class=kr>if</span> <span class=ow>not</span> <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>retry</span> <span class=kr>then</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>retry</span> <span class=o>=</span> <span class=kc>true</span>
-    <span class=c1>-- Pick a random backend to start with</span>
-    <span class=n>server</span> <span class=o>=</span> <span class=n>_backend_servers</span><span class=p>[</span><span class=nb>math.random</span><span class=p>(</span><span class=o>#</span><span class=n>_backend_servers</span><span class=p>)]</span>
+<span class=c1>-- This block will only trigger if ngx.ctx.retry is not true or is</span><span class=w>
+</span><span class=c1>-- unset.</span><span class=w>
+</span><span class=c1>-- We set this to true during the initial request so future</span><span class=w>
+</span><span class=c1>-- requests within this context will not go down this path.</span><span class=w>
+</span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>retry</span><span class=w> </span><span class=kr>then</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>retry</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>true</span><span class=w>
+    </span><span class=c1>-- Pick a random backend to start with</span><span class=w>
+    </span><span class=nv>server</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>_backend_servers</span><span class=p>[</span><span class=nb>math.random</span><span class=p>(</span><span class=o>#</span><span class=nv>_backend_servers</span><span class=p>)]</span><span class=w>
 
-    <span class=c1>-- Kinda messy but, create a context table we dump tried</span>
-    <span class=c1>-- backends to.</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span> <span class=o>=</span> <span class=p>{}</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span><span class=p>[</span><span class=n>server</span><span class=p>]</span> <span class=o>=</span> <span class=kc>true</span>
+    </span><span class=c1>-- Kinda messy but, create a context table we dump tried</span><span class=w>
+    </span><span class=c1>-- backends to.</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{}</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=p>[</span><span class=nv>server</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>true</span><span class=w>
 
-    <span class=c1>-- set up more tries using the length of the server list minus 1.</span>
-    <span class=n>ok</span><span class=p>,</span> <span class=n>err</span> <span class=o>=</span> <span class=n>balancer</span><span class=p>.</span><span class=n>set_more_tries</span><span class=p>(</span><span class=o>#</span><span class=n>_backend_servers</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span>
-    <span class=kr>if</span> <span class=ow>not</span> <span class=n>ok</span> <span class=kr>then</span>
-        <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"set_more_tries failed: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-    <span class=kr>end</span>
+    </span><span class=c1>-- set up more tries using the length of the server list minus 1.</span><span class=w>
+    </span><span class=nv>ok</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>balancer</span><span class=p>.</span><span class=nf>set_more_tries</span><span class=p>(</span><span class=o>#</span><span class=nv>_backend_servers</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=mi>1</span><span class=p>)</span><span class=w>
+    </span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>ok</span><span class=w> </span><span class=kr>then</span><span class=w>
+        </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"set_more_tries failed: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+    </span><span class=kr>end</span>
 </pre><p>Here we set up what happens when <cite>ngx.ctx.retry</cite> is undefined or false, which will happen on first request for a client.<p>Within this block we pick a random backend, set up a table of addresses already tried so if a retry is necessary it won’t use the same host.<p>Then we set the number of retries to attempt as the length of the server table minus one.</div><div class=section id=handling-a-retry-request><h3>Handling a retry request</h3><pre class="code lua literal-block">
-<span class=kr>else</span>
-    <span class=c1>-- This block will trigger on a retry</span>
-    <span class=c1>-- Here we'll run through the backends and pick one we haven't</span>
-    <span class=c1>-- tried yet.</span>
-    <span class=kr>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>ip</span> <span class=kr>in</span> <span class=nb>ipairs</span><span class=p>(</span><span class=n>_backend_servers</span><span class=p>)</span> <span class=kr>do</span>
-        <span class=n>in_ctx</span> <span class=o>=</span> <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span><span class=p>[</span><span class=n>ip</span><span class=p>]</span> <span class=o>~=</span> <span class=kc>nil</span>
-        <span class=kr>if</span> <span class=n>in_ctx</span> <span class=o>==</span> <span class=kc>false</span> <span class=kr>then</span>
-            <span class=n>ngx</span><span class=p>.</span><span class=n>ctx</span><span class=p>.</span><span class=n>tried</span><span class=p>[</span><span class=n>ip</span><span class=p>]</span> <span class=o>=</span> <span class=kc>true</span>
-            <span class=n>server</span> <span class=o>=</span> <span class=n>ip</span>
-            <span class=kr>break</span>
-        <span class=kr>end</span>
-    <span class=kr>end</span>
-<span class=kr>end</span>
+<span class=kr>else</span><span class=w>
+    </span><span class=c1>-- This block will trigger on a retry</span><span class=w>
+    </span><span class=c1>-- Here we'll run through the backends and pick one we haven't</span><span class=w>
+    </span><span class=c1>-- tried yet.</span><span class=w>
+    </span><span class=kr>for</span><span class=w> </span><span class=nv>i</span><span class=p>,</span><span class=w> </span><span class=nv>ip</span><span class=w> </span><span class=kr>in</span><span class=w> </span><span class=nb>ipairs</span><span class=p>(</span><span class=nv>_backend_servers</span><span class=p>)</span><span class=w> </span><span class=kr>do</span><span class=w>
+        </span><span class=nv>in_ctx</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=p>[</span><span class=nv>ip</span><span class=p>]</span><span class=w> </span><span class=o>~=</span><span class=w> </span><span class=kc>nil</span><span class=w>
+        </span><span class=kr>if</span><span class=w> </span><span class=nv>in_ctx</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>false</span><span class=w> </span><span class=kr>then</span><span class=w>
+            </span><span class=nv>ngx</span><span class=p>.</span><span class=py>ctx</span><span class=p>.</span><span class=py>tried</span><span class=p>[</span><span class=nv>ip</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>true</span><span class=w>
+            </span><span class=nv>server</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>ip</span><span class=w>
+            </span><span class=kr>break</span><span class=w>
+        </span><span class=kr>end</span><span class=w>
+    </span><span class=kr>end</span><span class=w>
+</span><span class=kr>end</span>
 </pre><p>This block is what will be called if the request is a retry. In it we simply iterate through the backend server table looking for a backend we haven’t tried yet. Once we find one we add it to the list of servers tried and break the loop to send the client to that server.</div><div class=section id=passing-the-request-back-to-nginx><h3>Passing the request back to nginx</h3><pre class="code lua literal-block">
-<span class=c1>-- Hardcoded port again to make example easier</span>
-<span class=n>ok</span><span class=p>,</span> <span class=n>err</span> <span class=o>=</span> <span class=n>balancer</span><span class=p>.</span><span class=n>set_current_peer</span><span class=p>(</span><span class=n>server</span><span class=p>,</span> <span class=mi>443</span><span class=p>)</span>
-<span class=kr>if</span> <span class=ow>not</span> <span class=n>ok</span> <span class=kr>then</span>
-    <span class=n>ngx</span><span class=p>.</span><span class=n>log</span><span class=p>(</span><span class=n>ngx</span><span class=p>.</span><span class=n>ERR</span><span class=p>,</span> <span class=s2>"set_current_peer failed: "</span><span class=p>,</span> <span class=n>err</span><span class=p>)</span>
-    <span class=kr>return</span> <span class=n>ngx</span><span class=p>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span>
-<span class=kr>end</span>
+<span class=c1>-- Hardcoded port again to make example easier</span><span class=w>
+</span><span class=nv>ok</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nv>balancer</span><span class=p>.</span><span class=nf>set_current_peer</span><span class=p>(</span><span class=nv>server</span><span class=p>,</span><span class=w> </span><span class=mi>443</span><span class=p>)</span><span class=w>
+</span><span class=kr>if</span><span class=w> </span><span class=ow>not</span><span class=w> </span><span class=nv>ok</span><span class=w> </span><span class=kr>then</span><span class=w>
+    </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>log</span><span class=p>(</span><span class=nv>ngx</span><span class=p>.</span><span class=py>ERR</span><span class=p>,</span><span class=w> </span><span class=s2>"set_current_peer failed: "</span><span class=p>,</span><span class=w> </span><span class=nv>err</span><span class=p>)</span><span class=w>
+    </span><span class=kr>return</span><span class=w> </span><span class=nv>ngx</span><span class=p>.</span><span class=nf>exit</span><span class=p>(</span><span class=mi>500</span><span class=p>)</span><span class=w>
+</span><span class=kr>end</span>
 </pre><p>This final block is where nginx is told which backend to send the client to.</div></div><div class=section id=putting-it-all-together><h2>Putting it all together</h2><p>Below is the full example written as a single <cite>nginx.conf</cite>. Sadly syntax highlighters have issues with nginx and Lua in a single file.<pre class="code nginx literal-block">
 <span class=c1># set 2 worker processes to show the timer spawning on each one
 </span><span class=k>worker_processes</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>

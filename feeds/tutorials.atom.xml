@@ -261,7 +261,7 @@ only configuration similarity this requires is that mail for all users is
 stored on the filesystem in the same place, rather than to separate locations
 i.e. each user having ~/.Maildir.&lt;/p&gt;
 &lt;div class="section" id="encfs"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;EncFS&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;EncFS&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;encfs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once installed, you’ll need to make a directory for encrypted and decrypted
@@ -430,14 +430,14 @@ sudo&lt;span class="w"&gt; &lt;/span&gt;/etc/init.d/postfix&lt;span class="w"&gt
 and Solr, the latter being used for &lt;span class="caps"&gt;IMAP&lt;/span&gt; &lt;span class="caps"&gt;SEARCH&lt;/span&gt;. I personally use 2 &lt;span class="caps"&gt;GB&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I’ll warn you all now, this is a long article.&lt;/p&gt;
 &lt;div class="section" id="ssl"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo openssl genrsa -out /etc/ssl/private/mail.key 4096
 sudo openssl req -new -key /etc/ssl/private/mail.key -out /tmp/mail.csr
 sudo openssl x509 -req -days 365 -in /tmp/mail.csr -signkey /etc/ssl/private/mail.key -out /etc/ssl/certs/mail.crt
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mysql"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;MySQL&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;MySQL&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install mysql-server
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You’ll be prompted several times for a password for MySQL during the installation,
