@@ -28,7 +28,7 @@ jobs:
         run: |
           make dev-start
           sudo make install-shot-scraper
-          make screenshot-shot-scraper
+          sudo make screenshot-shot-scraper
           make dev-stop
           find output -type f -not -name "*.png" -delete
           mv output output_screenshots

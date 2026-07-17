@@ -30,7 +30,7 @@ html: clean $(OUTPUTDIR)/index.html
 
 $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
-	python scripts/replace_tokens.py $(OUTPUTDIR)
+	python3 scripts/replace_tokens.py $(OUTPUTDIR)
 
 .PHONY: clean
 clean:
@@ -55,6 +55,8 @@ dev-stop:
 
 .PHONY: publish
 publish:
+	sed -i '/\<link rel="stylesheet" .*/d' eevee/templates/partials/_minify_css.html
+	sed -i '/\<script async/d' eevee/templates/partials/_minify_js.html
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 	python3 scripts/replace_tokens.py $(OUTPUTDIR)
 
