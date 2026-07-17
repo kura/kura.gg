@@ -7,12 +7,12 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v6
         with:
           python-version: 3.11
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: ~/.cache/pip
           key: cache_file
@@ -27,10 +27,7 @@ jobs:
       - name: screenshot
         run: |
           make dev-start
-          sudo pip install shot-scraper
-          sudo shot-scraper install
-          sudo playwright install-deps
-          sudo playwright install
+          sudo make install-shot-scraper
           make screenshot-shot-scraper
           make dev-stop
           find output -type f -not -name "*.png" -delete

@@ -84,6 +84,14 @@ pngquant:
 screenshot:
 	bash screenshot/screenshot.sh $(OUTPUTDIR)/
 
+.PHONY: install-shot-scraper
+install-shot-scraper:
+	python3 -m venv shots
+	./shots/bin/python3 -m pip install shot-scraper
+	./shots/bin/shot-scraper install
+	./shots/bin/playwright install-deps
+	./shots/bin/playwright install
+
 .PHONY: screenshot-shot-scraper
 screenshot-shot-scraper:
 	bash screenshot/screenshot-shot-scraper.sh $(OUTPUTDIR)/

@@ -10,7 +10,7 @@ screenshot() {
     url=$1
     output=$2
     echo "${url} -> ${output}"
-    sudo shot-scraper $url -o $output-orig.png --width 1920 --height 1080
+    sudo ./shots/bin/shot-scraper $url -o $output-orig.png --width 1920 --height 1080
     sudo convert $output-orig.png -resize 100% $output-orig.png
     pngquant $output-orig.png -o $output
     rm $output-orig.png
