@@ -48,9 +48,9 @@ SOCIAL = [
         "bookmark"
     ),
     (
-        """<i class="fa" aria-hidden="true">&#129443</i> @kura@noc.social""",
-        "@kura@noc.social",
-        "https://noc.social/@kura",
+        """<i class="fa" aria-hidden="true">&#129443</i> @kura@cyberpsychosis.io""",
+        "@kura@cyberpsychosis.io",
+        "https://cyberpsychosis.io/@kura",
         "me"
     ),
 ]
